@@ -4,42 +4,211 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                BladewindUI has been designed to not interfere with the existing components in your project. 
-                Probably you just want to take this for a spin before deciding if BladewindUI components will be the only components you use in your project. 
-                All BladewindUI components exist in your project's <code class="inline">resources > views > components > <span class="text-red-400">bladewind</span></code> directory. 
-                Per Laravel convention, this results in you having to type the <code class="inline text-red-400">&lt;x-bladewind</code> prefix everytime you want to use a BladewindUI component.
+                The alert component is useful for displaying messages intended to get the attention of your end users. 
+                BladewindUI alerts are in two variants. Dark alerts and faint alerts. Dark here is not to be confused with dark mode. 
+                This just provides a darker shade of the colour used, depending on what type of alert is displayed. 
             </p>
-             <p>
-                
-            </p>
-            <br/>
-            <h2>Getting rid of the <b class="font-bold">bladewind</b> prefix </h2>
+            <a name="faint"></a>
             <p>
-                Using any of the BladewindUI components can be without the bladewind prefix like so <code class="inline text-red-400">&lt;x-button&gt;Save User&lt;/x-button&gt;</code>. Achieving this is actually quite easy. 
-                Simply move all the blade files in <code class="inline">resources > views > components > bladewind</code> into <code class="inline">resources > views > components</code>. 
-                You can then delete the <span>bladewind</span> folder from your <code class="inline">resources > views > components</code> folder since it's technically empty at this point.
+                BladewindUI alerts are displayed inline by default. You may want to check out the <a href="/component/notification">Notification</a> component if you want something more intrusive.
             </p>
-            
-            <br />
-            <h2>If you are not into the Blues...</h2>
-            <p>The primary precompiled color theme used for the BladewindUI components is blue. If your primary theme is not blue, you can change this in a few steps. This assumes you have some knowledge of Tailwind CSS and how to compile changes made to Laravel's app.css file.</p>
-            <p>From your command line, while at the root of your Laravel project, type the following command to publish the uncompiled css files for the BladewindUI components.</p>
-           
-            <p>You should now have in your <code class="inline">resources</code> directory, a <code class="inline text-red-400">bladewind</code> folder containing all the uncompiled tailwind css files. <a href="https://laravel.com/docs/9.x/mix" target="_blank">Refer to this article</a> if you are not familiar with compiling assets in Laravel.</p>
-            <br />
-            <h2>You can change everything</h2>
-            <p>Truely, you can! These components are in essence just Laravel blade templates that sit right there in your project. If there are any implementations you are unhappy with, simply locate the particular blade template and dissect it at will.</p>
+
+            <h2>Faint Coloured Alerts</h2>
+            <h3 class="pb-2 ">Info</h3>
+            <x-bladewind.alert css="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert&gt;
+                        Your subscription is expiring in 19 days. 
+                        &lt;a href="#"&gt;Renew now&lt;/a&gt;
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Error</h3>
+            <x-bladewind.alert type="error"> css="mb-3"You do not have permission to upload files</x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert type="error"&gt;
+                        You do not have permission to upload files
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Warning</h3>
+            <x-bladewind.alert type="warning" css="mb-3">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert type="warning"&gt;
+                        Well, this is your first warning. Do that again and I'll wipe your hard disk
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Success</h3>
+            <x-bladewind.alert type="success" css="mb-3">Files were successfully uploaded</x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert type="success"&gt;
+                        Files were successfully uploaded
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <p>&nbsp;</p>
+            <a name="dark"><h2>Dark Coloured Alerts</h2></a>
+            <p>If you are into darker shades of alerts like myself, this attribute is for you.</p>
+            <h3 class="pb-2 ">Info</h3>
+            <x-bladewind.alert shade="dark">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert shade="dark"&gt;
+                        Your subscription is expiring in 19 days. 
+                        &lt;a href="#" class="!text-white/70"&gt;Renew now&lt;/a&gt;
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Error</h3>
+            <x-bladewind.alert type="error" shade="dark">You do not have permission to upload files</x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert type="error" shade="dark"&gt;
+                        You do not have permission to upload files
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Warning</h3>
+            <x-bladewind.alert type="warning" shade="dark">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert type="warning" shade="dark"&gt;
+                        Well, this is your first warning. Do that again and I'll wipe your hard disk
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Success</h3>
+            <x-bladewind.alert type="success" shade="dark">Files were successfully uploaded</x-bladewind.alert>
+            <pre class="language-markup line-numbers" data-lines="1">
+                <code>
+                    &lt;x-bladewind.alert type="success" shade="dark"&gt;
+                        Files were successfully uploaded
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
             
             <p>&nbsp;</p>
+            <a name="iconless"><h2>Without Icons</h2></a>
+            <p>By default the alert component shows a close icon and another icon matching the type of alert. Both icons can be turned off separately.</p>
+            <h3 class="pb-2 ">Info</h3>
+            <x-bladewind.alert shade="dark" show_icon="false" show_close_icon="false">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert 
+                        shade="dark"
+                        show_icon="false"
+                        show_close_icon="false"&gt;
+                        Your subscription is expiring in 19 days. 
+                        &lt;a href="#" class="!text-white/70"&gt;Renew now&lt;/a&gt;
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Error</h3>
+            <x-bladewind.alert type="error" shade="dark" show_close_icon="false">You do not have permission to upload files</x-bladewind.alert>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.alert 
+                        type="error" 
+                        shade="dark"
+                        show_close_icon="false"&gt;
+                        You do not have permission to upload files
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <div>&nbsp;</div>
+            <h3 class="pb-2 ">Warning</h3>
+            <x-bladewind.alert type="warning" shade="dark" show_icon="false">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind.alert>
+            <pre class="language-markup line-numbers" data-line="4">
+                <code>
+                    &lt;x-bladewind.alert 
+                        type="warning" 
+                        shade="dark"
+                        show_icon="false"&gt;
+                        Well, this is your first warning. Do that again and I'll wipe your hard disk
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <p>&nbsp;</p>
+            <a name="attributes"><h2>Full List Of Attributes</h2></a>
+            <p>The table below shows a comprehensive list of all the attributes available for the Alert component.</p>
+            <x-bladewind.table striped="true">
+                <x-slot name="header">
+                    <th>Option</th>
+                    <th>Default</th>
+                    <th>Available Values</th>
+                </x-slot>
+                <tr>
+                    <td>type</td>
+                    <td>info</td>
+                    <td><code class="inline">info</code> <code class="inline">error</code> <code class="inline">warning</code> <code class="inline">success</code></td>
+                </tr>
+                <tr>
+                    <td>shade</td>
+                    <td>info</td>
+                    <td><code class="inline">info</code> <code class="inline">error</code> <code class="inline">warning</code> <code class="inline">success</code></td>
+                </tr>
+                <tr>
+                    <td>show_close_icon</td>
+                    <td>true</td>
+                    <td>Determines if the close icon should be shown. Value needs to be set as a string not boolean. <br><code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
+                    <td>show_icon</td>
+                    <td>true</td>
+                    <td>Determines if the alert type icon should be displayed. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                </tr>
+                <tr>
+                    <td>css</td>
+                    <td><em>blank</em></td>
+                    <td>Any additonal css classes can be added using this attribute. For example to make your alert rounded you can add <code class="inline">css="rounded-lg"</code> for example. The default is an empty string.</td>
+                </tr>
+            </x-bladewind.table>
+            <p>&nbsp;</p>
+            <h3 class="pb-2 ">Alert with all attributes defined</h3>
+            <pre class="language-markup line-numbers" data-line="4">
+                <code>
+                    &lt;x-bladewind.alert 
+                        type="warning" 
+                        shade="dark"
+                        show_close_icon="false"
+                        show_icon="false"
+                        css="rounded-lg shadow-sm"&gt;
+                        Stay safe. Wash your hands for 20 seconds
+                    &lt;/x-bladewind.alert&gt;
+                </code>
+            </pre>
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
         </div>
-        <div class="w-40 grow-0">
-            <nav class=" fixed h-screen overflow-y-scroll">
-                <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Layouts</h5></li>
+        <div class="w-1/4 grow-0">
+            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+                <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
-                    <div class="flex items-center"><div class="dot"></div><a href="/layout/app">App</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="/layout/centered-content">Centered Content</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="/layout/error-pages">Error Pages</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="/layout/slideout-panel">Slideout Panel</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#faint">Faint coloured alerts</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#dark">Dark coloured alerts</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#iconless">Without icons</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>
         </div>
@@ -47,7 +216,7 @@
 
     <x-slot name="scripts">
         <script>
-            selectNavigationItem('.customization');
+            selectNavigationItem('.component-alert');
         </script>
     </x-slot>
 </x-app>

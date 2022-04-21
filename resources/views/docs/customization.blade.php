@@ -22,9 +22,9 @@
         You can then delete the <span>bladewind</span> folder from your <code class="inline">resources > views > components</code> folder since it's technically empty at this point.
     </p>
     <p>
-        <x-bladewind::alert type="warning" show_close_icon="false">
+        <x-bladewind.alert type="warning" show_close_icon="false">
             Please note that this will overwrite any files you have in your <code class="text-sm">resources > views > components</code> directory with the same names as what you are copying over from <code class="text-sm">resources > views > components > bladewind</code>
-        </x-bladewind::alert>
+        </x-bladewind.alert>
     </p>
     <br />
     <h2>If you are not into the Blues...</h2>
