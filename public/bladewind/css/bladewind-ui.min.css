@@ -504,6 +504,10 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .mt-2{margin-top:0.5rem}
 .mt-8{margin-top:2rem}
 .-mb-px{margin-bottom:-1px}
+.-ml-2{margin-left:-0.5rem}
+.-ml-6{margin-left:-1.5rem}
+.-ml-4{margin-left:-1rem}
+.-ml-5{margin-left:-1.25rem}
 .block{display:block}
 .inline-block{display:inline-block}
 .inline{display:inline}
@@ -530,6 +534,9 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .h-full{height:100%}
 .h-14{height:3.5rem}
 .h-16{height:4rem}
+.h-20{height:5rem}
+.h-24{height:6rem}
+.h-28{height:7rem}
 .min-h-screen{min-height:100vh}
 .w-full{width:100%}
 .w-6{width:1.5rem}
@@ -648,6 +655,9 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .w-10{width:2.5rem}
 .w-14{width:3.5rem}
 .w-16{width:4rem}
+.w-20{width:5rem}
+.w-24{width:6rem}
+.w-28{width:7rem}
 .min-w-full{min-width:100%}
 .max-w-7xl{max-width:80rem}
 .max-w-6xl{max-width:72rem}
