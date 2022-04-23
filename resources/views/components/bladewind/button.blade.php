@@ -8,7 +8,7 @@
     'onclick' => '', // a function to call onclick on the button
     'disabled' => 'false', // set to true to disable the button
     'css' => '',
-    'color' => 'blue', // red, yellow, green, blue, purple, orange, teal, amber, cyan
+    'color' => 'blue', // red, yellow, green, blue, purple, orange, cyan, black
     'coloring' => [
         'bg' => [
             'red' => 'bg-red-500',

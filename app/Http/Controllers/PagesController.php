@@ -11,4 +11,6 @@ class PagesController extends Controller
     public function alert()                 { return view('docs.alert'); }
     public function avatar()                { return view('docs.avatar'); }
     public function button()                { return view('docs.button'); }
+    public function card()                  { return view('docs.card'); }
+    public function checkbox()              { return view('docs.checkbox'); }
 }

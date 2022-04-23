@@ -1,7 +1,3 @@
-@props([
-    'notification_type' => '',
-    'notification_message' => ''
-])
 <x-meta>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
@@ -34,7 +30,7 @@
         
         <div class="h-20"></div>
         <div class="max-w-7xl mx-auto pt-14">
-            <nav class="w-64 fixed h-screen overflow-y-scroll main-nav">
+            <nav class="w-64 fixed h-screen overflow-y-scroll main-nav pb-44">
                 <h5 class="mb-3 font-semibold text-slate-900 dark:text-slate-200">Getting Started</h5></li>
                 <div class="space-y-3">
                 <div class="flex items-center installation"><div class="dot"></div><a href="/">Installation</a></div>

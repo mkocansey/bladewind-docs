@@ -182,7 +182,6 @@
                 <x-bladewind.button>Look Ma! I am blue</x-bladewind.button>
             </p>
 
-            <a name="attributes"></a>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.button 
@@ -213,17 +212,17 @@
                 </code>
             </pre>
             <br />
+            
             <p>
                 Assuming you decide to use a different primary button colour throughout your application, say purple, specifying 
                 <code class="inline text-red-500">color="purple"</code> everytime you create a button can get quite tedious. We advise you instead open up the 
                 <code class="inline">resources > views > components > bladewind > button.blade.php</code> file and change the blue value on the line that says
-                <code class="inline">'color' => 'blue',</code>.
+                <code class="inline">'color' => 'blue',</code>.<a name="attributes"></a>
             </p>
-            <br />
 
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
-            <p>The table below shows a comprehensive list of all the attributes available for the Avatar component.</p>
+            <p>The table below shows a comprehensive list of all the attributes available for the Button component.</p>
             <x-bladewind.table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -304,6 +303,9 @@
             </pre>
 
             <p>&nbsp;</p>
+            <x-bladewind.alert show_close_icon="false">
+                The source file for this component is available in <code class="inline">resources/views/components/bladewind/button.blade.php</code>
+            </x-bladewind.alert>
             <p>&nbsp;</p>
 
         </div>
