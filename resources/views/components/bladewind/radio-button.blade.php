@@ -7,7 +7,7 @@
     'checked' => 'false',
     'disabled' => 'false',
 ])
-<x-checkbox 
+<x-bladewind::checkbox 
     name="{{$name}}" 
     label="{{$label}}" 
     value="{{$value}}"

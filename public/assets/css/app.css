@@ -566,6 +566,10 @@ code.inline{
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.mx-3{
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .ml-2{
   margin-left: 0.5rem;
 }
