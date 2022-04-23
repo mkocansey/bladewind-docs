@@ -5,7 +5,7 @@
     'value' => '',
     'label' => '',
     'checked' => 'false',
-    'disabled' => false,
+    'disabled' => 'false',
 ])
 <x-checkbox 
     name="{{$name}}" 

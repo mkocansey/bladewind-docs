@@ -1,11 +1,11 @@
 @props([ 
     'name' => 'checkbox',
-    'css' => '',
     'value' => '',
     'label' => '',
     'checked' => 'false',
     'disabled' => 'false',
     'type' => 'checkbox',
+    'css' => '',
 ])
 @php $name = str_replace(' ','_', str_replace('-', '_',$name)); @endphp
 
@@ -20,5 +20,5 @@
             focus:ring-blue-400 focus:ring-opacity-25 
             border border-gray-300 
             rounded {{$css}}" 
-        type="{{$type}}" @if($checked == 'true') checked="checked" @endif />{{ $label }}
+        type="{{$type}}" @if($checked == 'true') checked="checked" @endif />{!! $label !!}
 </label>
