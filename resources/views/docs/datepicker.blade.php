@@ -1,0 +1,176 @@
+<x-app>
+    <x-slot name="title">Datepicker Component</x-slot>
+    <h1 class="page-title">Datepicker</h1>
+    <div class="flex">
+        <div class="grow w-3/4">
+            <p>
+                Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
+            </p>
+            
+            <x-bladewind.datepicker css="!w-40"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.datepicker  /&gt;
+                </code>
+            </pre>
+            <div class="pb-10"></div>
+            <p>It is possible to change the placeholder text</p>
+            <x-bladewind.datepicker 
+                css="!w-40" 
+                placeholder="Invoice Date"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind.datepicker placeholder="Invoice Date"  /&gt;
+                </code>
+            </pre>
+            <div class="pb-10"></div>
+            
+            <h3 class="pb-2 ">Range</h3>
+            <x-bladewind.datepicker type="range"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::datepicker type="range"  /&gt;
+                </code>
+            </pre>
+            <div class="py-2"></div>
+            <br />
+            
+            <div class="pb-10"></div>
+            
+            <h3 class="pb-2 ">Show As a Required Field</h3>
+            <p>An asterisk is appended to the placeholder text.</p>
+            <x-bladewind.datepicker css="!w-44" required="true"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::datepicker required="true"  /&gt;
+                </code>
+            </pre>
+            <br />
+            <div class="pb-10"></div>
+            
+            <h3 class="pb-2 ">With Default Date</h3>
+            <x-bladewind.datepicker css="!w-44" default_date="2021-12-03"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::datepicker default_date="2021-12-03"  /&gt;
+                </code>
+            </pre>
+            <br />
+            <h3 class="pb-2 ">With Default Dates for Range Datepicker</h3>
+            <x-bladewind.datepicker type="range" date_from="2021-12-03" date_to="2022-01-03"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::datepicker 
+                        type="range" 
+                        date_from="2021-12-03" 
+                        date_to="2022-01-03"  /&gt;
+                </code>
+            </pre>
+            <div class="py-2"></div>
+            <br />
+            
+           <a name="attributes"></a>
+           <div>&nbsp;</div>
+           
+            <p>&nbsp;</p>
+            <h2>Full List Of Attributes</h2>
+            <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
+            <x-bladewind.table striped="true">
+                <x-slot name="header">
+                    <th>Option</th>
+                    <th>Default</th>
+                    <th>Available Values</th>
+                </x-slot>
+                <tr>
+                    <td>name</td>
+                    <td>bw-datepicker</td>
+                    <td>This name can be accessed when the input is submitted in the form. The name is also available as part of the css classes.</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>single</td>
+                    <td><code class="inline">single</code><code class="inline">range</code></td>
+                </tr>
+                <tr>
+                    <td>default_date</td>
+                    <td><em>blank</em></td>
+                    <td>In case you are editing a form, the value passed will be set on the value attribute of the checkbox. 
+                    <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
+                </tr>
+                <tr>
+                    <td>date_from</td>
+                    <td><em>blank</em></td>
+                    <td>Default date to set for the <em>From</em> date when using the range datepicker.</td>
+                </tr>
+                <tr>
+                    <td>date_to</td>
+                    <td><em>blank</em></td>
+                    <td>Default date to set for the <em>To</em> date when using the range datepicker.</td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td>Select a date</td>
+                    <td>Placeholder text to display</td>
+                </tr>
+                <tr>
+                    <td>required</td>
+                    <td>false</td>
+                    <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                </tr>
+                <tr>
+                    <td>css</td>
+                    <td>bw-datepicker</td>
+                    <td>Any additonal css classes can be added using this attribute.</td>
+                </tr>
+            </x-bladewind.table>
+            <p>&nbsp;</p>
+            <h3 class="pb-2 ">Datepicker with all attributes defined</h3>
+            <pre class="language-markup line-numbers" data-line="4">
+                <code>
+                    &lt;x-bladewind.datepicker 
+                        name="invoice_date"
+                        type="single"
+                        required="false"
+                        placeholder="Invoice Date" 
+                        date_from=""
+                        date_to=""
+                        default_date=""
+                        css="shadow-sm" /&gt;
+                </code>
+            </pre>
+
+            <p>&nbsp;</p>
+            <x-bladewind.alert show_close_icon="false">
+                The source file for this component is available in <code class="inline">resources/views/components/bladewind/datepicker.blade.php</code>
+            </x-bladewind.alert><br/>
+            <x-bladewind.alert show_close_icon="false">
+                The source language (translation) files for this component are available in <code class="inline">lang/en/datepicker.php</code> and <code class="inline">lang/fr/datepicker.php</code>
+            </x-bladewind.alert><br />
+            <x-bladewind.alert show_close_icon="false">
+                The source javascript file for this component is available in <code class="inline">public/bladewind/js/datepicker.js</code>
+            </x-bladewind.alert>
+            <p>&nbsp;</p>
+
+        </div>
+        <div class="w-1/4 grow-0">
+            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+                <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
+                <div class="space-y-2">
+                    <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <x-slot name="scripts">
+        <script>
+            selectNavigationItem('.component-datepicker');
+        </script>
+    </x-slot>
+</x-app>
