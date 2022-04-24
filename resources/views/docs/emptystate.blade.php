@@ -1,6 +1,6 @@
 <x-app>
-    <x-slot name="title">Datepicker Component</x-slot>
-    <h1 class="page-title">Datepicker</h1>
+    <x-slot name="title">Empty State Component</x-slot>
+    <h1 class="page-title">Empty State</h1>
     <div class="flex">
         <div class="grow w-3/4">
             <p>
@@ -80,7 +80,7 @@
            
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
-            <p>The table below shows a comprehensive list of all the attributes available for the Datepicker component.</p>
+            <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
             <x-bladewind.table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -169,7 +169,6 @@
     </div>
 
     <x-slot name="scripts">
-    
         <script>
             selectNavigationItem('.component-datepicker');
         </script>
