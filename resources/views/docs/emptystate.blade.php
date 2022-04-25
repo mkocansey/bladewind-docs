@@ -111,7 +111,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind.table>
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
