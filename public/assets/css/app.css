@@ -1155,6 +1155,9 @@ code.inline{
 .\!w-44{
   width: 11rem !important;
 }
+.w-32{
+  width: 8rem;
+}
 .min-w-full{
   min-width: 100%;
 }

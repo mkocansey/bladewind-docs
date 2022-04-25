@@ -58,6 +58,7 @@
                     <div class="flex items-center component-radio-button"><div class="dot"></div><a href="/component/radio-button">Radio Button</a></div>
                     <div class="flex items-center component-rating"><div class="dot"></div><a href="/component/rating" class="opacity-40">Rating</a></div>
                     <div class="flex items-center component-statistic"><div class="dot"></div><a href="/component/statistic">Statistic</a></div>
+                    <div class="flex items-center component-spinner"><div class="dot"></div><a href="/component/spinner">Spinner</a></div>
                     <div class="flex items-center component-tab"><div class="dot"></div><a href="/component/tab">Tab</a></div>
                     <div class="flex items-center component-table"><div class="dot"></div><a href="/component/table">Table</a></div>
                     <div class="flex items-center component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
