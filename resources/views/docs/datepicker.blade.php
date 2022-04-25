@@ -7,27 +7,37 @@
                 Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
             </p>
             
-            <x-bladewind.datepicker css="!w-40"  />
+            <x-bladewind.datepicker  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.datepicker  /&gt;
                 </code>
             </pre>
-            <div class="pb-10"></div>
-            <p>It is possible to change the placeholder text</p>
+            <br/>
+            <p>
+                By default the datepicker fills up the width of its parent container. You can however specify a width of your choice using the datepicker's <code class="inline">css</code> attribute.
+            </p>
+            <p>You can also change the placeholder text from the default <code>Select a date</code>.</p>
             <x-bladewind.datepicker 
                 css="!w-40" 
                 placeholder="Invoice Date"  />
             <div class="py-2"></div>
+            <a name="range"></a>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.datepicker placeholder="Invoice Date"  /&gt;
+                    &lt;x-bladewind.datepicker 
+                        css="!w-40" 
+                        placeholder="Invoice Date"  /&gt;
                 </code>
             </pre>
             <div class="pb-10"></div>
             
-            <h3 class="pb-2 ">Range</h3>
+            <h2 class="pb-2 ">Range Datepicker</h2>
+            <p>
+                This range datepicker isn't your typical date range selection. This option simply saves you from manually embedding the datepicker two times. 
+                Specifying <code class="inline text-red-500">type="range"</code> will create two separate datepicker boxes for start and end dates.
+            </p>
             <x-bladewind.datepicker type="range"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
@@ -37,12 +47,26 @@
             </pre>
             <div class="py-2"></div>
             <br />
-            
+            <p>
+                The default labels are <b>From</b> and <b>To</b>. These can be modified using the <code class="inline text-red-500">date_from_label</code> and <code class="inline text-red-500">date_to_label</code> attributes. These attributes only work if <code class="inline text-red-500">type="range</code>.
+            </p>
+            <x-bladewind.datepicker type="range" date_from_label="start date" date_to_label="end date"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::datepicker 
+                        type="range" 
+                        date_from_label="start date" 
+                        date_to_label="end date" /&gt;
+                </code>
+            </pre>
+
             <div class="pb-10"></div>
             
             <h3 class="pb-2 ">Show As a Required Field</h3>
             <p>An asterisk is appended to the placeholder text.</p>
             <x-bladewind.datepicker css="!w-44" required="true"  />
+            <a name="defaults"></a>
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -52,7 +76,10 @@
             <br />
             <div class="pb-10"></div>
             
-            <h3 class="pb-2 ">With Default Date</h3>
+            <h2 class="pb-2 ">With Default Values</h2>
+            <p>
+                There are times you will want the datepicker to load prepopulated with a default value. This is useful when in edit mode or when using filters and you want to show the user what dates they filtered by.
+            </p>
             <x-bladewind.datepicker css="!w-44" default_date="2021-12-03"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
@@ -61,15 +88,17 @@
                 </code>
             </pre>
             <br />
-            <h3 class="pb-2 ">With Default Dates for Range Datepicker</h3>
-            <x-bladewind.datepicker type="range" date_from="2021-12-03" date_to="2022-01-03"  />
+            <p>
+                It is possible to have default dates for a range datepicker also.
+            </p>
+            <x-bladewind.datepicker type="range" default_date_from="2021-12-03" default_date_to="2022-01-03"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::datepicker 
                         type="range" 
-                        date_from="2021-12-03" 
-                        date_to="2022-01-03"  /&gt;
+                        default_date_from="2021-12-03" 
+                        default_date_to="2022-01-03"  /&gt;
                 </code>
             </pre>
             <div class="py-2"></div>
@@ -104,14 +133,24 @@
                     <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
                 </tr>
                 <tr>
-                    <td>date_from</td>
+                    <td>default_date_from</td>
                     <td><em>blank</em></td>
                     <td>Default date to set for the <em>From</em> date when using the range datepicker.</td>
                 </tr>
                 <tr>
-                    <td>date_to</td>
+                    <td>default_date_to</td>
                     <td><em>blank</em></td>
                     <td>Default date to set for the <em>To</em> date when using the range datepicker.</td>
+                </tr>
+                <tr>
+                    <td>date_from_label</td>
+                    <td>From</td>
+                    <td>Placeholder text to display for the <code>From</code> date. Applicable only to range datepickers.</td>
+                </tr>
+                <tr>
+                    <td>date_to_label</td>
+                    <td>To</td>
+                    <td>Placeholder text to display for the <code>To</code> date. Applicable only to range datepickers.</td>
                 </tr>
                 <tr>
                     <td>placeholder</td>
@@ -162,6 +201,8 @@
             <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
+                    <div class="flex items-center"><div class="dot"></div><a href="#range">Range datepicker</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#defaults">With default values</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>

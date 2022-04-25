@@ -11,9 +11,12 @@
     'placeholder' => 'Select a date',
     // is the value of the date field required? used for form validation. default is false
     'required' => 'false',
+
     // used for range datepickers
-    'date_from' => '',
-    'date_to' => '',
+    'default_date_from' => '',
+    'default_date_to' => '',
+    'date_from_label' => 'From',
+    'date_to_label' => 'To',
     'has_label' => 'false',
     'css' => '',
 ])
@@ -111,15 +114,15 @@
     <div class="grid grid-cols-2 gap-2">
         <div>
             <x-bladewind::datepicker 
-                name="{{ $name }}-1" type="single" placeholder="From" 
-                default_date="{{ $date_from??'' }}" required="{{ $required }}" 
-                label="From"></x-bladewind::datepicker>
+                name="{{ $name }}-1" type="single" placeholder="{{$date_from_label}}" 
+                default_date="{{ $default_date_from??'' }}" required="{{ $required }}" 
+                label="{{$date_from_label}}"></x-bladewind::datepicker>
         </div>
         <div>
             <x-bladewind::datepicker 
-                name="{{ $name }}-2" type="single" placeholder="To" 
-                default_date="{{ $date_to??'' }}" required="{{ $required }}" 
-                label="To"></x-bladewind::datepicker>
+                name="{{ $name }}-2" type="single" placeholder="{{$date_to_label}}" 
+                default_date="{{ $default_date_to??'' }}" required="{{ $required }}" 
+                label="{{$date_to_label}}}"></x-bladewind::datepicker>
         </div>
     </div>
 @endif
