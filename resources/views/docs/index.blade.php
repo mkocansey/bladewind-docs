@@ -19,6 +19,14 @@
     </p>
     <p>Now include the BladewindUI css file and initialize a few javascript variables in the <code class="inline">&lt;head&gt;</code> of your pages. This should ideally be done in the layouts file your app's pages extend from.</p>
     <p>
+    <pre class="lang-markup">
+        <code>
+            // this is required for animation of notifications and slide out panels
+            // you can ignore this if you already have animate.css in your project
+            
+            &lt;link href="&#123;&#123; asset('bladewind/css/animate.min.css') }}" rel="stylesheet" /&gt;</code></pre>
+    </p>
+    <p>
     <pre class="lang-markup"><code>&lt;link href="&#123;&#123; asset('bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" /&gt;</code></pre>
     </p>
     <p>

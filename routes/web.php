@@ -28,5 +28,6 @@ Route::get('component/tag',                     [ PagesController::class, 'tag' 
 Route::get('component/textbox',                 [ PagesController::class, 'textbox' ]);
 Route::get('component/tooltip',                 [ PagesController::class, 'tooltip' ]);
 Route::get('component/textarea',                [ PagesController::class, 'textarea' ]);
+Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
 Route::get('layout/error-pages',                [ PagesController::class, 'error-pages' ]);
 Route::get('layout/app',                        [ PagesController::class, 'app_layout' ]);

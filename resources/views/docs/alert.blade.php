@@ -26,7 +26,7 @@
             </pre>
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Error</h3>
-            <x-bladewind.alert type="error"> css="mb-3"You do not have permission to upload files</x-bladewind.alert>
+            <x-bladewind.alert type="error" css="mb-3">You do not have permission to upload files</x-bladewind.alert>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.alert type="error"&gt;

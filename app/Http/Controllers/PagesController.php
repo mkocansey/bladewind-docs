@@ -17,4 +17,6 @@ class PagesController extends Controller
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
     public function radiobutton()           { return view('docs.radiobutton'); }
+    public function modal()                 { return view('docs.modal'); }
+    public function notification()          { return view('docs.notification'); }
 }

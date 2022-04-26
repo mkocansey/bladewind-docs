@@ -18,7 +18,7 @@
         'center_bottom' => 'bottom-10',
     ]
 ])
-<div class="fixed {{ $position_css[str_replace(' ', '_', $position)] }} z-50 hidden border-2 notification bg-white shadow-lg p-4 rounded-lg w-1/4">
+<div class="fixed {{ $position_css[str_replace(' ', '_', $position)] }} z-50 hidden border-2 bw-notification bg-white shadow-lg p-4 rounded-lg w-1/4">
     <div class="flex">
         <div class="flex-none pr-4">
             <x-bladewind::modal-icon />
@@ -47,13 +47,13 @@
             "info" : "border-blue-400/80",
         };
         let dismiss_in_seconds = (dismiss_in*1000);
-        dom_el('.notification .title').innerText = title;
-        dom_el('.notification .message').innerHTML = message;
-        changeCss('.notification', `${border_color.success}, ${border_color.error}, ${border_color.info}, ${border_color.warning}`, 'remove');
-        changeCss('.notification', eval(`border_color.${type}`));
+        dom_el('.bw-notification .title').innerText = title;
+        dom_el('.bw-notification .message').innerHTML = message;
+        changeCss('.bw-notification', `${border_color.success}, ${border_color.error}, ${border_color.info}, ${border_color.warning}`, 'remove');
+        changeCss('.bw-notification', eval(`border_color.${type}`));
         changeCssForDomArray('.modal-icon', 'hidden');  // hide all modal icons
-        unhide(`.notification .modal-icon.${type}`); // show only the relevant modal icon
-        animateCSS('.notification','fadeInRight').then((message) => { 
+        unhide(`.bw-notification .modal-icon.${type}`); // show only the relevant modal icon
+        animateCSS('.bw-notification','fadeInRight').then((message) => { 
             setTimeout(function(){
                 hideNotification();
             }, dismiss_in_seconds);
@@ -61,6 +61,6 @@
     }
 
     hideNotification = function (){
-        animateCSS('.notification','fadeOutRight').then((message) => { hide('.notification'); });
+        animateCSS('.bw-notification','fadeOutRight').then((message) => { hide('.bw-notification'); });
     }
 </script>
