@@ -14,6 +14,7 @@ class PagesController extends Controller
     public function card()                  { return view('docs.card'); }
     public function checkbox()              { return view('docs.checkbox'); }
     public function datepicker()            { return view('docs.datepicker'); }
+    public function dropdown()              { return view('docs.dropdown'); }
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
     public function radiobutton()           { return view('docs.radiobutton'); }
