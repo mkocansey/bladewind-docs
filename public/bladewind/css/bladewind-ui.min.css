@@ -514,6 +514,9 @@ table.with-hover-effect tr>td:last-child{border-right-width:2px;--tw-border-opac
 .mb-6{margin-bottom:1.5rem}
 .mb-8{margin-bottom:2rem}
 .-mb-px{margin-bottom:-1px}
+.\!mr-2{margin-right:0.5rem !important}
+.\!-mt-1{margin-top:-0.25rem !important}
+.\!mr-3{margin-right:0.75rem !important}
 .block{display:block}
 .inline-block{display:inline-block}
 .inline{display:inline}

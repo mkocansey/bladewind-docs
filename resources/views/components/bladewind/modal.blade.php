@@ -6,7 +6,7 @@
     // title text to display. example: Confirm your delete action
     'title' => '',
     // name of the modal. used to uniquely identify the modal in css and js
-    'name' => 'default',
+    'name' => 'amodal',
     // text to display on primary button. default is Okay
     'ok_button_label' => 'Okay',
     // text to display on secondary button. default is Cancel
