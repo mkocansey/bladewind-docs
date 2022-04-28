@@ -20,4 +20,5 @@ class PagesController extends Controller
     public function radiobutton()           { return view('docs.radiobutton'); }
     public function modal()                 { return view('docs.modal'); }
     public function notification()          { return view('docs.notification'); }
+    public function spinner()               { return view('docs.spinner'); }
 }

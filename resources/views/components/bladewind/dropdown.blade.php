@@ -2,7 +2,7 @@
 @php use Illuminate\Support\Str; @endphp
 @props([
     // name to uniquely identiy a dropdown
-    'name' => 'dropdown',
+    'name' => 'bw-dropdown',
 
     // the default text to display when the dropdown shows
     'placeholder' => 'Select One',
