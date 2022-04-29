@@ -21,4 +21,5 @@ class PagesController extends Controller
     public function modal()                 { return view('docs.modal'); }
     public function notification()          { return view('docs.notification'); }
     public function spinner()               { return view('docs.spinner'); }
+    public function tag()                   { return view('docs.tag'); }
 }

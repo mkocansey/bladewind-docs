@@ -78,7 +78,7 @@
             <h3 class="pb-2 ">Spinner with all attributes defined</h3>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind.checkbox 
+                    &lt;x-bladewind.spinner 
                         size="medium"
                         css="m-0" /&gt;
                 </code>

@@ -59,7 +59,7 @@
 
             <p>&nbsp;</p>
             <a name="dark"><h2>Dark Coloured Alerts</h2></a>
-            <p>If you are into darker shades of alerts like myself, this attribute is for you.</p>
+            <p>If you are into darker shades of alerts like myself, this attribute is for you. <code class="inline text-red-500">shade="dark"</code></p>
             <h3 class="pb-2 ">Info</h3>
             <x-bladewind.alert shade="dark">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind.alert>
             <pre class="language-markup line-numbers">
