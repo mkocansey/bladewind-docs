@@ -22,4 +22,5 @@ class PagesController extends Controller
     public function notification()          { return view('docs.notification'); }
     public function spinner()               { return view('docs.spinner'); }
     public function tag()                   { return view('docs.tag'); }
+    public function table()                 { return view('docs.table'); }
 }

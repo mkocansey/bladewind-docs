@@ -143,7 +143,7 @@
            <a name="attributes"></a>
            <br /><br /><br />
             <p><h2>Full List Of Attributes</h2></p>
-            <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
+            <p>The table below shows a comprehensive list of all the attributes available for the Tag component.</p>
             <x-bladewind.table striped="true">
                 <x-slot name="header">
                     <th>Option</th>

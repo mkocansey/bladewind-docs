@@ -517,7 +517,7 @@
             <br/>
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
-            <p>The table below shows a comprehensive list of all the attributes available for the modal component.</p>
+            <p>The table below shows a comprehensive list of all the attributes available for the Modal component.</p>
             <x-bladewind.table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
