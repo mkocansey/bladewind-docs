@@ -44,6 +44,7 @@
                     <div class="flex items-center component-avatar"><div class="dot"></div><a href="/component/avatar">Avatar</a></div>
                     <div class="flex items-center component-button"><div class="dot"></div><a href="/component/button">Button</a></div>
                     <div class="flex items-center component-card"><div class="dot"></div><a href="/component/card">Card</a></div>
+                    <div class="flex items-center component-centered-content"><div class="dot"></div><a href="/component/centered-content">Centered Content</a></div>
                     <div class="flex items-center component-checkbox"><div class="dot"></div><a href="/component/checkbox">Checkbox</a></div>
                     <div class="flex items-center component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker</a></div>
                     <div class="flex items-center component-dropdown"><div class="dot"></div><a href="/component/dropdown">Dropdown</a></div>
@@ -54,7 +55,7 @@
                     <div class="flex items-center component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>
                     <div class="flex items-center component-pagination"><div class="dot"></div><a href="/component/pagination" class="opacity-40">Pagination</a></div>
                     <div class="flex items-center component-process-indicator"><div class="dot"></div><a href="/component/process-indicator">Process Indicator</a></div>
-                    <div class="flex items-center componentprogress-bar-"><div class="dot"></div><a href="/component/progress-bar">Progress Bar</a></div>
+                    <div class="flex items-center component-progress-bar"><div class="dot"></div><a href="/component/progress-bar">Progress Bar</a></div>
                     <div class="flex items-center component-radio-button"><div class="dot"></div><a href="/component/radio-button">Radio Button</a></div>
                     <div class="flex items-center component-rating"><div class="dot"></div><a href="/component/rating">Rating</a></div>
                     <div class="flex items-center component-statistic"><div class="dot"></div><a href="/component/statistic">Statistic</a></div>
@@ -71,7 +72,6 @@
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Layouts</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="/layout/app">App</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="/layout/centered-content">Centered Content</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="/layout/error-pages">Error Pages</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="/layout/slideout-panel">Slideout Panel</a></div>
                 </div>
