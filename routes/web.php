@@ -19,9 +19,10 @@ Route::get('component/filepicker',              [ PagesController::class, 'filep
 Route::get('component/list',                    [ PagesController::class, 'list' ]);
 Route::get('component/modal',                   [ PagesController::class, 'modal' ]);
 Route::get('component/notification',            [ PagesController::class, 'notification' ]);
-Route::get('component/process-indicator',       [ PagesController::class, 'process-indicator' ]);
-Route::get('component/progress-bar',            [ PagesController::class, 'progress-bar' ]);
+Route::get('component/process-indicator',       [ PagesController::class, 'process_indicator' ]);
+Route::get('component/progress-bar',            [ PagesController::class, 'progress_bar' ]);
 Route::get('component/radio-button',            [ PagesController::class, 'radiobutton' ]);
+Route::get('component/rating',                  [ PagesController::class, 'rating' ]);
 Route::get('component/tab',                     [ PagesController::class, 'tab' ]);
 Route::get('component/table',                   [ PagesController::class, 'table' ]);
 Route::get('component/tag',                     [ PagesController::class, 'tag' ]);

@@ -84,7 +84,7 @@
 @php 
     $data = json_decode(str_replace('&quot;', '"', $data));
     $onselect = str_replace('&#039;', "'", $onselect);
-    $input_name = str_replace('-', '_', $name);
+    $input_name = preg_replace('/[\s-]/', '_', $name);
     //if(! isset($data[0]->$label_key) || ! isset($data[0]->$value_key) ) {
     if(! isset($data[0]->$label_key) ) {
         echo '<p style="color:red">

@@ -18,9 +18,15 @@ class PagesController extends Controller
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
     public function radiobutton()           { return view('docs.radiobutton'); }
+    public function rating()                { return view('docs.rating'); }
     public function modal()                 { return view('docs.modal'); }
     public function notification()          { return view('docs.notification'); }
+    public function process_indicator()     { return view('docs.process-indicator'); }
+    public function progress_bar()          { return view('docs.progress-bar'); }
     public function spinner()               { return view('docs.spinner'); }
     public function tag()                   { return view('docs.tag'); }
     public function table()                 { return view('docs.table'); }
+    public function textbox()               { return view('docs.textbox'); }
+    public function textarea()              { return view('docs.textarea'); }
+    public function tooltip()               { return view('docs.tooltip'); }
 }
