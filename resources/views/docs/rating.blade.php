@@ -9,7 +9,7 @@
                 Where there are multiple ratings on the same page, it is recommended to name each rating component. 
                 You can either display ratings as stars, hearts or thumbsup.
             </p>
-            <p><x-bladewind.rating name="star-rating" /></p>
+            <p><x-bladewind::rating name="star-rating" /></p>
             <p>
                 <pre class="language-markup">
                     <code>
@@ -17,7 +17,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating type="heart" name="heart-rating" /></p>
+            <p><x-bladewind::rating type="heart" name="heart-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
@@ -27,7 +27,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating type="thumbsup" name="thumb-rating" /></p>
+            <p><x-bladewind::rating type="thumbsup" name="thumb-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
@@ -44,7 +44,7 @@
             </p>
             <p>The BladewindUI tag component allows you to specify different colours. The tags by default are faint in colour with blue being the default colour.
             There are nine colour options to pick from.</p>
-            <p><x-bladewind.rating rating="1" color="red" name="red-rating" /></p>
+            <p><x-bladewind::rating rating="1" color="red" name="red-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -56,7 +56,7 @@
                 </pre>
             </p>
             <p>
-                <x-bladewind.rating rating="2" color="yellow" name="yellow-rating" />
+                <x-bladewind::rating rating="2" color="yellow" name="yellow-rating" />
             </p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
@@ -68,7 +68,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="3" color="green" name="green-rating" /></p>
+            <p><x-bladewind::rating rating="3" color="green" name="green-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -79,7 +79,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="4" color="blue" name="blue-rating" /></p>
+            <p><x-bladewind::rating rating="4" color="blue" name="blue-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -90,7 +90,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="5" color="pink" name="pink-rating" /></p>
+            <p><x-bladewind::rating rating="5" color="pink" name="pink-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -101,7 +101,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="1" color="cyan" name="cyan-rating" /></p>
+            <p><x-bladewind::rating rating="1" color="cyan" name="cyan-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -112,7 +112,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating name="orange-rating" /></p>
+            <p><x-bladewind::rating name="orange-rating" /></p>
             <p>
                 <pre class="language-markup">
                     <code>
@@ -120,7 +120,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="3" color="gray" name="gray-rating" /></p>
+            <p><x-bladewind::rating rating="3" color="gray" name="gray-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -131,7 +131,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="4" color="purple" name="purple-rating" /></p>
+            <p><x-bladewind::rating rating="4" color="purple" name="purple-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
@@ -148,7 +148,7 @@
                 <h2>Different Sizes</h2>
             </p>
             <p>The BladewindUI rating component comes not just in colors but also sizes. There are three sizes available. The default size is <code class="inline text-red-500">small</code></p>
-            <p><x-bladewind.rating rating="2" name="small-rating" /></p>
+            <p><x-bladewind::rating rating="2" name="small-rating" /></p>
             <p>
                 <pre class="language-markup">
                     <code>
@@ -156,7 +156,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="3" type="thumbsup" size="medium" name="medium-rating" /></p>
+            <p><x-bladewind::rating rating="3" type="thumbsup" size="medium" name="medium-rating" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
@@ -168,7 +168,7 @@
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.rating rating="2" type="heart" name="big-rating" size="big" /></p>
+            <p><x-bladewind::rating rating="2" type="heart" name="big-rating" size="big" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
@@ -237,7 +237,7 @@
            <br /><br /><br />
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Rating component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -277,7 +277,7 @@
                     <td><em>blank</em></td>
                     <td>Javascript function to execute when stars are clicked. </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Rating with all attributes defined</h3>
             <pre class="language-markup">
@@ -293,9 +293,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/rating.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

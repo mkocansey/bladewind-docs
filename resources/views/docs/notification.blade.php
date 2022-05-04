@@ -9,7 +9,7 @@
                 That said, it means most of the time content of notifications are built on the fly, so, it will not make sense to have a notification pre-filled with content waiting to be triggered.
             </p>
             <p>Include the notification component anywhere on your page. This component does not allow for much dynamic customization.</p>
-            <x-bladewind.notification />
+            <x-bladewind::notification />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -29,7 +29,7 @@
                 </code>
             </pre>
             <br />
-            <x-bladewind.table>
+            <x-bladewind::table>
                 <x-slot name="header">
                     <th>Parameter</th>
                     <th>Required?</th>
@@ -58,7 +58,7 @@
                     <td>optional</td>
                     <td>Numeric. In how many seconds should the notification be dismissed if the user does not explicitly click on the close button. Default is 10 seconds. Note the value is in seconds and <b>not</b> milliseconds. So 20 will mean 20 seconds.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <br/>
             <pre class="language-javascript line-numbers">
                 <code>
@@ -70,22 +70,22 @@
             <div class="pb-10"></div>
             
             <p>
-                <x-bladewind.button 
+                <x-bladewind::button 
                     onclick="showNotification(
                         'Download Successful', 
-                        'Your download completed successfully')">success</x-bladewind.button> &nbsp;
-                <x-bladewind.button 
+                        'Your download completed successfully')">success</x-bladewind::button> &nbsp;
+                <x-bladewind::button 
                     onclick="showNotification(
                         'Delete Failed', 
-                        'Your message could not be deleted. Try again', 'error')">error</x-bladewind.button> &nbsp;
-                <x-bladewind.button 
+                        'Your message could not be deleted. Try again', 'error')">error</x-bladewind::button> &nbsp;
+                <x-bladewind::button 
                     onclick="showNotification(
                         'Low Disk Space', 
-                        `You have used 20gb of your 25gb storage space. <a href='#'>Upgrade soon</a>`, 'warning')">warning</x-bladewind.button> &nbsp;
-                <x-bladewind.button 
+                        `You have used 20gb of your 25gb storage space. <a href='#'>Upgrade soon</a>`, 'warning')">warning</x-bladewind::button> &nbsp;
+                <x-bladewind::button 
                     onclick="showNotification(
                         'Invitation Accepted', 
-                        `Samuel just accepted your invitation to join BladewindUI Inc. <a href='#'>Say Hello</a>`, 'info')">info</x-bladewind.button>
+                        `Samuel just accepted your invitation to join BladewindUI Inc. <a href='#'>Say Hello</a>`, 'info')">info</x-bladewind::button>
             </p>
             
 
@@ -123,10 +123,10 @@
             </pre>
            
             <p>
-                <x-bladewind.alert type="warning" show_close_icon="false">
+                <x-bladewind::alert type="warning" show_close_icon="false">
                     Only a single instance of the notification component is available per page. Notifications are not stacked. 
                     Triggering a new notification  when one is already shown will overwrite the earlier notification.
-                </x-bladewind.alert>
+                </x-bladewind::alert>
             </p>
             
            <a name="attributes"></a>
@@ -135,7 +135,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Notification component.</p>
-            <x-bladewind.table>
+            <x-bladewind::table>
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -150,7 +150,7 @@
                         <code class="inline">top left</code> <code class="inline">bottom left</code>
                     </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Notification with all attributes defined</h3>
             <pre class="language-markup line-numbers" data-line="4">
@@ -160,9 +160,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/notification.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

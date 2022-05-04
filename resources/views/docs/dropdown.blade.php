@@ -76,9 +76,9 @@
                 The default array keys used to render the dropdown are <code class="inline text-red-500">label</code> and <code class="inline text-red-500">value</code>.
             </p>
             <p>
-                <x-bladewind.dropdown name="country" data="{{json_encode($countries)}}" />
+                <x-bladewind::dropdown name="country" data="{{json_encode($countries)}}" />
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     &lt;x-bladewind.dropdown 
                         name="country"
@@ -88,9 +88,9 @@
             <p>&nbsp</p>
             <h3>Change Placeholder Text</h3>
             <p>
-                <x-bladewind.dropdown name="country2" placeholder="What is your nationality" data="{{json_encode($countries)}}" />
+                <x-bladewind::dropdown name="country2" placeholder="What is your nationality" data="{{json_encode($countries)}}" />
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     &lt;x-bladewind.dropdown 
                         name="country2"
@@ -122,7 +122,7 @@
                 Using our array above we will end up with <code class="inline text-red-500">label_key="country"</code> and <code class="inline text-red-500">value_key="code"</code>.
             </p>
             <br/>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3,4">
                 <code>
                     &lt;x-bladewind.dropdown 
                         name="country"
@@ -156,7 +156,7 @@
                 Still working with our <code class="inline text-red-500">$countries</code> array from above, our dropdown code will now be
             </p>
             <link href="{{ asset('bladewind/css/flags.css') }}" rel="stylesheet" />
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="5">
                 <code>
                     &lt;x-bladewind.dropdown 
                         name="country"
@@ -167,13 +167,13 @@
                 </code>
             </pre>
             <p>
-                <x-bladewind.dropdown name="country3" data="{{json_encode($countries)}}" flag_key="value" />
+                <x-bladewind::dropdown name="country3" data="{{json_encode($countries)}}" flag_key="value" />
             </p>
             <br />
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 For flags to work you will need to include the following stylesheet. It is deliberately not compiled into the core BladewindUI css because not everyone uses flags. 
                 <code class="inline">&lt;link href="&#123;&#123; asset('bladewind/css/flags.css') }}" rel="stylesheet" /&gt;</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             
             <a name="images"></a>
             <p>&nbsp;</p><br />
@@ -187,7 +187,7 @@
                 Let us create a new array of employees with the needed information. 
             </p>
                         <p>
-            <pre class="language-js line-numbers">
+            <pre class="language-js line-numbers" data-line="7,12,17,22,27">
                 <code>
                 &lt;?php
                     $staff = 
@@ -221,7 +221,7 @@
                 </code>
             </pre>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="5">
                 <code>
                     &lt;x-bladewind.dropdown 
                         name="staff"
@@ -232,7 +232,7 @@
                 </code>
             </pre>
             <p>
-                <x-bladewind.dropdown 
+                <x-bladewind::dropdown 
                     name="staff" 
                     data="{{json_encode($staff)}}" 
                     label_key="name" 
@@ -288,11 +288,11 @@
             </p>
 
             <p>
-                <x-bladewind.dropdown name="country4" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
+                <x-bladewind::dropdown name="country4" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
             </p>
             
             
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     &lt;x-bladewind.dropdown
                          name="country4" 
@@ -334,25 +334,77 @@
             <p>As stated earlier on in this document, the BladewindUI dropdown component is killing two birds with one code. You may not always need the dropdown for collecting user input. You could use the dropdown as a menu or navigation. In this case you will want the user to be sent to a url when a dropdown item is selected. To achieve this you will need to specify the <code class="inline text-red-500">url_key</code> attribute. This key will need to exist in your data array. When a dropdown item is selected, the url specified for that item will be called. By default urls that point within your app will open in the same browser window. External links will open in a new window. </p>
             <p>Our <code class="inline text-red-500">$countries</code> array has been updated with urls to the Wikipedia pages for each country. This has automatically turned our dropdown component into a menu and not form <code class="inline">&lt;select&gt;</code>. </p>
             <p>
-                <pre class="language-js line-numbers">
+                <pre class="language-js line-numbers" data-line="6,11,16,21,26,31,36,41,46,51">
                     <code>
                     &lt;?php
                         $countries = [
-                            [ 'country' => 'Benin',         'code' => 'bj',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Burkina Faso',  'code' => 'bf',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Cameroon',      'code' => 'cm',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Congo',         'code' => 'cd',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Gambia',        'code' => 'gm',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Ghana',         'code' => 'gh',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Ivory Coast',   'code' => 'ci',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Nigeria',       'code' => 'ng',     'url' => '#basic' ],
-                            [ 'country' => 'Kenya',         'code' => 'ke',     'url' => 'https://url-to-wikipedia-page' ],
-                            [ 'country' => 'Togo',          'code' => 'tg',     'url' => 'https://url-to-wikipedia-page' ],
+                            [ 
+                                'country' => 'Benin',         
+                                'code' => 'bj',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Burkina Faso',  
+                                'code' => 'bf',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Cameroon',      
+                                'code' => 'cm',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Congo',         
+                                'code' => 'cd',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Gambia',        
+                                'code' => 'gm',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Ghana',         
+                                'code' => 'gh',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Ivory Coast',   
+                                'code' => 'ci',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Nigeria',       
+                                'code' => 'ng',     
+                                'url' => '#basic' 
+                            ],
+                            [ 
+                                'country' => 'Kenya',         
+                                'code' => 'ke',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
+                            [ 
+                                'country' => 'Togo',          
+                                'code' => 'tg',     
+                                'url' => 'https://url-to-wikipedia-page' 
+                            ],
                         ];
                     </code>
                 </pre>
             </p>
-            <p><x-bladewind.dropdown name="country5" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" /></p>
+            <p><x-bladewind::dropdown name="country5" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" /></p>
+            <p>
+                <pre class="language-markup line-numbers" data-line="4">
+                    <code>
+                        &lt;x-bladewind.dropdown
+                            name="country5" 
+                            data="&#123;{ json_encode($countries) }}"
+                            url_key="url" 
+                            flag_key="value" /&gt;
+                    </code>
+                </pre>
+            </p>
+            <br />
             <p>
                 <h3>Appending Selected Value to URL</h3>
             </p>
@@ -360,19 +412,19 @@
                 You can also append the value that was selected by the user to the URL when using the dropdown as a menu by setting <code class="inline text-red-500">append_value_to_url="true"</code>. By default this is turned off.
             </p>
             <a name="submittable"></a>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     &lt;x-bladewind.dropdown
                         ...
                         append_value_to_url="true" /&gt;
                 </code>
             </pre>
-            <p><x-bladewind.dropdown name="country6" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" /></p>
+            <p><x-bladewind::dropdown name="country6" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" /></p>
             <p>
                 If you select a country, say Ghana, from the dropdown above you will notice it appends <code class="inline text-red-500">value=gh</code> to the URL. 
                 By default we use the key <code class="inline text-red-500">value</code>. To change this to your preferred key, set the attribute <code class="inline text-red-500">append_value_to_url_as</code>.
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="4">
                 <code>
                     &lt;x-bladewind.dropdown
                         ...
@@ -381,12 +433,12 @@
                 </code>
             </pre>
 <a name="attributes"></a>
-            <p><x-bladewind.dropdown name="country7" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" append_value_to_url_as="code" /></p>
+            <p><x-bladewind::dropdown name="country7" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" append_value_to_url_as="code" /></p>
 
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Dropdown component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -477,10 +529,10 @@
                     <td>false</td>
                     <td>This is just a nifty addition that prepends a filter icon to the placeholder text when set to <code>true</code>.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Dropdown with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.dropdown 
                         name="country"
@@ -503,12 +555,12 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/dropdown.blade.php</code>
-            </x-bladewind.alert> <br />
-            <x-bladewind.alert show_close_icon="false">
+            </x-bladewind::alert> <br />
+            <x-bladewind::alert show_close_icon="false">
                 The javascript source file for this component is available in <code class="inline">public/bladewind/assets/js/dropdown.js</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

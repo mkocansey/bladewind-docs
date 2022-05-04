@@ -7,7 +7,7 @@
                 Display a spinning icon
             </p>
             
-            <x-bladewind.spinner  />
+            <x-bladewind::spinner  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -17,7 +17,7 @@
             <div class="py-2"></div>
             <br />
             
-            <x-bladewind.spinner size="medium"  />
+            <x-bladewind::spinner size="medium"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -26,7 +26,7 @@
             </pre>
             <div class="py-2"></div>
             <br />
-            <x-bladewind.spinner size="big"  />
+            <x-bladewind::spinner size="big"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -35,7 +35,7 @@
             </pre>
             <div class="py-2"></div>
             <br />
-            <x-bladewind.spinner size="xl"  />
+            <x-bladewind::spinner size="xl"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -44,7 +44,7 @@
             </pre>
             <div class="py-2"></div>
             <br />
-            <x-bladewind.spinner size="omg"  />
+            <x-bladewind::spinner size="omg"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -57,7 +57,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Spinner component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -73,10 +73,10 @@
                     <td>bw-spinner</td>
                     <td>Any additional CSS you wish to add.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Spinner with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.spinner 
                         size="medium"
@@ -85,9 +85,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/spinner.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

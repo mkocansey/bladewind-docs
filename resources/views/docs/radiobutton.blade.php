@@ -7,7 +7,7 @@
                 Display a radio button with or without a label 
             </p>
             
-            <x-bladewind.radio-button name="tnc"  />
+            <x-bladewind::radio-button name="tnc"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -17,10 +17,10 @@
             <div class="py-2"></div>
             <br />
             <h3>What kind of movies do you like?</h3><br/>
-            <x-bladewind.radio-button label="Action" name="genre"  />
-            <x-bladewind.radio-button label="Comedy" name="genre"  />
-            <x-bladewind.radio-button label="Drama" name="genre"  />
-            <x-bladewind.radio-button label="Thriller" name="genre" />
+            <x-bladewind::radio-button label="Action" name="genre"  />
+            <x-bladewind::radio-button label="Comedy" name="genre"  />
+            <x-bladewind::radio-button label="Drama" name="genre"  />
+            <x-bladewind::radio-button label="Thriller" name="genre" />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -34,24 +34,22 @@
             <br />
 
             <div class="py-2"></div><br/>
-            <x-bladewind.radio-button label="I am checked by default" checked="true" name="check_me"  />
+            <x-bladewind::radio-button label="I am checked by default" checked="true" name="check_me"  />
             <br/><br/>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
-                    <code>
                     &lt;x-bladewind.radio-button 
                         label="I am checked by default"
                         checked="true"
                         name="check_me"  /&gt;
                 </code>
-                </code>
             </pre>
 
             <div class="py-2"></div><br/>
-            <x-bladewind.radio-button label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
-            <x-bladewind.radio-button label="I am checked and disabled" disabled="true" checked="true"  />
+            <x-bladewind::radio-button label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
+            <x-bladewind::radio-button label="I am checked and disabled" disabled="true" checked="true"  />
             <br/><br/>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     <code>
                     &lt;x-bladewind.radio-button 
@@ -66,7 +64,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Radio Button component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -103,10 +101,10 @@
                     <td>bw-radio button</td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Radio button with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.radio-button 
                         label="I agree to the terms and conditions" 
@@ -119,9 +117,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/radio-button.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

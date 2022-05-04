@@ -7,7 +7,7 @@
                 Display a checkbox with or without a label 
             </p>
             
-            <x-bladewind.checkbox  />
+            <x-bladewind::checkbox  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -17,7 +17,7 @@
             <div class="py-2"></div>
             <br />
             
-            <x-bladewind.checkbox label="I agree to the terms and conditions"  />
+            <x-bladewind::checkbox label="I agree to the terms and conditions"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -27,7 +27,7 @@
             </pre>
             <div class="py-2"></div>
             <br />
-            <x-bladewind.checkbox label="I agree to the &nbsp;<a href='/terms'>terms and conditions</a>"  />
+            <x-bladewind::checkbox label="I agree to the &nbsp;<a href='/terms'>terms and conditions</a>"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -37,9 +37,9 @@
             </pre>
 
             <div class="py-2"></div><br/>
-            <x-bladewind.checkbox label="I am checked by default" checked="true"  />
+            <x-bladewind::checkbox label="I am checked by default" checked="true"  />
             <br/><br/>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     <code>
                     &lt;x-bladewind.checkbox 
@@ -50,10 +50,10 @@
             </pre>
 
             <div class="py-2"></div><br/>
-            <x-bladewind.checkbox label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
-            <x-bladewind.checkbox label="I am checked and disabled" disabled="true" checked="true"  />
+            <x-bladewind::checkbox label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
+            <x-bladewind::checkbox label="I am checked and disabled" disabled="true" checked="true"  />
             <br/><br/>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     <code>
                     &lt;x-bladewind.checkbox 
@@ -68,7 +68,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -105,10 +105,10 @@
                     <td>bw-checkbox</td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Checkbox with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.checkbox 
                         label="I agree to the terms and conditions" 
@@ -121,9 +121,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/checkbox.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

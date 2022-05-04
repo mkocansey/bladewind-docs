@@ -6,7 +6,7 @@
         <p>Display tabular data beautifully in a simple way. </p>
         <p>This component like all other BladewindUI components is simple to use with a few options to customise the component to suit your app needs. A BladewindUI table consists of two parts. The table header and the table body. </p>
         <p>
-            <x-bladewind.table>
+            <x-bladewind::table>
                 <x-slot name="header">
                     <th>Name</th>
                     <th>Department</th>
@@ -26,7 +26,7 @@
                         kabutey@gmail.com
                     </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
         </p>
         <p>
             <pre class="language-markup line-numbers">
@@ -57,7 +57,7 @@
     <p>By default the BladewindUI table  rows are displayed with wide gaps to place more emphasis on each row and it’s content. Each row also has a default hover effect that highlights the left and right borders of the row. These can both be turned off. </p>
     <p>To remove the wide gaps between the table rows you need to set the divider attribute to thin, like this, <code class="inline text-red-500">divider="thin"</code>. </p>
     <p>
-        <x-bladewind.table divider="thin">
+        <x-bladewind::table divider="thin">
             <x-slot name="header">
                 <th>Name</th>
                 <th>Department</th>
@@ -77,12 +77,13 @@
                     kabutey@gmail.com
                 </td>
             </tr>
-        </x-bladewind.table>
+        </x-bladewind::table>
     </p>
         <p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                     &lt;x-bladewind.table divider="thin"&gt;
+                     &lt;x-bladewind.table 
+                        divider="thin"&gt;
                         &lt;x-slot name="header"&gt;
                             &lt;th&gt;Name&lt;/th&gt;
                             ...
@@ -98,7 +99,7 @@
     <p>It is also possible to completely turn off the divider lines.</p>
     <p>To remove the divider completely, set the divided attribute to false, like this, <code class="inline text-red-500">divided="false"</code>. </p>
     <p>
-        <x-bladewind.table divided="false">
+        <x-bladewind::table divided="false">
             <x-slot name="header">
                 <th>Name</th>
                 <th>Department</th>
@@ -118,12 +119,13 @@
                     kabutey@gmail.com
                 </td>
             </tr>
-        </x-bladewind.table>
+        </x-bladewind::table>
     </p>
         <p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                     &lt;x-bladewind.table divided="false"&gt;
+                     &lt;x-bladewind.table 
+                        divided="false"&gt;
                         &lt;x-slot name="header"&gt;
                             &lt;th&gt;Name&lt;/th&gt;
                             ...
@@ -137,7 +139,7 @@
     <br /><br /><p><h2>No Hover Effect</h2></p>
     <p>To remove the beautiful green side border effect when users hover on each row, set the hover attribute to false, like this, <code class="inline text-red-500">hover_effect="false"</code>. </p>
     <p>
-        <x-bladewind.table hover_effect="false" divider="thin">
+        <x-bladewind::table hover_effect="false" divider="thin">
             <x-slot name="header">
                 <th>Name</th>
                 <th>Department</th>
@@ -157,12 +159,14 @@
                     kabutey@gmail.com
                 </td>
             </tr>
-        </x-bladewind.table>
+        </x-bladewind::table>
     </p>
         <p>
-        <pre class="language-markup line-numbers">
+        <pre class="language-markup line-numbers" data-line="2">
             <code>
-                    &lt;x-bladewind.table hover_effect="false" divider="thin"&gt;
+                    &lt;x-bladewind.table 
+                        hover_effect="false" 
+                        divider="thin"&gt;
 
                     &lt;x-slot name="header"&gt;
                         &lt;th&gt;Name&lt;/th&gt;
@@ -177,7 +181,7 @@
     <p><h2>Striped Table</h2></p>
     <p>Design experts argue that it is sometimes easier for users to visually scan tabular data if the table has striped rows. We are not challenging the experts. We’ve however made it possible for you to make your BladewindUI tables have striped rows. Set <code class="inline text-red-500">striped="true"</code> on the table component  to get a striped table. </p>
      <p>
-            <x-bladewind.table striped="true" divider="thin">
+            <x-bladewind::table striped="true" divider="thin">
                 <x-slot name="header">
                     <th>Name</th>
                     <th>Department</th>
@@ -218,12 +222,14 @@
                         norabenashine@gmail.com
                     </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
         </p>
         <p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                    &lt;x-bladewind.table striped="true" divider="thin"&gt;
+                    &lt;x-bladewind.table 
+                        striped="true" 
+                        divider="thin"&gt;
 
                     &lt;x-slot name="header"&gt;
                         &lt;th&gt;Name&lt;/th&gt;
@@ -239,7 +245,7 @@
         <p><h2>Cells for Totals</h2></p>
         <p>Accountants have this interesting habit of double underlining their totals. If that’s something that interests you, apply the class <code class="inline">double-underline</code> to the <code class="inline">td</code> that holds the total value you want double underlined. </p>
         <p>
-            <x-bladewind.table striped="true" divider="thin">
+            <x-bladewind::table striped="true" divider="thin">
                 <x-slot name="header">
                     <th>Item</th>
                     <th class="text-center">Quantity</th>
@@ -261,10 +267,10 @@
                         7,300.00
                     </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
         </p>
         <p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="10">
                 <code>
                     &lt;x-bladewind.table striped="true" divider="thin"&gt;
 
@@ -273,6 +279,12 @@
                         ...
                     &lt;/x-slot&gt;
                     ...
+                    &lt;tr&gt;
+                        &lt;td colspan="2" class="text-right"&gt;&lt;/td&gt;
+                        &lt;td class="double-underline text-right"&gt;
+                            7,300.00
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
                 &lt;/x-bladewind.table&gt;
             </code>
         </pre>
@@ -283,7 +295,7 @@
         <p><h2>Table With Drop Shadow</h2></p>
         <p>You can add a subtle shadow effect to your BladewindUI tables by setting <code class="inline text-red-500">has_shadow="true"</code>. </p>
         <p>
-            <x-bladewind.table striped="true" divider="thin" has_shadow="true">
+            <x-bladewind::table striped="true" divider="thin" has_shadow="true">
                 <x-slot name="header">
                     <th>Item</th>
                     <th class="text-center">Quantity</th>
@@ -305,10 +317,10 @@
                         7,300.00
                     </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
         </p>
         <p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
                     &lt;x-bladewind.table 
                         has_shadow="true"
@@ -329,7 +341,7 @@
            <br /><br /><br />
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -367,10 +379,10 @@
                     <td><em>blank</em></td>
                     <td>This slot holds your table header information.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Table with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.table 
                         striped="true" 
@@ -392,9 +404,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/table.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

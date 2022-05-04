@@ -15,7 +15,7 @@
 
             <h2>Faint Coloured Alerts</h2>
             <h3 class="pb-2 ">Info</h3>
-            <x-bladewind.alert css="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind.alert>
+            <x-bladewind::alert css="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind::alert>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.alert&gt;
@@ -26,10 +26,11 @@
             </pre>
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Error</h3>
-            <x-bladewind.alert type="error" css="mb-3">You do not have permission to upload files</x-bladewind.alert>
-            <pre class="language-markup line-numbers">
+            <x-bladewind::alert type="error" css="mb-3">You do not have permission to upload files</x-bladewind::alert>
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                    &lt;x-bladewind.alert type="error"&gt;
+                    &lt;x-bladewind.alert 
+                        type="error"&gt;
                         You do not have permission to upload files
                     &lt;/x-bladewind.alert&gt;
                 </code>
@@ -37,10 +38,11 @@
 
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Warning</h3>
-            <x-bladewind.alert type="warning" css="mb-3">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind.alert>
-            <pre class="language-markup line-numbers">
+            <x-bladewind::alert type="warning" css="mb-3">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                    &lt;x-bladewind.alert type="warning"&gt;
+                    &lt;x-bladewind.alert 
+                        type="warning"&gt;
                         Well, this is your first warning. Do that again and I'll wipe your hard disk
                     &lt;/x-bladewind.alert&gt;
                 </code>
@@ -48,10 +50,11 @@
 
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Success</h3>
-            <x-bladewind.alert type="success" css="mb-3">Files were successfully uploaded</x-bladewind.alert>
-            <pre class="language-markup line-numbers">
+            <x-bladewind::alert type="success" css="mb-3">Files were successfully uploaded</x-bladewind::alert>
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                    &lt;x-bladewind.alert type="success"&gt;
+                    &lt;x-bladewind.alert 
+                        type="success"&gt;
                         Files were successfully uploaded
                     &lt;/x-bladewind.alert&gt;
                 </code>
@@ -61,10 +64,11 @@
             <a name="dark"><h2>Dark Coloured Alerts</h2></a>
             <p>If you are into darker shades of alerts like myself, this attribute is for you. <code class="inline text-red-500">shade="dark"</code></p>
             <h3 class="pb-2 ">Info</h3>
-            <x-bladewind.alert shade="dark">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind.alert>
-            <pre class="language-markup line-numbers">
+            <x-bladewind::alert shade="dark">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind::alert>
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                    &lt;x-bladewind.alert shade="dark"&gt;
+                    &lt;x-bladewind.alert 
+                        shade="dark"&gt;
                         Your subscription is expiring in 19 days. 
                         &lt;a href="#" class="!text-white/70"&gt;Renew now&lt;/a&gt;
                     &lt;/x-bladewind.alert&gt;
@@ -72,7 +76,7 @@
             </pre>
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Error</h3>
-            <x-bladewind.alert type="error" shade="dark">You do not have permission to upload files</x-bladewind.alert>
+            <x-bladewind::alert type="error" shade="dark">You do not have permission to upload files</x-bladewind::alert>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.alert type="error" shade="dark"&gt;
@@ -83,7 +87,7 @@
 
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Warning</h3>
-            <x-bladewind.alert type="warning" shade="dark">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind.alert>
+            <x-bladewind::alert type="warning" shade="dark">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.alert type="warning" shade="dark"&gt;
@@ -94,7 +98,7 @@
 
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Success</h3>
-            <x-bladewind.alert type="success" shade="dark">Files were successfully uploaded</x-bladewind.alert>
+            <x-bladewind::alert type="success" shade="dark">Files were successfully uploaded</x-bladewind::alert>
             <pre class="language-markup line-numbers" data-lines="1">
                 <code>
                     &lt;x-bladewind.alert type="success" shade="dark"&gt;
@@ -107,8 +111,8 @@
             <a name="iconless"><h2>Without Icons</h2></a>
             <p>By default the alert component shows a close icon and another icon matching the type of alert. Both icons can be turned off separately.</p>
             <h3 class="pb-2 ">Info</h3>
-            <x-bladewind.alert shade="dark" show_icon="false" show_close_icon="false">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind.alert>
-            <pre class="language-markup line-numbers">
+            <x-bladewind::alert shade="dark" show_icon="false" show_close_icon="false">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind::alert>
+            <pre class="language-markup line-numbers" data-line="3,4">
                 <code>
                     &lt;x-bladewind.alert 
                         shade="dark"
@@ -121,8 +125,8 @@
             </pre>
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Error</h3>
-            <x-bladewind.alert type="error" shade="dark" show_close_icon="false">You do not have permission to upload files</x-bladewind.alert>
-            <pre class="language-markup line-numbers">
+            <x-bladewind::alert type="error" shade="dark" show_close_icon="false">You do not have permission to upload files</x-bladewind::alert>
+            <pre class="language-markup line-numbers" data-line="4">
                 <code>
                     &lt;x-bladewind.alert 
                         type="error" 
@@ -135,14 +139,15 @@
 
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Warning</h3>
-            <x-bladewind.alert type="warning" shade="dark" show_icon="false">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind.alert>
+            <x-bladewind::alert type="warning" shade="dark" show_icon="false">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
                     &lt;x-bladewind.alert 
                         type="warning" 
                         shade="dark"
                         show_icon="false"&gt;
-                        Well, this is your first warning. Do that again and I'll wipe your hard disk
+                        Well, this is your first warning. 
+                        Do that again and I'll wipe your hard disk
                     &lt;/x-bladewind.alert&gt;
                 </code>
             </pre>
@@ -150,7 +155,7 @@
             <p>&nbsp;</p>
             <a name="attributes"><h2>Full List Of Attributes</h2></a>
             <p>The table below shows a comprehensive list of all the attributes available for the Alert component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -181,10 +186,10 @@
                     <td><em>blank</em></td>
                     <td>Any additonal css classes can be added using this attribute. For example to make your alert rounded you can add <code class="inline">css="rounded-lg"</code> for example. The default is an empty string.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Alert with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.alert 
                         type="warning" 
@@ -198,9 +203,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/alert.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

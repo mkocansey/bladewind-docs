@@ -17,17 +17,17 @@
                 the syntax for cooking up a modal is very simple.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('tnc-agreement')">Basic modal</x-bladewind.button>
-                <x-bladewind.button onclick="showModal('tnc-agreement-titled')">Basic modal with a title</x-bladewind.button>
-                <x-bladewind.modal name="tnc-agreement">
+                <x-bladewind::button onclick="showModal('tnc-agreement')">Basic modal</x-bladewind::button>
+                <x-bladewind::button onclick="showModal('tnc-agreement-titled')">Basic modal with a title</x-bladewind::button>
+                <x-bladewind::modal name="tnc-agreement">
                     Please agree to the terms and conditions of the agreement before proceeding.
-                </x-bladewind.modal>
-                <x-bladewind.modal name="tnc-agreement-titled" title="Agree or Disagree">
+                </x-bladewind::modal>
+                <x-bladewind::modal name="tnc-agreement-titled" title="Agree or Disagree">
                     Please agree to the terms and conditions of the agreement before proceeding.
-                </x-bladewind.modal>
+                </x-bladewind::modal>
             </p>
             <br />
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="11,17">
                 <code>
                     &lt;x-bladewind.button 
                         onclick="showModal('tnc-agreement')"&gt;
@@ -55,10 +55,10 @@
             </pre>
             
             <p>
-                <x-bladewind.alert show_close_icon="false">
+                <x-bladewind::alert show_close_icon="false">
                     IMPORTANT: BladewindUI Modals are created, targetted and invoked using the <code class="inline text-red-500">name</code> attribute. 
                     You can have several modals on the same page but it is very important to provide unique names for each modal.
-                </x-bladewind.alert>
+                </x-bladewind::alert>
             </p><a name="types"></a>
             <p>
                 Clicking on the backdrop of the modal or on the cancel button will by default dismiss the modal. This behaviour can  be changed. See the <a href="#cant-dismiss">Non-dismissed modal</a> section below.
@@ -77,9 +77,9 @@
                 This requires that you set <code class="inline text-red-500">type="info"</code> on the modal component. The default icon changes to a blue info icon.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('info')">Info Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('info')">Info Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('info')"&gt;
                         Info Modal
@@ -99,9 +99,9 @@
                 This requires that you set <code class="inline text-red-500">type="error"</code> on the modal component. The default icon changes to a red exclamation mark.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('error')">Error Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('error')">Error Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('error')"&gt;
                         Error Modal
@@ -120,9 +120,9 @@
                 This requires that you set <code class="inline text-red-500">type="warning"</code> on the modal component. The default icon changes to a yellow bell icon.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('warning')">Warning Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('warning')">Warning Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('warning')"&gt;
                         Warning Modal
@@ -141,10 +141,10 @@
                 This requires that you set <code class="inline text-red-500">type="success"</code> on the modal component. The default icon changes to a green thumbs up icon.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('success')">Success Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('success')">Success Modal</x-bladewind::button>
             </p>
             
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('Success')"&gt;
                         Success Modal
@@ -158,19 +158,19 @@
                     &lt;/x-bladewind.modal&gt;
                 </code>
             </pre>
-            <x-bladewind.modal type="info" title="General Info" name="info">
+            <x-bladewind::modal type="info" title="General Info" name="info">
                 We really think you should buy some Bitcoin despite it's ups and dowms. What sayeth thou?
-            </x-bladewind.modal>
-            <x-bladewind.modal type="error" title="Delete Not Allowed" name="error">
+            </x-bladewind::modal>
+            <x-bladewind::modal type="error" title="Delete Not Allowed" name="error">
                 You do not have permissions to delete this user.
-            </x-bladewind.modal>
-            <x-bladewind.modal type="warning" title="First warning" name="warning">
+            </x-bladewind::modal>
+            <x-bladewind::modal type="warning" title="First warning" name="warning">
                 Hmmm...This is your first warning. Two more warnings and you are off this platform.
-            </x-bladewind.modal>
+            </x-bladewind::modal>
             
-            <x-bladewind.modal type="success" title="User Deleted" name="success">
+            <x-bladewind::modal type="success" title="User Deleted" name="success">
                 Yayy.. User deleted successfully
-            </x-bladewind.modal>
+            </x-bladewind::modal>
             <a name="sizes"></a>
             <p>&nbsp;</p><br>
             <p>
@@ -186,9 +186,9 @@
                 This requires that you set <code class="inline text-red-500">size="small"</code> on the modal component.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('small-modal')">Small Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('small-modal')">Small Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('small-modal')"&gt;
                         Small Modal
@@ -208,7 +208,7 @@
                 This is the default so it is not really necessary to set the attribute on the component if you want to use the medium modal size.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('medium-modal')">Medium Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('medium-modal')">Medium Modal</x-bladewind::button>
             </p>
             <pre class="language-markup line-numbers">
                 <code>
@@ -228,9 +228,9 @@
                 This requires that you set <code class="inline text-red-500">size="big"</code> on the modal component.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('big-modal')">Big Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('big-modal')">Big Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('big-modal')"&gt;
                         Big Modal
@@ -249,9 +249,9 @@
                 This requires that you set <code class="inline text-red-500">size="large"</code> on the modal component.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('large-modal')">Large Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('large-modal')">Large Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('large-modal')"&gt;
                         Large Modal
@@ -270,9 +270,9 @@
                 This requires that you set <code class="inline text-red-500">size="xl"</code> on the modal component.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('xl-modal')">xl Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('xl-modal')">xl Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('xl-modal')"&gt;
                         Xl Modal
@@ -291,9 +291,9 @@
                 This requires that you set <code class="inline text-red-500">size="omg"</code> on the modal component.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('omg-modal')">omg Modal</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('omg-modal')">omg Modal</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('omg-modal')"&gt;
                         OMG Modal
@@ -308,25 +308,25 @@
                     &lt;/x-bladewind.modal&gt;
                 </code>
             </pre>
-            <x-bladewind.modal size="small" title="Small Modal" name="small-modal">
+            <x-bladewind::modal size="small" title="Small Modal" name="small-modal">
                 I am the smallest in the modal family. Don't hate.
-            </x-bladewind.modal>
-            <x-bladewind.modal title="Medium Modal" name="medium-modal">
+            </x-bladewind::modal>
+            <x-bladewind::modal title="Medium Modal" name="medium-modal">
                 I am the medium sized modal. Also the default if you do not set a size.
-            </x-bladewind.modal>
-            <x-bladewind.modal size="big" title="Big Modal" name="big-modal">
+            </x-bladewind::modal>
+            <x-bladewind::modal size="big" title="Big Modal" name="big-modal">
                 English can be quite confusing. How is big different from large? You be the judge!
-            </x-bladewind.modal>
-            <x-bladewind.modal size="large" title="Large Modal" name="large-modal">
+            </x-bladewind::modal>
+            <x-bladewind::modal size="large" title="Large Modal" name="large-modal">
                 I am the large modal. If I am not large enough to contain your needs, check out my xl brother.
-            </x-bladewind.modal>
-            <x-bladewind.modal size="xl" title="XL Modal" name="xl-modal">
+            </x-bladewind::modal>
+            <x-bladewind::modal size="xl" title="XL Modal" name="xl-modal">
                 I am the extra large modal. How do you like my size now. You could fill me up with some much needed content.
-            </x-bladewind.modal>
-            <x-bladewind.modal size="omg" title="Full Width Modal" name="omg-modal">
+            </x-bladewind::modal>
+            <x-bladewind::modal size="omg" title="Full Width Modal" name="omg-modal">
                 I am the full width modal. My nickname is OMG. I take up the entire screen. I do not know why you will need a modal like this but well, 
                 like they say, it is better to have and not use that need and not have.
-            </x-bladewind.modal>
+            </x-bladewind::modal>
 
             <a name="actions"></a>
             <p>&nbsp;</p><br />
@@ -340,17 +340,17 @@
                 In the same way, to hide the primary button, the okay button in this case, simply set <code class="inline text-red-500">ok_button_label=""</code>. When the button label is blank, the button won't be displayed.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('no-cancel')">No cancel button</x-bladewind.button>
-                <x-bladewind.button onclick="showModal('no-okay')">No okay button</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('no-cancel')">No cancel button</x-bladewind::button>
+                <x-bladewind::button onclick="showModal('no-okay')">No okay button</x-bladewind::button>
             </p>
-            <x-bladewind.modal title="No Cancel Button" name="no-cancel" cancel_button_label="">
+            <x-bladewind::modal title="No Cancel Button" name="no-cancel" cancel_button_label="">
                 I have no cancel button. Just okay and that is fine.
-            </x-bladewind.modal>
-            <x-bladewind.modal title="No Okay Button" name="no-okay" ok_button_label="">
+            </x-bladewind::modal>
+            <x-bladewind::modal title="No Okay Button" name="no-okay" ok_button_label="">
                 I have no okay button. Just cancel this thing and let's all go home.
-            </x-bladewind.modal>
+            </x-bladewind::modal>
             <br /><h3 class="pb-2 ">No Cancel Button</h3>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="8">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('no-cancel')"&gt;
                         No cancel button
@@ -366,7 +366,7 @@
             </pre>
             <br />
             <h3 class="pb-2 ">No Okay Button</h3>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="8">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('no-okay')"&gt;
                         No okay button
@@ -390,13 +390,13 @@
                 A no-action-buttons modal can be useful if you want to have a form in a modal with its own button that submits the form.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('no-action-buttons')">No action buttons</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('no-action-buttons')">No action buttons</x-bladewind::button>
             </p>
-            <x-bladewind.modal title="No Action Buttons" name="no-action-buttons" show_action_buttons="false">
+            <x-bladewind::modal title="No Action Buttons" name="no-action-buttons" show_action_buttons="false">
                 I have no action buttons. Only the backdrop can close me now.
-            </x-bladewind.modal>
+            </x-bladewind::modal>
             
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="6">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('no-action-buttons')"&gt;No action buttons&lt;/x-bladewind.button&gt;
 
@@ -416,9 +416,9 @@
                 The attributes expect javascript functions as the values.
             </p>
             <p>
-                <x-bladewind.button onclick="showModal('custom-actions')">CLick me for custom actions</x-bladewind.button>
+                <x-bladewind::button onclick="showModal('custom-actions')">CLick me for custom actions</x-bladewind::button>
             </p>
-            <x-bladewind.modal 
+            <x-bladewind::modal 
                 size="big" 
                 center_action_buttons="true" 
                 type="warning" 
@@ -427,8 +427,8 @@
                 cancel_button_action="alert('good choice')" close_after_action="false" 
                 name="custom-actions" ok_button_label="Yes, delete" cancel_button_label="don't delete">
                 Are you sure you want to delete this user? This action cannot be undone.
-            </x-bladewind.modal>
-            <pre class="language-markup line-numbers">
+            </x-bladewind::modal>
+            <pre class="language-markup line-numbers" data-line="7,10,11">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('custom-actions')"&gt;
                         CLick me for custom actions
@@ -467,28 +467,28 @@
             <p>Getting this result is simple. Just set <code class="inline text-red-500">backdrop_can_close="false"</code>. If you are using the modals with the action buttons you will also need to set the actions of each button. See "Action Button Actions" above.</p>
             <p>In this example, we assume your app is very data sensitive and you want users to be able to lock their screens when stepping away from their computers. Refresh the page to get out of locked mode.</p>
             <p>
-                <x-bladewind.button onclick="showModal('lock-screen')">
+                <x-bladewind::button onclick="showModal('lock-screen')">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg> lock the screen</x-bladewind.button>
+                    </svg> lock the screen</x-bladewind::button>
             </p>
-            <x-bladewind.modal 
+            <x-bladewind::modal 
                 show_action_buttons="false" 
                 backdrop_can_close="false"
                 name="lock-screen">
                     <div class="flex mx-auto justify-center my-2">
-                        <x-bladewind.avatar css=""
+                        <x-bladewind::avatar css=""
                             image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" />
                     </div>
                     <div class="my-4">
                         You will need to unlock the screen to continue using this application.
                     </div>
-                    <x-bladewind.input placeholder="Enter your password to unlock" type="password" />
-                    <x-bladewind.button css="w-full">Check password</x-bladewind.button>
+                    <x-bladewind::input placeholder="Enter your password to unlock" type="password" />
+                    <x-bladewind::button css="w-full">Check password</x-bladewind::button>
                 
-            </x-bladewind.modal>
+            </x-bladewind::modal>
 
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="7">
                 <code>
                     &lt;x-bladewind.button onclick="showModal('lock-screen')"&gt;
                         &lt;svg&gt;...&lt;/svg&gt; lock the screen
@@ -498,6 +498,7 @@
                         show_action_buttons="false" 
                         backdrop_can_close="false"
                         name="lock-screen"&gt;
+
                             &lt;div class="flex mx-auto justify-center my-2"&gt;
                                 &lt;x-bladewind.avatar css="" image="/path/to/the/image/file" /&gt;
                             &lt;/div&gt;
@@ -510,6 +511,7 @@
                                 type="password" /&gt;
 
                             &lt;x-bladewind.button css="w-full"&gt;Check password&lt;/x-bladewind.button&gt;
+
                     &lt;/x-bladewind.modal&gt;
                 </code>
             </pre>
@@ -518,7 +520,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Modal component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -590,10 +592,10 @@
                     <td><em>blank</em></td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Modal with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.modal 
                         type="warning" 
@@ -615,10 +617,10 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/modal.blade.php</code> and 
                 <code class="inline">resources/views/components/bladewind/modal-icons.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

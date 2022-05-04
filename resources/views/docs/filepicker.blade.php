@@ -6,7 +6,7 @@
             <p>
                 Select a file from your computer. If the selected file is an image you get to see a preview of the file. Heavy images will take a couple of seconds to render the preview.
             </p>
-            <x-bladewind.filepicker name="dp" />
+            <x-bladewind::filepicker name="dp" />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -15,11 +15,11 @@
             </pre>
             <div class="pb-10"></div>
             <p>It is possible to change the placeholder text</p>
-            <x-bladewind.filepicker 
+            <x-bladewind::filepicker 
                 name="proof_of_payment"
                 placeholder="Upload proof of payment"  />
             <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     &lt;x-bladewind.filepicker 
                         name="proof_of_payment"
@@ -29,9 +29,9 @@
             <div class="pb-10"></div>
             
             <h3 class="pb-2 ">Accept Only Specific File Types</h3>
-            <x-bladewind.filepicker placeholder="Upload a PDF" name="pdf_only" accepted_file_types=".pdf"  />
+            <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only" accepted_file_types=".pdf"  />
             <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="4">
                 <code>
                     &lt;x-bladewind::filepicker 
                         name="pdf_only" 
@@ -41,9 +41,9 @@
             </pre>
             <br />
             <p>
-                <x-bladewind.alert type="warning" show_close_icon="false">
+                <x-bladewind::alert type="warning" show_close_icon="false">
                     To prevent erratic behaviour when using the filepicker multiple times on the same page, you should give each filepicker a unique name. You can do this by setting the <code class="inline">name</code> attribute on the filepicker.
-                </x-bladewind.alert>
+                </x-bladewind::alert>
             </p>
             <div class="py-2"></div>
             
@@ -53,7 +53,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Filepicker component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -80,10 +80,10 @@
                     <td>false</td>
                     <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Filepicker with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.filepicker 
                         name="profile_pic"
@@ -94,9 +94,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/filepicker.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

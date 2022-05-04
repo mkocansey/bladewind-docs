@@ -4,7 +4,7 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>Tags, sometimes referred to as labels allow you to logically group items or indicate statuses of items.  You can also use tags to list selections. They are very simple to use.</p>
-            <p><x-bladewind.tag label="pending" /></p>
+            <p><x-bladewind::tag label="pending" /></p>
             <a name="faint"></a>
             <p>
                 <pre class="language-markup line-numbers">
@@ -19,15 +19,15 @@
             <p>The BladewindUI tag component allows you to specify different colours. The tags by default are faint in colour with blue being the default colour.
             There are nine colour options to pick from.</p>
             <p>
-                <x-bladewind.tag label="pending" color="red" /> &nbsp;
-                <x-bladewind.tag label="pending" color="yellow" /> &nbsp;
-                <x-bladewind.tag label="pending" color="green" /> &nbsp;
-                <x-bladewind.tag label="pending" color="blue" /> &nbsp;
-                <x-bladewind.tag label="pending" color="pink" /> &nbsp;
-                <x-bladewind.tag label="pending" color="cyan" /> &nbsp;
-                <x-bladewind.tag label="pending" color="orange" /> &nbsp;
-                <x-bladewind.tag label="pending" color="gray" /> &nbsp;
-                <x-bladewind.tag label="pending" color="purple" /> &nbsp;
+                <x-bladewind::tag label="pending" color="red" /> &nbsp;
+                <x-bladewind::tag label="pending" color="yellow" /> &nbsp;
+                <x-bladewind::tag label="pending" color="green" /> &nbsp;
+                <x-bladewind::tag label="pending" color="blue" /> &nbsp;
+                <x-bladewind::tag label="pending" color="pink" /> &nbsp;
+                <x-bladewind::tag label="pending" color="cyan" /> &nbsp;
+                <x-bladewind::tag label="pending" color="orange" /> &nbsp;
+                <x-bladewind::tag label="pending" color="gray" /> &nbsp;
+                <x-bladewind::tag label="pending" color="purple" /> &nbsp;
             </p>
             <p>
                 <pre class="language-markup line-numbers">
@@ -60,15 +60,15 @@
             </p>
             <p>Dark colours in this case have nothing to do with dark mode. These are just a deeper shade of the tag colours. You can get darker shaded tags by setting <code class="inline text-red-500">shade="dark"</code> </p>
             <p>
-                <x-bladewind.tag label="pending" shade="dark" color="red" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="yellow" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="green" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="blue" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="pink" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="cyan" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="orange" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="gray" /> &nbsp;
-                <x-bladewind.tag label="pending" shade="dark" color="purple" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="red" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="yellow" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="green" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="blue" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="pink" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="cyan" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="orange" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="gray" /> &nbsp;
+                <x-bladewind::tag label="pending" shade="dark" color="purple" /> &nbsp;
             </p>
             <p>
                 <pre class="language-markup line-numbers">
@@ -100,13 +100,16 @@
             Tags can also have close icons. That will be useful if you use tags to display user selections and want a way to remove a user’s selection from the list. By default tags do not show the close icon. 
             To activate close icons, set <code class="inline text-red-500">can_close="true"</code>. The default action when the close icon is clicked is to remove the tag that was clicked.
             </p>
-            <p><x-bladewind.tag label="pending" can_close="true" />  &nbsp;  <x-bladewind.tag label="pending" can_close="true" color="pink" /></p>
+            <p><x-bladewind::tag label="pending" can_close="true" />  &nbsp;  <x-bladewind::tag label="pending" can_close="true" color="pink" /></p>
             <p>
-                <pre class="language-markup line-numbers">
+                <pre class="language-markup line-numbers" data-line="2,5">
                     <code>
-                        &lt;x-bladewind.tag label="pending" can_close="true" /&gt;
+                        &lt;x-bladewind.tag label="pending" 
+                            can_close="true" /&gt;
 
-                        &lt;x-bladewind.tag label="pending" can_close="true" color="pink" /&gt;
+                        &lt;x-bladewind.tag label="pending" 
+                            can_close="true" 
+                            color="pink" /&gt;
                     </code>
                 </pre>
             </p>
@@ -118,11 +121,11 @@
             You can turn off the prefixing of IDs by setting <code class="inline text-red-500">add_id_prefix="false"</code>
             </p>
             <p>
-                <x-bladewind.tag label="marketing" can_close="true" add_id_prefix="false" id="a1001" onclick="alert('you clicked on '+ dom_el('#a1001').innerText)" />  &nbsp;  
-                <x-bladewind.tag label="accounting" can_close="true" color="pink" css="a1002"  onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" />
+                <x-bladewind::tag label="marketing" can_close="true" add_id_prefix="false" id="a1001" onclick="alert('you clicked on '+ dom_el('#a1001').innerText)" />  &nbsp;  
+                <x-bladewind::tag label="accounting" can_close="true" color="pink" css="a1002"  onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" />
             </p>
             
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="4">
                 <code>
                     &lt;x-bladewind.tag 
                         label="marketing" 
@@ -144,7 +147,7 @@
            <br /><br /><br />
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Tag component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -194,10 +197,10 @@
                     <td>bw-tag</td>
                     <td>Any additional CSS you wish to add.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Tag with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.tag 
                         label="accounting" 
@@ -212,9 +215,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/tag.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

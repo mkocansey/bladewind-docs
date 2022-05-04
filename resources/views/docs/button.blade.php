@@ -11,38 +11,38 @@
             </p>
             <br /><br />
             <a name="primary"><h2>Primary Button</h2></a>
-            <x-bladewind.button>Subscribe Now</x-bladewind.button>
+            <x-bladewind::button>Subscribe Now</x-bladewind::button>
             <div class="h-2"></div>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button/&gt;
                 </code>
             </pre>
             <p>&nbsp</p>
             <h3 class="pb-4">Different Sizes</h3>
-            <x-bladewind.button size="tiny">Save</x-bladewind.button> &nbsp;&nbsp;
-            <x-bladewind.button size="small">Subscribe</x-bladewind.button>&nbsp;&nbsp;
-            <x-bladewind.button size="regular">Subscribe</x-bladewind.button>&nbsp;&nbsp;
-            <x-bladewind.button size="big">Save User</x-bladewind.button>
+            <x-bladewind::button size="tiny">Save</x-bladewind::button> &nbsp;&nbsp;
+            <x-bladewind::button size="small">Subscribe</x-bladewind::button>&nbsp;&nbsp;
+            <x-bladewind::button size="regular">Subscribe</x-bladewind::button>&nbsp;&nbsp;
+            <x-bladewind::button size="big">Save User</x-bladewind::button>
             
             <br /><br />
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button size="tiny"&gt;Save&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button size="small"&gt;Subscribe&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button size="regular"&gt;Subscribe&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
             <a name="secondary"></a>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button size="big"&gt;Save User&lt;/x-bladewind.button&gt;
                 </code>
@@ -50,19 +50,22 @@
            
             <p>&nbsp;</p>
             <h2>Secondary Button</h2>
-           <x-bladewind.button type="secondary">Subscribe Now</x-bladewind.button>
+           <x-bladewind::button type="secondary">Subscribe Now</x-bladewind::button>
             <div class="h-2"></div>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
-                    &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button/&gt;
+                    &lt;x-bladewind.button 
+                        type="secondary"&gt;
+                        subscribe now
+                    &lt;/x-bladewind.button/&gt;
                 </code>
             </pre>
             <p>&nbsp</p>
             <h3 class="pb-4">Different Sizes</h3>
-            <x-bladewind.button type="secondary" size="tiny">Save</x-bladewind.button>
-            <x-bladewind.button type="secondary" size="small">Subscribe</x-bladewind.button>
-            <x-bladewind.button type="secondary" size="regular">Subscribe</x-bladewind.button>
-            <x-bladewind.button type="secondary" size="big">Save User</x-bladewind.button>
+            <x-bladewind::button type="secondary" size="tiny">Save</x-bladewind::button>
+            <x-bladewind::button type="secondary" size="small">Subscribe</x-bladewind::button>
+            <x-bladewind::button type="secondary" size="regular">Subscribe</x-bladewind::button>
+            <x-bladewind::button type="secondary" size="big">Save User</x-bladewind::button>
             
             <br /><br />
             <pre class="language-markup line-numbers">
@@ -104,14 +107,16 @@
             with a spinner but you want to show the spinner when the button is clicked. If you want the spinner to be visible by default you need to also set the 
             <code class="inline text-red-500">show_spinner="true"</code> attribute.</p>
             <p>
-                <x-bladewind.button has_spinner="true" show_spinner="true">Saving ...</x-bladewind.button> &nbsp;&nbsp;
-                <x-bladewind.button type="secondary" has_spinner="true" show_spinner="true">Saving ...</x-bladewind.button>
+                <x-bladewind::button has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button> &nbsp;&nbsp;
+                <x-bladewind::button type="secondary" has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button>
             </p>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2,3">
                 <code>
                     &lt;x-bladewind.button
                         has_spinner="true" 
-                        show_spinner="true"&gt;Saving...&lt;/x-bladewind.button&gt;
+                        show_spinner="true"&gt;
+                        Saving...
+                    &lt;/x-bladewind.button&gt;
                 </code>
             </pre>
             <br />
@@ -120,10 +125,10 @@
                 In this case you will need to set the <code class="inline text-red-500">name</code> and <code class="inline text-red-500">onclick</code> attributes of the button.
             </p>
             <p>
-                <x-bladewind.button has_spinner="true" name="save-user" onclick="unhide('.save-user .bw-spinner')">Click for my spinner</x-bladewind.button> &nbsp;&nbsp;
+                <x-bladewind::button has_spinner="true" name="save-user" onclick="unhide('.save-user .bw-spinner')">Click for my spinner</x-bladewind::button> &nbsp;&nbsp;
             </p>
             <a name="submittable"></a>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
                     &lt;x-bladewind.button
                         has_spinner="true" 
@@ -145,17 +150,17 @@
             <p>
                 <form action="" method="get" class="p-7 bg-slate-200/50 shadow-md shadow-slate-400/20">
                     <div class="flex space-x-3">
-                    <x-bladewind.input placeholder="First name" name="first_name" required="true" />
-                    <x-bladewind.input placeholder="Last name" name="last_name" />
+                    <x-bladewind::input placeholder="First name" name="first_name" required="true" />
+                    <x-bladewind::input placeholder="Last name" name="last_name" />
                     </div>
-                    <x-bladewind.input name="email" placeholder="Email" type="email" />
-                    <x-bladewind.textarea placeholder="Comment"></x-bladewind.textarea>
-                    <x-bladewind.button can_submit="true" css="mx-auto block mt-2">click me to submit</x-bladewind.button>
+                    <x-bladewind::input name="email" placeholder="Email" type="email" />
+                    <x-bladewind::textarea placeholder="Comment"></x-bladewind::textarea>
+                    <x-bladewind::button can_submit="true" css="mx-auto block mt-2">click me to submit</x-bladewind::button>
                 </form>
             </p>
 
             <a name="coloured"></a>
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="2">
                 <code>
                     &lt;x-bladewind.button
                         can_submit="true"
@@ -169,44 +174,52 @@
                 Only primary buttons can take on different colors. If the default blue color doesn't do it for you, we have eight other colour options to pick from. 
             </p>
             <p>
-                <x-bladewind.button color="red">Look Ma! I am red</x-bladewind.button>&nbsp;
-                <x-bladewind.button color="yellow">Look Ma! I am yellow</x-bladewind.button>
-                <x-bladewind.button color="green">Look Ma! I am green</x-bladewind.button>
+                <x-bladewind::button color="red">Look Ma! I am red</x-bladewind::button>&nbsp;
+                <x-bladewind::button color="yellow">Look Ma! I am yellow</x-bladewind::button>
+                <x-bladewind::button color="green">Look Ma! I am green</x-bladewind::button>
                 
-                <x-bladewind.button color="pink" css="my-4">Look Ma! I am pink</x-bladewind.button>
-                <x-bladewind.button color="cyan" css="my-4">Look Ma! I am cyan</x-bladewind.button>
-                <x-bladewind.button color="black" css="my-4">Look Ma! I am black</x-bladewind.button>
+                <x-bladewind::button color="pink" css="my-4">Look Ma! I am pink</x-bladewind::button>
+                <x-bladewind::button color="cyan" css="my-4">Look Ma! I am cyan</x-bladewind::button>
+                <x-bladewind::button color="black" css="my-4">Look Ma! I am black</x-bladewind::button>
 
-                <x-bladewind.button color="purple">Look Ma! I am purple</x-bladewind.button>
-                <x-bladewind.button color="orange">Look Ma! I am orange</x-bladewind.button>
-                <x-bladewind.button>Look Ma! I am blue</x-bladewind.button>
+                <x-bladewind::button color="purple">Look Ma! I am purple</x-bladewind::button>
+                <x-bladewind::button color="orange">Look Ma! I am orange</x-bladewind::button>
+                <x-bladewind::button>Look Ma! I am blue</x-bladewind::button>
             </p>
 
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" data-line="1,5,9,13,17,21,25,29">
                 <code>
-                    &lt;x-bladewind.button 
-                        color="red"&gt;look ma! i am red&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="red"&gt;
+                        look ma! i am red
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="yellow"&gt;look ma! i am yellow&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="yellow"&gt;
+                        look ma! i am yellow
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="green"&gt;look ma! i am green&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="green"&gt;
+                        look ma! i am green
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="pink"&gt;look ma! i am pink&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="pink"&gt;
+                        look ma! i am pink
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="cyan"&gt;look ma! i am cyan&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="cyan"&gt;
+                        look ma! i am cyan
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="black"&gt;look ma! i am black&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="black"&gt;
+                        look ma! i am black
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="purple"&gt;look ma! i am purple&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="purple"&gt;
+                        look ma! i am purple
+                    &lt;/x-bladewind.button&gt;
 
-                    &lt;x-bladewind.button 
-                        color="orange"&gt;look ma! i am orange&lt;/x-bladewind.button&gt;
+                    &lt;x-bladewind.button color="orange"&gt;
+                        look ma! i am orange
+                    &lt;/x-bladewind.button&gt;
 
                     &lt;x-bladewind.button&gt;look ma! i am blue&lt;/x-bladewind.button&gt;
                 </code>
@@ -223,7 +236,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Button component.</p>
-            <x-bladewind.table striped="true">
+            <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -282,10 +295,10 @@
                     <td>bw-button</td>
                     <td>Any additonal css classes can be added using this attribute. For example if you prefer to have non-rounded buttons you can set <code class="inline">css="!rounded-none"</code>.</td>
                 </tr>
-            </x-bladewind.table>
+            </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Button with all attributes defined</h3>
-            <pre class="language-markup line-numbers" data-line="4">
+            <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button 
                         type="secondary"
@@ -303,9 +316,9 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind.alert show_close_icon="false">
+            <x-bladewind::alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources/views/components/bladewind/button.blade.php</code>
-            </x-bladewind.alert>
+            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>
