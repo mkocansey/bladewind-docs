@@ -3,14 +3,13 @@
     <h1 class="page-title">Button</h1>
     <div class="flex">
         <div class="grow w-3/4">
-        <a name="primary"></a>
             <p>
                 The default primary colour theme for BladewindUI buttons is blue. 
                 It is possible to set a colour attribute to display our button in different colours. These are however a definite list of colours.
-                You can check out our customization notes on how to use a different primary theme colour if you'd prefer a colour not defined in our list.
+                You can check out our customization notes on how to use a different primary <a name="primary"></a> theme colour if you'd prefer a colour not defined in our list.
             </p>
-            <br /><br />
-            <a name="primary"><h2>Primary Button</h2></a>
+            <br />
+            <h2>Primary Button</h2>
             <x-bladewind::button>Subscribe Now</x-bladewind::button>
             <div class="h-2"></div>
             <pre class="language-markup">
@@ -41,11 +40,10 @@
                     &lt;x-bladewind.button size="regular"&gt;Subscribe&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
-            <a name="secondary"></a>
             <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button size="big"&gt;Save User&lt;/x-bladewind.button&gt;
-                </code>
+                </code><a name="secondary"></a>
             </pre>
            
             <p>&nbsp;</p>
@@ -89,23 +87,23 @@
                          size="regular"&gt;Subscribe&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
-            <a name="spinning"></a>
+            
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.button
                          type="secondary" 
                          size="big"&gt;Save User&lt;/x-bladewind.button&gt;
-                </code>
+                </code><a name="spinning"></a>
             </pre>
 
             <p>&nbsp;</p>
-            <a name="stacked"><h2>With Spinners</h2></a>
-            <p>Buttons can have spinners. This is useful if you are indicating progress of a form submission or any other progress. 
+            <h2>With Spinners</h2>
+            <p>Buttons can have spinners. This is useful when indicating progress of a form submission or progress of any other action. 
             The button spinners use the BladewindUI <a href="/component/spinner">Spinner</a> component.</p>
             <p>Spinners can be activated on buttons by setting the <code class="inline text-red-500">has_spinner="true"</code> 
             attribute. This creates a button with a spinner but, the spinners are hidden by default. The assumption is, you want a button 
-            with a spinner but you want to show the spinner when the button is clicked. If you want the spinner to be visible by default you need to also set the 
-            <code class="inline text-red-500">show_spinner="true"</code> attribute.</p>
+            with a spinner but you want to show the spinner when the button is clicked. If you want the spinner to be visible by default you can set the 
+            attribute <code class="inline text-red-500">show_spinner="true"</code>.</p>
             <p>
                 <x-bladewind::button has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button> &nbsp;&nbsp;
                 <x-bladewind::button type="secondary" has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button>
@@ -127,8 +125,8 @@
             <p>
                 <x-bladewind::button has_spinner="true" name="save-user" onclick="unhide('.save-user .bw-spinner')">Click for my spinner</x-bladewind::button> &nbsp;&nbsp;
             </p>
-            <a name="submittable"></a>
-            <pre class="language-markup line-numbers" data-line="2">
+
+            <pre class="language-markup line-numbers" data-line="2-4">
                 <code>
                     &lt;x-bladewind.button
                         has_spinner="true" 
@@ -136,15 +134,15 @@
                         onclick="unhide('.save-user .bw-spinner')"&gt;
                         Click for my spinner
                     &lt;/x-bladewind.button&gt;
-                </code>
+                </code><a name="submittable"></a>
             </pre>
             
             <p>&nbsp;</p>
             <h2>Form Submission</h2>
             <p>
                 By default the button component is rendered as <code class="inline text-red-500">&lt;button type="button"...</code>. 
-                This default behavior will not work for submitting forms. To enable form submission, set this attribute on the button, 
-                <code class="inline">can_submit="true"</code>. The resulting html for the button will be 
+                This default button behavior will not submit forms. To enable form submission, set this attribute on the button, 
+                <code class="inline text-red-500">can_submit="true"</code>. The resulting html for the button will be 
                 <code class="inline text-red-500">&lt;button type="submit"...</code>.
             </p>
             <p>
@@ -159,19 +157,18 @@
                 </form>
             </p>
 
-            <a name="coloured"></a>
             <pre class="language-markup line-numbers" data-line="2">
                 <code>
                     &lt;x-bladewind.button
                         can_submit="true"
                         css="mx-auto block"&gt;click me to submit&lt;/x-bladewind.button&gt;
-                </code>
+                </code><a name="coloured"></a>
             </pre>
            
             <p>&nbsp;</p>
             <h2>Colored Button</h2>
             <p>
-                Only primary buttons can take on different colors. If the default blue color doesn't do it for you, we have eight other colour options to pick from. 
+                Only primary buttons can take on different colors. If the default blue color doesn't do it for you, there are eight other colour options to pick from. 
             </p>
             <p>
                 <x-bladewind::button color="red">Look Ma! I am red</x-bladewind::button>&nbsp;
@@ -244,7 +241,7 @@
                 </x-slot>
                 <tr>
                     <td>type</td>
-                    <td>secondary</td>
+                    <td>primary</td>
                     <td><code class="inline">primary</code> <code class="inline">secondary</code></td>
                 </tr>
                 <tr>

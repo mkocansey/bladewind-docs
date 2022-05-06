@@ -1437,6 +1437,10 @@ code.inline{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
+.border-red-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
 .bg-gray-200\/30{
   background-color: rgb(229 231 235 / 0.3);
 }

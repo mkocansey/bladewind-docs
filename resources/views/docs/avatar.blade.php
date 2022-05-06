@@ -3,24 +3,24 @@
     <h1 class="page-title">Avatar</h1>
     <div class="flex">
         <div class="grow w-3/4">
-        <a name="single"></a>
             <p>
-                The avatar component allows you to diplay a rounded picture at an avatar size. Of course, the size is customizable. 
-                This component can be useful for displayed pictures of logged in users, a contacts list, employees directory etc.
+                The avatar component allows you to diplay a rounded picture at an avatar size. This size is of course customizable. 
+                This component can be useful for displaying pictures of logged in users, a contacts list, employees directory etc.
+                <a name="single"></a>
                 The avatar component can either display a single image or a horizontal stack of images. Images are displayed as inline-block elements. 
             </p>
             
-            <a name="sizes"><h2>Single Image</h2></a>
+            <h2>Single Avatar</h2>
             <x-bladewind::avatar image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" css="mb-3" />
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.avatar image="/path/to/the/image/file" /&gt;
-                </code>
+                </code><a name="sizes"></a>
             </pre>
 
             <p>&nbsp;</p>
             <h2>Different Sizes</h2>
-            <p>You can specify a size for the avatar. See the full <a href="#attributes">list of attributes</a> for the available sizes. The default is <code class="inline text-red-500">size="regular"</code></p>
+            <p>You can specify a size for the avatar. See the full <a href="#attributes">list of attributes</a> for the available sizes. The default size is <code class="inline text-red-500">regular</code></p>
             <x-bladewind::avatar image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" size="tiny" />
             <x-bladewind::avatar image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" size="small" />
             <x-bladewind::avatar image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" size="medium" />
@@ -59,12 +59,15 @@
                 &lt;x-bladewind.avatar 
                     image="/path/to/the/image/file" 
                     size="omg" /&gt;
-                </code>
+                </code><a name="stack"></a>
             </pre>
            
             <p>&nbsp;</p>
-            <a name="stacked"><h2>Stacked Images</h2></a>
-            <p>Stacked avatars have an overlapping effect. The component will not restrict you from stacking avatars of different sizes but, for a more appealing visual effect, stacking images of the same size is advised.</p>
+            <h2>Stacked Avatars</h2>
+            <p>
+                Stacked avatars have an overlapping effect. The component will not restrict you from stacking avatars of different sizes but, for a more appealing visual effect, stacking images of the same size is advised.
+                You can achieve stackability by setting the <code class="inline text-red-500">stacked="true"</code> attribute on each avatar that you want as part of the stack.
+            </p> 
 
             <x-bladewind::avatar stacked="true" image="data:image/jpeg;base64,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" />
             <x-bladewind::avatar stacked="true" image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" />
@@ -89,12 +92,12 @@
                     image="/path/to/the/image/file" 
                     stacked="true" /&gt;
             
-                </code>
+                </code><a name="attributes"></a>
             </pre>
 
 
             <p>&nbsp;</p>
-            <a name="attributes"><h2>Full List Of Attributes</h2></a>
+            <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Avatar component.</p>
             <x-bladewind::table striped="true">
                 <x-slot name="header">
@@ -110,7 +113,7 @@
                 <tr>
                     <td>alt</td>
                     <td>image</td>
-                    <td>The text to display as the alt attribute value of the image.</td>
+                    <td>The text to display as the value for the image's alt attribute.</td>
                 </tr>
                 <tr>
                     <td>size</td>
@@ -152,9 +155,9 @@
             <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
-                    <div class="flex items-center"><div class="dot"></div><a href="#single">Single image</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#single">Single avatar</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="#stack">Stack of images</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#stack">Stacked avatars</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>

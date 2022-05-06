@@ -4,59 +4,58 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                Display a spinning icon
+                Centre content within a container. This container could be any block level element, say a <code class="inline">div</code>
             </p>
             
-            <x-bladewind::spinner  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
+            <x-bladewind::centered-content size="tiny">
+                <x-bladewind::card>
+                    this card is centered in this column
+                </x-bladewind::card>
+            </x-bladewind::centered-content>
+
+            <p>
+                <pre class="language-markup line-numbers" data-line="1">
+                    <code>
+                        &lt;x-bladewind::centered-content size="tiny"&gt;
+
+                            &lt;x-bladewind::card&gt;
+                                this content is centered in this column
+                            &lt;/x-bladewind::card&gt;
+
+                        &lt;/x-bladewind::centered-content&gt;
+                    </code>
+                </pre>
+            </p>
             <br />
-            
-            <x-bladewind::spinner size="medium"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="medium"  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            <x-bladewind::spinner size="big"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="big"  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            <x-bladewind::spinner size="xl"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="xl"  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            <x-bladewind::spinner size="omg"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="omg"  /&gt;
-                </code>
-            </pre>
+            <p>
+                There are different sizes for the centered content component which are too wide for this documentation space. Try them out in your layouts to see how they look.
+            </p>
+            <x-bladewind::centered-content size="small">
+                <x-bladewind::card>
+                    this card is centered in this column
+                </x-bladewind::card>
+            </x-bladewind::centered-content>
+
+            <p>
+                <pre class="language-markup line-numbers" data-line="1">
+                    <code>
+                        &lt;x-bladewind::centered-content size="small"&gt;
+
+                            &lt;x-bladewind::card&gt;
+                                this content is centered in this column
+                            &lt;/x-bladewind::card&gt;
+
+                        &lt;/x-bladewind::centered-content&gt;
+                    </code>
+                </pre>
+            </p>
+
            <a name="attributes"></a>
            <br />
            
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
-            <p>The table below shows a comprehensive list of all the attributes available for the Spinner component.</p>
+            <p>The table below shows a comprehensive list of all the attributes available for the Centered Content component.</p>
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -65,29 +64,10 @@
                 </x-slot>
                 <tr>
                     <td>size</td>
-                    <td>small</td>
-                    <td><code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
-                </tr>
-                <tr>
-                    <td>css</td>
-                    <td>bw-spinner</td>
-                    <td>Any additional CSS you wish to add.</td>
+                    <td>default</td>
+                    <td><code class="inline">tiny</code>  <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">xxl</code> <code class="inline">omg</code></td>
                 </tr>
             </x-bladewind::table>
-            <p>&nbsp;</p>
-            <h3 class="pb-2 ">Spinner with all attributes defined</h3>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner 
-                        size="medium"
-                        css="m-0" /&gt;
-                </code>
-            </pre>
-
-            <p>&nbsp;</p>
-            <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources/views/components/bladewind/spinner.blade.php</code>
-            </x-bladewind::alert>
             <p>&nbsp;</p>
 
         </div>

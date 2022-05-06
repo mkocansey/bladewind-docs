@@ -10,7 +10,8 @@
             </p>
             <a name="faint"></a>
             <p>
-                BladewindUI alerts are displayed inline by default. You may want to check out the <a href="/component/notification">Notification</a> component if you want something more intrusive.
+                BladewindUI alerts are displayed inline by default. You may want to check out the <a href="/component/notification">Notification</a> component if you want something more intrusive. 
+                For each colour shade there are four alert types, <code class="inline">info</code> <code class="inline">error</code> <code class="inline">warning</code> and <code class="inline">success</code>.
             </p>
 
             <h2>Faint Coloured Alerts</h2>
@@ -61,12 +62,13 @@
                         type="success"&gt;
                         Files were successfully uploaded
                     &lt;/x-bladewind.alert&gt;
-                </code>
-            </pre></p>
+                </code><a name="dark"></a>
+            </pre>
+            </p>
 
             <p>&nbsp;</p>
-            <a name="dark"><h2>Dark Coloured Alerts</h2></a>
-            <p>If you are into darker shades of alerts like myself, this attribute is for you. <code class="inline text-red-500">shade="dark"</code></p>
+            <h2>Dark Coloured Alerts</h2>
+            <p>If you are into darker colours, you can set the <code class="inline text-red-500">shade="dark"</code> attribute on the alert component to get darker colours.</p>
             <h3 class="pb-2 ">Info</h3>
             <x-bladewind::alert shade="dark">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind::alert>
             <p><pre class="language-markup line-numbers" data-line="2">
@@ -108,12 +110,12 @@
                     &lt;x-bladewind.alert type="success" shade="dark"&gt;
                         Files were successfully uploaded
                     &lt;/x-bladewind.alert&gt;
-                </code>
+                </code><a name="iconless"></a>
             </pre></p>
             
             <p>&nbsp;</p>
-            <a name="iconless"><h2>Without Icons</h2></a>
-            <p>By default the alert component shows a close icon and another icon matching the type of alert. Both icons can be turned off separately.</p>
+            <h2>Without Icons</h2>
+            <p>By default the alert component shows a close icon and another icon that matches the type of alert being displayed. Both icons can be turned off separately.</p>
             <h3 class="pb-2 ">Info</h3>
             <x-bladewind::alert shade="dark" show_icon="false" show_close_icon="false">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind::alert>
             <p><pre class="language-markup line-numbers" data-line="3,4">
@@ -153,11 +155,11 @@
                         Well, this is your first warning. 
                         Do that again and I'll wipe your hard disk
                     &lt;/x-bladewind.alert&gt;
-                </code>
+                </code><a name="attributes"></a>
             </pre></p>
 
             <p>&nbsp;</p>
-            <a name="attributes"><h2>Full List Of Attributes</h2></a>
+            <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Alert component.</p>
             <x-bladewind::table striped="true">
                 <x-slot name="header">
@@ -172,8 +174,8 @@
                 </tr>
                 <tr>
                     <td>shade</td>
-                    <td>info</td>
-                    <td><code class="inline">info</code> <code class="inline">error</code> <code class="inline">warning</code> <code class="inline">success</code></td>
+                    <td>faint</td>
+                    <td><code class="inline">faint</code> <code class="inline">dark</code></td>
                 </tr>
                 <tr>
                     <td>show_close_icon</td>
