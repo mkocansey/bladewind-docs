@@ -6,6 +6,11 @@
             <p>
                 Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
             </p>
+            <p>
+                <x-bladewind::alert show_close_icon="false" type="info">
+                    This component builds on the code by <a href="https://tailwindcomponents.com/u/mithicher" target="_blank">mithicher</a> available <a href="https://tailwindcomponents.com/component/datepicker-with-tailwindcss-and-alpinejs" target="_blank">here</a>
+                </x-bladewind::alert>
+            </p>
             
             <x-bladewind::datepicker  />
             <div class="py-2"></div>
@@ -22,14 +27,13 @@
             <x-bladewind::datepicker 
                 css="!w-40" 
                 placeholder="Invoice Date"  />
-            <div class="py-2"></div>
-            <a name="range"></a>
+            <div class="py-2"></div>            
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.datepicker 
                         css="!w-40" 
                         placeholder="Invoice Date"  /&gt;
-                </code>
+                </code><a name="range"></a>
             </pre>
             <div class="pb-10"></div>
             
@@ -48,7 +52,7 @@
             <div class="py-2"></div>
             <br />
             <p>
-                The default labels are <b>From</b> and <b>To</b>. These can be modified using the <code class="inline text-red-500">date_from_label</code> and <code class="inline text-red-500">date_to_label</code> attributes. These attributes only work if <code class="inline text-red-500">type="range</code>.
+                The default placeholder texts for the range datepicker are <b>From</b> and <b>To</b>. These can however, be modified using the <code class="inline text-red-500">date_from_label</code> and <code class="inline text-red-500">date_to_label</code> attributes. These attributes only work if <code class="inline text-red-500">type="range"</code>.
             </p>
             <x-bladewind::datepicker type="range" date_from_label="start date" date_to_label="end date"  />
             <div class="py-2"></div>
@@ -64,14 +68,14 @@
             <div class="pb-10"></div>
             
             <h3 class="pb-2 ">Show As a Required Field</h3>
-            <p>An asterisk is appended to the placeholder text.</p>
+            <p>An asterisk is appended to the placeholder text when <code class="inline text-red-500">required="true"</code>.</p>
             <x-bladewind::datepicker css="!w-44" required="true"  />
-            <a name="defaults"></a>
+            
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::datepicker required="true"  /&gt;
-                </code>
+                </code><a name="defaults"></a>
             </pre>
             <br />
             <div class="pb-10"></div>

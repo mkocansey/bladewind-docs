@@ -93,12 +93,12 @@
                 <tr>
                     <td>checked</td>
                     <td>false</td>
-                    <td>Determines if the checkbox is checked or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                    <td>Specifies whether the checkbox is checked or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
                     <td>disabled</td>
                     <td>false</td>
-                    <td>Determines if the checkbox is disabled or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                    <td>Specifies whether the checkbox is disabled or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
                     <td>css</td>

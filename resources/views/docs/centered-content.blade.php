@@ -4,7 +4,7 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                Centre content within a container. This container could be any block level element, say a <code class="inline">div</code>
+                Center content within a container. This container could be any block level element, say a <code class="inline">div</code>
             </p>
             
             <x-bladewind::centered-content size="tiny">

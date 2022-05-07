@@ -4,15 +4,13 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                This component makes it easy to display content in a card layout. What you get by default is a very basic card. The layout of its content 
-                is entirely up to you, considering different people have very different card needs. We have however, made provision for some very specific 
-                use cases. You can specify if the card should have
-                <div class="dot"></div> a header and/or<br>
-                <div class="dot"></div> a footer<br><br />
-                <a name="basic"></a>
-                These options we believe should take care of a lot of card needs. There’s also contact cards. This card is very specific for displaying contact details. 
+                This component makes it easy to display content in a card layout. What you get by default is a very basic card. 
+                Considering different people have very different card needs, the content of the card is absolutely up to the user. 
+                We have however, made provision for some very specific card use cases. You can specify if the card has a 
+                <a href="#heaedr-footer">header and a footer</a>.<a name="basic"></a>
+                There’s also <a href="#contact">contact cards</a> which are very specific for displaying contact details. These options should take care of a lot of card needs. 
             </p>
-            <br /><br />
+            <p>&nbsp;</p>
             <h2>Basic Card</h2>
             <p>
                 This just gives you the card frame with the option to define a heading text or card title. 
@@ -31,26 +29,25 @@
             <x-bladewind::card title="recent activity"></x-bladewind::card>
 
             <div class="h-2"></div>
-            <a name="examples"></a>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.card title="recent activity"&gt;
                         // the card content goes here
                     &lt;/x-bladewind.card/&gt;
-                </code>
+                </code><a name="examples"></a>
             </pre>
             
             <p>&nbsp</p>
             <h2>Practical Examples</h2>
             <p>
-                As explained earlier, we kept the card component super simple because we believe people have varying uses for cards and boxing users in to specific layouts will defeat the purpose of having a card component. Below are a few examples of how you can use Bladewind for varying content types.
+                As explained earlier, the card component has been kept super simple because people have varying uses for cards and forcing specific layouts on them defeats the purpose of having a card component. Below are a few examples of how you can use the BladewindUI Card component for varying content types.
             </p>
             <h3 class="pb-4">Invoice Table</h3>
             <p>
                 Below is an example of an invoice table sitting in a basic BladewindUI Card. The BladewindUI <a href="/component/table">Table component</a> was used in building the invoice.
             </p>
             <x-bladewind::card title="invoice details">
-                <x-bladewind::table striped="true">
+                <x-bladewind::table striped="true" divider="thin">
                     <x-slot name="header">
                         <th>Item</th>
                         <th width="10%" class="text-center">Quantity</th>
@@ -107,7 +104,7 @@
             <p>&nbsp;</p>
             <h3 class="pb-4">Huge Navigation Items</h3>
             <p>
-                Below is an example of a grid-based navigation that uses cards for its menu items. The hover effect is achieved by adding additional tailwind classes to the <code class="inline text-red-500">css</code> attribute of the card. 
+                Below is an example of a grid-based navigation that uses cards for its menu items. The hover effect is achieved by adding additional TailwindUI classes to the <code class="inline text-red-500">css</code> attribute of the card. 
                 The icons used in the design below or anywhere else in our docs are from <a href="https://heroicons.com/" target="_blank">Heroicons</a>.
             </p>
             <p>
@@ -271,15 +268,14 @@
                         &lt;/x-bladewind.card&gt;
 
                     &lt;/div&gt;
-                </code>
+                </code><a name="contact"></a>
             </pre>
-            
-           <a name="contact"></a>
-           <br />
+           
             <p>&nbsp;</p>
             <h2>Contact Card</h2>
-            <p>This card component is very specific to rendering contacts. 
-            It is not useful for anything else. It saves you from having to manually build a contact card like we did in the practical examples above. A default avatar is used if one is not provided.</p>
+            <p>
+                This card component is very specific to rendering contacts. It is not useful for anything else. It saves you from having to manually build a contact card like we did in the practical examples above. A default avatar is used if one is not provided.
+            </p>
            <div class="grid grid-cols-2 gap-4">
                 <x-bladewind::contact-card 
                     name="Michael K. Ocansey"
@@ -298,21 +294,97 @@
                     birthday="01-May-2000">
                 </x-bladewind::contact-card>
            </div>
-            <br><br>
-            <a name="attributes"></a>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.contact-card 
-                        name="Michael K. Ocansey"
-                        mobile="+233.123.456.789"
-                        image="/path/to/the/image/file" 
-                        position="Senior Copywriter"
-                        email="mike@bladewindui.com" 
-                        birthday="01-May-2000"&gt;&lt;/x-bladewind.contact-card&gt;
-                </code>
-            </pre>
-           
-            <br />
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.contact-card 
+                            name="Michael K. Ocansey"
+                            mobile="+233.123.456.789"
+                            image="/path/to/the/image/file" 
+                            position="Senior Copywriter"
+                            email="mike@bladewindui.com" 
+                            birthday="01-May-2000"&gt;&lt;/x-bladewind.contact-card&gt;
+                    </code><a name="header-footer"></a>
+                </pre>
+            </p>
+            
+            <p>&nbsp;</p>
+            <h2>Header and Footer</h2>
+            <p>
+                You can specify a header and footer for the card component. This is set up as a slot so there is really no restriction to what goes inside the header and footer. 
+                Headers and footers are independent so you don't need to explicitly specify both. When the <code class="inline">header</code> slot is set, the main body of the card looses all its padding so you will need to style the card body as you wish. Lets try and create an Instagram-like card. 
+                The image is from Unsplash and by <a href="https://unsplash.com/@thevisualchef007" target="_blank">Akindele Ibukun</a>
+            </p>
+           <div class="grid grid-cols-2 gap-4">
+                <x-bladewind::card>
+                    <x-slot name="header">
+                        <div class="flex px-4 pt-2 pb-3">
+                            <x-bladewind::avatar size="small" image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" />
+                            <div class="pl-2">
+                                <span class="block font-semibold text-black/70">mkocansey</span>
+                                <span class="block text-xs">Greater Accra, Accra, Ghana</span>
+                            </div>
+                        </div>
+                    </x-slot>
+                    <img alt="Photo by Akindele Ibukun from https://unsplash.com/@@thevisualchef007" src="https://images.unsplash.com/photo-1651277167651-9d31e995dd4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+                    <x-slot name="footer">
+                        <div class="flex justify-between p-4">
+                            <div class="flex space-x-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </x-slot>
+                </x-bladewind::card>
+           </div>
+            <p>
+                <pre class="language-markup line-numbers" data-line="3, 17">
+                    <code>
+                        &lt;x-bladewind::card&gt;
+
+                            &lt;x-slot name="header"&gt;
+                                &lt;div class="flex px-4 pt-2 pb-3"&gt;
+                                    &lt;x-bladewind::avatar 
+                                        size="small" 
+                                        image="/path/to/the/image/file" /&gt;
+                                    &lt;div class="pl-2"&gt;
+                                        &lt;span class="block..."&gt;mkocansey&lt;/span&gt;
+                                        &lt;span class="block..."&gt;Greater Accra, Accra&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/x-slot&gt;
+
+                            &lt;img src="/path/to/the/image/file" /&gt;
+
+                            &lt;x-slot name="footer"&gt;
+                                &lt;div class="flex justify-between p-4"&gt;
+                                    &lt;div class="flex space-x-4"&gt;
+                                        &lt;svg&gt; ... &lt;/svg&gt;
+                                        &lt;svg&gt; ... &lt;/svg&gt;
+                                        &lt;svg&gt; ... &lt;/svg&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;svg&gt; ... &lt;/svg&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/x-slot&gt;
+
+                        &lt;/x-bladewind::card&gt;
+                    </code><a name="attributes"></a>
+                </pre>
+            </p>
 
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
@@ -336,12 +408,13 @@
                 <tr>
                     <td>footer</td>
                     <td><em>blank</em></td>
-                    <td>Once a footer slot is defined, the content of the slot gets fixed to the base of the card as a footer on a gray background.</td>
+                    <td>Once a footer slot is defined, the content of the slot gets fixed to the base of the card as a footer.</td>
                 </tr>
                 <tr>
                     <td>reduce_padding</td>
                     <td>false</td>
-                    <td>This controls how much padding is in the card. Seeting this attribute to <code class="inline">true</code> will reduce the padding in the card. This is useful for building cards like the contact list under <a href="#examples">practical examples</a> above.<br /><code class="inline">true</code>  <code class="inline">false</code></td>
+                    <td>This controls how much padding is in the card. Setting this attribute to <code class="inline">true</code> will reduce the padding in the card. This is useful for building cards like the contact list under <a href="#examples">practical examples</a> above.
+                    This attribute only works if header and footer are not set. <br /><code class="inline">true</code>  <code class="inline">false</code></td>
                 </tr>
                 <tr>
                     <td>has_shadow</td>
