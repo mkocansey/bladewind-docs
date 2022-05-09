@@ -5,7 +5,7 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                We tried to kill two birds with one code with this component, by letting it act as both a form 
+                This component tried killing two birds with one code by acting as both a form 
                 <code class="inline text-red-500">&lt;select&gt;...&lt;/select&gt;</code> and well, a dropdown menu. 
                 <a name="basic"></a>
                 Arguably this component has the most attributes for a reason. A lot is happening but let's dive right in 
@@ -72,7 +72,7 @@
             </pre>
             </p>
             <p>
-                This structure is all you need at the least to render a BladewindUI dropdown. 
+                This structure is all you need to render a BladewindUI dropdown. 
                 The default array keys used to render the dropdown are <code class="inline text-red-500">label</code> and <code class="inline text-red-500">value</code>.
             </p>
             <p>
@@ -100,7 +100,7 @@
             </pre>
             <p>&nbsp</p>
             <p>
-                Of course we know it is not feasible to always rewrite your arrays to use the value and label keys expected by the component. There is a solution. 
+                Of course it is not feasible to always rewrite your arrays to use the <code class="inline">value</code> and <code class="inline">label</code> keys expected by the component. There is a solution. 
                 Assuming we changed our array to the structure below.
             </p>
             <p>
@@ -118,7 +118,7 @@
             </pre>
             </p>
             <p>
-                To render the dropdown now, you can can set the <code class="inline text-red-500">label_key</code> and <code class="inline text-red-500">value_key</code> attributes. 
+                We changed our array keys from <code class="inline">label</code> and <code class="inline">value</code> to <code class="inline">country</code> and <code class="inline">code</code>. To render the dropdown now, you just need to set the <code class="inline text-red-500">label_key</code> and <code class="inline text-red-500">value_key</code> attributes. 
                 Using our array above we will end up with <code class="inline text-red-500">label_key="country"</code> and <code class="inline text-red-500">value_key="code"</code>.
             </p>
             <br/>
@@ -135,13 +135,12 @@
             <p>
                 Just for some perspective, what we are trying to mimick here is the html implementation of a <code class="inline text-red-500">select</code> form element.
             </p>
-            <a name="flags"></a>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;select name="country"...&gt;
                         &lt;option value="gh"&gt;Ghana&lt;/option&gt;
                     &lt;/select&gt;
-                </code>
+                </code><a name="flags"></a>
             </pre>
             <p>&nbsp;</p>
             <h2>With Country Flags</h2>
@@ -171,11 +170,10 @@
             </p>
             <br />
             <x-bladewind::alert show_close_icon="false">
-                For flags to work you will need to include the following stylesheet. It is deliberately not compiled into the core BladewindUI css because not everyone uses flags. 
-                <code class="inline">&lt;link href="&#123;&#123; asset('bladewind/css/flags.css') }}" rel="stylesheet" /&gt;</code>
+                For flags to work you will need to include the following stylesheet. It is deliberately not compiled into the core BladewindUI css because not everyone needs flags. 
+                <code class="inline">&lt;link href="&#123;&#123; asset('bladewind/css/flags.css') }}" rel="stylesheet" /&gt;</code><a name="images"></a>
             </x-bladewind::alert>
             
-            <a name="images"></a>
             <p>&nbsp;</p><br />
             <h2>With Images</h2>
             <div class="h-2"></div>
@@ -239,16 +237,15 @@
                     value_key="id"
                     image_key="picture" />
             </p>
+            <a name="searchable"></a>
             <br />
-            
-            <a name="searchable"></a><br />
             <p>&nbsp;</p>
             <h2>Searchable Dropdown</h2>
             <div class="h-2"></div>
             <p>
                 Assuming we had a very long list of items in our dropdown, say all countries of the world, or list of employees, it will be tedious to scroll down the list to find what you are looking for.
                 The BladewindUI dropdown has an attribute that makes the component searchable. 
-                <code class="inline text-red-500">searchable="true"</code>. By default this is turned off <code class="inline text-red-500">searchable="false"</code>.
+                <code class="inline text-red-500">searchable="true"</code>. By default this is turned off.
             </p>
             <p>
                 Let's now increase our list of countries from five to ten. The new array will be
@@ -310,29 +307,34 @@
             <a name="stacked"><h2>Onselect Action</h2></a>
             <p>
             Every BladewindUI dropdown component you display creates as part of the dropdown html the following hidden form field 
-            <code class="inline text-red-500"><input type="hidden" name="the-input-name-you-provide" /></code>. When you select an item from the dropdown, the hidden input field is updated with the value of what you selected. The value will be whatever you specified as your value_key. When you submit a form that has any BladewindUI dropdown, you can access the value of the dropdown by specifying the name you used on the dropdown. Consider the example below. 
+            <code class="inline text-red-500">&lt;input type="hidden" name="the-input-name-you-provide" /&gt;</code>. When you select an item from the dropdown, the hidden input field is updated with the value of what you selected. The value will be whatever you specified as your <code class="inline">value_key</code>. When you submit a form that has any BladewindUI dropdown, you can access the value of the dropdown by specifying the name you used on the dropdown. Consider the example below. 
             </p>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;form ...&gt;
-                    ...
-                    &lt;x-bladewind.dropdown name="country" ... /&gt;
-                    &lt;/form&gt;
-                </code>
-            </pre>
             <p>
-            After submitting the form the value of the country dropdown can be accessed using any of the following regular ways Laravel allows you to access data from the request class. </p>
-            <pre class="language-js line-numbers">
-                <code>
-                    $request->get('country');
-                    $request->input('country');
-                    $request->country;
-                </code>
-            </pre>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;form ...&gt;
+                        ...
+                        &lt;x-bladewind.dropdown name="country" ... /&gt;
+                        &lt;/form&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+            After submitting the form the value of the country dropdown can be accessed using any of the following regular ways Laravel allows you to access data from the request class. 
+            </p>
+            <p>
+                <pre class="language-js line-numbers">
+                    <code>
+                        $request->get('country');
+                        $request->input('country');
+                        $request->country;
+                    </code>
+                </pre>
+            </p>
             <br />
             <p><h3>Redirecting to URLs</h3></p>
             <p>As stated earlier on in this document, the BladewindUI dropdown component is killing two birds with one code. You may not always need the dropdown for collecting user input. You could use the dropdown as a menu or navigation. In this case you will want the user to be sent to a url when a dropdown item is selected. To achieve this you will need to specify the <code class="inline text-red-500">url_key</code> attribute. This key will need to exist in your data array. When a dropdown item is selected, the url specified for that item will be called. By default urls that point within your app will open in the same browser window. External links will open in a new window. </p>
-            <p>Our <code class="inline text-red-500">$countries</code> array has been updated with urls to the Wikipedia pages for each country. This has automatically turned our dropdown component into a menu and not form <code class="inline">&lt;select&gt;</code>. </p>
+            <p>Our <code class="inline text-red-500">$countries</code> array has been updated with urls to the Wikipedia pages for each country. We then set the <code class="inline text-red-500">url_key</code> attribute on the dropdown. This has automatically turned our dropdown component into a menu and not form <code class="inline">&lt;select&gt;</code>. </p>
             <p>
                 <pre class="language-js line-numbers" data-line="6,11,16,21,26,31,36,41,46,51">
                     <code>
@@ -421,7 +423,7 @@
             </pre>
             <p><x-bladewind::dropdown name="country6" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" /></p>
             <p>
-                If you select a country, say Ghana, from the dropdown above you will notice it appends <code class="inline text-red-500">value=gh</code> to the URL. 
+                If you select a country, say Ghana, from the dropdown above you will notice it appends <code class="inline text-red-500">value=gh</code> in the URL. 
                 By default we use the key <code class="inline text-red-500">value</code>. To change this to your preferred key, set the attribute <code class="inline text-red-500">append_value_to_url_as</code>.
             </p>
             <pre class="language-markup line-numbers" data-line="4">
@@ -432,9 +434,11 @@
                         append_value_to_url_as="code" /&gt;
                 </code>
             </pre>
-<a name="attributes"></a>
             <p><x-bladewind::dropdown name="country7" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" append_value_to_url_as="code" /></p>
-
+<a name="attributes"></a>
+            <p>
+                Selecting any country from the dropdown above, say Ghana, will now pass <code class="inline text-red-500">code=gh</code> in the URL. 
+            </p>
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Dropdown component.</p>
@@ -457,7 +461,7 @@
                 <tr>
                     <td>onselect</td>
                     <td><em>blank</em></td>
-                    <td>Custom function to call when an item in the dropdown is selected. Thiis should just be the name of the custom function, without parenthesis. For example <code class="inline text-red-500">assignToProject</code>. 
+                    <td>Custom function to call when an item in the dropdown is selected. <b>This should just be the name of the custom function, without parenthesis</b>. For example <code class="inline text-red-500">assignToProject</code>. 
                     The component appends the selected <em>value</em> and <em>label</em> to the function call as <code class="inline text-red-500">assignToProject(value, label)</code></td>
                 </tr>
                 <tr>
@@ -499,7 +503,7 @@
                     <td>append_value_to_url_as</td>
                     <td>value</td>
                     <td>When <code class="inline text-red-500">append_value_to_url="true"</code>, selected values are appended to the URL by default as <code class="inline text-red-500">value=value</code>. 
-                    To append selected values to the URL as a different variable name, set <code class="inline text-red-500">append_value_to_url_as</code> to any non-spaced string.</td>
+                    To append selected values to the URL as a different variable name, set <code class="inline text-red-500">append_value_to_url_as</code> to any string with no spaces.</td>
                 </tr>
                 <tr>
                     <td>data_serialize_as</td>

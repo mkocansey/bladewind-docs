@@ -128,12 +128,12 @@
                 <tr>
                     <td>type</td>
                     <td>single</td>
-                    <td><code class="inline">single</code><code class="inline">range</code></td>
+                    <td><code class="inline">single</code> <code class="inline">range</code></td>
                 </tr>
                 <tr>
                     <td>default_date</td>
                     <td><em>blank</em></td>
-                    <td>In case you are editing a form, the value passed will be set on the value attribute of the checkbox. 
+                    <td>In case you are editing a form, the value passed will be set on the value attribute of the datepicker input. 
                     <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
                 </tr>
                 <tr>

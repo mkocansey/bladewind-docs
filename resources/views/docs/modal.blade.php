@@ -11,7 +11,7 @@
 
             <h2>Default Modal</h2>
             <p>
-                 Modals are mostly displayed on trigger of an action, say when a button is clicked. 
+                 Modals are mostly displayed when an action is triggered, say when a button is clicked. 
                 All BladewindUI modals are invoked via a javascript helper function bundled with the component. 
                 <code class="inline text-red-500">showModal('name-of-modal');</code>. Like with all BladewindUI components, 
                 the syntax for cooking up a modal is very simple.
@@ -59,9 +59,10 @@
                     IMPORTANT: BladewindUI Modals are created, targetted and invoked using the <code class="inline text-red-500">name</code> attribute. 
                     You can have several modals on the same page but it is very important to provide unique names for each modal.
                 </x-bladewind::alert>
-            </p><a name="types"></a>
+            </p>
             <p>
-                Clicking on the backdrop of the modal or on the cancel button will by default dismiss the modal. This behaviour can  be changed. See the <a href="#cant-dismiss">Non-dismissed modal</a> section below.
+                Clicking on the backdrop of the modal or on the cancel button will by default dismiss the modal. You probably guessed it. The <code class="inline text-red-500">hideModal('name-of-modal');</code> helper function is called to dismiss modals. 
+                It is possible to prevent the backdrop or the cancel button from closing the modal. See the <a href="#cant-dismiss">Non-dismissed modal</a> section below.<a name="types"></a>
             </p>
             <p>&nbsp;</p>
             <p>
@@ -333,7 +334,7 @@
             <a name="dark"><h2>Action Buttons</h2></a>
             <p>The modal component by default shows a <code class="inline text-red-500">Cancel</code> and <code class="inline text-red-500">Okay</code> button.
             Both buttons by default close the modal when clicked. It is possible to show either of the buttons or even none of the buttons.</p>
-            <p>If you don't want your buttons to save <b>Cancel</b> and <b>Okay</b>, set the <code class="inline text-red-500">cancel_button_label</code> and 
+            <p>If you don't want your buttons to say <b>Cancel</b> and <b>Okay</b>, set the <code class="inline text-red-500">cancel_button_label</code> and 
             <code class="inline text-red-500">ok_button_label</code> attributes to whatever text you want the buttons to display.</p>
             <p>
                 To hide the <code class="inline text-red-500">cancel</code> button, simply set <code class="inline text-red-500">cancel_button_label=""</code>. When the button label is blank, the button won't be displayed.
@@ -463,9 +464,12 @@
             
             <p>&nbsp;</p>
             <h2>Non-Dismissible Modal</h2>
-            <p>By default the modal component can be closed using the backdrop of any of the action buttons. There are cases when you really don't want the user to dismiss the modal until a choice has been made or an action has been performed.</p>
-            <p>Getting this result is simple. Just set <code class="inline text-red-500">backdrop_can_close="false"</code>. If you are using the modals with the action buttons you will also need to set the actions of each button. See "Action Button Actions" above.</p>
-            <p>In this example, we assume your app is very data sensitive and you want users to be able to lock their screens when stepping away from their computers. Refresh the page to get out of locked mode.</p>
+            <p>By default the modal component can be closed using the backdrop or any of the action buttons. There are cases when you really don't want the user to dismiss the modal until a choice has been made or an action has been performed.</p>
+            <p>Getting this result is simple. Just set <code class="inline text-red-500">backdrop_can_close="false"</code>. If you are using the modals with the action buttons you will also need to set the actions of each button. See <a href="#actions">Action Buttons</a> above.</p>
+            <p>In this example, we assume your app is very data sensitive and you want users to be able to lock their screens when stepping away from their computers.</p>
+            <p>
+                <x-bladewind::alert type="warning" show_close_icon="false" show_icon="false">Refresh the page to get out of locked mode</x-bladewind::alert>
+            </p>
             <p>
                 <x-bladewind::button onclick="showModal('lock-screen')">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -544,12 +548,12 @@
                 <tr>
                     <td>ok_button_label</td>
                     <td>okay</td>
-                    <td>Determines the label to be displayed on the primary action button.</td>
+                    <td>Specify the label to be displayed on the primary action button.</td>
                 </tr>
                 <tr>
                     <td>cancel_button_label</td>
                     <td>cancel</td>
-                    <td>Determines the label to be displayed on the secondary action button.</td>
+                    <td>Specify the label to be displayed on the secondary action button.</td>
                 </tr>
                 <tr>
                     <td>ok_button_action</td>
@@ -564,22 +568,22 @@
                 <tr>
                     <td>close_after_action</td>
                     <td>true</td>
-                    <td>Determines if the modal stays open after any of the action buttons are clicked. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                    <td>Specifies whether the modal stays open after any of the action buttons are clicked. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
                     <td>backdrop_can_close</td>
                     <td>true</td>
-                    <td>Determines if clicking on the modal backdrop should close the modal. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                    <td>Specifies whether clicking on the modal backdrop should close the modal. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
                     <td>show_action_buttons</td>
                     <td>true</td>
-                    <td>Determines if the action buttons should be displayed. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                    <td>Specifies whether the action buttons should be displayed. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
                     <td>center_action_buttons</td>
                     <td>true</td>
-                    <td>Determines if the action buttons should be centered in the action bar. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+                    <td>Specifies whether the action buttons should be centered in the action bar. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
                     <td>size</td>

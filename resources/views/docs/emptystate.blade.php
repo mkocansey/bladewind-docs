@@ -5,7 +5,7 @@
         <div class="grow w-3/4">
             <p>
                 Display this when there is nothing to display. This prevents your users from seeing boring blank pages with one liners like "no users to display". 
-                Similar to all the other BladewindUI compnents, we have kept the empty state component very minimal, bearing in mind that different users have different empty state preferences. 
+                Similar to all the other BladewindUI components, the empty state component has been kept very minimal, bearing in mind that different users have different empty state preferences. 
                 In fact, each application will have its own specific empty state requirements.
             </p>
             <p>&nbsp;</p>
@@ -130,7 +130,7 @@
                 <tr>
                     <td>show_image</td>
                     <td>true</td>
-                    <td>Determines if the image should be displayed or not. Set this to <code>false</code> if you intend to control the entire content of the empty state component. <code class="inline">true</code><code class="inline">false</code></td>
+                    <td>Specifies whether the image should be displayed or not. Set this to <code>false</code> if you intend to control the entire content of the empty state component. <code class="inline">true</code><code class="inline">false</code></td>
                 </tr>
                 <tr>
                     <td>button_label</td>
