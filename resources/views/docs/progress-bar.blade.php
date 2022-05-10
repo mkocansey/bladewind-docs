@@ -3,11 +3,8 @@
     <h1 class="page-title">Progress Bar</h1>
     <div class="flex">
         <div class="grow w-3/4">
-        
             <p>
-                We realized after building this component that it actually can serve two purposes. Let’s first talk about the primary use case. Displaying progress. 
-            </p>
-            <p>
+                 Display progress. 
                 The progress bar expects a percentage. The bar will then fill up to the percentage specified. There is a subtle animation when the bar is filling up to its desired percentage. The default progress bar color is blue.
             </p>
             
@@ -327,6 +324,13 @@
                     <td>percentage_suffix</td>
                     <td><em>blank</em></td>
                     <td>Specifies what text should be displayed after the percentage label.</td>
+                </tr>
+                <tr>
+                    <td>percentage_label_opacity</td>
+                    <td>100</td>
+                    <td>Specifies the opacity of the percentage label. In case you want the percentage label to be displayed a shade less than the prefix or suffix. Available values are what's been defined in the <a href="https://tailwindcss.com/docs/opacity" target="_blank">TailwindCSS docs for opacity</a> without the 'opacity-' prefix.<br/>
+                    <code class="inline">0</code> <code class="inline">5</code> <code class="inline">10</code> <code class="inline">20</code> <code class="inline">25</code> <code class="inline">30</code> <code class="inline">40</code> <code class="inline">50</code> <code class="inline">60</code> <code class="inline">70</code> <code class="inline">75</code> <code class="inline">80</code> <code class="inline">90</code> <code class="inline">95</code> <code class="inline">100</code>
+                    </td>
                 </tr>
                 <tr>
                     <td>css</td>

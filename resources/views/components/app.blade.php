@@ -50,6 +50,7 @@
                     <div class="flex items-center component-dropdown"><div class="dot"></div><a href="/component/dropdown">Dropdown</a></div>
                     <div class="flex items-center component-empty-state"><div class="dot"></div><a href="/component/empty-state">Empty State</a></div>
                     <div class="flex items-center component-filepicker"><div class="dot"></div><a href="/component/filepicker">Filepicker</a></div>
+                    <div class="flex items-center component-hlg"><div class="dot"></div><a href="/component/horizontal-line-graph">Horizontal Line Graph</a></div>
                     <div class="flex items-center component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
                     <div class="flex items-center component-modal"><div class="dot"></div><a href="/component/modal">Modal</a></div>
                     <div class="flex items-center component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>

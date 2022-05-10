@@ -1,8 +1,6 @@
 <?php
-
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/',                                 [ PagesController::class, 'index' ]);
 Route::get('customization',                     [ PagesController::class, 'customization' ]);
@@ -16,6 +14,7 @@ Route::get('component/datepicker',              [ PagesController::class, 'datep
 Route::get('component/dropdown',                [ PagesController::class, 'dropdown' ]);
 Route::get('component/empty-state',             [ PagesController::class, 'emptystate' ]);
 Route::get('component/filepicker',              [ PagesController::class, 'filepicker' ]);
+Route::get('component/horizontal-line-graph',   [ PagesController::class, 'line_graph' ]);
 Route::get('component/list-view',               [ PagesController::class, 'list' ]);
 Route::get('component/modal',                   [ PagesController::class, 'modal' ]);
 Route::get('component/notification',            [ PagesController::class, 'notification' ]);

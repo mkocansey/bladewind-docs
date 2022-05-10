@@ -18,6 +18,7 @@ class PagesController extends Controller
     public function dropdown()              { return view('docs.dropdown'); }
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
+    public function line_graph()            { return view('docs.horizontal-line-graph'); }
     public function list()                  { return view('docs.list'); }
     public function radiobutton()           { return view('docs.radiobutton'); }
     public function rating()                { return view('docs.rating'); }

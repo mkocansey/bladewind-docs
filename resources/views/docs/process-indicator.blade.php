@@ -4,7 +4,7 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                Display a spinning icon
+                Display that a process is in progress.
             </p>
             
             <x-bladewind::spinner  />
