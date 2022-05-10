@@ -16,7 +16,7 @@ Route::get('component/datepicker',              [ PagesController::class, 'datep
 Route::get('component/dropdown',                [ PagesController::class, 'dropdown' ]);
 Route::get('component/empty-state',             [ PagesController::class, 'emptystate' ]);
 Route::get('component/filepicker',              [ PagesController::class, 'filepicker' ]);
-Route::get('component/list',                    [ PagesController::class, 'list' ]);
+Route::get('component/list-view',               [ PagesController::class, 'list' ]);
 Route::get('component/modal',                   [ PagesController::class, 'modal' ]);
 Route::get('component/notification',            [ PagesController::class, 'notification' ]);
 Route::get('component/process-indicator',       [ PagesController::class, 'process_indicator' ]);
