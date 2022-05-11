@@ -67,7 +67,7 @@
                     <div class="flex items-center component-textbox"><div class="dot"></div><a href="/component/textbox">Textbox</a></div>
                     <div class="flex items-center component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
                     <div class="flex items-center component-tooltip"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>
-                    <div class="flex items-center component-toggle"><div class="dot"></div><a href="/component/toggle" class="opacity-40">Toggle</a></div>
+                    <div class="flex items-center component-toggle"><div class="dot"></div><a href="/component/toggle">Toggle</a></div>
                 </div>
 
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Layouts</h5></li>
