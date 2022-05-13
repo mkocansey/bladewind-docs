@@ -54,7 +54,7 @@
                     <div class="flex items-center component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
                     <div class="flex items-center component-modal"><div class="dot"></div><a href="/component/modal">Modal</a></div>
                     <div class="flex items-center component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>
-                    <div class="flex items-center component-pagination"><div class="dot"></div><a href="/component/pagination" class="opacity-40">Pagination</a></div>
+                    <div class="flex items-center component-pagination hidden"><div class="dot"></div><a href="/component/pagination" class="opacity-40">Pagination</a></div>
                     <div class="flex items-center component-process-indicator"><div class="dot"></div><a href="/component/process-indicator">Process Indicator</a></div>
                     <div class="flex items-center component-progress-bar"><div class="dot"></div><a href="/component/progress-bar">Progress Bar</a></div>
                     <div class="flex items-center component-radio-button"><div class="dot"></div><a href="/component/radio-button">Radio Button</a></div>
@@ -66,7 +66,7 @@
                     <div class="flex items-center component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
                     <div class="flex items-center component-textbox"><div class="dot"></div><a href="/component/textbox">Textbox</a></div>
                     <div class="flex items-center component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
-                    <div class="flex items-center component-tooltip"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>
+                    <div class="flex items-center component-tooltip hidden"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>
                     <div class="flex items-center component-toggle"><div class="dot"></div><a href="/component/toggle">Toggle</a></div>
                 </div>
 

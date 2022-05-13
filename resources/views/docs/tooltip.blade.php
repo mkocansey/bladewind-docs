@@ -4,10 +4,14 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                Display a spinning icon
+                Display a tooltip. This is technically not a component.
             </p>
-            
-            <x-bladewind::spinner  />
+                <a href="" class="admins" data-tooltip="admins" data-inverted="" data-position="left center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                </a>
+
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
