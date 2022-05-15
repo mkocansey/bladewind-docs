@@ -7,11 +7,6 @@ require 'recipe/common.php';
 
 set('repository', 'git@github.com:mkocansey/bladewind-docs.git');
 set('keep_releases', 5);
-/*set('slack_webhook', 'https://hooks.slack.com/services/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');
-set('slack_success_text', 'Deployment to *{{target}}* by *_{{user}}_* was successful');
-set('slack_success_color', 'good');
-set('slack_failure_text', 'Deployment to *{{target}}* by *_{{user}}_* failed :scream:');
-set('slack_failure_color', 'danger');*/
 set('composer_options', 'update --no-scripts');
 add('shared_files', []);
 add('shared_dirs', []);
@@ -51,7 +46,7 @@ task('build', [
 desc('run composer update');
 task('deploy:run_composer', function(){
     cd(get('deploy_path').'/current');
-    run('rm -f composer.lock && composer update --ignore-platform-reqs --no-scripts');
+    run('/usr/local/bin/composer update --ignore-platform-reqs --no-scripts'); //rm -f composer.lock && 
 });
 
 after('deploy:failed', 'deploy:unlock');

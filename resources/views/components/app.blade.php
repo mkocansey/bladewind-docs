@@ -67,9 +67,9 @@
 
                 <h5 class="mb-3 my-10 font-semibold text-slate-900 dark:text-slate-600/90">Extras</h5></li>
                 <div class="space-y-2">
-                    <div class="flex items-center extra-layouts"><div class="dot"></div><a href="/extra/app-layout">App Layouts</a></div>
+                    <div class="flex items-center extra-layouts hidden"><div class="dot"></div><a href="/extra/app-layouts">App Layouts</a></div>
                     <div class="flex items-center extra-errors"><div class="dot"></div><a href="/extra/error-pages">Error Pages</a></div>
-                    <div class="flex items-center extra-spa"><div class="dot"></div><a href="/extra/spa">Single Page Technique</a></div>
+                    <div class="flex items-center extra-spa hidden"><div class="dot"></div><a href="/extra/spa">Single Page Technique</a></div>
                     <p>&nbsp;</p>
                     {{-- <div class="flex items-center"><div class="dot"></div><a href="/layout/slideout-panel">Slideout Panel</a></div> --}}
                 </div>
