@@ -36,4 +36,7 @@ class PagesController extends Controller
     public function textarea()              { return view('docs.textarea'); }
     public function toggle()                { return view('docs.toggle'); }
     public function tooltip()               { return view('docs.tooltip'); }
+    public function app_layout()            { return view('docs.app-layouts'); }
+    public function spa()                   { return view('docs.spa'); }
+    public function errors()                { return view('docs.error-pages'); }
 }

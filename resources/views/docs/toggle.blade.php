@@ -8,7 +8,7 @@
             </p>
             <p><x-bladewind::toggle /></p>
             <p>
-                <pre class="language-markup line-numbers">
+                <pre class="language-markup">
                     <code>
                         &lt;x-bladewind.toggle  /&gt;
                     </code>
@@ -16,13 +16,13 @@
             </p>
             <br />
             <p>
-                You can display the toggle component with a label that can be positioned either to the left or right of the component. 
+                You can display the toggle component with a label that can be positioned either on the left or right of the component. 
                 The default position is left but can easily be flipped to the right by setting the attribute <code class="inline text-red-500">label_position="right"</code>. 
                 Clicking on the label toggles the component.
             </p>
             <p><x-bladewind::toggle label="Send me quarterly newsletters" /></p>
             <p>
-                <pre class="language-markup line-numbers">
+                <pre class="language-markup">
                     <code>
                         &lt;x-bladewind.toggle label="Send me quarterly newsletters"  /&gt;
                     </code>

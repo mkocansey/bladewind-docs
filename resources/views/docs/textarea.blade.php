@@ -4,59 +4,56 @@
     <div class="flex">
         <div class="grow w-3/4">
             <p>
-                Display a spinning icon
+                Displays a textarea. By default the textarea is displayed with three rows. 
+                You can increase the number of rows by setting the <code class="inline text-red-500">rows</code> attribute. 
+                Example, <code class="inline text-red-500">rows="5"</code>.
             </p>
-            
-            <x-bladewind::spinner  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            
-            <x-bladewind::spinner size="medium"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="medium"  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            <x-bladewind::spinner size="big"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="big"  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            <x-bladewind::spinner size="xl"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="xl"  /&gt;
-                </code>
-            </pre>
-            <div class="py-2"></div>
-            <br />
-            <x-bladewind::spinner size="omg"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.spinner size="omg"  /&gt;
-                </code>
-            </pre>
-           <a name="attributes"></a>
-           <br />
+            <p><x-bladewind::input name="comment" /></p>
+            <p>
+                <pre class="language-markup">
+                    <code>
+                        &lt;x-bladewind.textarea  /&gt;
+                    </code>
+                </pre>
+            </p><br />
+            <h3>Add Placeholder Text</h3>
+            <p><x-bladewind::textarea placeholder="Comment" /></p>
+            <p>
+                <pre class="language-markup">
+                    <code>
+                        &lt;x-bladewind.textarea placeholder="Comment"  /&gt;
+                    </code>
+                </pre>
+            </p>
+            <br /><h3>With Labels</h3><br />
+            <p>
+                You can display the BladewindUI textarea with labels. Labels present themselves as placeholders but jump to the top border of the textarea when that field has focus. 
+                This is a nice way to build compact looking forms without having form labels in the way. If you prefer to create and style your own form labels, simply ignore the <code class="inline text-red-500">label</code> attribute and use the <code class="inline text-red-500">placeholder</code> attribute instead.
+            </p>
+            <p><x-bladewind::textarea label="Comment" /></p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.textarea label="Comment"  /&gt;
+                    </code>
+                </pre>
+            </p>
+            <br /><h3>Required Fields</h3><br />
+            <p>
+                This either adds a red asterisk sign to the placeholder text or a red star to the label of the textarea field.
+            </p>
+            <p><x-bladewind::textarea label="Comment" required="true" /></p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.textarea required="true" label="Comment"  /&gt;
+                    </code><a name="attributes"></a>
+                </pre>
+            </p>
            
-            <p>&nbsp;</p>
-            <h2>Full List Of Attributes</h2>
-            <p>The table below shows a comprehensive list of all the attributes available for the Spinner component.</p>
+           <p>&nbsp;</p>
+            <p><h2>Full List Of Attributes</h2></p>
+            <p>The table below shows a comprehensive list of all the attributes available for the Input component.</p>
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -64,29 +61,74 @@
                     <th>Available Values</th>
                 </x-slot>
                 <tr>
-                    <td>size</td>
-                    <td>small</td>
-                    <td><code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
+                    <td>name</td>
+                    <td>input-uniqid()</td>
+                    <td>Unique name to identify the input element by. Useful for retrieving value from the input when it is submitted in a form. The component by default uses a random name prefixed with 'input-'.</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>text</td>
+                    <td>
+                        Accepts list of valid HTML input element types. <br />
+                        <code class="inline">text</code> <code class="inline">email</code> <code class="inline">password</code> <code class="inline">search</code> <code class="inline">tel</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td><em>blank</em></td>
+                    <td>Label that describes the input element. Example: Full name</td>
+                </tr>
+                <tr>
+                    <td>numeric</td>
+                    <td>false</td>
+                    <td>Sepcifies if the input element should accept only numeric characters. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
+                    <td>required</td>
+                    <td>false</td>
+                    <td>Specifies if the input element is required or not. When required, a red asterisk is displayed next to the placeholder or label.<br /> <code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
+                    <td>add_clearing</td>
+                    <td>true</td>
+                    <td>Specifies if an 8px margin should be added to the bottom of the element. This ensures your form fields are evenly spaced by default. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td><em>blank</em></td>
+                    <td>Placeholder text to display in the input element. </td>
+                </tr>
+                <tr>
+                    <td>selected_value</td>
+                    <td><em>blank</em></td>
+                    <td>Default value to display in the input element. Useful when in edit mode.</td>
                 </tr>
                 <tr>
                     <td>css</td>
-                    <td>bw-spinner</td>
+                    <td><em>blank</em></td>
                     <td>Any additional CSS you wish to add.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
-            <h3 class="pb-2 ">Spinner with all attributes defined</h3>
-            <pre class="language-markup line-numbers">
+            <h3 class="pb-2 ">Input with all attributes defined</h3>
+            <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind.spinner 
-                        size="medium"
-                        css="m-0" /&gt;
+                    &lt;x-bladewind.input 
+                        name="pin"
+                        label="Enter PIN" 
+                        placeholder=""
+                        type="password"
+                        numeric="false" 
+                        add_clearing="false" 
+                        required="true"
+                        css="mb-5" 
+                        selected_value="" /&gt;
                 </code>
             </pre>
 
             <p>&nbsp;</p>
             <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources/views/components/bladewind/spinner.blade.php</code>
+                The source file for this component is available in <code class="inline">resources/views/components/bladewind/input.blade.php</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 
