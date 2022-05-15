@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "285f84eafa7d06afdc2cd94083f8a2b5",
+    "content-hash": "14f1c2a6066e176c8d0f8e5679dd2258",
     "packages": [
         {
             "name": "brick/math",
@@ -1643,14 +1643,20 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "dev-development",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkocansey/bladewind.git",
+                "reference": "9949a04c55d62a138768adae11961013946558b5"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/mkocansey/Projects/kursor/bladewind",
-                "reference": "02fff587037e89e5ba2111b4c8e6e1be2e2fe3b9"
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/9949a04c55d62a138768adae11961013946558b5",
+                "reference": "9949a04c55d62a138768adae11961013946558b5",
+                "shasum": ""
             },
             "require": {
-                "php": "^7.3|^8.1"
+                "php": ">=7.3"
             },
             "type": "library",
             "extra": {
@@ -1665,11 +1671,7 @@
                     "Mkocansey\\Bladewind\\": "src/"
                 }
             },
-            "scripts": {
-                "post-update-cmd": [
-                    "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=assets --force"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1679,16 +1681,18 @@
                     "email": "kabutey@gmail.com"
                 }
             ],
-            "description": "UI Components using TailwindCSS , Laravel Blade Templates and vanilla Javascript",
+            "description": "Laravel UI Components using TailwindCSS, Blade Templates and vanilla Javascript",
             "keywords": [
+                "Ui Components",
                 "blade components",
                 "laravel",
-                "tailwindcss",
-                "ui components"
+                "tailwindcss"
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/mkocansey/bladewind/issues",
+                "source": "https://github.com/mkocansey/bladewind/tree/v0.1.0"
+            },
+            "time": "2022-05-15T22:45:35+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7826,9 +7830,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "mkocansey/bladewind": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
