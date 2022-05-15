@@ -32,5 +32,6 @@ Route::get('component/tooltip',                 [ PagesController::class, 'toolt
 Route::get('component/textarea',                [ PagesController::class, 'textarea' ]);
 Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
 Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);
-Route::get('layout/error-pages',                [ PagesController::class, 'error-pages' ]);
-Route::get('layout/app',                        [ PagesController::class, 'app_layout' ]);
+Route::get('extra/error-pages',                 [ PagesController::class, 'errors' ]);
+Route::get('extra/app-layouts',                 [ PagesController::class, 'app_layouts' ]);
+Route::get('extra/spa',                         [ PagesController::class, 'spa' ]);
