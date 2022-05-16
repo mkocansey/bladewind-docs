@@ -64,7 +64,7 @@ You are now ready to start using any of the BladewindUI components in your appli
 - **[Avatar](https://bladewindui.com/component/avatar)**
 - **[Button](https://bladewindui.com/component/button)**
 - **[Card](https://bladewindui.com/component/card)**
-- **[Centered Element](https://bladewindui.com/component/centered-element)**
+- **[Centered Content](https://bladewindui.com/component/centered-content)**
 - **[Checkbox](https://bladewindui.com/component/checkbox)**
 - **[Datepicker](https://bladewindui.com/component/datepicker)**
 - **[Dropdown](https://bladewindui.com/component/dropdown)**
