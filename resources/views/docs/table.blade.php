@@ -1,8 +1,8 @@
 <x-app>
     <x-slot name="title">Table Component</x-slot>
     <h1 class="page-title">Table</h1>
-    <div class="flex">
-        <div class="grow w-3/4">
+    <div class="flex flex-col-reverse sm:flex-row">
+        <div class="grow sm:w-3/4">
         <p>Display tabular data beautifully in a simple way. </p>
         <p>This component like all other BladewindUI components is simple to use with a few options to customise the component to suit your app needs. A BladewindUI table consists of two parts. The table header and the table body. </p>
         <p>
@@ -410,8 +410,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 grow-0">
-            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+        <div class="sm:w-1/4 grow-0 mb-8">
+            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#nogaps">No Gaps</a></div>

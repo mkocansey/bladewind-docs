@@ -1,8 +1,8 @@
 <x-app>
     <x-slot name="title">Avatar Component</x-slot>
     <h1 class="page-title">Avatar</h1>
-    <div class="flex">
-        <div class="grow w-3/4">
+    <div class="flex flex-col-reverse sm:flex-row">
+        <div class="grow sm:w-3/4">
             <p>
                 The avatar component allows you to diplay a rounded picture at an avatar size. This size is of course customizable. 
                 This component can be useful for displaying pictures of logged in users, a contacts list, employees directory etc.
@@ -151,8 +151,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 md:grow-0 hidden md:block">
-            <nav class="md:pl-8 md:fixed md:h-screen overflow-y-scroll -mt-6">
+        <div class="sm:w-1/4 grow-0 mb-8">
+            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#single">Single avatar</a></div>

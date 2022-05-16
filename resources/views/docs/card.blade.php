@@ -1,8 +1,8 @@
 <x-app>
     <x-slot name="title">Card Component</x-slot>
     <h1 class="page-title">Card</h1>
-    <div class="flex">
-        <div class="grow w-3/4">
+    <div class="flex flex-col-reverse sm:flex-row">
+        <div class="grow sm:w-3/4">
             <p>
                 This component makes it easy to display content in a card layout. What you get by default is a very basic card. 
                 Considering different people have very different card needs, the content of the card is absolutely up to the user. 
@@ -532,8 +532,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 grow-0">
-            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+        <div class="sm:w-1/4 grow-0 mb-8">
+            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic card</a></div>

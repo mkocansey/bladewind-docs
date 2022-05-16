@@ -1,8 +1,8 @@
 <x-app>
     <x-slot name="title">Notification Component</x-slot>
     <h1 class="page-title">Notification</h1>
-    <div class="flex">
-        <div class="grow w-3/4">
+    <div class="flex flex-col-reverse sm:flex-row">
+        <div class="grow sm:w-3/4">
             <p>
                 Unlike the <a href="/component/alert">Alert</a> component, the notification component is purely triggered via javascript. This is an intrusive way of displaying messages to your end users.  
                 The notification component comes with a helper function to trigger the notification. Notifications are usually triggered after a user action is performed. 
@@ -166,8 +166,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 grow-0">
-            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+        <div class="sm:w-1/4 grow-0 mb-8">
+            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>

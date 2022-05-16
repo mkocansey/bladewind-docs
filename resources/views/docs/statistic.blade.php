@@ -1,8 +1,8 @@
 <x-app>
     <x-slot name="title">Statistic Component</x-slot>
     <h1 class="page-title">Statistic</h1>
-    <div class="flex">
-        <div class="grow w-3/4">
+    <div class="flex flex-col-reverse sm:flex-row">
+        <div class="grow sm:w-3/4">
             <p>
                 Display numeric summaries. These are mostly used on dashboards but can really be used anywhere. The statistic component like most BladewindUI components takes up the width of its parent element and expects a label and a number.</p>
                 <p>The component only displays the number passed to it with no alteration. You are therefore responsible for thousand separator and decimal formats in your numbers. </p>
@@ -287,8 +287,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 grow-0">
-            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+        <div class="sm:w-1/4 grow-0 mb-8">
+            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#icons">With icons</a></div>

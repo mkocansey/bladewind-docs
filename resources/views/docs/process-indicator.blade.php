@@ -1,8 +1,8 @@
 <x-app>
     <x-slot name="title">Process Indicator Component</x-slot>
     <h1 class="page-title">Process Indicator</h1>
-    <div class="flex">
-        <div class="grow w-3/4">
+    <div class="flex flex-col-reverse sm:flex-row">
+        <div class="grow sm:w-3/4">
             <p>
                 Show that a process is in progress. A process can have two possible outcomes. It could either pass or fail. The process indicator can be used within the page but looks cooler when used in a <a href="/component/modal">Modal component</a>. 
                 There are three parts to using the process indicator component. 
@@ -268,8 +268,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 grow-0">
-            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+        <div class="sm:w-1/4 grow-0 mb-8">
+            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
