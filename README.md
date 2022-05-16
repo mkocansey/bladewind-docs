@@ -6,7 +6,7 @@ BladewindUI is a collection of UI components written purely using TailwindCSS, L
 <br /><br />
 
 ### Installation
-The full installatioin guide is available at Check out the full documentation on https://bladewindui.com.
+The full installatioin guide is available on https://bladewindui.com.
 <br />
 
 BladewindUI is very specific to Laravel since all components are purely written using blade syntax. To install in your Laravel project simply run this command in the terminal at the root of your project.
