@@ -151,8 +151,8 @@
             <p>&nbsp;</p>
 
         </div>
-        <div class="w-1/4 grow-0">
-            <nav class="pl-8 fixed h-screen overflow-y-scroll -mt-6">
+        <div class="w-1/4 md:grow-0 hidden md:block">
+            <nav class="md:pl-8 md:fixed md:h-screen overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#single">Single avatar</a></div>

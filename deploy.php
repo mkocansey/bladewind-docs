@@ -46,6 +46,7 @@ task('build', [
 desc('run composer update');
 task('deploy:run_composer', function(){
     cd(get('deploy_path').'/current');
+    run('cp ../.env .'); //rm -f composer.lock &&  && sudo chgrp -R www-data storage
     run('/usr/local/bin/composer update --ignore-platform-reqs --no-scripts'); //rm -f composer.lock && 
 });
 
