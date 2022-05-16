@@ -46,8 +46,9 @@ task('build', [
 desc('run composer update');
 task('deploy:run_composer', function(){
     cd(get('deploy_path').'/current');
-    run('cp ../.env .'); //rm -f composer.lock &&  && sudo chgrp -R www-data storage
+    run('cp ../.env . && sudo chgrp -R www-data storage'); //rm -f composer.lock && 
     run('/usr/local/bin/composer update --ignore-platform-reqs --no-scripts'); //rm -f composer.lock && 
+    run('php artisan config:clear && php artisan cache:clear && php artisan view:clear && php artisan route:clear && php artisan clear-compiled && php artisan optimize'); 
 });
 
 after('deploy:failed', 'deploy:unlock');
