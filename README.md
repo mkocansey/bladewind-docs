@@ -26,7 +26,7 @@ php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvi
 ```
 <br />
 
-Now include the BladewindUI css file and initialize a few javascript variables in the <head> of your pages. This should ideally be done in the layouts file your app's pages extend from.
+Now include the BladewindUI css file in the &lt;head&gt; of your pages. This should ideally be done in the layouts file your app pages extend from.
 
 <br />
 
@@ -39,7 +39,7 @@ Now include the BladewindUI css file and initialize a few javascript variables i
 
 <br />
 
-Finally, include the BladewindUI javascript file anywhere before the closing of the </body> tag of your pages. Again, this should ideally be done in the layouts file your app's pages extend from.
+Finally, include the BladewindUI javascript file anywhere before the closing of the &lt;/body&gt; tag of your pages. Again, this should ideally be done in the layouts file your app's pages extend from.
 
 <br />
 
