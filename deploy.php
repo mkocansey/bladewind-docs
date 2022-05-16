@@ -52,18 +52,3 @@ task('deploy:run_composer', function(){
 });
 
 after('deploy:failed', 'deploy:unlock');
-
-/*
-host('bladewindui.com')
-    ->set('remote_user', 'deployer')
-    ->set('deploy_path', '~/bladewind-docs');
-
-// Tasks
-
-task('build', function () {
-    cd('{{release_path}}');
-    run('npm run build');
-});
-
-after('deploy:failed', 'deploy:unlock');
-*/
