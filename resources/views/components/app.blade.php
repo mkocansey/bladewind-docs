@@ -3,7 +3,10 @@
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
     <body class="text-gray-500/80 dark:bg-gray-800 dark:text-slate-400">
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
         <div class="fixed w-full z-40 py-4 px-6 bg-white/95 dark:bg-slate-900 shadow-2xl shadow-blue-200/40 border-b border-blue-100/80 dark:border-0 dark:shadow-slate-800">
             <div class="max-w-7xl mx-auto">
                 <div class="">
