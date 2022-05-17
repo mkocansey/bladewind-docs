@@ -6,7 +6,7 @@ require 'recipe/common.php';
 // Config
 
 set('repository', 'git@github.com:mkocansey/bladewind-docs.git');
-set('keep_releases', 5);
+set('keep_releases', 1);
 set('composer_options', 'update --no-scripts');
 add('shared_files', []);
 add('shared_dirs', []);
@@ -47,7 +47,7 @@ desc('run composer update');
 task('deploy:run_composer', function(){
     cd(get('deploy_path').'/current');
     run('cp ../.env . && sudo chgrp -R www-data storage'); //rm -f composer.lock && 
-    run('/usr/local/bin/composer update --ignore-platform-reqs --no-scripts'); //rm -f composer.lock && 
+    run('/usr/local/bin/composer update'); //rm -f composer.lock &&  --ignore-platform-reqs --no-scripts
     run('php artisan config:clear && php artisan cache:clear && php artisan view:clear && php artisan route:clear && php artisan clear-compiled && php artisan optimize'); 
 });
 
