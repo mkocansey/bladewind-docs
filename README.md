@@ -95,7 +95,7 @@ Check out the full documentation on https://bladewindui.com.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability, please e-mail Michael K. Ocansey at [kabutey@gmail.com](mailto:kabutey@gmail.com).
+If you discover a security vulnerability, please e-mail Michael K. Ocansey at [mike@bladewindui.com](mailto:mike@bladewindui.com).
 
 <br />
 
