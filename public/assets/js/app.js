@@ -10,7 +10,9 @@
 __webpack_require__(/*! ./prism */ "./resources/js/prism.js");
 
 selectNavigationItem = function selectNavigationItem(el) {
-  dom_el(el).classList.add("active");
+  dom_els(el).forEach(function (element) {
+    element.classList.add("active");
+  });
 };
 
 /***/ }),

@@ -262,8 +262,8 @@
 
             <p>&nbsp;</p>
             <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources/views/components/bladewind/processing.blade.php</code> 
-                and <code class="inline">resources/views/components/bladewind/process-complete.blade.php</code>
+                The source file for this component is available in <code class="inline">resources > views > components > bladewind > processing.blade.php</code> 
+                and <code class="inline">resources > views > components > bladewind > process-complete.blade.php</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 

@@ -190,7 +190,7 @@
 
             <p>&nbsp;</p>
             <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources/views/components/bladewind/datepicker.blade.php</code>
+                The source file for this component is available in <code class="inline">resources > views > components > bladewind > datepicker.blade.php</code>
             </x-bladewind::alert><br/>
             <x-bladewind::alert show_close_icon="false">
                 The source language (translation) files for this component are available in <code class="inline">lang/en/datepicker.php</code> and <code class="inline">lang/fr/datepicker.php</code>

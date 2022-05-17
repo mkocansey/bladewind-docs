@@ -1,3 +1,5 @@
 require('./prism');
 
-selectNavigationItem = function(el) {  dom_el(el).classList.add("active"); }
+selectNavigationItem = (el) => {  dom_els(el).forEach(element => {
+    element.classList.add("active"); 
+});}

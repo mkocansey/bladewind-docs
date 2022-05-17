@@ -108,7 +108,7 @@
                 The icons used in the design below or anywhere else in our docs are from <a href="https://heroicons.com/" target="_blank">Heroicons</a>.
             </p>
             <p>
-                <div class="grid grid-cols-3 gap-5">
+                <div class="sm:grid sm:grid-cols-3 sm:gap-5 space-y-4">
                     <x-bladewind::card css="cursor-pointer hover:shadow-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-green-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -159,7 +159,7 @@
                 Just a simple list of contacts with action icons.
             </p>
             <p>
-                <div class="grid grid-cols-2 gap-3">
+                <div class="sm:grid sm:grid-cols-2 sm:gap-3 divide-y-8 md:divide-y-0">
                     <x-bladewind::card reduce_padding="true">
                         <div class="flex items-center">
                             <div><x-bladewind::avatar image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" /></div>
@@ -276,7 +276,7 @@
             <p>
                 This card component is very specific to rendering contacts. It is not useful for anything else. It saves you from having to manually build a contact card like we did in the practical examples above. A default avatar is used if one is not provided.
             </p>
-           <div class="grid grid-cols-2 gap-4">
+           <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:divide-y-0 divide-y-8">
                 <x-bladewind::contact-card 
                     name="Michael K. Ocansey"
                     mobile="+233.123.456.789" 
@@ -315,7 +315,7 @@
                 Headers and footers are independent so you don't need to explicitly specify both. When the <code class="inline">header</code> slot is set, the main body of the card looses all its padding so you will need to style the card body as you wish. Lets try and create an Instagram-like card. 
                 The image is from Unsplash and by <a href="https://unsplash.com/@thevisualchef007" target="_blank">Akindele Ibukun</a>
             </p>
-           <div class="grid grid-cols-2 gap-4">
+           <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:divide-y-0 divide-y-8">
                 <x-bladewind::card>
                     <x-slot name="header">
                         <div class="flex px-4 pt-2 pb-3">
@@ -524,10 +524,10 @@
 
             <p>&nbsp;</p>
             <x-bladewind::alert show_close_icon="false">
-                The source file for the card component is available in <code class="inline">resources/views/components/bladewind/card.blade.php</code>
+                The source file for the card component is available in <code class="inline">resources > views > components > bladewind > card.blade.php</code>
             </x-bladewind::alert><br />
             <x-bladewind::alert show_close_icon="false">
-                The source file for the contact card component is available in <code class="inline">resources/views/components/bladewind/contact-card.blade.php</code>
+                The source file for the contact card component is available in <code class="inline">resources > views > components > bladewind > contact-card.blade.php</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 

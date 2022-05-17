@@ -431,7 +431,7 @@
 
             <p>&nbsp;</p>
             <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources/views/components/bladewind/horizontal-line-graph.blade.php</code>
+                The source file for this component is available in <code class="inline">resources > views > components > bladewind > horizontal-line-graph.blade.php</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 

@@ -174,7 +174,7 @@
 
             <p>&nbsp;</p>
             <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources/views/components/bladewind/empty-state.blade.php</code>
+                The source file for this component is available in <code class="inline">resources > views > components > bladewind > empty-state.blade.php</code>
             </x-bladewind::alert><br/>
             <x-bladewind::alert show_close_icon="false">
                 Illustrations used above were taken from <a href="https://undraw.co/" target="_blank">https://undraw.co/</a></code>

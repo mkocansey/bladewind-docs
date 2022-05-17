@@ -195,8 +195,8 @@
             <p>&nbsp;</p>
             <p>
                 <x-bladewind::alert show_close_icon="false">
-                    The source file for this component is available in <code class="inline">resources/views/components/bladewind/list-view.blade.php</code> and 
-                    <code class="inline">resources/views/components/bladewind/list-item.blade.php</code>
+                    The source file for this component is available in <code class="inline">resources > views > components > bladewind > list-view.blade.php</code> and 
+                    <code class="inline">resources > views > components > bladewind > list-item.blade.php</code>
                 </x-bladewind::alert>
             </p>
             <p>&nbsp;</p>
