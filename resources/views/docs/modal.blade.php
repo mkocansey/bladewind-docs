@@ -18,7 +18,7 @@
             </p>
             <p>
                 <x-bladewind::button onclick="showModal('tnc-agreement')">Basic modal</x-bladewind::button>
-                <x-bladewind::button onclick="showModal('tnc-agreement-titled')">Basic modal with a title</x-bladewind::button>
+                <x-bladewind::button onclick="showModal('tnc-agreement-titled')" css="mt-2 sm:mt-0">Basic modal with a title</x-bladewind::button>
                 <x-bladewind::modal name="tnc-agreement">
                     Please agree to the terms and conditions of the agreement before proceeding.
                 </x-bladewind::modal>
@@ -176,6 +176,9 @@
             <p>&nbsp;</p><br>
             <p>
                 <h2>Different Sizes</h2>
+            </p>
+            <p>
+                <x-bladewind::alert show_close_icon="false" show_icon="false">On mobile the modal has just one size</x-bladewind::alert>
             </p>
             <p>
                 You could tell the above modals looked quite squashed. The BladewindUI modal component comes with a size option that allows your content to breath in the modals.
@@ -342,7 +345,7 @@
             </p>
             <p>
                 <x-bladewind::button onclick="showModal('no-cancel')">No cancel button</x-bladewind::button>
-                <x-bladewind::button onclick="showModal('no-okay')">No okay button</x-bladewind::button>
+                <x-bladewind::button onclick="showModal('no-okay')" css="mt-2 sm:mt-0">No okay button</x-bladewind::button>
             </p>
             <x-bladewind::modal title="No Cancel Button" name="no-cancel" cancel_button_label="">
                 I have no cancel button. Just okay and that is fine.
