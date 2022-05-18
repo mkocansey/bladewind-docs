@@ -1647,7 +1647,7 @@
             "dist": {
                 "type": "path",
                 "url": "/Users/mkocansey/Projects/kursor/bladewind",
-                "reference": "f9a6ed9557dff9b88aebf6035ae57d4de71b1dcd"
+                "reference": "8bb10a3a94810d1056e08719c33bfb20ae2942f3"
             },
             "require": {
                 "php": ">=7.3"

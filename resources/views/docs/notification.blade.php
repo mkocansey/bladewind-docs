@@ -78,11 +78,11 @@
                     onclick="showNotification(
                         'Delete Failed', 
                         'Your message could not be deleted. Try again', 'error')">error</x-bladewind::button> &nbsp;
-                <x-bladewind::button 
+                <x-bladewind::button css="mt-2 sm:mt-0" 
                     onclick="showNotification(
                         'Low Disk Space', 
                         `You have used 20gb of your 25gb storage space. <a href='#'>Upgrade soon</a>`, 'warning')">warning</x-bladewind::button> &nbsp;
-                <x-bladewind::button 
+                <x-bladewind::button css="mt-2 sm:mt-0" 
                     onclick="showNotification(
                         'Invitation Accepted', 
                         `Samuel just accepted your invitation to join BladewindUI Inc. <a href='#'>Say Hello</a>`, 'info')">info</x-bladewind::button>
