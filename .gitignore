@@ -14,3 +14,4 @@ yarn-error.log
 /.vscode
 /resources/views/components/bladewind
 deploy.php
+.editorconfig

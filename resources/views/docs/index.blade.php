@@ -8,6 +8,7 @@
     </p>
     <h2>Prerequisites </h2>
     <p>Bladewind components are purely Laravel blade components with some tailwindcss sweetness. This means you absolutely need to be using Bladewind in a Laravel project. </p>
+    <p><x-bladewind::alert show_close_icon="false">The version of Laravel supported with BladewindUI is <b>>=9.x</b>. This libray uses snake cases for naming its props attributes and these for some strange reason don't seem to work on Laravel versions earlier than 9.x</x-bladewind::alert></p>
     <h2>Install</h2>
     <p>At the root of your Laravel project, type the following composer command in your terminal to pull in the package.</p>
     <p>

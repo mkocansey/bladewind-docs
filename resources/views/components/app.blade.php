@@ -82,7 +82,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             changeCss(document.documentElement, current_theme, 'add', true);
             addToStorage('theme', current_theme);
         }
-        (getFromStorage('theme') == null) ? addToStorage('theme', 'light') : changeCss(document.documentElement, getFromStorage('theme'), 'add', true);
+        (getFromStorage('theme') == null) ? addToStorage('theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light')) : '';
+        changeCss(document.documentElement, getFromStorage('theme'), 'add', true);
     </script>
 </body>
 </html>
