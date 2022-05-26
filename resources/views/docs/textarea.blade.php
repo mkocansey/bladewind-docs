@@ -47,10 +47,31 @@
                 <pre class="language-markup line-numbers">
                     <code>
                         &lt;x-bladewind.textarea required="true" label="Comment"  /&gt;
+                    </code>
+                </pre>
+            </p>
+            <br /><h3>Events</h3><br />
+            <p>
+                You can append any of the available HTML event attributes (<em>onclick, onblur, onfocus, onmouseover, onmouseout, onkeyup, onkeydown</em> etc) to the component, just like you would to a regular <code class="inline">&lt;textarea ...</code> tag. 
+                The border of the textarea below turns red onfocus and to gray onblur.
+            </p>
+            <p><x-bladewind::textarea name="events" label="Comment" required="true" 
+                onfocus="changeCss('.events', '!border-2,!border-red-400')" 
+                onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"></x-bladewind::textarea>
+            </p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.texarea 
+                            name="events" 
+                            label="Comment" 
+                            required="true" 
+                            onfocus="changeCss('.events', '!border-2,!border-red-400')" 
+                            onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"&gt;
+                        &lt;/x-bladewind.textarea&gt;
                     </code><a name="attributes"></a>
                 </pre>
             </p>
-           
            <p>&nbsp;</p>
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Textarea component.</p>
@@ -103,11 +124,6 @@
                     <td><em>blank</em></td>
                     <td>Default value to display in the input element. Useful when in edit mode.</td>
                 </tr>
-                <tr>
-                    <td>css</td>
-                    <td><em>blank</em></td>
-                    <td>Any additional CSS you wish to add.</td>
-                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Input with all attributes defined</h3>
@@ -121,7 +137,6 @@
                         numeric="false" 
                         add_clearing="false" 
                         required="true"
-                        css="mb-5" 
                         selected_value="" /&gt;
                 </code>
             </pre>

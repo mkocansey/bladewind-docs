@@ -153,7 +153,7 @@
                     </div>
                     <x-bladewind::input name="email" placeholder="Email" type="email" />
                     <x-bladewind::textarea placeholder="Comment"></x-bladewind::textarea>
-                    <x-bladewind::button can_submit="true" css="mx-auto block mt-2">click me to submit</x-bladewind::button>
+                    <x-bladewind::button can_submit="true" class="mx-auto block mt-2">click me to submit</x-bladewind::button>
                 </form>
             </p>
 
@@ -161,7 +161,7 @@
                 <code>
                     &lt;x-bladewind.button
                         can_submit="true"
-                        css="mx-auto block"&gt;click me to submit&lt;/x-bladewind.button&gt;
+                        class="mx-auto block"&gt;click me to submit&lt;/x-bladewind.button&gt;
                 </code><a name="coloured"></a>
             </pre>
            
@@ -175,9 +175,93 @@
                 <x-bladewind::button color="yellow">Look Ma! I am yellow</x-bladewind::button>
                 <x-bladewind::button color="green">Look Ma! I am green</x-bladewind::button>
                 
-                <x-bladewind::button color="pink" css="my-4">Look Ma! I am pink</x-bladewind::button>
-                <x-bladewind::button color="cyan" css="my-4">Look Ma! I am cyan</x-bladewind::button>
-                <x-bladewind::button color="black" css="my-4">Look Ma! I am black</x-bladewind::button>
+                <x-bladewind::button color="pink" class="my-4">Look Ma! I am pink</x-bladewind::button>
+                <x-bladewind::button color="cyan" class="my-4">Look Ma! I am cyan</x-bladewind::button>
+                <x-bladewind::button color="black" class="my-4">Look Ma! I am black</x-bladewind::button>
+
+                <x-bladewind::button color="purple">Look Ma! I am purple</x-bladewind::button>
+                <x-bladewind::button color="orange">Look Ma! I am orange</x-bladewind::button>
+                <x-bladewind::button>Look Ma! I am blue</x-bladewind::button>
+            </p>
+
+            <pre class="language-markup line-numbers" data-line="1,5,9,13,17,21,25,29">
+                <code>
+                    &lt;x-bladewind.button color="red"&gt;
+                        look ma! i am red
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="yellow"&gt;
+                        look ma! i am yellow
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="green"&gt;
+                        look ma! i am green
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="pink"&gt;
+                        look ma! i am pink
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="cyan"&gt;
+                        look ma! i am cyan
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="black"&gt;
+                        look ma! i am black
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="purple"&gt;
+                        look ma! i am purple
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button color="orange"&gt;
+                        look ma! i am orange
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.button&gt;look ma! i am blue&lt;/x-bladewind.button&gt;
+                </code>
+            </pre>
+            <br />
+            
+            <p>
+                Assuming you decide to use a different primary button colour throughout your application, say purple, specifying 
+                <code class="inline text-red-500">color="purple"</code> everytime you create a button can get quite tedious. We advise you instead open up the 
+                <code class="inline">resources > views > components > bladewind > button.blade.php</code> file and change the blue value on the line that says
+                <code class="inline">'color' => 'blue',</code>.<a name="events"></a>
+            </p>
+            
+            <p>&nbsp;</p>
+            <h2>Button Events</h2>
+            <p>
+                The Bladewind button component translates to a regular HTML <code class="inline text-red-500">&lt;button...</code> tag. 
+                This means you can literally append any HTML button event attribute (<em>onclick, onblur, onmouseover, onmouseout</em> etc) to the component and it will be fired. 
+            </p>
+            <p>
+                <x-bladewind::button onclick="alert('you clicked me')">I have an onclick</x-bladewind::button>
+            </p>
+
+            <pre class="language-markup line-numbers" data-line="2">
+                <code>
+                    &lt;x-bladewind.button
+                        onclick="alert('you clicked me')"&gt;
+                        click me to submit
+                    &lt;/x-bladewind.button&gt;
+                </code><a name="coloured"></a>
+            </pre>
+           
+            <p>&nbsp;</p>
+            <h2>Colored Button</h2>
+            <p>
+                Only primary buttons can take on different colors. If the default blue color doesn't do it for you, there are eight other colour options to pick from. 
+            </p>
+            <p>
+                <x-bladewind::button color="red">Look Ma! I am red</x-bladewind::button>&nbsp;
+                <x-bladewind::button color="yellow">Look Ma! I am yellow</x-bladewind::button>
+                <x-bladewind::button color="green">Look Ma! I am green</x-bladewind::button>
+                
+                <x-bladewind::button color="pink" class="my-4">Look Ma! I am pink</x-bladewind::button>
+                <x-bladewind::button color="cyan" class="my-4">Look Ma! I am cyan</x-bladewind::button>
+                <x-bladewind::button color="black" class="my-4">Look Ma! I am black</x-bladewind::button>
 
                 <x-bladewind::button color="purple">Look Ma! I am purple</x-bladewind::button>
                 <x-bladewind::button color="orange">Look Ma! I am orange</x-bladewind::button>
@@ -282,16 +366,6 @@
                     <td>false</td>
                     <td>Defines if the button should be disabled or enabled. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
-                <tr>
-                    <td>onclick</td>
-                    <td><em>blank</em></td>
-                    <td>Any javascript actions you wish to perform when the button is clicked can be defined via this attribute. Example, <code class="inline">onclick="validateForm()"</code> where validateForm() is a javascript function available on the page.</td>
-                </tr>
-                <tr>
-                    <td>css</td>
-                    <td>bw-button</td>
-                    <td>Any additonal css classes can be added using this attribute. For example if you prefer to have non-rounded buttons you can set <code class="inline">css="!rounded-none"</code>.</td>
-                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Button with all attributes defined</h3>
@@ -304,9 +378,8 @@
                         has_spinner="true"
                         show_spinner="false"
                         disabled="false"
-                        can_submit="false"
-                        onclick="alert('you clicked me')"
-                        css="!rounded-none"&gt;
+                        class="mt-0"
+                        can_submit="false"&gt;
                         ...
                     &lt;/x-bladewind.button&gt;
                 </code>
@@ -328,6 +401,7 @@
                     <div class="flex items-center"><div class="dot"></div><a href="#spinning">Spinning button</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#submittable">Form submission</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#coloured">Coloured button</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#events">Button events</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>

@@ -64,6 +64,26 @@
                 <pre class="language-markup line-numbers">
                     <code>
                         &lt;x-bladewind.input required="true" label="Full name"  /&gt;
+                    </code>
+                </pre>
+            </p>
+            <br /><h3>Events</h3><br />
+            <p>
+                You can append any of the available HTML event attributes (<em>onclick, onblur, onfocus, onmouseover, onmouseout, onkeyup, onkeydown</em> etc) to the component, just like you would to a regular <code class="inline">&lt;input ...</code> tag. 
+                The border of the textbox below turns red onfocus and to gray onblur.
+            </p>
+            <p><x-bladewind::input name="events" label="Full name" required="true" 
+                onfocus="changeCss('.events', '!border-2,!border-red-400')" 
+                onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')" /></p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.input 
+                            name="events" 
+                            label="Full name" 
+                            required="true" 
+                            onfocus="changeCss('.events', '!border-2,!border-red-400')" 
+                            onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"  /&gt;
                     </code><a name="attributes"></a>
                 </pre>
             </p>
@@ -119,11 +139,6 @@
                     <td>selected_value</td>
                     <td><em>blank</em></td>
                     <td>Default value to display in the input element. Useful when in edit mode.</td>
-                </tr>
-                <tr>
-                    <td>css</td>
-                    <td><em>blank</em></td>
-                    <td>Any additional CSS you wish to add.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
