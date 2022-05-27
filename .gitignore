@@ -15,3 +15,5 @@ yarn-error.log
 /resources/views/components/bladewind
 deploy.php
 .editorconfig
+dev-composer.json
+prod-composer.json

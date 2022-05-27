@@ -30,11 +30,11 @@
     <p>
     <pre class="lang-markup"><code>&lt;link href="&#123;&#123; asset('bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" /&gt;</code></pre>
     </p>
-    <p>
+    {{-- <p>
     <pre class="lang-js"><code>&lt;script&gt;var notification_timeout,user_function,el_name,momo_obj,delete_obj;var dropdownIsOpen = false;&lt;/script&gt;</code></pre>
-    </p>
-    <br>
-    <p>Finally, include the BladewindUI javascript file anywhere before the closing of the <code class="inline">&lt;/body&gt;</code> tag of your pages. Again, this should ideally be done in the layouts file your app's pages extend from.</p>
+    </p> --}}
+    {{-- <br> --}}
+    {{-- <p>Finally, include the BladewindUI javascript file anywhere before the closing of the <code class="inline">&lt;/body&gt;</code> tag of your pages. Again, this should ideally be done in the layouts file your app's pages extend from.</p> --}}
     <p>
     <pre class="lang-markup"><code>&lt;script src="&#123;&#123; asset('bladewind/js/helpers.js') }}" type="text/javascript">&lt;/script&gt;</code></pre>
     </p>
