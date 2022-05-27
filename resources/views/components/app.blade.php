@@ -1,5 +1,5 @@
 <x-meta>
-    <script src="{{ asset('bladewind/js/helpers.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
 <body class="text-gray-500/80 bg-gray-100/80 dark:bg-gray-800 dark:text-slate-400">

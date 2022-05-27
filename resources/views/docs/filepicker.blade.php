@@ -6,11 +6,11 @@
             <p>
                 Select a file from your computer. If the selected file is an image you get to see a preview of the file. Heavy images will take a couple of seconds to render the preview.
             </p>
-            <x-bladewind::filepicker name="dp" />
+            <x-bladewind::filepicker name="logo" />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.filepicker name="dp" /&gt;
+                    &lt;x-bladewind.filepicker name="logo" /&gt;
                 </code>
             </pre>
             <div class="pb-10"></div>
