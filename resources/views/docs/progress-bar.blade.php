@@ -278,6 +278,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Progress Bar component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -333,9 +334,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-progress-bar</td>
-                    <td>Any additional CSS you wish to add.</td>
+                    <td>Any additional css you wish to add.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
@@ -351,7 +352,7 @@
                         shade = "faint",
                         percentage_prefix = "uploading content: ",
                         percentage_suffix = "completed",
-                        css="m-0" /&gt;
+                        class="m-0" /&gt;
                 </code>
             </pre>
 

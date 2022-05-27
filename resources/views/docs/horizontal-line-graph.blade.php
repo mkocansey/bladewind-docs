@@ -14,7 +14,7 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind::horizontal-line-graph 
+                        &lt;x-bladewind.horizontal-line-graph 
                             label="Women Farmers: " 
                             percentage="55" /&gt;
                     </code>
@@ -375,6 +375,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Horizontal Line Graph component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -410,7 +411,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-horizontal-line-graph</td>
                     <td>Any additional CSS you wish to add.</td>
                 </tr>
@@ -425,7 +426,7 @@
                         color = "red",
                         shade = "faint",
                         percentage_label_opacity = "75",
-                        css="py-4" /&gt;
+                        class="py-4" /&gt;
                 </code>
             </pre>
 

@@ -11,16 +11,16 @@
                 <div class="grid grid-cols-3">
                     <div class="text-center">
                         <code class="inline">processing</code><br />
-                        <x-bladewind::processing name="processing" message="Deleting pending payment" hide="false" />
+                        <x-bladewind.processing name="processing" message="Deleting pending payment" hide="false" />
                     </div>
                     <div class="text-center">
                         <code class="inline">process passed</code><br />
-                        <x-bladewind::process-complete name="delete-yes" process_completed_as="passed" button_label="Done"
+                        <x-bladewind.process-complete name="delete-yes" process_completed_as="passed" button_label="Done"
                             button_action="alert('i passed')" message="Pending payment was deleted successfully" hide="false" />
                     </div>
                     <div class="text-center">
                         <code class="inline">process failed</code><br />
-                        <x-bladewind::process-complete name="delete-no" process_completed_as="failed" button_label="Done"
+                        <x-bladewind.process-complete name="delete-no" process_completed_as="failed" button_label="Done"
                         button_action="alert('i failed')" message="Pending payment could not be deleted" hide="false" />
                     </div>
                 </div>
@@ -30,20 +30,20 @@
                 Let's simulate deleting of a pending payment.
             </p>
 
-            <x-bladewind::button 
+            <x-bladewind.button 
                 onclick="deletePayment('pass')" 
-                size="small">Delete Payment and Pass</x-bladewind::button> &nbsp;&nbsp;&nbsp;
-            <x-bladewind::button onclick="deletePayment('fail')" size="small">Delete Payment and Fail</x-bladewind::button>
+                size="small">Delete Payment and Pass</x-bladewind.button> &nbsp;&nbsp;&nbsp;
+            <x-bladewind.button onclick="deletePayment('fail')" size="small">Delete Payment and Fail</x-bladewind.button>
             
-            <x-bladewind::modal title="" name="delete-paymentz" show_action_buttons="false">
-                <x-bladewind::processing name="processing-delete" message="Deleting pending payment" hide="false" />
+            <x-bladewind.modal title="" name="delete-paymentz" show_action_buttons="false">
+                <x-bladewind.processing name="processing-delete" message="Deleting pending payment" hide="false" />
 
-                <x-bladewind::process-complete name="delete-payment-yes" process_completed_as="passed" button_label="Done"
+                <x-bladewind.process-complete name="delete-payment-yes" process_completed_as="passed" button_label="Done"
                     button_action="alert('i passed... closing modal now'); hideModal('delete-paymentz')" message="Pending payment was deleted successfully" />
 
-                <x-bladewind::process-complete name="delete-payment-no" process_completed_as="failed" button_label="Done"
+                <x-bladewind.process-complete name="delete-payment-no" process_completed_as="failed" button_label="Done"
                     button_action="alert('i failed... closing modal now'); hideModal('delete-paymentz')" message="Pending payment could not be deleted" />
-            </x-bladewind::modal>
+            </x-bladewind.modal>
             <script>
                 var m;
                 deletePayment = function(mode) {
@@ -68,17 +68,17 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="2,8">
                     <code>
-                        &lt;x-bladewind::button 
+                        &lt;x-bladewind.button 
                             onclick="deletePayment('pass')" 
                             size="small"&gt;
                             Delete Payment and Pass
-                        &lt;/x-bladewind::button&gt;
+                        &lt;/x-bladewind.button&gt;
 
-                        &lt;x-bladewind::button 
+                        &lt;x-bladewind.button 
                             onclick="deletePayment('fail')" 
                             size="small"&gt;
                             Delete Payment and Fail
-                        &lt;/x-bladewind::button&gt;
+                        &lt;/x-bladewind.button&gt;
                     </code>
                 </pre>
             </p>
@@ -88,18 +88,18 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="1,6,12,14,20,22">
                     <code>
-                        &lt;x-bladewind::modal 
+                        &lt;x-bladewind.modal 
                             name="delete-paymentz" 
                             show_action_buttons="false"&gt;
 
                             // this shows that process is in progress
-                            &lt;x-bladewind::processing 
+                            &lt;x-bladewind.processing 
                                 name="processing-delete" 
                                 message="Deleting pending payment" 
                                 hide="false" /&gt;
 
                             // this is shown when process completes with a pass
-                            &lt;x-bladewind::process-complete 
+                            &lt;x-bladewind.process-complete 
                                 name="delete-payment-yes" 
                                 process_completed_as="passed" 
                                 button_label="Done"
@@ -107,14 +107,14 @@
                                 message="Pending payment was deleted successfully" /&gt;
 
                             // this is shown when process completes with a failure
-                            &lt;x-bladewind::process-complete 
+                            &lt;x-bladewind.process-complete 
                                 name="delete-payment-no" 
                                 process_completed_as="failed" 
                                 button_label="Done"
                                 button_action="alert('i failed... closing modal now'); hideModal('delete-paymentz')" 
                                 message="Pending payment could not be deleted" /&gt;
 
-                        &lt;/x-bladewind::modal&gt;
+                        &lt;/x-bladewind.modal&gt;
                     </code>
                 </pre>
             </p>
@@ -169,8 +169,9 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Process Indicator component.</p>
+            @include('docs/announcement')
             <p><h3>Processing Component Attributes</h3></p>
-            <x-bladewind::table striped="true">
+            <x-bladewind.table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -191,10 +192,10 @@
                     <td><em>blank</em></td>
                     <td>Message to display below the spinning icon.</td>
                 </tr>
-            </x-bladewind::table>
+            </x-bladewind.table>
             <p>&nbsp;</p>
             <p><h3>Process Complete Component Attributes</h3></p>
-            <x-bladewind::table striped="true">
+            <x-bladewind.table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
                     <th>Default</th>
@@ -230,18 +231,18 @@
                     <td>true</td>
                     <td>The process complete component is hidden by default. <br /><code class="inline">true</code> <code class="inline">false</code></td>
                 </tr>
-            </x-bladewind::table>
+            </x-bladewind.table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Process Indicator with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::processing 
+                    &lt;x-bladewind.processing 
                         name="processing-delete" 
                         message="Deleting pending payment" 
                         hide="false" /&gt;
 
                     // this is shown when process completes with a pass
-                    &lt;x-bladewind::process-complete 
+                    &lt;x-bladewind.process-complete 
                         name="delete-payment-yes" 
                         process_completed_as="passed" 
                         hide="false"
@@ -250,7 +251,7 @@
                         message="Pending payment was deleted successfully" /&gt;
 
                     // this is shown when process completes with a failure
-                    &lt;x-bladewind::process-complete 
+                    &lt;x-bladewind.process-complete 
                         name="delete-payment-no" 
                         process_completed_as="failed" 
                         hide="false"
@@ -261,10 +262,10 @@
             </pre>
 
             <p>&nbsp;</p>
-            <x-bladewind::alert show_close_icon="false">
+            <x-bladewind.alert show_close_icon="false">
                 The source file for this component is available in <code class="inline">resources > views > components > bladewind > processing.blade.php</code> 
                 and <code class="inline">resources > views > components > bladewind > process-complete.blade.php</code>
-            </x-bladewind::alert>
+            </x-bladewind.alert>
             <p>&nbsp;</p>
 
         </div>

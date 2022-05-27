@@ -122,7 +122,7 @@
             </p>
             <p>
                 <x-bladewind::tag label="marketing" can_close="true" add_id_prefix="false" id="a1001" onclick="alert('you clicked on '+ dom_el('#a1001').innerText)" />  &nbsp;  
-                <x-bladewind::tag label="accounting" can_close="true" color="pink" css="a1002"  onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" />
+                <x-bladewind::tag label="accounting" can_close="true" color="pink" class="a1002"  onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" />
             </p>
             
             <pre class="language-markup line-numbers" data-line="4">
@@ -138,7 +138,7 @@
                         label="accounting" 
                         can_close="true" 
                         color="pink" 
-                        css="a1002" 
+                        class="a1002" 
                         onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" /&gt;
                 </code>
             </pre>
@@ -147,6 +147,7 @@
            <br /><br /><br />
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Tag component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -193,7 +194,7 @@
                     <td>Javascript function to execute when the close icon is clicked. </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-tag</td>
                     <td>Any additional CSS you wish to add.</td>
                 </tr>
@@ -206,7 +207,7 @@
                         label="accounting" 
                         can_close="true" 
                         color="pink" 
-                        css="a1002" 
+                        class="a1002" 
                         id="a1002"
                         add_id_prefix="false" 
                         shade="dark"

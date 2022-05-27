@@ -18,6 +18,7 @@ class PagesController extends Controller
     public function dropdown()              { return view('docs.dropdown'); }
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
+    public function laravel8()              { return view('docs.laravel8'); }
     public function line_graph()            { return view('docs.horizontal-line-graph'); }
     public function list()                  { return view('docs.list'); }
     public function radiobutton()           { return view('docs.radiobutton'); }
@@ -34,6 +35,7 @@ class PagesController extends Controller
     public function table()                 { return view('docs.table'); }
     public function textbox()               { return view('docs.textbox'); }
     public function textarea()              { return view('docs.textarea'); }
+    public function timepicker()            { return view('docs.timepicker'); }
     public function toggle()                { return view('docs.toggle'); }
     public function tooltip()               { return view('docs.tooltip'); }
     public function app_layouts()           { return view('docs.app-layouts'); }

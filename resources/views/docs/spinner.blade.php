@@ -57,6 +57,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Spinner component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -69,9 +70,9 @@
                     <td><code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-spinner</td>
-                    <td>Any additional CSS you wish to add.</td>
+                    <td>Any additional css you wish to add.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
@@ -80,7 +81,7 @@
                 <code>
                     &lt;x-bladewind.spinner 
                         size="medium"
-                        css="m-0" /&gt;
+                        class="m-0" /&gt;
                 </code>
             </pre>
 

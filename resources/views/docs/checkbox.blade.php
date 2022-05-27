@@ -68,6 +68,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -101,7 +102,7 @@
                     <td>Specifies whether the checkbox is disabled or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-checkbox</td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
@@ -116,7 +117,7 @@
                         disabled="false"
                         name="tnc"
                         value="yes"
-                        css="shadow-sm" /&gt;
+                        class="shadow-sm" /&gt;
                 </code>
             </pre>
 

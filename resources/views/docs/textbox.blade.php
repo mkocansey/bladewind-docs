@@ -91,6 +91,7 @@
            <p>&nbsp;</p>
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Input component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -153,7 +154,6 @@
                         numeric="false" 
                         add_clearing="false" 
                         required="true"
-                        css="mb-5" 
                         selected_value="" /&gt;
                 </code>
             </pre>

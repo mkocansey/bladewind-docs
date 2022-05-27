@@ -18,7 +18,7 @@
             </p>
             <p>
                 <x-bladewind::button onclick="showModal('tnc-agreement')">Basic modal</x-bladewind::button>
-                <x-bladewind::button onclick="showModal('tnc-agreement-titled')" css="mt-2 sm:mt-0">Basic modal with a title</x-bladewind::button>
+                <x-bladewind::button onclick="showModal('tnc-agreement-titled')" class="mt-2 sm:mt-0">Basic modal with a title</x-bladewind::button>
                 <x-bladewind::modal name="tnc-agreement">
                     Please agree to the terms and conditions of the agreement before proceeding.
                 </x-bladewind::modal>
@@ -345,7 +345,7 @@
             </p>
             <p>
                 <x-bladewind::button onclick="showModal('no-cancel')">No cancel button</x-bladewind::button>
-                <x-bladewind::button onclick="showModal('no-okay')" css="mt-2 sm:mt-0">No okay button</x-bladewind::button>
+                <x-bladewind::button onclick="showModal('no-okay')" class="mt-2 sm:mt-0">No okay button</x-bladewind::button>
             </p>
             <x-bladewind::modal title="No Cancel Button" name="no-cancel" cancel_button_label="">
                 I have no cancel button. Just okay and that is fine.
@@ -479,19 +479,16 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg> lock the screen</x-bladewind::button>
             </p>
-            <x-bladewind::modal 
-                show_action_buttons="false" 
-                backdrop_can_close="false"
-                name="lock-screen">
+            <x-bladewind::modal show_action_buttons="false" backdrop_can_close="false" name="lock-screen">
                     <div class="flex mx-auto justify-center my-2">
-                        <x-bladewind::avatar css=""
+                        <x-bladewind::avatar class=""
                             image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" />
                     </div>
                     <div class="my-4">
                         You will need to unlock the screen to continue using this application.
                     </div>
                     <x-bladewind::input placeholder="Enter your password to unlock" type="password" />
-                    <x-bladewind::button css="w-full">Check password</x-bladewind::button>
+                    <x-bladewind::button class="w-full">Check password</x-bladewind::button>
                 
             </x-bladewind::modal>
 
@@ -507,7 +504,7 @@
                         name="lock-screen"&gt;
 
                             &lt;div class="flex mx-auto justify-center my-2"&gt;
-                                &lt;x-bladewind.avatar css="" image="/path/to/the/image/file" /&gt;
+                                &lt;x-bladewind.avatar class="" image="/path/to/the/image/file" /&gt;
                             &lt;/div&gt;
                             &lt;div class="my-4"&gt;
                                 You will need to unlock the screen to continue using this application.
@@ -517,7 +514,7 @@
                                 placeholder="Enter your password to unlock" 
                                 type="password" /&gt;
 
-                            &lt;x-bladewind.button css="w-full"&gt;Check password&lt;/x-bladewind.button&gt;
+                            &lt;x-bladewind.button class="w-full"&gt;Check password&lt;/x-bladewind.button&gt;
 
                     &lt;/x-bladewind.modal&gt;
                 </code>
@@ -527,6 +524,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Modal component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -595,7 +593,7 @@
                     <code class="inline">big</code> <code class="inline">large</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td><em>blank</em></td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
@@ -617,7 +615,7 @@
                         show_action_buttons="false" 
                         center_action_buttons="true"
                         size="medium"
-                        css="shadow-sm"&gt;
+                        class="shadow-sm"&gt;
                         ...
                     &lt;/x-bladewind.modal&gt;
                 </code>

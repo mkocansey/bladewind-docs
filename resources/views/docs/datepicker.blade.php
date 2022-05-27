@@ -24,15 +24,15 @@
                 By default the datepicker fills up the width of its parent container. You can however specify a width of your choice using the datepicker's <code class="inline">css</code> attribute.
             </p>
             <p>You can also change the placeholder text from the default <code>Select a date</code>.</p>
-            <x-bladewind::datepicker 
-                css="!w-40" 
-                placeholder="Invoice Date"  />
+            <div class="w-40">
+                <x-bladewind::datepicker placeholder="Invoice Date" has_label="true"  />
+            </div>
             <div class="py-2"></div>            
-            <pre class="language-markup line-numbers">
+            <pre class="language-markup line-numbers" line-number="2">
                 <code>
-                    &lt;x-bladewind.datepicker 
-                        css="!w-40" 
-                        placeholder="Invoice Date"  /&gt;
+                    &lt;div class="w-40"&gt;
+                        &lt;x-bladewind.datepicker placeholder="Invoice Date"  /&gt;
+                    &lt;/div&gt;
                 </code><a name="range"></a>
             </pre>
             <div class="pb-10"></div>
@@ -46,7 +46,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::datepicker type="range"  /&gt;
+                    &lt;x-bladewind.datepicker type="range"  /&gt;
                 </code>
             </pre>
             <div class="py-2"></div>
@@ -58,7 +58,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::datepicker 
+                    &lt;x-bladewind.datepicker 
                         type="range" 
                         date_from_label="start date" 
                         date_to_label="end date" /&gt;
@@ -74,7 +74,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::datepicker required="true"  /&gt;
+                    &lt;x-bladewind.datepicker required="true"  /&gt;
                 </code><a name="defaults"></a>
             </pre>
             <br />
@@ -88,7 +88,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::datepicker default_date="2021-12-03"  /&gt;
+                    &lt;x-bladewind.datepicker default_date="2021-12-03"  /&gt;
                 </code>
             </pre>
             <br />
@@ -99,7 +99,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::datepicker 
+                    &lt;x-bladewind.datepicker 
                         type="range" 
                         default_date_from="2021-12-03" 
                         default_date_to="2022-01-03"  /&gt;
@@ -114,6 +114,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Datepicker component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -167,7 +168,7 @@
                     <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-datepicker</td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
@@ -184,7 +185,7 @@
                         date_from=""
                         date_to=""
                         default_date=""
-                        css="shadow-sm" /&gt;
+                        class="shadow-sm" /&gt;
                 </code>
             </pre>
 
@@ -193,10 +194,13 @@
                 The source file for this component is available in <code class="inline">resources > views > components > bladewind > datepicker.blade.php</code>
             </x-bladewind::alert><br/>
             <x-bladewind::alert show_close_icon="false">
-                The source language (translation) files for this component are available in <code class="inline">lang/en/datepicker.php</code> and <code class="inline">lang/fr/datepicker.php</code>
+                The source language (translation) files for this component are available in <code class="inline">lang/en/datepicker.php</code>, <code class="inline">lang/fr/datepicker.php</code> and <code class="inline">lang/it/datepicker.php</code>
             </x-bladewind::alert><br />
             <x-bladewind::alert show_close_icon="false">
                 The source javascript file for this component is available in <code class="inline">public/bladewind/js/datepicker.js</code>
+            </x-bladewind::alert><br />
+            <x-bladewind::alert show_close_icon="false">
+                This component includes AlpineJs from <code class="inline">https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 
@@ -207,6 +211,7 @@
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#range">Range datepicker</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#defaults">With default values</a></div>
+                    <div class="flex items-center hidden"><div class="dot"></div><a href="#timepicker">With Timepicker</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>
@@ -214,7 +219,7 @@
     </div>
 
     <x-slot name="scripts">
-    
+        {{-- <script src="{{ asset('bladewind/js/datepicker.js') }}"></script> --}}
         <script>
             selectNavigationItem('.component-datepicker');
         </script>

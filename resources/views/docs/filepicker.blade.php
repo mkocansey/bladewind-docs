@@ -33,7 +33,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind::filepicker 
+                    &lt;x-bladewind.filepicker 
                         name="pdf_only" 
                         placeholder="Upload a PDF"
                         accepted_file_types=".pdf"  /&gt;
@@ -53,6 +53,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Filepicker component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>

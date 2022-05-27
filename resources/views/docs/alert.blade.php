@@ -16,7 +16,7 @@
 
             <h2>Faint Coloured Alerts</h2>
             <h3 class="pb-2 ">Info</h3>
-            <x-bladewind::alert css="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind::alert>
+            <x-bladewind::alert class="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind::alert>
             <p>
                 <pre class="language-markup line-numbers">
                     <code>
@@ -29,7 +29,7 @@
             </p>
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Error</h3>
-            <x-bladewind::alert type="error" css="mb-3">You do not have permission to upload files</x-bladewind::alert>
+            <x-bladewind::alert type="error" class="mb-3">You do not have permission to upload files</x-bladewind::alert>
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
@@ -42,7 +42,7 @@
             </p>
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Warning</h3>
-            <x-bladewind::alert type="warning" css="mb-3">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
+            <x-bladewind::alert type="warning" class="mb-3">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
             <p>
             <pre class="language-markup line-numbers" data-line="2">
                 <code>
@@ -55,7 +55,7 @@
 
             <div>&nbsp;</div>
             <h3 class="pb-2 ">Success</h3>
-            <x-bladewind::alert type="success" css="mb-3">Files were successfully uploaded</x-bladewind::alert>
+            <x-bladewind::alert type="success" class="mb-3">Files were successfully uploaded</x-bladewind::alert>
             <p><pre class="language-markup line-numbers" data-line="2">
                 <code>
                     &lt;x-bladewind.alert 
@@ -161,6 +161,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Alert component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -190,7 +191,7 @@
                 <tr>
                     <td>css</td>
                     <td><em>blank</em></td>
-                    <td>Any additonal css classes can be added using this attribute. For example to make your alert rounded you can add <code class="inline">css="rounded-lg"</code> for example. The default is an empty string.</td>
+                    <td>Any additonal css classes can be added using this attribute. For example to make your alert rounded you can add <code class="inline">class="rounded-lg"</code> for example. The default is an empty string.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
@@ -202,7 +203,7 @@
                         shade="dark"
                         show_close_icon="false"
                         show_icon="false"
-                        css="rounded-lg shadow-sm"&gt;
+                        class="rounded-lg shadow-sm"&gt;
                         Stay safe. Wash your hands for 20 seconds
                     &lt;/x-bladewind.alert&gt;
                 </code>

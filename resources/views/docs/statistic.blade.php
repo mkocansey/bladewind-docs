@@ -200,6 +200,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Statistic component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -252,7 +253,7 @@
                     <td>Only applicable when <code class="inline text-red-500">icon</code> has a value. <br /><code class="inline">left</code> <code class="inline">right</code></td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-spinner</td>
                     <td>Any additional CSS you wish to add. You can add css to help you uniquely identify a statistic.</td>
                 </tr>
@@ -270,7 +271,7 @@
                         icon_position="right"
                         has_shadow="false"
                         show_spinner="true"
-                        css="m-0"&gt;
+                        class="m-0"&gt;
 
                         &lt;x-slot name="icon"&gt;
                             &lt;svg&gt;...&lt;/svg&gt;

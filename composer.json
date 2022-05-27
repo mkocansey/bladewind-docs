@@ -1,19 +1,19 @@
 {
-    "name": "laravel/laravel",
+    "name": "mkocansey/bladewind-docs",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Docs for BladewindUI.",
+    "keywords": ["docs", "bladewind"],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "deployer/deployer": "^7.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "mkocansey/bladewind": "~0.1"
+        "mkocansey/bladewind": "^0.1"
     },
     "require-dev": {
+        "deployer/deployer": "^7.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",

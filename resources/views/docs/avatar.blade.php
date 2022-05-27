@@ -99,6 +99,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Avatar component.</p>
+            @include('docs/announcement')
             <x-bladewind::table striped="true">
                 <x-slot name="header">
                     <th>Option</th>
@@ -126,7 +127,7 @@
                     <td>Defines if the avatar images are displayed as a stack. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>mr-2 mt-2</td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
@@ -140,7 +141,7 @@
                         alt="company logo"
                         size="big"
                         stacked="true"
-                        css="ring-blue-200 ring-offset-2" /&gt;
+                        class="ring-blue-200 ring-offset-2" /&gt;
                 </code>
             </pre>
 

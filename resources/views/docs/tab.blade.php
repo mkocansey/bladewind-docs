@@ -292,6 +292,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Tab component.</p>
+            @include('docs/announcement')
             <p><h3>Tab Group Component Attributes</h3></p>
             <x-bladewind::table striped="true">
                 <x-slot name="header">

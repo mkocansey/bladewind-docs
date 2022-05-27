@@ -116,6 +116,7 @@
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Empty State component.</p>
+            @include('docs/announcement')
             <x-bladewind::table>
                 <x-slot name="header">
                     <th>Option</th>
@@ -152,7 +153,7 @@
                     <td>Empty state message.</td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-empty-state</td>
                     <td>Any additonal css classes can be added using this attribute.</td>
                 </tr>
@@ -167,7 +168,7 @@
                         onclick="goToRoute('new-message')"
                         image="/assets/images/empty-inbox.png"
                         show_image="true"
-                        css="shadow-sm"&gt;
+                        class="shadow-sm"&gt;
                     &lt;/x-bladewind.empty-state&gt;
                 </code>
             </pre>

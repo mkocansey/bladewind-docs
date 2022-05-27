@@ -2,6 +2,7 @@
 <div class="space-y-3">
 <div class="flex items-center installation"><div class="dot"></div><a href="/">Installation</a></div>
     <div class="flex items-center customization"><div class="dot"></div><a href="/customization">Customization</a></div>
+    <div class="flex items-center laravel-8"><div class="dot"></div><a href="/laravel8-users">Laravel 8 Users</a></div>
 </div>
 
 <h5 class="mb-3 mt-10 font-semibold text-slate-800 dark:text-slate-600/90">Components</h5></li>
@@ -32,6 +33,7 @@
     <div class="flex items-center component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
     <div class="flex items-center component-textbox"><div class="dot"></div><a href="/component/textbox">Textbox</a></div>
     <div class="flex items-center component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
+    <div class="flex items-center component-timepicker hidden"><div class="dot"></div><a href="/component/timepicker">Timepicker</a></div>
     <div class="flex items-center component-tooltip hidden"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>
     <div class="flex items-center component-toggle"><div class="dot"></div><a href="/component/toggle">Toggle</a></div>
 </div>

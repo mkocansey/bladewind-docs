@@ -7,8 +7,10 @@
         Well, that was how these components were born.
     </p>
     <h2>Prerequisites </h2>
-    <p>Bladewind components are purely Laravel blade components with some tailwindcss sweetness. This means you absolutely need to be using Bladewind in a Laravel project. </p>
-    <p><x-bladewind::alert show_close_icon="false">The version of Laravel supported with BladewindUI is <b>>=9.x</b>. This libray uses snake cases for naming its props attributes and these for some strange reason don't seem to work on Laravel versions earlier than 9.x</x-bladewind::alert></p>
+    <p>Bladewind components are purely Laravel blade components with some tailwindcss sweetness. This means you absolutely need to be using Bladewind in a Laravel project. The package has the following dependencies:</p>
+    <x-bladewind::alert show_close_icon="false" show_icon="false">PHP >= 7.3</x-bladewind::alert>
+    <br />
+    <br />
     <h2>Install</h2>
     <p>At the root of your Laravel project, type the following composer command in your terminal to pull in the package.</p>
     <p>
@@ -56,8 +58,11 @@
         2. The supporting CSS and JS files were placed in <code class="inline">public > bladewind</code>
     </p>
     <p>
-        3. The language files for the <a href="/component/datepicker">datepicker</a> component were placed in <code class="inline">lang > bladewind</code>. The default comes with just English and French. You can <a href="/customization">add more languages</a>.
+        3. The language files for the <a href="/component/datepicker">datepicker</a> component were placed in <code class="inline">lang > bladewind</code>. The default comes with just English, French and Italian. You can <a href="/customization">add more languages</a>.
     </p>
+    <p><x-bladewind::alert show_close_icon="false" show_icon="false">If you intend to use bladewindUI in a Laravel 8.x project, please do well to <a href="/laravel8-users">read this</a>.</x-bladewind::alert></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
     <p>&nbsp;</p>
 
     <x-slot name="scripts">
