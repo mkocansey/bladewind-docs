@@ -8,7 +8,7 @@
                 You can increase the number of rows by setting the <code class="inline text-red-500">rows</code> attribute. 
                 Example, <code class="inline text-red-500">rows="5"</code>.
             </p>
-            <p><x-bladewind::input name="comment" /></p>
+            <p><x-bladewind::textarea name="comment" /></p>
             <p>
                 <pre class="language-markup">
                     <code>

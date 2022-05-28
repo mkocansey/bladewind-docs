@@ -32,13 +32,15 @@
     <p>
     <pre class="lang-markup"><code>&lt;link href="&#123;&#123; asset('bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" /&gt;</code></pre>
     </p>
-    {{-- <p>
-    <pre class="lang-js"><code>&lt;script&gt;var notification_timeout,user_function,el_name,momo_obj,delete_obj;var dropdownIsOpen = false;&lt;/script&gt;</code></pre>
-    </p> --}}
-    {{-- <br> --}}
-    {{-- <p>Finally, include the BladewindUI javascript file anywhere before the closing of the <code class="inline">&lt;/body&gt;</code> tag of your pages. Again, this should ideally be done in the layouts file your app's pages extend from.</p> --}}
     <p>
     <pre class="lang-markup"><code>&lt;script src="&#123;&#123; asset('bladewind/js/helpers.js') }}" type="text/javascript">&lt;/script&gt;</code></pre>
+    </p>
+    <br />
+    <p>
+        <x-bladewind::alert type="warning" show_close_icon="false">The Datepicker and Timepicker components require AlpineJs 3.x to work. Include this in your &lt;head&gt;. You can ignore this final step if you are already using AlpineJs in your project.</x-bladewind::alert>
+    </p>
+    <p>
+    <pre class="lang-markup"><code>&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;</code></pre>
     </p>
     <br>
     <p>You are now ready to start using any of the BladewindUI components in your application</p> 
@@ -49,16 +51,19 @@
             </code>
         </pre>
     </p>
+    <p>
+        <x-bladewind::button>Save User</x-bladewind::button>
+    </p>
     <br />
-    <p>BladewindUI components have been designed to be <b class="text-red-500">non</b> destructive, meaning, they coexist with any other components you may already have in your project. Publishing the assets with the command above did the following:</p>
+    <p>BladewindUI components have been designed to be <b class="text-red-500">non</b> destructive, meaning, they coexist with any other components you may already have in your project. The following happened when you run the <code class="inline">vendor:publish</code> command earlier on:</p>
     <p>
         1. The blade components now exist in <code class="inline">resources > views > components > bladewind</code>
     </p>
     <p>
-        2. The supporting CSS and JS files were placed in <code class="inline">public > bladewind</code>
+        2. The supporting CSS and JS files have been placed in <code class="inline">public > bladewind</code>
     </p>
     <p>
-        3. The language files for the <a href="/component/datepicker">datepicker</a> component were placed in <code class="inline">lang > bladewind</code>. The default comes with just English, French and Italian. You can <a href="/customization">add more languages</a>.
+        3. The language files for the <a href="/component/datepicker">Datepicker</a> component have been placed in <code class="inline">lang > bladewind</code>. The default languages shipped with the Datepicker are English, French and Italian. You can <a href="/customization">add more languages</a>.
     </p>
     <p><x-bladewind::alert show_close_icon="false" show_icon="false">If you intend to use bladewindUI in a Laravel 8.x project, please do well to <a href="/laravel8-users">read this</a>.</x-bladewind::alert></p>
     <p>&nbsp;</p>

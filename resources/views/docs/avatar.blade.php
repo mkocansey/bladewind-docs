@@ -11,7 +11,7 @@
             </p>
             
             <h2>Single Avatar</h2>
-            <x-bladewind::avatar image="/assets/images/avatar1.jpg" css="mb-3" />
+            <x-bladewind::avatar image="/assets/images/avatar1.jpg" class="mb-3" />
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.avatar image="/path/to/the/image/file" /&gt;

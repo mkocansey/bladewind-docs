@@ -192,7 +192,7 @@
             <p>
                 <pre class="language-markup">
                     <code>
-                        &lt;input type="hidden" css="rating-value-small-rating" value="2" /&gt;
+                        &lt;input type="hidden" class="rating-value-small-rating" value="2" /&gt;
                     </code>
                 </pre>
             </p>

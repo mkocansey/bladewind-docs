@@ -17,7 +17,6 @@
         <link href="{{ asset('bladewind/css/animate.min.css')}}" rel="stylesheet" />
         <link href="{{ asset('bladewind/css/bladewind-ui.min.css')}}" rel="stylesheet" />
         <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" />
-        <script src="{{ asset('assets/js/app.js') }}" type="text/javascript"></script>
-        <script>var notification_timeout,user_function,el_name,momo_obj,delete_obj;var dropdownIsOpen = false;</script>
+        <script src="{{ asset('assets/js/app.js') }}"></script>
         {{ $slot }}
     </head>

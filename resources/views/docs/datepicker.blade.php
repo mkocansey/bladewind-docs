@@ -1,4 +1,5 @@
 <x-app>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <x-slot name="title">Datepicker Component</x-slot>
     <h1 class="page-title">Datepicker</h1>
     <div class="flex flex-col-reverse sm:flex-row">
