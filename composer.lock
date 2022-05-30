@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2ae884f5e1ec60753604ad2d163e080",
+    "content-hash": "f70f7c84b62ecdaa377f9762fd92a6d7",
     "packages": [
         {
             "name": "brick/math",
@@ -371,16 +371,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "3.1.2",
+            "version": "3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "ee0db30118f661fb166bcffbf5d82032df484697"
+                "reference": "a5ed8d58ed0c340a7c2109f587951b1c84cf6286"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ee0db30118f661fb166bcffbf5d82032df484697",
-                "reference": "ee0db30118f661fb166bcffbf5d82032df484697",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a5ed8d58ed0c340a7c2109f587951b1c84cf6286",
+                "reference": "a5ed8d58ed0c340a7c2109f587951b1c84cf6286",
                 "shasum": ""
             },
             "require": {
@@ -427,7 +427,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/3.1.2"
+                "source": "https://github.com/egulias/EmailValidator/tree/3.2"
             },
             "funding": [
                 {
@@ -435,7 +435,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-11T09:18:27+00:00"
+            "time": "2022-05-28T22:19:18+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -1600,16 +1600,16 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "v0.1.8",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkocansey/bladewind.git",
-                "reference": "91da1d1965781f84e5644d7f2e672d3784cad98f"
+                "reference": "d4a022fc6f113adb7d7bd614a196665e37a735ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/91da1d1965781f84e5644d7f2e672d3784cad98f",
-                "reference": "91da1d1965781f84e5644d7f2e672d3784cad98f",
+                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/d4a022fc6f113adb7d7bd614a196665e37a735ce",
+                "reference": "d4a022fc6f113adb7d7bd614a196665e37a735ce",
                 "shasum": ""
             },
             "require": {
@@ -1647,9 +1647,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mkocansey/bladewind/issues",
-                "source": "https://github.com/mkocansey/bladewind/tree/v0.1.8"
+                "source": "https://github.com/mkocansey/bladewind/tree/v1.0.1"
             },
-            "time": "2022-05-27T23:27:42+00:00"
+            "time": "2022-05-30T11:05:06+00:00"
         },
         {
             "name": "monolog/monolog",

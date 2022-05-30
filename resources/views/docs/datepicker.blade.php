@@ -36,8 +36,8 @@
                     &lt;/div&gt;
                 </code><a name="range"></a>
             </pre>
-            <div class="pb-10"></div>
             
+            <div class="pb-10"></div>
             <h2 class="pb-2 ">Range Datepicker</h2>
             <p>
                 This range datepicker isn't your typical date range selection. This option simply saves you from manually embedding the datepicker two times. 
@@ -76,8 +76,46 @@
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.datepicker required="true"  /&gt;
-                </code><a name="defaults"></a>
+                </code><a name="formats"></a>
             </pre>
+            <br />
+            
+            <div class="pb-10"></div>
+            <h2 class="pb-2 ">Date Formats</h2>
+            <p>
+                You can specify how you want dates selected in the datepicker to be displayed. There are four options to pick from.
+                The default format is <code class="inline text-red-500">format="yyyy-mm-dd"</code>. When using a range datepicker, the format you specify is applied to both datepickers.
+            </p>
+            <x-bladewind::datepicker name="date1" type="range" format="dd-mm-yyyy"  />
+            <pre class="language-markup">
+                <code>
+                    &lt;x-bladewind.datepicker name="date1" type="range" format="dd-mm-yyyy" /&gt;
+                </code>
+            </pre>
+            <p>
+                <x-bladewind::datepicker name="date2" format="mm-dd-yyyy"  />
+                <pre class="language-markup">
+                    <code>
+                        &lt;x-bladewind.datepicker name="date2" format="mm-dd-yyyy" /&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                <x-bladewind::datepicker name="date3" format="D d M, Y" type="range"  />
+                <pre class="language-markup">
+                    <code>
+                        &lt;x-bladewind.datepicker name="date3" format="D d M, Y" type="range" /&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                <x-bladewind::datepicker name="date4" format="yyyy-mm-dd"  />
+                <pre class="language-markup">
+                    <code>
+                        &lt;x-bladewind.datepicker name="date4" format="yyyy-mm-dd" /&gt;
+                    </code><a name="defaults"></a>
+                </pre>
+            </p>
             <br />
             <div class="pb-10"></div>
             
@@ -159,6 +197,13 @@
                     <td>Placeholder text to display for the <code>To</code> date. Applicable only to range datepickers.</td>
                 </tr>
                 <tr>
+                    <td>format</td>
+                    <td>yyyy-mm-dd</td>
+                    <td>How date should be formatted.<br /><code class="inline">yyyy-mm-dd</code> 
+                    <code class="inline">dd-mm-yyyy</code> <code class="inline">mm-dd-yyyy</code>
+                    <code class="inline">D d M, Y</code></td>
+                </tr>
+                <tr>
                     <td>placeholder</td>
                     <td>Select a date</td>
                     <td>Placeholder text to display</td>
@@ -211,6 +256,7 @@
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#range">Range datepicker</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#formats">Date formats</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#defaults">With default values</a></div>
                     <div class="flex items-center hidden"><div class="dot"></div><a href="#timepicker">With Timepicker</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
