@@ -79,8 +79,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             let current_theme = getFromStorage('theme');
             current_theme = (current_theme == 'light') ? 'dark' : 'light';
             document.documentElement.removeAttribute('class');
-            changeCss(document.documentElement, current_theme, 'add', true);
             addToStorage('theme', current_theme);
+            changeCss(document.documentElement, current_theme, 'add', true);
         }
         (getFromStorage('theme') == null) ? addToStorage('theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light')) : '';
         changeCss(document.documentElement, getFromStorage('theme'), 'add', true);
