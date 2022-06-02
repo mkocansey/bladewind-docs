@@ -55,6 +55,37 @@
                     </code>
                 </pre>
             </p>
+            <br /><h3>What Happens When Both Placeholder and Label are Set</h3><br />
+            <p>
+                The <code class="inline">label</code> attribute actually replaces <code class="inline">placeholder</code>. In most common cases input labels are displayed above 
+                the input box and don't interfere with the input's placeholder text. However, the label for Bladewind's Textbox component is designed to sit in the same spot where the placeholder text is displayed and covers it up.
+                Having a placeholder text that is longer than your label text results in some parts of the placeholder text sticking out under the label. If you want the placeholder to still be shown even when there is a label, set <code class="inline text-red-500">show_placeholder_always="true"</code>
+            </p>
+            <p><x-bladewind::input name="mobile" label="Mobile" placeholder="000.0000.000" show_placeholder_always="true"  /></p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.input 
+                            name="mobile" label="Mobile" placeholder="000.0000.000" /&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                From the example above you will notice the placeholder is sticking out under the label. This is because the placeholder text is longer than the label. 
+                See why we hide the placeholder when the label is set. One way to fix this is by appending non breaking spaces to your label till the placeholder text is covered. 
+                This is an ugly solution.
+            </p>
+            <p><x-bladewind::input name="mobile" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;x-bladewind.input name="mobile" 
+                            label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
+                            placeholder="000.0000.000" 
+                            show_placeholder_always="true" /&gt;
+                    </code>
+                </pre>
+            </p>
             <br /><h3>Required Fields</h3><br />
             <p>
                 This either adds a red asterisk sign to the placeholder text or a red star to the label of the input field.
@@ -137,6 +168,14 @@
                     <td>Placeholder text to display in the input element. </td>
                 </tr>
                 <tr>
+                    <td>show_placeholder_always</td>
+                    <td>false</td>
+                    <td>
+                        Placeholder text is hidden when the label attribute has a value. Setting this to true always shows the placeholder.<br />
+                        <code class="inline">true</code> <code class="inline">false</code>
+                     </td>
+                </tr>
+                <tr>
                     <td>selected_value</td>
                     <td><em>blank</em></td>
                     <td>Default value to display in the input element. Useful when in edit mode.</td>
@@ -154,6 +193,7 @@
                         numeric="false" 
                         add_clearing="false" 
                         required="true"
+                        show_placeholder_always="true"
                         selected_value="" /&gt;
                 </code>
             </pre>

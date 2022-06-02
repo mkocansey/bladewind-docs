@@ -16,7 +16,10 @@
     <p>
         <pre class="lang-bash command-line"><code>composer require mkocansey/bladewind</code></pre>
     </p>
-    <p>Next you need to <b>publish the package assets</b> by running this command, still at the root of your Laravel project.</p>
+    <p>
+        Next you need to <b>publish the package assets</b> by running this command, still at the root of your Laravel project.
+        You always need to publish assets when you update to a new version of BladewindUI. See <a href="#update">Update Notes</a> at the bottom of this page.
+    </p>
     <p>
     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=assets --force</code></pre>
     </p>
@@ -24,23 +27,26 @@
     <p>
     <pre class="lang-markup">
         <code>
-            // this is required for animation of notifications and slide out panels
-            // you can ignore this if you already have animate.css in your project
+            // this is required for the animation of notifications and slide out panels
+            // you can ignore this if you already have animate.css (https://animate.style/) in your project
             
-            &lt;link href="&#123;&#123; asset('bladewind/css/animate.min.css') }}" rel="stylesheet" /&gt;</code></pre>
-    </p>
-    <p>
-    <pre class="lang-markup"><code>&lt;link href="&#123;&#123; asset('bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" /&gt;</code></pre>
-    </p>
-    <p>
-    <pre class="lang-markup"><code>&lt;script src="&#123;&#123; asset('bladewind/js/helpers.js') }}" type="text/javascript">&lt;/script&gt;</code></pre>
+            &lt;link href="&#123;&#123; asset('bladewind/css/animate.min.css') }}" rel="stylesheet" /&gt;
+
+            &lt;link href="&#123;&#123; asset('bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" /&gt;
+
+            &lt;script src="&#123;&#123; asset('bladewind/js/helpers.js') }}">&lt;/script&gt;</code></pre>
     </p>
     <br />
     <p>
-        <x-bladewind::alert type="warning" show_close_icon="false">The Datepicker and Timepicker components require AlpineJs 3.x to work. Include this in your &lt;head&gt;. You can ignore this final step if you are already using AlpineJs in your project.</x-bladewind::alert>
-    </p>
-    <p>
-    <pre class="lang-markup"><code>&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;</code></pre>
+        <pre class="lang-markup">
+            <code>
+                // The Datepicker and Timepicker components require AlpineJs 3.x to work. 
+                // Include this in your &lt;head&gt;. You can ignore this final step if 
+                // you are already using AlpineJs in your project
+
+                &lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;
+            </code>
+        </pre>
     </p>
     <br>
     <p>You are now ready to start using any of the BladewindUI components in your application</p> 
@@ -64,9 +70,18 @@
     </p>
     <p>
         3. The language files for the <a href="/component/datepicker">Datepicker</a> component have been placed in <code class="inline">lang > bladewind</code>. The default languages shipped with the Datepicker are English, French and Italian. You can <a href="/customization">add more languages</a>.
+    </p><br />
+    <x-bladewind::alert show_close_icon="false" type="warning" shade="dark">If you intend to use bladewindUI in a Laravel 8.x project, please do well to <a href="/laravel8-users">read this</a>.</x-bladewind::alert><a name="update"></a></p>
+        <br />
+    <br />
+    <h2>Update</h2>
+    <p>When you update the Bladewind package via <code class="inline">composer update</code> it is important to always run the command below to republish the library's assets, as component updates are sometimes made to the CSS and JS files as well. 
+    Composer prevents packages from automatically running scripts after installing for obvious security reasons. </p>
+    <p>
+        <pre class="lang-bash command-line"><code>composer update</code></pre>
+
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=assets --force</code></pre>
     </p>
-    <p><x-bladewind::alert show_close_icon="false" show_icon="false">If you intend to use bladewindUI in a Laravel 8.x project, please do well to <a href="/laravel8-users">read this</a>.</x-bladewind::alert></p>
-    <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
 
