@@ -115,7 +115,130 @@
                             required="true" 
                             onfocus="changeCss('.events', '!border-2,!border-red-400')" 
                             onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"  /&gt;
+                    </code><a name="validate"></a>
+                </pre>
+            </p>
+            <br /><h2>Validating Required Fields</h2>
+            <p>
+                Bladewind comes with a very handy helper function for validating input and textarea fields that have the attribute <code class="inline text-red-500">required='true"</code> set. 
+                The best way to explain this is to look at an actual sign up form example.
+            </p>
+            <p>
+                <x-bladewind::card>
+                    <form method="get" class="signup-form">
+                        <h1 class="my-2 text-2xl font-light text-blue-900/80">Create Account</h1>
+                        <p class="mt-3 mb-6 text-blue-900/80 text-sm">
+                            This is a sign up form example to demonstrate how to validate forms using Bladewind.
+                        </p>
+                        <x-bladewind::input name="fname" required="true" label="Full Name" error_message="You will need to enter your full name" />
+                        <div class="flex gap-4">
+                            <x-bladewind::input name="email" required="true"  label="Email" />
+                            <x-bladewind::input name="mobile"  label="Mobile" numeric="true" />
+                        </div>
+                        <x-bladewind::textarea required="true" name="bio" 
+                            error_message="Yoh! write something nice about yourself" 
+                            label="Describe yourself" show_error_inline="true"></x-bladewind::textarea>
+                        <div class="text-center">
+                            <x-bladewind::button name="btn-save" has_spinner="true" type="primary" can_submit="true" class="mt-3">Sign Up Today</x-bladewind::button>
+                        </div>
+                    </form>
+                </x-bladewind::card>
+            </p>
+            <p>
+                Let's take a look at the code for the form and then proceed to break it down.
+            </p>
+            <p>
+                <pre class="language-markup line-numbers" data-line="1,5,16,22,33,35, 36">
+                    <code>
+                        &lt;x-bladewind::notification /&gt;
+
+                        &lt;x-bladewind::card&gt;
+
+                            &lt;form method="get" class="signup-form"&gt;
+
+                                &lt;h1 class="my-2 text-2xl font-light text-blue-900/80"&gt;Create Account&lt;/h1&gt;
+                                &lt;p class="mt-3 mb-6 text-blue-900/80 text-sm"&gt;
+                                    This is a sign up form example to demonstrate how to validate forms using Bladewind.
+                                &lt;/p&gt;
+
+                                &lt;x-bladewind::input 
+                                    name="fname" 
+                                    required="true" 
+                                    label="Full Name" 
+                                    error_message="You will need to enter your full name" /&gt;
+                                
+                                &lt;div class="flex gap-4"&gt;
+
+                                    &lt;x-bladewind::input 
+                                        name="email" 
+                                        required="true" 
+                                        label="Email" /&gt;
+                                    
+                                    &lt;x-bladewind::input 
+                                        name="mobile" 
+                                        label="Mobile" 
+                                        numeric="true" /&gt;
+
+                                &lt;/div&gt;
+
+                                &lt;x-bladewind::textarea 
+                                    required="true" 
+                                    name="bio" 
+                                    error_message="Yoh! write something nice about yourself"  
+                                    show_error_inline="true"
+                                    label="Describe yourself"&gt;&lt;/x-bladewind::textarea&gt;
+                                
+                                &lt;div class="text-center"&gt;
+
+                                    &lt;x-bladewind::button 
+                                        name="btn-save" 
+                                        has_spinner="true"
+                                        type="primary" 
+                                        can_submit="true" 
+                                        class="mt-3"&gt;
+                                        Sign Up Today
+                                    &lt;/x-bladewind::button&gt;
+
+                                &lt;/div&gt;
+
+                            &lt;/form&gt;
+
+                        &lt;/x-bladewind::card&gt;
                     </code><a name="attributes"></a>
+                </pre>
+            </p>
+            <p>
+                Error messages can either be displayed inline or using the <a href="/component/notification">Bladewind notification</a> component. 
+                You will notice we included the Notification component on line 1. On line 5 we have a form with a class of <code class="inline">signup-form</code>. 
+                This class will be used to set up an event listener on the form. On line 16 out input component defines an <code class="inline text-red-500">error_message</code> attribute. 
+                This message is what will be displayed if we validate the form and find that field to be empty. The <code class="inline">error_message</code> attribute will 
+                only be used if the <code class="inline text-red-500">required="true"</code> attribute has been set on the input component.
+            </p>
+            <p>
+                Our email input has set <code class="inline text-red-500">required="true"</code> but has no <code class="inline text-red-500">error_message</code> attribute defined. You will notice 
+                when we submit the form with no email value, the field is highlighted with a red border but no message is displayed.
+            </p>
+            <p>
+                Lastly, our textarea component defines a new attribute on line 36. The <code class="inline text-red-500">show_error_inline="true"</code> attribute will display the 
+                error message beneath the field the attribute was set on.
+            </p>
+            <p>Below is the javascript that triggers the validation of the form. <code class="inline">dom_el</code>, <code class="inline">unhide</code> and <code class="inline">validateForm</code> are helper functions in the package.</p>
+            <p>
+                <pre class="language-js line-numbers" data-line="">
+                    <code>
+                        dom_el('.signup-form').addEventListener('submit', function (e){
+                            e.preventDefault();
+                            signUp();
+                        });
+
+                        signUp = () => {
+                            if (validateForm('.signup-form')) {
+
+                                // do this if form is validated
+                                unhide('.btn-save .bw-spinner')
+                            }
+                        }
+                    </code>
                 </pre>
             </p>
            
@@ -193,6 +316,9 @@
                         numeric="false" 
                         add_clearing="false" 
                         required="true"
+                        error_message="PIN can only be 4 digits"
+                        show_error_inline="true"
+                        error_heading="Bugged"
                         show_placeholder_always="true"
                         selected_value="" /&gt;
                 </code>
@@ -203,12 +329,14 @@
                 The source file for this component is available in <code class="inline">resources > views > components > bladewind > input.blade.php</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
+            <x-bladewind::notification />
 
         </div>
         <div class="sm:w-1/4 grow-0 mb-8">
             <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
                 <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
                 <div class="space-y-2">
+                    <div class="flex items-center"><div class="dot"></div><a href="#validate">Validating input fields</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>
@@ -218,6 +346,17 @@
     <x-slot name="scripts">
         <script>
             selectNavigationItem('.component-textbox');
+            
+            dom_el('.signup-form').addEventListener('submit', function (e){
+                e.preventDefault();
+                signUp();
+            });
+
+            signUp = () => {
+                if (validateForm('.signup-form')) {
+                    unhide('.btn-save .bw-spinner')
+                }
+            }
         </script>
     </x-slot>
 </x-app>

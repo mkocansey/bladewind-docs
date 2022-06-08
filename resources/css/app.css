@@ -17,4 +17,5 @@
     .navigation a { @apply border-t border-slate-300 pt-4 block w-full pl-6 dark:border-gray-800 }
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
+    h3 { @apply text-xl }
 }

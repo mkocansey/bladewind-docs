@@ -11,11 +11,10 @@ dom_els(`.${el_name} .dropdown-items>div.dd-item`).forEach((el) => {
         let label = el.getAttribute('data-label');
         let href = el.getAttribute('data-href');
         let href_target = el.getAttribute('data-href-target');
-        let parent_tag = el.getAttribute('aria-parent');
-        let user_function = el.getAttribute('aria-user-function');
+        let parent_tag = el.getAttribute('data-parent');
+        let user_function = el.getAttribute('data-user-function');
         if(parent_tag != null) {
             dom_el(`.bw-${parent_tag}`).value = value;
-            console.log(el.innerHTML);
             dom_el(`.${parent_tag}>button>label`).innerHTML = `<div class="flex items-center">${el.innerHTML}</div>`;
             el.parentElement.parentElement.classList.toggle('hidden');
 

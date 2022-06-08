@@ -50,6 +50,10 @@
                     </code>
                 </pre>
             </p>
+            <p>
+                See component/input documentation on <a href="https://bladewindui.com/component/textbox#validate">Validating Required Fields</a>.
+            </p>
+
             <br /><h3>Events</h3><br />
             <p>
                 You can append any of the available HTML event attributes (<em>onclick, onblur, onfocus, onmouseover, onmouseout, onkeyup, onkeydown</em> etc) to the component, just like you would to a regular <code class="inline">&lt;textarea ...</code> tag. 
