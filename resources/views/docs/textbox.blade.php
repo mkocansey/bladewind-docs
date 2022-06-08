@@ -204,7 +204,7 @@
                             &lt;/form&gt;
 
                         &lt;/x-bladewind::card&gt;
-                    </code><a name="attributes"></a>
+                    </code>
                 </pre>
             </p>
             <p>
@@ -238,7 +238,7 @@
                                 unhide('.btn-save .bw-spinner')
                             }
                         }
-                    </code>
+                    </code><a name="attributes"></a>
                 </pre>
             </p>
            
@@ -297,6 +297,21 @@
                         Placeholder text is hidden when the label attribute has a value. Setting this to true always shows the placeholder.<br />
                         <code class="inline">true</code> <code class="inline">false</code>
                      </td>
+                </tr>
+                <tr>
+                    <td>error_message</td>
+                    <td><em>blank</em></td>
+                    <td>The message to display when the form is validated and field happens to be blank.</td>
+                </tr>
+                <tr>
+                    <td>show_error_inline</td>
+                    <td>false</td>
+                    <td>Error messages can either be displayed inline or using the Notification component (default).<br /><code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
+                    <td>error_heading</td>
+                    <td>Error</td>
+                    <td>Only used when displaying validation errors using the Notification component. Because the validation errors are triggered from javascript, it may not be easy to translate the heading of the notification message. This provides a way to specify a translatable heading for the error.</td>
                 </tr>
                 <tr>
                     <td>selected_value</td>
