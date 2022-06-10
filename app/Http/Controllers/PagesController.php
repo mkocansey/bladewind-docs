@@ -39,6 +39,7 @@ class PagesController extends Controller
     public function toggle()                { return view('docs.toggle'); }
     public function tooltip()               { return view('docs.tooltip'); }
     public function app_layouts()           { return view('docs.app-layouts'); }
-    public function spa()                   { return view('docs.spa'); }
     public function errors()                { return view('docs.error-pages'); }
+    public function helper_functions()      { return view('docs.helpers'); }
+    public function spa()                   { return view('docs.spa'); }
 }
