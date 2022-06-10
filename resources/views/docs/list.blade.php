@@ -60,7 +60,7 @@
                                 &lt;/div&gt;
 
                             &lt;/x-bladewind::list-item&gt
-                            ;
+                            
                             &lt;x-bladewind.list-item&gt;
                                 &lt;x-bladewind.avatar 
                                     size="small" 

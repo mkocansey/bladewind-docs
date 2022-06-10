@@ -28,12 +28,12 @@
                 <div class="grid grid-cols-2 gap-6">
                     <x-bladewind::card title="Mobile Money Penetration">
                         <x-bladewind::horizontal-line-graph label="MTN: " percentage="55" color="yellow" />
-                        <x-bladewind::horizontal-line-graph label="Vodafone: " percentage="30" color="red" css="py-3" />
+                        <x-bladewind::horizontal-line-graph label="Vodafone: " percentage="30" color="red" class="py-3" />
                         <x-bladewind::horizontal-line-graph label="AirtelTigo: " percentage="15" color="blue" />
                     </x-bladewind::card>
                     <x-bladewind::card title="Farmer age ratio">
                         <x-bladewind::horizontal-line-graph label="Above 60: " percentage="33" color="cyan" />
-                        <x-bladewind::horizontal-line-graph label="Between 40 - 60: " percentage="43" color="purple" css="py-3" />
+                        <x-bladewind::horizontal-line-graph label="Between 40 - 60: " percentage="43" color="purple" class="py-3" />
                         <x-bladewind::horizontal-line-graph label="Under 40: " percentage="24" color="gray" />
                     </x-bladewind::card>
                 </div>
@@ -54,7 +54,7 @@
                                     label="Vodafone: " 
                                     percentage="30" 
                                     color="red" 
-                                    css="py-3" /&gt;
+                                    class="py-3" /&gt;
 
                                 &lt;x-bladewind.horizontal-line-graph 
                                     label="AirtelTigo: " 
@@ -74,7 +74,7 @@
                                     label="Between 40 - 60: " 
                                     percentage="43" 
                                     color="purple" 
-                                    css="py-3" /&gt;
+                                    class="py-3" /&gt;
 
                                 &lt;x-bladewind.horizontal-line-graph 
                                     label="Under 40: " 

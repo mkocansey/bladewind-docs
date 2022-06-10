@@ -8,6 +8,10 @@
                 It is possible to set a colour attribute to display our button in different colours. These are however a definite list of colours.
                 You can check out our customization notes on how to use a different primary <a name="primary"></a> theme colour if you'd prefer a colour not defined in our list.
             </p>
+            <p>
+                By default the component uses the <code class="inline">&lt;button&gt;</code> tag to build the button. If you find yourself in the category of developers who prefer to use the <code class="inline">&lt;a&gt;</code> tag for their buttons, you will need to specify 
+                the attribute <code class="inline text-red-500">tag="a"</code>.
+            </p>
             <br />
             <h2>Primary Button</h2>
             <x-bladewind::button>Subscribe Now</x-bladewind::button>
@@ -15,6 +19,16 @@
             <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button/&gt;
+                </code>
+            </pre>
+            <br /><x-bladewind::button tag="a">Subscribe Now</x-bladewind::button>
+            <div class="h-2"></div>
+            <pre class="language-markup">
+                <code>
+                    // this button is created using the &lt;a&gt; tag
+                    // you can inspect element on the above button to check
+
+                    &lt;x-bladewind.button tag="a"&gt;subscribe now&lt;/x-bladewind.button/&gt;
                 </code>
             </pre>
             <p>&nbsp</p>
@@ -367,6 +381,11 @@
                     <td>false</td>
                     <td>Defines if the button should be disabled or enabled. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
+                <tr>
+                    <td>tag</td>
+                    <td>button</td>
+                    <td>Specifies which html tag to use in creating the button. <br> <code class="inline">button</code> <code class="inline">a</code> </td>
+                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Button with all attributes defined</h3>
@@ -380,6 +399,7 @@
                         show_spinner="false"
                         disabled="false"
                         class="mt-0"
+                        tag="a"
                         can_submit="false"&gt;
                         ...
                     &lt;/x-bladewind.button&gt;
