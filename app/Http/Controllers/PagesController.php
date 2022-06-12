@@ -38,6 +38,7 @@ class PagesController extends Controller
     public function timepicker()            { return view('docs.timepicker'); }
     public function toggle()                { return view('docs.toggle'); }
     public function tooltip()               { return view('docs.tooltip'); }
+    public function verification_code()     { return view('docs.code'); }
     public function app_layouts()           { return view('docs.app-layouts'); }
     public function errors()                { return view('docs.error-pages'); }
     public function helper_functions()      { return view('docs.helpers'); }

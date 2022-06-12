@@ -318,6 +318,14 @@
                     <td><em>blank</em></td>
                     <td>Default value to display in the input element. Useful when in edit mode.</td>
                 </tr>
+                <tr>
+                    <td>with_dots</td>
+                    <td>true</td>
+                    <td>
+                        Mostly relevant if <code class="inline">numeric="true"</code>. Determines if numeric values can contain dots or not.<br />
+                        <code class="inline">true</code> <code class="inline">false</code>
+                    </td>
+                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Input with all attributes defined</h3>
@@ -334,6 +342,7 @@
                         error_message="PIN can only be 4 digits"
                         show_error_inline="true"
                         error_heading="Bugged"
+                        with_dots="true"
                         show_placeholder_always="true"
                         selected_value="" /&gt;
                 </code>

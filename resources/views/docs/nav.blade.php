@@ -36,6 +36,7 @@
     <div class="flex items-center component-timepicker hidden"><div class="dot"></div><a href="/component/timepicker">Timepicker</a></div>
     <div class="flex items-center component-tooltip hidden"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>
     <div class="flex items-center component-toggle"><div class="dot"></div><a href="/component/toggle">Toggle</a></div>
+    <div class="flex items-center component-code"><div class="dot"></div><a href="/component/verification-code">Verification Code</a></div>
 </div>
 
 <h5 class="mb-3 my-10 font-semibold text-slate-900 dark:text-slate-600/90">Extras</h5></li>
