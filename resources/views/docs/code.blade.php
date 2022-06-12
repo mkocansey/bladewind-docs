@@ -177,7 +177,7 @@
                 <code class="inline">hideSpinner(name)</code> Javascript helper function.
             </p><br />
             <p>
-                <x-bladewind::code name="spin_me" on_verify="spinSpinSpin" />
+                <x-bladewind::code name="spin_me" on_verify="validatePin" />
             </p><br />
             <p>
                 <pre class="language-markup">

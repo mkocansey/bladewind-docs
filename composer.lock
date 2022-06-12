@@ -1600,16 +1600,16 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mkocansey/bladewind.git",
-                "reference": "62d090c3098f8d66ca57f4a690c77cacb47cd03c"
+                "reference": "da38de28369e3a7b8abd0143a9674832ef8ad5a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/62d090c3098f8d66ca57f4a690c77cacb47cd03c",
-                "reference": "62d090c3098f8d66ca57f4a690c77cacb47cd03c",
+                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/da38de28369e3a7b8abd0143a9674832ef8ad5a8",
+                "reference": "da38de28369e3a7b8abd0143a9674832ef8ad5a8",
                 "shasum": ""
             },
             "require": {
@@ -1647,9 +1647,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mkocansey/bladewind/issues",
-                "source": "https://github.com/mkocansey/bladewind/tree/v1.2.0"
+                "source": "https://github.com/mkocansey/bladewind/tree/v1.2.1"
             },
-            "time": "2022-06-12T04:43:44+00:00"
+            "time": "2022-06-12T14:42:47+00:00"
         },
         {
             "name": "monolog/monolog",
