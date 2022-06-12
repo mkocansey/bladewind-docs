@@ -7,7 +7,7 @@
                 Display a set of input fields to accept verification code from a user. It is common place to add email and phone number verification to websites these days. 
                 These codes range from four to six digits. The verification code Bladewind component however, allows you to specify how many digits you want the enduser to type, by specifying the 
                 <code class="inline text-red-500">total_digits</code> attribute. There is no restriction on the maximum value you can specify for the <code class="inline">total_digits</code>.  In a finance app, you could 
-                use this to collect account numbers. The default number of digits displayed by the component is six (6). We interchange the words PIN, PIN code and verification code. We mean the same thing.
+                use this to collect account numbers. The default number of digits displayed by the component is four (4). We interchange the words PIN, PIN code and verification code. We mean the same thing.
             </p>
             <br/>
             <p><x-bladewind::code  /></p>
@@ -18,10 +18,10 @@
             </pre>
             <br/>
             <br/>
-            <p><x-bladewind::code total_digits="4"  /></p>
+            <p><x-bladewind::code total_digits="5"  /></p>
             <pre class="language-markup">
                 <code>
-                    &lt;x-bladewind.code total_digits="4"  /&gt;
+                    &lt;x-bladewind.code total_digits="5"  /&gt;
                 </code><a name="code"></a>
             </pre>
             <br />
@@ -32,7 +32,7 @@
             <p>
                 <pre class="language-markup">
                     <code>
-                        &lt;x-bladewind.code total_digits="4" name="pin_code"  /&gt;
+                        &lt;x-bladewind.code name="pin_code"  /&gt;
                     </code>
                 </pre>
             </p>
@@ -75,7 +75,10 @@
             <p>
                 <pre class="language-markup">
                     <code>
-                        &lt;x-bladewind.code total_digits="5" on_verify="checkPin" /&gt;
+                        &lt;x-bladewind.code 
+                            total_digits="5" 
+                            on_verify="checkPin" /&gt;
+
 
                         &lt;script&gt;
                             checkPin = (code) => {
@@ -99,7 +102,7 @@
             <p>
                 <pre class="language-markup">
                     <code>
-                        &lt;x-bladewind.code total_digits="4" name="pin_code"  /&gt;
+                        &lt;x-bladewind.code name="pin_code"  /&gt;
                     </code>
                 </pre>
             </p>
@@ -127,25 +130,24 @@
                 It accepts the name provided to the code component as a parameter. The error message can be hidden by calling the 
                 <code class="inline">hidePinError(name)</code> Javascript helper function.
             </p>
-            <p>The verification code inputs below expect the code <strong>2022</strong>. Enter any other code and see how the error is displayed. </p>
+            <p>The verification code below is supposed to be <strong>2022</strong>. Enter any other code and see how the error is displayed. </p>
             <p>
-                <x-bladewind::code name="this_year" error_message="Your code is invalid. Tip: try this year" on_verify="checkPinCode" total_digits="4" />
+                <x-bladewind::code name="pcode" error_message="Yoh! check your code" on_verify="checkPinCode" />
             </p><br />
             <p>
                 <pre class="language-markup">
                     <code>
                         &lt;x-bladewind.code 
-                            name="this_year"
-                            error_message="Your code is invalid. Tip: try this year" 
-                            on_verify="checkPinCode" 
-                            total_digits="4" /&gt;
+                            name="pcode"
+                            error_message="Yoh! check your code" 
+                            on_verify="checkPinCode" /&gt;
                     </code>
                 </pre>
                 <script>
                    checkPinCode = (code) => {
                         if( code !== '2022') {
-                            clearPin('this_year');
-                            showPinError('this_year');
+                            clearPin('pcode');
+                            showPinError('pcode');
                         }
                     }
                 </script>
@@ -156,9 +158,10 @@
                         &lt;script&gt;
                             checkPinCode = (code) => {
                                 if( code !== '2022') {
-                                    clearPin('this_year');
-                                    // accepts name of the code component as a parameter
-                                    showPinError('this_year');
+                                    clearPin('pcode');
+                                    // accepts name of the code 
+                                    // component as a parameter
+                                    showPinError('pcode');
                                 }
                             }
                         &lt;/script&gt;
@@ -179,11 +182,13 @@
             <p>
                 <pre class="language-markup">
                     <code>
-                        &lt;x-bladewind.code name="spin_me" on_verify="spinSpinSpin"  /&gt;
+                        &lt;x-bladewind.code 
+                            name="spin_me" 
+                            on_verify="validatePin"  /&gt;
                     </code>
                 </pre>
                 <script>
-                   spinSpinSpin = (code) => {
+                   validatePin = (code) => {
                         showSpinner('spin_me');
                     }
                 </script>
@@ -192,8 +197,9 @@
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
                         &lt;script&gt;
-                            spinSpinSpin = (code) => {
+                            validatePin = (code) => {
                                 showSpinner('spin_me');
+                                ajaxCall('/verify/pin', `code=${code}`, ...
                             }
                         &lt;/script&gt;
                     </code>
