@@ -38,9 +38,10 @@
     <h2>You can change everything</h2>
     <p>Truely, you can! These components are in essence just Laravel blade templates that sit right there in your project. If there are any implementations you are unhappy with, simply locate the particular blade template and dissect it at will.</p>
     <p>
-        Something to keep in mind though. Most Bladewind updates we roll out may affect the blade files, css and js files. Updates that touch the css and js files will require that you run the command below to publish the css and js files.
+        Something to keep in mind though. Most Bladewind updates we roll out may affect the blade files, css and js files. Updates that touch the css and js files require the library's assets to be republished. This is done automatically.
+        If you wish to manually publish the assets just to be sure, run the command below.
     </p>
-     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=assets --force</code></pre><br />
+     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=laravel-assets --force</code></pre><br />
      <p>
         To prevent any changes you made earlier from being overwritten by updates, we advise you to make all changes that overwrite Bladewind classes in your project's css file instead of editing the Bladewind css file directly.
      </p>
