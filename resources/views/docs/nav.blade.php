@@ -46,5 +46,6 @@
     <div class="flex items-center extra-helpers"><div class="dot"></div><a href="/extra/helper-functions">Helper Functions</a></div>
     <div class="flex items-center extra-spa hidden"><div class="dot"></div><a href="/extra/spa">Single Page Technique</a></div>
     <p>&nbsp;</p>
+    <p>&nbsp;</p>
     {{-- <div class="flex items-center"><div class="dot"></div><a href="/layout/slideout-panel">Slideout Panel</a></div> --}}
 </div>

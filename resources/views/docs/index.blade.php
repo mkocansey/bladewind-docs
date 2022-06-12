@@ -21,7 +21,7 @@
         You always need to publish assets when you update to a new version of BladewindUI. See <a href="#update">Update Notes</a> at the bottom of this page.
     </p>
     <p>
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=assets --force</code></pre>
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=laravel-assets --force</code></pre>
     </p>
     <p>Now include the BladewindUI css file and initialize a few javascript variables in the <code class="inline">&lt;head&gt;</code> of your pages. This should ideally be done in the layouts file your app's pages extend from.</p>
     <p>
@@ -74,14 +74,25 @@
     <x-bladewind::alert show_close_icon="false" type="warning" shade="dark">If you intend to use bladewindUI in a Laravel 8.x project, please do well to <a href="/laravel8-users">read this</a>.</x-bladewind::alert><a name="update"></a></p>
         <br />
     <br />
-    <h2>Update</h2>
-    <p>When you update the Bladewind package via <code class="inline">composer update</code> it is important to always run the command below to republish the library's assets, as component updates are sometimes made to the CSS and JS files as well. 
-    Composer prevents packages from automatically running scripts after installing for obvious security reasons. </p>
-    <p>
-        <pre class="lang-bash command-line"><code>composer update</code></pre>
-
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=assets --force</code></pre>
+    <h2>Updating Bladewind</h2>
+    <p><pre class="lang-bash command-line"><code>composer update</code></pre></p>
+    <p>When you update the Bladewind package via <code class="inline">composer update</code>
+    the assets are republished since it is possible changes were made to the library's CSS or JS files. 
+    If you see output similar to what is below, it means the assets were successfully published. 
     </p>
+    <p>
+    <pre class="lang-bash command-line">
+        <code>
+            Copied Directory [/vendor/mkocansey/bladewind/src/resources/views/components] To [/resources/views/components/bladewind]
+            Copied Directory [/vendor/mkocansey/bladewind/src/resources/lang] To [/resources/lang]
+            Copied Directory [/vendor/mkocansey/bladewind/src/resources/assets/compiled] To [/public/bladewind]
+        </code>
+    </pre>
+    </p>
+    <p>
+        If you do not see output similar to what is above, you will need to manually republish the assets by running the command below.
+    </p>
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=laravel-assets --force</code></pre>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
 
