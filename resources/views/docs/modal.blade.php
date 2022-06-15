@@ -20,10 +20,10 @@
                 <x-bladewind::button onclick="showModal('tnc-agreement')">Basic modal</x-bladewind::button>
                 <x-bladewind::button onclick="showModal('tnc-agreement-titled')" class="mt-2 sm:mt-0">Basic modal with a title</x-bladewind::button>
                 <x-bladewind::modal name="tnc-agreement">
-                    Please agree to the terms and conditions of the agreement before proceeding.
+                    Please agree to the terms and conditions of the agreement before proceeding. By clicking the OKAY button you agree to let your machine explode 💥
                 </x-bladewind::modal>
                 <x-bladewind::modal name="tnc-agreement-titled" title="Agree or Disagree">
-                    Please agree to the terms and conditions of the agreement before proceeding.
+                    Please agree to the terms and conditions of the agreement before proceeding. 
                 </x-bladewind::modal>
             </p>
             <br />
@@ -182,9 +182,30 @@
             </p>
             <p>
                 You could tell the above modals looked quite squashed. The BladewindUI modal component comes with a size option that allows your content to breath in the modals.
-                This can be achieved by setting the <code class="inline text-red-500">size</code> attribute on the modal component. The default <code class="inline text-red-500">size="medium"</code>. 
-                Below are all the available sizes.
+                This can be achieved by setting the <code class="inline text-red-500">size</code> attribute on the modal component. The default <code class="inline text-red-500">size="small"</code>. 
+                Below are all the available sizes. All sizes are the same on mobile.
             </p>
+            <p><h3>Tiny Modal</h3></p>
+            <p>
+                This requires that you set <code class="inline text-red-500">size="tiny"</code> on the modal component.
+            </p>
+            <p>
+                <x-bladewind::button onclick="showModal('tiny-modal')">Tiny Modal</x-bladewind::button>
+            </p>
+            <pre class="language-markup line-numbers" data-line="6">
+                <code>
+                    &lt;x-bladewind.button onclick="showModal('tiny-modal')"&gt;
+                        Tiny Modal
+                    &lt;/x-bladewind.button&gt;
+
+                    &lt;x-bladewind.modal 
+                        size="tiny" 
+                        title="Tiny Modal" 
+                        name="tiny-modal"&gt;
+                        I am the tiniest in the modal family. Don't hate.
+                    &lt;/x-bladewind.modal&gt;
+                </code>
+            </pre>
             <p><h3>Small Modal</h3></p>
             <p>
                 This requires that you set <code class="inline text-red-500">size="small"</code> on the modal component.
@@ -312,10 +333,13 @@
                     &lt;/x-bladewind.modal&gt;
                 </code>
             </pre>
-            <x-bladewind::modal size="small" title="Small Modal" name="small-modal">
-                I am the smallest in the modal family. Don't hate.
+            <x-bladewind::modal size="tiny" title="Tiny Modal" name="tiny-modal">
+                I am the tiniest in the modal family. I am probably rarely used.
             </x-bladewind::modal>
-            <x-bladewind::modal title="Medium Modal" name="medium-modal">
+            <x-bladewind::modal size="small" title="Small Modal" name="small-modal">
+                I am the smallest in the modal family. I am probably the second most used.
+            </x-bladewind::modal>
+            <x-bladewind::modal size="medium" title="Medium Modal" name="medium-modal">
                 I am the medium sized modal. Also the default if you do not set a size.
             </x-bladewind::modal>
             <x-bladewind::modal size="big" title="Big Modal" name="big-modal">
@@ -589,7 +613,7 @@
                 <tr>
                     <td>size</td>
                     <td>medium</td>
-                    <td>Defines the size of the modal. Arranged from smallest to largest. <br> <code class="inline">small</code> <code class="inline">medium</code> 
+                    <td>Defines the size of the modal. Arranged from smallest to largest. <br> <code class="inline">tiny</code> <code class="inline">small</code> <code class="inline">medium</code> 
                     <code class="inline">big</code> <code class="inline">large</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
                 </tr>
                 <tr>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f70f7c84b62ecdaa377f9762fd92a6d7",
+    "content-hash": "0ef07f7cc355b07a8af19fdffb31f1b4",
     "packages": [
         {
             "name": "brick/math",
@@ -1454,16 +1454,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.0.20",
+            "version": "3.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "42a2f47dcf39944e2aee1b660ee55ab6ef69b535"
+                "reference": "8f1fcf9d2304ff77a006aa36dd2cb5f236999b12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/42a2f47dcf39944e2aee1b660ee55ab6ef69b535",
-                "reference": "42a2f47dcf39944e2aee1b660ee55ab6ef69b535",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8f1fcf9d2304ff77a006aa36dd2cb5f236999b12",
+                "reference": "8f1fcf9d2304ff77a006aa36dd2cb5f236999b12",
                 "shasum": ""
             },
             "require": {
@@ -1524,7 +1524,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.0.20"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.21"
             },
             "funding": [
                 {
@@ -1540,7 +1540,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-25T19:18:39+00:00"
+            "time": "2022-06-12T17:54:28+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -1600,17 +1600,11 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "v1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkocansey/bladewind.git",
-                "reference": "da38de28369e3a7b8abd0143a9674832ef8ad5a8"
-            },
+            "version": "dev-development",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/da38de28369e3a7b8abd0143a9674832ef8ad5a8",
-                "reference": "da38de28369e3a7b8abd0143a9674832ef8ad5a8",
-                "shasum": ""
+                "type": "path",
+                "url": "/Users/mkocansey/Projects/kursor/bladewind",
+                "reference": "1ee89b499aef3d1d5fee79b9ab2e36f8864d18e9"
             },
             "require": {
                 "php": ">=7.3"
@@ -1628,7 +1622,11 @@
                     "Mkocansey\\Bladewind\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "post-update-cmd": [
+                    "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=assets --force"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1640,16 +1638,14 @@
             ],
             "description": "Laravel UI Components using TailwindCSS, Blade Templates and vanilla Javascript",
             "keywords": [
-                "Ui Components",
                 "blade components",
                 "laravel",
-                "tailwindcss"
+                "tailwindcss",
+                "ui components"
             ],
-            "support": {
-                "issues": "https://github.com/mkocansey/bladewind/issues",
-                "source": "https://github.com/mkocansey/bladewind/tree/v1.2.1"
-            },
-            "time": "2022-06-12T14:42:47+00:00"
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "monolog/monolog",
@@ -7856,7 +7852,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mkocansey/bladewind": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
