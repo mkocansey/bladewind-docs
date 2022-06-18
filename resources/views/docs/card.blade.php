@@ -33,7 +33,7 @@
                 <code>
                     &lt;x-bladewind.card title="recent activity"&gt;
                         // the card content goes here
-                    &lt;/x-bladewind.card/&gt;
+                    &lt;/x-bladewind.card&gt;
                 </code><a name="examples"></a>
             </pre>
             
