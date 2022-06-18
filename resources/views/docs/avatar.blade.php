@@ -11,7 +11,7 @@
             </p>
             
             <h2>Single Avatar</h2>
-            <x-bladewind::avatar image="/assets/images/avatar1.jpg" class="mb-3" />
+            <x-bladewind::avatar image="/assets/images/issah.jpg" class="mb-3" />
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.avatar image="/path/to/the/image/file" /&gt;
@@ -21,13 +21,13 @@
             <p>&nbsp;</p>
             <h2>Different Sizes</h2>
             <p>You can specify a size for the avatar. See the full <a href="#attributes">list of attributes</a> for the available sizes. The default size is <code class="inline text-red-500">regular</code></p>
-            <x-bladewind::avatar image="/assets/images/avatar5.png" size="tiny" />
-            <x-bladewind::avatar image="/assets/images/avatar4.png" size="small" />
-            <x-bladewind::avatar image="/assets/images/avatar3.jpg" size="medium" />
-            <x-bladewind::avatar image="/assets/images/avatar2.jpg" />
-            <x-bladewind::avatar image="/assets/images/avatar1.jpg" size="big" />
-            <x-bladewind::avatar image="/assets/images/avatar2.jpg" size="huge" />
-            <x-bladewind::avatar image="/assets/images/avatar3.jpg" size="omg" />
+            <x-bladewind::avatar image="/assets/images/elodie.jpeg" size="tiny" />
+            <x-bladewind::avatar image="/assets/images/me.jpeg" size="small" />
+            <x-bladewind::avatar image="/assets/images/audrey.jpeg" size="medium" />
+            <x-bladewind::avatar image="/assets/images/francis-head.webp" />
+            <x-bladewind::avatar image="/assets/images/edwin.jpeg" size="big" />
+            <x-bladewind::avatar image="/assets/images/rowe.jpeg" size="huge" />
+            <x-bladewind::avatar image="/assets/images/issah.jpg" size="omg" />
             <br />
             <br />
             <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27">
@@ -69,10 +69,10 @@
                 You can achieve stackability by setting the <code class="inline text-red-500">stacked="true"</code> attribute on each avatar that you want as part of the stack.
             </p> 
 
-            <x-bladewind::avatar stacked="true" image="/assets/images/avatar1.jpg" />
-            <x-bladewind::avatar stacked="true" image="/assets/images/avatar2.jpg" />
-            <x-bladewind::avatar stacked="true" image="/assets/images/avatar3.jpg" />
-            <x-bladewind::avatar stacked="true" image="/assets/images/avatar5.png" />
+            <x-bladewind::avatar stacked="true" image="/assets/images/me.jpeg" />
+            <x-bladewind::avatar stacked="true" image="/assets/images/audrey.jpeg" />
+            <x-bladewind::avatar stacked="true" image="/assets/images/rowe.jpeg" />
+            <x-bladewind::avatar stacked="true" image="/assets/images/issah.jpg" />
             <br><br />
             <pre class="language-markup line-numbers" data-line="3,7,11,15">
                 <code>
