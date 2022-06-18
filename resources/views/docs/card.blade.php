@@ -104,24 +104,24 @@
             <p>&nbsp;</p>
             <h3 class="pb-4">Huge Navigation Items</h3>
             <p>
-                Below is an example of a grid-based navigation that uses cards for its menu items. The hover effect is achieved by adding additional TailwindUI classes to the <code class="inline text-red-500">css</code> attribute of the card. 
+                Below is an example of a grid-based navigation that uses cards for its menu items. The hover effect is achieved by adding additional TailwindUI classes to the <code class="inline text-red-500">class</code> attribute of the card. 
                 The icons used in the design below or anywhere else in our docs are from <a href="https://heroicons.com/" target="_blank">Heroicons</a>.
             </p>
             <p>
-                <div class="sm:grid sm:grid-cols-3 sm:gap-5 space-y-4">
-                    <x-bladewind::card css="cursor-pointer hover:shadow-gray-300">
+                <div class="sm:grid sm:grid-cols-3 sm:gap-5 space-y-4 sm:space-y-0">
+                    <x-bladewind::card class="cursor-pointer hover:shadow-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-green-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <span class="text-center block font-semibold mt-2">Projects</span>
                     </x-bladewind::card>
-                    <x-bladewind::card css="cursor-pointer hover:shadow-gray-300">
+                    <x-bladewind::card class="cursor-pointer hover:shadow-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-purple-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                         <span class="text-center block font-semibold mt-2">Tasks</span>
                     </x-bladewind::card>
-                    <x-bladewind::card css="cursor-pointer hover:shadow-gray-300">
+                    <x-bladewind::card class="cursor-pointer hover:shadow-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-rose-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
@@ -134,17 +134,17 @@
                 <code>
                     &lt;div class="grid grid-cols-3 gap-5"&gt;
                         
-                        &lt;x-bladewind.card css="cursor-pointer hover:shadow-gray-300"&gt;
+                        &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
                             &lt;svg ...&gt;...&lt;/svg&gt;
                             &lt;span class="text-center ..."&gt;Projects&lt;/span&gt;
                         &lt;/x-bladewind.card&gt;
 
-                        &lt;x-bladewind.card css="cursor-pointer hover:shadow-gray-300"&gt;
+                        &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
                             &lt;svg...&gt;...&lt;/svg&gt;
                             &lt;span class="text-center ..."&gt;Tasks&lt;/span&gt;
                         &lt;/x-bladewind.card&gt;
                         
-                        &lt;x-bladewind.card css="cursor-pointer hover:shadow-gray-300"&gt;
+                        &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
                             &lt;svg...&gt;...&lt;/svg&gt;
                             &lt;span class="text-center ..."&gt;Ideas&lt;/span&gt;
                         &lt;/x-bladewind.card&gt;
@@ -423,9 +423,9 @@
                     <td>This controls if the card should have a shadow effect. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-card</td>
-                    <td>Any additonal css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">css="!rounded-none"</code>.</td>
+                    <td>Any additonal css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">class="!rounded-none"</code>.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
@@ -436,7 +436,7 @@
                         title="recent updates"
                         has_shadow="true"
                         reduce_padding="false"
-                        css="!rounded-none"&gt;
+                        class="!rounded-none"&gt;
 
                         &lt;x-slot name="header"&gt;...&lt;/x-slot&gt;
                         &lt;x-slot name="footer"&gt;...&lt;/x-slot&gt;
@@ -497,9 +497,9 @@
                     <td>This controls if the card should have a shadow effect. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
                 </tr>
                 <tr>
-                    <td>css</td>
+                    <td>class</td>
                     <td>bw-contact-card</td>
-                    <td>Any additonal css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">css="!rounded-none"</code>.</td>
+                    <td>Any additonal css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">class="!rounded-none"</code>.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
@@ -514,7 +514,7 @@
                         email="mike@bladewindui.com" 
                         department="Tech"
                         birthday="01-May-2000"
-                        css="!rounded-none"&gt;
+                        class="!rounded-none"&gt;
                         
                         // you can define additional content here
                         ...
