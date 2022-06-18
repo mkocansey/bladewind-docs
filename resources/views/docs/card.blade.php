@@ -22,7 +22,7 @@
                 <code>
                     &lt;x-bladewind.card&gt;
                         // the card content goes here
-                    &lt;/x-bladewind.card/&gt;
+                    &lt;/x-bladewind.card&gt;
                 </code>
             </pre>
         <br /><br />
