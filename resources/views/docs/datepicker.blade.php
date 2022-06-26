@@ -246,7 +246,8 @@
                 The source javascript file for this component is available in <code class="inline">public/bladewind/js/datepicker.js</code>
             </x-bladewind::alert><br />
             <x-bladewind::alert show_close_icon="false">
-                This component includes AlpineJs from <code class="inline">https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js</code>
+                This component REQUIRES AlpineJs. This is not included in the library so you will need to include this for the datepicker to work. 
+                <code class="inline">&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 
@@ -266,7 +267,6 @@
     </div>
 
     <x-slot name="scripts">
-        {{-- <script src="{{ asset('bladewind/js/datepicker.js') }}"></script> --}}
         <script>
             selectNavigationItem('.component-datepicker');
         </script>
