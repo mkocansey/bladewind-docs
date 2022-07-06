@@ -376,6 +376,11 @@
                     <td>Determines if the table has a drop shadow effect. The value should be passed as a string, not boolean.<br /> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
+                    <td>compact</td>
+                    <td>false</td>
+                    <td>If set to true, the spacing between the TRs are reduced.<br /><code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
                     <td>header</td>
                     <td><em>blank</em></td>
                     <td>This slot holds your table header information.</td>
@@ -390,6 +395,7 @@
                         divided="true"
                         divider="thin"
                         has_shadow="true" 
+                        compact="true"
                         hover_effect="true"&gt;
 
                         &lt;x-slot name="header"&gt;

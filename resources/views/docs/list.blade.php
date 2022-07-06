@@ -162,16 +162,21 @@
                     <td>Should the background of the component be transparent or placed on a white background.<br /><code class="inline">true</code> <code class="inline">false</code></td>
                 </tr>
                 <tr>
+                    <td>compact</td>
+                    <td>false</td>
+                    <td>If set to true, the spacing between the list items are reduced from 16px to 8px.<br /><code class="inline">true</code> <code class="inline">false</code></td>
+                </tr>
+                <tr>
                     <td>class</td>
                     <td><em>blank</em></td>
                     <td>Any additional css you wish to add.</td>
                 </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
-            <h3 class="pb-2 ">Spinner with all attributes defined</h3>
+            <h3 class="pb-2 ">List View with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.list-view transparent="true" class="bg-yellow-50"&gt;
+                    &lt;x-bladewind.list-view compact="true" transparent="true" class="bg-yellow-50"&gt;
 
                         &lt;x-bladewind.list-item&gt;
 
