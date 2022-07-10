@@ -146,7 +146,7 @@
                 </p>
             <p>
                 You will need to programmatically get rid of the spinner once you have received your number and updated your number field. 
-                To be able to access various elements that make up the statistic, it is important to give the statistic a name. This can be done using the <code class="inline text-red-500">css</code> 
+                To be able to access various elements that make up the statistic, it is important to give the statistic a name. This can be done using the <code class="inline text-red-500">class</code> 
                 attribute. Assuming we named our statistic component <code class="inline text-red-500">total-payments</code>, the code below will be the resulting HTML for the component.
             </p>
             <p>
