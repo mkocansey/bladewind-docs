@@ -35,6 +35,7 @@ class PagesController extends Controller
     public function table()                 { return view('docs.table'); }
     public function textbox()               { return view('docs.textbox'); }
     public function textarea()              { return view('docs.textarea'); }
+    public function timeline()              { return view('docs.timeline'); }
     public function timepicker()            { return view('docs.timepicker'); }
     public function toggle()                { return view('docs.toggle'); }
     public function tooltip()               { return view('docs.tooltip'); }

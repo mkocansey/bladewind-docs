@@ -28,10 +28,11 @@ Route::get('component/tab',                     [ PagesController::class, 'tab' 
 Route::get('component/table',                   [ PagesController::class, 'table' ]);
 Route::get('component/tag',                     [ PagesController::class, 'tag' ]);
 Route::get('component/textbox',                 [ PagesController::class, 'textbox' ]);
+Route::get('component/textarea',                [ PagesController::class, 'textarea' ]);
+Route::get('component/timeline',                [ PagesController::class, 'timeline' ]);
 Route::get('component/timepicker',              [ PagesController::class, 'timepicker' ]);
 Route::get('component/toggle',                  [ PagesController::class, 'toggle' ]);
 Route::get('component/tooltip',                 [ PagesController::class, 'tooltip' ]);
-Route::get('component/textarea',                [ PagesController::class, 'textarea' ]);
 Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
 Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);
 Route::get('component/verification-code',       [ PagesController::class, 'verification_code' ]);

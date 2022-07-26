@@ -33,6 +33,7 @@
     <div class="flex items-center component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
     <div class="flex items-center component-textbox"><div class="dot"></div><a href="/component/textbox">Textbox</a></div>
     <div class="flex items-center component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
+    <div class="flex items-center component-timeline"><div class="dot"></div><a href="/component/timeline">Timeline</a></div>
     <div class="flex items-center component-timepicker hidden"><div class="dot"></div><a href="/component/timepicker">Timepicker</a></div>
     <div class="flex items-center component-tooltip hidden"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>
     <div class="flex items-center component-toggle"><div class="dot"></div><a href="/component/toggle">Toggle</a></div>
