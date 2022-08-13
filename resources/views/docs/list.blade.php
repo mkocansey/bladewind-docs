@@ -6,7 +6,8 @@
             <p>
                 Display a list of items. The list view component mimicks the <code class="inline">&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> tags. 
                 The component makes use of two tags to render the list of items. Just like when using a <code class="inline">&lt;li&gt;&lt;/li&gt;</code>, the user is completely in charge of what content goes in there. 
-                All the list view component does is draw fine lines between your items. Every top level block element is flexed into its own column. The first top level block element has no left padding so you'll need to factor that into your design when using this component.
+                All the list view component does is draw fine lines between your items. Every top level block element is flexed into its own column. The first top level block element has no left padding so you'll 
+                need to factor that into your design when using this component.
             </p>
             <p>
                 <x-bladewind::list-view>
