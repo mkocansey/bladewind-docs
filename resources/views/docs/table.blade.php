@@ -423,7 +423,7 @@
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#nogaps">No Gaps</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#nodivider">No divider</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="#hnohover">No hover effect</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#nohover">No hover effect</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#striped">Striped table</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#totals">Cells for totals</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#shadow">With drop shadow</a></div>

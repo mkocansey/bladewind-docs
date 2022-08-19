@@ -15,6 +15,7 @@
     <div class="flex items-center component-checkbox"><div class="dot"></div><a href="/component/checkbox">Checkbox</a></div>
     <div class="flex items-center component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker</a></div>
     <div class="flex items-center component-dropdown"><div class="dot"></div><a href="/component/dropdown">Dropdown</a></div>
+    <div class="flex items-center component-dropmenu"><div class="dot"></div><a href="/component/dropmenu">Dropmenu</a></div>
     <div class="flex items-center component-empty-state"><div class="dot"></div><a href="/component/empty-state">Empty State</a></div>
     <div class="flex items-center component-filepicker"><div class="dot"></div><a href="/component/filepicker">Filepicker</a></div>
     <div class="flex items-center component-hlg"><div class="dot"></div><a href="/component/horizontal-line-graph">Horizontal Line Graph</a></div>

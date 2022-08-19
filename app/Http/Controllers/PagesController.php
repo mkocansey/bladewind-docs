@@ -16,6 +16,7 @@ class PagesController extends Controller
     public function checkbox()              { return view('docs.checkbox'); }
     public function datepicker()            { return view('docs.datepicker'); }
     public function dropdown()              { return view('docs.dropdown'); }
+    public function dropmenu()              { return view('docs.dropmenu'); }
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
     public function laravel8()              { return view('docs.laravel8'); }

@@ -12,6 +12,7 @@ Route::get('component/centered-content',        [ PagesController::class, 'cente
 Route::get('component/checkbox',                [ PagesController::class, 'checkbox' ]);
 Route::get('component/datepicker',              [ PagesController::class, 'datepicker' ]);
 Route::get('component/dropdown',                [ PagesController::class, 'dropdown' ]);
+Route::get('component/dropmenu',                [ PagesController::class, 'dropmenu' ]);
 Route::get('component/empty-state',             [ PagesController::class, 'emptystate' ]);
 Route::get('component/filepicker',              [ PagesController::class, 'filepicker' ]);
 Route::get('component/horizontal-line-graph',   [ PagesController::class, 'line_graph' ]);

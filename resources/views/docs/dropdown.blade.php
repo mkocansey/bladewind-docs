@@ -7,6 +7,7 @@
             <p>
                 This component tried killing two birds with one code by acting as both a form 
                 <code class="inline text-red-500">&lt;select&gt;...&lt;/select&gt;</code> and well, a dropdown menu. 
+                The main difference between this and the BladewindUI <a href="/component/dropmenu">Dropmenu</a> component is aesthetics and maybe simplicity.
                 <a name="basic"></a>
                 Arguably this component has the most attributes for a reason. A lot is happening but let's dive right in 
                 and display a basic dropdown.

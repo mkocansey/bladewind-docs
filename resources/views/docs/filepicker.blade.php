@@ -29,6 +29,12 @@
             <div class="pb-10"></div>
             
             <h3 class="pb-2 ">Accept Only Specific File Types</h3>
+            <p>
+                The component allows you to restrict the type of files users can upload by setting the <code class="inline text-red-500">accepted_file_types</code> attribute. 
+                You can either specify one or a comma separated list of any of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types" target="_blank">MIME types available here</a>. 
+                You can either specify MIME types or file extensions. You can have a comma separated mixture of file extensions and MIME types. Note however, the file extensions need to have the dot prefix. Example:  
+                <code class="text-red-500 inline">accepted_file_types="image/*, .pdf, .xlsx"</code>
+            </p>
             <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only" accepted_file_types=".pdf"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers" data-line="4">
@@ -36,6 +42,26 @@
                     &lt;x-bladewind.filepicker 
                         name="pdf_only" 
                         placeholder="Upload a PDF"
+                        accepted_file_types=".pdf"  /&gt;
+                </code>
+            </pre>
+            <br />
+            <br />
+            <h3 class="pb-2 ">Restrict File Sizes</h3>
+            <p>
+                You can restrict how big the files users upload should be by adding the <code class="inline text-red-500">max_file_size attribute</code>. 
+                The file size is measured in megabytes (mb) and you don't need to add the 'mb'. Just the number. The default max_file_size is 5 (5mb). 
+                The component will display an error if the user uploads a file outside the restrictions. 
+                If you expect your users to upload really huge files, remember to set this attribute so your users don't get restraicted by the default of 5mb.
+            </p>
+            <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only_1mb" accepted_file_types=".pdf" max_file_size="1"  />
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers" data-line="4">
+                <code>
+                    &lt;x-bladewind.filepicker 
+                        name="pdf_only" 
+                        placeholder="Upload a PDF"
+                        max_file_size="1"
                         accepted_file_types=".pdf"  /&gt;
                 </code>
             </pre>
