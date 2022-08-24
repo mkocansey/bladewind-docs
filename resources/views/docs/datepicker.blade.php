@@ -209,11 +209,6 @@
                     <td>Placeholder text to display</td>
                 </tr>
                 <tr>
-                    <td>has_label</td>
-                    <td>false</td>
-                    <td>Should the datepicker be forced to use a label instead of a placeholder</td>
-                </tr>
-                <tr>
                     <td>required</td>
                     <td>false</td>
                     <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
