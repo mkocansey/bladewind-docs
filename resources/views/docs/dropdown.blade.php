@@ -86,7 +86,7 @@
                         data="&#123;&#123; json_encode($countries) }}" /&gt;
                 </code>
             </pre>
-            <p>&nbsp</p>
+            <p>&nbsp;</p>
             <h3>Change Placeholder Text</h3>
             <p>
                 <x-bladewind::dropdown name="country2" placeholder="What is your nationality" data="{{json_encode($countries)}}" />
@@ -99,7 +99,7 @@
                         data="&#123;&#123; json_encode($countries) }}" /&gt;
                 </code>
             </pre>
-            <p>&nbsp</p>
+            <p>&nbsp;</p>
             <p>
                 Of course it is not feasible to always rewrite your arrays to use the <code class="inline">value</code> and <code class="inline">label</code> keys expected by the component. There is a solution. 
                 Assuming we changed our array to the structure below.
@@ -142,6 +142,23 @@
                         &lt;option value="gh"&gt;Ghana&lt;/option&gt;
                     &lt;/select&gt;
                 </code><a name="flags"></a>
+            </pre>
+            <p>&nbsp;</p>
+            <h3>Selected a Value By Default</h3>
+            <p>
+                Like with the regular HTML &lt;select&gt; field, it is possible to select a dropdown item by default when the page loads. Useful when editing records. 
+            </p>
+            <p>
+                <x-bladewind::dropdown name="country-select" placeholder="What is your nationality" data="{{json_encode($countries)}}" selected_value="gh" />
+            </p>
+            <pre class="language-markup line-numbers" data-line="3">
+                <code>
+                    &lt;x-bladewind.dropdown 
+                        name="country-select"
+                        selected_value="gh"
+                        placeholder="What is your nationality"
+                        data="&#123;&#123; json_encode($countries) }}" /&gt;
+                </code>
             </pre>
             <p>&nbsp;</p>
             <h2>With Country Flags</h2>
