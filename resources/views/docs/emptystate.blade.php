@@ -45,9 +45,33 @@
                 </code>
             </pre>
             <div class="pb-10"></div>
+            <div class="pb-10"></div>
+            <p>
+                There are times you will want your empty state to have a heading to let the user know immediately what is happening, without having to read the full message.
+                To achieve this set the <code class="inline text-red-500">heading</code> attribute of the Empty State component.
+            </p>
+            <x-bladewind::empty-state 
+                message="You have not saved any gists yet to your GitHub account"
+                image="/assets/images/no-code.svg"
+                button_label="Create Gist" 
+                heading="Create Gists Already"
+                onclick="alert('you clicked me')"></x-bladewind::empty-state>
+            <div class="py-2"></div>
+            <pre class="language-markup line-numbers" data-line="3">
+                <code>
+                    &lt;x-bladewind.empty-state 
+                        message="You have not saved any gists yet to your GitHub account" 
+                        heading="Create Gists Already"
+                        image="/assets/images/no-code.svg"
+                        button_label="Create Gist" 
+                        onclick="alert('you clicked me')"&gt;
+                    &lt;/x-bladewind.empty-state&gt;
+                </code>
+            </pre>
+            <div class="pb-10"></div>
             
             <p>
-                The two examples above use the attributes of the empty state component to build the empty state content. It is also possible to ignore all attributes and dump your content right in to the empty state component. 
+                The examples above use the attributes of the empty state component to build the empty state content. It is also possible to ignore all attributes and dump your content right in to the empty state component. 
                 In this case you will need to set <code class="inline text-red-500">show_image="false"</code>.
             </p>
             <x-bladewind::empty-state show_image="false">
@@ -148,6 +172,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>heading</td>
+                    <td><em>blank</em></td>
+                    <td>Empty state heading.</td>
+                </tr>
+                <tr>
                     <td>message</td>
                     <td><em>blank</em></td>
                     <td>Empty state message.</td>
@@ -168,6 +197,7 @@
                         onclick="goToRoute('new-message')"
                         image="/assets/images/empty-inbox.png"
                         show_image="true"
+                        heading="Nothing to see here"
                         class="shadow-sm"&gt;
                     &lt;/x-bladewind.empty-state&gt;
                 </code>
