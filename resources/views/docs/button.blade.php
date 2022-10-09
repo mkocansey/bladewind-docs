@@ -15,14 +15,12 @@
             <br />
             <h2>Primary Button</h2>
             <x-bladewind::button>Subscribe Now</x-bladewind::button>
-            <div class="h-2"></div>
             <pre class="language-markup">
                 <code>
                     &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button/&gt;
                 </code>
             </pre>
             <br /><x-bladewind::button tag="a">Subscribe Now</x-bladewind::button>
-            <div class="h-2"></div>
             <pre class="language-markup">
                 <code>
                     // this button is created using the &lt;a&gt; tag
@@ -386,6 +384,13 @@
                     <td>button</td>
                     <td>Specifies which html tag to use in creating the button. <br> <code class="inline">button</code> <code class="inline">a</code> </td>
                 </tr>
+                <tr>
+                    <td>button_text_css</td>
+                    <td><em>blank</em></td>
+                    <td>The button text colour has been predetermined by the button colour and respective shades. It is however possible to overwrite the colour of the button text. 
+                        If the css you specify has already been precompiled into the BladewindUI css file, it will be used. 
+                        If not, you need to ensure the css you specify exists in your project's css file<br> <code class="inline">any of the TailwindCss styles</code> </td>
+                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Button with all attributes defined</h3>
@@ -400,6 +405,7 @@
                         disabled="false"
                         class="mt-0"
                         tag="a"
+                        button_text_css="font-bold text-black
                         can_submit="false"&gt;
                         ...
                     &lt;/x-bladewind.button&gt;
