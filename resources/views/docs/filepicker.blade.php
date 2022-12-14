@@ -4,7 +4,7 @@
     <div class="flex flex-col-reverse sm:flex-row">
         <div class="grow sm:w-3/4">
             <p>
-                Select a file from your computer. If the selected file is an image you get to see a preview of the file. Heavy images will take a couple of seconds to render the preview.
+                This component wraps but beautifies the default HTML File input. It allows users to select files from their computer. If the selected file is an image you get to see a preview of the file. Heavy images will take a couple of seconds to render the preview.
             </p>
             <x-bladewind::filepicker name="logo" />
             <div class="py-2"></div>
@@ -15,32 +15,32 @@
             </pre>
             <div class="pb-10"></div>
             <p>It is possible to change the placeholder text</p>
-            <x-bladewind::filepicker 
+            <x-bladewind::filepicker
                 name="proof_of_payment"
                 placeholder="Upload proof of payment"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers" data-line="3">
                 <code>
-                    &lt;x-bladewind.filepicker 
+                    &lt;x-bladewind.filepicker
                         name="proof_of_payment"
                         placeholder="Upload proof of payment"  /&gt;
                 </code>
             </pre>
             <div class="pb-10"></div>
-            
+
             <h3 class="pb-2 ">Accept Only Specific File Types</h3>
             <p>
-                The component allows you to restrict the type of files users can upload by setting the <code class="inline text-red-500">accepted_file_types</code> attribute. 
-                You can either specify one or a comma separated list of any of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types" target="_blank">MIME types available here</a>. 
-                You can either specify MIME types or file extensions. You can have a comma separated mixture of file extensions and MIME types. Note however, the file extensions need to have the dot prefix. Example:  
+                The component allows you to restrict the type of files users can upload by setting the <code class="inline text-red-500">accepted_file_types</code> attribute.
+                You can either specify one or a comma separated list of any of the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types" target="_blank">MIME types available here</a>.
+                You can either specify MIME types or file extensions. You can have a comma separated mixture of file extensions and MIME types. Note however, the file extensions need to have the dot prefix. Example:
                 <code class="text-red-500 inline">accepted_file_types="image/*, .pdf, .xlsx"</code>
             </p>
             <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only" accepted_file_types=".pdf"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind.filepicker 
-                        name="pdf_only" 
+                    &lt;x-bladewind.filepicker
+                        name="pdf_only"
                         placeholder="Upload a PDF"
                         accepted_file_types=".pdf"  /&gt;
                 </code>
@@ -49,17 +49,17 @@
             <br />
             <h3 class="pb-2 ">Restrict File Sizes</h3>
             <p>
-                You can restrict how big the files users upload should be by adding the <code class="inline text-red-500">max_file_size attribute</code>. 
-                The file size is measured in megabytes (mb) and you don't need to add the 'mb'. Just the number. The default max_file_size is 5 (5mb). 
-                The component will display an error if the user uploads a file outside the restrictions. 
-                If you expect your users to upload really huge files, remember to set this attribute so your users don't get restraicted by the default of 5mb.
+                You can restrict how big the files users upload should be by adding the <code class="inline text-red-500">max_file_size</code> attribute.
+                The file size is measured in megabytes (mb) and you don't need to add the 'mb'. Just the number. The default max_file_size is 5 (5mb).
+                The component will display an error if the user uploads a file larger than what is specified in <code class="inline">max_file_size</code>.
+                If you expect your users to upload really huge files, remember to set this attribute so your users don't get restricted by the default of 5mb.
             </p>
             <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only_1mb" accepted_file_types=".pdf" max_file_size="1"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind.filepicker 
-                        name="pdf_only" 
+                    &lt;x-bladewind.filepicker
+                        name="pdf_only"
                         placeholder="Upload a PDF"
                         max_file_size="1"
                         accepted_file_types=".pdf"  /&gt;
@@ -72,10 +72,10 @@
                 </x-bladewind::alert>
             </p>
             <div class="py-2"></div>
-            
+
            <a name="attributes"></a>
            <div>&nbsp;</div>
-           
+
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Filepicker component.</p>
@@ -89,7 +89,7 @@
                 <tr>
                     <td>name</td>
                     <td>bw-filepicker</td>
-                    <td>Name for the filepicker. So if you named the filepicker <code>profile_pic</code>, the resulting html will be 
+                    <td>Name for the filepicker. So if you named the filepicker <code>profile_pic</code>, the resulting html will be
                     <code class="inline text-red-500">&lt;input type="file" class="bw-profile_pic" name="profile_pic" ../&gt;</code></td>
                 </tr>
                 <tr>
@@ -112,10 +112,10 @@
             <h3 class="pb-2 ">Filepicker with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.filepicker 
+                    &lt;x-bladewind.filepicker
                         name="profile_pic"
                         required="false"
-                        placeholder="Choose a profile picture" 
+                        placeholder="Choose a profile picture"
                         accepted_file_types=".jpg, .png" /&gt;
                 </code>
             </pre>
