@@ -1,5 +1,5 @@
 <x-meta>
-    <script src="{{ asset('bladewind/js/helpers.js') }}"></script>
+    <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
 <body class="text-gray-500/80 bg-gray-100/80 dark:bg-gray-800 dark:text-slate-400">
@@ -41,7 +41,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             @include('docs/nav')
         </nav>
 
-        <div class="content-area grow md:ml-64"> 
+        <div class="content-area grow md:ml-64">
             <div class="px-6 md:pt-2">
                 {{ $slot ?? '' }}
             </div>
@@ -50,27 +50,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="footer">
-        
+
     </div>
     {{ $scripts ?? '' }}
     <script>
         addToStorage = (key, val, storageType = 'localStorage') => {
             if(window.localStorage || window.sessionStorage){
-                (storageType === 'localStorage') ? 
+                (storageType === 'localStorage') ?
                     localStorage.setItem(key, val) : sessionStorage.setItem(key, val);
             }
         }
 
         getFromStorage = (key, storageType = 'localStorage') => {
             if(window.localStorage || window.sessionStorage){
-                return (storageType === 'localStorage') ? 
+                return (storageType === 'localStorage') ?
                     localStorage.getItem(key) : sessionStorage.getItem(key);
             }
         }
 
         removeFromStorage = (key, storageType = 'localStorage') => {
             if(window.localStorage || window.sessionStorage){
-                (storageType === 'localStorage') ? 
+                (storageType === 'localStorage') ?
                     localStorage.removeItem(key) : sessionStorage.removeItem(key);
             }
         }

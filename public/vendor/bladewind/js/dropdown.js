@@ -36,7 +36,7 @@ dom_els(`.${el_name} .dropdown-items>div.dd-item`).forEach((el) => {
     });
 });
 
-selectSelectedValues = () => { // selected_value="gh"
+selectSelectedValues = () => {
     if(dom_els('div[data-selected="true"]')) {
         dom_els('div[data-selected="true"]').forEach((el) => {
             el.click();
