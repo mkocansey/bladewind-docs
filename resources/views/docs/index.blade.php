@@ -27,7 +27,7 @@
         Your app's css and js files should come after the Bladewind files so your customizations (if any) can take effect.
     </p>
     <p>
-        <x-bladewind::alert show_close_icon="false">From v1.5.0, the Bladewind assets were moved from <b>public</b> to <b>public/vendor</b> to enable Bladewind sit with any third party libraries you may already have in your project</x-bladewind::alert>
+        <x-bladewind::alert show_close_icon="false">From v2.0.0, the Bladewind assets were moved from <b>public</b> to <b>public/vendor</b> to enable Bladewind sit with any third party libraries you may already have in your project</x-bladewind::alert>
     </p>
     <pre class="lang-markup">
         <code>
