@@ -17,7 +17,7 @@
             <x-bladewind::button>Subscribe Now</x-bladewind::button>
             <pre class="language-markup">
                 <code>
-                    &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button/&gt;
+                    &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
             <br /><x-bladewind::button tag="a">Subscribe Now</x-bladewind::button>
@@ -26,7 +26,7 @@
                     // this button is created using the &lt;a&gt; tag
                     // you can inspect element on the above button to check
 
-                    &lt;x-bladewind.button tag="a"&gt;subscribe now&lt;/x-bladewind.button/&gt;
+                    &lt;x-bladewind.button tag="a"&gt;subscribe now&lt;/x-bladewind.button&gt;
                 </code>
             </pre>
             <p>&nbsp</p>
