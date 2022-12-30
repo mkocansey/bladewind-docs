@@ -69,6 +69,18 @@
              To prevent any changes you made earlier from being overwritten by updates, we advise you to make all changes that overwrite Bladewind css classes in your project's css file instead of editing the Bladewind css file directly. Your project's css file should always be included <b>after</b> the Bladewind css file.
          </x-bladewind::alert>
      </p>
+    <br />
+    <h2>Changing Datepicker Translations</h2>
+    <p>
+        The <a href="/component/datepicker">Datepicker component</a> is wired to speak a couple of languages. The language files are served from BladewindUI's vendor directory,
+        <code class="inline">
+            vendor > mkocansey > bladewind > lang
+        </code>. Currently, the available languages are English, French, Italian and German. You can add more languages as you see fit or even modify the existing translations. If you want to do this for just your project you will first need to publish the language files by running the command below from the root of your project.
+    </p>
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-lang --force</code></pre><br />
+    <p>
+        The language files will now be available in your project's <code class="inline">lang > vendor > bladewind</code> directory. You can now add more languages or edit the language files that were published.
+    </p>
 
     <p>&nbsp;</p>
     <p>&nbsp;</p>

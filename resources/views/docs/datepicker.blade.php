@@ -12,7 +12,7 @@
                     This component builds on the code by <a href="https://tailwindcomponents.com/u/mithicher" target="_blank">mithicher</a> available <a href="https://tailwindcomponents.com/component/datepicker-with-tailwindcss-and-alpinejs" target="_blank">here</a>
                 </x-bladewind::alert>
             </p>
-            
+
             <x-bladewind::datepicker  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
@@ -28,7 +28,7 @@
             <div class="w-40">
                 <x-bladewind::datepicker placeholder="Invoice Date" has_label="true"  />
             </div>
-            <div class="py-2"></div>            
+            <div class="py-2"></div>
             <pre class="language-markup line-numbers" line-number="2">
                 <code>
                     &lt;div class="w-40"&gt;
@@ -36,11 +36,11 @@
                     &lt;/div&gt;
                 </code><a name="range"></a>
             </pre>
-            
+
             <div class="pb-10"></div>
             <h2 class="pb-2 ">Range Datepicker</h2>
             <p>
-                This range datepicker isn't your typical date range selection. This option simply saves you from manually embedding the datepicker two times. 
+                This range datepicker isn't your typical date range selection. This option simply saves you from manually embedding the datepicker two times.
                 Specifying <code class="inline text-red-500">type="range"</code> will create two separate datepicker boxes for start and end dates.
             </p>
             <x-bladewind::datepicker type="range"  />
@@ -59,19 +59,19 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.datepicker 
-                        type="range" 
-                        date_from_label="start date" 
+                    &lt;x-bladewind.datepicker
+                        type="range"
+                        date_from_label="start date"
                         date_to_label="end date" /&gt;
                 </code>
             </pre>
 
             <div class="pb-10"></div>
-            
+
             <h3 class="pb-2 ">Show As a Required Field</h3>
             <p>An asterisk is appended to the placeholder text when <code class="inline text-red-500">required="true"</code>.</p>
             <x-bladewind::datepicker css="!w-44" required="true"  />
-            
+
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
@@ -79,7 +79,7 @@
                 </code><a name="formats"></a>
             </pre>
             <br />
-            
+
             <div class="pb-10"></div>
             <h2 class="pb-2 ">Date Formats</h2>
             <p>
@@ -118,7 +118,7 @@
             </p>
             <br />
             <div class="pb-10"></div>
-            
+
             <h2 class="pb-2 ">With Default Values</h2>
             <p>
                 There are times you will want the datepicker to load prepopulated with a default value. This is useful when in edit mode or when using filters and you want to show the user what dates they filtered by.
@@ -138,18 +138,18 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.datepicker 
-                        type="range" 
-                        default_date_from="2021-12-03" 
+                    &lt;x-bladewind.datepicker
+                        type="range"
+                        default_date_from="2021-12-03"
                         default_date_to="2022-01-03"  /&gt;
                 </code>
             </pre>
             <div class="py-2"></div>
             <br />
-            
+
            <a name="attributes"></a>
            <div>&nbsp;</div>
-           
+
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Datepicker component.</p>
@@ -173,7 +173,7 @@
                 <tr>
                     <td>default_date</td>
                     <td><em>blank</em></td>
-                    <td>In case you are editing a form, the value passed will be set on the value attribute of the datepicker input. 
+                    <td>In case you are editing a form, the value passed will be set on the value attribute of the datepicker input.
                     <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
                 </tr>
                 <tr>
@@ -199,7 +199,7 @@
                 <tr>
                     <td>format</td>
                     <td>yyyy-mm-dd</td>
-                    <td>How date should be formatted.<br /><code class="inline">yyyy-mm-dd</code> 
+                    <td>How date should be formatted.<br /><code class="inline">yyyy-mm-dd</code>
                     <code class="inline">dd-mm-yyyy</code> <code class="inline">mm-dd-yyyy</code>
                     <code class="inline">D d M, Y</code></td>
                 </tr>
@@ -223,11 +223,11 @@
             <h3 class="pb-2 ">Datepicker with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.datepicker 
+                    &lt;x-bladewind.datepicker
                         name="invoice_date"
                         type="single"
                         required="false"
-                        placeholder="Invoice Date" 
+                        placeholder="Invoice Date"
                         date_from=""
                         date_to=""
                         default_date=""
@@ -241,15 +241,19 @@
                 The source file for this component is available in <code class="inline">resources > views > components > bladewind > datepicker.blade.php</code>
             </x-bladewind::alert><br/>
             <x-bladewind::alert show_close_icon="false">
-                The source language (translation) files for this component are available in <code class="inline">lang/en/datepicker.php</code>, <code class="inline">lang/fr/datepicker.php</code> and <code class="inline">lang/it/datepicker.php</code>
+                The source language (translation) files for this component are available in <code class="inline">vendor/mkocansey/bladewind/lang/(en|fr|it|de)/datepicker.php</code>
             </x-bladewind::alert><br />
             <x-bladewind::alert show_close_icon="false">
-                The source javascript file for this component is available in <code class="inline">public/bladewind/js/datepicker.js</code>
+                The source javascript file for this component is available in <code class="inline">public/vendor/bladewind/js/datepicker.js</code>
             </x-bladewind::alert><br />
             <x-bladewind::alert show_close_icon="false">
-                This component REQUIRES AlpineJs. This is not included in the library so you will need to include this for the datepicker to work. 
+                This component REQUIRES AlpineJs. This is not included in the library so you will need to include this for the datepicker to work.
                 <code class="inline">&lt;script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"&gt;&lt;/script&gt;</code>
             </x-bladewind::alert>
+            <p>&nbsp;</p>
+            <a href="/customization">Read the notes</a> on how to modify the Datepicker translations.
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <p>&nbsp;</p>
 
         </div>

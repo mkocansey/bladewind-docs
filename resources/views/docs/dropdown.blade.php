@@ -582,7 +582,7 @@
                 The source file for this component is available in <code class="inline">resources > views > components > bladewind > dropdown.blade.php</code>
             </x-bladewind::alert> <br />
             <x-bladewind::alert show_close_icon="false">
-                The javascript source file for this component is available in <code class="inline">public/bladewind/assets/js/dropdown.js</code>
+                The javascript source file for this component is available in <code class="inline">public/vendor/bladewind/assets/js/dropdown.js</code>
             </x-bladewind::alert>
             <p>&nbsp;</p>
 

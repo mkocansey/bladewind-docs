@@ -4,9 +4,9 @@
     <div class="flex flex-col-reverse sm:flex-row">
         <div class="grow sm:w-3/4">
             <p>
-                Display a checkbox with or without a label 
+                Display a checkbox with or without a label
             </p>
-            
+
             <x-bladewind::checkbox  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
@@ -16,12 +16,12 @@
             </pre>
             <div class="py-2"></div>
             <br />
-            
+
             <x-bladewind::checkbox label="I agree to the terms and conditions"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.checkbox 
+                    &lt;x-bladewind.checkbox
                         label="I agree to the terms and conditions"  /&gt;
                 </code>
             </pre>
@@ -31,7 +31,7 @@
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.checkbox 
+                    &lt;x-bladewind.checkbox
                         label="I agree to the &lt;a href='/terms'&gt;terms and conditions&lt;/a&gt;"  /&gt;
                 </code>
             </pre>
@@ -42,7 +42,7 @@
             <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     <code>
-                    &lt;x-bladewind.checkbox 
+                    &lt;x-bladewind.checkbox
                         label="I am checked by default"
                         checked="true"  /&gt;
                 </code>
@@ -56,7 +56,7 @@
             <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     <code>
-                    &lt;x-bladewind.checkbox 
+                    &lt;x-bladewind.checkbox
                         label="I am disabled"
                         disabled="true"  /&gt;
                 </code>
@@ -64,7 +64,7 @@
             </pre>
            <a name="attributes"></a>
            <div>&nbsp;</div>
-           
+
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Checkbox component.</p>
@@ -88,7 +88,7 @@
                 <tr>
                     <td>value</td>
                     <td><em>blank</em></td>
-                    <td>In case you are editing a form, the value passed will be set on the value attribute of the checkbox. 
+                    <td>In case you are editing a form, the value passed will be set on the value attribute of the checkbox.
                     <code class="inline text-red-500">&lt;input type="checkbox" <b>value=""</b> ../&gt;</code></td>
                 </tr>
                 <tr>
@@ -111,8 +111,8 @@
             <h3 class="pb-2 ">Checkbox with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.checkbox 
-                        label="I agree to the terms and conditions" 
+                    &lt;x-bladewind.checkbox
+                        label="I agree to the terms and conditions"
                         checked="false"
                         disabled="false"
                         name="tnc"
