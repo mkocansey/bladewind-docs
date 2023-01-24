@@ -106,6 +106,26 @@
     </p>
     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-components --force</code></pre>
     <p>&nbsp;</p>
+    <p>
+        To automate publishing of the BladewindUI files every time you run  <code class="inline">composer update</code>, you can add the following lines to your <code class="inline">composer.json</code> file under the <code class="inline">scripts</code> key.
+    </p>
+    <pre class="lang-js line-numbers" data-line="5,8">
+        <code>
+                "scripts": {
+                ...
+                    "post-update-cmd": [
+                        "@php artisan vendor:publish --tag=laravel-assets --ansi",
+                        "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-public --force",
+                        // add this next line if you also want to automatically publish
+                        // the components to your resources > views > components directory
+                        "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-components --force"
+                    ],
+                    ...
+        </code>
+    </pre>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
     <p>&nbsp;</p>
 
     <x-slot name="scripts">
