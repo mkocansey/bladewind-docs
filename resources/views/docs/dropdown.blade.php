@@ -172,7 +172,7 @@
             <p>
                 Still working with our <code class="inline text-red-500">$countries</code> array from above, our dropdown code will now be
             </p>
-            <link href="{{ asset('bladewind/css/flags.css') }}" rel="stylesheet" />
+            <link href="{{ asset('vendor/bladewind/css/flags.css') }}" rel="stylesheet" />
             <pre class="language-markup line-numbers" data-line="5">
                 <code>
                     &lt;x-bladewind.dropdown
@@ -189,20 +189,20 @@
             <br />
             <x-bladewind::alert show_close_icon="false">
                 For flags to work you will need to include the following stylesheet. It is deliberately not compiled into the core BladewindUI css because not everyone needs flags.
-                <code class="inline">&lt;link href="&#123;&#123; asset('bladewind/css/flags.css') }}" rel="stylesheet" /&gt;</code><a name="images"></a>
+                <code class="inline">&lt;link href="&#123;&#123; asset('vendor/bladewind/css/flags.css') }}" rel="stylesheet" /&gt;</code><a name="images"></a>
             </x-bladewind::alert>
 
             <p>&nbsp;</p><br />
             <h2>With Images</h2>
             <div class="h-2"></div>
-            <p>
-                You may wish to include images in your dropdown list. For example, your app allows you to assign tasks to employees. You may want your employee list to have the pictures of each person next to their name.
-                You will need to specify the <code class="inline text-red-500">image_key</code> attribute on the dropdown. This should be the name of the key in your array that has the image urls.
-            </p>
-            <p>
-                Let us create a new array of employees with the needed information.
-            </p>
-                        <p>
+        <p>
+            You may wish to include images in your dropdown list. For example, your app allows you to assign tasks to employees. You may want your employee list to have the pictures of each person next to their name.
+            You will need to specify the <code class="inline text-red-500">image_key</code> attribute on the dropdown. This should be the name of the key in your array that has the image urls.
+        </p>
+        <p>
+            Let us create a new array of employees with the needed information.
+        </p>
+        <p>
             <pre class="language-js line-numbers" data-line="7,12,17,22,27">
                 <code>
                 &lt;?php

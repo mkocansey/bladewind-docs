@@ -9,6 +9,7 @@
 <div class="space-y-3">
     <div class="flex items-center component-alert"><div class="dot"></div><a href="/component/alert">Alert</a></div>
     <div class="flex items-center component-avatar"><div class="dot"></div><a href="/component/avatar">Avatar</a></div>
+    <div class="flex items-center component-bell"><div class="dot"></div><a href="/component/bell">Bell</a></div>
     <div class="flex items-center component-button"><div class="dot"></div><a href="/component/button">Button</a></div>
     <div class="flex items-center component-card"><div class="dot"></div><a href="/component/card">Card</a></div>
     <div class="flex items-center component-centered-content"><div class="dot"></div><a href="/component/centered-content">Centered Content</a></div>

@@ -6,6 +6,7 @@ Route::get('/',                                 [ PagesController::class, 'index
 Route::get('customization',                     [ PagesController::class, 'customization' ]);
 Route::get('component/alert',                   [ PagesController::class, 'alert' ]);
 Route::get('component/avatar',                  [ PagesController::class, 'avatar' ]);
+Route::get('component/bell',                    [ PagesController::class, 'bell' ]);
 Route::get('component/button',                  [ PagesController::class, 'button' ]);
 Route::get('component/card',                    [ PagesController::class, 'card' ]);
 Route::get('component/centered-content',        [ PagesController::class, 'centered_content' ]);

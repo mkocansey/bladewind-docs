@@ -15,7 +15,7 @@
         <link rel="apple-touch-icon" href="{{ asset('assets/images/icon.png') }}" />
         <link rel="icon" href="{{ asset('assets/images/icon.png') }}" />
         <link href="{{ asset('vendor/bladewind/css/animate.min.css')}}" rel="stylesheet" />
-        <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css')}}" rel="stylesheet" />
+        <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css')}}?<?php echo uniqid() ?>" rel="stylesheet" />
         <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" />
         <script src="{{ asset('assets/js/app.js') }}"></script>
         {{ $slot }}
