@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ef07f7cc355b07a8af19fdffb31f1b4",
+    "content-hash": "a6114c9c735130c127358e5c8c58e5a4",
     "packages": [
         {
             "name": "brick/math",
@@ -1616,11 +1616,17 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "dev-development",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mkocansey/bladewind.git",
+                "reference": "efd9a0330949aa28ae11806dfe26d00aa0a822bd"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/mkocansey/Projects/kursor/bladewind",
-                "reference": "90a4799a4d485cacb7771dc8b6ee72d2e1e38c1c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/efd9a0330949aa28ae11806dfe26d00aa0a822bd",
+                "reference": "efd9a0330949aa28ae11806dfe26d00aa0a822bd",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.3"
@@ -1638,11 +1644,7 @@
                     "Mkocansey\\Bladewind\\": "src/"
                 }
             },
-            "scripts": {
-                "post-update-cmd": [
-                    "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=assets --force"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1654,14 +1656,16 @@
             ],
             "description": "Laravel UI Components using TailwindCSS, Blade Templates and vanilla Javascript",
             "keywords": [
+                "Ui Components",
                 "blade components",
                 "laravel",
-                "tailwindcss",
-                "ui components"
+                "tailwindcss"
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/mkocansey/bladewind/issues",
+                "source": "https://github.com/mkocansey/bladewind/tree/v2.1.0"
+            },
+            "time": "2023-01-26T20:35:45+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7788,9 +7792,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "mkocansey/bladewind": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
