@@ -114,27 +114,152 @@
             <br><br />
             <pre class="language-markup line-numbers">
                 <code>
-                &lt;x-bladewind::bell color="blue" /&gt;
+                &lt;x-bladewind.bell color="blue" /&gt;
 
-                &lt;x-bladewind::bell color="red" /&gt;
+                &lt;x-bladewind.bell color="red" /&gt;
 
-                &lt;x-bladewind::bell color="yellow" /&gt;
+                &lt;x-bladewind.bell color="yellow" /&gt;
 
-                &lt;x-bladewind::bell color="green" /&gt;
+                &lt;x-bladewind.bell color="green" /&gt;
 
-                &lt;x-bladewind::bell color="pink" /&gt;
+                &lt;x-bladewind.bell color="pink" /&gt;
 
-                &lt;x-bladewind::bell color="cyan" /&gt;
+                &lt;x-bladewind.bell color="cyan" /&gt;
 
-                &lt;x-bladewind::bell color="black" /&gt;
+                &lt;x-bladewind.bell color="black" /&gt;
 
-                &lt;x-bladewind::bell color="purple" /&gt;
+                &lt;x-bladewind.bell color="purple" /&gt;
 
-                &lt;x-bladewind::bell color="orange" /&gt;
+                &lt;x-bladewind.bell color="orange" /&gt;
 
-                </code><a name="attributes"></a>
+                </code><a name="events"></a>
             </pre>
+            <a name="events"></a>
+            <br />
+            <p>&nbsp;</p>
+            <h2>Events</h2>
+            <p>
+                In most apps the bell is accessed either using onclick or onmouseover events. You can add these events to the component as you normally would to any tag.
+                Alternatively, you could wrap the bell component in any other HTML tag that accepts click and hover events.
+            </p>
+            <p>
+                The example below wraps the Bell component in the <a href="/component/dropmenu">Dropmenu</a> component. The Dropmenu component then uses the <a href="/component/listmenu">List View</a> component to display a list of notifications.
+            </p>
 
+            <div class="text-center p-6">
+                <x-bladewind::dropmenu>
+                    <x-slot name="trigger">
+                        <x-bladewind::bell />
+                    </x-slot>
+                    <x-bladewind::dropmenu-item>
+                        <x-bladewind::list-view transparent="true">
+                            <x-bladewind::list-item>
+                                <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
+                                <div class="mx-1 pt-1">
+                                    <div class="text-sm">
+                                        <span class="font-medium text-slate-900">Michael</span> assigned <a href="#">a task</a> to you
+                                        <div class="text-xs">3 hours ago</div>
+                                    </div>
+                                </div>
+                            </x-bladewind::list-item>
+                            <x-bladewind::list-item>
+                                <x-bladewind::avatar size="small" image="" />
+                                <div class="mx-1 pt-1">
+                                    <div class="text-sm">
+                                        <span class="font-medium text-slate-900">Client K.</span> <a href="#">commented</a> on a task
+                                        <div class="text-xs">3 hours ago</div>
+                                    </div>
+                                </div>
+                            </x-bladewind::list-item>
+                            <x-bladewind::list-item>
+                                <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
+                                <div class="mx-1 pt-1">
+                                    <div class="text-sm">
+                                        <span class="font-medium text-slate-900">Catherine</span> joined your team. <a href="#">Say hi</a>!!
+                                        <div class="text-xs">3 hours ago</div>
+                                    </div>
+                                </div>
+                            </x-bladewind::list-item>
+                            <x-bladewind::list-item>
+                                <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
+                                <div class="mx-1 pt-1">
+                                    <div class="text-sm">
+                                        <span class="font-medium text-slate-900">Audrey</span> requested your <a href="#">review</a>
+                                        <div class="text-xs">3 hours ago</div>
+                                    </div>
+                                </div>
+                            </x-bladewind::list-item>
+                        </x-bladewind::list-view>
+                    </x-bladewind::dropmenu-item>
+                </x-bladewind::dropmenu>
+            </div>
+            <br>
+            <pre class="language-markup line-numbers" data-line="3">
+                <code>
+                    &lt;x-bladewind::dropmenu&gt;
+                        &lt;x-slot name="trigger"&gt;
+                            &lt;x-bladewind.bell /&gt;
+                        &lt;/x-slot&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
+                            &lt;x-bladewind.list-view transparent="true"&gt;
+
+                                &lt;x-bladewind.list-item&gt;
+                                    &lt;x-bladewind.avatar size="small" image="..." /&gt;
+                                    &lt;div class="mx-1 pt-1"&gt;
+                                        &lt;div class="text-sm"&gt;
+                                            &lt;span class="font-medium text-slate-900"&gt;
+                                                Michael
+                                            &lt;/span&gt;
+                                            assigned &lt;a href="#"&gt;a task&lt;/a&gt; to you
+                                            &lt;div class="text-xs"&gt;3 hours ago&lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/x-bladewind.list-item&gt;
+
+                                &lt;x-bladewind.list-item&gt;
+                                    ...
+                                &lt;/x-bladewind.list-item&gt;
+
+                                &lt;x-bladewind.list-item&gt;
+                                    ...
+                                &lt;/x-bladewind.list-item&gt;
+
+                            &lt;/x-bladewind.list-view&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
+
+                </code>
+            </pre>
+            <br />
+            <p><h3>Onclick, Onmouseover, On-anything</h3></p>
+            <p>
+                As seen in the example above, the Bell component inherits the default action defined in the <a href="/component/dropmenu">Dropmenu</a> component. If you prefer to design your own notification layout or redirect users to a page that lists their notifications, you can define any HTML event attribute on the Bell.
+            </p>
+            <div class="grid-cols-2 grid gap-4">
+                <div class="text-center">
+                    <div class="py-4">mouseover</div>
+                    <x-bladewind::bell onmouseover="alert('the mouse was over me')" />
+                    <br /><br />
+                    <pre class="language-markup line-numbers" data-line="3">
+                        <code>
+                            &lt;x-bladewind.bell
+                                onmouseover="alert('..')" /&gt;
+                        </code><a name="attributes"></a>
+                    </pre>
+                </div>
+                <div class="text-center">
+                    <div class="py-4">click</div>
+                    <x-bladewind::bell onclick="alert('do something on click')" />
+                    <br /><br />
+                    <pre class="language-markup line-numbers" data-line="3">
+                        <code>
+                            &lt;x-bladewind.bell
+                                onclick="alert('...')" /&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <br />
 
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
@@ -193,6 +318,9 @@
                 </x-bladewind::alert>
             </p>
             <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
 
         </div>
         <div class="sm:w-1/4 grow-0 mb-8">
@@ -201,6 +329,7 @@
                 <div class="space-y-2">
                     <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#colors">Different colours</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#events">Events</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>
