@@ -44,7 +44,7 @@
             </p>
             <br /><h3>With Labels</h3><br />
             <p>
-                You can display the BladewindUI textbox with labels. Labels present themselves as placeholders but jump to the top border of the textbox when that field has focus. 
+                You can display the BladewindUI textbox with labels. Labels present themselves as placeholders but jump to the top border of the textbox when that field has focus.
                 This is a nice way to build compact looking forms without having form labels in the way. If you prefer to create and style your own form labels, simply ignore the <code class="inline text-red-500">label</code> attribute and use the <code class="inline text-red-500">placeholder</code> attribute instead.
             </p>
             <p><x-bladewind::input label="Full name" /></p>
@@ -57,7 +57,7 @@
             </p>
             <br /><h3>What Happens When Both Placeholder and Label are Set</h3><br />
             <p>
-                The <code class="inline">label</code> attribute actually replaces <code class="inline">placeholder</code>. In most common cases input labels are displayed above 
+                The <code class="inline">label</code> attribute actually replaces <code class="inline">placeholder</code>. In most common cases input labels are displayed above
                 the input box and don't interfere with the input's placeholder text. However, the label for Bladewind's Textbox component is designed to sit in the same spot where the placeholder text is displayed and covers it up.
                 Having a placeholder text that is longer than your label text results in some parts of the placeholder text sticking out under the label. If you want the placeholder to still be shown even when there is a label, set <code class="inline text-red-500">show_placeholder_always="true"</code>
             </p>
@@ -65,23 +65,23 @@
             <p>
                 <pre class="language-markup line-numbers">
                     <code>
-                        &lt;x-bladewind.input 
+                        &lt;x-bladewind.input
                             name="mobile" label="Mobile" placeholder="000.0000.000" /&gt;
                     </code>
                 </pre>
             </p>
             <p>
-                From the example above you will notice the placeholder is sticking out under the label. This is because the placeholder text is longer than the label. 
-                See why we hide the placeholder when the label is set. One way to fix this is by appending non breaking spaces to your label till the placeholder text is covered. 
+                From the example above you will notice the placeholder is sticking out under the label. This is because the placeholder text is longer than the label.
+                See why we hide the placeholder when the label is set. One way to fix this is by appending non breaking spaces to your label till the placeholder text is covered.
                 This is an ugly solution.
             </p>
-            <p><x-bladewind::input name="mobile" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
+            <p><x-bladewind::input name="mobile" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
             <p>
                 <pre class="language-markup line-numbers">
                     <code>
-                        &lt;x-bladewind.input name="mobile" 
-                            label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
-                            placeholder="000.0000.000" 
+                        &lt;x-bladewind.input name="mobile"
+                            label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                            placeholder="000.0000.000"
                             show_placeholder_always="true" /&gt;
                     </code>
                 </pre>
@@ -100,27 +100,27 @@
             </p>
             <br /><h3>Events</h3><br />
             <p>
-                You can append any of the available HTML event attributes (<em>onclick, onblur, onfocus, onmouseover, onmouseout, onkeyup, onkeydown</em> etc) to the component, just like you would to a regular <code class="inline">&lt;input ...</code> tag. 
+                You can append any of the available HTML event attributes (<em>onclick, onblur, onfocus, onmouseover, onmouseout, onkeyup, onkeydown</em> etc) to the component, just like you would to a regular <code class="inline">&lt;input ...</code> tag.
                 The border of the textbox below turns red onfocus and to gray onblur.
             </p>
-            <p><x-bladewind::input name="events" label="Full name" required="true" 
-                onfocus="changeCss('.events', '!border-2,!border-red-400')" 
+            <p><x-bladewind::input name="events" label="Full name" required="true"
+                onfocus="changeCss('.events', '!border-2,!border-red-400')"
                 onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')" /></p>
             <p>
                 <pre class="language-markup line-numbers">
                     <code>
-                        &lt;x-bladewind.input 
-                            name="events" 
-                            label="Full name" 
-                            required="true" 
-                            onfocus="changeCss('.events', '!border-2,!border-red-400')" 
+                        &lt;x-bladewind.input
+                            name="events"
+                            label="Full name"
+                            required="true"
+                            onfocus="changeCss('.events', '!border-2,!border-red-400')"
                             onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"  /&gt;
                     </code><a name="validate"></a>
                 </pre>
             </p>
             <br /><h2>Validating Required Fields</h2>
             <p>
-                Bladewind comes with a very handy helper function for validating input and textarea fields that have the attribute <code class="inline text-red-500">required='true"</code> set. 
+                Bladewind comes with a very handy helper function for validating input and textarea fields that have the attribute <code class="inline text-red-500">required='true"</code> set.
                 The best way to explain this is to look at an actual sign up form example.
             </p>
             <p>
@@ -135,8 +135,8 @@
                             <x-bladewind::input name="email" required="true"  label="Email" />
                             <x-bladewind::input name="mobile"  label="Mobile" numeric="true" />
                         </div>
-                        <x-bladewind::textarea required="true" name="bio" 
-                            error_message="Yoh! write something nice about yourself" 
+                        <x-bladewind::textarea required="true" name="bio"
+                            error_message="Yoh! write something nice about yourself"
                             label="Describe yourself" show_error_inline="true"></x-bladewind::textarea>
                         <div class="text-center">
                             <x-bladewind::button name="btn-save" has_spinner="true" type="primary" can_submit="true" class="mt-3">Sign Up Today</x-bladewind::button>
@@ -161,40 +161,40 @@
                                     This is a sign up form example to demonstrate how to validate forms using Bladewind.
                                 &lt;/p&gt;
 
-                                &lt;x-bladewind::input 
-                                    name="fname" 
-                                    required="true" 
-                                    label="Full Name" 
+                                &lt;x-bladewind::input
+                                    name="fname"
+                                    required="true"
+                                    label="Full Name"
                                     error_message="You will need to enter your full name" /&gt;
-                                
+
                                 &lt;div class="flex gap-4"&gt;
 
-                                    &lt;x-bladewind::input 
-                                        name="email" 
-                                        required="true" 
+                                    &lt;x-bladewind::input
+                                        name="email"
+                                        required="true"
                                         label="Email" /&gt;
-                                    
-                                    &lt;x-bladewind::input 
-                                        name="mobile" 
-                                        label="Mobile" 
+
+                                    &lt;x-bladewind::input
+                                        name="mobile"
+                                        label="Mobile"
                                         numeric="true" /&gt;
 
                                 &lt;/div&gt;
 
-                                &lt;x-bladewind::textarea 
-                                    required="true" 
-                                    name="bio" 
-                                    error_message="Yoh! write something nice about yourself"  
+                                &lt;x-bladewind::textarea
+                                    required="true"
+                                    name="bio"
+                                    error_message="Yoh! write something nice about yourself"
                                     show_error_inline="true"
                                     label="Describe yourself"&gt;&lt;/x-bladewind::textarea&gt;
-                                
+
                                 &lt;div class="text-center"&gt;
 
-                                    &lt;x-bladewind::button 
-                                        name="btn-save" 
+                                    &lt;x-bladewind::button
+                                        name="btn-save"
                                         has_spinner="true"
-                                        type="primary" 
-                                        can_submit="true" 
+                                        type="primary"
+                                        can_submit="true"
                                         class="mt-3"&gt;
                                         Sign Up Today
                                     &lt;/x-bladewind::button&gt;
@@ -208,24 +208,28 @@
                 </pre>
             </p>
             <p>
-                Error messages can either be displayed inline or using the <a href="/component/notification">Bladewind notification</a> component. 
-                You will notice we included the Notification component on line 1. On line 5 we have a form with a class of <code class="inline">signup-form</code>. 
-                This class will be used to set up an event listener on the form. On line 16 out input component defines an <code class="inline text-red-500">error_message</code> attribute. 
-                This message is what will be displayed if we validate the form and find that field to be empty. The <code class="inline">error_message</code> attribute will 
+                Error messages can either be displayed inline or using the <a href="/component/notification">Bladewind notification</a> component.
+                You will notice we included the Notification component on line 1. On line 5 we have a form with a class of <code class="inline">signup-form</code>.
+                This class will be used to set up an event listener on the form. On line 16 out input component defines an <code class="inline text-red-500">error_message</code> attribute.
+                This message is what will be displayed if we validate the form and find that field to be empty. The <code class="inline">error_message</code> attribute will
                 only be used if the <code class="inline text-red-500">required="true"</code> attribute has been set on the input component.
             </p>
             <p>
-                Our email input has set <code class="inline text-red-500">required="true"</code> but has no <code class="inline text-red-500">error_message</code> attribute defined. You will notice 
+                Our email input has set <code class="inline text-red-500">required="true"</code> but has no <code class="inline text-red-500">error_message</code> attribute defined. You will notice
                 when we submit the form with no email value, the field is highlighted with a red border but no message is displayed.
             </p>
             <p>
-                Lastly, our textarea component defines a new attribute on line 36. The <code class="inline text-red-500">show_error_inline="true"</code> attribute will display the 
+                Lastly, our textarea component defines a new attribute on line 36. The <code class="inline text-red-500">show_error_inline="true"</code> attribute will display the
                 error message beneath the field the attribute was set on.
             </p>
             <p>Below is the javascript that triggers the validation of the form. <code class="inline">dom_el</code>, <code class="inline">unhide</code> and <code class="inline">validateForm</code> are helper functions in the package.</p>
             <p>
                 <pre class="language-js line-numbers" data-line="">
                     <code>
+                        // dom_el(),
+                        // validateForm() and
+                        // unhide() are helper functions in BladewindUI
+
                         dom_el('.signup-form').addEventListener('submit', function (e){
                             e.preventDefault();
                             signUp();
@@ -241,7 +245,7 @@
                     </code><a name="attributes"></a>
                 </pre>
             </p>
-           
+
            <p>&nbsp;</p>
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Input component.</p>
@@ -331,13 +335,13 @@
             <h3 class="pb-2 ">Input with all attributes defined</h3>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind.input 
+                    &lt;x-bladewind.input
                         name="pin"
-                        label="Enter PIN" 
+                        label="Enter PIN"
                         placeholder=""
                         type="password"
-                        numeric="false" 
-                        add_clearing="false" 
+                        numeric="false"
+                        add_clearing="false"
                         required="true"
                         error_message="PIN can only be 4 digits"
                         show_error_inline="true"
@@ -370,7 +374,7 @@
     <x-slot name="scripts">
         <script>
             selectNavigationItem('.component-textbox');
-            
+
             dom_el('.signup-form').addEventListener('submit', function (e){
                 e.preventDefault();
                 signUp();

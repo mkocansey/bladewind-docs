@@ -17,12 +17,14 @@
             <p>It is possible to change the placeholder text</p>
             <x-bladewind::filepicker
                 name="proof_of_payment"
+                required="true"
                 placeholder="Upload proof of payment"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers" data-line="3">
                 <code>
                     &lt;x-bladewind.filepicker
                         name="proof_of_payment"
+                        required="true"
                         placeholder="Upload proof of payment"  /&gt;
                 </code>
             </pre>

@@ -25,7 +25,7 @@
             </p>
 
             <div class="text-center">
-                <x-bladewind::bell show_dot="true" />
+                <x-bladewind::bell show_dot="false" />
             </div>
             <br />
             <pre class="language-markup line-numbers">
@@ -45,7 +45,7 @@
             <br />
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.bell show_dot="false" /&gt;
+                    &lt;x-bladewind.bell animate_dot="true" /&gt;
                 </code>
             </pre>
             <br />

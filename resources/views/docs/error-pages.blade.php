@@ -5,8 +5,8 @@
         <div class="grow sm:w-3/4">
             <p>
                 Laravel comes with some default error pages that show up when you hit various errors. The most popular being the 404.
-                BladewindUI provides an error component that lets you have error pages looking consistent. By default the Laravel error pages 
-                are stashed away in <code class="inline">/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views</code>. To use the Bladewind error pages component you will first need to 
+                BladewindUI provides an error component that lets you have error pages looking consistent. By default the Laravel error pages
+                are stashed away in <code class="inline">/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/views</code>. To use the Bladewind error pages component you will first need to
                 <a href="https://laravel.com/docs/9.x/errors#custom-http-error-pages" target="_blank">publish the Laravel error pages</a> to your working resources directory by running the command below from your terminal.
             </p>
             <p>
@@ -19,7 +19,7 @@
                 The Laravel error pages should now be available in <code class="inline">resources/views/errors</code>. You can now edit any of the error pages that correspond to an http status code. <em>401.blade.php, 403.blade.php, 404.blade.php, 419.blade.php, 429.blade.php, 500.blade.php, 503.blade.php</em>.
             </p>
             <p>
-                Let;s take for example the default <code class="inline">resources/views/erros/404.blade.php</code>, the code in there looks like this:
+                Let's take for example the default <code class="inline">resources/views/erros/404.blade.php</code>, the code in there looks like this:
             </p>
             <p>
                 <pre class="language-js line-numbers">
@@ -40,12 +40,12 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="6, 12">
                     <code>
-                        // this is a layout file specific to the documentation that 
-                        // just gets rid of the left navigation 
+                        // this is a layout file specific to the documentation that
+                        // just gets rid of the left navigation
                         // it is not available as a component
                         &lt;x-frameless title="404 | Page not found"&gt;
 
-                            &lt;x-bladewind::error 
+                            &lt;x-bladewind::error
                                 heading="Page not found"
                                 description="The page you requested does not exist. We have a caffeine-induced bot working overtime to find it for you"
                                 button_text="Back to docs"
@@ -63,11 +63,11 @@
             </p>
 
             <p>
-                The image to be displayed on the error page has been setup as a slot so you can decide if you want to use 
+                The image to be displayed on the error page has been setup as a slot so you can decide if you want to use
                 <code class="inline"">&lt;img&gt;</code> or <code class="inline"">&lt;svg&gt;</code>
                 <a name="attributes"></a>
             </p>
-           
+
            <p>&nbsp;</p>
             <p><h2>Full List Of Attributes</h2></p>
             <p>The table below shows a comprehensive list of all the attributes available for the Error component.</p>
@@ -110,7 +110,7 @@
             <h3 class="pb-2 ">Error with all attributes defined</h3>
             <pre class="language-markup line-numbers" data-line="4">
                 <code>
-                    &lt;x-bladewind::error 
+                    &lt;x-bladewind::error
                         heading="Page not found"
                         description="The page you requested does not exist. We have a caffeine-induced bot working overtime to find it for you"
                         button_text="Back to docs"

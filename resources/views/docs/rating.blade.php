@@ -4,9 +4,9 @@
     <div class="flex flex-col-reverse sm:flex-row">
         <div class="grow sm:w-3/4">
             <p>
-                Displays a five star rating system. The number of stars  highlighted match the rating passed. 
-                There are nine star colors to choose from but the default is <code class="inline text-red-500">orange</code>. 
-                Where there are multiple ratings on the same page, it is recommended to name each rating component. 
+                Displays a five star rating system. The number of stars  highlighted match the rating passed.
+                There are nine star colors to choose from but the default is <code class="inline text-red-500">orange</code>.
+                Where there are multiple ratings on the same page, it is recommended to name each rating component.
                 You can either display ratings as stars, hearts or thumbsup.
             </p>
             <p><x-bladewind::rating name="star-rating" /></p>
@@ -21,8 +21,8 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
-                        &lt;x-bladewind.rating 
-                            type="heart" 
+                        &lt;x-bladewind.rating
+                            type="heart"
                             name="heart-rating" /&gt;
                     </code>
                 </pre>
@@ -31,8 +31,8 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
-                        &lt;x-bladewind.rating 
-                            type="thumbsup" 
+                        &lt;x-bladewind.rating
+                            type="thumbsup"
                             name="thumb-rating" /&gt;
                     </code>
                 </pre>
@@ -48,9 +48,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="1" 
-                            color="red" 
+                        &lt;x-bladewind.rating
+                            rating="1"
+                            color="red"
                             name="red-rating" /&gt;
                     </code>
                 </pre>
@@ -61,9 +61,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="2" 
-                            color="yellow" 
+                        &lt;x-bladewind.rating
+                            rating="2"
+                            color="yellow"
                             name="yellow-rating" /&gt;
                     </code>
                 </pre>
@@ -72,9 +72,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="3" 
-                            color="green" 
+                        &lt;x-bladewind.rating
+                            rating="3"
+                            color="green"
                             name="green-rating" /&gt;
                     </code>
                 </pre>
@@ -83,9 +83,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="4" 
-                            color="blue" 
+                        &lt;x-bladewind.rating
+                            rating="4"
+                            color="blue"
                             name="blue-rating" /&gt;
                     </code>
                 </pre>
@@ -94,9 +94,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="5" 
-                            color="pink" 
+                        &lt;x-bladewind.rating
+                            rating="5"
+                            color="pink"
                             name="pink-rating" /&gt;
                     </code>
                 </pre>
@@ -105,9 +105,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="1" 
-                            color="cyan" 
+                        &lt;x-bladewind.rating
+                            rating="1"
+                            color="cyan"
                             name="cyan-rating" /&gt;
                     </code>
                 </pre>
@@ -124,9 +124,9 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="3" 
-                            color="gray" 
+                        &lt;x-bladewind.rating
+                            rating="3"
+                            color="gray"
                             name="gray-rating" /&gt;
                     </code>
                 </pre>
@@ -135,8 +135,8 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="3">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="4" 
+                        &lt;x-bladewind.rating
+                            rating="4"
                             color="purple"
                             name="purple-rating" /&gt;
                     </code>
@@ -160,10 +160,10 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
-                        &lt;x-bladewind.rating 
-                            size="medium" 
-                            type="thumbsup" 
-                            rating="3" 
+                        &lt;x-bladewind.rating
+                            size="medium"
+                            type="thumbsup"
+                            rating="3"
                             name="medium-rating" /&gt;
                     </code>
                 </pre>
@@ -172,10 +172,10 @@
             <p>
                 <pre class="language-markup line-numbers" data-line="2">
                     <code>
-                        &lt;x-bladewind.rating 
-                            size="big" 
-                            type="heart" 
-                            rating="2" 
+                        &lt;x-bladewind.rating
+                            size="big"
+                            type="heart"
+                            rating="2"
                             name="big-rating" /&gt;
                     </code>
                 </pre>
@@ -186,7 +186,7 @@
                 <h2>Click Actions</h2>
             </p>
             <p>
-                A hidden input field is created in the background with every rating component that is created. Again, the input field uses the <code class="inline text-red-500">name</code> attribute set for the rating component to uniquely identify and update the hidden input. 
+                A hidden input field is created in the background with every rating component that is created. Again, the input field uses the <code class="inline text-red-500">name</code> attribute set for the rating component to uniquely identify and update the hidden input.
                 Assuming you named your rating component <code class="inline text-red-500">small-rating</code>, the following hidden input will be created. The name is prefixed with <code class="inline">rating-value-</code> so the resulting name will be <code class="inline">rating-value-small-rating</code>
             </p>
             <p>
@@ -197,16 +197,16 @@
                 </pre>
             </p>
             <p>
-                You can now access this element via Javascript using the custom function you pass to the <code class="inline text-red-500">onclick</code>. 
-                Let us assume you have a Javascript function called <code class="inline">saveRating</code> that accepts a parameter of which rating component you wish to save. 
+                You can now access this element via Javascript using the custom function you pass to the <code class="inline text-red-500">onclick</code>.
+                Let us assume you have a Javascript function called <code class="inline">saveRating</code> that accepts a parameter of which rating component you wish to save.
                 We can end up with the following.
             </p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.rating 
-                            rating="2" 
-                            name="small-rating" 
+                        &lt;x-bladewind.rating
+                            rating="2"
+                            name="small-rating"
                             onclick="saveRating('small-rating')" /&gt;
                     </code>
                 </pre>
@@ -215,17 +215,19 @@
                 <pre class="language-js">
                     <code>
                         &lt;script&gt;
-                            saveRating = function(element) { 
+                            saveRating = function(element) {
 
-                                // element here is the corresponding rating component
-                                // to access the value of the element
+                                // element here is the corresponding rating component.
+                                // dom_el() is a helper function in BladewindUI
+                                // access the value of the element
+
                                 let element_value = dom_el(`.rating-value-${element}`).value;
 
-                                // now that you have the rating value you can save it 
+                                // now that you have the rating value you can save it
                                 // maybe via an ajax call.. completely up to you
                                 ajaxCall(
-                                    'post', 
-                                    '/article/rating/save', 
+                                    'post',
+                                    '/article/rating/save',
                                     `rating=${element_value}`
                                 );
                             }
@@ -283,11 +285,11 @@
             <h3 class="pb-2 ">Rating with all attributes defined</h3>
             <pre class="language-markup">
                 <code>
-                    &lt;x-bladewind.rating 
+                    &lt;x-bladewind.rating
                         type="heart"
-                        name="album-rating" 
+                        name="album-rating"
                         rating="3"
-                        color="yellow" 
+                        color="yellow"
                         size="big"
                         onclick="alert('you clicked on a star')" /&gt;
                 </code>
