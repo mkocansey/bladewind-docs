@@ -4,16 +4,16 @@
     <div class="flex flex-col-reverse sm:flex-row">
         <div class="grow sm:w-3/4">
             <p>
-                This component makes it easy to display content in a card layout. What you get by default is a very basic card. 
-                Considering different people have very different card needs, the content of the card is absolutely up to the user. 
-                We have however, made provision for some very specific card use cases. You can specify if the card has a 
+                This component makes it easy to display content in a card layout. What you get by default is a very basic card.
+                Considering different people have very different card needs, the content of the card is absolutely up to the user.
+                We have however, made provision for some very specific card use cases. You can specify if the card has a
                 <a href="#heaedr-footer">header and a footer</a>.<a name="basic"></a>
-                There’s also <a href="#contact">contact cards</a> which are very specific for displaying contact details. These options should take care of a lot of card needs. 
+                There’s also <a href="#contact">contact cards</a> which are very specific for displaying contact details. These options should take care of a lot of card needs.
             </p>
             <p>&nbsp;</p>
             <h2>Basic Card</h2>
             <p>
-                This just gives you the card frame with the option to define a heading text or card title. 
+                This just gives you the card frame with the option to define a heading text or card title.
             </p>
             <x-bladewind::card></x-bladewind::card>
 
@@ -26,7 +26,8 @@
                 </code>
             </pre>
         <br /><br />
-            <x-bladewind::card title="recent activity"></x-bladewind::card>
+            <x-bladewind::card title="most recent activity"></x-bladewind::card>
+            <br />
 
             <div class="h-2"></div>
             <pre class="language-markup line-numbers">
@@ -36,7 +37,7 @@
                     &lt;/x-bladewind.card&gt;
                 </code><a name="examples"></a>
             </pre>
-            
+
             <p>&nbsp</p>
             <h2>Practical Examples</h2>
             <p>
@@ -104,7 +105,7 @@
             <p>&nbsp;</p>
             <h3 class="pb-4">Huge Navigation Items</h3>
             <p>
-                Below is an example of a grid-based navigation that uses cards for its menu items. The hover effect is achieved by adding additional TailwindUI classes to the <code class="inline text-red-500">class</code> attribute of the card. 
+                Below is an example of a grid-based navigation that uses cards for its menu items. The hover effect is achieved by adding additional TailwindUI classes to the <code class="inline text-red-500">class</code> attribute of the card.
                 The icons used in the design below or anywhere else in our docs are from <a href="https://heroicons.com/" target="_blank">Heroicons</a>.
             </p>
             <p>
@@ -133,7 +134,7 @@
             <pre class="language-markup line-numbers" data-line="3,8,13">
                 <code>
                     &lt;div class="grid grid-cols-3 gap-5"&gt;
-                        
+
                         &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
                             &lt;svg ...&gt;...&lt;/svg&gt;
                             &lt;span class="text-center ..."&gt;Projects&lt;/span&gt;
@@ -143,7 +144,7 @@
                             &lt;svg...&gt;...&lt;/svg&gt;
                             &lt;span class="text-center ..."&gt;Tasks&lt;/span&gt;
                         &lt;/x-bladewind.card&gt;
-                        
+
                         &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
                             &lt;svg...&gt;...&lt;/svg&gt;
                             &lt;span class="text-center ..."&gt;Ideas&lt;/span&gt;
@@ -155,7 +156,7 @@
             <p>&nbsp;</p>
             <h3 class="pb-4">Contact List</h3>
             <p>
-                Below is an example of a contact list. This does not use the BladewindUI <a href="#contact">contact card component</a>. 
+                Below is an example of a contact list. This does not use the BladewindUI <a href="#contact">contact card component</a>.
                 Just a simple list of contacts with action icons.
             </p>
             <p>
@@ -270,49 +271,49 @@
                     &lt;/div&gt;
                 </code><a name="contact"></a>
             </pre>
-           
+
             <p>&nbsp;</p>
             <h2>Contact Card</h2>
             <p>
                 This card component is very specific to rendering contacts. It is not useful for anything else. It saves you from having to manually build a contact card like we did in the practical examples above. A default avatar is used if one is not provided.
             </p>
            <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:divide-y-0 divide-y-8">
-                <x-bladewind::contact-card 
-                    name="Michael K. Ocansey"
-                    mobile="+233.123.456.789" 
-                    department="Tech Team"
-                    position="Senior Copywriter"
-                    email="mike@bladewindui.com" 
-                    birthday="01-May-2000">
-                </x-bladewind::contact-card>
-                <x-bladewind::contact-card 
+                <x-bladewind::contact-card
                     name="Michael K. Ocansey"
                     mobile="+233.123.456.789"
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7n9_1gR1PQc9MSg7ss7CSF2SV_Flmv11aDg&usqp=CAU" 
+                    department="Tech Team"
                     position="Senior Copywriter"
-                    email="mike@bladewindui.com" 
+                    email="mike@bladewindui.com"
+                    birthday="01-May-2000">
+                </x-bladewind::contact-card>
+                <x-bladewind::contact-card
+                    name="Michael K. Ocansey"
+                    mobile="+233.123.456.789"
+                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7n9_1gR1PQc9MSg7ss7CSF2SV_Flmv11aDg&usqp=CAU"
+                    position="Senior Copywriter"
+                    email="mike@bladewindui.com"
                     birthday="01-May-2000">
                 </x-bladewind::contact-card>
            </div>
             <p>
                 <pre class="language-markup line-numbers">
                     <code>
-                        &lt;x-bladewind.contact-card 
+                        &lt;x-bladewind.contact-card
                             name="Michael K. Ocansey"
                             mobile="+233.123.456.789"
-                            image="/path/to/the/image/file" 
+                            image="/path/to/the/image/file"
                             position="Senior Copywriter"
-                            email="mike@bladewindui.com" 
+                            email="mike@bladewindui.com"
                             birthday="01-May-2000"&gt;&lt;/x-bladewind.contact-card&gt;
                     </code><a name="header-footer"></a>
                 </pre>
             </p>
-            
+
             <p>&nbsp;</p>
             <h2>Header and Footer</h2>
             <p>
-                You can specify a header and footer for the card component. This is set up as a slot so there is really no restriction to what goes inside the header and footer. 
-                Headers and footers are independent so you don't need to explicitly specify both. When the <code class="inline">header</code> slot is set, the main body of the card looses all its padding so you will need to style the card body as you wish. Lets try and create an Instagram-like card. 
+                You can specify a header and footer for the card component. This is set up as a slot so there is really no restriction to what goes inside the header and footer.
+                Headers and footers are independent so you don't need to explicitly specify both. When the <code class="inline">header</code> slot is set, the main body of the card looses all its padding so you will need to style the card body as you wish. Lets try and create an Instagram-like card.
                 The image is from Unsplash and by <a href="https://unsplash.com/@thevisualchef007" target="_blank">Akindele Ibukun</a>
             </p>
            <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:divide-y-0 divide-y-8">
@@ -356,8 +357,8 @@
 
                             &lt;x-slot name="header"&gt;
                                 &lt;div class="flex px-4 pt-2 pb-3"&gt;
-                                    &lt;x-bladewind::avatar 
-                                        size="small" 
+                                    &lt;x-bladewind::avatar
+                                        size="small"
                                         image="/path/to/the/image/file" /&gt;
                                     &lt;div class="pl-2"&gt;
                                         &lt;span class="block..."&gt;mkocansey&lt;/span&gt;
@@ -432,7 +433,7 @@
             <h3 class="pb-2 ">Card with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.card 
+                    &lt;x-bladewind.card
                         title="recent updates"
                         has_shadow="true"
                         reduce_padding="false"
@@ -442,13 +443,13 @@
                         &lt;x-slot name="footer"&gt;...&lt;/x-slot&gt;
 
                         ...
-                        
+
                     &lt;/x-bladewind.card&gt;
                 </code>
             </pre>
 
             <p>&nbsp;</p>
-            
+
             <p>The table below shows a comprehensive list of all the attributes available for the Contact Card component.</p>
             <x-bladewind::table striped="true">
                 <x-slot name="header">
@@ -506,19 +507,19 @@
             <h3 class="pb-2 ">Contact Card with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.contact-card 
+                    &lt;x-bladewind.contact-card
                         name="Michael K. Ocansey"
                         mobile="+233.123.456.789"
-                        image="/path/to/the/image/file" 
+                        image="/path/to/the/image/file"
                         position="Senior Copywriter"
-                        email="mike@bladewindui.com" 
+                        email="mike@bladewindui.com"
                         department="Tech"
                         birthday="01-May-2000"
                         class="!rounded-none"&gt;
-                        
+
                         // you can define additional content here
                         ...
-                        
+
                     &lt;/x-bladewind.contact-card&gt;
                 </code>
             </pre>
@@ -553,9 +554,9 @@
         </script>
     </x-slot>
 </x-app>
-    <x-bladewind::modal 
-        title="Delete Confirmation" 
-        type="info" 
+    <x-bladewind::modal
+        title="Delete Confirmation"
+        type="info"
         name="delete-contact">
         Do you really want to delete this contact? There's no going back.
     </x-bladewind::modal>

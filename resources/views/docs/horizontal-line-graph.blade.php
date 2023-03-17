@@ -3,26 +3,26 @@
     <h1 class="page-title">Horizontal Line Graph</h1>
     <div class="flex flex-col-reverse sm:flex-row">
         <div class="grow sm:w-3/4">
-        
+
             <p>
-               This component is structurally similar to the <a href="">Progress Bar</a> component. In fact, it is rendered using the progress bar component. 
+               This component is structurally similar to the <a href="">Progress Bar</a> component. In fact, it is rendered using the progress bar component.
                The default colour used for the horizontal line graph is blue.
             </p>
             <p>
-                <x-bladewind::horizontal-line-graph label="Women Farmers: " percentage="55" />
+                <x-bladewind::horizontal-line-graph label="Women Farmers: " percentage="55.8" />
             </p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="55" /&gt;
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="55.8" /&gt;
                     </code>
                 </pre>
             </p>
             <br />
             <p>
-                That’s the basic syntax for displaying a horizontal line graph but let’s look at more practical examples of how to use this component in your applications. 
+                That’s the basic syntax for displaying a horizontal line graph but let’s look at more practical examples of how to use this component in your applications.
             </p>
             <p>
                 <div class="grid grid-cols-2 gap-6">
@@ -45,40 +45,40 @@
 
                             &lt;x-bladewind.card title="Mobile Money Penetration"&gt;
 
-                                &lt;x-bladewind.horizontal-line-graph 
-                                    label="MTN: " 
-                                    percentage="55" 
+                                &lt;x-bladewind.horizontal-line-graph
+                                    label="MTN: "
+                                    percentage="55"
                                     color="yellow" /&gt;
 
-                                &lt;x-bladewind.horizontal-line-graph 
-                                    label="Vodafone: " 
-                                    percentage="30" 
-                                    color="red" 
+                                &lt;x-bladewind.horizontal-line-graph
+                                    label="Vodafone: "
+                                    percentage="30"
+                                    color="red"
                                     class="py-3" /&gt;
 
-                                &lt;x-bladewind.horizontal-line-graph 
-                                    label="AirtelTigo: " 
-                                    percentage="15" 
+                                &lt;x-bladewind.horizontal-line-graph
+                                    label="AirtelTigo: "
+                                    percentage="15"
                                     color="blue" /&gt;
 
                             &lt;/x-bladewind.card&gt;
 
                             &lt;x-bladewind.card title="Farmer age ratio"&gt;
 
-                                &lt;x-bladewind.horizontal-line-graph 
-                                    label="Above 60: " 
-                                    percentage="33" 
+                                &lt;x-bladewind.horizontal-line-graph
+                                    label="Above 60: "
+                                    percentage="33"
                                     color="cyan" /&gt;
 
-                                &lt;x-bladewind.horizontal-line-graph 
-                                    label="Between 40 - 60: " 
-                                    percentage="43" 
-                                    color="purple" 
+                                &lt;x-bladewind.horizontal-line-graph
+                                    label="Between 40 - 60: "
+                                    percentage="43"
+                                    color="purple"
                                     class="py-3" /&gt;
 
-                                &lt;x-bladewind.horizontal-line-graph 
-                                    label="Under 40: " 
-                                    percentage="24" 
+                                &lt;x-bladewind.horizontal-line-graph
+                                    label="Under 40: "
+                                    percentage="24"
                                     color="gray" /&gt;
 
                             &lt;/x-bladewind.card&gt;
@@ -93,142 +93,142 @@
             <h2>Different Colours</h2>
             </p>
             <p>
-                You can display a horizontal line graph in nine different colours by setting the color attribute on the component, like this, <code class="inline text-red-500">color="red"</code>. 
-                Like most BladewindUI components that have colour options, there are two shades, <code class="inline">faint</code>, and <code class="inline">dark</code>. The default shade is <code class="inline">faint</code>. 
+                You can display a horizontal line graph in nine different colours by setting the color attribute on the component, like this, <code class="inline text-red-500">color="red"</code>.
+                Like most BladewindUI components that have colour options, there are two shades, <code class="inline">faint</code>, and <code class="inline">dark</code>. The default shade is <code class="inline">faint</code>.
                 You can switch between shades by setting <code class="inline text-red-500">shade="dark"</code> or <code class="inline text-red-500">shade="faint"</code>
             </p>
             <p>
                 <h3>Faint Colours</h3>
             </p>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="10" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="10"
                 color="red" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="10" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="10"
                             color="red" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="20" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="20"
                 color="yellow" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="20" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="20"
                             color="yellow"/&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="30" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="30"
                 color="green" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="30" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="30"
                             color="green" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="40" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="40"
                 color="pink" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="40" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="40"
                             color="pink" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="50" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="50"
                 color="cyan" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="50" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="50"
                             color="cyan" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="60" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="60"
                 color="gray" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="60" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="60"
                             color="gray" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="70" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="70"
                 color="purple" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="70" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="70"
                             color="purple" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="80" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="80"
                 color="orange" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="80" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="80"
                             color="orange" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="90" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="90"
                 /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
                             percentage="90" /&gt;
                     </code>
                 </pre>
@@ -237,141 +237,141 @@
             <p>
                 <h3>Dark Colours</h3>
             </p>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="10" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="10"
                 color="red" shade="dark" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="10" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="10"
                             shade="dark" color="red" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="20" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="20"
                 shade="dark" color="yellow" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="20" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="20"
                             shade="dark" color="yellow" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="30" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="30"
                 shade="dark" color="green" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="30" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="30"
                             shade="dark" color="green" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="40" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="40"
                 shade="dark" color="pink" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="40" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="40"
                             shade="dark" color="pink" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="50" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="50"
                 shade="dark" color="cyan" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="50" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="50"
                             shade="dark" color="cyan" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="60" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="60"
                 shade="dark" color="gray" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="60" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="60"
                             shade="dark" color="gray" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="70" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="70"
                 shade="dark" color="purple" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="70" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="70"
                             shade="dark" color="purple" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="80" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="80"
                 shade="dark" color="orange" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="80" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="80"
                             shade="dark" color="orange" /&gt;
                     </code>
                 </pre>
             </p>
             <div class="h-3"></div>
-            <p><x-bladewind::horizontal-line-graph 
-                label="Women Farmers: " 
-                percentage="90" 
+            <p><x-bladewind::horizontal-line-graph
+                label="Women Farmers: "
+                percentage="90"
                 shade="dark" /></p>
             <p>
                 <pre class="language-markup line-numbers" data-line="4">
                     <code>
-                        &lt;x-bladewind.horizontal-line-graph 
-                            label="Women Farmers: " 
-                            percentage="90" 
+                        &lt;x-bladewind.horizontal-line-graph
+                            label="Women Farmers: "
+                            percentage="90"
                             shade="dark" /&gt;
                     </code><a name="attributes"></a>
                 </pre>
             </p>
-           
+
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Horizontal Line Graph component.</p>
@@ -420,8 +420,8 @@
             <h3 class="pb-2 ">Horizontal Line Graph with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.horizontal-line-graph 
-                        label="Women Farmers: " 
+                    &lt;x-bladewind.horizontal-line-graph
+                        label="Women Farmers: "
                         percentage = "50"
                         color = "red",
                         shade = "faint",

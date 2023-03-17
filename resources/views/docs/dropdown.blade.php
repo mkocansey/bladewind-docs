@@ -457,6 +457,36 @@
             <p>
                 Selecting any country from the dropdown above, say Ghana, will now pass <code class="inline text-red-500">code=gh</code> in the URL.
             </p>
+
+
+            <a name="regular"></a>
+            <br/>
+            <p>&nbsp;</p>
+            <a name="stacked"><h2>Regular Dropdown</h2></a>
+            <p>
+                It is possible to use the plain old HTML dropdown or &lt;select&gt; element and apply the BladewindUI <code class="inline">bw-raw-select</code> class to change the style to look just like the complex Dropdown above or the <a href="/component/textbox">textbox</a> component.
+                This option has no searchability and does only what the HTML select element is capable of doing.
+            </p>
+            <p>
+                <select class="bw-raw-select">
+                    <option value="">Are you above 18?</option>
+                    <option value="yes">Yep! I am</option>
+                    <option value="no">Nope but tell no one</option>
+                    <option value="idk">I'd rather not say</option>
+                </select>
+            </p>
+            <p>
+                <pre class="language-markup line-numbers">
+                    <code>
+                        &lt;select class="bw-raw-select"&gt;
+                            &lt;option value=""&gt;Are you above 18?&lt;/option&gt;
+                            &lt;option value="yes"&gt;Yep! I am&lt;/option&gt;
+                            &lt;option value="no"&gt;Nope but tell no one&lt;/option&gt;
+                            &lt;option value="idk"&gt;I'd rather not say&lt;/option&gt;
+                        &lt;/select&gt;
+                    </code>
+                </pre>
+            </p>
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the Dropdown component.</p>
@@ -596,6 +626,7 @@
                     <div class="flex items-center"><div class="dot"></div><a href="#images">With images</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#searchable">Searchable dropdown</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#onselect">Onselect action</a></div>
+                    <div class="flex items-center"><div class="dot"></div><a href="#regular">Regular dropdown</a></div>
                     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
                 </div>
             </nav>

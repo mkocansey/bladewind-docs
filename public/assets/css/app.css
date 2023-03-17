@@ -1264,6 +1264,12 @@ h3{
 .w-\[63px\]{
   width: 63px;
 }
+.w-1{
+  width: 0.25rem;
+}
+.\!w-auto{
+  width: auto !important;
+}
 .min-w-full{
   min-width: 100%;
 }
@@ -1494,6 +1500,9 @@ h3{
 .\!rounded-none{
   border-radius: 0px !important;
 }
+.rounded-2xl{
+  border-radius: 1rem;
+}
 .rounded-sm{
   border-radius: 0.125rem;
 }
@@ -1501,11 +1510,29 @@ h3{
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
 }
+.\!rounded-tr-none{
+  border-top-right-radius: 0px !important;
+}
+.\!rounded-br-none{
+  border-bottom-right-radius: 0px !important;
+}
 .rounded-br-lg{
   border-bottom-right-radius: 0.5rem;
 }
 .rounded-bl-lg{
   border-bottom-left-radius: 0.5rem;
+}
+.\!rounded-tl-none{
+  border-top-left-radius: 0px !important;
+}
+.\!rounded-bl-none{
+  border-bottom-left-radius: 0px !important;
+}
+.rounded-bl-md{
+  border-bottom-left-radius: 0.375rem;
+}
+.rounded-tl-md{
+  border-top-left-radius: 0.375rem;
 }
 .border{
   border-width: 1px;
@@ -1539,6 +1566,9 @@ h3{
 }
 .border-l-4{
   border-left-width: 4px;
+}
+.\!border-l-0{
+  border-left-width: 0px !important;
 }
 .border-dashed{
   border-style: dashed;
@@ -1629,6 +1659,9 @@ h3{
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.border-slate-300\/80{
+  border-color: rgb(203 213 225 / 0.8);
 }
 .bg-gray-100\/80{
   background-color: rgb(243 244 246 / 0.8);
@@ -1727,8 +1760,8 @@ h3{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-white\/90{
-  background-color: rgb(255 255 255 / 0.9);
+.bg-white\/10{
+  background-color: rgb(255 255 255 / 0.1);
 }
 .bg-blue-200{
   --tw-bg-opacity: 1;
@@ -1850,9 +1883,6 @@ h3{
 .p-4{
   padding: 1rem;
 }
-.\!p-1{
-  padding: 0.25rem !important;
-}
 .p-8{
   padding: 2rem;
 }
@@ -1888,6 +1918,22 @@ h3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.\!px-1\.5{
+  padding-left: 0.375rem !important;
+  padding-right: 0.375rem !important;
+}
+.\!py-0\.5{
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.125rem !important;
+}
+.\!px-1{
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+.\!py-0{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
 .px-0\.5{
   padding-left: 0.125rem;
   padding-right: 0.125rem;
@@ -1919,30 +1965,6 @@ h3{
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-.\!py-1{
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
-}
-.\!px-2{
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
-}
-.\!px-1{
-  padding-left: 0.25rem !important;
-  padding-right: 0.25rem !important;
-}
-.\!py-0{
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-.\!py-0\.5{
-  padding-top: 0.125rem !important;
-  padding-bottom: 0.125rem !important;
-}
-.\!px-1\.5{
-  padding-left: 0.375rem !important;
-  padding-right: 0.375rem !important;
 }
 .pt-14{
   padding-top: 3.5rem;
@@ -2022,6 +2044,9 @@ h3{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.\!text-\[10px\]{
+  font-size: 10px !important;
+}
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -2037,12 +2062,6 @@ h3{
 .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
-}
-.\!text-\[8px\]{
-  font-size: 8px !important;
-}
-.\!text-\[10px\]{
-  font-size: 10px !important;
 }
 .font-normal{
   font-weight: 400;
