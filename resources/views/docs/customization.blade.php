@@ -44,7 +44,7 @@
         <a href="https://laravel.com/docs/9.x/mix" target="_blank">Refer to this article</a> if you are not familiar with compiling assets in Laravel.
     </p>
     <h2 id="change-it-all">You can change everything</h2>
-    <p>Truely, you can! These components are in essence just Laravel blade templates that sit right in your project. If there are any implementations you are unhappy with, simply locate the particular blade template and dissect it at will.
+    <p>Truly, you can! These components are in essence just Laravel blade templates that sit right in your project. If there are any implementations you are unhappy with, simply locate the particular blade template and dissect it at will.
         At the end of every component documentation page, you will find the name of the blade file that defines that component.
     </p>
     <p>
@@ -55,7 +55,7 @@
     <p>
         Updates that touch the css and js files require the library's assets to be republished. Run the command below to republish the library's css and js files.
     </p>
-     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force</code></pre><br />
+     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force</code></pre>
      <p>
          <x-bladewind::alert type="info" show_close_icon="false">
              To prevent any changes you made earlier from being overwritten by updates, we advise you to make all changes that overwrite Bladewind css classes in your project's css file instead of editing the Bladewind css file directly. Your project's css file should always be included <b>after</b> the Bladewind css file.

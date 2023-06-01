@@ -54,15 +54,15 @@
     <p>
         <code class="inline">&lt;x-bladewind.dropmenu trigger="FILTERS"&gt; ... &lt;/x-bladewind.dropmenu&gt;</code>
     </p>
-    <p>
-        <code class="inline">
+    <pre class="language-markup line-numbers">
+        <code>
         &lt;x-bladewind.dropmenu&gt;
         &nbsp;&nbsp;&lt;x-slot name="trigger"&gt;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;x-bladewind.button type="secondary"&gt;Actions&lt;/x-bladewind.button&gt;
         &nbsp;&nbsp;&lt;/x-slot&gt;
          ...
          &lt;/x-bladewind.dropmenu&gt;</code>
-    </p>
+    </pre>
 
     <x-bladewind::table hover_effect="false" divider="thin">
         <tr>
