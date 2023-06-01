@@ -1,4 +1,4 @@
-<html>
+<html class="scroll-smooth">
     <head>
             <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -13,6 +13,9 @@
         <meta name="keywords" content="tailwindcss, laravel, ui components, blade templates, ui elements, html, css" />
         <meta name="description" content="Super simple but elegant Laravel blade-based UI components using TailwindCSS and vanilla Javascript. All for free!" />
         <link rel="apple-touch-icon" href="{{ asset('assets/images/icon.png') }}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
         <link rel="icon" href="{{ asset('assets/images/icon.png') }}" />
         <link href="{{ asset('vendor/bladewind/css/animate.min.css')}}" rel="stylesheet" />
         <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css')}}?<?php echo uniqid() ?>" rel="stylesheet" />

@@ -4,18 +4,21 @@
 @tailwind utilities;
 
 @layer base {
+    .pre-font { font-family: 'Source Code Pro', monospace; }
     nav a { @apply hover:text-slate-700 dark:hover:text-slate-300 }
     .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 }
     .active .dot { @apply border border-purple-400 bg-purple-400 }
     .active a { @apply text-purple-500 }
+    .page-title { @apply font-bold tracking-wide text-3xl text-slate-800  mb-10 dark:text-slate-500 }
+    pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-900 !mt-4 !mb-7 !py-4 }
     .content-area p { @apply leading-8 text-slate-600 dark:text-slate-400 mb-7 }
-    .page-title { @apply font-light tracking-wider text-3xl text-slate-800 pb-3 border-b border-dotted border-slate-200 mb-10 dark:text-slate-500 dark:border-slate-700 }
-    h2 { @apply font-light text-2xl text-orange-800 mb-7 tracking-wider dark:text-orange-400 }
-    pre { @apply rounded-xl !bg-gray-600 dark:!bg-gray-900 }
     .content-area a { @apply text-purple-500 hover:text-purple-700 }
+    .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6 { @apply scroll-mt-24 font-semibold mb-6 mt-16 block }
+    h2 { @apply font-light text-2xl text-slate-600 dark:text-orange-400 }
+    h3 { @apply text-xl text-slate-600 }
+    code { @apply !pre-font !text-sm !leading-7  }
     code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 inline-block dark:bg-gray-700 dark:text-gray-400 }
     .navigation a { @apply border-t border-slate-300 pt-4 block w-full pl-6 dark:border-gray-800 }
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
-    h3 { @apply text-xl }
 }

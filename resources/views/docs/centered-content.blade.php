@@ -1,86 +1,68 @@
 <x-app>
-    <x-slot name="title">Centered Content Component</x-slot>
-    <h1 class="page-title">Centered Content</h1>
-    <div class="flex flex-col-reverse sm:flex-row">
-        <div class="grow sm:w-3/4">
-            <p>
-                Center content within a container. This container could be any block level element, say a <code class="inline">div</code>
-            </p>
-            
-            <x-bladewind::centered-content size="tiny">
-                <x-bladewind::card>
-                    this card is centered in this column
-                </x-bladewind::card>
-            </x-bladewind::centered-content>
+    <x-slot:title>Centered Content Component</x-slot:title>
+    <x-slot:page_title>Centered Content</x-slot:page_title>
+    <p>
+        Center content within a container. This container could be any block level element, say a <code class="inline">div</code>
+    </p>
 
-            <p>
-                <pre class="language-markup line-numbers" data-line="1">
-                    <code>
-                        &lt;x-bladewind::centered-content size="tiny"&gt;
+    <x-bladewind::centered-content size="tiny">
+        <x-bladewind::card>
+            this card is centered in this column
+        </x-bladewind::card>
+    </x-bladewind::centered-content>
 
-                            &lt;x-bladewind::card&gt;
-                                this content is centered in this column
-                            &lt;/x-bladewind::card&gt;
+    <pre class="language-markup line-numbers" data-line="1">
+        <code>
+            &lt;x-bladewind::centered-content size="tiny"&gt;
 
-                        &lt;/x-bladewind::centered-content&gt;
-                    </code>
-                </pre>
-            </p>
-            <br />
-            <p>
-                There are different sizes for the centered content component which are too wide for this documentation space. Try them out in your layouts to see how they look.
-            </p>
-            <x-bladewind::centered-content size="small">
-                <x-bladewind::card>
-                    this card is centered in this column
-                </x-bladewind::card>
-            </x-bladewind::centered-content>
+                &lt;x-bladewind::card&gt;
+                    this content is centered in this column
+                &lt;/x-bladewind::card&gt;
 
-            <p>
-                <pre class="language-markup line-numbers" data-line="1">
-                    <code>
-                        &lt;x-bladewind::centered-content size="small"&gt;
+            &lt;/x-bladewind::centered-content&gt;
+        </code>
+    </pre>
 
-                            &lt;x-bladewind::card&gt;
-                                this content is centered in this column
-                            &lt;/x-bladewind::card&gt;
+    <p>
+        There are different sizes for the centered content component which are too wide for this documentation space. Try them out in your layouts to see how they look.
+    </p>
+    <x-bladewind::centered-content size="small">
+        <x-bladewind::card>
+            this card is centered in this column
+        </x-bladewind::card>
+    </x-bladewind::centered-content>
 
-                        &lt;/x-bladewind::centered-content&gt;
-                    </code>
-                </pre>
-            </p>
+    <pre class="language-markup line-numbers" data-line="1">
+        <code>
+            &lt;x-bladewind::centered-content size="small"&gt;
 
-           <a name="attributes"></a>
-           <br />
-           
-            <p>&nbsp;</p>
-            <h2>Full List Of Attributes</h2>
-            <p>The table below shows a comprehensive list of all the attributes available for the Centered Content component.</p>
-            @include('docs/announcement')
-            <x-bladewind::table striped="true">
-                <x-slot name="header">
-                    <th>Option</th>
-                    <th>Default</th>
-                    <th>Available Values</th>
-                </x-slot>
-                <tr>
-                    <td>size</td>
-                    <td>default</td>
-                    <td><code class="inline">tiny</code>  <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">xxl</code> <code class="inline">omg</code></td>
-                </tr>
-            </x-bladewind::table>
-            <p>&nbsp;</p>
+                &lt;x-bladewind::card&gt;
+                    this content is centered in this column
+                &lt;/x-bladewind::card&gt;
 
-        </div>
-        <div class="sm:w-1/4 grow-0 mb-8">
-            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
-                <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
-                <div class="space-y-2">
-                    <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
-                </div>
-            </nav>
-        </div>
-    </div>
+            &lt;/x-bladewind::centered-content&gt;
+        </code>
+    </pre>
+
+    <h2 id="attributes">Full List Of Attributes</h2>
+    <p>The table below shows a comprehensive list of all the attributes available for the Centered Content component.</p>
+    @include('docs/announcement')
+    <x-bladewind::table striped="true">
+        <x-slot name="header">
+            <th>Option</th>
+            <th>Default</th>
+            <th>Available Values</th>
+        </x-slot>
+        <tr>
+            <td>size</td>
+            <td>default</td>
+            <td><code class="inline">tiny</code>  <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">xxl</code> <code class="inline">omg</code></td>
+        </tr>
+    </x-bladewind::table>
+
+    <x-slot:side_nav>
+        <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
+    </x-slot:side_nav>
 
     <x-slot name="scripts">
         <script>
