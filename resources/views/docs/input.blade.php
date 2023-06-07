@@ -515,6 +515,90 @@
                 <code class="inline">true</code> <code class="inline">false</code>
             </td>
         </tr>
+        <tr>
+            <td>prefix</td>
+            <td>blank</td>
+            <td>
+               Specify the prefix for the input field
+            </td>
+        </tr>
+        <tr>
+            <td>prefix_is_icon</td>
+            <td>false</td>
+            <td>
+                If prefix is specified, is it an icon. By default prefixes are treated as text.<br />
+                <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
+        <tr>
+            <td>prefix_icon_type</td>
+            <td>outline</td>
+            <td>
+                If an icon is used as a prefix, should it be a solid or outline icon..<br />
+                <code class="inline">outline</code> <code class="inline">solid</code>
+            </td>
+        </tr>
+        <tr>
+            <td>transparent_prefix</td>
+            <td>true</td>
+            <td>
+                If a prefix is defined, should it have a transparent background or not.<br />
+                <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
+        <tr>
+            <td>prefix_icon_css</td>
+            <td>blank</td>
+            <td>
+                Additional css classes to apply to the prefix if <b>prefix_is_icon=true</b>. Can be any TailwindCSS classes that work on icons.
+            </td>
+        </tr>
+        <tr>
+            <td>suffix</td>
+            <td>blank</td>
+            <td>
+               Specify the suffix for the input field
+            </td>
+        </tr>
+        <tr>
+            <td>suffix_is_icon</td>
+            <td>false</td>
+            <td>
+                If suffix is specified, is it an icon. By default suffixes are treated as text.<br />
+                <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
+        <tr>
+            <td>suffix_icon_type</td>
+            <td>outline</td>
+            <td>
+                If an icon is used as a suffix, should it be a solid or outline icon.<br />
+                <code class="inline">outline</code> <code class="inline">solid</code>
+            </td>
+        </tr>
+        <tr>
+            <td>transparent_suffix</td>
+            <td>true</td>
+            <td>
+                If a suffix is defined, should it have a transparent background or not.<br />
+                <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
+        <tr>
+            <td>suffix_icon_css</td>
+            <td>blank</td>
+            <td>
+                Additional css classes to apply to the suffix if <b>suffix_is_icon=true</b>. Can be any TailwindCSS classes that work on icons.
+            </td>
+        </tr>
+        <tr>
+            <td>viewable</td>
+            <td>false</td>
+            <td>
+                Works only if <b>type=password</b>. Should the password be viewable? If <code class="inline">true</code>, an eye icon is displayed in the input field.<br />
+                <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
     </x-bladewind::table>
     <h3>Input with all attributes defined</h3>
     <pre class="language-markup line-numbers" data-line="4">
