@@ -20,6 +20,9 @@
     <div class="flex items-center component-empty-state"><div class="dot"></div><a href="/component/empty-state">Empty State</a></div>
     <div class="flex items-center component-filepicker"><div class="dot"></div><a href="/component/filepicker">Filepicker</a></div>
     <div class="flex items-center component-hlg"><div class="dot"></div><a href="/component/horizontal-line-graph">Horizontal Line Graph</a></div>
+    <div class="flex items-center component-icon"><div class="dot"></div><a href="/component/icon">Icon</a></div>
+    <div class="flex items-center component-input"><div class="dot"></div><a href="/component/input">Input</a></div>
+    <div class="flex items-center component-label"><div class="dot"></div><a href="/component/label">Label</a></div>
     <div class="flex items-center component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
     <div class="flex items-center component-modal"><div class="dot"></div><a href="/component/modal">Modal</a></div>
     <div class="flex items-center component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>
@@ -33,7 +36,6 @@
     <div class="flex items-center component-tab"><div class="dot"></div><a href="/component/tab">Tab</a></div>
     <div class="flex items-center component-table"><div class="dot"></div><a href="/component/table">Table</a></div>
     <div class="flex items-center component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
-    <div class="flex items-center component-textbox"><div class="dot"></div><a href="/component/textbox">Textbox</a></div>
     <div class="flex items-center component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
     <div class="flex items-center component-timeline"><div class="dot"></div><a href="/component/timeline">Timeline</a></div>
     <div class="flex items-center component-timepicker hidden"><div class="dot"></div><a href="/component/timepicker">Timepicker</a></div>

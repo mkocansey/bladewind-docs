@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "790b80773b899da2030bcdb96584fe25",
+    "content-hash": "58509fb32c3e08769c11017f4111acba",
     "packages": [
         {
             "name": "brick/math",
@@ -1759,17 +1759,11 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "v2.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkocansey/bladewind.git",
-                "reference": "e61b490c75807e7907eb5e7ba3326e4817bf3398"
-            },
+            "version": "dev-65-improve-dark-mode-implementation-for-all-components",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/e61b490c75807e7907eb5e7ba3326e4817bf3398",
-                "reference": "e61b490c75807e7907eb5e7ba3326e4817bf3398",
-                "shasum": ""
+                "type": "path",
+                "url": "/Users/mkocansey/Projects/kursor/bladewind",
+                "reference": "666e805aa0d5a12a2215ef5415caec6090366757"
             },
             "require": {
                 "php": ">=7.3"
@@ -1787,28 +1781,30 @@
                     "Mkocansey\\Bladewind\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "post-update-cmd": [
+                    "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=assets --force"
+                ]
+            },
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Michael K. Ocansey",
-                    "email": "kabutey@gmail.com"
+                    "email": "mike@bladewindui.com"
                 }
             ],
             "description": "Laravel UI Components using TailwindCSS, Blade Templates and vanilla Javascript",
             "keywords": [
-                "Ui Components",
                 "blade components",
                 "laravel",
-                "tailwindcss"
+                "tailwindcss",
+                "ui components"
             ],
-            "support": {
-                "issues": "https://github.com/mkocansey/bladewind/issues",
-                "source": "https://github.com/mkocansey/bladewind/tree/v2.1.8"
-            },
-            "time": "2023-05-16T16:14:24+00:00"
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "monolog/monolog",
@@ -8070,7 +8066,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mkocansey/bladewind": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

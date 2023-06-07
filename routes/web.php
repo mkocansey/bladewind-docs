@@ -18,6 +18,8 @@ Route::get('component/empty-state',             [ PagesController::class, 'empty
 Route::get('component/filepicker',              [ PagesController::class, 'filepicker' ]);
 Route::get('component/horizontal-line-graph',   [ PagesController::class, 'line_graph' ]);
 Route::get('laravel8-users',                    [ PagesController::class, 'laravel8' ]);
+Route::get('component/icon',                    [ PagesController::class, 'icon' ]);
+Route::get('component/input',                   [ PagesController::class, 'input' ]);
 Route::get('component/list-view',               [ PagesController::class, 'list' ]);
 Route::get('component/modal',                   [ PagesController::class, 'modal' ]);
 Route::get('component/notification',            [ PagesController::class, 'notification' ]);
@@ -29,8 +31,8 @@ Route::get('component/rating',                  [ PagesController::class, 'ratin
 Route::get('component/tab',                     [ PagesController::class, 'tab' ]);
 Route::get('component/table',                   [ PagesController::class, 'table' ]);
 Route::get('component/tag',                     [ PagesController::class, 'tag' ]);
-Route::get('component/textbox',                 [ PagesController::class, 'textbox' ]);
 Route::get('component/textarea',                [ PagesController::class, 'textarea' ]);
+Route::get('component/textbox',                 [ PagesController::class, 'input' ]);
 Route::get('component/timeline',                [ PagesController::class, 'timeline' ]);
 Route::get('component/timepicker',              [ PagesController::class, 'timepicker' ]);
 Route::get('component/toggle',                  [ PagesController::class, 'toggle' ]);

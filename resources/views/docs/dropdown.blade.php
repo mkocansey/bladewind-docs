@@ -2,6 +2,27 @@
     <x-slot:title>Dropdown Component</x-slot:title>
     <x-slot:page_title>Dropdown</x-slot:page_title>
 
+
+    <div class="relative hide-sc">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <p>
         This component tried killing two birds with one code by acting as both a form
         <code class="inline text-red-500">&lt;select&gt;...&lt;/select&gt;</code> and well, a dropdown menu.

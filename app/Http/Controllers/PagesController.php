@@ -20,6 +20,8 @@ class PagesController extends Controller
     public function dropmenu()              { return view('docs.dropmenu'); }
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }
+    public function icon()                  { return view('docs.icon'); }
+    public function input()                 { return view('docs.input'); }
     public function laravel8()              { return view('docs.laravel8'); }
     public function line_graph()            { return view('docs.horizontal-line-graph'); }
     public function list()                  { return view('docs.list'); }
@@ -35,7 +37,6 @@ class PagesController extends Controller
     public function tag()                   { return view('docs.tag'); }
     public function tab()                   { return view('docs.tab'); }
     public function table()                 { return view('docs.table'); }
-    public function textbox()               { return view('docs.textbox'); }
     public function textarea()              { return view('docs.textarea'); }
     public function timeline()              { return view('docs.timeline'); }
     public function timepicker()            { return view('docs.timepicker'); }

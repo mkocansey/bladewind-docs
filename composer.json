@@ -10,7 +10,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "mkocansey/bladewind": "~2.1"
+        "mkocansey/bladewind": "dev-65-improve-dark-mode-implementation-for-all-components"
     },
     "require-dev": {
         "deployer/deployer": "^7.0",
@@ -62,5 +62,8 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": []
+    "repositories": [{
+        "type" : "path",
+        "url" : "/Users/mkocansey/Projects/kursor/bladewind"
+    }]
 }
