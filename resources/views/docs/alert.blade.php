@@ -1,7 +1,6 @@
 <x-app>
-    <x-slot name="title">Alert Component</x-slot>
+    <x-slot:title>Alert Component</x-slot:title>
     <x-slot:page_title>Alert</x-slot:page_title>
-
     <p>
         The alert component is useful for displaying messages intended to get the attention of your end users.
         BladewindUI alerts are in two variants. Dark alerts and faint alerts. Dark here is not to be confused with dark mode.
@@ -203,9 +202,9 @@
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
-    <x-slot name="scripts">
+    <x-slot:scripts>
         <script>
             selectNavigationItem('.component-alert');
         </script>
-    </x-slot>
+    </x-slot:scripts>
 </x-app>

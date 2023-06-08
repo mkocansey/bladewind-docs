@@ -9,33 +9,33 @@
         need to factor that into your design when using this component.
     </p>
 
-    <x-bladewind::card>
-        <x-bladewind::list-view>
+    <x-bladewind::card reduce_padding="true">
+        <x-bladewind::list-view compact="true">
             <x-bladewind::list-item>
                 <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
                 <div class="ml-3">
-                    <div class="text-sm font-medium text-slate-900">Michael K. Ocansey</div>
+                    <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
                     <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
                 </div>
             </x-bladewind::list-item>
             <x-bladewind::list-item>
                 <x-bladewind::avatar size="small" image="" />
                 <div class="ml-3">
-                    <div class="text-sm font-medium text-slate-900">Anonymous Jackson</div>
+                    <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
                     <div class="text-sm text-slate-500 truncate">fake@person.com</div>
                 </div>
             </x-bladewind::list-item>
             <x-bladewind::list-item>
                 <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
                 <div class="ml-3">
-                    <div class="text-sm font-medium text-slate-900">Catherine Gerald</div>
+                    <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
                     <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
                 </div>
             </x-bladewind::list-item>
             <x-bladewind::list-item>
                 <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
                 <div class="ml-3">
-                    <div class="text-sm font-medium text-slate-900">Audrey Munyiva</div>
+                    <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva</div>
                     <div class="text-sm text-slate-500 truncate">audrey@munyiva.com</div>
                 </div>
             </x-bladewind::list-item>
@@ -95,28 +95,28 @@
         <x-bladewind::list-item>
             <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
             <div class="ml-3">
-                <div class="text-sm font-medium text-slate-900">Michael K. Ocansey</div>
+                <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
                 <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
             </div>
         </x-bladewind::list-item>
         <x-bladewind::list-item>
             <x-bladewind::avatar size="small" image="" />
             <div class="ml-3">
-                <div class="text-sm font-medium text-slate-900">Anonymous Jackson</div>
+                <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
                 <div class="text-sm text-slate-500 truncate">fake@person.com</div>
             </div>
         </x-bladewind::list-item>
         <x-bladewind::list-item>
             <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
             <div class="ml-3">
-                <div class="text-sm font-medium text-slate-900">Catherine Gerald</div>
+                <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
                 <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
             </div>
         </x-bladewind::list-item>
         <x-bladewind::list-item>
             <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
             <div class="ml-3">
-                <div class="text-sm font-medium text-slate-900">Audrey Munyiva</div>
+                <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva</div>
                 <div class="text-sm text-slate-500 truncate">audrey@munyiva.com</div>
             </div>
         </x-bladewind::list-item>

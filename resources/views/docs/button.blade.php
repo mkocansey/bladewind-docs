@@ -147,6 +147,27 @@
             &lt;/x-bladewind.button&gt;
         </code>
     </pre>
+    <h2 id="icons">With Icons</h2>
+    <p>Buttons can have <a href="/component/icon">icons</a>. 
+    To add an icon simply specify the icon name in the <code class="inline text-red-500">icon</code> attribute. Refer to our <a href="/component/icon">Icon</a> component page for details on icon names.</p> 
+    Icons by default are positioned to the left of the button. You can set <code class="inline text-red-500">icon_right="true"</code> to position the icon to the right of the button.
+    <p>
+        <x-bladewind::alert show_close_icon="false">If you specify <b>icon_right="true"</b> and <b>has_spinner="true"</b>, your icon will be ignored because the spinner is positioned to the right of the button.</x-bladewind::alert>
+    </p>
+    <br />
+    <p>
+        <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button> &nbsp;&nbsp;
+        <x-bladewind::button type="secondary" icon="arrow-small-right" icon_right="true">Next Chapter</x-bladewind::button>
+    </p>
+    <pre class="language-markup line-numbers" data-line="2,3">
+        <code>
+            &lt;x-bladewind.button
+                has_spinner="true"
+                show_spinner="true"&gt;
+                Saving...
+            &lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
 
     <h2 id="submittable">Form Submission</h2>
     <p>
@@ -156,15 +177,17 @@
         <code class="inline text-red-500">&lt;button type="submit"...</code>.
     </p>
     <p>
-        <form action="" method="get" class="p-7 bg-slate-200/50 shadow-md shadow-slate-400/20">
-            <div class="flex space-x-3">
-            <x-bladewind::input placeholder="First name" name="first_name" required="true" />
-            <x-bladewind::input placeholder="Last name" name="last_name" />
-            </div>
-            <x-bladewind::input name="email" placeholder="Email" type="email" />
-            <x-bladewind::textarea placeholder="Comment"></x-bladewind::textarea>
-            <x-bladewind::button can_submit="true" class="mx-auto block mt-2">click me to submit</x-bladewind::button>
-        </form>
+        <x-bladewind::card size="big">
+            <form action="" method="get">
+                <div class="sm:flex sm:space-x-3">
+                    <x-bladewind::input placeholder="First name" name="first_name" required="true" />
+                    <x-bladewind::input placeholder="Last name" name="last_name" />
+                </div>
+                <x-bladewind::input name="email" placeholder="Email" type="email" />
+                <x-bladewind::textarea placeholder="Comment"></x-bladewind::textarea>
+                <x-bladewind::button can_submit="true" class="mx-auto block mt-2 w-full">click me to submit</x-bladewind::button>
+            </form>
+        </x-bladewind::card>
     </p>
 
     <pre class="language-markup line-numbers" data-line="2">
@@ -180,17 +203,21 @@
         Only primary buttons can take on different colors. If the default blue color doesn't do it for you, there are eight other colour options to pick from.
     </p>
     <p>
-    <x-bladewind::button color="red">Look Ma! I am red</x-bladewind::button>&nbsp;
-    <x-bladewind::button color="yellow">Look Ma! I am yellow</x-bladewind::button>
-    <x-bladewind::button color="green">Look Ma! I am green</x-bladewind::button>
-
-    <x-bladewind::button color="pink" class="my-4">Look Ma! I am pink</x-bladewind::button>
-    <x-bladewind::button color="cyan" class="my-4">Look Ma! I am cyan</x-bladewind::button>
-    <x-bladewind::button color="black" class="my-4">Look Ma! I am black</x-bladewind::button>
-
-    <x-bladewind::button color="purple">Look Ma! I am purple</x-bladewind::button>
-    <x-bladewind::button color="orange">Look Ma! I am orange</x-bladewind::button>
-    <x-bladewind::button>Look Ma! I am blue</x-bladewind::button>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <x-bladewind::button color="red">Red is a colour no?</x-bladewind::button>
+        <x-bladewind::button color="yellow">Is gold yellow?</x-bladewind::button>
+        <x-bladewind::button color="green">Let's go green</x-bladewind::button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <x-bladewind::button color="pink">Babies love Pink</x-bladewind::button>
+        <x-bladewind::button color="cyan">Cyan oh Cyan!</x-bladewind::button>
+        <x-bladewind::button color="black">Black is Bae</x-bladewind::button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <x-bladewind::button color="purple">Purple Wheels</x-bladewind::button>
+        <x-bladewind::button color="orange">Get me an Orange</x-bladewind::button>
+        <x-bladewind::button>Feeling Blue</x-bladewind::button>
+    </div>
     </p>
 
     <pre class="language-markup line-numbers" data-line="1,5,9,13,17,21,25,29">
@@ -309,6 +336,16 @@
             <td>Defines if the button should be disabled or enabled. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>icon</td>
+            <td><em>blank</em></td>
+            <td>Defines if the button should have an icon. All Heroicons icon names can be specified.</td>
+        </tr>
+        <tr>
+            <td>icon_right</td>
+            <td>false</td>
+            <td>Defines if the icon should be positioned to the right of the button. Takes effect only is <em>icon</em> is not blank. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
             <td>tag</td>
             <td>button</td>
             <td>Specifies which html tag to use in creating the button. <br> <code class="inline">button</code> <code class="inline">a</code> </td>
@@ -334,6 +371,8 @@
                 disabled="false"
                 class="mt-0"
                 tag="a"
+                icon="lock-closed" 
+                icon_right="false"
                 button_text_css="font-bold text-black
                 can_submit="false"&gt;
                 ...
@@ -349,7 +388,8 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#primary">Primary button</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#secondary">Secondary button</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#spinning">With Spinners</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#spinning">With spinners</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#icons">With icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#submittable">Form submission</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#coloured">Coloured button</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#events">Button events</a></div>

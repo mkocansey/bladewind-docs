@@ -22,7 +22,7 @@
     <div class="flex items-center component-hlg"><div class="dot"></div><a href="/component/horizontal-line-graph">Horizontal Line Graph</a></div>
     <div class="flex items-center component-icon"><div class="dot"></div><a href="/component/icon">Icon</a></div>
     <div class="flex items-center component-input"><div class="dot"></div><a href="/component/input">Input</a></div>
-    <div class="flex items-center component-label"><div class="dot"></div><a href="/component/label">Label</a></div>
+    {{-- <div class="flex items-center component-label"><div class="dot"></div><a href="/component/label">Label</a></div> --}}
     <div class="flex items-center component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
     <div class="flex items-center component-modal"><div class="dot"></div><a href="/component/modal">Modal</a></div>
     <div class="flex items-center component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>

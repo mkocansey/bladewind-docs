@@ -356,10 +356,6 @@
         To hide the <code class="inline text-red-500">cancel</code> button, simply set <code class="inline text-red-500">cancel_button_label=""</code>. When the button label is blank, the button won't be displayed.
         In the same way, to hide the primary button, the okay button in this case, simply set <code class="inline text-red-500">ok_button_label=""</code>. When the button label is blank, the button won't be displayed.
     </p>
-    <p>
-        <x-bladewind::button onclick="showModal('no-cancel')">No cancel button</x-bladewind::button>
-        <x-bladewind::button onclick="showModal('no-okay')" class="mt-2 sm:mt-0">No okay button</x-bladewind::button>
-    </p>
     <x-bladewind::modal title="No Cancel Button" name="no-cancel" cancel_button_label="">
         I have no cancel button. Just okay and that is fine.
     </x-bladewind::modal>
@@ -367,6 +363,9 @@
         I have no okay button. Just cancel this thing and let's all go home.
     </x-bladewind::modal>
     <h3>No Cancel Button</h3>
+    <p>
+        <x-bladewind::button onclick="showModal('no-cancel')">No cancel button</x-bladewind::button>
+    </p>
     <pre class="language-markup line-numbers" data-line="8">
         <code>
             &lt;x-bladewind.button onclick="showModal('no-cancel')"&gt;
@@ -381,8 +380,10 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-
     <h3>No Okay Button</h3>
+    <p>
+        <x-bladewind::button onclick="showModal('no-okay')" class="mt-2 sm:mt-0">No okay button</x-bladewind::button>
+    </p>
     <pre class="language-markup line-numbers" data-line="8">
         <code>
             &lt;x-bladewind.button onclick="showModal('no-okay')"&gt;
@@ -483,10 +484,7 @@
         <x-bladewind::alert type="warning" show_close_icon="false" show_icon="false">Refresh the page to get out of locked mode</x-bladewind::alert>
     </p>
     <p>
-    <x-bladewind::button onclick="showModal('lock-screen')">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg> lock the screen</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('lock-screen')" icon="lock" class="text-white">lock the screen</x-bladewind::button>
     </p>
     <x-bladewind::modal show_action_buttons="false" backdrop_can_close="false" name="lock-screen">
             <div class="flex mx-auto justify-center my-2">

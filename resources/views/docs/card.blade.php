@@ -65,11 +65,11 @@
             <tr>
                 <td>iTunes Gift Card</td>
                 <td class="text-center">5</td>
-                <td class="text-right">250.00</td>
+                <td class="text-right double-underline">250.00</td>
             </tr>
             <tr>
-                <td colspan="2" class="text-right font-bold border-b-4 border-double border-slate-300">Total:</td>
-                <td colspan="2" class="text-right font-bold border-b-4 border-t-4 border-double border-slate-300">4,350.00</td>
+                <td colspan="2" class="text-right font-bold">Total:</td>
+                <td colspan="2" class="text-right font-bold double-underline">4,350.00</td>
             </tr>
         </x-bladewind::table>
     </x-bladewind::card>
@@ -102,19 +102,19 @@
     </p>
 
     <div class="sm:grid sm:grid-cols-3 sm:gap-5 space-y-4 sm:space-y-0">
-        <x-bladewind::card class="cursor-pointer hover:shadow-gray-300">
+        <x-bladewind::card class="cursor-pointer hover:shadow-gray-300 hover:dark:shadow-slate-900">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-green-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <span class="text-center block font-semibold mt-2">Projects</span>
         </x-bladewind::card>
-        <x-bladewind::card class="cursor-pointer hover:shadow-gray-300">
+        <x-bladewind::card class="cursor-pointer hover:shadow-gray-300 hover:dark:shadow-slate-900">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-purple-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
             </svg>
             <span class="text-center block font-semibold mt-2">Tasks</span>
         </x-bladewind::card>
-        <x-bladewind::card class="cursor-pointer hover:shadow-gray-300">
+        <x-bladewind::card class="cursor-pointer hover:shadow-gray-300 hover:dark:shadow-slate-900">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto rounded-full p-3 bg-rose-400 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
@@ -308,7 +308,7 @@
                 <div class="flex px-4 pt-2 pb-3">
                     <x-bladewind::avatar size="small" image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" />
                     <div class="pl-2">
-                        <span class="block font-semibold text-black/70">mkocansey</span>
+                        <span class="block font-semibold text-black/70 dark:text-slate-300">mkocansey</span>
                         <span class="block text-xs">Greater Accra, Accra, Ghana</span>
                     </div>
                 </div>
@@ -317,20 +317,12 @@
             <x-slot name="footer">
                 <div class="flex justify-between p-4">
                     <div class="flex space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
-                        </svg>
+                        <x-bladewind::icon name="heart" class="h-[32px] w-[32px] text-gray-500 cursor-pointer hover:text-black hover:dark:text-slate-300" />
+                        <x-bladewind::icon name="chat-bubble-oval-left-ellipsis" class="h-[32px] w-[32px] text-gray-500 cursor-pointer hover:text-black hover:dark:text-slate-300" />
+                        <x-bladewind::icon name="arrow-uturn-left" class="h-[32px] w-[32px] text-gray-500 cursor-pointer hover:text-black hover:dark:text-slate-300" />
                     </div>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 cursor-pointer hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                        </svg>
+                        <x-bladewind::icon name="bookmark" class="h-[32px] w-[32px] text-gray-500 cursor-pointer hover:text-black hover:dark:text-slate-300" />
                     </div>
                 </div>
             </x-slot>
@@ -358,9 +350,9 @@
                 &lt;x-slot name="footer"&gt;
                     &lt;div class="flex justify-between p-4"&gt;
                         &lt;div class="flex space-x-4"&gt;
-                            &lt;svg&gt; ... &lt;/svg&gt;
-                            &lt;svg&gt; ... &lt;/svg&gt;
-                            &lt;svg&gt; ... &lt;/svg&gt;
+                            &lt;x-bladewind::icon name="heart" class="h-8 w-8...k" /&gt;
+                            &lt;x-bladewind::icon name="chat-bubble-oval-left-ellipsis" class="h-8 w-8...k" /&gt;
+                            &lt;x-bladewind::icon name="arrow-uturn-left" class="h-8 w-8...k" /&gt;
                         &lt;/div&gt;
                         &lt;div&gt;
                             &lt;svg&gt; ... &lt;/svg&gt;

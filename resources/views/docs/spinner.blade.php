@@ -8,7 +8,7 @@
 
     <x-bladewind::spinner  />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.spinner  /&gt;
         </code>
@@ -17,7 +17,7 @@
 
     <x-bladewind::spinner size="medium"  />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.spinner size="medium"  /&gt;
         </code>
@@ -25,7 +25,7 @@
 
     <x-bladewind::spinner size="big"  />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.spinner size="big"  /&gt;
         </code>
@@ -33,7 +33,7 @@
 
     <x-bladewind::spinner size="xl"  />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.spinner size="xl"  /&gt;
         </code>
@@ -41,7 +41,7 @@
 
     <x-bladewind::spinner size="omg"  />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.spinner size="omg"  /&gt;
         </code>

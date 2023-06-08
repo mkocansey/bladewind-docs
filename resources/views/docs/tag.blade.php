@@ -4,7 +4,7 @@
 
     <p>Tags, sometimes referred to as labels allow you to logically group items or indicate statuses of items.  You can also use tags to list selections. They are very simple to use.</p>
     <p><x-bladewind::tag label="pending" /></p>
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.tag label="pending"  /&gt;
         </code>

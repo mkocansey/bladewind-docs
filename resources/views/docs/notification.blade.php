@@ -9,7 +9,7 @@
     <p>Include the notification component anywhere on your page. This component does not allow for much dynamic customization.</p>
     <x-bladewind::notification />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.notification /&gt;
         </code>
@@ -18,7 +18,7 @@
         Now you can trigger a notification using the javascript helper function. The function accepts four parameters listed below.
     </p>
 
-    <pre class="language-javascript line-numbers">
+    <pre class="language-javascript">
         <code>
             &lt;script&gt;
                 showNotification(title, message, type, dismiss_in);
