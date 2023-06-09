@@ -9,7 +9,7 @@
         <!-- End Google Tag Manager -->
         <title>BladewindUI: {{ $title }}</title>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="keywords" content="tailwindcss, laravel, ui components, blade templates, ui elements, html, css" />
         <meta name="description" content="Super simple but elegant Laravel blade-based UI components using TailwindCSS and vanilla Javascript. All for free!" />
         <link rel="apple-touch-icon" href="{{ asset('assets/images/icon.png') }}" />
