@@ -12,13 +12,18 @@
         the attribute <code class="inline text-red-500">tag="a"</code>.
     </p>
     <h2 id="primary">Primary Button</h2>
-    <x-bladewind::button>Subscribe Now</x-bladewind::button>
+    <div class="text-center p-4">
+        <x-bladewind::button>Subscribe Now</x-bladewind::button>
+    </div>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button&gt;
         </code>
     </pre>
-    <x-bladewind::button tag="a">Subscribe Now</x-bladewind::button>
+    <br />
+    <div class="text-center p-4">
+        <x-bladewind::button tag="a">Subscribe Now</x-bladewind::button>
+    </div>
     <pre class="language-markup">
         <code>
             // this button is created using the &lt;a&gt; tag
@@ -29,7 +34,9 @@
     </pre>
 
     <h3>Disabled Button</h3>
-    <x-bladewind::button disabled="true">Disabled Button</x-bladewind::button>
+    <div class="text-center p-4">
+        <x-bladewind::button disabled="true">Disabled Button</x-bladewind::button>
+    </div>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind.button disabled="true"&gt;disabled button&lt;/x-bladewind.button&gt;
@@ -37,10 +44,12 @@
     </pre>
 
     <h3>Different Sizes</h3>
-    <x-bladewind::button size="tiny">Save</x-bladewind::button> &nbsp;&nbsp;
-    <x-bladewind::button size="small">Subscribe</x-bladewind::button>&nbsp;&nbsp;
-    <x-bladewind::button size="regular">Subscribe</x-bladewind::button>&nbsp;&nbsp;
-    <x-bladewind::button size="big">Save User</x-bladewind::button>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button size="tiny">Save</x-bladewind::button>
+        <x-bladewind::button size="small">Subscribe</x-bladewind::button>
+        <x-bladewind::button size="regular">Subscribe</x-bladewind::button>
+        <x-bladewind::button size="big">Save User</x-bladewind::button>
+    </div>
 
     <pre class="language-markup">
         <code>
@@ -64,7 +73,9 @@
     </pre>
 
     <h2 id="secondary">Secondary Button</h2>
-   <x-bladewind::button type="secondary">Subscribe Now</x-bladewind::button>
+    <div class="text-center p-4">
+    <x-bladewind::button type="secondary">Subscribe Now</x-bladewind::button>
+   </div>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
             &lt;x-bladewind.button
@@ -74,11 +85,12 @@
         </code>
     </pre>
     <h3>Different Sizes</h3>
-    <x-bladewind::button type="secondary" size="tiny">Save</x-bladewind::button>
-    <x-bladewind::button type="secondary" size="small">Subscribe</x-bladewind::button>
-    <x-bladewind::button type="secondary" size="regular">Subscribe</x-bladewind::button>
-    <x-bladewind::button type="secondary" size="big">Save User</x-bladewind::button>
-
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button type="secondary" size="tiny">Save</x-bladewind::button>
+        <x-bladewind::button type="secondary" size="small">Subscribe</x-bladewind::button>
+        <x-bladewind::button type="secondary" size="regular">Subscribe</x-bladewind::button>
+        <x-bladewind::button type="secondary" size="big">Save User</x-bladewind::button>
+    </div>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind.button
@@ -116,10 +128,10 @@
     attribute. This creates a button with a spinner but, the spinners are hidden by default. The assumption is, you want a button
     with a spinner but you want to show the spinner when the button is clicked. If you want the spinner to be visible by default you can set the
     attribute <code class="inline text-red-500">show_spinner="true"</code>.</p>
-    <p>
+    <div class="text-center p-4">
         <x-bladewind::button has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button> &nbsp;&nbsp;
         <x-bladewind::button type="secondary" has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button>
-    </p>
+    </div>
     <pre class="language-markup line-numbers" data-line="2,3">
         <code>
             &lt;x-bladewind.button
@@ -133,9 +145,9 @@
         It is possible to trigger the spinning effect when the button is clicked. This can be achieved using the helper functions bundled with BladewindUI.
         In this case you will need to set the <code class="inline text-red-500">name</code> and <code class="inline text-red-500">onclick</code> attributes of the button.
     </p>
-    <p>
+    <div class="text-center p-4">
         <x-bladewind::button has_spinner="true" name="save-user" onclick="unhide('.save-user .bw-spinner')">Click for my spinner</x-bladewind::button> &nbsp;&nbsp;
-    </p>
+    </div>
 
     <pre class="language-markup line-numbers" data-line="2-4">
         <code>
@@ -155,16 +167,27 @@
         <x-bladewind::alert show_close_icon="false">If you specify <b>icon_right="true"</b> and <b>has_spinner="true"</b>, your icon will be ignored because the spinner is positioned to the right of the button.</x-bladewind::alert>
     </p>
     <br />
-    <p>
-        <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button> &nbsp;&nbsp;
+    <div class="text-center">
+        <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button icon="arrow-path"&gt;
+                Refresh Page
+            &lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <br />
+    <div class="text-center space-x-4">
         <x-bladewind::button type="secondary" icon="arrow-small-right" icon_right="true">Next Chapter</x-bladewind::button>
-    </p>
-    <pre class="language-markup line-numbers" data-line="2,3">
+    </div>
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.button
-                has_spinner="true"
-                show_spinner="true"&gt;
-                Saving...
+                type="secondary" 
+                icon="arrow-small-right" 
+                icon_right="true""&gt;
+                Next Chapter
             &lt;/x-bladewind.button&gt;
         </code>
     </pre>
@@ -270,9 +293,9 @@
         The Bladewind button component translates to a regular HTML <code class="inline text-red-500">&lt;button...</code> tag.
         This means you can literally append any HTML button event attribute (<em>onclick, onblur, onmouseover, onmouseout</em> etc) to the component and it will be fired.
     </p>
-    <p>
+    <div class="text-center p-4">
         <x-bladewind::button onclick="alert('you clicked me')">I have an onclick</x-bladewind::button>
-    </p>
+    </div>
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>

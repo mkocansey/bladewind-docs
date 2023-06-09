@@ -128,7 +128,7 @@
                 This is a sign up form example to demonstrate how to validate forms using Bladewind.
             </p>
             <x-bladewind::input name="fname" required="true" label="Full Name" error_message="You will need to enter your full name" />
-            <div class="flex gap-4">
+            <div class="sm:flex gap-4">
                 <x-bladewind::input name="email" required="true"  label="Email" />
                 <x-bladewind::input name="mobile"  label="Mobile" numeric="true" />
             </div>
@@ -349,7 +349,7 @@
     <x-bladewind::centered-content size="small">
         <x-bladewind::input name="fullname" placeholder="John T. Doe" prefix="user" prefix_is_icon="true" />
         <x-bladewind::input name="emailic" placeholder="me@bladewindui.com" prefix="envelope" prefix_is_icon="true" />
-        <div class="flex gap-4">
+        <div class="sm:flex gap-4">
             <x-bladewind::input name="fon" placeholder="0000.000.00" prefix="phone" prefix_is_icon="true" />
             <x-bladewind::input name="passw" type="password" placeholder="Password" prefix="key" prefix_is_icon="true" prefix_icon_css="text-orange-500" viewable="true" />
         </div>
@@ -480,7 +480,8 @@
             <td>Placeholder text to display in the input element. </td>
         </tr>
         <tr>
-            <td>show_placeholder_always</td>
+            <td><span class="sm:hidden">show_ placeholder_ always</span>
+            <span class="sm:block hidden">show_placeholder_always</span></td>
             <td>false</td>
             <td>
                 Placeholder text is hidden when the label attribute has a value. Setting this to true always shows the placeholder.<br />
