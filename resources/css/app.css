@@ -4,6 +4,11 @@
 @tailwind utilities;
 
 @layer base {
+    :root { --primary: hsl(0, 0%, 95%); --secondary: rgba(156, 19, 193, 0.87); }
+    * { scrollbar-width: thin; scrollbar-color: var(--secondary) var(--primary); }
+    *::-webkit-scrollbar { width: 10px; }
+    *::-webkit-scrollbar-track { background: var(--primary); border-radius: 5px; }
+    *::-webkit-scrollbar-thumb { background-color: var(--secondary); border-radius: 14px; border: 3px solid var(--primary); }
     .pre-font { font-family: 'Source Code Pro', monospace; }
     nav a { @apply hover:text-slate-700 dark:hover:text-slate-300 }
     .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 }

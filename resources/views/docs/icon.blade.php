@@ -158,6 +158,28 @@
                 class="h-24 w-24 !fill-green-300 !stroke-green-500" /&gt;
         </code>
     </pre>
+
+    <h2 id="custom-dir">Custom SVG Directory</h2>
+    <p>
+        If you place your icon files in the default BladewindUI directory specified above, it is likely your files will be overwritten anytime there is a Bladewind update and you publish the public files. 
+        To ensure you don't lose your custom icons, it is advised you place them in a directory in your <code class="inline">public</code> directory. You will need to specify the <code class="inline text-red-500">dir</code> attribute.
+    </p>
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            For the example below, we placed the SVG file <b>discount-circle.svg</b> in the <code class="inline">public > assets > images</code> directory.
+        </x-bladewind::alert>
+    </p>
+    <div class="text-center">
+        <x-bladewind::icon name="discount-circle" dir="assets/images" class="h-24 w-24" />
+    </div>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.icon 
+                name="discount-circle" 
+                dir="assets/images" 
+                class="h-24 w-24" /&gt;
+        </code>
+    </pre>
     <p>
         <x-bladewind::alert type="error" show_close_icon="false">
             Some TailwindCSS classes may not work on SVG files/icons that are not from Heroicons. SVG <a href="https://tailwindcss.com/docs/fill">fill</a> and <a href="https://tailwindcss.com/docs/stroke">stroke</a> classes were not working as expected in some cases.
@@ -195,7 +217,8 @@
         <code>
             &lt;x-bladewind.icon
                 name="video-camera-slash" 
-                type="solid"
+                type="solid" 
+                dir="assets/images"
                 class="h-16 w-16 text-amber-500" /&gt;
         </code>
     </pre>
@@ -209,6 +232,7 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#solid-icons">Solid icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#svg-icons">SVG icons</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#custom-dir">Custom directory</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
     <x-slot name="scripts">

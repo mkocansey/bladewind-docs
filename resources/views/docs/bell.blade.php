@@ -12,7 +12,7 @@
         <x-bladewind::bell />
     </div>
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.bell /&gt;
         </code>
@@ -27,7 +27,7 @@
         <x-bladewind::bell show_dot="false" />
     </div>
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.bell show_dot="false" /&gt;
         </code>
@@ -42,7 +42,7 @@
         <x-bladewind::bell animate_dot="true" />
     </div>
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.bell animate_dot="true" /&gt;
         </code>
@@ -57,7 +57,7 @@
         <x-bladewind::bell invert="true" />
     </div>
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.bell invert="true" /&gt;
         </code>
@@ -71,13 +71,13 @@
         <x-bladewind::bell size="big" />
     </div>
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             // size="small" can be omitted since it is the default
             &lt;x-bladewind.bell size="small" /&gt;
         </code>
     </pre>
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.bell size="big" /&gt;
         </code>
