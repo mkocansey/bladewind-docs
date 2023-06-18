@@ -46,8 +46,8 @@
     </div>
 
     <div class="h-20"></div>
-    <div class="md:max-w-7xl mx-auto pt-10">
-        <nav class="md:w-64 md:fixed h-0 md:h-screen md:overflow-y-scroll main-nav md:pb-44 invisible md:visible md:pl-6">
+    <div class="sm:max-w-7xl mx-auto pt-10">
+        <nav class="sm:w-64 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible sm:pl-6">
             @include('docs/nav')
         </nav>
 
