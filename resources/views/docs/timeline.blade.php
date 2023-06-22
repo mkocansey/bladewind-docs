@@ -3,47 +3,42 @@
     <x-slot:page_title>Timeline</x-slot:page_title>
 
     <p>
-        Display date and progress or statuses on a timeline. The default colour for the timeline component is cyan but you can choose from eight additional colour options.
+        Display date and progress or statuses on a timeline. The date format you display is completely your choice. The timeline just expects a date string. The default colour for the timeline component is blue but you can choose from <a href="#colours">eight additional colour</a> options.
         The timeline component does not centre itself in its parent element. You will need to figure that bit out in your layout. In the example below the timeline has been wrapped in
         <code class="inline">&lt;div class="w-96 mx-auto"&gt;...&lt;/div&gt;</code>
     </p>
-
-    <div class="w-96 mx-auto pb-10">
-        <x-bladewind::timeline date="18-JUL" label="You signed up" status="completed" />
-        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" status="completed" />
-        <x-bladewind::timeline date="20-JUL" label="Customer rep called" status="completed" />
-        <x-bladewind::timeline date="" label="Account is being reviewed" />
-        <x-bladewind::timeline date="" label="Account activated" />
-    </div>
     <p>
-        Most timelines have two types of circles. One that is filled to denote the event has occurred or been completed. The other circle is empty to denote an upcoming event.
-        For a timeline to be filled set the attribute <code class="inline text-red-500">status="completed"</code>
+        Completed events in the BladewindUI Timeline show a checkmark, while upcoming events are denoted with an empty circle. To set a timeline as completed set the attribute <code class="inline text-red-500">completed="true"</code>.
     </p>
 
-    <pre class="language-markup">
+    <div class="w-96 mx-auto pb-10">
+        <x-bladewind::timeline date="18-JUL" label="You signed up" completed="true" />
+        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed="true" />
+        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed="true" />
+        <x-bladewind::timeline label="Account is being reviewed" />
+        <x-bladewind::timeline label="Account activated" />
+    </div>
+
+    <pre class="language-markup line-numbers" data-line="4,9,14">
         <code>
             &lt;x-bladewind.timeline
                 date="18-JUL"
                 label="You signed up"
-                status="completed" /&gt;
+                completed="true" /&gt;
 
             &lt;x-bladewind.timeline
                 date="19-JUL"
                 label="Customer rep assigned"
-                status="completed" /&gt;
+                completed="true" /&gt;
 
             &lt;x-bladewind.timeline
                 date="20-JUL"
                 label="Customer rep called"
-                status="completed" /&gt;
+                completed="true" /&gt;
 
-            &lt;x-bladewind.timeline
-                date=""
-                label="Account is being reviewed" /&gt;
+            &lt;x-bladewind.timeline label="Account is being reviewed" /&gt;
 
-            &lt;x-bladewind.timeline
-                date=""
-                label="Account activated" /&gt;
+            &lt;x-bladewind.timeline label="Account activated" /&gt;
         </code>
     </pre>
 
@@ -54,41 +49,83 @@
     </p>
 
     <div class="w-96 mx-auto pb-10">
-        <x-bladewind::timeline date="18-JUL" label="You signed up" status="completed" stacked="true" />
-        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" status="completed" stacked="true" />
-        <x-bladewind::timeline date="20-JUL" label="Customer rep called" status="completed" stacked="true" />
-        <x-bladewind::timeline date="" label="Account is being reviewed" stacked="true" />
-        <x-bladewind::timeline date="" label="Account activated" stacked="true" />
+        <x-bladewind::timeline date="18-JUL" label="You signed up" completed="true" stacked="true" />
+        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed="true" stacked="true" />
+        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed="true" stacked="true" />
+        <x-bladewind::timeline label="Account is being reviewed" stacked="true" />
+        <x-bladewind::timeline label="Account activated" stacked="true" />
     </div>
     <pre class="language-markup line-numbers" data-line="5, 11,17,22,27">
         <code>
             &lt;x-bladewind.timeline
                 date="18-JUL"
                 label="You signed up"
-                status="completed"
+                completed="true"
                 stacked="true" /&gt;
 
             &lt;x-bladewind.timeline
                 date="19-JUL"
                 label="Customer rep assigned"
-                status="completed"
+                completed="true"
                 stacked="true" /&gt;
 
             &lt;x-bladewind.timeline
                 date="20-JUL"
                 label="Customer rep called"
-                status="completed"
+                completed="true"
                 stacked="true" /&gt;
 
             &lt;x-bladewind.timeline
-                date=""
                 label="Account is being reviewed"
                 stacked="true" /&gt;
 
             &lt;x-bladewind.timeline
-                date=""
                 label="Account activated"
                 stacked="true" /&gt;
+        </code>
+    </pre>
+
+    <h2 id="icons">Different Completed Event Icons</h2>
+    <p>
+        Thanks to the BladewindUI <a href="/component/icon">Icon component</a>, embedding icons in the Timeline is easy.
+        By default, completed events are displayed with a checkmark. It is possible to use any <a href="https://heroicons.com" target="_blank">Heroicons</a> icon for your completed events timeline.
+        Just set the attribute <code class="inline text-red-500">icon="name-of-icon"</code>.
+    </p>
+
+    <div class="w-96 mx-auto pb-10">
+        <x-bladewind::timeline date="18-JUL" label="You signed up" completed="true" stacked="true" icon="envelope" />
+        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed="true" stacked="true" icon="user" />
+        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed="true" stacked="true" icon="phone-arrow-down-left" />
+        <x-bladewind::timeline label="Account is being reviewed" stacked="true" />
+        <x-bladewind::timeline label="Account activated" stacked="true" />
+    </div>
+    <pre class="language-markup line-numbers" data-line="5, 13,20">
+        <code>
+            &lt;x-bladewind.timeline
+                date="18-JUL"
+                label="You signed up"
+                completed="true"
+                icon="envelope"
+                stacked="true"
+                icon=""/&gt;
+
+            &lt;x-bladewind.timeline
+                date="19-JUL"
+                label="Customer rep assigned"
+                completed="true"
+                icon="user"
+                stacked="true" /&gt;
+
+            &lt;x-bladewind.timeline
+                date="20-JUL"
+                label="Customer rep called"
+                completed="true"
+                icon="phone-arrow-down-left"
+                stacked="true" /&gt;
+
+            &lt;x-bladewind.timeline label="Account is being reviewed" stacked="true" /&gt;
+
+            &lt;x-bladewind.timeline label="Account activated" stacked="true" /&gt;
         </code>
     </pre>
 
@@ -99,11 +136,11 @@
         <code class="inline text-red-500">last="true"</code>. This tells the timeline component that this is the last item in the timeline list.
     </p>
     <div class="w-96 mx-auto pb-10">
-        <x-bladewind::timeline date="18-JUL" label="You signed up" status="completed" />
-        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" status="completed" />
-        <x-bladewind::timeline date="20-JUL" label="Customer rep called" status="completed" />
-        <x-bladewind::timeline date="" label="Account is being reviewed" />
-        <x-bladewind::timeline date="" label="Account activated" last="true" />
+        <x-bladewind::timeline date="18-JUL" label="You signed up" completed="true" />
+        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed="true" />
+        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed="true" />
+        <x-bladewind::timeline label="Account is being reviewed" />
+        <x-bladewind::timeline label="Account activated" last="true" />
     </div>
 
     <pre class="language-markup line-numbers" data-line="23">
@@ -111,24 +148,22 @@
             &lt;x-bladewind.timeline
                 date="18-JUL"
                 label="You signed up"
-                status="completed" /&gt;
+                completed="true" /&gt;
 
             &lt;x-bladewind.timeline
                 date="19-JUL"
                 label="Customer rep assigned"
-                status="completed" /&gt;
+                completed="true" /&gt;
 
             &lt;x-bladewind.timeline
                 date="20-JUL"
                 label="Customer rep called"
-                status="completed" /&gt;
+                completed="true" /&gt;
 
             &lt;x-bladewind.timeline
-                date=""
                 label="Account is being reviewed" /&gt;
 
             &lt;x-bladewind.timeline
-                date=""
                 label="Account activated"
                 last="true" /&gt;
         </code>
@@ -136,19 +171,19 @@
 
     <h2 id="colours">Different Colours</h2>
     <p>
-        Like with most of our other components, the timeline component can be displayed in nine different colours. One of these nine colours should definitely match your theme.
-        The nice thing about the timeline is, colours are actually applied to each timeline so you can have a rainbow timeline. Typically, you will want to use one colour for all timelines but hey, knock yourself out.
+        Like with most of our other components, the timeline component can be displayed in nine different colours. Hopefully, one of these nine colours matches your theme.
+        The nice thing about the timeline is, colours are actually applied to each timeline so your timelines can have a colour cocktail. Typically, you will want to use one colour for all timelines but hey, knock yourself out.
     </p>
     <div class="w-96 mx-auto pb-10">
-        <x-bladewind::timeline date="18-JUL" label="You signed up" status="completed" color="red" />
-        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" status="completed" color="yellow" />
-        <x-bladewind::timeline date="20-JUL" label="Customer rep called" status="completed" color="green" />
-        <x-bladewind::timeline date="" label="Account is being reviewed" color="blue" />
-        <x-bladewind::timeline date="" label="Account activated" color="pink" />
-        <x-bladewind::timeline date="" label="Account deleted" color="black" />
-        <x-bladewind::timeline date="" label="User re-activated" color="purple" />
-        <x-bladewind::timeline date="" label="Email verified" color="orange" />
-        <x-bladewind::timeline date="" label="User goes live" last="true" />
+        <x-bladewind::timeline date="18-JUL" label="You signed up" completed="true" color="red" />
+        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed="true" color="yellow" />
+        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed="true" color="green" />
+        <x-bladewind::timeline label="Account is being reviewed" color="blue" />
+        <x-bladewind::timeline label="Account activated" color="pink" />
+        <x-bladewind::timeline label="Account deleted" color="black" />
+        <x-bladewind::timeline label="User re-activated" color="purple" />
+        <x-bladewind::timeline label="Email verified" color="orange" />
+        <x-bladewind::timeline label="User goes live" last="true" />
     </div>
 
     <pre class="language-markup line-numbers" data-line="5,11,17,22,27,32,37,42">
@@ -156,48 +191,43 @@
             &lt;x-bladewind::timeline
                 date="18-JUL"
                 label="You signed up"
-                status="completed"
+                completed="true"
                 color="red" /&gt;
 
             &lt;x-bladewind::timeline
                 date="19-JUL"
                 label="Customer rep assigned"
-                status="completed"
+                completed="true"
                 color="yellow" /&gt;
 
             &lt;x-bladewind::timeline
                 date="20-JUL"
                 label="Customer rep called"
-                status="completed"
+                completed="true"
                 color="green" /&gt;
 
             &lt;x-bladewind::timeline
-                date=""
                 label="Account is being reviewed"
                 color="blue" /&gt;
 
             &lt;x-bladewind::timeline
-                date=""
                 label="Account activated"
                 color="pink" /&gt;
 
             &lt;x-bladewind::timeline
-                date=""
                 label="Account deleted"
                 color="black" /&gt;
 
             &lt;x-bladewind::timeline
-                date=""
                 label="User re-activated"
                 color="purple" /&gt;
 
             &lt;x-bladewind::timeline
-                date=""
                 label="Email verified"
                 color="orange" /&gt;
 
             &lt;x-bladewind::timeline
-                date=""
+                color="cyan"
                 label="User goes live"
                 last="true" /&gt;
         </code>
@@ -213,9 +243,9 @@
             <th>Available Values</th>
         </x-slot>
         <tr>
-            <td>status</td>
-            <td>pending</td>
-            <td><code class="inline">pending</code> <code class="inline">completed</code></td>
+            <td>completed</td>
+            <td>true</td>
+            <td>This attribute can be omitted if the event has not been completed. <code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>date</td>
@@ -226,6 +256,11 @@
             <td>label</td>
             <td><em>blank</em></td>
             <td>Text to display next to or above the date. The activity in the timeline.</td>
+        </tr>
+        <tr>
+            <td>icon</td>
+            <td>checkmark</td>
+            <td>Accepts any icon name from <a href="https://heroicons.com" target="_blank">Heroicons</a>.</td>
         </tr>
         <tr>
             <td>stacked</td>
@@ -255,7 +290,8 @@
                 stacked="false"
                 last="true"
                 color="pink"
-                status="completed" /&gt;
+                icon="checkmark"
+                completed="true" /&gt;
         </code>
     </pre>
 
@@ -266,6 +302,7 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#stacked">Stacked timeline</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#icons">Different icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#notail">No trailing line</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
