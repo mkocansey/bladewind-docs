@@ -900,8 +900,6 @@
 <x-slot name="scripts">
     <script>
         selectNavigationItem('.component-select');
-        bw_country_multi.selectByValue('gh');
-        bw_country_multi.disable();
     </script>
 </x-slot>
 </x-app>
