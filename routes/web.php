@@ -28,6 +28,9 @@ Route::get('component/progress-bar',            [ PagesController::class, 'progr
 Route::get('component/pagination',              [ PagesController::class, 'pagination' ]);
 Route::get('component/radio-button',            [ PagesController::class, 'radiobutton' ]);
 Route::get('component/rating',                  [ PagesController::class, 'rating' ]);
+Route::get('component/select',                  [ PagesController::class, 'select' ]);
+Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
+Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);
 Route::get('component/tab',                     [ PagesController::class, 'tab' ]);
 Route::get('component/table',                   [ PagesController::class, 'table' ]);
 Route::get('component/tag',                     [ PagesController::class, 'tag' ]);
@@ -37,8 +40,6 @@ Route::get('component/timeline',                [ PagesController::class, 'timel
 Route::get('component/timepicker',              [ PagesController::class, 'timepicker' ]);
 Route::get('component/toggle',                  [ PagesController::class, 'toggle' ]);
 Route::get('component/tooltip',                 [ PagesController::class, 'tooltip' ]);
-Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
-Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);
 Route::get('component/verification-code',       [ PagesController::class, 'verification_code' ]);
 Route::get('extra/app-layouts',                 [ PagesController::class, 'app_layouts' ]);
 Route::get('extra/error-pages',                 [ PagesController::class, 'errors' ]);

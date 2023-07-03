@@ -160,9 +160,9 @@
         </code>
     </pre>
     <h2 id="icons">With Icons</h2>
-    <p>Buttons can have <a href="/component/icon">icons</a>. 
-    To add an icon simply specify the icon name in the <code class="inline text-red-500">icon</code> attribute. Refer to our <a href="/component/icon">Icon</a> component page for details on icon names.</p> 
-    Icons by default are positioned to the left of the button. You can set <code class="inline text-red-500">icon_right="true"</code> to position the icon to the right of the button.
+    <p>Buttons can have <a href="/component/icon">icons</a>.
+    To add an icon simply specify the icon name in the <code class="inline text-red-500">icon</code> attribute. Refer to our <a href="/component/icon">Icon</a> component page for details on icon names.
+    Icons by default are positioned to the left of the button. You can set <code class="inline text-red-500">icon_right="true"</code> to position the icon to the right of the button.</p>
     <p>
         <x-bladewind::alert show_close_icon="false">If you specify <b>icon_right="true"</b> and <b>has_spinner="true"</b>, your icon will be ignored because the spinner is positioned to the right of the button.</x-bladewind::alert>
     </p>
@@ -184,8 +184,8 @@
     <pre class="language-markup">
         <code>
             &lt;x-bladewind.button
-                type="secondary" 
-                icon="arrow-small-right" 
+                type="secondary"
+                icon="arrow-small-right"
                 icon_right="true""&gt;
                 Next Chapter
             &lt;/x-bladewind.button&gt;
@@ -394,7 +394,7 @@
                 disabled="false"
                 class="mt-0"
                 tag="a"
-                icon="lock-closed" 
+                icon="lock-closed"
                 icon_right="false"
                 button_text_css="font-bold text-black
                 can_submit="false"&gt;

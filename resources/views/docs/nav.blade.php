@@ -31,6 +31,7 @@
     <div class="flex items-center component-progress-bar"><div class="dot"></div><a href="/component/progress-bar">Progress Bar</a></div>
     <div class="flex items-center component-radio-button"><div class="dot"></div><a href="/component/radio-button">Radio Button</a></div>
     <div class="flex items-center component-rating"><div class="dot"></div><a href="/component/rating">Rating</a></div>
+    <div class="flex items-center component-select"><div class="dot"></div><a href="/component/select">Select</a></div>
     <div class="flex items-center component-statistic"><div class="dot"></div><a href="/component/statistic">Statistic</a></div>
     <div class="flex items-center component-spinner"><div class="dot"></div><a href="/component/spinner">Spinner</a></div>
     <div class="flex items-center component-tab"><div class="dot"></div><a href="/component/tab">Tab</a></div>

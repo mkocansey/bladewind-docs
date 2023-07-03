@@ -1,18 +1,18 @@
 <x-app>
-    <x-slot:title>Dropdown Component</x-slot:title>
-    <x-slot:page_title>Dropdown</x-slot:page_title>
-
-    <x-bladewind::alert show_close_icon="false">
-        You should probably use the <a href="/component/select">Select component</a> instead if you simply want the features of the HTML Select form field with
-        the options to search and select multiple items.
-    </x-bladewind::alert>
-<br />
+    <x-slot:title>Select Component</x-slot:title>
+    <x-slot:page_title>Select</x-slot:page_title>
     <p>
-        This component tried killing two birds with one code by acting as both a form
-        <code class="inline text-red-500">&lt;select&gt;...&lt;/select&gt;</code> and well, a dropdown menu.
-        The main difference between this and the BladewindUI <a href="/component/dropmenu">Dropmenu</a> component is aesthetics and maybe simplicity.
-        Arguably this component has the most attributes for a reason. A lot is happening but let's dive right in
-        and display a basic dropdown.
+        Select single or multiple values from a list.
+    </p>
+    <p>
+        This Select component is an improvement on our <a href="/component/dropdown">Dropdown</a> component and offers more stripped down options with a nicer look. If you
+        are currently using the Dropdown component in your forms for basic user input collection, you can simply replace <code class="inline">x-bladewind.dropdown</code>
+        with <code class="inline">x-bladewind.select</code> and everything will work fine.
+    </p>
+    <p>
+        <x-bladewind::alert type="error" show_close_icon="false">
+            If you have multiple select components on a page, it is important to give each one a <b>unique</b> name. Failure to do this will result in erratic behaviour of the component.
+        </x-bladewind::alert>
     </p>
     <p>
         @php
@@ -22,6 +22,13 @@
                 [ 'label' => 'Ghana', 'value' => 'gh' ],
                 [ 'label' => 'Nigeria', 'value' => 'ng' ],
                 [ 'label' => 'Kenya', 'value' => 'ke' ]
+            ];
+            $countries_mixed_keys = [
+                [ 'country' => 'Benin', 'code' => 'bj' ],
+                [ 'country' => 'Burkina Faso', 'code' => 'bf' ],
+                [ 'country' => 'Ghana', 'code' => 'gh' ],
+                [ 'country' => 'Nigeria', 'code' => 'ng' ],
+                [ 'country' => 'Kenya', 'code' => 'ke' ]
             ];
             $staff = [
                 [
@@ -53,10 +60,10 @@
         @endphp
     </p>
 
-    <h2 id="basic">Basic dropdown</h2>
+    <h2 id="basic">Basic Usage</h2>
 
     <p>
-        The <code class="inline text-red-500">data</code> attribute is what really drives the BladewindUI dropdown component.
+        The <code class="inline text-red-500">data</code> attribute is what really drives the BladewindUI select component.
         This attribute expects an <code class="inline text-red-500">array</code> to be passed to it. Let's look at the basic structure of such an array using a list of five countries.
         We will build on this array structure as we go further in this documentation.
     </p>
@@ -75,15 +82,15 @@
     </pre>
 
     <p>
-        This structure is all you need to render a BladewindUI dropdown.
-        The default array keys used to render the dropdown are <code class="inline text-red-500">label</code> and <code class="inline text-red-500">value</code>.
+        This structure is all you need to render a BladewindUI select.
+        The default array keys used to render the select are <code class="inline text-red-500">label</code> and <code class="inline text-red-500">value</code>.
     </p>
     <p>
-        <x-bladewind::dropdown name="country" data="{{json_encode($countries)}}" />
+        <x-bladewind::select name="country" data="{{json_encode($countries)}}" />
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                 name="country"
                 data="&#123;&#123; json_encode($countries) }}" /&gt;
         </code>
@@ -91,11 +98,11 @@
 
     <h3>Change Placeholder Text</h3>
     <p>
-        <x-bladewind::dropdown name="country2" placeholder="What is your nationality" data="{{json_encode($countries)}}" />
+        <x-bladewind::select name="country2" placeholder="What is your nationality" data="{{json_encode($countries)}}" />
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                 name="country2"
                 placeholder="What is your nationality"
                 data="&#123;&#123; json_encode($countries) }}" /&gt;
@@ -121,22 +128,24 @@
     </pre>
 
     <p>
-        We changed our array keys from <code class="inline">label</code> and <code class="inline">value</code> to <code class="inline">country</code> and <code class="inline">code</code>. To render the dropdown now, you just need to set the <code class="inline text-red-500">label_key</code> and <code class="inline text-red-500">value_key</code> attributes.
+        We changed our array keys from <code class="inline">label</code> and <code class="inline">value</code> to <code class="inline">country</code> and <code class="inline">code</code>. To render the select now, you just need to set the <code class="inline text-red-500">label_key</code> and <code class="inline text-red-500">value_key</code> attributes.
         Using our array above we will end up with <code class="inline text-red-500">label_key="country"</code> and <code class="inline text-red-500">value_key="code"</code>.
     </p>
 
     <pre class="language-markup line-numbers" data-line="3,4">
         <code>
-            &lt;x-bladewind.dropdown
-                name="country"
+            &lt;x-bladewind.select
+                name="country_mixed"
                 label_key="country"
                 value_key="code"
                 data="&#123;&#123; json_encode($countries) }}" /&gt;
         </code>
     </pre>
-
     <p>
-        Just for some perspective, what we are trying to mimick here is the html implementation of a <code class="inline text-red-500">select</code> form element.
+        <x-bladewind::select name="country_mixed" label_key="country" value_key="code" data="{{json_encode($countries_mixed_keys)}}" />
+    </p>
+    <p>
+        Just for some perspective, what we are trying to mimic here is the html implementation of a <code class="inline text-red-500">select</code> form element.
     </p>
     <pre class="language-markup line-numbers">
         <code>
@@ -148,16 +157,64 @@
 
     <h3>Selecting a Value By Default</h3>
     <p>
-        Like with the regular HTML &lt;select&gt; field, it is possible to select a dropdown item by default when the page loads. Useful when editing records.
+        Like with the regular HTML &lt;select&gt; field, it is possible to have an item selected by default when the page loads. Useful when editing records.
     </p>
     <p>
-        <x-bladewind::dropdown name="country-select" placeholder="What is your nationality" data="{{json_encode($countries)}}" selected_value="gh" />
+        <x-bladewind::select name="country-select" placeholder="What is your nationality" data="{{json_encode($countries)}}" selected_value="gh" />
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                 name="country-select"
                 selected_value="gh"
+                placeholder="What is your nationality"
+                data="&#123;&#123; json_encode($countries) }}" /&gt;
+        </code>
+    </pre>
+    <h3>Required Field</h3>
+    <p>
+        Setting a select as required appends a red asterisk to the placeholder text.
+    </p>
+    <p>
+        <x-bladewind::select name="country-select2" placeholder="What is your nationality" required="true" data="{{json_encode($countries)}}" />
+    </p>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.select
+                name="country-select2"
+                required="true"
+                placeholder="What is your nationality"
+                data="&#123;&#123; json_encode($countries) }}" /&gt;
+        </code>
+    </pre>
+    <h3>Disabled Select</h3>
+    <p>
+        A disabled select has a 50% opacity and a cursor indicating the field cannot be accessed.
+    </p>
+    <p>
+        <x-bladewind::select name="country-dis" placeholder="What is your nationality" disabled="true" data="{{json_encode($countries)}}" />
+    </p>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.select
+                name="country-dis"
+                disabled="true"
+                placeholder="What is your nationality"
+                data="&#123;&#123; json_encode($countries) }}" /&gt;
+        </code>
+    </pre>
+    <h3>Readonly Select</h3>
+    <p>
+        A readonly select is quite visible but cannot be opened to view the list of items.
+    </p>
+    <p>
+        <x-bladewind::select name="country-ro" placeholder="What is your nationality" readonly="true" data="{{json_encode($countries)}}" />
+    </p>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.select
+                name="country-ro"
+                readonly="true"
                 placeholder="What is your nationality"
                 data="&#123;&#123; json_encode($countries) }}" /&gt;
         </code>
@@ -168,15 +225,18 @@
         This is just a simple way for users who are displaying list of countries to display flags next to each country name.
         This implementation was ported from <a href="https://semantic-ui.com/elements/flag.html" target="_blank">Semantic UI library's flags</a> feature.
         Flags are rendered using the country's ISO code. Example: Ghana has an ISO code of GH. Nigeria has an ISO code of NG.
-        You will need to specify the <code class="inline text-red-500">flag_key</code> attribute on the dropdown. This should be the name of the key in your array that has the country codes.
+        You will need to specify the <code class="inline text-red-500">flag_key</code> attribute on the select. This should be the name of the key in your array that has the country codes.
     </p>
     <p>
-        Still working with our <code class="inline text-red-500">$countries</code> array from above, our dropdown code will now be
+        Still working with our <code class="inline text-red-500">$countries</code> array from above, our select code will now be
     </p>
     <link href="{{ asset('vendor/bladewind/css/flags.css') }}" rel="stylesheet" />
+    <p>
+        <x-bladewind::select name="country3" data="{{json_encode($countries)}}" flag_key="value" />
+    </p>
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                 name="country"
                 label_key="country"
                 value_key="code"
@@ -184,9 +244,6 @@
                 data="&#123;&#123; json_encode($countries) }}" /&gt;
         </code>
     </pre>
-    <p>
-        <x-bladewind::dropdown name="country3" data="{{json_encode($countries)}}" flag_key="value" />
-    </p>
 
     <x-bladewind::alert show_close_icon="false">
         For flags to work you will need to include the following stylesheet. It is deliberately not compiled into the core BladewindUI css because not everyone needs flags.
@@ -195,8 +252,8 @@
 
     <h2 id="images">With Images</h2>
     <p>
-        You may wish to include images in your dropdown list. For example, your app allows you to assign tasks to employees. You may want your employee list to have the pictures of each person next to their name.
-        You will need to specify the <code class="inline text-red-500">image_key</code> attribute on the dropdown. This should be the name of the key in your array that has the image urls.
+        You may wish to include images in your select list. For example, your app allows you to assign tasks to employees. You may want your employee list to have the pictures of each person next to their name.
+        You will need to specify the <code class="inline text-red-500">image_key</code> attribute on the select. This should be the name of the key in your array that has the image urls.
     </p>
     <p>
         Let us create a new array of employees with the needed information.
@@ -234,10 +291,21 @@
             ]
         </code>
     </pre>
+    <br />
+    <p>
+        <x-bladewind::select
+            name="staff"
+            data="{{json_encode($staff)}}"
+            label_key="name"
+            value_key="id"
+            placeholder="Assign task to"
+            image_key="picture" />
+    </p>
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                 name="staff"
+                placeholder="Assign task to"
                 label_key="name"
                 value_key="id"
                 image_key="picture"
@@ -245,21 +313,13 @@
         </code>
     </pre>
 
-    <x-bladewind::dropdown
-        name="staff"
-        data="{{json_encode($staff)}}"
-        label_key="name"
-        value_key="id"
-        image_key="picture" />
-
-    <h2 id="searchable">Searchable Dropdown</h2>
+    <h2 id="searchable">Searchable Select</h2>
     <p>
-        Assuming we had a very long list of items in our dropdown, say all countries of the world, or list of employees, it will be tedious to scroll down the list to find what you are looking for.
-        The BladewindUI dropdown has an attribute that makes the component searchable.
-        <code class="inline text-red-500">searchable="true"</code>. By default this is turned off.
+        Assuming we had a very long list of items in our select, say all countries of the world, or list of employees, it will be tedious to scroll down the list to find what you are looking for.
+        Set the following attribute <code class="inline text-red-500">searchable="true"</code> to make the Select component searchable. This is turned off by default.
     </p>
     <p>
-        Let's now increase our list of countries from five to ten. The new array will be
+        Let's now increase our list of countries from five to ten. The new array will be:
     </p>
     @php
         $countries = [
@@ -292,13 +352,13 @@
             ];
         </code>
     </pre>
-
+<br />
     <p>
-        <x-bladewind::dropdown name="country4" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
+        <x-bladewind::select name="country4" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                  name="country4"
                  searchable="true"
                  label_key="country"
@@ -308,21 +368,128 @@
         </code>
     </pre>
 
-    <h2 id="onselect">Onselect Action</h2>
+    <h2 id="multiple">Select Multiple Items</h2>
     <p>
-    Every BladewindUI dropdown component you display creates as part of the dropdown html the following hidden form field
-    <code class="inline text-red-500">&lt;input type="hidden" name="the-input-name-you-provide" /&gt;</code>. When you select an item from the dropdown, the hidden input field is updated with the value of what you selected. The value will be whatever you specified as your <code class="inline">value_key</code>. When you submit a form that has any BladewindUI dropdown, you can access the value of the dropdown by specifying the name you used on the dropdown. Consider the example below.
+        There are instances where you need to select more than one item from the select component. This is possible by setting the attribute
+        <code class="inline text-red-500">multiple="true"</code>. Unlike the single select, multiple selects do not automatically close when you select items.
+        This is because we technically do not know how many items you are selecting and if you are done.
+        To close a multiple select just click anywhere on the page outside the component.
+    </p>
+    <p>
+        Left and right navigation arrows are displayed only when some of the selected items are out of view. You can ignore the arrows and scroll left and right using your mouse.
+        This will be a 2 finger scroll on Macs.
+    </p>
+    <p>
+        <x-bladewind::select name="country-multi" multiple="true" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
+    </p>
+    <pre class="language-markup line-numbers" data-line="7">
+        <code>
+            &lt;x-bladewind.select
+                name="country-multi"
+                searchable="true"
+                label_key="country"
+                value_key="code"
+                flag_key="code"
+                multiple="true"
+                data="&#123;&#123; json_encode($countries)}}" /&gt;
+        </code>
+    </pre>
+    <p>
+        You can auto select some of the items in the component by default, for example when in edit mode. To select multiple items, you will need to specify them as a comma separated list.
+    </p>
+    <p>
+        <x-bladewind::select name="country-multi2" multiple="true" searchable="true" data="{{json_encode($countries)}}" flag_key="value" selected_value="gh, gm, ci, bf" />
+    </p>
+    <pre class="language-markup line-numbers" data-line="4">
+        <code>
+            &lt;x-bladewind.select
+                name="country-multi2"
+                searchable="true"
+                selected_value="gh, gm, ci, bf"
+                label_key="country"
+                value_key="code"
+                flag_key="code"
+                multiple="true"
+                 data="&#123;&#123; json_encode($countries)}}" /&gt;
+        </code>
+    </pre>
+
+    <h2 id="non-dynamic">Manually Building a Select</h2>
+    <p>
+        There could be cases when your data will not come from an API call or array. You may want to manually build the Select options.
+        Say for gender, you simply want 3 options. Male, female, other. It is possible to make these items into an array but honestly
+        array-ing simple things like this can get tedious --fast. The Select component has a child component that allows you to do this.
+    </p>
+    <p>
+        Let us consider the example below. The important trade-off here is to set <code class="inline text-red-500">data="manual"</code>.
+    </p>
+    <pre class="language-markup line-numbers">
+        <code>
+           &lt;x-bladewind.select name="gender" placeholder="Select Gender" data="manual"&gt;
+                &lt;x-bladewind.select-item label="Male" value="male" /&gt;
+                &lt;x-bladewind.select-item label="Female" value="female" /&gt;
+                &lt;x-bladewind.select-item label="Prefer not to say" value="other" /&gt;
+           &lt;/x-bladewind.select&gt;
+        </code>
+    </pre>
+    <p>
+        <x-bladewind::select name="gender" placeholder="Select Gender" data="manual">
+            <x-bladewind::select-item label="Male" value="male" />
+            <x-bladewind::select-item label="Female" value="female" />
+            <x-bladewind::select-item label="Prefer not to say" value="other" />
+        </x-bladewind::select>
+    </p>
+    <p>
+        The manual Select can inherit all the cool features of an array-based Select. Can be searchable or even multiple selection.
+    </p>
+    <pre class="language-markup line-numbers">
+        <code>
+           &lt;x-bladewind.select
+                name="tags"
+                placeholder="Tags for this music"
+                multiple="true"
+                searchable="true" data="manual"&gt;
+
+                &lt;x-bladewind::select-item label="Pop" value="pop" image="/path/to/image" /&gt;
+                &lt;x-bladewind::select-item label="Hip" value="hip" flag="gh" /&gt;
+                &lt;x-bladewind::select-item label="Trendy" value="trendy" flag="ng" /&gt;
+                &lt;x-bladewind::select-item label="GenZ" value="genz" image="/path/to/image" /&gt;
+                &lt;x-bladewind::select-item label="Trance" value="trance" /&gt;
+                &lt;x-bladewind::select-item label="For Coder's" value="devs" /&gt;
+
+           &lt;/x-bladewind.select&gt;
+        </code>
+    </pre>
+    <p>
+        <x-bladewind::select name="tags" placeholder="Tags for this music" multiple="true" searchable="true" data="manual">
+            <x-bladewind::select-item label="Pop" value="pop" image="{{ asset('assets/images/edwin.jpeg') }}" />
+            <x-bladewind::select-item label="Hip" value="hip" flag="gh" />
+            <x-bladewind::select-item label="Trendy" value="trendy" flag="ng" />
+            <x-bladewind::select-item label="GenZ" value="genz" image="{{ asset('assets/images/audrey.jpeg') }}" />
+            <x-bladewind::select-item label="Trance" value="trance" />
+            <x-bladewind::select-item label="For Coder's" value="devs" />
+        </x-bladewind::select>
+    </p>
+    <p>
+        The example above allows for multiple selection of items, it's searchable and mixes flags and images, just to show you
+        that all features are possible even when manually building the Select items.
+    </p>
+
+    <h2 id="onselect">Get Value of Selected Item(s)</h2>
+    <p>
+    Every BladewindUI select component you display creates as part of the select html the following hidden form field
+    <code class="inline text-red-500">&lt;input type="hidden" name="the-select-name-you-provided" /&gt;</code>. When you select an item from the select, the hidden input field is updated with the value of what you selected. The value will be whatever you specified as your <code class="inline">value_key</code>. When you submit a form that has any BladewindUI select, you can access the value of the select by specifying the name you used on the select. Consider the example below.
     </p>
     <pre class="language-markup line-numbers">
         <code>
             &lt;form ...&gt;
             ...
-            &lt;x-bladewind.dropdown name="country" ... /&gt;
+            &lt;x-bladewind.select name="country" ... /&gt;
             &lt;/form&gt;
         </code>
     </pre>
     <p>
-    After submitting the form the value of the country dropdown can be accessed using any of the following regular ways Laravel allows you to access data from the request class.
+    After submitting the form the value of the country select can be accessed using any of the following ways permitted in Laravel.
     </p>
 
     <pre class="language-js line-numbers">
@@ -332,112 +499,225 @@
             $request->country;
         </code>
     </pre>
+    <br />
+    <x-bladewind::alert type="info" show_close_icon="false">
+        The <b>multiple select</b> generates a comma separated list of values with a prefixing comma that you will need to trim when you submit your forms.
+        Selecting multiple countries from our country example above will result in the following input field. Note the comma before 'gh'. <br /><br />
+        <code class="inline text-red-500">&lt;input type="hidden" name="country_multi" value=",gh,ci,bf,gm" /&gt;</code>
+    </x-bladewind::alert>
 
-    <h3>Redirecting to URLs</h3>
-    <p>As stated earlier on in this document, the BladewindUI dropdown component is killing two birds with one code. You may not always need the dropdown for collecting user input. You could use the dropdown as a menu or navigation. In this case you will want the user to be sent to a url when a dropdown item is selected. To achieve this you will need to specify the <code class="inline text-red-500">url_key</code> attribute. This key will need to exist in your data array. When a dropdown item is selected, the url specified for that item will be called. By default urls that point within your app will open in the same browser window. External links will open in a new window. </p>
-    <p>Our <code class="inline text-red-500">$countries</code> array has been updated with urls to the Wikipedia pages for each country. We then set the <code class="inline text-red-500">url_key</code> attribute on the dropdown. This has automatically turned our dropdown component into a menu and not form <code class="inline">&lt;select&gt;</code>. </p>
-
-    <pre class="language-js line-numbers" data-line="6,11,16,21,26,31,36,41,46,51">
-        <code>
-        &lt;?php
-            $countries = [
-                [
-                    'country' => 'Benin',
-                    'code' => 'bj',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Burkina Faso',
-                    'code' => 'bf',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Cameroon',
-                    'code' => 'cm',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Congo',
-                    'code' => 'cd',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Gambia',
-                    'code' => 'gm',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Ghana',
-                    'code' => 'gh',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Ivory Coast',
-                    'code' => 'ci',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Nigeria',
-                    'code' => 'ng',
-                    'url' => '#basic'
-                ],
-                [
-                    'country' => 'Kenya',
-                    'code' => 'ke',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-                [
-                    'country' => 'Togo',
-                    'code' => 'tg',
-                    'url' => 'https://url-to-wikipedia-page'
-                ],
-            ];
-        </code>
-    </pre>
-
-    <x-bladewind::dropdown name="country5" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" />
-    <pre class="language-markup line-numbers" data-line="4">
-        <code>
-            &lt;x-bladewind.dropdown
-                name="country5"
-                data="&#123;{ json_encode($countries) }}"
-                url_key="url"
-                flag_key="value" /&gt;
-        </code>
-    </pre>
-
-    <h3>Appending Selected Value to URL</h3>
+    <h2 id="custom-functions">Execute Custom Functions</h2>
     <p>
-        You can also append the value that was selected by the user to the URL when using the dropdown as a menu by setting <code class="inline text-red-500">append_value_to_url="true"</code>. By default this is turned off.
+        It is possible to execute a JavaScript custom function when an item is selected.
+        The custom function is executed <b>in addition</b> to the default BladewindUI action of writing the selected value to a hidden field. Building on our countries example above, let's say you want to prepend a mobile number field with the dialing code
+        of the selected country. This can be done via a custom function. You can define a custom function by setting <code class="inline text-red-500">onselect="function_name"</code>.
+        You only need to specify the name of the function without parenthesis and parameters. Example: <code class="inline text-red-500">onselect="prependDialingCode"</code>.
+    </p>
+    <p>
+        The value and label of the selected item are passed to the custom function and executed like so: <code class="inline text-red-500">onselect="prependDialingCode(value, label)"</code>.
+        Your function therefore needs to be defined with two parameters. Let's consider a more detailed example below.
+    </p>
+    <script>
+        const dialing_codes = {
+            'gh' : '+233',
+            'ng' : '+234',
+            'bf' : '+226'
+        }
+        prependDialingCode = (value) => {
+            dom_el('.mobile-prefix').innerText = eval(`dialing_codes.${value}`);
+        }
+    </script>
+
+    <div class="grid grid-cols-2 gap-4">
+        <x-bladewind::select name="cusfxns" placeholder="Your country" data="manual" onselect="prependDialingCode">
+            <x-bladewind::select-item label="Burkina Faso" value="bf" />
+            <x-bladewind::select-item label="Ghana" value="gh" />
+            <x-bladewind::select-item label="Nigeria" value="ng" />
+        </x-bladewind::select>
+        <x-bladewind::input name="mobile" numeric="true" prefix="+xxx" suffix="device-phone-mobile" suffix_is_icon="true" transparent_prefix="false" placeholder="Mobile" />
+    </div>
+
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;div class="grid grid-cols-2 gap-4"&gt;
+
+                &lt;x-bladewind::select
+                    name="cusfxns"
+                    placeholder="Your country"
+                    data="manual"
+                    onselect="prependDialingCode"&gt;
+
+                    &lt;x-bladewind::select-item label="Burkina Faso" value="bf" /&gt;
+                    &lt;x-bladewind::select-item label="Ghana" value="gh" /&gt;
+                    &lt;x-bladewind::select-item label="Nigeria" value="ng" /&gt;
+
+                &lt;/x-bladewind::select&gt;
+
+                &lt;x-bladewind::input
+                    name="mobile"
+                    numeric="true"
+                    prefix="+xxx"
+                    suffix="device-phone-mobile"
+                    suffix_is_icon="true"
+                    transparent_prefix="false"
+                    placeholder="Mobile" /&gt;
+            &lt;/div&gt;
+
+        </code>
+    </pre>
+    <pre class="language-js line-numbers">
+        <code>
+            // javascript
+            const dialing_codes = {
+                'gh' : '+233',
+                'ng' : '+234',
+                'bf' : '+226'
+            }
+
+            prependDialingCode = (value) => {
+                domEl('.mobile-prefix').innerText = eval(`dialing_codes.${value}`);
+            }
+        </code>
+    </pre>
+    <p>
+        The input field above has <code class="text-red-500 inline">name="mobile"</code> and also has a <code class="text-red-500 inline">prefix="+xxx"</code>.
+        Bladewind names all prefixes after their input element so, the prefix field in the mobile input will have <code class="inline">class="mobile-prefix"</code>. Even though
+        Bladewind passes both 'value' and 'label' to custom functions specified  on Selects, in this example the <code class="inline">prependDialingCode</code>
+        function only accepts 'value' because the 'label' is not needed.
     </p>
 
-    <pre class="language-markup line-numbers" data-line="3">
+    <h2 id="js-manipulations">Manipulate Selects from JavaScript</h2>
+    <p>
+        There are those moments when you need to interact with a Select component from JavaScript. The Bladewind Select component exposes 3 methods that help you to do just that.
+        When you create a Select component and provide a name, BladewindUI initializes the component in JavaScript using the name you provided.
+    </p>
+    <pre class="language-markup">
         <code>
-            &lt;x-bladewind.dropdown
-                ...
-                append_value_to_url="true" /&gt;
+            // the following component declaration
+            &lt;x-bladewind.select name="country-multiple" placeholder="Select a country" /&gt;
         </code>
     </pre>
-    <x-bladewind::dropdown name="country6" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" />
-    <p>
-        If you select a country, say Ghana, from the dropdown above you will notice it appends <code class="inline text-red-500">value=gh</code> in the URL.
-        By default we use the key <code class="inline text-red-500">value</code>. To change this to your preferred key, set the attribute <code class="inline text-red-500">append_value_to_url_as</code>.
-    </p>
-    <pre class="language-markup line-numbers" data-line="4">
+    <pre class="language-js">
         <code>
-            &lt;x-bladewind.dropdown
-                ...
-                append_value_to_url="true"
-                append_value_to_url_as="code" /&gt;
+            // will be initialized in JavaScript as
+            const bw_country_multiple = new BladewindSelect('country_multiple', 'Select a country');
+        </code>
+    </pre>
+    <p>
+        Note how the name passed to the component has been prefixed with <code class="inline text-red-500">bw_</code>
+        and all dashes <code class="inline">'-'</code> replaced with underscores <code class="inline">'_'</code>. This variable is now accessible to you in JavaScript and represents the Select component.
+    </p>
+    <p>
+        The following methods can be performed on the Select component now, from JavaScript...
+    </p>
+    <x-bladewind::table striped="true">
+        <x-slot name="header">
+            <th>Method</th>
+            <th>Description</th>
+        </x-slot>
+        <tr>
+            <td>enable</td>
+            <td>Enables the select and makes it clickable. <br /><br />
+            <code class="inline">bw_country_multiple.enable();</code></td>
+        </tr>
+        <tr>
+            <td>disable</td>
+            <td>Disables the select and makes it non-clickable. There is a known issue with this when used on multiple select components that already have values selected. The user can click on the close icons next to the selected values to remove them.
+                <br /><br /><code class="inline">bw_country_multiple.disable();</code></td>
+        </tr>
+        <tr>
+            <td>reset</td>
+            <td>Removes any selected values from the component. This also empties the hidden input field associated with the component.
+                <br /><br /><code class="inline">bw_country_multiple.reset();</code></td>
+        </tr>
+        <tr>
+            <td>selectByValue(value)</td>
+            <td>Select one of the component values. The value you pass needs to exist in the Select's list of items else the command will simply be ignored.
+                This does not work for multiple values yet. You can use it on a mutiple select to select multiple values but you will need to call the method multiple times.
+                <br /><br />
+                <code class="inline">bw_country_multiple.selectByValue('gh');</code>
+                <code class="inline">bw_country_multiple.selectByValue('ng');</code>
+            </td>
+        </tr>
+    </x-bladewind::table>
+    <h3>A Practical Example</h3>
+    <p>
+        <x-bladewind::select name="from-js" placeholder="Your country" data="manual">
+            <x-bladewind::select-item label="Burkina Faso" value="bf" />
+            <x-bladewind::select-item label="Ghana" value="gh" />
+            <x-bladewind::select-item label="Nigeria" value="ng" />
+        </x-bladewind::select>
+    </p>
+    <div class="space-x-4 text-center">
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.selectByValue('gh')">Select Ghana</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.selectByValue('ng')">Select Nigeria</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.disable()">Disable</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.reset()">Reset</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.enable()">Enable</x-bladewind::button>
+    </div>
+<br />
+    <pre class="language-markup line-numbers" data-line="9,14,19,24,29">
+        <code>
+            &lt;x-bladewind.select name="from-js" placeholder="Your country" data="manual"&gt;
+                &lt;x-bladewind.select-item label="Burkina Faso" value="bf" /&gt;
+                &lt;x-bladewind.select-item label="Ghana" value="gh" /&gt;
+                &lt;x-bladewind.select-item label="Nigeria" value="ng" /&gt;
+            &lt;/x-bladewind.select&gt;
+
+            &lt;div class="space-x-4 text-center"&gt;
+
+                &lt;x-bladewind.button size="small" type="secondary"
+                    onclick="bw_from_js.selectByValue('gh')"&gt;
+                    Select Ghana
+                &lt;/x-bladewind.button&gt;
+
+                &lt;x-bladewind.button size="small" type="secondary"
+                    onclick="bw_from_js.selectByValue('ng')"&gt;
+                    Select Nigeria
+                &lt;/x-bladewind.button&gt;
+
+                &lt;x-bladewind.button size="small" type="secondary"
+                    onclick="bw_from_js.disable()"&gt;
+                    Disable
+                &lt;/x-bladewind.button&gt;
+
+                &lt;x-bladewind.button size="small" type="secondary"
+                    onclick="bw_from_js.reset()"&gt;
+                    Reset
+                &lt;/x-bladewind.button&gt;
+
+                &lt;x-bladewind.button size="small" type="secondary"
+                    onclick="bw_from_js.enable()"&gt;
+                    Enable
+                &lt;/x-bladewind.button&gt;
+
+            &lt;/div&gt;
         </code>
     </pre>
 
-    <x-bladewind::dropdown name="country7" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" append_value_to_url="true" append_value_to_url_as="code" />
-
+    <h2 id="native">Native Select</h2>
     <p>
-        Selecting any country from the dropdown above, say Ghana, will now pass <code class="inline text-red-500">code=gh</code> in the URL.
+        It is possible to use the plain old HTML <code class="inline">&lt;select&gt; </code> element and apply the BladewindUI <code class="inline">bw-raw-select</code> class to change the style to look just like all the other BladewindUI form components.
+        This option has no searchability and does only what the HTML select element is capable of doing.
     </p>
-
+    <p>
+        <select class="bw-raw-select">
+            <option value="">Are you above 18?</option>
+            <option value="yes">Yep! I am</option>
+            <option value="no">Nope but tell no one</option>
+            <option value="idk">I'd rather not say</option>
+        </select>
+    </p>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;select name="age" class="bw-raw-select"&gt;
+                &lt;option value=""&gt;Are you above 18?&lt;/option&gt;
+                &lt;option value="yes"&gt;Yep! I am&lt;/option&gt;
+                &lt;option value="no"&gt;Nope but tell no one&lt;/option&gt;
+                &lt;option value="idk"&gt;I'd rather not say&lt;/option&gt;
+            &lt;/select&gt;
+        </code>
+    </pre>
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Dropdown component.</p>
     @include('docs/announcement')
@@ -449,18 +729,18 @@
         </x-slot>
         <tr>
             <td>name</td>
-            <td>bw-dropdown</td>
-            <td>This name is assigned to the hidden input created for the dropdown. The name is then accessed when the dropdown is submitted in a form.</td>
+            <td>bw-select</td>
+            <td>This name is assigned to the hidden input created for the select. The name is then accessed when the select is submitted in a form.</td>
         </tr>
         <tr>
             <td>placeholder</td>
             <td>Select One</td>
-            <td>Default text displayed on the dropdown</td>
+            <td>Default text displayed on the select</td>
         </tr>
         <tr>
             <td>onselect</td>
             <td><em>blank</em></td>
-            <td>Custom function to call when an item in the dropdown is selected. <b>This should just be the name of the custom function, without parenthesis</b>. For example <code class="inline text-red-500">assignToProject</code>.
+            <td>Custom function to call when an item in the select is selected. <b>This should just be the name of the custom function, without parenthesis</b>. For example <code class="inline text-red-500">assignToProject</code>.
             The component appends the selected <em>value</em> and <em>label</em> to the function call as <code class="inline text-red-500">assignToProject(value, label)</code></td>
         </tr>
         <tr>
@@ -471,45 +751,29 @@
         <tr>
             <td>value_key</td>
             <td>value</td>
-            <td>Which key in your array should the dropdown pick its values from.</td>
+            <td>Which key in your array should the select pick its values from.</td>
         </tr>
         <tr>
             <td>label_key</td>
             <td>label</td>
-            <td>Which key in your array should the dropdown pick its values from.</td>
+            <td>Which key in your array should the select pick its values from.</td>
         </tr>
         <tr>
             <td>flag_key</td>
             <td><em>blank</em></td>
-            <td>When using the dropdown with flags, which key in your array should the dropdown pick the country ISO codes from. Flags are only rendered using the countries ISO codes.</td>
+            <td>When using the select with flags, which key in your array should the select pick the country ISO codes from. Flags are only rendered using the countries ISO codes.</td>
         </tr>
         <tr>
             <td>image_key</td>
             <td><em>blank</em></td>
-            <td>When using the dropdown with images, which key in your array should the dropdown pick its images from.</td>
-        </tr>
-        <tr>
-            <td>url_key</td>
-            <td><em>blank</em></td>
-            <td>When using the dropdown as a menu, which key in your array should the dropdown pick the URLs from. Internal URLs will open in the same browser window. External URLs will open in a new window.</td>
-        </tr>
-        <tr>
-            <td>append_value_to_url</td>
-            <td>false</td>
-            <td>When using the dropdown as a menu you can opt to append selected values to the URL. This is turned off by default. <br /><code class="inline">true</code> <code class="inline">false</code>.</td>
-        </tr>
-        <tr>
-            <td>append_value_to_url_as</td>
-            <td>value</td>
-            <td>When <code class="inline text-red-500">append_value_to_url="true"</code>, selected values are appended to the URL by default as <code class="inline text-red-500">value=value</code>.
-            To append selected values to the URL as a different variable name, set <code class="inline text-red-500">append_value_to_url_as</code> to any string with no spaces.</td>
+            <td>When using the select with images, which key in your array should the select pick its images from.</td>
         </tr>
         <tr>
             <td>data_serialize_as</td>
             <td><em>blank</em></td>
-            <td>This is better explained with an example. In a form your dropdown has <code class="inline text-red-500">name="country"</code>. When the form is submitted the dropdown's value can be accessed as <code class="inline text-red-500">$request->country</code>.
-            If for some reason you want your dropdown to have its name but pass its value with a different name, set <code class="inline text-red-500">data_serialize_as</code>. Picking up on the example, if we set, <code class="inline text-red-500">data_serialize_as="country_name"</code>, when the form is submitted
-            we can access the value of the dropdown as <code class="inline text-red-500">$request->country_name</code>.
+            <td>This is better explained with an example. In a form your select has <code class="inline text-red-500">name="country"</code>. When the form is submitted the select's value can be accessed as <code class="inline text-red-500">$request->country</code>.
+            If for some reason you want your select to have its name but pass its value with a different name, set <code class="inline text-red-500">data_serialize_as</code>. Picking up on the example, if we set, <code class="inline text-red-500">data_serialize_as="country_name"</code>, when the form is submitted
+            we can access the value of the select as <code class="inline text-red-500">$request->country_name</code>.
             </td>
         </tr>
         <tr>
@@ -520,24 +784,82 @@
         <tr>
             <td>selected_value</td>
             <td><em>blank</em></td>
-            <td>Determines which value from the array should be selected by default when the dropdown loads. Useful when editing content. If you want an item in your array whose value=13 to be selected, set <code class="inline text-red-500">selected_value="13"</code>.</td>
+            <td>Determines which value from the array should be selected by default when the select loads. Useful when editing content. If you want an item in your array whose value=13 to be selected, set <code class="inline text-red-500">selected_value="13"</code>.
+            You can also set multiple values to be selected <code class="inline text-red-500">selected_value="to do, in progress, done"</code></td>
         </tr>
         <tr>
             <td>searchable</td>
             <td>false</td>
-            <td>Makes the dropdown either searchable or not. A search box is placed above the dropdown items when set to <code class="inline">true</code>. <br /><code class="inline">true</code> <code class="inline">false</code>.</td>
+            <td>Makes the select either searchable or not. A search box is placed above the select items when set to <code class="inline">true</code>. <br /><code class="inline">true</code> <code class="inline">false</code>.</td>
         </tr>
         <tr>
-            <td>show_filter_icon</td>
+            <td>disabled</td>
             <td>false</td>
-            <td>This is just a nifty addition that prepends a filter icon to the placeholder text when set to <code>true</code>.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
+            <td>Specifies if select should be disabled or not.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>false</td>
+            <td>Specifies if select should be readonly or not.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
+        </tr>
+        <tr>
+            <td>multiple</td>
+            <td>false</td>
+            <td>Specifies if multiple items can be selected.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
+        </tr>
+        <tr>
+            <td>add_clearing</td>
+            <td>true</td>
+            <td>Specifies if a 12px margin should be applied to the bottom of the select for spacing. Useful in forms. All BladewindUI form elements have this for uniformity.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
         </tr>
     </x-bladewind::table>
 
-    <h3>Dropdown with all attributes defined</h3>
+
+    <h3>Select Item Attributes</h3>
+    <p>When manually listing select items, the following attributes are available</p>
+    <x-bladewind::table striped="true">
+        <x-slot name="header">
+            <th>Option</th>
+            <th>Default</th>
+            <th>Available Values</th>
+        </x-slot>
+        <tr>
+            <td>value</td>
+            <td>value</td>
+            <td>Value of the item.</td>
+        </tr>
+        <tr>
+            <td>label</td>
+            <td>label</td>
+            <td>Label of the item.</td>
+        </tr>
+        <tr>
+            <td>flag</td>
+            <td><em>blank</em></td>
+            <td>ISO code of country whose flag to display.</td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><em>blank</em></td>
+            <td>URL of image to display for the item.</td>
+        </tr>
+        <tr>
+            <td>selected</td>
+            <td><em>false</em></td>
+            <td>Determines if the item should be selected or not.  <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+{{--        <tr>
+            <td>onselect</td>
+            <td><em>blank</em></td>
+            <td>Custom function to call when an item in the select is selected. <b>This should just be the name of the custom function, without parenthesis</b>. For example <code class="inline text-red-500">assignToProject</code>.
+                The component appends the selected <em>value</em> and <em>label</em> to the function call as <code class="inline text-red-500">assignToProject(value, label)</code></td>
+        </tr>--}}
+    </x-bladewind::table>
+
+    <h3>Select with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind.select
                 name="country"
                 placeholder="What is your nationality"
                 onselect="confirmSelection"
@@ -546,35 +868,40 @@
                 label_key="country"
                 flag_key="code"
                 image_key=""
-                url_key=""
-                append_value_to_url=""
-                append_value_to_url_as=""
+                disabled="false"
+                readonly="true"
                 data_serialize_as="country_id"
                 required="true"
                 selected_value="1001"
-                searchable="true"
-                show_filter_icon="false" /&gt;
+                searchable="true"  /&gt;
         </code>
     </pre>
 
 <x-bladewind::alert show_close_icon="false">
-    The source file for this component is available in <code class="inline">resources > views > components > bladewind > dropdown.blade.php</code>
+    The source file for this component is available in <code class="inline">resources > views > components > bladewind > select.blade.php</code>
 </x-bladewind::alert> <br />
 <x-bladewind::alert show_close_icon="false">
-    The javascript source file for this component is available in <code class="inline">public/vendor/bladewind/assets/js/dropdown.js</code>
+    The javascript source file for this component is available in <code class="inline">public/vendor/bladewind/assets/js/select.js</code>
 </x-bladewind::alert>
 
 <x-slot:side_nav>
-    <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic dropdown</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#flags">With country flags</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#images">With images</a></div>
-    <div class="flex items-center"><div class="dot"></div><a href="#searchable">Searchable dropdown</a></div>
-    <div class="flex items-center"><div class="dot"></div><a href="#onselect">Onselect action</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#searchable">Searchable select</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#multiple">Multiple select</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#non-dynamic">Non dynamic items</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#onselect">Get selected values</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#custom-functions">Custom functions</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#js-manipulations">Manipulate from JavaScript</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#native">Native select</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
 </x-slot:side_nav>
 <x-slot name="scripts">
     <script>
-        selectNavigationItem('.component-dropdown');
+        selectNavigationItem('.component-select');
+        bw_country_multi.selectByValue('gh');
+        bw_country_multi.disable();
     </script>
 </x-slot>
 </x-app>

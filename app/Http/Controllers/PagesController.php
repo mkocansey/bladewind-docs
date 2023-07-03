@@ -33,6 +33,8 @@ class PagesController extends Controller
     public function progress_bar()          { return view('docs.progress-bar'); }
     public function pagination()            { return view('docs.pagination'); }
     public function spinner()               { return view('docs.spinner'); }
+
+    public function select()                { return view('docs.select'); }
     public function statistic()             { return view('docs.statistic'); }
     public function tag()                   { return view('docs.tag'); }
     public function tab()                   { return view('docs.tab'); }
