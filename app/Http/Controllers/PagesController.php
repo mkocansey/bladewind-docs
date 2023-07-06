@@ -31,6 +31,8 @@ class PagesController extends Controller
     public function notification()          { return view('docs.notification'); }
     public function process_indicator()     { return view('docs.process-indicator'); }
     public function progress_bar()          { return view('docs.progress-bar'); }
+
+    public function progress_circle()       { return view('docs.progress-circle'); }
     public function pagination()            { return view('docs.pagination'); }
     public function spinner()               { return view('docs.spinner'); }
 

@@ -25,6 +25,7 @@ Route::get('component/modal',                   [ PagesController::class, 'modal
 Route::get('component/notification',            [ PagesController::class, 'notification' ]);
 Route::get('component/process-indicator',       [ PagesController::class, 'process_indicator' ]);
 Route::get('component/progress-bar',            [ PagesController::class, 'progress_bar' ]);
+Route::get('component/progress-circle',         [ PagesController::class, 'progress_circle' ]);
 Route::get('component/pagination',              [ PagesController::class, 'pagination' ]);
 Route::get('component/radio-button',            [ PagesController::class, 'radiobutton' ]);
 Route::get('component/rating',                  [ PagesController::class, 'rating' ]);
