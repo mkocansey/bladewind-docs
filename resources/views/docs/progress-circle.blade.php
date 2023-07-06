@@ -279,15 +279,20 @@
         </tr>
     </x-bladewind::table>
 
-    <h3>Progress Bar with all attributes defined</h3>
+    <h3>Progress Circle with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind.progress-circle
                 percentage = "50"
                 color = "red",
                 show_label = "false",
-                show_percent = "true",
+                show_percent = "false",
                 animate = "true",
+                size="medium"
+                circle_width="50"
+                text_size="50"
+                align="100"
+                valign="0"
                 shade = "faint" /&gt;
         </code>
     </pre>
