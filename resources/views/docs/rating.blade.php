@@ -189,6 +189,19 @@
                 &lt;/script&gt;
             </code>
         </pre>
+    <h2 id="no-click">Disabled Click Actions</h2>
+    <p>
+        In designs we are not always asking users to rate. There are times the user has already rate and we need to display the ratings as readonly.
+        In such cases the hover and click actions need to be disabled so the user won't modify the value of the rating. This can be achieved by setting <code class="inline text-red-500">clickable='false"</code>.
+    </p>
+    <p>
+        <x-bladewind::rating rating="4" clickable="false" />
+    </p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.rating rating="4" clickable="false" /&gt;
+        </code>
+    </pre>
 
    <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Rating component.</p>
@@ -233,6 +246,11 @@
             <td><em>blank</em></td>
             <td>Javascript function to execute when stars are clicked. </td>
         </tr>
+        <tr>
+            <td>clickable</td>
+            <td>true</td>
+            <td>Enable or disable click actions.<br /> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
     </x-bladewind::table>
     <h3>Rating with all attributes defined</h3>
     <pre class="language-markup">
@@ -243,6 +261,7 @@
                 rating="3"
                 color="yellow"
                 size="big"
+                clickable="true"
                 onclick="alert('you clicked on a star')" /&gt;
         </code>
     </pre>
@@ -255,6 +274,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#click">Click actions</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#no-click">Disable actions</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
