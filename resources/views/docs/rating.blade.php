@@ -191,7 +191,7 @@
         </pre>
     <h2 id="no-click">Disabled Click Actions</h2>
     <p>
-        In designs we are not always asking users to rate. There are times the user has already rate and we need to display the ratings as readonly.
+        In designs we are not always asking users to rate. There are times the user has already rated, and we need to display the ratings as readonly.
         In such cases the hover and click actions need to be disabled so the user won't modify the value of the rating. This can be achieved by setting <code class="inline text-red-500">clickable='false"</code>.
     </p>
     <p>
