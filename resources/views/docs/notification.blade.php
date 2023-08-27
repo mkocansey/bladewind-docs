@@ -2,11 +2,10 @@
     <x-slot:title>Notification Component</x-slot:title>
     <x-slot:page_title>Notification</x-slot:page_title>
     <p>
-        Unlike the <a href="/component/alert">Alert</a> component, the notification component is purely triggered via javascript. This is an intrusive way of displaying messages to your end users.
-        The notification component comes with a helper function to trigger the notification. Notifications are usually triggered after a user action is performed.
-        That said, it means most of the time content of notifications are built on the fly, so, it will not make sense to have a notification pre-filled with content waiting to be triggered.
+        Unlike the <a href="/component/alert">Alert</a> component, the notification component is not permanently visible on the screen and is useful when you want to provide feedback to your users.
+        The BladewindUI Notification component is solely triggered via Javascript.
     </p>
-    <p>Include the notification component anywhere on your page. This component does not allow for much dynamic customization.</p>
+    <p>To use this component simply include it anywhere on your page. If you intend to use this throughout your app it will be best to include the component in say your header page.</p>
     <x-bladewind::notification />
 
     <pre class="language-markup">
@@ -53,18 +52,19 @@
         <tr>
             <td>dismiss_in</td>
             <td>optional</td>
-            <td>Numeric. In how many seconds should the notification be dismissed if the user does not explicitly click on the close button. Default is 10 seconds. Note the value is in seconds and <b>not</b> milliseconds. So 20 will mean 20 seconds.</td>
+            <td>Numeric. In how many seconds should the notification be dismissed if the user does not explicitly click on the close button. Default is 15 seconds. Note the value is in seconds and <b>not</b> milliseconds. So 20 will mean 20 seconds.</td>
         </tr>
     </x-bladewind::table>
 
     <pre class="language-javascript line-numbers">
         <code>
             &lt;script&gt;
-                showNotification('Delete Successful', 'Your downloaded file was deleted successfully');
+                showNotification('Delete Successful', 'Your file was deleted successfully');
             &lt;/script&gt;
         </code>
     </pre>
-
+<br />
+<br />
     <p>
         <x-bladewind::button
             onclick="showNotification(
@@ -96,30 +96,32 @@
             &lt;x-bladewind.button
                 onclick="showNotification(
                     'Delete Failed',
-                    'Your message could not be deleted. Try again', 'error')"&gt;
+                    'Your message could not be deleted. Try again',
+                    'error')"&gt;
                 error
             &lt;/x-bladewind.button&gt; &nbsp;
 
             &lt;x-bladewind.button
                 onclick="showNotification(
                     'Low Disk Space',
-                    `You have used 20gb of your 25gb storage space. &lt;a href='#'&gt;Upgrade soon&lt;/a&gt;`, 'warning')"&gt;
+                    `You have used 20gb of your 25gb storage space. &lt;a href='#'&gt;Upgrade soon&lt;/a&gt;`,
+                    'warning')"&gt;
                 warning
             &lt;/x-bladewind.button&gt; &nbsp;
 
             &lt;x-bladewind.button
                 onclick="showNotification(
                     'Invitation Accepted',
-                    `Samuel just accepted your invitation to join BladewindUI Inc. &lt;a href='#'&gt;Say Hello&lt;/a&gt;`, 'info')"&gt;
+                    `Samuel just accepted your invitation to join BladewindUI Inc. &lt;a href='#'&gt;Say Hello&lt;/a&gt;`,
+                    'info')"&gt;
                 info
             &lt;/x-bladewind.button&gt;
         </code>
     </pre>
 
     <p>
-        <x-bladewind::alert type="warning" show_close_icon="false">
-            Only a single instance of the notification component is available per page. Notifications are not stacked.
-            Triggering a new notification  when one is already shown will overwrite the earlier notification.
+        <x-bladewind::alert show_close_icon="false">
+            Multiple notifications can be triggered. In this case, they are displayed as a stack in chronological order. The latest notification is always on top.
         </x-bladewind::alert>
     </p>
 
