@@ -121,6 +121,41 @@
         </code>
     </pre>
 
+    <h3>Different Radius</h3>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button radius="none">No Radius</x-bladewind::button>
+        <x-bladewind::button radius="small">Small Radius</x-bladewind::button>
+        <x-bladewind::button radius="medium">Medium Radius</x-bladewind::button>
+        <x-bladewind::button radius="full">Full Radius</x-bladewind::button>
+    </div>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button type="secondary" radius="none">No Radius</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="small">Small Radius</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="medium">Medium Radius</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="full">Full Radius</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind::button radius="none">No Radius&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind::button radius="small">Small Radius&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind::button radius="medium">Medium Radius&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            // this is the default so radius="full" can be omitted
+            &lt;x-bladewind::button radius="full">Full Radius&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+
     <h2 id="spinning">With Spinners</h2>
     <p>Buttons can have spinners. This is useful when indicating progress of a form submission or progress of any other action.
     The button spinners use the BladewindUI <a href="/component/spinner">Spinner</a> component.</p>
@@ -169,6 +204,7 @@
     <br />
     <div class="text-center">
         <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button>
+        <x-bladewind::button.circle icon="pencil"></x-bladewind::button.circle>
     </div>
     <pre class="language-markup">
         <code>
@@ -306,6 +342,46 @@
         </code>
     </pre>
 
+    <h2 id="circular">Circular Buttons</h2>
+    <p>
+        The Bladewind button component provides a circular option that accepts ONLY icons. The <a href="/component/icon">Icon component page</a> describes how to use icon names.
+        Just like the non-circular buttons, these can exist as primary or secondary and in all colour flavours.
+    </p>
+    <div class="text-center p-4 space-x-4">
+        <x-bladewind::button.circle icon="pencil" />
+        <x-bladewind::button.circle icon="trash" color="red"/>
+        <x-bladewind::button.circle icon="cloud-arrow-down" type="secondary"/>
+    </div>
+
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind.button.circle icon="pencil" /&gt;
+
+            &lt;x-bladewind.button.circle icon="trash" color="red" /&gt;
+
+            &lt;x-bladewind.button.circle icon="refresh" type="secondary" /&gt;
+        </code>
+    </pre>
+    <p>
+        Circular buttons come in the same sizes as non-circular buttons. Both button shapes are equal in height.
+    </p>
+    <div class="text-center p-4 space-x-4">
+        <x-bladewind::button.circle icon="pencil" size="tiny" />
+        <x-bladewind::button size="tiny">Hello World</x-bladewind::button>
+    </div>
+    <div class="text-center p-4 space-x-4">
+        <x-bladewind::button.circle icon="pencil" size="small" />
+        <x-bladewind::button size="small">Hello World</x-bladewind::button>
+    </div>
+    <div class="text-center p-4 space-x-4">
+        <x-bladewind::button.circle icon="pencil" size="regular" />
+        <x-bladewind::button size="regular">Hello World</x-bladewind::button>
+    </div>
+    <div class="text-center p-4 space-x-4">
+        <x-bladewind::button.circle icon="pencil" size="big" />
+        <x-bladewind::button size="big">Hello World</x-bladewind::button>
+    </div>
+
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Button component.</p>
     @include('docs/announcement')
@@ -333,17 +409,17 @@
         <tr>
             <td>has_spinner</td>
             <td>false</td>
-            <td>Defines if the button should include a spinner. The value must be a string and not boolean. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Defines if the button should include a spinner. The value must be a string and not boolean. <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>show_spinner</td>
             <td>false</td>
-            <td>This only applies if <code class="inline text-red-500">has_spinner="true"</code>. By default the spinner, even if enabled is hidden. This attribute sets the default visibility of the spinner. The value must be a string and not boolean. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>This only applies if <code class="inline text-red-500">has_spinner="true"</code>. By default the spinner, even if enabled is hidden. This attribute sets the default visibility of the spinner. The value must be a string and not boolean. <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>color</td>
-            <td>blue</td>
-            <td>Set the color of the button. <br> <code class="inline">blue</code> <code class="inline">red</code>
+            <td>primary</td>
+            <td>Set the colour of the button. The default is picked from what has been defined as the primary colour in your tailwind.config.js file. BladewindUI sets the default to blue. <br /><br><br /> <code class="inline">primary</code> <code class="inline">blue</code> <code class="inline">red</code>
             <code class="inline">yellow</code> <code class="inline">green</code><code class="inline">purple</code> <code class="inline">pink</code>
             <code class="inline">orange</code> <code class="inline">black</code> <code class="inline">cyan</code></td>
         </tr>
@@ -351,12 +427,12 @@
             <td>can_submit</td>
             <td>false</td>
             <td>By default the button component is rendered as <code class="inline text-red-500">&lt;button type="button"...</code>.
-            This default behavior will not work for submitting forms. To enable form submission, set <code class="inline">can_submit="true"</code>. The resulting html for the button will be <code class="inline text-red-500">&lt;button type="submit"...</code>. . <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            This default behavior will not work for submitting forms. To enable form submission, set <code class="inline">can_submit="true"</code>. The resulting html for the button will be <code class="inline text-red-500">&lt;button type="submit"...</code>. . <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>disabled</td>
             <td>false</td>
-            <td>Defines if the button should be disabled or enabled. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Defines if the button should be disabled or enabled. <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>icon</td>
@@ -366,24 +442,29 @@
         <tr>
             <td>icon_right</td>
             <td>false</td>
-            <td>Defines if the icon should be positioned to the right of the button. Takes effect only is <em>icon</em> is not blank. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Defines if the icon should be positioned to the right of the button. Takes effect only is <em>icon</em> is not blank. <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>tag</td>
             <td>button</td>
-            <td>Specifies which html tag to use in creating the button. <br> <code class="inline">button</code> <code class="inline">a</code> </td>
+            <td>Specifies which html tag to use in creating the button. <br><br /> <code class="inline">button</code> <code class="inline">a</code> </td>
+        </tr>
+        <tr>
+            <td>radius</td>
+            <td>full</td>
+            <td>Specifies how round the button should look. <br><br /> <code class="inline">none</code> <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">full</code> </td>
         </tr>
         <tr>
             <td>button_text_css</td>
             <td><em>blank</em></td>
             <td>The button text colour has been predetermined by the button colour and respective shades. It is however possible to overwrite the colour of the button text.
                 If the css you specify has already been precompiled into the BladewindUI css file, it will be used.
-                If not, you need to ensure the css you specify exists in your project's css file<br> <code class="inline">any of the TailwindCss styles</code> </td>
+                If not, you need to ensure the css you specify exists in your project's css file <br><br /> <code class="inline">any of the TailwindCss styles</code> </td>
         </tr>
     </x-bladewind::table>
 
     <h3>Button with all attributes defined</h3>
-    <pre class="language-markup">
+    <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind.button
                 type="secondary"
@@ -394,6 +475,7 @@
                 disabled="false"
                 class="mt-0"
                 tag="a"
+                radius="medium"
                 icon="lock-closed"
                 icon_right="false"
                 button_text_css="font-bold text-black
@@ -416,6 +498,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#submittable">Form submission</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#coloured">Coloured button</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#events">Button events</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#circular">Circular buttons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

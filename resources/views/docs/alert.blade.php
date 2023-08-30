@@ -140,6 +140,27 @@
             &lt;/x-bladewind.alert&gt;
         </code>
     </pre>
+    <h2 id="customize-colours">Customizing Alert Colors</h2>
+    <p>
+        BladewindUI defines the colours used for this component in the <code class="inline">tailwind.config.js</code> file. The properties defined are specified below.
+    </p>
+    <pre class="line-numbers language-js">
+        <code>
+...
+  theme: {
+    extend: {
+      colors: {
+        ...
+        success: colors.emerald,
+        error: colors.red,
+        warning: colors.amber,
+        info: colors.blue
+      }
+    },
+  }
+...
+        </code>
+    </pre>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Alert component.</p>
@@ -163,12 +184,12 @@
         <tr>
             <td>show_close_icon</td>
             <td>true</td>
-            <td>Determines if the close icon should be shown. Value needs to be set as a string not boolean. <br><code class="inline">true</code> <code class="inline">false</code></td>
+            <td>Specifies if the close icon should be shown. Value needs to be set as a string not boolean. <br><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>show_icon</td>
             <td>true</td>
-            <td>Determines if the alert type icon should be displayed. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specifies if the alert type icon should be displayed. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>class</td>

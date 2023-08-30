@@ -4,7 +4,7 @@
     <p>
         BladewindUI has been designed to not interfere with the existing components in your project.
         Probably you just want to take this for a spin before deciding if BladewindUI components will be the only components you use in your project.
-        Once installed, all BladewindUI components are invoked from the <code class="inline">vendor > mkocansey > bladewind</code> directory unless published.
+        Once installed, all BladewindUI components are invoked from your <code class="inline">project-root > vendor > mkocansey > bladewind</code> directory unless published.
         Per Laravel convention, this results in you having to type the <code class="inline text-red-400">&lt;x-bladewind</code> prefix everytime you want to use a BladewindUI component.
     </p>
     <pre class="language-markup">
@@ -14,7 +14,7 @@
     </pre>
     <p>
         Once you publish the BladewindUI components, the files get moved to the <code class="inline">resources > views > components > <span class="text-red-400">bladewind</span></code> directory.
-        You can then use the dot, instead of colon syntax to access a component.
+        You can then use the dot, instead of the colon syntax to access a component.
     </p>
     <pre class="language-markup">
         <code>
@@ -23,20 +23,62 @@
     </pre>
     <h2 id="noprefix">Getting rid of the <b class="font-bold">bladewind</b> prefix </h2>
     <p>
-        Using any of the BladewindUI components can be without the bladewind prefix. This <code class="inline text-red-400">&lt;x-bladewind.button&gt;Save User&lt;/x-bladewind.button&gt;</code> becomes <code class="inline text-red-400">&lt;x-button&gt;Save User&lt;/x-button&gt;</code>.
+        It is possible to use any of the BladewindUI components without the bladewind prefix. This <code class="inline text-red-400">&lt;x-bladewind.button&gt;Save User&lt;/x-bladewind.button&gt;</code> becomes <code class="inline text-red-400">&lt;x-button&gt;Save User&lt;/x-button&gt;</code>.
         Achieving this is quite easy. This requires that you have run the command to <a href="/#publishing">publish Bladewind components</a> .
         Simply move all the blade files in <code class="inline">resources > views > components > bladewind</code> into <code class="inline">resources > views > components</code>.
-        You can then delete the <span>bladewind</span> folder from your <code class="inline">resources > views > components</code> folder since it's technically empty at this point.
+        You can then delete the <span>bladewind</span> folder from your <code class="inline">resources > views > components</code> folder since it is technically empty at this point.
     </p>
     <p>
         <x-bladewind::alert type="warning" show_close_icon="false">
             Please note that this will overwrite any files you have in your <code class="text-sm">resources > views > components</code> directory with the same names as what you are copying over from <code class="text-sm">resources > views > components > bladewind</code>
         </x-bladewind::alert>
     </p>
-    <h2 id="noblues">If you are not into the Blues...</h2>
-    <p>The primary precompiled colour theme used for the BladewindUI components is blue. If your primary theme is not blue, you can change this in a few steps. This assumes you have some knowledge of <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>
-        and how to compile changes made to Laravel's <code class="inline">app.css</code> file.</p>
-    <p>From your command line, while at the root of your Laravel project, type the following command to publish the uncompiled css files for the BladewindUI components.</p>
+    <h2 id="change-theme">If you are not into the Blues...</h2>
+    <p>The default precompiled colour theme used for the BladewindUI components is blue. If your primary theme is not blue, you can change this in a few steps. This assumes you have some knowledge of <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.</p>
+    <p>
+        BladewindUI defines its dark mode colours, primary and secondary <a href="/component/button">button</a> colours, colours for the <a href="/component/alert">alert</a> and <a href="/component/notification">notification</a> components in its <code class="inline">tailwind.config.js</code> file.
+    </p>
+    <pre class="language-js line-numbers">
+    <code>
+        // your-project/vendor/mkocansey/bladewind/tailwind.config.js
+  theme: {
+    extend: {
+      colors: {
+        primary: colors.blue,
+        secondary: colors.slate,
+        dark: colors.slate,
+        success: colors.emerald,
+        error: colors.red,
+        warning: colors.amber,
+        info: colors.blue
+      }
+},
+    </code>
+    </pre>
+<p>
+    To change the colours used above, simply define overwriting values in your project's <code class="inline">tailwind.config.js</code>.
+</p>
+    <pre class="language-js line-numbers" data-line="5">
+    <code>
+        // your-project/tailwind.config.js
+  theme: {
+    extend: {
+      colors: {
+        primary: colors.indigo,
+        secondary: colors.zinc,
+        dark: colors.gray,
+        success: colors.green,
+        error: colors.rose,
+        warning: colors.orange,
+        info: colors.blue
+      }
+},
+    </code>
+    </pre>
+    <p>Following the changes above, now all your primary buttons will use the <b>indigo</b> colour palette instead of blue. Dark mode will use the gray palette instead of slate.</p>
+
+    <h3>If you are feeling geeky</h3>
+    <p>The changes to the Tailwind config should be enough to get you your right colours. If however, for some reason you are in your geeky elements and prefer to access all the uncompiled BladewindUI CSS files, you can run the command below.</p>
     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-assets --force</code></pre>
     <p>
         You should now have in your <code class="inline">public</code> directory, a <code class="inline">vendor > bladewind > <span class=" text-red-400">assets</span></code> folder containing all the uncompiled tailwind css files.
@@ -66,7 +108,7 @@
         The <a href="/component/datepicker">Datepicker component</a> is wired to speak a couple of languages. The language files are served from BladewindUI's vendor directory,
         <code class="inline">
             vendor > mkocansey > bladewind > lang
-        </code>. Currently, the available languages are English, French, Italian and German. You can add more languages as you see fit or even modify the existing translations. If you want to do this for just your project you will first need to publish the language files by running the command below from the root of your project.
+        </code>. Currently, the available languages are English, French, Italian, Arabic, German, Chinese and Indonesian. You can add more languages as you see fit or even modify the existing translations. If you want to do this for just your project you will first need to publish the language files by running the command below from the root of your project.
     </p>
     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-lang --force</code></pre><br />
     <p>
@@ -75,7 +117,7 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#noprefix">Remove the bladewind prefix</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#noblues">Change the default theme colour</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#change-theme">Change the colour theme</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#change-it-all">Change everything</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#datepicker-translations">Translating the Datepicker</a></div>
     </x-slot:side_nav>

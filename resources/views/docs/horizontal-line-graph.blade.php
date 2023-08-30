@@ -367,8 +367,8 @@
         </tr>
         <tr>
             <td>color</td>
-            <td>blue</td>
-            <td>There are nine colors to choose from. <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
+            <td>primary</td>
+            <td>There are nine colors to choose from. <br /><br /><code class="inline">primary</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
                 <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code></td>
         </tr>
         <tr>

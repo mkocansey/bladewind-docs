@@ -117,17 +117,42 @@
         <tr>
             <td>size</td>
             <td>regular</td>
-            <td>Defines the size of the avatar. <br><code class="inline">tiny</code> <code class="inline">small</code> <code class="inline">medium</code><code class="inline">regular</code> <code class="inline">big</code><code class="inline">huge</code> <code class="inline">omg</code></td>
+            <td>Specifies the size of the avatar. <br><code class="inline">tiny</code> <code class="inline">small</code> <code class="inline">medium</code><code class="inline">regular</code> <code class="inline">big</code><code class="inline">huge</code> <code class="inline">omg</code></td>
         </tr>
         <tr>
             <td>stacked</td>
             <td>false</td>
-            <td>Defines if the avatar images are displayed as a stack. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specifies if the avatar images are displayed as a stack. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
+            <td>show_dot</td>
+            <td>false</td>
+            <td>Specifies if the avatar images have dot indicators. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
+            <td>dot_color</td>
+            <td>green</td>
+            <td>Specifies what colour to use as the dot indicator. Only relevant if <em>show_dot=true</em>.<br><br>
+                <code class="inline">primary</code>
+                <code class="inline">blue</code> <code class="inline">red</code>
+                <code class="inline">yellow</code> <code class="inline">green</code><code class="inline">purple</code> <code class="inline">pink</code>
+                <code class="inline">orange</code> <code class="inline">black</code> <code class="inline">cyan</code>
+            </td>
+        </tr>
+        <tr>
+            <td>dot_placement</td>
+            <td>bottom</td>
+            <td>Specifies where the dot indicator should be placed. Only relevant if <em>show_dot=true</em>.<br> <code class="inline">top</code> <code class="inline">bottom</code> </td>
+        </tr>
+        <tr>
+            <td>show_ring</td>
+            <td>true</td>
+            <td>By default avatars show a ring around them. Setting this can turn it off or back on. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>class</td>
             <td>mr-2 mt-2</td>
-            <td>Any additonal css classes can be added using this attribute.</td>
+            <td>Any additional css classes can be added using this attribute.</td>
         </tr>
     </x-bladewind::table>
     <p>&nbsp;</p>
@@ -139,6 +164,10 @@
                 alt="company logo"
                 size="big"
                 stacked="true"
+                show_dot="true"
+                show_ring="false",
+                dot_color="red",
+                dot_placement="top"
                 class="ring-blue-200 ring-offset-2" /&gt;
         </code>
     </pre>
