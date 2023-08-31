@@ -204,7 +204,6 @@
     <br />
     <div class="text-center">
         <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button>
-        <x-bladewind::button.circle icon="pencil"></x-bladewind::button.circle>
     </div>
     <pre class="language-markup">
         <code>
@@ -350,7 +349,7 @@
     <div class="text-center p-4 space-x-4">
         <x-bladewind::button.circle icon="pencil" />
         <x-bladewind::button.circle icon="trash" color="red"/>
-        <x-bladewind::button.circle icon="cloud-arrow-down" type="secondary"/>
+        <x-bladewind::button.circle icon="cloud-arrow-down" type="secondary" show_ring="false" />
     </div>
 
     <pre class="language-markup line-numbers">
@@ -359,7 +358,7 @@
 
             &lt;x-bladewind.button.circle icon="trash" color="red" /&gt;
 
-            &lt;x-bladewind.button.circle icon="refresh" type="secondary" /&gt;
+            &lt;x-bladewind.button.circle icon="refresh" type="secondary" show_ring="false" /&gt;
         </code>
     </pre>
     <p>
@@ -435,6 +434,11 @@
             <td>Defines if the button should be disabled or enabled. <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>show_focus_ring</td>
+            <td>true</td>
+            <td>By default buttons are displayed with a ring around them when they have focus. This attribute can disable that. <br><br /> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
             <td>icon</td>
             <td><em>blank</em></td>
             <td>Defines if the button should have an icon. All Heroicons icon names can be specified.</td>
@@ -475,6 +479,7 @@
                 disabled="false"
                 class="mt-0"
                 tag="a"
+                show_focus_ring="false"
                 radius="medium"
                 icon="lock-closed"
                 icon_right="false"

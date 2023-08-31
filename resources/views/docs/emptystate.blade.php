@@ -50,7 +50,7 @@
         message="You have not saved any gists to your GitHub account"
         image="/assets/images/no-code.svg"
         button_label="Create Gist"
-        heading="Create Gists Already"
+        heading="Create Gists Now"
         onclick="alert('you clicked me')">
     </x-bladewind::empty-state>
     <pre class="language-markup line-numbers" data-line="3">

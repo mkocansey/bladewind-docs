@@ -177,6 +177,29 @@
         </code>
     </pre>
 
+    <h3>No Backdrop Blurring</h3>
+    <p>
+        If you want the backdrop of the modals to be clear to reveal the content behind the modal you can set <code class="inline text-red-500">blur_backdrop="false"</code>.
+    </p>
+    <p>
+        <x-bladewind::button onclick="showModal('noblur')">No Backdrop Blurring</x-bladewind::button>
+    </p>
+
+    <pre class="language-markup line-numbers" data-line="6">
+        <code>
+            &lt;x-bladewind.button onclick="showModal('noblur')"&gt;
+                No Backdrop Blurring
+            &lt;/x-bladewind.button&gt;
+
+           &lt;x-bladewind.modal
+                title="See Through Me"
+                blur_backdrop="true"
+                name="noblur"&gt;
+                The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+            &lt;/x-bladewind.modal&gt;
+        </code>
+    </pre>
+
     <x-bladewind::modal type="info" title="General Info" name="info">
         We really think you should buy some Bitcoin despite it's ups and dowms. What sayeth thou?
     </x-bladewind::modal>
@@ -194,6 +217,10 @@
     <x-bladewind::modal title="Stretched Buttons" name="stretched" stretch_action_buttons="true">
         The action buttons in this modal have been stretched. This means each button gets its own line.
         Cool right?
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="See Through Me" name="noblur" blur_backdrop="false">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
     </x-bladewind::modal>
 
     <h2 id="sizes">Different Sizes</h2>
@@ -611,6 +638,11 @@
             <td>Specifies whether clicking on the modal backdrop should close the modal.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>blur_backdrop</td>
+            <td>true</td>
+            <td>Specifies whether the backdrop of the modal should be blurred.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
             <td>show_action_buttons</td>
             <td>true</td>
             <td>Specifies whether the action buttons should be displayed.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
@@ -652,6 +684,7 @@
                 cancel_button_action="alert('say nay')"
                 backdrop_can_close="false"
                 show_action_buttons="false"
+                blur_backdrop="false"
                 center_action_buttons="true"
                 size="medium"
                 class="shadow-sm"&gt;

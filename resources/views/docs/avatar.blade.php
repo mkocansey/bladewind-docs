@@ -10,7 +10,9 @@
     </p>
 
     <h2 id="single">Single Avatar</h2>
-    <x-bladewind::avatar image="/assets/images/issah.jpg" class="mb-3" />
+    <div class="text-center">
+        <x-bladewind::avatar image="/assets/images/issah.jpg" class="mb-3" />
+    </div>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind.avatar image="/path/to/the/image/file" /&gt;
@@ -22,6 +24,7 @@
     </p>
     <h2 id="sizes">Different Sizes</h2>
     <p>You can specify a size for the avatar. See the full <a href="#attributes">list of attributes</a> for the available sizes. The default size is <code class="inline text-red-500">regular</code></p>
+    <div class="text-center">
     <x-bladewind::avatar image="/assets/images/edwin.jpeg" size="tiny" />
     <x-bladewind::avatar image="/assets/images/me.jpeg" size="small" />
     <x-bladewind::avatar image="/assets/images/audrey.jpeg" size="medium" />
@@ -29,7 +32,7 @@
     <x-bladewind::avatar image="/assets/images/doc.png" size="big" />
     <x-bladewind::avatar image="/assets/images/rowe.jpeg" size="huge" />
     <x-bladewind::avatar image="/assets/images/issah.jpg" size="omg" />
-    <br />
+    </div>
     <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27">
         <code>
@@ -68,12 +71,13 @@
         Stacked avatars have an overlapping effect. The component will not restrict you from stacking avatars of different sizes but, for a more appealing visual effect, stacking images of the same size is advised.
         You can achieve stackability by setting the <code class="inline text-red-500">stacked="true"</code> attribute on each avatar that you want as part of the stack.
     </p>
-
+    <div class="text-center">
     <x-bladewind::avatar stacked="true" image="/assets/images/francis.png" />
     <x-bladewind::avatar stacked="true" image="/assets/images/rowe.jpeg" />
     <x-bladewind::avatar stacked="true" image="/assets/images/doc.png" />
     <x-bladewind::avatar stacked="true" image="/assets/images/issah.jpg" />
-    <br><br />
+    </div>
+    <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,15">
         <code>
         &lt;x-bladewind.avatar
@@ -93,6 +97,65 @@
             stacked="true" /&gt;
 
         </code><a name="attributes"></a>
+    </pre>
+    <h2 id="indicator">Dot Indicator</h2>
+    <p>
+        Avatars can be displayed with a dot to indicate the status of a user. These statuses could be online, offline, invisible. To show a dot indicator on an avatar simply set <code class="inline text-red-500">show_dot="true"</code>.
+    </p>
+    <div class="text-center">
+        <x-bladewind::avatar show_dot="true" image="/assets/images/francis.png" />
+        <x-bladewind::avatar show_dot="true" image="/assets/images/rowe.jpeg" />
+        <x-bladewind::avatar show_dot="true" image="/assets/images/doc.png" />
+    </div>
+    <br />
+    <pre class="language-markup line-numbers" data-line="2">
+        <code>
+        &lt;x-bladewind.avatar
+            show_dot="true"
+            image="/path/to/the/image/file" /&gt;
+        </code>
+    </pre>
+    <p>
+        By default the dot indicator is displayed at the base of the avatar. To change the placement to the top of the avatar, set the <code class="inline text-red-500">dot_placement="top"</code> attribute.
+    </p>
+    <div class="text-center">
+        <x-bladewind::avatar show_dot="true" dot_placement="top" image="/assets/images/francis.png" />
+        <x-bladewind::avatar show_dot="true" dot_placement="top" image="/assets/images/rowe.jpeg" />
+        <x-bladewind::avatar show_dot="true" dot_placement="top" image="/assets/images/doc.png" />
+    </div>
+    <br />
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+        &lt;x-bladewind.avatar
+            show_dot="true"
+            dot_placement="top"
+            image="/path/to/the/image/file" /&gt;
+        </code>
+    </pre>
+    <p>
+        The dot is available in different colours if you wish to use an indicator that matches your theme. This also allows you to set different colours for different statuses.
+        Set the <code class="inline text-red-500">dot_color</code> attribute to any of the nine colours compiled into BladewindUI. See the <a href="#attributes">attributes</a> table below for all colours.
+    </p>
+    <div class="text-center">
+        <x-bladewind::avatar show_dot="true" dot_color="primary" image="/assets/images/francis.png" />
+        <x-bladewind::avatar show_dot="true" dot_color="gray" image="/assets/images/rowe.jpeg" />
+        <x-bladewind::avatar show_dot="true" dot_color="red" image="/assets/images/doc.png" />
+    </div>
+    <br />
+    <pre class="language-markup line-numbers" data-line="2,6,10">
+        <code>
+        &lt;x-bladewind.avatar show_dot="true"
+            dot_color="primary"
+            image="/path/to/the/image/file" /&gt;
+
+        &lt;x-bladewind.avatar show_dot="true"
+            dot_color="gray"
+            image="/path/to/the/image/file" /&gt;
+
+        &lt;x-bladewind.avatar show_dot="true"
+            dot_color="red"
+            image="/path/to/the/image/file" /&gt;
+        </code>
     </pre>
 
     <h2 id="attributes">Full List Of Attributes</h2>
@@ -136,7 +199,7 @@
                 <code class="inline">primary</code>
                 <code class="inline">blue</code> <code class="inline">red</code>
                 <code class="inline">yellow</code> <code class="inline">green</code><code class="inline">purple</code> <code class="inline">pink</code>
-                <code class="inline">orange</code> <code class="inline">black</code> <code class="inline">cyan</code>
+                <code class="inline">orange</code> <code class="inline">gray</code> <code class="inline">cyan</code>
             </td>
         </tr>
         <tr>
@@ -184,6 +247,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#single">Single avatar</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#stack">Stacked avatars</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#indicator">Dot Indicator</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

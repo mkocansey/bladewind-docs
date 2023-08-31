@@ -23,7 +23,7 @@
         </div>
     </div>
     <p>
-        Now that we have seen all three parts that make this component, let's build a flow that makes use of all three parts. This is heavily dependent on Javascript but nothing scary.
+        Now that we have seen all three parts that make up this component, let's build a flow that makes use of all three parts. This is heavily dependent on Javascript but nothing scary.
         Let's simulate deleting of a pending payment.
     </p>
 

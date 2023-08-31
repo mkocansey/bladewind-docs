@@ -1,6 +1,6 @@
 <x-app>
     <x-slot:title>Statistic Component</x-slot:title>
-    <x-slot:page_title">Statistic</h1>
+    <x-slot:page_title>Statistic</x-slot:page_title>
 
     <p>
         Display numeric summaries. These are mostly used on dashboards but can really be used anywhere. The statistic component like most BladewindUI components takes up the width of its parent element and expects a label and a number.</p>
