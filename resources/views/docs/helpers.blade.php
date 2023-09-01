@@ -147,7 +147,7 @@
     </pre>
 
     <h2 id="hidemodal">hideModal</h2>
-    <p>Specifically hides a Bladewind <a href="/component/modal">Modal</a> component.</p>
+    <p>Specifically hides a BladewindUI <a href="/component/modal">Modal</a> component.</p>
     <pre class="language-js line-numbers">
         <code>
             /* ---------------------------------------------------------------
@@ -159,6 +159,23 @@
             hideModal('.make-payment');
         </code>
     </pre>
+
+    <h2 id="hidemodalbuttons">hideModalActionButtons</h2>
+    <p>Hides the action buttons on a BladewindUI <a href="/component/modal">Modal</a> component.
+        The action buttons are the Ok and Cancel buttons. See the <a href="/component/modal#forms">example here</a> for how this is used.</p>
+    <pre class="language-js line-numbers">
+        <code>
+            /* ---------------------------------------------------------------
+                element:    css class that identifies the modal to hide
+            -----------------------------------------------------------------*/
+            hideModalActionButtons(element);
+
+            // example
+            // this will hide the Cancel and Ok buttons on the make-payment modal
+            hideModalActionButtons('make-payment');
+        </code>
+    </pre>
+
     <h2 id="isnumberkey">isNumberKey</h2>
     <p>Used by the Bladewind <a href="/component/textbox">Textbox</a> component to restrict user input to only numeric values. You can however use this helper function in your own non-Bladewind textboxes.
     For example to enter verification codes.</p>
@@ -219,6 +236,20 @@
         </code>
     </pre>
 
+    <h2 id="showmodalbuttons">showModalActionButtons</h2>
+    <p>Unhides the action buttons on a BladewindUI <a href="/component/modal">Modal</a> component. The action buttons are the Ok and Cancel buttons.</p>
+    <pre class="language-js line-numbers">
+        <code>
+            /* --------------------------------------------------------------------
+                element:    css class that identifies the modal to show buttons for
+            --------------------------------------------------------------------*/
+            showModalActionButtons(element);
+
+            // example
+            // this will show the Cancel and Ok buttons on the make-payment modal
+            showModalActionButtons('make-payment');
+        </code>
+    </pre>
     <h2 id="stringcontains">stringContains</h2>
     <p>Checks to see if a string contains the specified keyword. Returns true if string contains the keyword and
     false if string does not contain the keyword.</p>
@@ -300,10 +331,12 @@
         <div class="flex items-center"><div class="dot"></div><a href="#getfromstorage">getFromStorage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#hide">hide</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#hidemodal">hideModal</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#hidemodalbuttons">hideModalActionButtons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#isnumberkey">isNumberKey</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#removefromstorage">removeFromStorage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#serialize">serialize</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#showmodal">showModal</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#showmodalbuttons">showModalActionButtons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#stringcontains">stringContains</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#unhide">unhide</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#validateform">validateForm</a></div>

@@ -1,6 +1,7 @@
 <x-app>
     <x-slot:title>Modal Component</x-slot:title>
     <x-slot:page_title>Modal</x-slot:page_title>
+    <x-bladewind::notification />
     <p>
         The modal component is useful for displaying content that is overlayed on the primary page content.
     </p>
@@ -12,9 +13,11 @@
         <code class="inline text-red-500">showModal('name-of-modal');</code>. Like with all BladewindUI components,
         the syntax for cooking up a modal is very simple.
     </p>
-    <p>
+    <div class="space-x-4">
         <x-bladewind::button onclick="showModal('tnc-agreement')">Basic modal</x-bladewind::button>
         <x-bladewind::button onclick="showModal('tnc-agreement-titled')" class="mt-2 sm:mt-0">Basic modal with a title</x-bladewind::button>
+    </div>
+    <p>
         <x-bladewind::modal name="tnc-agreement">
             Please agree to the terms and conditions of the agreement before proceeding. By clicking the OKAY button you agree to let your machine explode 💥
         </x-bladewind::modal>
@@ -23,7 +26,7 @@
         </x-bladewind::modal>
     </p>
 
-    <pre class="language-markup line-numbers" data-line="11,17">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <pre class="language-markup line-numbers" data-line="11,17">
         <code>
             &lt;x-bladewind.button
                 onclick="showModal('tnc-agreement')"&gt;
@@ -540,7 +543,7 @@
         <x-bladewind::alert type="warning" show_close_icon="false" show_icon="false">Refresh the page to get out of locked mode</x-bladewind::alert>
     </p>
     <p>
-        <x-bladewind::button onclick="showModal('lock-screen')" icon="lock" class="text-white">lock the screen</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('lock-screen')" icon="lock-closed" class="text-white">lock the screen</x-bladewind::button>
     </p>
     <x-bladewind::modal show_action_buttons="false" backdrop_can_close="false" name="lock-screen">
             <div class="flex mx-auto justify-center my-2">
@@ -582,6 +585,306 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
+
+    <h2 id="forms">Submitting Form Using Action Button</h2>
+    <p>
+        There may be instances where you want to load a form in a modal and only submit the form when the user clicks on the Okay or Save action button.
+        Submitting the form should also happen ONLY if all validations have passed. The modal component itself does not provide a magical way of achieving this but the code below implements the logic we just described.
+    </p>
+    <p>
+        <x-bladewind::button onclick="showModal('form-mode')" icon="lock" class="text-white">Edit Profile</x-bladewind::button>
+    </p>
+    <x-bladewind::modal backdrop_can_close="false" name="form-mode" ok_button_action="saveProfile()" center_action_buttons="true" ok_button_label="Update" close_after_action="false">
+        <form method="get" action="" class="profile-form">
+            @csrf
+            <b>Edit Your Profile</b>
+            <div class="grid grid-cols-2 gap-4 mt-6">
+                <x-bladewind::input required="true" name="first_name" label="First name" error_message="Please enter your first name" />
+                <x-bladewind::input required="true" name="last_name" label="Last name" error_message="Please enter your last name" />
+            </div>
+            <x-bladewind::input required="true" name="email" label="Email address" error_message="Please enter your email" />
+            <x-bladewind::input numeric="true" name="mobile" label="Mobile" />
+        </form>
+    </x-bladewind::modal>
+    <script>
+        saveProfile = () => {
+            if(validateForm('.profile-form')){
+                domEl('.profile-form').submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
+
+    <pre class="language-markup line-numbers" data-line="5">
+        <code>
+            // the modal and its form
+            &lt;x-bladewind::modal
+                backdrop_can_close="false"
+                name="form-mode"
+                ok_button_action="saveProfile()"
+                ok_button_label="Update"
+                close_after_action="false"
+                center_action_buttons="true"&gt;
+
+                &lt;form method="post" action="" class="profile-form"&gt;
+                    @@csrf
+                    &lt;b class="mt-0"&gt;Edit Your Profile&lt;/b&gt;
+                    &lt;div class="grid grid-cols-2 gap-4 mt-6"&gt;
+                        &lt;x-bladewind::input required="true" name="first_name"
+                            error_message="Please enter your first name" label="First name" /&gt;
+
+                        &lt;x-bladewind::input required="true" name="last_name"
+                             error_message="Please enter your last name" label="Last name" /&gt;
+                    &lt;/div&gt;
+                    &lt;x-bladewind::input required="true" name="email"
+                         error_message="Please enter your email" label="Email address" /&gt;
+
+                    &lt;x-bladewind::input numeric="true" name="mobile" label="Mobile" /&gt;
+                &lt;/form&gt;
+
+            &lt;/x-bladewind::modal&gt;
+        </code>
+    </pre>
+
+    <pre class="language-js line-numbers" data-line="3">
+        <code>
+            // the script called by the Update button
+            saveProfile = () => {
+                if(validateForm('.profile-form')){
+                    domEl('.profile-form').submit();
+                } else {
+                    return false;
+                }
+            }
+        </code>
+    </pre>
+    <p>
+        The "Update" button from the modal above calls a <code class="inline">saveProfile()</code> Javascript function when it is clicked on
+        <code class="inline text-red-500">ok_button_action="saveProfile()"</code>. In the Javascript function, we validate the profile form
+        <code class="inline">class="profile-form"</code> using the
+        <code class="inline">validateForm()</code> helper function available in BladewindUI. We then submit the form if all required fields are not empty.
+        The form above uses <code class="inline text-red-500">method="get"</code> so you can see the form fields passed as query strings in the URL.
+    </p>
+    <p>
+        By default BladewindUI modals close when either of the action buttons are clicked. To prevent our modal from closing when the user clicks on the Update button, we
+        set the <code class="inline text-red-500">close_after_action="false"</code> attribute.
+    </p>
+    <h3>Using Ajax</h3>
+    <p>
+        In the next example our form is submitted via Ajax. The example makes use of the <a href="/component/process-indicator">Process Indicator</a> component to show progress.
+    </p>
+    <p>
+        <x-bladewind::button onclick="showModal('form-mode-ajax')" icon="lock" class="text-white">Edit Profile Ajax</x-bladewind::button>
+    </p>
+    <x-bladewind::modal backdrop_can_close="false" name="form-mode-ajax" ok_button_action="saveProfileAjax()" center_action_buttons="true" ok_button_label="Update" close_after_action="false">
+        <form method="get" action="" class="profile-form-ajax">
+            @csrf
+            <b>Edit Your Profile</b>
+            <div class="grid grid-cols-2 gap-4 mt-6">
+                <x-bladewind::input required="true" name="first_name2" label="First name" error_message="Please enter your first name" />
+                <x-bladewind::input required="true" name="last_name2" label="Last name" error_message="Please enter your last name" />
+            </div>
+            <x-bladewind::input required="true" name="email2" label="Email address" error_message="Please enter your email" />
+            <x-bladewind::input numeric="true" name="mobile2" label="Mobile" />
+        </form>
+        <x-bladewind::processing
+            name="profile-updating"
+            message="Updating your profile." />
+
+        <x-bladewind::process-complete
+            name="profile-update-yes"
+            process_completed_as="passed"
+            button_label="Done"
+            button_action="hideModal('form-mode-ajax')"
+            message="Profile updated successfully." />
+
+    </x-bladewind::modal>
+    <script>
+        saveProfileAjax = () => {
+            if(validateForm('.profile-form-ajax')){
+                // show process indicator while you make your ajax call
+                unhide('.profile-updating');
+                hide('.profile-form-ajax');
+                hideModalActionButtons('form-mode-ajax');
+                // make the call
+                makeAjaxCall(serialize('.profile-form-ajax'));
+            } else {
+                return false;
+            }
+        }
+
+        makeAjaxCall = (formData) => {
+            // this is a dummy function but your real function
+            // will make a call and post all the data
+            setTimeout(() => {
+                // do these when your ajax call is done saving your data
+                hide('.profile-updating');
+                unhide('.profile-update-yes')
+            }, 5000);
+        }
+    </script>
+
+    <pre class="language-markup line-numbers" data-line="6,8,23,27,31">
+        <code>
+        // the modal and its form.
+        // take note of the processing and process-complete components
+
+        &lt;x-bladewind::modal
+            backdrop_can_close="false"
+            name="form-mode-ajax"
+            center_action_buttons="true"
+            ok_button_action="saveProfileAjax()"
+            ok_button_label="Update"
+            close_after_action="false"&gt;
+
+            &lt;form method="get" action="" class="profile-form-ajax"&gt;
+                @@csrf
+                &lt;b&gt;Edit Your Profile&lt;/b&gt;
+                &lt;div class="grid grid-cols-2 gap-4 mt-6"&gt;
+                    &lt;x-bladewind::input required="true" name="first_name2" label="First name" error_message="Please enter your first name" /&gt;
+                    &lt;x-bladewind::input required="true" name="last_name2" label="Last name" error_message="Please enter your last name" /&gt;
+                &lt;/div&gt;
+                &lt;x-bladewind::input required="true" name="email2" label="Email address" error_message="Please enter your email" /&gt;
+                &lt;x-bladewind::input numeric="true" name="mobile2" label="Mobile" /&gt;
+            &lt;/form&gt;
+
+            &lt;x-bladewind::processing
+                name="profile-updating"
+                message="Updating your profile." /&gt;
+
+            &lt;x-bladewind::process-complete
+                name="profile-update-yes"
+                process_completed_as="passed"
+                button_label="Done"
+                button_action="hideModal('form-mode-ajax')"
+                message="Profile updated successfully." /&gt;
+
+        &lt;/x-bladewind::modal&gt;
+        </code>
+    </pre>
+
+    <pre class="language-js line-numbers" data-line="3">
+        <code>
+        // the script called by the Update button
+        saveProfileAjax = () => {
+            if(validateForm('.profile-form-ajax')){
+                // show process indicator while you make your ajax call
+                unhide('.profile-updating');
+                hide('.profile-form-ajax');
+                hideModalActionButtons('form-mode-ajax');
+                // make the call
+                makeAjaxCall(serialize('.profile-form-ajax'));
+            } else {
+                return false;
+            }
+        }
+
+        makeAjaxCall = (formData) => {
+            // this is a dummy function but your real function
+            // will make a call and post all the data
+            setTimeout(() => {
+                // do these when your ajax call is done saving your data
+                hide('.profile-updating');
+                unhide('.profile-update-yes')
+            }, 5000);
+        }
+        </code>
+    </pre>
+    <p>
+        The example above follows the same principle as the first, except we submit the form via Ajax.
+        When the Update button is clicked the <code class="inline">saveProfileAjax()</code> function is called.
+        This validates the form and hides the action buttons of the modal if validation passes.
+        We don't want the user canceling the form submission or clicking the Update button a second time.
+        The form is also hidden while the process indicator is displayed. Lastly, the form data is passed to the <code class="inline">makeAjaxCall()</code> function.
+    </p>
+    <p>
+        You will need to flesh out the makeAjaxCall() function yourself to make the actual ajax call. The idea however is, once the ajax call returns
+        a status, we hide the process indicator and display the <a href="/component/process-indicator">process-complete</a> component. The Done button on the process-complete
+        component closes the modal when clicked on (<code class="inline text-red-500">button_action="hideModal('form-mode-ajax')"</code>).
+    </p>
+    <p>
+        This example used only one process-complete component. Normally you will have two process-complete components. One to show if the process failed and the other to show if the process succeeded.
+    </p>
+    <p>
+        <code class="inline">hide()</code>, <code class="inline">unhide()</code>, <code class="inline">hideModalActionButtons()</code>, <code class="inline">serialize()</code> and <code class="inline">validateForm()</code>
+        are all <a href="/extra/helper-functions">helper functions</a> available in BladewindUI.
+    </p>
+
+    <h3>Option 3. Probably the easiest option</h3>
+    <p>
+        The third and final option is to hide the Okay button of the modal and let the submit button sit in the form itself. The modal will only have a cancel button to close the form if needed.
+    </p>
+    <p>
+        <x-bladewind::button onclick="showModal('form-mode-simple')">Edit Profile Simple</x-bladewind::button>
+    </p>
+    <x-bladewind::modal backdrop_can_close="false" name="form-mode-simple" ok_button_label="" center_action_buttons="true">
+        <form method="get" action="" class="profile-form-simple" onsubmit="return saveProfileSimple()">
+            @csrf
+            <b>Edit Your Profile</b>
+            <div class="grid grid-cols-2 gap-4 mt-6">
+                <x-bladewind::input required="true" name="first_name3" label="First name" error_message="Please enter your first name" />
+                <x-bladewind::input required="true" name="last_name3" label="Last name" error_message="Please enter your last name" />
+            </div>
+            <x-bladewind::input required="true" name="email3" label="Email address" error_message="Please enter your email" />
+            <x-bladewind::input numeric="true" name="mobile3" label="Mobile" />
+            <x-bladewind::button can_submit="true" class="w-full mt-2">Update Profile</x-bladewind::button>
+        </form>
+    </x-bladewind::modal>
+    <script>
+        saveProfileSimple = () => {
+            if(validateForm('.profile-form-simple')){
+                return domEl('.profile-form-simple').submit();
+            }
+            return false;
+        }
+    </script>
+
+    <pre class="line-numbers language-markup" data-line="5,9">
+        <code>
+        // the modal and its form.
+        &lt;x-bladewind::modal
+            backdrop_can_close="false"
+            name="form-mode-simple"
+            ok_button_label=""
+            center_action_buttons="true"&gt;
+
+            &lt;form method="get" action="" class="profile-form-simple"
+                  onsubmit="return saveProfileSimple()"&gt;
+                @@csrf
+                &lt;b&gt;Edit Your Profile&lt;/b&gt;
+                &lt;div class="grid grid-cols-2 gap-4 mt-6"&gt;
+                    &lt;x-bladewind::input required="true" name="first_name3" label="First name" error_message="Please enter your first name" /&gt;
+                    &lt;x-bladewind::input required="true" name="last_name3" label="Last name" error_message="Please enter your last name" /&gt;
+                &lt;/div&gt;
+                &lt;x-bladewind::input required="true" name="email3" label="Email address" error_message="Please enter your email" /&gt;
+                &lt;x-bladewind::input numeric="true" name="mobile3" label="Mobile" /&gt;
+                &lt;x-bladewind::button can_submit="true" class="w-full mt-2"&gt;Update Profile&lt;/x-bladewind::button&gt;
+            &lt;/form&gt;
+        &lt;/x-bladewind::modal&gt;
+        </code>
+    </pre>
+    <pre class="line-numbers language-js" data-line="4">
+        <code>
+        // the script called by the Update button
+        saveProfileSimple = () => {
+            if(validateForm('.profile-form-simple')){
+                return domEl('.profile-form-simple').submit();
+            }
+            return false;
+        }
+        </code>
+    </pre>
+
+    <p>
+        The example above sets <code class="text-red-500 inline">ok_button_label=""</code> to hide the Okay button.
+        We then set the <code class="text-red-500 inline">onsubmit</code> attribute of the form to call a Javascript function when the form is submitted. <code class="inline text-red-500">onsubmit="<b>return</b> saveProfileSimple()"</code>.
+        Take note of the <code class="inline">return</code> keyword. Without this, the form will submit when clicked on, even if validation fails.
+    </p>
+    <p>
+        To make the button submittable we added the <code class="inline text-red-500">can_submit="true"</code> attribute to the button component. The Javascript
+        function returns false when validation fails or true if otherwise. That is really all we need to do in this case. One of these three options should hopefully serve your use-case.
+    </p>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Modal component.</p>
@@ -704,6 +1007,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#actions">Action buttons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#cant-dismiss">Non-dismissible modal</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#forms">Form submissions</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
