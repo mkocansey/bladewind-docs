@@ -99,13 +99,15 @@
 
         toggleThemeMode = () => {
             let current_theme = getFromStorage('theme');
-            current_theme = (current_theme == 'light') ? 'dark' : 'light';
+            current_theme = (current_theme === 'light') ? 'dark' : 'light';
             document.documentElement.removeAttribute('class');
             addToStorage('theme', current_theme);
             changeCss(document.documentElement, current_theme, 'add', true);
         }
-        (getFromStorage('theme') == null) ? addToStorage('theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light')) : '';
-        changeCss(document.documentElement, getFromStorage('theme'), 'add', true);
+        let initial_theme = (getFromStorage('theme') == null) ?
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light') : 'light';
+        addToStorage('theme', initial_theme);
+        changeCss(document.documentElement, initial_theme, 'add', true);
     </script>
 </body>
 </html>
