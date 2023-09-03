@@ -363,9 +363,9 @@
             [ 'id' => 3, 'first_name' => 'Abigail',   'last_name' => 'Edwin',    'department' => 'Engineering', 'marital_status' => 0 ],
         ];
         $action_icons = [
-            "icon:chat-bubble-bottom-center-text | tip:send user a message | click:sendMessage({first_name}, {last_name})",
-            "icon:pencil | click:redirect(/user/{id})",
-            "icon:trash | color:red| click:deleteUser({id}, {first_name})",
+            "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
+            "icon:pencil | click:redirect('/user/{id}')",
+            "icon:trash | click:deleteUser({id}, '{first_name}', '{last_name}')",
         ];
     @endphp
     <p>
@@ -411,32 +411,142 @@
     <pre class="language-js line-numbers">
         <code>
             $action_icons = [
-                'icon:chat-bubble-bottom-center-text | tip:send user a message | click:sendMessage(first_name, last_name)',
-                'icon:pencil | click:/user/{id}',
-                'icon:trash | color:red | click:deleteUser(id, first_name, last_name)',
+                "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
+                "icon:pencil | click:redirect('/user/{id}')",
+                "icon:trash | color:red | click:deleteUser({id}, '{first_name}', '{last_name}')",
             ];
         </code>
     </pre>
     <script>
-        sendMessage = () => {
-            alert('first_name');
+        sendMessage = (first_name, last_name) => {
+            showModal('send-message');
+            domEl('.bw-send-message .modal-title').innerText = `Send Message to ${first_name} ${last_name}`;
         }
-        deleteUser = () => {
-            alert('are you deleting the user');
+        deleteUser = (id, first_name, last_name) => {
+            showModal('delete-user');
+            domEl('.bw-delete-user .title').innerText = `${first_name} ${last_name}`;
         }
-        redirect = () => {
-            alert('send away problems');
+        redirect = (url) => {
+            window.open(url);
         }
     </script>
+    <x-bladewind::modal name="send-message" title="">
+        <div class="mb-6">The message will be delivered to their company inbox if they are not currently online</div>
+        <x-bladewind::textarea placeholder="Type message here..." rows="5"></x-bladewind::textarea>
+    </x-bladewind::modal>
+    <x-bladewind::modal name="delete-user" type="error" title="Confirm User Deletion">
+        Are you really sure you want to delete <b class="title"></b>?
+        This action cannot be reversed.
+    </x-bladewind::modal>
+
     <pre class="language-markup line-numbers" data-line="2,4">
         <code>
             &lt;x-bladewind::table
                 exclude_columns="id, marital_status"
-                data="&#123;&#123; json_encode($staff) }}"
-                action_icons="&#123;&#123; json_encode($action_icons) }}" /&gt;
+                divider="thin"
+                action_icons="&#123;&#123; json_encode($action_icons) }}"
+                data="&#123;&#123; json_encode($staff) }}" /&gt;
         </code>
     </pre>
-    <x-bladewind::table data="{{ json_encode($staff) }}" action_icons="{{ json_encode($action_icons) }}"  exclude_columns="id, marital_status" />
+    <p>
+        <x-bladewind::table data="{{ json_encode($staff) }}" divider="thin" action_icons="{{ json_encode($action_icons) }}"  exclude_columns="id, marital_status" />
+    </p>
+    <br />
+    <p>
+        The icons are displayed from the <code class="inline">$action_icons</code> array above. Let us analyze the first line of the <code class="inline">$action_icons</code> array.
+        Note how each attribute is separated by a pipe (|).
+    </p>
+    <x-bladewind::table striped="true">
+        <tr>
+            <td><b>icon:chat-bubble-left</b></td>
+            <td>This will display the <b>chat-bubble-left</b> icon</td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><b>tip:send user a message</b></td>
+            <td>On hover of the icon, the user will see a tooltip that says "send user a message"</td>
+        </tr>
+        <tr>
+            <td><b>click:sendMessage('{first_name}', '{last_name}')</b></td>
+            <td>
+                When the icon is clicked, the <b>sendMessage</b> Javascript function is triggered. The function name can be any function that exists in your code.
+                Two parameters are passed to the function. The parameters can be any of the keys that exists in your array. In our earlier example our array contains
+                <b>first_name</b> and <b>last_name</b> keys so we pass this to our function. It is important to wrap strings in a single quote.
+                The keys also need to be wrapped in curly braces. The table component will replace <em>'{first_name}'</em> with the actual value of first_name from the array.
+            </td>
+        </tr>
+        <tr>
+            <td><b>color:green</b></td>
+            <td>The icon colour will be green.</td>
+        </tr>
+    </x-bladewind::table>
+    <br />
+    <p>
+        Below are the modals and Javascript functions being called when the icons are clicked.
+    </p>
+    <pre class="line-numbers language-markup">
+        <code>
+            &lt;x-bladewind::modal name="send-message" title=""&gt;
+                &lt;div class="mb-6"&gt;The message will be delivered to their company inbox if they are not currently online&lt;/div&gt;
+                &lt;x-bladewind::textarea placeholder="Type message here..." rows="5" /&gt;
+            &lt;/x-bladewind::modal&gt;
+
+            &lt;x-bladewind::modal name="delete-user" type="error" title="Confirm User Deletion"&gt;
+                Are you really sure you want to delete &lt;b class="title"&gt;&lt;/b&gt;?
+                This action cannot be reversed.
+            &lt;/x-bladewind::modal&gt;
+        </code>
+    </pre>
+
+    <pre class="language-js line-numbers">
+        <code>
+        sendMessage = (first_name, last_name) => {
+            showModal('send-message');
+            domEl('.bw-send-message .modal-title').innerText = `Send Message to ${first_name} ${last_name}`;
+        }
+
+        deleteUser = (id, first_name, last_name) => {
+            showModal('delete-user');
+            domEl('.bw-delete-user .title').innerText = `${first_name} ${last_name}`;
+        }
+
+        redirect = (url) => {
+            window.open(url);
+        }
+        </code>
+    </pre>
+
+    <h3>Searchable Table Data</h3>
+    <p>
+        The table component provides a very basic way for users to search through table content.
+        If the <code class="text-red-500 inline">searchable="true"</code> attribute is set,
+        a search field is placed above the table that makes it possible to search through any column of the table.
+    </p>
+
+    <h3>Aliasing Column Names</h3>
+    <p>
+        There are times your array might contain keys that are not user-friendly enough to be column headings. From our array above assuming we wanted to replace
+        <code class="inline">marital_status</code> to <code class="inline">married?</code>, we will set the <code class="text-red-500 inline">column_aliases</code> attribute.
+        This attributes accepts a json encoded array.
+    </p>
+
+    <pre class="language-js line-numbers">
+        <code>
+            $column_aliases = [
+                'id' => 'ref #',
+                'marital_status' => 'married?'
+            ];
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers" data-line="5">
+        <code>
+            &lt;x-bladewind::table
+                exclude_columns="id"
+                divider="thin"
+                action_icons="&#123;&#123; json_encode($action_icons) }}"
+                column_aliases="&#123;&#123; json_encode($column_aliases) }}"
+                data="&#123;&#123; json_encode($staff) }}" /&gt;
+        </code>
+    </pre>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>

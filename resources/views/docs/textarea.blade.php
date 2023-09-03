@@ -42,7 +42,7 @@
         </code>
     </pre>
     <p>
-        See component/input documentation on <a href="https://bladewindui.com/component/textbox#validate">Validating Required Fields</a>.
+        See component/textarea documentation on <a href="https://bladewindui.com/component/textbox#validate">Validating Required Fields</a>.
     </p>
 
     <h3>Events</h3>
@@ -77,66 +77,78 @@
         </x-slot>
         <tr>
             <td>name</td>
-            <td>input-uniqid()</td>
-            <td>Unique name to identify the input element by. Useful for retrieving value from the input when it is submitted in a form. The component by default uses a random name prefixed with 'input-'.</td>
-        </tr>
-        <tr>
-            <td>type</td>
-            <td>text</td>
-            <td>
-                Accepts list of valid HTML input element types. <br />
-                <code class="inline">text</code> <code class="inline">email</code> <code class="inline">password</code> <code class="inline">search</code> <code class="inline">tel</code>
-            </td>
+            <td>textarea-uniqid()</td>
+            <td>Unique name to identify the textarea element by. Useful for retrieving value from the textarea when it is submitted in a form. The component by default uses a random name prefixed with 'textarea-'.</td>
         </tr>
         <tr>
             <td>label</td>
             <td><em>blank</em></td>
-            <td>Label that describes the input element. Example: Full name</td>
+            <td>Label that describes the textarea element. Example: Full name</td>
         </tr>
         <tr>
-            <td>numeric</td>
+            <td>error_message</td>
+            <td><em>blank</em></td>
+            <td>Error message to display when field is required but blank.</td>
+        </tr>
+        <tr>
+            <td>error_heading</td>
+            <td>Error</td>
+            <td>Error heading to display in notification component when field is required but blank. This is used when *show_error_inline=true*.</td>
+        </tr>
+        <tr>
+            <td>show_error_inline</td>
             <td>false</td>
-            <td>Sepcifies if the input element should accept only numeric characters. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+            <td>
+                Specifies if the error message is displayed inline (beneath the field) or in a notification component.
+                <br /><br /> <code class="inline">true</code> <code class="inline">false</code>
+            </td>
         </tr>
         <tr>
             <td>required</td>
             <td>false</td>
-            <td>Specifies if the input element is required or not. When required, a red asterisk is displayed next to the placeholder or label.<br /> <code class="inline">true</code> <code class="inline">false</code></td>
+            <td>Specifies if the textarea element is required or not. When required, a red asterisk is displayed next to the placeholder or label.<br /><br /> <code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>add_clearing</td>
             <td>true</td>
-            <td>Specifies if an 8px margin should be added to the bottom of the element. This ensures your form fields are evenly spaced by default. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+            <td>Specifies if an 8px margin should be added to the bottom of the element. This ensures your form fields are evenly spaced by default. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>placeholder</td>
             <td><em>blank</em></td>
-            <td>Placeholder text to display in the input element. </td>
+            <td>Placeholder text to display in the textarea element. </td>
+        </tr>
+        <tr>
+            <td>rows</td>
+            <td>3</td>
+            <td>Specifies the height of the textarea in rows. Can be any positive whole number. </td>
         </tr>
         <tr>
             <td>selected_value</td>
             <td><em>blank</em></td>
-            <td>Default value to display in the input element. Useful when in edit mode.</td>
+            <td>Default value to display in the textarea element. Useful when in edit mode.</td>
         </tr>
     </x-bladewind::table>
     <p>&nbsp;</p>
-    <h3 class="pb-2 ">Input with all attributes defined</h3>
-    <pre class="language-markup line-numbers" data-line="4">
+    <h3 class="pb-2 ">Textarea with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.input
-                name="pin"
-                label="Enter PIN"
+            &lt;x-bladewind.textarea
+                name="message"
+                label="Enter message"
                 placeholder=""
-                type="password"
-                numeric="false"
                 add_clearing="false"
                 required="true"
+                show_error_inline="false"
+                error_heading="Error"
+                error_message="A comment is required"
+                rows="5"
                 selected_value="" /&gt;
         </code>
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
-        The source file for this component is available in <code class="inline">resources > views > components > bladewind > input.blade.php</code>
+        The source file for this component is available in <code class="inline">resources > views > components > bladewind > textarea.blade.php</code>
     </x-bladewind::alert>
     <p>&nbsp;</p>
 
