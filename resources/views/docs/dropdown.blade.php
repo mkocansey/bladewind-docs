@@ -85,7 +85,20 @@
         <code>
             &lt;x-bladewind.dropdown
                 name="country"
-                data="&#123;&#123; json_encode($countries) }}" /&gt;
+                :data="$countries" /&gt;
+        </code>
+    </pre>
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            Below is an alternative way to pass <code class="inline">data</code> to the component. Note there is no colon before the data attribute and in this case the data is passed as a json encoded string.
+        </x-bladewind::alert>
+    </p>
+
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.dropdown
+                name="country"
+                data="&#123;&#123; json_encode($countries) }} /&gt;
         </code>
     </pre>
 
@@ -98,7 +111,7 @@
             &lt;x-bladewind.dropdown
                 name="country2"
                 placeholder="What is your nationality"
-                data="&#123;&#123; json_encode($countries) }}" /&gt;
+                :data="$countries" /&gt;
         </code>
     </pre>
 
@@ -131,7 +144,7 @@
                 name="country"
                 label_key="country"
                 value_key="code"
-                data="&#123;&#123; json_encode($countries) }}" /&gt;
+                :data="$countries" /&gt;
         </code>
     </pre>
 
@@ -159,7 +172,7 @@
                 name="country-select"
                 selected_value="gh"
                 placeholder="What is your nationality"
-                data="&#123;&#123; json_encode($countries) }}" /&gt;
+                :data="$countries" /&gt;
         </code>
     </pre>
 
@@ -181,7 +194,7 @@
                 label_key="country"
                 value_key="code"
                 flag_key="code"
-                data="&#123;&#123; json_encode($countries) }}" /&gt;
+                :data="$countries" /&gt;
         </code>
     </pre>
     <p>
@@ -241,13 +254,13 @@
                 label_key="name"
                 value_key="id"
                 image_key="picture"
-                data="&#123;&#123; json_encode($staff) }}" /&gt;
+                :data="$staff" /&gt;
         </code>
     </pre>
 
     <x-bladewind::dropdown
         name="staff"
-        data="{{json_encode($staff)}}"
+        :data="$staff"
         label_key="name"
         value_key="id"
         image_key="picture" />
@@ -304,7 +317,7 @@
                  label_key="country"
                  value_key="code"
                  flag_key="code"
-                 data="&#123;&#123; json_encode($countries)}}" /&gt;
+                 :data="$countries" /&gt;
         </code>
     </pre>
 
@@ -464,9 +477,14 @@
             The component appends the selected <em>value</em> and <em>label</em> to the function call as <code class="inline text-red-500">assignToProject(value, label)</code></td>
         </tr>
         <tr>
+            <td>:data</td>
+            <td>[]</td>
+            <td>Array of elements to be displayed in the component. This should be an array. See above examples. Ignore this attribute if you prefer to use <code class="inline">data</code> instead.</td>
+        </tr>
+        <tr>
             <td>data</td>
             <td>[]</td>
-            <td>This should be a json encoded array. See above examples. <code class="inline text-red-500">json_encode($your_array)</code>.</td>
+            <td><b>Json encoded</b> array of elements to be displayed in the component. Ignore this attribute if you prefer to use <code class="inline">:data</code> instead..</td>
         </tr>
         <tr>
             <td>value_key</td>
@@ -541,7 +559,7 @@
                 name="country"
                 placeholder="What is your nationality"
                 onselect="confirmSelection"
-                data="&#123;&#123; json_encode($countries)}} "
+                :data="$countries"
                 value_key="code"
                 label_key="country"
                 flag_key="code"

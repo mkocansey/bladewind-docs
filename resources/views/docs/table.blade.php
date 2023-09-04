@@ -392,9 +392,22 @@
     </pre>
     <pre class="language-markup line-numbers">
         <code>
+            &lt;x-bladewind::table :data="$staff" /&gt;
+        </code>
+    </pre>
+
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            Below is an alternative way to pass <code class="inline">data</code> to the component. Note there is no colon before the data attribute and in this case the data is passed as a json encoded string.
+        </x-bladewind::alert>
+    </p>
+
+    <pre class="language-markup line-numbers">
+        <code>
             &lt;x-bladewind::table data="&#123;&#123; json_encode($staff) }}" /&gt;
         </code>
     </pre>
+
     @php
         $staff = [
             [ 'id' => 1, 'first_name' => 'Michael', 'last_name' => 'Ocansey',   'department' => 'Engineering', 'marital_status' => 1 ],
@@ -409,7 +422,7 @@
         ];
     @endphp
     <p>
-        <x-bladewind::table data="{{ json_encode($staff) }}" />
+        <x-bladewind::table :data="$staff" />
     </p>
     <p>
         As you can tell from the above example, the component simply picks the array passed to it and generates a table.
@@ -433,12 +446,12 @@
             <code class="text-red-500 inline">include_columns</code> takes precedence over <code class="text-red-500 inline">exclude_columns</code>. If you specify both attributes, <code class="text-red-500 inline">exclude_columns</code> will be ignored.
         </x-bladewind::alert>
     </p>
-    <x-bladewind::table data="{{ json_encode($staff) }}" exclude_columns="id, marital_status" />
+    <x-bladewind::table :data="$staff" exclude_columns="id, marital_status" />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
             &lt;x-bladewind::table
                 exclude_columns="id, marital_status"
-                data="&#123;&#123;json_encode($staff) }}" /&gt;
+                :data="$staff" /&gt;
         </code>
     </pre>
     <h3>Displaying Action Icons</h3>
@@ -484,12 +497,12 @@
             &lt;x-bladewind::table
                 exclude_columns="id, marital_status"
                 divider="thin"
-                action_icons="&#123;&#123; json_encode($action_icons) }}"
-                data="&#123;&#123; json_encode($staff) }}" /&gt;
+                :action_icons="$action_icons"
+                :data="$staff" /&gt;
         </code>
     </pre>
     <p>
-        <x-bladewind::table data="{{ json_encode($staff) }}" divider="thin" action_icons="{{ json_encode($action_icons) }}"  exclude_columns="id, marital_status" />
+        <x-bladewind::table :data="$staff" divider="thin" :action_icons="$action_icons"  exclude_columns="id, marital_status" />
     </p>
     <br />
     <p>
@@ -562,18 +575,18 @@
         a search field is placed above the table that makes it possible to search through any column of the table.
         By placeholder text for the search input can be replaced by setting the <code class="text-red-500 inline">search_placeholder</code> attribute on the table.
     </p>
-    <x-bladewind::table  searchable="true" search_placeholder="Find staff members by name..."
-        data="{{ json_encode($staff) }}" divider="thin" action_icons="{{ json_encode($action_icons) }}"
+    <x-bladewind::table searchable="true" search_placeholder="Find staff members by name..."
+        :data="$staff" divider="thin" :action_icons="$action_icons"
         exclude_columns="id, marital_status" />
 
     <pre class="language-html line-numbers" data-line="2,5">
         <code>
             &lt;x-bladewind::table
                 searchable="true"
-                data="&#123;&#123;  json_encode($staff) }}"
+                :data="$staff"
                 divider="thin"
                 search_placeholder="Find staff members by name..."
-                action_icons="&#123;&#123;  json_encode($action_icons) }}"
+                :action_icons="$action_icons"
                 exclude_columns="id, marital_status" /&gt;
         </code>
     </pre>
@@ -598,13 +611,13 @@
             &lt;x-bladewind::table
                 exclude_columns="id"
                 divider="thin"
-                action_icons="&#123;&#123; json_encode($action_icons) }}"
-                column_aliases="&#123;&#123; json_encode($column_aliases) }}"
-                data="&#123;&#123; json_encode($staff) }}" /&gt;
+                :action_icons="$action_icons"
+                :column_aliases="$column_aliases"
+                :data="$staff" /&gt;
         </code>
     </pre>
     <x-bladewind::table
-        data="{{ json_encode($staff) }}" divider="thin" column_aliases="{{ json_encode($column_aliases) }}" />
+        :data="$staff" divider="thin" :column_aliases="$column_aliases" />
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>
@@ -658,9 +671,14 @@
             <td>This slot holds your table header information.</td>
         </tr>
         <tr>
+            <td>:data</td>
+            <td>null</td>
+            <td>Array of elements to generate the table from. When this has a value, there is no need to manually build the table. Ignore this attribute if you prefer to use <code class="inline">data</code> instead.</td>
+        </tr>
+        <tr>
             <td>data</td>
-            <td><em>null</em></td>
-            <td>Json encoded array to generate the table from. When this has a value, there is no need to manually build the table.</td>
+            <td>null</td>
+            <td><b>Json encoded</b> array of elements to generate the table from. When this has a value, there is no need to manually build the table. Ignore this attribute if you prefer to use <code class="inline">:data</code> instead..</td>
         </tr>
         <tr>
             <td>exclude_columns</td>
@@ -673,9 +691,12 @@
             <td>Comma separated list of columns to include when generating the table. This list overwrites any columns specified in <em>exclude_columns</em>. In fact, the keys specified in this list will be the only ones used to generate the table.</td>
         </tr>
         <tr>
-            <td>action_icons</td>
+            <td>:action_icons</td>
             <td><em>null</em></td>
-            <td>Json encoded array of icon actions that will be displayed on each row of the table. Only used when <em>data</em> is not null. By default no action icons are displayed if value is <em>null</em></td>
+            <td>
+                Array of icon actions that will be displayed on each row of the table. Only used when <em>data</em> is not null. By default no action icons are displayed if value is <em>null</em>
+                This can also be passed as <code class="inline">action_icons</code> without the colon but then the array will need to be Json encoded.
+            </td>
         </tr>
         <tr>
             <td>action_title</td>
@@ -683,9 +704,10 @@
             <td>Heading of the column that shows the actions.</td>
         </tr>
         <tr>
-            <td>column_aliases</td>
+            <td>:column_aliases</td>
             <td>[]</td>
-            <td>Json encoded array of column aliases. Aliases are column names to use in place of what is defined in the <em>data</em> array. For example you may want a <em>date_of_birth</em> key to be displayed as <em>birthday</em>.</td>
+            <td>Array of column aliases. Aliases are column names to use in place of what is defined in the <em>data</em> array. For example you may want a <em>date_of_birth</em> key to be displayed as <em>birthday</em>.
+                This can also be passed as <code class="inline">column_aliases</code> without the colon but then the array will need to be Json encoded.</td>
         </tr>
         <tr>
             <td>searchable</td>
@@ -711,11 +733,11 @@
                 searchable="false"
                 search_placeholder=""
                 name="staff-table"
-                data="&#123;&#123; json_encode($data) }}"
-                column_aliases="&#123;&#123; json_encode($column_aliases) }}"
+                :data="$data"
+                :column_aliases="$column_aliases"
                 include_columns="first_name, last_name, email"
                 exclude_columns="id,picture"
-                action_icons="&#123;&#123; json_encode($action_icons) }}"
+                :action_icons="$action_icons"
                 action_title=""
                 hover_effect="true"&gt;
 
