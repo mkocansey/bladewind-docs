@@ -166,6 +166,45 @@
             &lt;/x-bladewind.table&gt;
         </code>
     </pre>
+    <h2 id="compact">Compact</h2>
+    <p>If the table feels too airy and spaced, there is a <code class="inline text-red-500">compact="true"</code> attribute to tighten things up.</p>
+    <x-bladewind::table compact="true" divider="thin">
+        <x-slot name="header">
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+        </x-slot>
+        <tr>
+            <td>Alfred Rowe</td>
+            <td>Outsourcing</td>
+            <td>
+                alfred@therowe.com
+            </td>
+        </tr>
+        <tr>
+            <td>Michael K. Ocansey</td>
+            <td>Tech</td>
+            <td>
+                kabutey@gmail.com
+            </td>
+        </tr>
+    </x-bladewind::table>
+<br />
+    <pre class="language-markup line-numbers" data-line="2">
+        <code>
+                &lt;x-bladewind.table
+                    compact="true"
+                    divider="thin"&gt;
+
+                &lt;x-slot name="header"&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    ...
+                &lt;/x-slot&gt;
+                ...
+            &lt;/x-bladewind.table&gt;
+        </code>
+    </pre>
+
     <h2 id="striped">Striped Table</h2>
     <p>Design experts argue that it is sometimes easier for users to visually scan tabular data if the table has striped rows. We are not challenging the experts. We’ve however made it possible for you to make your BladewindUI tables have striped rows. Set <code class="inline text-red-500">striped="true"</code> on the table component  to get a striped table. </p>
 
@@ -362,6 +401,7 @@
             [ 'id' => 2, 'first_name' => 'Alfred',  'last_name' => 'Rowe',     'department' => 'Engineering', 'marital_status' => 1 ],
             [ 'id' => 3, 'first_name' => 'Abigail',   'last_name' => 'Edwin',    'department' => 'Engineering', 'marital_status' => 0 ],
         ];
+        $column_aliases = [ 'id' => 'ref #', 'marital_status' => 'married?' ];
         $action_icons = [
             "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
             "icon:pencil | click:redirect('/user/{id}')",
@@ -520,7 +560,23 @@
         The table component provides a very basic way for users to search through table content.
         If the <code class="text-red-500 inline">searchable="true"</code> attribute is set,
         a search field is placed above the table that makes it possible to search through any column of the table.
+        By placeholder text for the search input can be replaced by setting the <code class="text-red-500 inline">search_placeholder</code> attribute on the table.
     </p>
+    <x-bladewind::table  searchable="true" search_placeholder="Find staff members by name..."
+        data="{{ json_encode($staff) }}" divider="thin" action_icons="{{ json_encode($action_icons) }}"
+        exclude_columns="id, marital_status" />
+
+    <pre class="language-html line-numbers" data-line="2,5">
+        <code>
+            &lt;x-bladewind::table
+                searchable="true"
+                data="&#123;&#123;  json_encode($staff) }}"
+                divider="thin"
+                search_placeholder="Find staff members by name..."
+                action_icons="&#123;&#123;  json_encode($action_icons) }}"
+                exclude_columns="id, marital_status" /&gt;
+        </code>
+    </pre>
 
     <h3>Aliasing Column Names</h3>
     <p>
@@ -547,6 +603,8 @@
                 data="&#123;&#123; json_encode($staff) }}" /&gt;
         </code>
     </pre>
+    <x-bladewind::table
+        data="{{ json_encode($staff) }}" divider="thin" column_aliases="{{ json_encode($column_aliases) }}" />
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>
@@ -557,6 +615,11 @@
             <th>Default</th>
             <th>Available Values</th>
         </x-slot>
+        <tr>
+            <td>name</td>
+            <td>'tbl-'.uniqid()</td>
+            <td>Name of the table. Useful if you want to target the table via Javascript. The name is added in the class="" attribute of the table.</td>
+        </tr>
         <tr>
             <td>striped</td>
             <td>false</td>
@@ -594,6 +657,46 @@
             <td><em>blank</em></td>
             <td>This slot holds your table header information.</td>
         </tr>
+        <tr>
+            <td>data</td>
+            <td><em>null</em></td>
+            <td>Json encoded array to generate the table from. When this has a value, there is no need to manually build the table.</td>
+        </tr>
+        <tr>
+            <td>exclude_columns</td>
+            <td><em>null</em></td>
+            <td>Comma separated list of columns to exclude when generating the table. The 'columns' need to match keys in your array.</td>
+        </tr>
+        <tr>
+            <td>include_columns</td>
+            <td><em>null</em></td>
+            <td>Comma separated list of columns to include when generating the table. This list overwrites any columns specified in <em>exclude_columns</em>. In fact, the keys specified in this list will be the only ones used to generate the table.</td>
+        </tr>
+        <tr>
+            <td>action_icons</td>
+            <td><em>null</em></td>
+            <td>Json encoded array of icon actions that will be displayed on each row of the table. Only used when <em>data</em> is not null. By default no action icons are displayed if value is <em>null</em></td>
+        </tr>
+        <tr>
+            <td>action_title</td>
+            <td>actions</td>
+            <td>Heading of the column that shows the actions.</td>
+        </tr>
+        <tr>
+            <td>column_aliases</td>
+            <td>[]</td>
+            <td>Json encoded array of column aliases. Aliases are column names to use in place of what is defined in the <em>data</em> array. For example you may want a <em>date_of_birth</em> key to be displayed as <em>birthday</em>.</td>
+        </tr>
+        <tr>
+            <td>searchable</td>
+            <td>false/td>
+            <td>Specify if the table is searchable. When <code class="inline">true</code>, a search input is placed above the table.<br /><br/><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>search_placeholder</td>
+            <td>Search table below...</td>
+            <td>Only used when <code class="inline">searchable="true"</code>. Specifies the text to display in the search input field.</td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Table with all attributes defined</h3>
@@ -605,6 +708,15 @@
                 divider="thin"
                 has_shadow="true"
                 compact="true"
+                searchable="false"
+                search_placeholder=""
+                name="staff-table"
+                data="&#123;&#123; json_encode($data) }}"
+                column_aliases="&#123;&#123; json_encode($column_aliases) }}"
+                include_columns="first_name, last_name, email"
+                exclude_columns="id,picture"
+                action_icons="&#123;&#123; json_encode($action_icons) }}"
+                action_title=""
                 hover_effect="true"&gt;
 
                 &lt;x-slot name="header"&gt;
@@ -627,6 +739,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#nogaps">No Gaps</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#nodivider">No divider</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#nohover">No hover effect</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#compact">Reduce Paddings</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#striped">Striped table</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#totals">Cells for totals</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#shadow">With drop shadow</a></div>

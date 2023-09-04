@@ -175,9 +175,10 @@
     <p>
         Setting a select as required appends a red asterisk to the placeholder text.
     </p>
-    <p>
+    <div class="required-select">
         <x-bladewind::select name="country-select2" placeholder="What is your nationality" required="true" data="{{json_encode($countries)}}" />
-    </p>
+        <x-bladewind::button type="secondary" onclick="validateForm('.required-select')">Validate Field</x-bladewind::button>
+    </div>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
             &lt;x-bladewind.select
