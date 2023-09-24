@@ -25,13 +25,13 @@
     <h2 id="sizes">Different Sizes</h2>
     <p>You can specify a size for the avatar. See the full <a href="#attributes">list of attributes</a> for the available sizes. The default size is <code class="inline text-red-500">regular</code></p>
     <div class="text-center">
-    <x-bladewind::avatar image="/assets/images/edwin.jpeg" size="tiny" />
-    <x-bladewind::avatar image="/assets/images/me.jpeg" size="small" />
-    <x-bladewind::avatar image="/assets/images/audrey.jpeg" size="medium" />
-    <x-bladewind::avatar image="/assets/images/francis.png" />
-    <x-bladewind::avatar image="/assets/images/doc.png" size="big" />
-    <x-bladewind::avatar image="/assets/images/rowe.jpeg" size="huge" />
-    <x-bladewind::avatar image="/assets/images/issah.jpg" size="omg" />
+        <x-bladewind::avatar image="/assets/images/edwin.jpeg" size="tiny" />
+        <x-bladewind::avatar image="/assets/images/me.jpeg" size="small" />
+        <x-bladewind::avatar image="/assets/images/audrey.jpeg" size="medium" />
+        <x-bladewind::avatar image="/assets/images/francis.png" />
+        <x-bladewind::avatar image="/assets/images/doc.png" size="big" />
+        <x-bladewind::avatar image="/assets/images/rowe.jpeg" size="huge" />
+        <x-bladewind::avatar image="/assets/images/issah.jpg" size="omg" />
     </div>
     <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27">
