@@ -4,8 +4,8 @@
 
     <p>
         Displays a text input element. This is also commonly known as a text box. This component in fact works for all the possible values of <code class="inline text-red-500">&lt;input type="" .../&gt;</code>.
-        The default is <code class="inline text-red-500">input type="text"</code>. This Bladewind component simply wraps the HTML input so you are free to use all the various 
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes" target="_blank">input attributes</a> available in HTML. 
+        The default is <code class="inline text-red-500">input type="text"</code>. This Bladewind component simply wraps the HTML input so you are free to use all the various
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes" target="_blank">input attributes</a> available in HTML.
     </p>
     <p><x-bladewind::input name="fnaln" /></p>
     <pre class="language-markup">
@@ -23,9 +23,9 @@
     </pre>
     <h3>Show Password With The Eye</h3>
     <p>
-        The component allows you to specify if the user should be able to view the password they entered by clicking on an eye. This can be achieved by setting 
-        <code class="inline text-red-500">viewable="true"</code>. 
-        The eye is appended as a <a href="#prefix-siffix">suffix</a> to the input. Clicking on the eye when the password is revealed, hides the pasword. 
+        The component allows you to specify if the user should be able to view the password they entered by clicking on an eye. This can be achieved by setting
+        <code class="inline text-red-500">viewable="true"</code>.
+        The eye is appended as a <a href="#prefix-siffix">suffix</a> to the input. Clicking on the eye when the password is revealed, hides the pasword.
         The eye icon will be displayed ONLY if the input <code class="inline text-red-500">type="password"</code>. It will be ignored in all other cases.
     </p>
     <p><x-bladewind::input type="password" name="passwed" viewable="true" /></p>
@@ -35,7 +35,7 @@
         </code>
     </pre>
     <h2 id="numeric">Numeric Input</h2>
-    <p>This accepts only numeric values. Useful when entering phone numbers, age or amounts. 
+    <p>This accepts only numeric values. Useful when entering phone numbers, age or amounts.
     By default the decimal point is not allowed as it is technically not a number. In cases where you need decimals, use the attribute <code class="inline text-red-500">with_dots="true"</code></p>
     <p><x-bladewind::input numeric="true" /></p>
     <pre class="language-markup">
@@ -220,7 +220,7 @@
     <p>Below is the javascript that triggers the validation of the form. <code class="inline">dom_el</code>, <code class="inline">unhide</code> and <code class="inline">validateForm</code> are helper functions in the package.</p>
     <pre class="language-js line-numbers" data-line="">
         <code>
-            /** 
+            /**
             dom_el(), validateForm(), hide() and unhide()
             are helper functions available in BladewindUI
             **/
@@ -238,10 +238,127 @@
         </code>
     </pre>
 
+
+
+    <h2 id="javascript">Manipulating Inputs Using Javascript</h2>
+    <p>
+        There are several instances where you will want to manipulate input fields for different reasons.
+        Most times, manipulating an input field will be dependent on a user's selection. This can be achieved in
+        Javascript since BladewindUI uses the <code class="inline text-red-500">name</code> attribute defined on an input as part of its <code class="inline text-red-500">class</code> attribute.
+        Let us take a look at a few examples from below.
+    </p>
+
+    <h3>Sign Up For Summer Camp</h3>
+    <p>
+        In the example below any user below 18 years will need to provide the name and email of their guardian.
+    </p>
+    <x-bladewind::card>
+        <h1 class="my-2 text-2xl font-light text-blue-900/80">Sign up for Summer Camp</h1>
+        <p class="mt-3 mb-6 text-blue-900/80 text-sm">
+            You are one step away from an awesome summer experience.
+        </p>
+        <div class="sm:flex gap-4">
+            <x-bladewind::input name="full_name" required="true"  label="Full name" />
+            <x-bladewind::input name="age_camp" label="How old are you?" required="true" numeric="true" with_dots="true" />
+        </div>
+        <b class="guardian-info py-2 block hidden">Who is your guardian?</b>
+        <div class="guardian flex gap-4 hidden">
+            <x-bladewind::input name="guardian_name_camp" required="true"  label="Guardian's Name" />
+            <x-bladewind::input name="guardian_email_camp" label="Guardian's email" onkeyup="showAddress(this.value)" />
+        </div>
+        <x-bladewind::input name="guardian_address" placeholder="Guardian's address" class="hidden" />
+    </x-bladewind::card>
+    <script>
+        dom_el('.age_camp').addEventListener('keyup', (el) => {
+            if(el.target.value !== ''  && el.target.value < 18 ){
+                unhide('.guardian-info');
+                unhide('.guardian');
+            } else {
+                hide('.guardian-info');
+                hide('.guardian');
+            }
+        });
+
+        showAddress = (value) => {
+            if(value !== '') unhide('.guardian_address');
+        }
+    </script>
+    <br />
+    <p>
+        Let's take a look at the code for the form and then proceed to look at the Javascript that's triggered.
+        Pay attention to lines 4 and 12.
+    </p>
+    <pre class="language-markup line-numbers" data-line="4,12">
+        <code>
+            ...
+            &lt;div class="flex gap-4"&gt;
+                &lt;x-bladewind.input name="full_name" required="true"  label="Full name" /&gt;
+                &lt;x-bladewind.input name="age_camp" label="How old are you?"
+                    required="true" numeric="true" with_dots="true" /&gt;
+            &lt;/div&gt;
+            &lt;b class="guardian-info py-2 block hidden"&gt;Who is your guardian?&lt;/b&gt;
+            &lt;div class="guardian flex gap-4 hidden"&gt;
+                &lt;x-bladewind.input name="guardian_name_camp" required="true" label="Guardian's Name" /&gt;
+                &lt;x-bladewind.input name="guardian_email_camp"
+                    label="Guardian's email"
+                    onkeyup="showAddress(this.value)" /&gt;
+            &lt;/div&gt;
+            &lt;x-bladewind::input name="guardian_address" placeholder="Guardian's address" class="hidden" /&gt;
+            ...
+        </code>
+    </pre>
+    <p>
+        From the above form, we want to perform an action when the value of the <code class="inline">age_camp</code> input field changes.
+        The resultant HTML code generated for the input field is below.
+    </p>
+    <pre class="language-markup line-numbers" data-line="2">
+        <code>
+            &lt;input
+                class="bw-input peer required age_camp placeholder-transparent dark:placeholder-transparent"
+                type="text"
+                id="age_camp"
+                name="age_camp"
+                value=""
+                autocomplete="off"
+                placeholder="How old are you?" /&gt;
+        </code>
+    </pre>
+    <p>
+        The name we provided to the Input component has been used as part of the <code class="inline">class</code> names of the component.
+        This makes it easy for us to access the component in Javascript. Below is the script that performs the hiding and unhiding of the DIVs based on the value of the age input.
+        In this example we use an event listener on the <code class="inline">age_camp</code> input to listen for any changes to the input on keyup.
+    </p>
+    <p>
+        Entering a value in the guardian email field also unhides an address field. This however uses an <code class="inline">onkeyup</code> event defined on the input field itself.
+    </p>
+    <pre class="language-js line-numbers" data-line="2">
+        <code>
+        // dom_el, unhide and hide are helper functions in BladewindUI
+        dom_el('.age_camp').addEventListener('keyup', (el) => {
+            if(el.target.value !== ''  && el.target.value < 18 ){
+                unhide('.guardian-info');
+                unhide('.guardian');
+            } else {
+                hide('.guardian-info');
+                hide('.guardian');
+            }
+        })
+
+        showAddress = (value) => {
+            if(value !== '') unhide('.guardian_address');
+        }
+        </code>
+    </pre>
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            To manipulate BladewindUI input elements using Javascript, simply target them using the name defined either in the class or id attributes.
+        </x-bladewind::alert>
+    </p>
+
     <h2 id="prefix-suffix">Prefixes and Suffixes</h2>
     <p>
-        There are cases where you need to prefix or append something to an input field. For example, you want to prefix a URL input field with 'https://' so your users wouldn't need to type that in everytime. 
-        Or, when asking your app users for their social media handles you may want to always have the '@' prefix. For now prefixes and suffixes support only text and <a href="/component/icon">icons</a>. 
+        There are cases where you need to prefix or append something to an input field. For example, you want to prefix a URL input field with 'https://' so your users wouldn't need to type that in everytime.
+        Or, when asking your app users for their social media handles you may want to always have the '@' prefix. For now prefixes and suffixes support only text and <a href="/component/icon">icons</a>.
     </p>
     <h3>Prefixes</h3>
     <p class="!mb-4">You can use prefixes even when your input has a label.</p>
@@ -287,13 +404,13 @@
     <x-bladewind::input name="tnc" placeholder="Your bio. Keep it brief and nice" suffix='<a href="#">See some good examples</a>' />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input 
-                name="tnc" 
-                placeholder="Your bio. Keep it brief and nice" 
+            &lt;x-bladewind.input
+                name="tnc"
+                placeholder="Your bio. Keep it brief and nice"
                 suffix='&lt;a href="#"&gt;See some good examples&lt;/a&gt;' /&gt;
         </code>
     </pre>
-    
+
 <h3>Prefix and Suffix Transparency</h3>
     <p>
         You can opt for non-transparent prefixes and suffixes by setting the attribute <code class="inline text-red-500">transparent_prefix="false"</code> and/or <code class="inline text-red-500">transparent_suffix="false"</code>.
@@ -302,11 +419,11 @@
     <x-bladewind::input name="usdbg" placeholder="0.00" prefix="USD" numeric transparent_prefix="false" />
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.input 
-                name="usdbg" 
-                placeholder="0.00" 
-                prefix="USD" 
-                transparent_prefix="false" 
+            &lt;x-bladewind.input
+                name="usdbg"
+                placeholder="0.00"
+                prefix="USD"
+                transparent_prefix="false"
                 numeric /&gt;
         </code>
     </pre>
@@ -314,10 +431,10 @@
     <x-bladewind::input name="spacex" placeholder="workspace-name" suffix=".slack.com" transparent_suffix="false" />
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind::input 
-                name="spacex" 
-                placeholder="workspace-name" 
-                transparent_suffix="false" 
+            &lt;x-bladewind::input
+                name="spacex"
+                placeholder="workspace-name"
+                transparent_suffix="false"
                 suffix=".slack.com" /&gt;
         </code>
     </pre>
@@ -326,23 +443,23 @@
     <pre class="language-markup line-numbers" data-line="3,4,6,7">
         <code>
             &lt;x-bladewind.input
-                name="spacexx" 
-                prefix="https://" 
-                transparent_prefix="false" 
-                placeholder="workspace-name" 
-                suffix=".slack.com" 
+                name="spacexx"
+                prefix="https://"
+                transparent_prefix="false"
+                placeholder="workspace-name"
+                suffix=".slack.com"
                 transparent_suffix="false" /&gt;
         </code>
     </pre>
     <h2 id="icons">With Icons</h2>
     <p>
-        The BladewindUI input field can have an icon for those moments where you want a simple icon to describe the field. 
-        This is not a different kind of input field. We simply make use of prefixes and suffixes to achieve this effect. All <a href="https://heroicons.com">Heroicons</a> names are supported out of the box. 
+        The BladewindUI input field can have an icon for those moments where you want a simple icon to describe the field.
+        This is not a different kind of input field. We simply make use of prefixes and suffixes to achieve this effect. All <a href="https://heroicons.com">Heroicons</a> names are supported out of the box.
         You can also specify an SVG tag to be used as an icon.
     </p>
     <p>
-        Since input icons are achieved using prefixes, it is important to add the attribute <code class="inline text-red-500">prefix_is_icon="true"</code> if you are using icons as prefixes or <code class="inline text-red-500">suffix_is_icon="true"</code> if you are using icons as suffixes. 
-        This way Bladewind forces your prefix or suffix to be an icon and not text. For example: if you specify the prefix <b>"phone"</b>, by default Bladewind will just display the text <b>"phone"</b> as your prefix. However, if you specify 
+        Since input icons are achieved using prefixes, it is important to add the attribute <code class="inline text-red-500">prefix_is_icon="true"</code> if you are using icons as prefixes or <code class="inline text-red-500">suffix_is_icon="true"</code> if you are using icons as suffixes.
+        This way Bladewind forces your prefix or suffix to be an icon and not text. For example: if you specify the prefix <b>"phone"</b>, by default Bladewind will just display the text <b>"phone"</b> as your prefix. However, if you specify
         <code class="inline text-red-500">prefix_is_icon="true"</code>, Bladewind will look for the icon with the name <b>"phone"</b> and display that instead.
     </p>
     <br />
@@ -360,37 +477,37 @@
         <code>
             &lt;x-bladewind.centered-content size="small"&gt;
 
-                &lt;x-bladewind.input 
-                    name="fullname" 
-                    placeholder="John T. Doe" 
-                    prefix="user" 
+                &lt;x-bladewind.input
+                    name="fullname"
+                    placeholder="John T. Doe"
+                    prefix="user"
                     prefix_is_icon="true" /&gt;
 
-                &lt;x-bladewind.input 
-                    name="emailic" 
-                    placeholder="me@bladewindui.com" 
-                    prefix="envelope" 
+                &lt;x-bladewind.input
+                    name="emailic"
+                    placeholder="me@bladewindui.com"
+                    prefix="envelope"
                     prefix_is_icon="true" /&gt;
 
                 &lt;div class="flex gap-4"&gt;
-                    &lt;x-bladewind.input 
-                        name="fon" 
-                        placeholder="0000.000.00" 
-                        prefix="phone" 
+                    &lt;x-bladewind.input
+                        name="fon"
+                        placeholder="0000.000.00"
+                        prefix="phone"
                         prefix_is_icon="true" /&gt;
 
-                    &lt;x-bladewind.input 
-                        name="passw" type="password" 
-                        placeholder="Password" 
-                        prefix="key" 
-                        prefix_is_icon="true" 
+                    &lt;x-bladewind.input
+                        name="passw" type="password"
+                        placeholder="Password"
+                        prefix="key"
+                        prefix_is_icon="true"
                         prefix_icon_css="text-orange-500"
                         viewable="true" /&gt;
 
                 &lt;/div&gt;
 
                 &lt;x-bladewind.button class="w-full"&gt;Sign Up&lt;/x-bladewind.button&gt;
-                
+
             &lt;/x-bladewind.centered-content&gt;
         </code>
     </pre>
@@ -404,9 +521,9 @@
 
     <pre class="language-markup line-numbers">
     <code>
-    &lt;x-bladewind.input 
-    name="www" 
-    placeholder="website address" 
+    &lt;x-bladewind.input
+    name="www"
+    placeholder="website address"
     prefix_is_icon="true"
     prefix='&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"&gt;
 &lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /&gt;
@@ -420,9 +537,9 @@
 
     <pre class="language-markup line-numbers">
     <code>
-    &lt;x-bladewind.input 
-    name="www" 
-    placeholder="website address" 
+    &lt;x-bladewind.input
+    name="www"
+    placeholder="website address"
     prefix_is_icon="true"
     transparent_prefix="false"
     prefix='&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"&gt;
@@ -617,18 +734,18 @@
                 error_heading="Bugged"
                 with_dots="true"
                 show_placeholder_always="true"
-                selected_value="" 
-                prefix="Email" 
-                transparent_prefix="false" 
-                prefix_is_icon="false" 
-                prefix_icon_type="solid" 
+                selected_value=""
+                prefix="Email"
+                transparent_prefix="false"
+                prefix_is_icon="false"
+                prefix_icon_type="solid"
                 prefix_icon_css=""
-                suffix="@gmail.com" 
-                transparent_suffix="false" 
-                suffix_is_icon="false" 
-                suffix_icon_type="solid" 
+                suffix="@gmail.com"
+                transparent_suffix="false"
+                suffix_is_icon="false"
+                suffix_icon_type="solid"
                 suffix_icon_css=""
-                viewable="false" 
+                viewable="false"
             /&gt;
         </code>
     </pre>
@@ -646,6 +763,7 @@
             <div class="flex items-center"><div class="dot"></div><a href="#labels-placeholders">Labels & Placeholders</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#required">Required Input Fields</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#events-validations">Events & Validations</a></div>
+            <div class="flex items-center"><div class="dot"></div><a href="#javascript">Javascript manipulations</a></div>
            <div class="flex items-center"><div class="dot"></div><a href="#prefix-suffix">Prefixes and suffixes</a></div>
            <div class="flex items-center"><div class="dot"></div><a href="#icons">With Icons</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>

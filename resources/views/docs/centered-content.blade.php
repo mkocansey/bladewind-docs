@@ -55,7 +55,7 @@
         </x-slot>
         <tr>
             <td>size</td>
-            <td>default</td>
+            <td>xl</td>
             <td><code class="inline">tiny</code>  <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">xxl</code> <code class="inline">omg</code></td>
         </tr>
     </x-bladewind::table>
