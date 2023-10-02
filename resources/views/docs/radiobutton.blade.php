@@ -7,7 +7,7 @@
         The default radio button colour is blue but there are nine colours available to choose from.
     </p>
 
-    <x-bladewind::radio-button name="tnc"  />
+    <x-bladewind::radio-button name="tnc" />
 
     <pre class="language-markup line-numbers">
         <code>

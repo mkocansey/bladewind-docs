@@ -671,6 +671,21 @@
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.enable()">Enable</x-bladewind::button>
     </div>
 <br />
+    <p>
+        <x-bladewind::select name="multiple-from-js" placeholder="Your country"  multiple="true" data="manual">
+            <x-bladewind::select-item label="Burkina Faso" value="bf" />
+            <x-bladewind::select-item label="Ghana" value="gh" />
+            <x-bladewind::select-item label="Nigeria" value="ng" />
+        </x-bladewind::select>
+    </p>
+    <div class="space-x-4 text-center">
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.selectByValue('gh')">Select Ghana</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.selectByValue('ng')">Select Nigeria</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.disable()">Disable</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.reset()">Reset</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.enable()">Enable</x-bladewind::button>
+    </div>
+<br />
     <pre class="language-markup line-numbers" data-line="9,14,19,24,29">
         <code>
             &lt;x-bladewind.select name="from-js" placeholder="Your country" data="manual"&gt;
@@ -907,7 +922,7 @@
     <div class="flex items-center"><div class="dot"></div><a href="#non-dynamic">Non dynamic items</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#onselect">Get selected values</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#custom-functions">Custom functions</a></div>
-    <div class="flex items-center"><div class="dot"></div><a href="#js-manipulations">Manipulate from JavaScript</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#js-manipulations">JavaScript manipulations</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#native">Native select</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
 </x-slot:side_nav>
