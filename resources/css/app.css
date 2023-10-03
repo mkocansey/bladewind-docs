@@ -9,21 +9,33 @@
     *::-webkit-scrollbar { width: 3px; height: 3px }
     *::-webkit-scrollbar-track { background: var(--primary); border-radius: 3px; }
     *::-webkit-scrollbar-thumb { background-color: var(--secondary); border-radius: 11px; border: 3px solid var(--primary); }
-    .pre-font { font-family: 'Source Code Pro', monospace; }
+    body { font-family: 'Inter', ui-sans-serif, system-ui,-apple-system,BlinkMacSystemFont,sans-serif !important; }
+    .pre-font { font-family: 'Inconsolata','Source Code Pro', monospace !important; }
     nav a { @apply hover:text-slate-700 dark:hover:text-slate-300 }
     .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 }
-    .active .dot { @apply border border-purple-400 bg-purple-400 }
-    .active a { @apply text-purple-500 }
+    .active .dot { @apply border border-indigo-400 bg-indigo-400 }
+    .active a { @apply text-indigo-500 }
     .page-title { @apply font-bold tracking-wide text-3xl text-slate-800  mb-10 dark:text-slate-500 }
     pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-900 !mt-4 !mb-7 !py-4 }
     .content-area p { @apply leading-8 text-slate-600 dark:text-slate-400 mb-7 }
-    .content-area a { @apply text-purple-500 hover:text-purple-700 }
+    .content-area a { @apply text-indigo-500 hover:text-indigo-700 }
     .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6 { @apply scroll-mt-24 font-semibold mb-6 mt-16 block }
     h2 { @apply font-light text-2xl text-slate-600 dark:text-orange-400 }
     h3 { @apply text-xl text-slate-600 }
-    code { @apply !pre-font !text-sm !leading-7  }
+    code { @apply !pre-font !text-[15px] !leading-6  }
     code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 inline-block dark:bg-gray-700 dark:text-gray-400 }
     .navigation a { @apply border-t border-slate-300 pt-4 block w-full pl-6 dark:border-gray-800 }
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
+    .copy-to-clipboard-button { @apply !px-3 !py-1.5 hover:!text-white !text-white !block !bg-slate-700 }
+    div.code-toolbar > .toolbar { @apply !right-2 !top-2 !opacity-100 }
+    :not(pre)>code[class*=language-],pre[class*=language-]{ @apply !bg-slate-800 dark:!bg-slate-900 !rounded-xl dark:border dark:border-slate-800 }
+    pre[class*="language-"].line-numbers { @apply !pl-14 }
+    .token.tag { @apply !text-rose-400 }
+    .token.attr-name { @apply !text-gray-100 }
+    .token.literal-property { @apply !text-rose-400 }
+    .token.attr-value,.token.punctuation { @apply !text-teal-500 }
+    .line-numbers-rows > span::before{ @apply !text-slate-500 }
+    .line-numbers .line-numbers-rows { @apply !border-r !border-slate-700 }
+    .line-highlight { @apply !bg-gradient-to-r !from-slate-700/30 !to-slate-800 dark:!from-slate-800/30 dark:!to-slate-900 border-t border-b border-slate-700/50 dark:border-slate-700/20 !mt-3.5 }
 }

@@ -15,7 +15,7 @@
         <link rel="apple-touch-icon" href="{{ asset('assets/images/icon.png') }}" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Code+Pro:wght@300&family=Inter:wght@400;700&display=swap" rel="stylesheet">
         <link rel="icon" href="{{ asset('assets/images/icon.png') }}" />
         <link href="{{ asset('vendor/bladewind/css/animate.min.css')}}" rel="stylesheet" />
         <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css')}}?<?php echo uniqid() ?>" rel="stylesheet" />

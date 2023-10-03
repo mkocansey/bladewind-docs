@@ -23,8 +23,10 @@ selectNavigationItem = function selectNavigationItem(el) {
   \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-/* PrismJS 1.28.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash&plugins=line-highlight+line-numbers+command-line+normalize-whitespace */
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+bash&plugins=line-highlight+line-numbers+command-line+normalize-whitespace+toolbar+copy-to-clipboard */
 var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},
     Prism = function (e) {
   var n = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i,
@@ -465,7 +467,10 @@ Prism.languages.markup = {
           punctuation: [{
             pattern: /^=/,
             alias: "attr-equals"
-          }, /"|'/]
+          }, {
+            pattern: /^(\s*)["']|["']$/,
+            lookbehind: !0
+          }]
         }
       },
       punctuation: /\/?>/,
@@ -717,14 +722,14 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
 }), Prism.languages.markup && (Prism.languages.markup.tag.addInlined("script", "javascript"), Prism.languages.markup.tag.addAttribute("on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)", "javascript")), Prism.languages.js = Prism.languages.javascript;
 !function (e) {
   var t = "\\b(?:BASH|BASHOPTS|BASH_ALIASES|BASH_ARGC|BASH_ARGV|BASH_CMDS|BASH_COMPLETION_COMPAT_DIR|BASH_LINENO|BASH_REMATCH|BASH_SOURCE|BASH_VERSINFO|BASH_VERSION|COLORTERM|COLUMNS|COMP_WORDBREAKS|DBUS_SESSION_BUS_ADDRESS|DEFAULTS_PATH|DESKTOP_SESSION|DIRSTACK|DISPLAY|EUID|GDMSESSION|GDM_LANG|GNOME_KEYRING_CONTROL|GNOME_KEYRING_PID|GPG_AGENT_INFO|GROUPS|HISTCONTROL|HISTFILE|HISTFILESIZE|HISTSIZE|HOME|HOSTNAME|HOSTTYPE|IFS|INSTANCE|JOB|LANG|LANGUAGE|LC_ADDRESS|LC_ALL|LC_IDENTIFICATION|LC_MEASUREMENT|LC_MONETARY|LC_NAME|LC_NUMERIC|LC_PAPER|LC_TELEPHONE|LC_TIME|LESSCLOSE|LESSOPEN|LINES|LOGNAME|LS_COLORS|MACHTYPE|MAILCHECK|MANDATORY_PATH|NO_AT_BRIDGE|OLDPWD|OPTERR|OPTIND|ORBIT_SOCKETDIR|OSTYPE|PAPERSIZE|PATH|PIPESTATUS|PPID|PS1|PS2|PS3|PS4|PWD|RANDOM|REPLY|SECONDS|SELINUX_INIT|SESSION|SESSIONTYPE|SESSION_MANAGER|SHELL|SHELLOPTS|SHLVL|SSH_AUTH_SOCK|TERM|UID|UPSTART_EVENTS|UPSTART_INSTANCE|UPSTART_JOB|UPSTART_SESSION|USER|WINDOWID|XAUTHORITY|XDG_CONFIG_DIRS|XDG_CURRENT_DESKTOP|XDG_DATA_DIRS|XDG_GREETER_DATA_DIR|XDG_MENU_PREFIX|XDG_RUNTIME_DIR|XDG_SEAT|XDG_SEAT_PATH|XDG_SESSION_DESKTOP|XDG_SESSION_ID|XDG_SESSION_PATH|XDG_SESSION_TYPE|XDG_VTNR|XMODIFIERS)\\b",
-      n = {
+      a = {
     pattern: /(^(["']?)\w+\2)[ \t]+\S.*/,
     lookbehind: !0,
     alias: "punctuation",
     inside: null
   },
-      a = {
-    bash: n,
+      n = {
+    bash: a,
     environment: {
       pattern: RegExp("\\$" + t),
       alias: "constant"
@@ -785,7 +790,7 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
       lookbehind: !0
     },
     "assign-left": {
-      pattern: /(^|[\s;|&]|[<>]\()\w+(?=\+?=)/,
+      pattern: /(^|[\s;|&]|[<>]\()\w+(?:\.\w+)*(?=\+?=)/,
       inside: {
         environment: {
           pattern: RegExp("(^|[\\s;|&]|[<>]\\()" + t),
@@ -796,23 +801,28 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
       alias: "variable",
       lookbehind: !0
     },
+    parameter: {
+      pattern: /(^|\s)-{1,2}(?:\w+:[+-]?)?\w+(?:\.\w+)*(?=[=\s]|$)/,
+      alias: "variable",
+      lookbehind: !0
+    },
     string: [{
       pattern: /((?:^|[^<])<<-?\s*)(\w+)\s[\s\S]*?(?:\r?\n|\r)\2/,
       lookbehind: !0,
       greedy: !0,
-      inside: a
+      inside: n
     }, {
       pattern: /((?:^|[^<])<<-?\s*)(["'])(\w+)\2\s[\s\S]*?(?:\r?\n|\r)\3/,
       lookbehind: !0,
       greedy: !0,
       inside: {
-        bash: n
+        bash: a
       }
     }, {
       pattern: /(^|[^\\](?:\\\\)*)"(?:\\[\s\S]|\$\([^)]+\)|\$(?!\()|`[^`]+`|[^"\\`$])*"/,
       lookbehind: !0,
       greedy: !0,
-      inside: a
+      inside: n
     }, {
       pattern: /(^|[^$\\])'[^']*'/,
       lookbehind: !0,
@@ -821,16 +831,16 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
       pattern: /\$'(?:[^'\\]|\\[\s\S])*'/,
       greedy: !0,
       inside: {
-        entity: a.entity
+        entity: n.entity
       }
     }],
     environment: {
       pattern: RegExp("\\$?" + t),
       alias: "constant"
     },
-    variable: a.variable,
+    variable: n.variable,
     "function": {
-      pattern: /(^|[\s;|&]|[<>]\()(?:add|apropos|apt|apt-cache|apt-get|aptitude|aspell|automysqlbackup|awk|basename|bash|bc|bconsole|bg|bzip2|cal|cat|cfdisk|chgrp|chkconfig|chmod|chown|chroot|cksum|clear|cmp|column|comm|composer|cp|cron|crontab|csplit|curl|cut|date|dc|dd|ddrescue|debootstrap|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|docker|docker-compose|du|egrep|eject|env|ethtool|expand|expect|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|git|gparted|grep|groupadd|groupdel|groupmod|groups|grub-mkconfig|gzip|halt|head|hg|history|host|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|ip|jobs|join|kill|killall|less|link|ln|locate|logname|logrotate|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|lynx|make|man|mc|mdadm|mkconfig|mkdir|mke2fs|mkfifo|mkfs|mkisofs|mknod|mkswap|mmv|more|most|mount|mtools|mtr|mutt|mv|nano|nc|netstat|nice|nl|node|nohup|notify-send|npm|nslookup|op|open|parted|passwd|paste|pathchk|ping|pkill|pnpm|podman|podman-compose|popd|pr|printcap|printenv|ps|pushd|pv|quota|quotacheck|quotactl|ram|rar|rcp|reboot|remsync|rename|renice|rev|rm|rmdir|rpm|rsync|scp|screen|sdiff|sed|sendmail|seq|service|sftp|sh|shellcheck|shuf|shutdown|sleep|slocate|sort|split|ssh|stat|strace|su|sudo|sum|suspend|swapon|sync|tac|tail|tar|tee|time|timeout|top|touch|tr|traceroute|tsort|tty|umount|uname|unexpand|uniq|units|unrar|unshar|unzip|update-grub|uptime|useradd|userdel|usermod|users|uudecode|uuencode|v|vcpkg|vdir|vi|vim|virsh|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yarn|yes|zenity|zip|zsh|zypper)(?=$|[)\s;|&])/,
+      pattern: /(^|[\s;|&]|[<>]\()(?:add|apropos|apt|apt-cache|apt-get|aptitude|aspell|automysqlbackup|awk|basename|bash|bc|bconsole|bg|bzip2|cal|cargo|cat|cfdisk|chgrp|chkconfig|chmod|chown|chroot|cksum|clear|cmp|column|comm|composer|cp|cron|crontab|csplit|curl|cut|date|dc|dd|ddrescue|debootstrap|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|docker|docker-compose|du|egrep|eject|env|ethtool|expand|expect|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|git|gparted|grep|groupadd|groupdel|groupmod|groups|grub-mkconfig|gzip|halt|head|hg|history|host|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|ip|java|jobs|join|kill|killall|less|link|ln|locate|logname|logrotate|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|lynx|make|man|mc|mdadm|mkconfig|mkdir|mke2fs|mkfifo|mkfs|mkisofs|mknod|mkswap|mmv|more|most|mount|mtools|mtr|mutt|mv|nano|nc|netstat|nice|nl|node|nohup|notify-send|npm|nslookup|op|open|parted|passwd|paste|pathchk|ping|pkill|pnpm|podman|podman-compose|popd|pr|printcap|printenv|ps|pushd|pv|quota|quotacheck|quotactl|ram|rar|rcp|reboot|remsync|rename|renice|rev|rm|rmdir|rpm|rsync|scp|screen|sdiff|sed|sendmail|seq|service|sftp|sh|shellcheck|shuf|shutdown|sleep|slocate|sort|split|ssh|stat|strace|su|sudo|sum|suspend|swapon|sync|sysctl|tac|tail|tar|tee|time|timeout|top|touch|tr|traceroute|tsort|tty|umount|uname|unexpand|uniq|units|unrar|unshar|unzip|update-grub|uptime|useradd|userdel|usermod|users|uudecode|uuencode|v|vcpkg|vdir|vi|vim|virsh|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yarn|yes|zenity|zip|zsh|zypper)(?=$|[)\s;|&])/,
       lookbehind: !0
     },
     keyword: {
@@ -864,37 +874,40 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
       pattern: /(^|\s)(?:[1-9]\d*|0)(?:[.,]\d+)?\b/,
       lookbehind: !0
     }
-  }, n.inside = e.languages.bash;
+  }, a.inside = e.languages.bash;
 
-  for (var o = ["comment", "function-name", "for-or-select", "assign-left", "string", "environment", "function", "keyword", "builtin", "boolean", "file-descriptor", "operator", "punctuation", "number"], s = a.variable[1].inside, i = 0; i < o.length; i++) {
-    s[o[i]] = e.languages.bash[o[i]];
+  for (var s = ["comment", "function-name", "for-or-select", "assign-left", "parameter", "string", "environment", "function", "keyword", "builtin", "boolean", "file-descriptor", "operator", "punctuation", "number"], o = n.variable[1].inside, i = 0; i < s.length; i++) {
+    o[s[i]] = e.languages.bash[s[i]];
   }
 
-  e.languages.shell = e.languages.bash;
+  e.languages.sh = e.languages.bash, e.languages.shell = e.languages.bash;
 }(Prism);
 !function () {
   if ("undefined" != typeof Prism && "undefined" != typeof document && document.querySelector) {
     var e,
         t = "line-numbers",
         i = "linkable-line-numbers",
-        n = !0;
+        n = /\n(?!$)/g,
+        r = !0;
     Prism.plugins.lineHighlight = {
-      highlightLines: function highlightLines(r, a, u) {
-        var c = (a = "string" == typeof a ? a : r.getAttribute("data-line") || "").replace(/\s+/g, "").split(",").filter(Boolean),
-            d = +r.getAttribute("data-line-offset") || 0,
-            h = (function () {
+      highlightLines: function highlightLines(o, u, c) {
+        var h = (u = "string" == typeof u ? u : o.getAttribute("data-line") || "").replace(/\s+/g, "").split(",").filter(Boolean),
+            d = +o.getAttribute("data-line-offset") || 0,
+            f = (function () {
           if (void 0 === e) {
             var t = document.createElement("div");
             t.style.fontSize = "13px", t.style.lineHeight = "1.5", t.style.padding = "0", t.style.border = "0", t.innerHTML = "&nbsp;<br />&nbsp;", document.body.appendChild(t), e = 38 === t.offsetHeight, document.body.removeChild(t);
           }
 
           return e;
-        }() ? parseInt : parseFloat)(getComputedStyle(r).lineHeight),
-            f = Prism.util.isActive(r, t),
-            p = r.querySelector("code"),
-            g = f ? r : p || r,
-            m = [],
-            v = p && g != p ? function (e, t) {
+        }() ? parseInt : parseFloat)(getComputedStyle(o).lineHeight),
+            p = Prism.util.isActive(o, t),
+            g = o.querySelector("code"),
+            m = p ? o : g || o,
+            v = [],
+            y = g.textContent.match(n),
+            b = y ? y.length + 1 : 1,
+            A = g && m != g ? function (e, t) {
           var i = getComputedStyle(e),
               n = getComputedStyle(t);
 
@@ -903,119 +916,122 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
           }
 
           return t.offsetTop + r(n.borderTopWidth) + r(n.paddingTop) - r(i.paddingTop);
-        }(r, p) : 0;
-        c.forEach(function (e) {
+        }(o, g) : 0;
+        h.forEach(function (e) {
           var t = e.split("-"),
               i = +t[0],
-              n = +t[1] || i,
-              o = r.querySelector('.line-highlight[data-range="' + e + '"]') || document.createElement("div");
+              n = +t[1] || i;
 
-          if (m.push(function () {
-            o.setAttribute("aria-hidden", "true"), o.setAttribute("data-range", e), o.className = (u || "") + " line-highlight";
-          }), f && Prism.plugins.lineNumbers) {
-            var s = Prism.plugins.lineNumbers.getLine(r, i),
-                l = Prism.plugins.lineNumbers.getLine(r, n);
+          if (!((n = Math.min(b + d, n)) < i)) {
+            var r = o.querySelector('.line-highlight[data-range="' + e + '"]') || document.createElement("div");
 
-            if (s) {
-              var a = s.offsetTop + v + "px";
-              m.push(function () {
-                o.style.top = a;
-              });
-            }
+            if (v.push(function () {
+              r.setAttribute("aria-hidden", "true"), r.setAttribute("data-range", e), r.className = (c || "") + " line-highlight";
+            }), p && Prism.plugins.lineNumbers) {
+              var s = Prism.plugins.lineNumbers.getLine(o, i),
+                  l = Prism.plugins.lineNumbers.getLine(o, n);
 
-            if (l) {
-              var c = l.offsetTop - s.offsetTop + l.offsetHeight + "px";
-              m.push(function () {
-                o.style.height = c;
-              });
-            }
-          } else m.push(function () {
-            o.setAttribute("data-start", String(i)), n > i && o.setAttribute("data-end", String(n)), o.style.top = (i - d - 1) * h + v + "px", o.textContent = new Array(n - i + 2).join(" \n");
-          });
+              if (s) {
+                var a = s.offsetTop + A + "px";
+                v.push(function () {
+                  r.style.top = a;
+                });
+              }
 
-          m.push(function () {
-            o.style.width = r.scrollWidth + "px";
-          }), m.push(function () {
-            g.appendChild(o);
-          });
+              if (l) {
+                var u = l.offsetTop - s.offsetTop + l.offsetHeight + "px";
+                v.push(function () {
+                  r.style.height = u;
+                });
+              }
+            } else v.push(function () {
+              r.setAttribute("data-start", String(i)), n > i && r.setAttribute("data-end", String(n)), r.style.top = (i - d - 1) * f + A + "px", r.textContent = new Array(n - i + 2).join(" \n");
+            });
+
+            v.push(function () {
+              r.style.width = o.scrollWidth + "px";
+            }), v.push(function () {
+              m.appendChild(r);
+            });
+          }
         });
-        var y = r.id;
+        var P = o.id;
 
-        if (f && Prism.util.isActive(r, i) && y) {
-          s(r, i) || m.push(function () {
-            r.classList.add(i);
+        if (p && Prism.util.isActive(o, i) && P) {
+          l(o, i) || v.push(function () {
+            o.classList.add(i);
           });
-          var b = parseInt(r.getAttribute("data-start") || "1");
-          o(".line-numbers-rows > span", r).forEach(function (e, t) {
-            var i = t + b;
+          var E = parseInt(o.getAttribute("data-start") || "1");
+          s(".line-numbers-rows > span", o).forEach(function (e, t) {
+            var i = t + E;
 
             e.onclick = function () {
-              var e = y + "." + i;
-              n = !1, location.hash = e, setTimeout(function () {
-                n = !0;
+              var e = P + "." + i;
+              r = !1, location.hash = e, setTimeout(function () {
+                r = !0;
               }, 1);
             };
           });
         }
 
         return function () {
-          m.forEach(l);
+          v.forEach(a);
         };
       }
     };
-    var r = 0;
+    var o = 0;
     Prism.hooks.add("before-sanity-check", function (e) {
       var t = e.element.parentElement;
 
-      if (a(t)) {
+      if (u(t)) {
         var i = 0;
-        o(".line-highlight", t).forEach(function (e) {
+        s(".line-highlight", t).forEach(function (e) {
           i += e.textContent.length, e.parentNode.removeChild(e);
         }), i && /^(?: \n)+$/.test(e.code.slice(-i)) && (e.code = e.code.slice(0, -i));
       }
     }), Prism.hooks.add("complete", function e(i) {
       var n = i.element.parentElement;
 
-      if (a(n)) {
-        clearTimeout(r);
-        var o = Prism.plugins.lineNumbers,
-            l = i.plugins && i.plugins.lineNumbers;
-        s(n, t) && o && !l ? Prism.hooks.add("line-numbers", e) : (Prism.plugins.lineHighlight.highlightLines(n)(), r = setTimeout(u, 1));
+      if (u(n)) {
+        clearTimeout(o);
+        var r = Prism.plugins.lineNumbers,
+            s = i.plugins && i.plugins.lineNumbers;
+        l(n, t) && r && !s ? Prism.hooks.add("line-numbers", e) : (Prism.plugins.lineHighlight.highlightLines(n)(), o = setTimeout(c, 1));
       }
-    }), window.addEventListener("hashchange", u), window.addEventListener("resize", function () {
-      o("pre").filter(a).map(function (e) {
+    }), window.addEventListener("hashchange", c), window.addEventListener("resize", function () {
+      s("pre").filter(u).map(function (e) {
         return Prism.plugins.lineHighlight.highlightLines(e);
-      }).forEach(l);
+      }).forEach(a);
     });
   }
 
-  function o(e, t) {
+  function s(e, t) {
     return Array.prototype.slice.call((t || document).querySelectorAll(e));
   }
 
-  function s(e, t) {
+  function l(e, t) {
     return e.classList.contains(t);
   }
 
-  function l(e) {
+  function a(e) {
     e();
   }
 
-  function a(e) {
+  function u(e) {
     return !!(e && /pre/i.test(e.nodeName) && (e.hasAttribute("data-line") || e.id && Prism.util.isActive(e, i)));
   }
 
-  function u() {
+  function c() {
     var e = location.hash.slice(1);
-    o(".temporary.line-highlight").forEach(function (e) {
+    s(".temporary.line-highlight").forEach(function (e) {
       e.parentNode.removeChild(e);
     });
     var t = (e.match(/\.([\d,-]+)$/) || [, ""])[1];
 
     if (t && !document.getElementById(e)) {
       var i = e.slice(0, e.lastIndexOf(".")),
-          r = document.getElementById(i);
-      r && (r.hasAttribute("data-line") || r.setAttribute("data-line", ""), Prism.plugins.lineHighlight.highlightLines(r, t, "temporary ")(), n && document.querySelector(".temporary.line-highlight").scrollIntoView());
+          n = document.getElementById(i);
+      n && (n.hasAttribute("data-line") || n.setAttribute("data-line", ""), Prism.plugins.lineHighlight.highlightLines(n, t, "temporary ")(), r && document.querySelector(".temporary.line-highlight").scrollIntoView());
     }
   }
 }();
@@ -1222,27 +1238,38 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
 }();
 !function () {
   if ("undefined" != typeof Prism) {
-    var e = Object.assign || function (e, n) {
-      for (var t in n) {
-        n.hasOwnProperty(t) && (e[t] = n[t]);
+    var e = Object.assign || function (e, t) {
+      for (var n in t) {
+        t.hasOwnProperty(n) && (e[n] = t[n]);
       }
 
       return e;
+    },
+        t = {
+      "remove-trailing": "boolean",
+      "remove-indent": "boolean",
+      "left-trim": "boolean",
+      "right-trim": "boolean",
+      "break-lines": "number",
+      indent: "number",
+      "remove-initial-line-feed": "boolean",
+      "tabs-to-spaces": "number",
+      "spaces-to-tabs": "number"
     };
 
     n.prototype = {
-      setDefaults: function setDefaults(n) {
-        this.defaults = e(this.defaults, n);
+      setDefaults: function setDefaults(t) {
+        this.defaults = e(this.defaults, t);
       },
-      normalize: function normalize(n, t) {
-        for (var r in t = e(this.defaults, t)) {
-          var i = r.replace(/-(\w)/g, function (e, n) {
-            return n.toUpperCase();
+      normalize: function normalize(t, n) {
+        for (var r in n = e(this.defaults, n)) {
+          var i = r.replace(/-(\w)/g, function (e, t) {
+            return t.toUpperCase();
           });
-          "normalize" !== r && "setDefaults" !== i && t[r] && this[i] && (n = this[i].call(this, n, t[r]));
+          "normalize" !== r && "setDefaults" !== i && n[r] && this[i] && (t = this[i].call(this, t, n[r]));
         }
 
-        return n;
+        return t;
       },
       leftTrim: function leftTrim(e) {
         return e.replace(/^\s+/, "");
@@ -1250,11 +1277,11 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
       rightTrim: function rightTrim(e) {
         return e.replace(/\s+$/, "");
       },
-      tabsToSpaces: function tabsToSpaces(e, n) {
-        return n = 0 | n || 4, e.replace(/\t/g, new Array(++n).join(" "));
+      tabsToSpaces: function tabsToSpaces(e, t) {
+        return t = 0 | t || 4, e.replace(/\t/g, new Array(++t).join(" "));
       },
-      spacesToTabs: function spacesToTabs(e, n) {
-        return n = 0 | n || 4, e.replace(RegExp(" {" + n + "}", "g"), "\t");
+      spacesToTabs: function spacesToTabs(e, t) {
+        return t = 0 | t || 4, e.replace(RegExp(" {" + t + "}", "g"), "\t");
       },
       removeTrailing: function removeTrailing(e) {
         return e.replace(/\s*?$/gm, "");
@@ -1263,29 +1290,29 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
         return e.replace(/^(?:\r?\n|\r)/, "");
       },
       removeIndent: function removeIndent(e) {
-        var n = e.match(/^[^\S\n\r]*(?=\S)/gm);
-        return n && n[0].length ? (n.sort(function (e, n) {
-          return e.length - n.length;
-        }), n[0].length ? e.replace(RegExp("^" + n[0], "gm"), "") : e) : e;
+        var t = e.match(/^[^\S\n\r]*(?=\S)/gm);
+        return t && t[0].length ? (t.sort(function (e, t) {
+          return e.length - t.length;
+        }), t[0].length ? e.replace(RegExp("^" + t[0], "gm"), "") : e) : e;
       },
-      indent: function indent(e, n) {
-        return e.replace(/^[^\S\n\r]*(?=\S)/gm, new Array(++n).join("\t") + "$&");
+      indent: function indent(e, t) {
+        return e.replace(/^[^\S\n\r]*(?=\S)/gm, new Array(++t).join("\t") + "$&");
       },
-      breakLines: function breakLines(e, n) {
-        n = !0 === n ? 80 : 0 | n || 80;
+      breakLines: function breakLines(e, t) {
+        t = !0 === t ? 80 : 0 | t || 80;
 
-        for (var r = e.split("\n"), i = 0; i < r.length; ++i) {
-          if (!(t(r[i]) <= n)) {
-            for (var o = r[i].split(/(\s+)/g), a = 0, l = 0; l < o.length; ++l) {
-              var s = t(o[l]);
-              (a += s) > n && (o[l] = "\n" + o[l], a = s);
+        for (var n = e.split("\n"), i = 0; i < n.length; ++i) {
+          if (!(r(n[i]) <= t)) {
+            for (var o = n[i].split(/(\s+)/g), a = 0, l = 0; l < o.length; ++l) {
+              var s = r(o[l]);
+              (a += s) > t && (o[l] = "\n" + o[l], a = s);
             }
 
-            r[i] = o.join("");
+            n[i] = o.join("");
           }
         }
 
-        return r.join("\n");
+        return n.join("\n");
       }
     },  true && module.exports && (module.exports = n), Prism.plugins.NormalizeWhitespace = new n({
       "remove-trailing": !0,
@@ -1295,34 +1322,187 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
     }), Prism.hooks.add("before-sanity-check", function (e) {
       var n = Prism.plugins.NormalizeWhitespace;
       if ((!e.settings || !1 !== e.settings["whitespace-normalization"]) && Prism.util.isActive(e.element, "whitespace-normalization", !0)) if (e.element && e.element.parentNode || !e.code) {
-        var t = e.element.parentNode;
+        var r = e.element.parentNode;
 
-        if (e.code && t && "pre" === t.nodeName.toLowerCase()) {
-          for (var r = t.childNodes, i = "", o = "", a = !1, l = 0; l < r.length; ++l) {
-            var s = r[l];
-            s == e.element ? a = !0 : "#text" === s.nodeName && (a ? o += s.nodeValue : i += s.nodeValue, t.removeChild(s), --l);
+        if (e.code && r && "pre" === r.nodeName.toLowerCase()) {
+          for (var i in null == e.settings && (e.settings = {}), t) {
+            if (Object.hasOwnProperty.call(t, i)) {
+              var o = t[i];
+              if (r.hasAttribute("data-" + i)) try {
+                var a = JSON.parse(r.getAttribute("data-" + i) || "true");
+                _typeof(a) === o && (e.settings[i] = a);
+              } catch (e) {}
+            }
+          }
+
+          for (var l = r.childNodes, s = "", c = "", u = !1, m = 0; m < l.length; ++m) {
+            var f = l[m];
+            f == e.element ? u = !0 : "#text" === f.nodeName && (u ? c += f.nodeValue : s += f.nodeValue, r.removeChild(f), --m);
           }
 
           if (e.element.children.length && Prism.plugins.KeepMarkup) {
-            var c = i + e.element.innerHTML + o;
-            e.element.innerHTML = n.normalize(c, e.settings), e.code = e.element.textContent;
-          } else e.code = i + e.code + o, e.code = n.normalize(e.code, e.settings);
+            var d = s + e.element.innerHTML + c;
+            e.element.innerHTML = n.normalize(d, e.settings), e.code = e.element.textContent;
+          } else e.code = s + e.code + c, e.code = n.normalize(e.code, e.settings);
         }
       } else e.code = n.normalize(e.code, e.settings);
     });
   }
 
-  function n(n) {
-    this.defaults = e({}, n);
+  function n(t) {
+    this.defaults = e({}, t);
   }
 
-  function t(e) {
-    for (var n = 0, t = 0; t < e.length; ++t) {
-      e.charCodeAt(t) == "\t".charCodeAt(0) && (n += 3);
+  function r(e) {
+    for (var t = 0, n = 0; n < e.length; ++n) {
+      e.charCodeAt(n) == "\t".charCodeAt(0) && (t += 3);
     }
 
-    return e.length + n;
+    return e.length + t;
   }
+}();
+!function () {
+  if ("undefined" != typeof Prism && "undefined" != typeof document) {
+    var e = [],
+        t = {},
+        n = function n() {};
+
+    Prism.plugins.toolbar = {};
+
+    var a = Prism.plugins.toolbar.registerButton = function (n, a) {
+      var r;
+      r = "function" == typeof a ? a : function (e) {
+        var t;
+        return "function" == typeof a.onClick ? ((t = document.createElement("button")).type = "button", t.addEventListener("click", function () {
+          a.onClick.call(this, e);
+        })) : "string" == typeof a.url ? (t = document.createElement("a")).href = a.url : t = document.createElement("span"), a.className && t.classList.add(a.className), t.textContent = a.text, t;
+      }, n in t ? console.warn('There is a button with the key "' + n + '" registered already.') : e.push(t[n] = r);
+    },
+        r = Prism.plugins.toolbar.hook = function (a) {
+      var r = a.element.parentNode;
+
+      if (r && /pre/i.test(r.nodeName) && !r.parentNode.classList.contains("code-toolbar")) {
+        var o = document.createElement("div");
+        o.classList.add("code-toolbar"), r.parentNode.insertBefore(o, r), o.appendChild(r);
+        var i = document.createElement("div");
+        i.classList.add("toolbar");
+
+        var l = e,
+            d = function (e) {
+          for (; e;) {
+            var t = e.getAttribute("data-toolbar-order");
+            if (null != t) return (t = t.trim()).length ? t.split(/\s*,\s*/g) : [];
+            e = e.parentElement;
+          }
+        }(a.element);
+
+        d && (l = d.map(function (e) {
+          return t[e] || n;
+        })), l.forEach(function (e) {
+          var t = e(a);
+
+          if (t) {
+            var n = document.createElement("div");
+            n.classList.add("toolbar-item"), n.appendChild(t), i.appendChild(n);
+          }
+        }), o.appendChild(i);
+      }
+    };
+
+    a("label", function (e) {
+      var t = e.element.parentNode;
+
+      if (t && /pre/i.test(t.nodeName) && t.hasAttribute("data-label")) {
+        var n,
+            a,
+            r = t.getAttribute("data-label");
+
+        try {
+          a = document.querySelector("template#" + r);
+        } catch (e) {}
+
+        return a ? n = a.content : (t.hasAttribute("data-url") ? (n = document.createElement("a")).href = t.getAttribute("data-url") : n = document.createElement("span"), n.textContent = r), n;
+      }
+    }), Prism.hooks.add("complete", r);
+  }
+}();
+!function () {
+  function t(t) {
+    var e = document.createElement("textarea");
+    e.value = t.getText(), e.style.top = "0", e.style.left = "0", e.style.position = "fixed", document.body.appendChild(e), e.focus(), e.select();
+
+    try {
+      var o = document.execCommand("copy");
+      setTimeout(function () {
+        o ? t.success() : t.error();
+      }, 1);
+    } catch (e) {
+      setTimeout(function () {
+        t.error(e);
+      }, 1);
+    }
+
+    document.body.removeChild(e);
+  }
+
+  "undefined" != typeof Prism && "undefined" != typeof document && (Prism.plugins.toolbar ? Prism.plugins.toolbar.registerButton("copy-to-clipboard", function (e) {
+    var o = e.element,
+        n = function (t) {
+      var e = {
+        copy: "Copy",
+        "copy-error": "Press Ctrl+C to copy",
+        "copy-success": "Copied!",
+        "copy-timeout": 5e3
+      };
+
+      for (var o in e) {
+        for (var n = "data-prismjs-" + o, c = t; c && !c.hasAttribute(n);) {
+          c = c.parentElement;
+        }
+
+        c && (e[o] = c.getAttribute(n));
+      }
+
+      return e;
+    }(o),
+        c = document.createElement("button");
+
+    c.className = "copy-to-clipboard-button", c.setAttribute("type", "button");
+    var r = document.createElement("span");
+    return c.appendChild(r), u("copy"), function (e, o) {
+      e.addEventListener("click", function () {
+        !function (e) {
+          navigator.clipboard ? navigator.clipboard.writeText(e.getText()).then(e.success, function () {
+            t(e);
+          }) : t(e);
+        }(o);
+      });
+    }(c, {
+      getText: function getText() {
+        return o.textContent;
+      },
+      success: function success() {
+        u("copy-success"), i();
+      },
+      error: function error() {
+        u("copy-error"), setTimeout(function () {
+          !function (t) {
+            window.getSelection().selectAllChildren(t);
+          }(o);
+        }, 1), i();
+      }
+    }), c;
+
+    function i() {
+      setTimeout(function () {
+        u("copy");
+      }, n["copy-timeout"]);
+    }
+
+    function u(t) {
+      r.textContent = n[t], c.setAttribute("data-copy-state", t);
+    }
+  }) : console.warn("Copy to Clipboard plugin loaded before Toolbar plugin."));
 }();
 
 /***/ }),
