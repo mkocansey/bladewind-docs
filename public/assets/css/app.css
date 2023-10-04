@@ -983,6 +983,9 @@ pre[class*="language-"].line-numbers{
 .hidden{
   display: none;
 }
+.\!hidden{
+  display: none !important;
+}
 .h-screen{
   height: 100vh;
 }
@@ -1420,6 +1423,16 @@ pre[class*="language-"].line-numbers{
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-6 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-6 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 .divide-y-8 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-y-reverse: 0;
@@ -2171,6 +2184,12 @@ pre[class*="language-"].line-numbers{
 }
 .uppercase{
   text-transform: uppercase;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+.\!capitalize{
+  text-transform: capitalize !important;
 }
 .leading-8{
   line-height: 2rem;

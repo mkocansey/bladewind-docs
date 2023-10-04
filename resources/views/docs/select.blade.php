@@ -725,6 +725,62 @@
         </code>
     </pre>
 
+    <h3>Filtering a table based on Select values</h3>
+    <p>
+        In this next example (<a href="" target="_blank">inspired by this comment</a>) we will filter an employee table based on what departments are selected in the multi select component.
+        The table is generated using the BladewindUI <a href="/component/table#dynamic">Table component</a>.
+    </p>
+    @php
+    $employees = [
+        [ 'name' => 'Michael Ocansey', 'email' => 'mike@demo.com', 'position' => 'CTO', 'department' => 'tech', 'dp' => 'me.jpeg', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Aaron Mensah', 'email' => 'amenline@demo.com', 'position' => 'Developer', 'department' => 'tech', 'dp' => 'rowe.jpeg', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Deborah Mawusi', 'email' => 'deborah@demo.com', 'position' => 'Intern', 'department' => 'tech', 'dp' => 'audrey.jpeg', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Stella Asamoah', 'email' => 'stella@demo.com', 'position' => 'Intern', 'department' => 'tech', 'dp' => 'female.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Samuel Osei-Antwi', 'email' => 'sam@demo.com', 'position' => 'Operations Officer', 'department' => 'operations', 'dp' => 'francis.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Abigail Aminah', 'email' => 'bertrand@demo.com', 'position' => 'Warehouse Manager', 'department' => 'operations', 'dp' => 'edwin.jpeg', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Catherine Gerald', 'email' => 'cathy@demo.com', 'position' => 'Field Supervisor', 'department' => 'field work', 'dp' => 'issah.jpg', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Blaise Konlan', 'email' => 'blaise@demo.com', 'position' => 'M & E Officer', 'department' => 'field work', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Francis Asomani', 'email' => 'francis@demo.com', 'position' => 'Finance Manager', 'department' => 'finance', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Alfred Armah', 'email' => 'alfred@demo.com', 'position' => 'Finance Officer', 'department' => 'finance', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Rembert Annankrah', 'email' => 'rembert@demo.com', 'position' => 'Cash Officer', 'department' => 'finance', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Priscilla Mills', 'email' => 'priscilla@demo.com', 'position' => 'Marketing Manager', 'department' => 'marketing', 'dp' => 'female.png', 'mobile' => '+233244123456' ],
+    ];
+    @endphp
+
+    <div class="bg-slate-100">
+        <x-bladewind::select name="department" placeholder="filter by department" data="manual" multiple="true" onselect="filterEmployees">
+            <x-bladewind::select-item label="Field Workers" value="field work" />
+            <x-bladewind::select-item label="Finance" value="finance" />
+            <x-bladewind::select-item label="Tech" value="tech" />
+            <x-bladewind::select-item label="Marketing" value="marketing" />
+            <x-bladewind::select-item label="Operations" value="operations" />
+        </x-bladewind::select>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+        @foreach($employees as $employee)
+            @php $dp =  ($employee['dp']!=='') ? "/assets/images/".$employee['dp'] : ''; @endphp
+            <x-bladewind::contact-card
+                :name="$employee['name']"
+                position="{{ ucfirst($employee['department']) }} > {{ $employee['position'] }}"
+                :email="$employee['email']"
+                :mobile="$employee['mobile']"
+                :image="$dp" />
+        @endforeach
+    </div>
+    <script>
+        filterEmployees = (value, label, all_values) => {
+            let employee_cards = dom_els('.bw-contact-card');
+            if(all_values.charAt(0) === ',') {
+                all_values = all_values.replace(',', '');
+            }
+            let keywords = all_values.toLowerCase().replaceAll(',','|');
+            let regex = new RegExp( `(${keywords})`, 'ig' );
+            employee_cards.forEach((el) => {
+                (! el.innerText.match(regex) ) ?
+                    changeCss(el, 'hidden', 'add', true) : changeCss(el, 'hidden', 'remove', true);
+            });
+        }
+    </script>
     <h2 id="native">Native Select</h2>
     <p>
         It is possible to use the plain old HTML <code class="inline">&lt;select&gt; </code> element and apply the BladewindUI <code class="inline">bw-raw-select</code> class to change the style to look just like all the other BladewindUI form components.
