@@ -757,7 +757,7 @@
             <x-bladewind::select-item label="Operations" value="operations" />
         </x-bladewind::select>
     </div>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid sm:grid-cols-2 gap-4">
         @foreach($employees as $employee)
             @php $dp =  ($employee['dp']!=='') ? "/assets/images/".$employee['dp'] : ''; @endphp
             <x-bladewind::contact-card
