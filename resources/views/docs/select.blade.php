@@ -516,9 +516,9 @@
     </pre>
     <br />
     <x-bladewind::alert type="info" show_close_icon="false">
-        The <b>multiple select</b> generates a comma separated list of values with a prefixing comma that you will need to trim when you submit your forms.
-        Selecting multiple countries from our country example above will result in the following input field. Note the comma before 'gh'. <br /><br />
-        <code class="inline text-red-500">&lt;input type="hidden" name="country_multi" value=",gh,ci,bf,gm" /&gt;</code>
+        The <b>multiple select</b> generates a comma separated list of values.
+        Selecting multiple countries from our country example above will result in the following input field. <br /><br />
+        <code class="inline text-red-500">&lt;input type="hidden" name="country_multi" value="gh,ci,bf,gm" /&gt;</code>
     </x-bladewind::alert>
 
     <h2 id="custom-functions">Execute Custom Functions</h2>
@@ -529,8 +529,9 @@
         You only need to specify the name of the function without parenthesis and parameters. Example: <code class="inline text-red-500">onselect="prependDialingCode"</code>.
     </p>
     <p>
-        The value and label of the selected item are passed to the custom function and executed like so: <code class="inline text-red-500">onselect="prependDialingCode(value, label)"</code>.
-        Your function therefore needs to be defined with two parameters. Let's consider a more detailed example below.
+        The value and label of the <b>selected item</b> are passed to the custom function and executed like so: <code class="inline text-red-500">onselect="prependDialingCode(value, label, all_values)"</code>.
+        The third parameter <code class="inline">all_values</code> is useful when you are expecting multiple values to be selected. All the selected values are passed as a comma separated list.
+        Your function therefore needs to be defined with three parameters (if you intend to use all three). Let's consider a more detailed example below (where we only make use of the <code class="inline">value</code> parameter).
     </p>
     <script>
         const dialing_codes = {
@@ -725,10 +726,10 @@
         </code>
     </pre>
 
-    <h3>Filtering a table based on Select values</h3>
+    <h3>Dynamically filter a table based on selected values</h3>
     <p>
-        In this next example (<a href="" target="_blank">inspired by this comment</a>) we will filter an employee table based on what departments are selected in the multi select component.
-        The table is generated using the BladewindUI <a href="/component/table#dynamic">Table component</a>.
+        In this next example (<a href="https://github.com/mkocansey/bladewind/issues/154#issuecomment-1742930457" target="_blank">inspired by this comment</a>) we will filter an employee directory based on what departments are selected in the multi select component.
+        Each employee card in the employee directory below is generated using the BladewindUI <a href="/component/card#contact">Contact card component</a>.
     </p>
     @php
     $employees = [
@@ -738,8 +739,8 @@
         [ 'name' => 'Stella Asamoah', 'email' => 'stella@demo.com', 'position' => 'Intern', 'department' => 'tech', 'dp' => 'female.png', 'mobile' => '+233244123456' ],
         [ 'name' => 'Samuel Osei-Antwi', 'email' => 'sam@demo.com', 'position' => 'Operations Officer', 'department' => 'operations', 'dp' => 'francis.png', 'mobile' => '+233244123456' ],
         [ 'name' => 'Abigail Aminah', 'email' => 'bertrand@demo.com', 'position' => 'Warehouse Manager', 'department' => 'operations', 'dp' => 'edwin.jpeg', 'mobile' => '+233244123456' ],
-        [ 'name' => 'Catherine Gerald', 'email' => 'cathy@demo.com', 'position' => 'Field Supervisor', 'department' => 'field work', 'dp' => 'issah.jpg', 'mobile' => '+233244123456' ],
-        [ 'name' => 'Blaise Konlan', 'email' => 'blaise@demo.com', 'position' => 'M & E Officer', 'department' => 'field work', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Catherine Gerald', 'email' => 'cathy@demo.com', 'position' => 'Field Supervisor', 'department' => 'field', 'dp' => 'issah.jpg', 'mobile' => '+233244123456' ],
+        [ 'name' => 'Blaise Konlan', 'email' => 'blaise@demo.com', 'position' => 'M & E Officer', 'department' => 'field', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
         [ 'name' => 'Francis Asomani', 'email' => 'francis@demo.com', 'position' => 'Finance Manager', 'department' => 'finance', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
         [ 'name' => 'Alfred Armah', 'email' => 'alfred@demo.com', 'position' => 'Finance Officer', 'department' => 'finance', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
         [ 'name' => 'Rembert Annankrah', 'email' => 'rembert@demo.com', 'position' => 'Cash Officer', 'department' => 'finance', 'dp' => 'male.png', 'mobile' => '+233244123456' ],
@@ -749,7 +750,7 @@
 
     <div class="bg-slate-100">
         <x-bladewind::select name="department" placeholder="filter by department" data="manual" multiple="true" onselect="filterEmployees">
-            <x-bladewind::select-item label="Field Workers" value="field work" />
+            <x-bladewind::select-item label="Field Workers" value="field" />
             <x-bladewind::select-item label="Finance" value="finance" />
             <x-bladewind::select-item label="Tech" value="tech" />
             <x-bladewind::select-item label="Marketing" value="marketing" />
@@ -770,17 +771,101 @@
     <script>
         filterEmployees = (value, label, all_values) => {
             let employee_cards = dom_els('.bw-contact-card');
-            if(all_values.charAt(0) === ',') {
-                all_values = all_values.replace(',', '');
-            }
-            let keywords = all_values.toLowerCase().replaceAll(',','|');
+            let keywords = all_values.replaceAll(',','|');
             let regex = new RegExp( `(${keywords})`, 'ig' );
             employee_cards.forEach((el) => {
-                (! el.innerText.match(regex) ) ?
-                    changeCss(el, 'hidden', 'add', true) : changeCss(el, 'hidden', 'remove', true);
+                (! el.innerText.match(regex) ) ? hide(el, true) : unhide(el, true);
             });
         }
     </script>
+    <br />
+    <br />
+    <p>
+        Let's break down the code for the example above. First we build the array of employees. This example uses an
+        array. You may have your data coming directly from the database or other.
+    </p>
+    <pre class="language-js line-numbers">
+        <code>
+            $employees = [
+                [
+                    'name' => 'Michael Ocansey',
+                    'email' => 'mike@demo.com',
+                    'position' => 'CTO',
+                    'department' => 'tech',
+                    'dp' => 'me.jpeg',
+                    'mobile' => '+233244123456'
+                ],
+                ...
+            ];
+        </code>
+    </pre>
+    <p>
+        Next, we build our multiple Select component with <a href="#non-dynamic">non-dynamic</a> data.
+        Note line 3 where we pass the name of the function responsible for filtering the data to the <code class="inline text-red-500">onselect</code> attribute.
+    </p>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.select
+                name="department"
+                onselect="filterEmployees"
+                placeholder="filter by department"
+                data="manual"
+                multiple="true"&gt;
+                &lt;x-bladewind.select-item label="Field Workers" value="field" /&gt;
+                &lt;x-bladewind.select-item label="Finance" value="finance" /&gt;
+                &lt;x-bladewind.select-item label="Tech" value="tech" /&gt;
+                &lt;x-bladewind.select-item label="Marketing" value="marketing" /&gt;
+                &lt;x-bladewind.select-item label="Operations" value="operations" /&gt;
+            &lt;/x-bladewind.select&gt;
+        </code>
+    </pre>
+    <p>
+        We then build the employee records from our array. This example uses the <a href="/component/card#contact">contact card</a> component, but you could use
+        the  <a href="/component/table">table component</a> to achieve the same results. How the data is displayed is completely up to you.
+    </p>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;div class="grid grid-cols-2 gap-4"&gt;
+                &commat;foreach($employees as $employee)
+                    &commat;php
+                        $dp =  ($employee['dp']!=='') ? "/assets/images/".$employee['dp'] : '';
+                        $position = ucfirst($employee['department']) . ' > ' . $employee['position'];
+                    &commat;endphp
+                    &lt;x-bladewind::contact-card
+                        :name="$employee['name']"
+                        :position="$position"
+                        :email="$employee['email']"
+                        :mobile="$employee['mobile']"
+                        :image="$dp" /&gt;
+                &commat;endforeach
+            &lt;/div&gt;
+        </code>
+    </pre>
+    <p>
+        Finally, the Javascript for filtering the cards. Every BladewindUI  <a href="/component/card#contact">contact card</a> component has the class <code class="inline">bw-contact-card</code>.
+        Our Javascript targets this class to access all employee cards. When a department is selected, we search through each card
+        and hide any cards that do not contain the selected department(s) in their innerText. Because multiple departments can be selected,
+        we need to dynamically build our regular expression for finding the selected departments in the cards.
+    </p>
+    <pre class="language-js line-numbers">
+        <code>
+             filterEmployees = (value, label, all_values) => {
+                // get all employee cards available in the DOM
+                let employee_cards = domEls('.bw-contact-card');
+
+                // replace every , with | so our regex will look like /(tech|finance)/ig
+                let keywords = all_values.replaceAll(',','|');
+
+                let regex = new RegExp( `(${keywords})`, 'ig' );
+
+                // go through each card and hide any that doesn't match selection
+                employee_cards.forEach((el) => {
+                    (! el.innerText.match(regex) ) ? hide(el, true) : unhide(el, true);
+                });
+            }
+        </code>
+    </pre>
+
     <h2 id="native">Native Select</h2>
     <p>
         It is possible to use the plain old HTML <code class="inline">&lt;select&gt; </code> element and apply the BladewindUI <code class="inline">bw-raw-select</code> class to change the style to look just like all the other BladewindUI form components.
