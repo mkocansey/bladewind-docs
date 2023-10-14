@@ -29,6 +29,7 @@ Route::get('component/progress-circle',         [ PagesController::class, 'progr
 Route::get('component/pagination',              [ PagesController::class, 'pagination' ]);
 Route::get('component/radio-button',            [ PagesController::class, 'radiobutton' ]);
 Route::get('component/rating',                  [ PagesController::class, 'rating' ]);
+Route::get('rtl',                               [ PagesController::class, 'rtl' ]);
 Route::get('component/select',                  [ PagesController::class, 'select' ]);
 Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
 Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);

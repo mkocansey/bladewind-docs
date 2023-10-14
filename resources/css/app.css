@@ -12,7 +12,7 @@
     body { font-family: 'Inter', ui-sans-serif, system-ui,-apple-system,BlinkMacSystemFont,sans-serif !important; }
     .pre-font { font-family: 'Inconsolata','Source Code Pro', monospace !important; }
     nav a { @apply hover:text-slate-700 dark:hover:text-slate-300 }
-    .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 }
+    .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 rtl:ml-2 }
     .active .dot { @apply border border-indigo-400 bg-indigo-400 }
     .active a { @apply text-indigo-500 }
     .page-title { @apply font-bold tracking-wide text-3xl text-slate-800  mb-10 dark:text-slate-500 }
