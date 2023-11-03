@@ -446,6 +446,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!container{max-width:1536px !important}}
 .bw-button{padding-top:1.25rem;padding-bottom:1.25rem;padding-left:1.75rem;padding-right:1.75rem;font-size:0.75rem;line-height:1rem;text-transform:uppercase;letter-spacing:0.1em}
 .bw-button:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
+[dir="rtl"] .bw-button{display:inline-flex;align-items:center}
 .bw-button.big{padding-top:1.75rem;padding-bottom:1.75rem;padding-left:3rem;padding-right:3rem}
 .bw-button.small{padding-top:0.75rem;padding-bottom:0.75rem;padding-left:1.5rem;padding-right:1.5rem;font-size:11px !important}
 .bw-button.tiny{padding-top:6px;padding-bottom:6px;padding-left:15px;padding-right:15px;font-size:10px}
@@ -509,10 +510,12 @@ button.bw-dropdown:focus{--tw-border-opacity:1;border-color:rgb(96 165 250 / var
     .bw-input:focus{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity))}
 input.no-label::-moz-placeholder, .bw-input.no-label::-moz-placeholder, .bw-textarea.bw-input.no-label::-moz-placeholder{color:transparent}
 input.no-label::placeholder, .bw-input.no-label::placeholder, .bw-textarea.bw-input.no-label::placeholder{color:transparent}
-.form-label{position:absolute;left:0.875rem;top:-0.5rem;z-index:20;cursor:text;--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity));padding-left:0.25rem;padding-right:0.25rem;font-size:0.75rem;line-height:1rem;color:rgb(30 58 138 / 0.4);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
+.form-label{position:absolute;top:-0.5rem;z-index:20;cursor:text;--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity));padding-left:0.25rem;padding-right:0.25rem;font-size:0.75rem;line-height:1rem;color:rgb(30 58 138 / 0.4);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .peer:-moz-placeholder-shown ~ .form-label{top:19px}
 .peer:placeholder-shown ~ .form-label{top:19px}
 .peer:focus ~ .form-label{top:-0.5rem}
+[dir="ltr"] .form-label{left:0.875rem}
+[dir="rtl"] .form-label{right:0.875rem}
 .dark .form-label{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity));--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity))}
 .prefix svg, .suffix svg{margin-right:0.25rem !important;height:1.5rem;width:1.5rem}
 .dark .prefix svg,.dark  .suffix svg{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity))}
@@ -563,13 +566,12 @@ table.with-hover-effect tr:nth-child(even):hover>td:last-child{border-right-widt
 .left-\[79px\]{left:79px}
 .top-0{top:0px}
 .bottom-0{bottom:0px}
-.right-\[2\.5px\]{right:2.5px}
 .right-3{right:0.75rem}
 .left-0{left:0px}
 .right-0{right:0px}
-.left-4{left:1rem}
 .right-4{right:1rem}
 .top-10{top:2.5rem}
+.left-4{left:1rem}
 .bottom-10{bottom:2.5rem}
 .left-1\/2{left:50%}
 .z-30{z-index:30}
@@ -630,8 +632,8 @@ table.with-hover-effect tr:nth-child(even):hover>td:last-child{border-right-widt
 .-mt-0{margin-top:-0px}
 .-mt-2{margin-top:-0.5rem}
 .\!-ml-2{margin-left:-0.5rem !important}
+.\!mr-2{margin-right:0.5rem !important}
 .\!-mr-2{margin-right:-0.5rem !important}
-.ml-2{margin-left:0.5rem}
 .block{display:block}
 .inline-block{display:inline-block}
 .inline{display:inline}
@@ -965,7 +967,6 @@ to{transform:rotate(360deg)}}
 .text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}
 .\!text-gray-600{--tw-text-opacity:1 !important;color:rgb(75 85 99 / var(--tw-text-opacity)) !important}
 .text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}
-.\!text-red-500{--tw-text-opacity:1 !important;color:rgb(239 68 68 / var(--tw-text-opacity)) !important}
 .text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity))}
 .text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity))}
 .text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
@@ -1023,12 +1024,12 @@ to{transform:rotate(360deg)}}
 .opacity-60{opacity:0.6}
 .opacity-40{opacity:0.4}
 .opacity-0{opacity:0}
+.opacity-50{opacity:0.5}
 .opacity-5{opacity:0.05}
 .opacity-10{opacity:0.1}
 .opacity-20{opacity:0.2}
 .opacity-25{opacity:0.25}
 .opacity-30{opacity:0.3}
-.opacity-50{opacity:0.5}
 .opacity-70{opacity:0.7}
 .opacity-75{opacity:0.75}
 .opacity-80{opacity:0.8}
@@ -1173,6 +1174,23 @@ to{transform:rotate(360deg)}}
 .peer:checked ~ .peer-checked\:bg-blue-500\/80{background-color:rgb(59 130 246 / 0.8)}
 .peer:checked ~ .peer-checked\:after\:translate-x-10::after{content:var(--tw-content);--tw-translate-x:2.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
 .peer:disabled ~ .peer-disabled\:opacity-40{opacity:0.4}
+[dir="ltr"] .ltr\:right-\[2\.5px\]{right:2.5px}
+[dir="ltr"] .ltr\:left-4{left:1rem}
+[dir="ltr"] .ltr\:right-3{right:0.75rem}
+[dir="ltr"] .ltr\:mr-2{margin-right:0.5rem}
+[dir="rtl"] .rtl\:right-\[34px\]{right:34px}
+[dir="rtl"] .rtl\:right-\[46px\]{right:46px}
+[dir="rtl"] .rtl\:right-\[58px\]{right:58px}
+[dir="rtl"] .rtl\:right-\[79px\]{right:79px}
+[dir="rtl"] .rtl\:left-\[2\.5px\]{left:2.5px}
+[dir="rtl"] .rtl\:right-4{right:1rem}
+[dir="rtl"] .rtl\:left-4{left:1rem}
+[dir="rtl"] .rtl\:left-3{left:0.75rem}
+[dir="rtl"] .rtl\:ml-2{margin-left:0.5rem}
+[dir="rtl"] .rtl\:\!-mr-2{margin-right:-0.5rem !important}
+[dir="rtl"] .rtl\:\!ml-2{margin-left:0.5rem !important}
+[dir="rtl"] .rtl\:\!-ml-2{margin-left:-0.5rem !important}
+[dir="rtl"] .rtl\:\!mr-2{margin-right:0.5rem !important}
 .dark .dark\:divide-dark-700 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(51 65 85 / var(--tw-divide-opacity))}
 .dark .dark\:divide-slate-700\/50 > :not([hidden]) ~ :not([hidden]){border-color:rgb(51 65 85 / 0.5)}
 .dark .dark\:divide-slate-700 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(51 65 85 / var(--tw-divide-opacity))}
