@@ -1,4 +1,5 @@
 <x-app>
+    <x-bladewind::notification />
     <x-slot:title>Select Component</x-slot:title>
     <x-slot:page_title>Select</x-slot:page_title>
     <p>
@@ -395,7 +396,7 @@
         This will be a 2 finger scroll on Macs.
     </p>
     <p>
-        <x-bladewind::select name="country-multi" multiple="true" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
+        <x-bladewind::select name="country-multi" multiple="true" searchable="true" :data="$countries" flag_key="value" max-selectable="3" />
     </p>
     <pre class="language-markup line-numbers" data-line="7">
         <code>
@@ -406,9 +407,18 @@
                 value_key="code"
                 flag_key="code"
                 multiple="true"
+                max_selectable="3"
                 :data="$countries" /&gt;
         </code>
     </pre>
+    <p>
+        If you try to select more than 3 items from the select component above, you will not be able to.
+        This is achieved by setting the
+        <code class="inline text-red-500">max_selectable</code> attribute. The default value is -1, which means there is no limit on selection.
+        Once you set a positive integer, the restriction on selection will be applied. You can set what error message should be displayed when the user tries to select more than is allowed.
+        You can set the <code class="inline text-red-500">max_error_message</code> attribute.
+    </p>
+    <h3>Automatic Selection of Items</h3>
     <p>
         You can auto select some of the items in the component by default, for example when in edit mode. To select multiple items, you will need to specify them as a comma separated list.
     </p>
@@ -988,6 +998,16 @@
             <td>true</td>
             <td>Specifies if a 12px margin should be applied to the bottom of the select for spacing. Useful in forms. All BladewindUI form elements have this for uniformity.<br /> <code class="inline">true</code> <code class="inline">false</code>.</td>
         </tr>
+        <tr>
+            <td>max_selectable</td>
+            <td>-1</td>
+            <td>What is the maximum number of items that can be selected. -1 means no maximum. This is only applied when <code class="inline">multiple="true"</code> <br /><code class="inline">positive integers</code></td>
+        </tr>
+        <tr>
+            <td>max_error</td>
+            <td>Please select only %s items</td>
+            <td>Message to display is user tries to select more than is allowed by <code class="inline">true</code>max_selectable</code>. %s is replaced with the number specified in <code class="inline">max_selectable</code></td>
+        </tr>
     </x-bladewind::table>
 
 
@@ -1024,6 +1044,16 @@
             <td><em>false</em></td>
             <td>Determines if the item should be selected or not.  <br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
+        <tr>
+            <td>max_selectable</td>
+            <td>-1</td>
+            <td>What is the maximum number of items that can be selected. -1 means no maximum.  <br /><code class="inline">positive integers</code></td>
+        </tr>
+        <tr>
+            <td>max_error</td>
+            <td>Please select only %s items</td>
+            <td>Message to display is user tries to select more than is allowed by <code class="inline">true</code>max_selectable</code>. %s is replaced with the number specified in <code class="inline">max_selectable</code></td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Select with all attributes defined</h3>
@@ -1043,6 +1073,7 @@
                 data_serialize_as="country_id"
                 required="true"
                 selected_value="1001"
+                max_selectable="3"
                 searchable="true"  /&gt;
         </code>
     </pre>

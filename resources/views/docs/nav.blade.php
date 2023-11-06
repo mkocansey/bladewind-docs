@@ -3,7 +3,6 @@
 <div class="flex items-center installation"><div class="dot"></div><a href="/">Installation</a></div>
     <div class="flex items-center customization"><div class="dot"></div><a href="/customization">Customization</a></div>
     <div class="flex items-center laravel-8"><div class="dot"></div><a href="/laravel8-users">Laravel 8 Users</a></div>
-    <div class="flex items-center rtl"><div class="dot"></div><a href="/rtl">Right to Left Support</a></div>
 </div>
 
 <h5 class="mb-3 mt-10 font-semibold text-slate-800 dark:text-slate-600/90">Components</h5></li>

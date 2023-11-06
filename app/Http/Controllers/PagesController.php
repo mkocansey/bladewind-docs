@@ -24,7 +24,6 @@ class PagesController extends Controller
     public function input()                 { return view('docs.input'); }
     public function laravel8()              { return view('docs.laravel8'); }
 
-    public function rtl()              { return view('docs.rtl'); }
     public function line_graph()            { return view('docs.horizontal-line-graph'); }
     public function list()                  { return view('docs.list'); }
     public function radiobutton()           { return view('docs.radiobutton'); }
