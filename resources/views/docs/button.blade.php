@@ -121,7 +121,7 @@
         </code>
     </pre>
 
-    <h3>Different Radius</h3>
+    <h3>Different Radii</h3>
     <div class="text-center p-4 space-x-3 space-y-3">
         <x-bladewind::button radius="none">No Radius</x-bladewind::button>
         <x-bladewind::button radius="small">Small Radius</x-bladewind::button>
@@ -151,7 +151,7 @@
     </pre>
     <pre class="language-markup">
         <code>
-            // this is the default so radius="full" can be omitted
+            &lt;!-- this is the default so radius="full" can be omitted -->
             &lt;x-bladewind::button radius="full">Full Radius&lt;/x-bladewind::button&gt;
         </code>
     </pre>
@@ -317,10 +317,25 @@
     </pre>
 
     <p>
-        Assuming you decide to use a different primary button colour throughout your application, say purple, specifying
-        <code class="inline text-red-500">color="purple"</code> everytime you create a button can get quite tedious. We advise you instead open up the
-        <code class="inline">resources > views > components > bladewind > button.blade.php</code> file and change the blue value on the line that says
-        <code class="inline">'color' => 'blue',</code>.
+        The nine colours above are the only ones precompiled into BladewindUI.
+        The default blue colour is tied to the primary colour attribute defined in the tailwind.config.js file.
+        <code class="inline">primary: colors.blue</code>.
+        If you wish to use a different primary button colour, say indigo,
+        you will need to define that colour in your project's tailwind.config.js file
+        and the primary will automatically pick that colour.
+        <a href="/customization#change-theme">There is more on this here.</a>
+    </p>
+    <p>
+        <pre class="language-js line-numbers" data-line="5">
+            <code>
+                // tailwind.config.js
+                ...
+                extend: {
+                    colors: {
+                        primary: colors.indigo,
+                ...
+            </code>
+        </pre>
     </p>
 
     <h2 id="events">Button Events</h2>
