@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html class="scroll-smooth">
     <head>
             <!-- Google Tag Manager -->

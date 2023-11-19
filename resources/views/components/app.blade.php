@@ -2,7 +2,7 @@
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
-<body class="text-gray-500/80 bg-slate-100/80  dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
+<body class="text-gray-500/80 bg-slate-100/80 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -22,14 +22,14 @@
     <x-topbar />
 
     <div class="h-20"></div>
-    <div class="sm:max-w-7xl mx-auto pt-10">
-        <nav class="sm:w-64 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible sm:pl-6 sm:rtl:pr-6">
+    <div class="sm:max-w-7xl mx-auto pt-10 flex flex-row sm:rtl:flex-row-reverse">
+        <nav class="sm:w-64 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible sm:pl-6">
             @include('docs/nav')
         </nav>
 
-        <div class="content-area grow sm:ml-64 pb-16 sm:rtl:mr-64">
+        <div class="content-area grow sm:ml-64 pb-16">
             <div class="px-6">
-                <div class="flex flex-col-reverse sm:flex-row">
+                <div class="flex flex-col-reverse sm:flex-row sm:rtl:flex-row-reverse">
                     <div class="grow sm:w-3/4">
                         <h1 class="page-title">{{$page_title??''}}</h1>
                         {{ $slot ?? '' }}
@@ -73,19 +73,6 @@
             }
         }
 
-        toggleThemeMode = () => {
-            let current_theme = getFromStorage('theme');
-            current_theme = (current_theme === 'light') ? 'dark' : 'light';
-            document.documentElement.removeAttribute('class');
-            addToStorage('theme', current_theme);
-            changeCss(document.documentElement, current_theme, 'add', true);
-        }
-        let initial_theme = (getFromStorage('theme') == null) ?
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light') : 'light';
-        addToStorage('theme', initial_theme);
-        changeCss(document.documentElement, initial_theme, 'add', true);
-    </script>
-    <script>
         Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
             var linkCopy = document.createElement('a');
             linkCopy.textContent = 'Copy';
@@ -96,6 +83,11 @@
             return linkCopy;
 
         });
+
+        switchDirection = (el) => {
+            changeCss('.bw-tgl-sp-rtltr', 'rtl:flex-row-reverse');
+            (el.checked) ? domEl('html').setAttribute('dir', 'rtl') : domEl('html').setAttribute('dir', 'ltr');
+        }
     </script>
 </body>
 </html>

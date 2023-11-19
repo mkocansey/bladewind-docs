@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bceb2f042bb79ab5a32885e5505756ce",
+    "content-hash": "d437b24c2ffa3a3e4fa705317b632b9c",
     "packages": [
         {
             "name": "brick/math",
@@ -972,16 +972,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.52.15",
+            "version": "v9.52.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e3350e87a52346af9cc655a3012d2175d2d05ad7"
+                "reference": "082345d76fc6a55b649572efe10b11b03e279d24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e3350e87a52346af9cc655a3012d2175d2d05ad7",
-                "reference": "e3350e87a52346af9cc655a3012d2175d2d05ad7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/082345d76fc6a55b649572efe10b11b03e279d24",
+                "reference": "082345d76fc6a55b649572efe10b11b03e279d24",
                 "shasum": ""
             },
             "require": {
@@ -1166,7 +1166,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-08-08T14:28:40+00:00"
+            "time": "2023-10-03T13:02:30+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1758,17 +1758,11 @@
         },
         {
             "name": "mkocansey/bladewind",
-            "version": "v2.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mkocansey/bladewind.git",
-                "reference": "6225a3aa16c71b3d0307f17ff4930b31d2702c55"
-            },
+            "version": "dev-development",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mkocansey/bladewind/zipball/6225a3aa16c71b3d0307f17ff4930b31d2702c55",
-                "reference": "6225a3aa16c71b3d0307f17ff4930b31d2702c55",
-                "shasum": ""
+                "type": "path",
+                "url": "/Users/mkocansey/projects/kursor/bladewind",
+                "reference": "fff1c8d772c8e6a9e88ffdc44ef65a7d05b99412"
             },
             "require": {
                 "php": ">=7.3"
@@ -1786,7 +1780,11 @@
                     "Mkocansey\\Bladewind\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "post-update-cmd": [
+                    "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-public --force"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1798,16 +1796,14 @@
             ],
             "description": "Laravel UI Components using TailwindCSS, Blade Templates and vanilla Javascript",
             "keywords": [
-                "Ui Components",
                 "blade components",
                 "laravel",
-                "tailwindcss"
+                "tailwindcss",
+                "ui components"
             ],
-            "support": {
-                "issues": "https://github.com/mkocansey/bladewind/issues",
-                "source": "https://github.com/mkocansey/bladewind/tree/v2.3.4"
-            },
-            "time": "2023-10-02T23:22:18+00:00"
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "monolog/monolog",
@@ -8148,7 +8144,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mkocansey/bladewind": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

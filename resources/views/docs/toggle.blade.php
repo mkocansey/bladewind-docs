@@ -11,7 +11,6 @@
             &lt;x-bladewind.toggle  /&gt;
         </code>
     </pre>
-
     <p>
         You can display the toggle component with a label that can be positioned either on the left or right of the component.
         The default position is left but can easily be flipped to the right by setting the attribute <code class="inline text-red-500">label_position="right"</code>.
@@ -45,9 +44,10 @@
         </code>
     </pre>
 
-    <h2 id="thin-bar">Thin Bar</h2>
+    <h2 id="thin-thicker-bar">Thin and Thicker Bars</h2>
     <p>
-        The toggle component can have a thinner bar like is seen on most Android devices. Set <code class="inline text-red-500">bar="thin"</code>. The default value for the <code class="inline text-red-500">bar</code> attribute is <code class="inline">thick</code>.
+        The toggle component can have a thinner bar like is seen on most Android devices and thicker bar as seen on iOS.
+        Set <code class="inline text-red-500">bar="thin"</code> or <code class="inline text-red-500">bar="thicker"</code>. The default bar is set at <code class="inline text-red-500">bar="thick"</code>.
     </p>
     <p><x-bladewind::toggle label="Send me quarterly newsletters" bar="thin" /></p>
     <pre class="language-markup line-numbers" data-line="3">
@@ -55,6 +55,14 @@
             &lt;x-bladewind.toggle
                 label="Send me quarterly newsletters"
                 bar="thin"  /&gt;
+        </code>
+    </pre>
+    <p><x-bladewind::toggle label="Send me quarterly newsletters" bar="thicker" /></p>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind.toggle
+                label="Send me quarterly newsletters"
+                bar="thicker"  /&gt;
         </code>
     </pre>
 
@@ -144,7 +152,7 @@
         </tr>
         <tr>
             <td>color</td>
-            <td>blue</td>
+            <td>primary</td>
             <td>There are nine colors to choose from. <br />
                 <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
                 <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code></td>
@@ -157,7 +165,7 @@
         <tr>
             <td>bar</td>
             <td>thick</td>
-            <td>Specifies the size for the slider bar. <br /><code class="inline">thin</code> <code class="inline">thick</code></td>
+            <td>Specifies the size for the slider bar. <br /><code class="inline">thin</code> <code class="inline">thick</code> <code class="inline">thicker</code></td>
         </tr>
         <tr>
             <td>onclick</td>
@@ -188,7 +196,7 @@
     <p>&nbsp;</p>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#thin-bar">Thin bar</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#thin-thicker-bar">Thin & thicker bars</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#checked">Checked and disbled</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>

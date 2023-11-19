@@ -2,6 +2,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <x-slot:title>Datepicker Component</x-slot:title>
     <x-slot:page_title>Datepicker</x-slot:page_title>
+    <x-bladewind::notification />
     <div class="flex flex-col-reverse sm:flex-row">
         <div class="grow sm:w-3/4">
     <p>
@@ -38,7 +39,8 @@
 
     <h2 id="range">Range Datepicker</h2>
     <p>
-        This range datepicker isn't your typical date range selection. This option simply saves you from manually embedding the datepicker two times.
+        This range datepicker isn't your typical date range selection you will find on airline websites.
+        This option simply saves you from manually embedding the datepicker two times.
         Specifying <code class="inline text-red-500">type="range"</code> will create two separate datepicker boxes for start and end dates.
     </p>
     <x-bladewind::datepicker type="range"  />
@@ -73,6 +75,39 @@
             &lt;x-bladewind.datepicker required="true"  /&gt;
         </code>
     </pre>
+
+    <h3>Validating The Range Picker</h3>
+    <p>
+        The date range picker comes with optional date validation. This validation only checks to ensure the
+        end date is not less than the start date. To enforce validation of the date range picker, set
+        <code class="inline text-red-500">validate="true"</code>. This is only applied if <code class="inline text-red-500">type="range"</code>.
+    </p>
+    <p>
+        When you activate validation,
+        you will need to provide the message to be displayed when a user selects an end date
+        that is less than the start date. This is provided as an option to make it translatable.
+        Set <code class="text-red-500 inline">validation_message="your message here"</code>
+    </p>
+    <p>
+        <x-bladewind::datepicker type="range" date_from_label="task starts" date_to_label="task due" date-from-name="validate1" date-to-name="validate2"
+             validate="true" validation_message="Seriously!, you know your task cannot end before you even got started"  />
+    </p>
+    <pre class="language-markup line-numbers" data-line="5">
+        <code>
+            &lt;x-bladewind::datepicker
+                type="range"
+                date_from_label="task starts"
+                date_to_label="task due"
+                validate="true"
+                validation_message="Seriously!, you know your task cannot end before you even got started"  /&gt;
+        </code>
+    </pre>
+
+    <p>
+        By default, the error validation message is displayed in the BladewindUI notification component. You will need
+        to ensure you have this on your page for the error message to be visible. If you prefer to display the error
+        message inline, under the date fields, simply set <code class="inline text-red-500">show_error_inline="true"</code>
+    </p>
 
     <h2 id="formats">Date Formats</h2>
     <p>

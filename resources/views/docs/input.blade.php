@@ -79,7 +79,7 @@
         This is why Bladewind hides the placeholder when the label is set. One way to fix this is by appending non breaking spaces to your label till the placeholder text is covered.
         This is an ugly solution.
     </p>
-    <p><x-bladewind::input name="mobile" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
+    <p><x-bladewind::input name="mobile2" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
         <pre class="language-markup line-numbers">
             <code>
                 &lt;x-bladewind.input name="mobile"
@@ -130,7 +130,7 @@
             <x-bladewind::input name="fname" required="true" label="Full Name" error_message="You will need to enter your full name" />
             <div class="sm:flex gap-4">
                 <x-bladewind::input name="email" required="true"  label="Email" />
-                <x-bladewind::input name="mobile"  label="Mobile" numeric="true" />
+                <x-bladewind::input name="mobile3"  label="Mobile" numeric="true" />
             </div>
             <x-bladewind::textarea required="true" name="bio"
                 error_message="Yoh! write something nice about yourself"
@@ -520,7 +520,7 @@
 </svg>' prefix_is_icon="true" />
 
     <pre class="language-markup line-numbers">
-    <code>
+    <code class="!whitespace-pre-wrap">
     &lt;x-bladewind.input
     name="www"
     placeholder="website address"
@@ -536,7 +536,7 @@
 </svg>' prefix_is_icon="true" />
 
     <pre class="language-markup line-numbers">
-    <code>
+    <code class="!whitespace-pre-wrap">
     &lt;x-bladewind.input
     name="www"
     placeholder="website address"

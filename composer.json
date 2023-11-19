@@ -2,7 +2,10 @@
     "name": "mkocansey/bladewind-docs",
     "type": "project",
     "description": "Docs for BladewindUI.",
-    "keywords": ["docs", "bladewind"],
+    "keywords": [
+        "docs",
+        "bladewind"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
@@ -10,7 +13,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "mkocansey/bladewind": "~2.3"
+        "mkocansey/bladewind": "dev-development"
     },
     "require-dev": {
         "deployer/deployer": "^7.0",
@@ -62,5 +65,10 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": {}
+    "repositories": {
+        "mkocansey/bladewind": {
+            "type": "path",
+            "url": "/Users/mkocansey/projects/kursor/bladewind"
+        }
+    }
 }

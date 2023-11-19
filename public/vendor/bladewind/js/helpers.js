@@ -24,7 +24,8 @@ validateForm = (form) => {
     let BreakException = {};
     try {
         dom_els(`${form} .required`).forEach((el) => {
-            el.classList.remove('!border-error-400');
+            // el.classList.remove('!border-error-400');
+            changeCss(el, '!border-error-400', 'remove', true);
             if (el.value === '') {
                 let el_name = el.getAttribute('name');
                 let el_parent = el.getAttribute('data-parent');
@@ -33,7 +34,8 @@ validateForm = (form) => {
                 let error_heading = el.getAttribute('data-error-heading');
                 // el.classList.add('!border-error-400');
                 // this will highlight select fields whose hidden inputs are required but empty
-                (el_parent !== null) ? dom_el(`.${el_parent} .clickable`).classList.add('!border-error-400') : el.classList.add('!border-error-400');
+                // (el_parent !== null) ? dom_el(`.${el_parent} .clickable`).classList.add('!border-error-400') : el.classList.add('!border-error-400');
+                (el_parent !== null) ? changeCss(dom_el(`.${el_parent} .clickable`), '!border-error-400') : changeCss(el, '!border-error-400', 'add', true);
                 el.focus();
                 if (error_message) {
                     (show_error_inline) ? unhide(`.${el_name}-inline-error`) :
@@ -265,13 +267,17 @@ positionPrefix = (el, mode = 'blur') => {
         }
         dom_el(`input.${el}`).style.paddingLeft = `${prefix_width}px`;
         input_field.addEventListener('focus', (event) => {
-            positionPrefix(el, event.type)
-        });
+            positionPrefix(el, event.type);
+            // for backward compatibility where {once:true} is not supported
+            input_field.removeEventListener('focus', positionPrefix);
+        }, {once: true});
     } else if (mode === 'focus') {
         if (label_field) label_field.style.left = default_label_left_pos;
         input_field.addEventListener('blur', (event) => {
-            positionPrefix(el, event.type)
-        });
+            positionPrefix(el, event.type);
+            // for backward compatibility where {once:true} is not supported
+            input_field.removeEventListener('blur', positionPrefix);
+        }, {once: true});
     }
 }
 
@@ -340,6 +346,25 @@ highlightSelectedTags = (values, name) => {
         let values_array = values.split(',');
         for (let x = 0; x < values_array.length; x++) {
             selectTag(values_array[x].trim(), name);
+        }
+    }
+}
+
+compareDates = (el1, el2, message, inline) => {
+    let date1_el = dom_el(el1);
+    let date2_el = dom_el(el2);
+    let start_date = new Date(date1_el.value).getTime();
+    let end_date = new Date(date2_el.value).getTime();
+    if (date1_el.value !== '' && date2_el.value !== '') {
+        console.log('values not empty');
+        if (start_date > end_date) {
+            console.log('error in date');
+            changeCss(date2_el, '!border-error-400', 'add', true);
+            (inline) ? showNotification('', message, 'error') : dom_el(`.error-${el1}${el2}`).innerHTML = message;
+            return false;
+        } else {
+            changeCss(date2_el, '!border-error-400', 'remove', true);
+            return true;
         }
     }
 }
