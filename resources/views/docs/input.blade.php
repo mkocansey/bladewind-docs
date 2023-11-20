@@ -238,8 +238,6 @@
         </code>
     </pre>
 
-
-
     <h2 id="javascript">Manipulating Inputs Using Javascript</h2>
     <p>
         There are several instances where you will want to manipulate input fields for different reasons.
@@ -354,7 +352,6 @@
             To manipulate BladewindUI input elements using Javascript, simply target them using the name defined either in the class or id attributes.
         </x-bladewind::alert>
     </p>
-
     <h2 id="prefix-suffix">Prefixes and Suffixes</h2>
     <p>
         There are cases where you need to prefix or append something to an input field. For example, you want to prefix a URL input field with 'https://' so your users wouldn't need to type that in everytime.
@@ -665,6 +662,13 @@
             </td>
         </tr>
         <tr>
+            <td>prefix_icon_div_css</td>
+            <td>blank</td>
+            <td>
+                Additional css classes to apply to the DIV containing the prefix if <b>prefix_is_icon=true</b>. Can be any TailwindCSS classes.
+            </td>
+        </tr>
+        <tr>
             <td>prefix_icon_css</td>
             <td>blank</td>
             <td>
@@ -700,6 +704,13 @@
             <td>
                 If a suffix is defined, should it have a transparent background or not.<br />
                 <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
+        <tr>
+            <td>suffix_icon_div_css</td>
+            <td>blank</td>
+            <td>
+                Additional css classes to apply to the DIV containing the suffix if <b>suffix_is_icon=true</b>. Can be any TailwindCSS classes.
             </td>
         </tr>
         <tr>

@@ -76,6 +76,7 @@
     <x-bladewind::avatar stacked="true" image="/assets/images/rowe.jpeg" />
     <x-bladewind::avatar stacked="true" image="/assets/images/doc.png" />
     <x-bladewind::avatar stacked="true" image="/assets/images/issah.jpg" />
+    <x-bladewind::avatar stacked="true" image="/assets/images/sarpong.png" />
     </div>
     <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,15">

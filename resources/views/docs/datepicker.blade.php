@@ -3,8 +3,7 @@
     <x-slot:title>Datepicker Component</x-slot:title>
     <x-slot:page_title>Datepicker</x-slot:page_title>
     <x-bladewind::notification />
-    <div class="flex flex-col-reverse sm:flex-row">
-        <div class="grow sm:w-3/4">
+    
     <p>
         Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
     </p>
