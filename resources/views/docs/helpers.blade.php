@@ -84,6 +84,32 @@
         </code>
     </pre>
 
+    <h2 id="comparedates">compareDates</h2>
+    <p>
+        Performs a validation for two dates.
+        Used by the range datepicker to ensure an end date is not less than a start date.
+        Returns boolean.
+    </p>
+    <pre class="language-js line-numbers">
+        <code>
+            /* ---------------------------------------------------------------
+                date1_field:   name of input field that has the start date
+                date2_field:   name of input field that has the end date
+                error_message:  message to display if the end date is less than start date
+                error_inline:   determines if message is displayed inline. Default is in the notification
+            -----------------------------------------------------------------*/
+            compareDates(
+                'task_begins',
+                'task_ends'
+                'Please ensure your task end date is after the task start date',
+                1); // uses 0 and 1 for boolean
+
+            // from above
+            // 1. the start date datepicker field has the name task_begins
+            // 2. the end date datepicker field has the name task_ends
+        </code>
+    </pre>
+
     <h2 id="domel">domEl</h2>
     <p>Shortcut for writing Javascript's <code class="inline">document.querySelector</code>. This function has an alias <code class="inline">dom_el</code> that does exactly the same thing.</p>
     <pre class="language-js line-numbers">
@@ -326,6 +352,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#animatecss">animateCSS</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#changecss">changeCss</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#changecssfordomarray">changeCssForDomArray</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#comparedates">compareDates</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#domel">domEl</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#domels">domEls</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#getfromstorage">getFromStorage</a></div>

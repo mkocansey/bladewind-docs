@@ -108,6 +108,9 @@
         to ensure you have this on your page for the error message to be visible. If you prefer to display the error
         message inline, under the date fields, simply set <code class="inline text-red-500">show_error_inline="true"</code>
     </p>
+    <p>
+        The validation is handled by the <a href="/extra/helper-functions#comparedates"><code class="inline">compareDates(date1_field, date2_field, error_message, show_error_inline)</code></a> helper function and returns a boolean.
+    </p>
 
     <h2 id="formats">Date Formats</h2>
     <p>
