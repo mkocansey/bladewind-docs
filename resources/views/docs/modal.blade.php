@@ -933,32 +933,32 @@
         <tr>
             <td>close_after_action</td>
             <td>true</td>
-            <td>Specifies whether the modal stays open after any of the action buttons are clicked.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specify whether the modal stays open after any of the action buttons are clicked.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>backdrop_can_close</td>
             <td>true</td>
-            <td>Specifies whether clicking on the modal backdrop should close the modal.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specify whether clicking on the modal backdrop should close the modal.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>blur_backdrop</td>
             <td>true</td>
-            <td>Specifies whether the backdrop of the modal should be blurred.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specify whether the backdrop of the modal should be blurred.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>show_action_buttons</td>
             <td>true</td>
-            <td>Specifies whether the action buttons should be displayed.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specify whether the action buttons should be displayed.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>center_action_buttons</td>
             <td>true</td>
-            <td>Specifies whether the action buttons should be centered in the action bar.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specify whether the action buttons should be centered in the action bar.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>stretch_action_buttons</td>
             <td>false</td>
-            <td>Specifies whether the action buttons should stretch the entire width of the modal. Each button will be on its own line.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Specify whether the action buttons should stretch the entire width of the modal. Each button will be on its own line.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
             <td>size</td>
@@ -967,9 +967,20 @@
             <code class="inline">big</code> <code class="inline">large</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
         </tr>
         <tr>
-            <td>class</td>
+            <td>show_close_icon</td>
+            <td>false</td>
+            <td>Display a close icon in the top right corner of the modal window. Clicking on this will close the modal or behave the same as the Cancel button if it exists in the modal footer.
+            <br><br><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>body_css</td>
             <td><em>blank</em></td>
-            <td>Any additonal css classes can be added using this attribute.</td>
+            <td>Any extra css classes to add to the modal body.</td>
+        </tr>
+        <tr>
+            <td>footer_css</td>
+            <td><em>blank</em></td>
+            <td>Any extra css classes to add to the modal footer.</td>
         </tr>
     </x-bladewind::table>
 
