@@ -172,7 +172,7 @@
 
            &lt;x-bladewind.modal
                 title="Stretched Buttons"
-                stretched-action_buttons="true"
+                stretched_action_buttons="true"
                 name="stretched"&gt;
                 The action buttons in this modal have been stretched.
                 This means each button gets its own line. Cool right?
@@ -545,9 +545,9 @@
     <p>
         <x-bladewind::button onclick="showModal('lock-screen')" icon="lock-closed" class="text-white">lock the screen</x-bladewind::button>
     </p>
-    <x-bladewind::modal show_action_buttons="false" backdrop_can_close="false" name="lock-screen">
+    <x-bladewind::modal size="medium" show_action_buttons="false" backdrop_can_close="false" name="lock-screen">
             <div class="flex mx-auto justify-center my-2">
-                <x-bladewind::avatar class=""
+                <x-bladewind::avatar size="big"
                     image="https://lh3.googleusercontent.com/a-/AOh14GhSotQTt_njzqqq-265MKM5z5iPP9m-_A2myyrGXQ=s288-p-rw-no" />
             </div>
             <div class="my-4">
