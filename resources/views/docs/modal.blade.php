@@ -18,7 +18,7 @@
         <x-bladewind::button onclick="showModal('tnc-agreement-titled')" class="mt-2 sm:mt-0">Basic modal with a title</x-bladewind::button>
     </div>
     <p>
-        <x-bladewind::modal name="tnc-agreement">
+        <x-bladewind::modal name="tnc-agreement" show_close_icon="true">
             Please agree to the terms and conditions of the agreement before proceeding. By clicking the OKAY button you agree to let your machine explode 💥
         </x-bladewind::modal>
         <x-bladewind::modal name="tnc-agreement-titled" title="Agree or Disagree">
@@ -130,7 +130,8 @@
                 type="warning"
                 title="First warning"
                 name="warning"&gt;
-                Hmmm...This is your first warning. Two more warnings and you are off this platform.
+                Hmmm...This is your first warning.
+                Two more warnings and you are off this platform.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -198,13 +199,14 @@
                 title="See Through Me"
                 blur_backdrop="true"
                 name="noblur"&gt;
-                The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+                The backdrop of this modal is not blurred.
+                You can see all the content behind the backdrop.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
 
     <x-bladewind::modal type="info" title="General Info" name="info">
-        We really think you should buy some Bitcoin despite it's ups and dowms. What sayeth thou?
+        There will be eclipse of the moon every couple of years. Just keep looking up, you might see one in action.
     </x-bladewind::modal>
     <x-bladewind::modal type="error" title="Delete Not Allowed" name="error">
         You do not have permissions to delete this user.
@@ -294,7 +296,8 @@
             &lt;x-bladewind.modal
                 title="Medium Modal"
                 name="medium-modal"&gt;
-                I am the medium sized modal. Also the default if you do not set a size.
+                I am the medium sized modal.
+                Also the default if you do not set a size.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -315,7 +318,8 @@
                 size="big"
                 title="Big Modal"
                 name="big-modal"&gt;
-                English can be quite confusing. How is big different from large? You be the judge!
+                English can be quite confusing.
+                How is big different from large? You be the judge!
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -336,7 +340,8 @@
                 size="large"
                 title="Large Modal"
                 name="large-modal"&gt;
-                I am the large modal. If I am not large enough to contain your needs, check out my xl brother.
+                I am the large modal. If I am not large enough to contain
+                your needs, check out my xl brother.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -357,7 +362,8 @@
                 size="xl"
                 title="XL Modal"
                 name="xl-modal"&gt;
-                I am the extra large modal. How do you like my size now. You could fill me up with some much needed content.
+                I am the extra large modal. How do you like my size now.
+                You could fill me up with some much needed content.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -378,8 +384,10 @@
                 size="omg"
                 title="Full Width Modal"
                 name="omg-modal"&gt;
-                I am the full width modal. My nickname is OMG. I take up the entire screen. I do not know why you will need a modal like this but well,
-                like they say, it is better to have and not use that need and not have.
+                I am the full width modal. My nickname is OMG.
+                I take up the entire screen. I do not know why
+                you will need a modal like this but well, like they say,
+                it is better to have and not use that need and not have.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -453,7 +461,8 @@
                 title="No Okay Button"
                 name="no-okay"
                 ok_button_label=""&gt;
-                I have no okay button. Just cancel this thing and let's all go home.
+                I have no okay button.
+                Just cancel this thing and let's all go home.
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
@@ -474,7 +483,9 @@
 
     <pre class="language-markup line-numbers" data-line="6">
         <code>
-            &lt;x-bladewind.button onclick="showModal('no-action-buttons')"&gt;No action buttons&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind.button onclick="showModal('no-action-buttons')"&gt;
+                No action buttons
+            &lt;/x-bladewind.button&gt;
 
             &lt;x-bladewind.modal
                 title="No Action Buttons"
@@ -528,11 +539,16 @@
 
     <p>
         You will notice from the custom actions example above that we introduced a new attribute, <code class="inline text-red-500">center_action_buttons="true"</code>. This centres the action buttons in the action bar.
-        By default they are right aligned and might look off when using the small or medium modal sizes.
+        By default, they are right aligned and might look off when using the small or medium modal sizes.
     </p>
     <p>
         We also introduced the attribute <code class="inline text-red-500">close_after_action="false"</code>.
         By default, the modal is dismissed after clicking any of the action buttons. Setting this attribute to <code class="inline text-red-500">false</code> will ensure the modal stays open after clicking any of the action buttons.
+    </p>
+    <h3>Close Icon</h3>
+    <p>
+        Closing of the modal is delegated mostly to the Cancel or Close button in the footer of the modal. It is, however, possible to close modals using a close icon placed in the top right of the modal.
+        To enable this, you will need to set <code class="text-red-500 inline">show_close_icon="true"</code>. <a href="javascript:showModal('tnc-agreement')">Here is an example.</a>
     </p>
 
     <h2 id="cant-dismiss">Non-Dismissible Modal</h2>
@@ -742,10 +758,13 @@
                 @@csrf
                 &lt;b&gt;Edit Your Profile&lt;/b&gt;
                 &lt;div class="grid grid-cols-2 gap-4 mt-6"&gt;
-                    &lt;x-bladewind::input required="true" name="first_name2" label="First name" error_message="Please enter your first name" /&gt;
-                    &lt;x-bladewind::input required="true" name="last_name2" label="Last name" error_message="Please enter your last name" /&gt;
+                    &lt;x-bladewind::input required="true" name="first_name2"
+                        label="First name" error_message="Please enter your first name" /&gt;
+                    &lt;x-bladewind::input required="true" name="last_name2"
+                        label="Last name" error_message="Please enter your last name" /&gt;
                 &lt;/div&gt;
-                &lt;x-bladewind::input required="true" name="email2" label="Email address" error_message="Please enter your email" /&gt;
+                &lt;x-bladewind::input required="true" name="email2"
+                        label="Email address" error_message="Please enter your email" /&gt;
                 &lt;x-bladewind::input numeric="true" name="mobile2" label="Mobile" /&gt;
             &lt;/form&gt;
 
@@ -854,12 +873,18 @@
                 @@csrf
                 &lt;b&gt;Edit Your Profile&lt;/b&gt;
                 &lt;div class="grid grid-cols-2 gap-4 mt-6"&gt;
-                    &lt;x-bladewind::input required="true" name="first_name3" label="First name" error_message="Please enter your first name" /&gt;
-                    &lt;x-bladewind::input required="true" name="last_name3" label="Last name" error_message="Please enter your last name" /&gt;
+                    &lt;x-bladewind::input required="true" name="first_name3"
+                        label="First name" error_message="Please enter your first name" /&gt;
+                    &lt;x-bladewind::input required="true" name="last_name3"
+                        label="Last name" error_message="Please enter your last name" /&gt;
                 &lt;/div&gt;
-                &lt;x-bladewind::input required="true" name="email3" label="Email address" error_message="Please enter your email" /&gt;
-                &lt;x-bladewind::input numeric="true" name="mobile3" label="Mobile" /&gt;
-                &lt;x-bladewind::button can_submit="true" class="w-full mt-2"&gt;Update Profile&lt;/x-bladewind::button&gt;
+                &lt;x-bladewind::input required="true" name="email3"
+                        label="Email address" error_message="Please enter your email" /&gt;
+                &lt;x-bladewind::input numeric="true" name="mobile3"
+                        label="Mobile" /&gt;
+                &lt;x-bladewind::button can_submit="true" class="w-full mt-2"&gt;
+                    Update Profile
+                &lt;/x-bladewind::button&gt;
             &lt;/form&gt;
         &lt;/x-bladewind::modal&gt;
         </code>
@@ -907,7 +932,7 @@
         </tr>
         <tr>
             <td>name</td>
-            <td>bw-modal</td>
+            <td>'bw-modal-'.uniqid()</td>
             <td>Uniquely identifies a modal. This attribute is very important if you want to prevent erratic behaviour of modals.</td>
         </tr>
         <tr>
@@ -998,6 +1023,7 @@
                 cancel_button_action="alert('say nay')"
                 backdrop_can_close="false"
                 show_action_buttons="false"
+                show_close_icon="true"
                 blur_backdrop="false"
                 center_action_buttons="true"
                 size="medium"
