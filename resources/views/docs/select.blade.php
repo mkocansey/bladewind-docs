@@ -674,6 +674,14 @@
                 <code class="inline">bw_countries.filter('countries', 'EU');</code>
             </td>
         </tr>
+        <tr>
+            <td>clearFilter(element, value)</td>
+            <td>Clear all filtering in &lt;element&gt; based on &lt;value&gt;. The component is reset if &lt;value&gt; is blank.
+                <br /><br />
+                <code class="inline">bw_continents.clearFilter('countries', 'AF');</code>
+                <code class="inline">bw_countries.clearFilter('countries');</code>
+            </td>
+        </tr>
     </x-bladewind::table>
     <h3>A Practical Example</h3>
     <p>
@@ -886,7 +894,7 @@
         </code>
     </pre>
 
-    <h3>Filter a Select component based on the value of another Select component</h3>
+    <h3 id="s2sfiltering">Filter a Select component based on the value of another Select component</h3>
     <p>
         Let's dig right into an example.
         Let's say you have two select components, continents and countries. You want to display a list of countries based on which continent was selected.
@@ -912,15 +920,17 @@
         ];
     @endphp
 
-    <div class="bg-slate-100 sm:grid sm:grid-cols-2 gap-6">
-        <x-bladewind::select name="continent" placeholder="Select Continent" data="manual" filter="continent-country">
-            <x-bladewind::select-item label="Africa" value="af" />
-            <x-bladewind::select-item label="Asia" value="as" />
-            <x-bladewind::select-item label="Europe" value="eu" />
-            <x-bladewind::select-item label="North America" value="na" />
-        </x-bladewind::select>
-        <x-bladewind::select name="continent-country" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" />
-    </div>
+    <x-bladewind::card reduce_padding="true">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <x-bladewind::select name="continent" placeholder="Select Continent" data="manual" filter="continent-country" add_clearing="false">
+                <x-bladewind::select-item label="Africa" value="af" />
+                <x-bladewind::select-item label="Asia" value="as" />
+                <x-bladewind::select-item label="Europe" value="eu" />
+                <x-bladewind::select-item label="North America" value="na" />
+            </x-bladewind::select>
+            <x-bladewind::select name="continent-country" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
+        </div>
+    </x-bladewind::card>
 <br />
     <p>
         Let us take a look at the code. We start by defining the array that will populate the continents select component.
@@ -994,6 +1004,69 @@
         You may not always want your filtering to be based on a value from one select component but probably just some arbitrary value passed from a link, button or other component.
         The select component exposes a <code class="inline text-red-500">filter()</code> method that allows for runtime filtering.
     </p>
+
+    <x-bladewind::card reduce_padding="true">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="space-x-2 flex items-center">
+                <a href="javascript:filterCountries('af')"><x-bladewind::tag label="africa" color="purple" class="cursor-pointer" /></a>
+                <a href="javascript:filterCountries('as')"><x-bladewind::tag label="asia" color="purple" class="cursor-pointer" /></a>
+                <a href="javascript:filterCountries('eu')"><x-bladewind::tag label="europe" color="purple" class="cursor-pointer" /></a>
+                <a href="javascript:filterCountries('na')"><x-bladewind::tag label="north america" color="purple" class="cursor-pointer" /></a>
+            </div>
+            <x-bladewind::select name="continent-country2" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
+        </div>
+    </x-bladewind::card>
+    <script>
+        filterCountries = (continent) => {
+            bw_continent_country2.filter('continent_country2', continent);
+        }
+    </script>
+    <br />
+    <p>
+        In this example, clicking on a tag filters the list of countries. This is achieved by calling the <code class="inline text-red-500">filter()</code> method on the target select component. Each tag calls a
+        <code class="inline">filterCountries()</code> Javascript function, passing the value of the continent as the parameter. Africa for example passes the parameter <code class="inline">af</code> as <code class="inline">filterCountries('af')</code>.
+    </p>
+    <pre class="language-markup line-numbers" data-line="3,12">
+        <code>
+            &lt;div class="bg-slate-100 sm:grid sm:grid-cols-2 gap-6 flex items-center"&gt;
+                &lt;div class="space-x-2"&gt;
+                    &lt;a href="javascript:filterCountries('af')"&gt;
+                        &lt;x-bladewind::tag label="africa" color="purple" class="cursor-pointer" /&gt;
+                    &lt;/a&gt;
+                    &lt;a href="javascript:filterCountries('as')"&gt;
+                        &lt;x-bladewind::tag label="asia" color="purple" class="cursor-pointer" /&gt;
+                    &lt;/a&gt;
+                    ...
+                &lt;/div&gt;
+                &lt;x-bladewind::select
+                    name="continent-country2"
+                    placeholder="Select Country"
+                    searchable="true"
+                    data="json_encode($countries)"
+                    label_key="name"
+                    value_key="value"
+                    filter_by="continent_code" /&gt;
+            &lt;/div&gt;
+        </code>
+    </pre>
+    <p>
+        Below is the script called by the tags. Note line 3 where we call the <code class="inline">filter()</code> function on the <code class="inline">continent-country2</code> select component.
+        We need to prefix the component name with <code class="inline">bw_</code> and also change all dashes in the component name to underscores. <code class="inline">continent-country2</code> becomes <code class="inline">continent_country2</code>.
+        Replacing dashes with underscores is not required if you already named your select component with underscores.
+    </p>
+    <p>
+        Also note how in this case we called the <code class="inline">filter()</code> on the same component that we are targeting. This is because we are not triggering the filtering from another select component.
+    </p>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;script&gt;
+                filterCountries = (continent) => {
+                    // this is where we actually tell the component to filter
+                    bw_continent_country2.filter('continent_country2', continent);
+                }
+            &lt;/script&gt;
+        </code>
+    </pre>
 
     <h2 id="native">Native Select</h2>
     <p>
@@ -1130,12 +1203,12 @@
         <tr>
             <td>filter</td>
             <td><em>blank</em></td>
-            <td>The name of the select component that needs to be filtered. See above example.</td>
+            <td>The name of the select component that needs to be filtered. <a href="#s2sfiltering">See above example</a>.</td>
         </tr>
         <tr>
             <td>filter_by</td>
             <td><em>blank</em></td>
-            <td>Which field should be used in filtering the target select component's items. You need to ensure this field exists in your target select component's  <code class="inline">data</code> attribute</td>
+            <td>Which key in the target select component's  <code class="inline">data</code>, should be used in filtering its items.</td>
         </tr>
     </x-bladewind::table>
 
