@@ -13,7 +13,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "mkocansey/bladewind": "dev-development"
+        "mkocansey/bladewind": "~2.0"
     },
     "require-dev": {
         "deployer/deployer": "^7.0",
@@ -65,10 +65,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": {
-        "mkocansey/bladewind": {
-        "type": "path",
-        "url": "/Users/mkocansey/projects/kursor/bladewind"
-    }
-    }
+    "repositories": {}
 }
