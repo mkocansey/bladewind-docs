@@ -22,7 +22,7 @@
     <x-topbar />
 
     <div class="h-20"></div>
-    <div class="sm:max-w-7xl mx-auto pt-10 flex flex-row sm:rtl:flex-row-reverse">
+    <div class="sm:max-w-7xl mx-auto sm:pt-10 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse">
         <nav class="sm:w-64 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible sm:pl-6">
             @include('docs/nav')
         </nav>
