@@ -665,6 +665,15 @@
                 <code class="inline">bw_country_multiple.selectByValue('ng');</code>
             </td>
         </tr>
+        <tr>
+            <td>filter(element, value)</td>
+            <td>Filter the items in &lt;element&gt; based on &lt;value&gt;. <code class="inline">element</code> is the name of the target select component to be filtered. By default, one select component triggers filtering on another select component.
+                However, a component can trigger filtering on itself if the value is not coming from another select component.
+                <br /><br />
+                <code class="inline">bw_continents.filter('countries', 'AF');</code>
+                <code class="inline">bw_countries.filter('countries', 'EU');</code>
+            </td>
+        </tr>
     </x-bladewind::table>
     <h3>A Practical Example</h3>
     <p>
@@ -736,6 +745,7 @@
         </code>
     </pre>
 
+    <h2 id="filtering">Filtering</h2>
     <h3>Dynamically filter a table based on selected values</h3>
     <p>
         In this next example (<a href="https://github.com/mkocansey/bladewind/issues/154#issuecomment-1742930457" target="_blank">inspired by this comment</a>) we will filter an employee directory based on what departments are selected in the multi select component.
@@ -876,6 +886,115 @@
         </code>
     </pre>
 
+    <h3>Filter a Select component based on the value of another Select component</h3>
+    <p>
+        Let's dig right into an example.
+        Let's say you have two select components, continents and countries. You want to display a list of countries based on which continent was selected.
+        The Select component provides an easy way to handle this kind of filtering, without having to whip up your own Javascript logic.
+    </p>
+    <p>
+        To make this possible we will need to introduce two new attributes. <code class="inline text-red-500">filter</code> and <code class="inline text-red-500">filter_by</code>.
+    </p>
+    @php
+        $countries = [
+            [ 'name' => 'Ghana', 'value' => 'gh', 'continent_code' => 'af' ],
+            [ 'name' => 'Nigeria', 'value' => 'ng', 'continent_code' => 'af' ],
+            [ 'name' => 'Kenya', 'value' => 'ke', 'continent_code' => 'af' ],
+            [ 'name' => 'China', 'value' => 'ch', 'continent_code' => 'as' ],
+            [ 'name' => 'Thailand', 'value' => 'th', 'continent_code' => 'as' ],
+            [ 'name' => 'Japan', 'value' => 'jp', 'continent_code' => 'as' ],
+            [ 'name' => 'Canada', 'value' => 'ca', 'continent_code' => 'na' ],
+            [ 'name' => 'Jamaica', 'value' => 'jm', 'continent_code' => 'na' ],
+            [ 'name' => 'Honduras', 'value' => 'hn', 'continent_code' => 'na' ],
+            [ 'name' => 'Netherlands', 'value' => 'nd', 'continent_code' => 'eu' ],
+            [ 'name' => 'Norway', 'value' => 'nw', 'continent_code' => 'eu' ],
+            [ 'name' => 'Poland', 'value' => 'pl', 'continent_code' => 'eu' ],
+        ];
+    @endphp
+
+    <div class="bg-slate-100 sm:grid sm:grid-cols-2 gap-6">
+        <x-bladewind::select name="continent" placeholder="Select Continent" data="manual" filter="continent-country">
+            <x-bladewind::select-item label="Africa" value="af" />
+            <x-bladewind::select-item label="Asia" value="as" />
+            <x-bladewind::select-item label="Europe" value="eu" />
+            <x-bladewind::select-item label="North America" value="na" />
+        </x-bladewind::select>
+        <x-bladewind::select name="continent-country" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" />
+    </div>
+<br />
+    <p>
+        Let us take a look at the code. We start by defining the array that will populate the continents select component.
+    </p>
+    <pre class="language-js line-numbers">
+        <code>
+            // this array populates the country dropdown.
+            // all countries in this array are displayed when no continent is selected
+            $countries = [
+                [ 'name' => 'Ghana', 'value' => 'gh', 'continent_code' => 'af' ],
+                [ 'name' => 'Nigeria', 'value' => 'ng', 'continent_code' => 'af' ],
+                [ 'name' => 'Kenya', 'value' => 'ke', 'continent_code' => 'af' ],
+                [ 'name' => 'China', 'value' => 'ch', 'continent_code' => 'as' ],
+                [ 'name' => 'Thailand', 'value' => 'th', 'continent_code' => 'as' ],
+                [ 'name' => 'Japan', 'value' => 'jp', 'continent_code' => 'as' ],
+                [ 'name' => 'Canada', 'value' => 'ca', 'continent_code' => 'na' ],
+                [ 'name' => 'Jamaica', 'value' => 'jm', 'continent_code' => 'na' ],
+                [ 'name' => 'Honduras', 'value' => 'hn', 'continent_code' => 'na' ],
+                [ 'name' => 'Netherlands', 'value' => 'nd', 'continent_code' => 'eu' ],
+                [ 'name' => 'Norway', 'value' => 'nw', 'continent_code' => 'eu' ],
+                [ 'name' => 'Poland', 'value' => 'pl', 'continent_code' => 'eu' ],
+            ];
+        </code>
+    </pre>
+
+    <p>
+        Next is the continents select component. This time we used a manual select instead of generating this from an array because it is just a list of 4 continents.
+        Take note however, of the <code class="inline text-red-500">filter="continent-country"</code> attribute. <code class="inline">continent-country</code> is the name of the select component we want to filter.
+    </p>
+    <pre class="language-markup line-numbers" data-line="3,5">
+        <code>
+            &lt;!--- the continents select component. --->
+            &lt;x-bladewind::select name="continent" placeholder="Select Continent"
+                filter="continent-country"
+                data="manual"&gt;
+                &lt;x-bladewind::select-item label=Africa" value="af" /&gt;
+                &lt;x-bladewind::select-item label="Asia" value="as" /&gt;
+                &lt;x-bladewind::select-item label="Europe" value="eu" /&gt;
+                &lt;x-bladewind::select-item label="North America" value="na" /&gt;
+            &lt;/x-bladewind::select&gt;
+        </code>
+    </pre>
+    <p>
+        Next we introduced <code class="inline text-red-500">filter_by="continent_code"</code> when creating our <code class="inline">continent-country</code> select component.
+        When this attribute is defined, all BladewindUI does is to add a <code class="inline">data-filter-value</code> attribute to the HTML generated for the Select component's items.
+        Whatever value is defined for <code class="inline text-red-500">filter_by</code> must exist as a key in the data you are populating the component with.
+        You can tell from our example array above, there is a key called <code class="inline">continent_code</code>.
+    </p>
+    <p>
+        The items in the continents select component have values that match <code class="inline">continent_code</code>.
+        For example the line for Africa has a value of <code class="inline">af</code>. Selecting this will filter the countries select component and keep all items whose <code class="inline">continent_code</code> match <code class="inline">af</code>.
+    </p>
+
+    <pre class="language-markup line-numbers" data-line="3,7">
+        <code>
+            &lt;!--- the countries select component. --->
+            &lt;x-bladewind::select
+                name="continent-country"
+                placeholder="Select Country"
+                searchable="true"
+                data="json_encode($countries)"
+                filter_by="continent_code"
+                label_key="name"
+                value_key="name"&gt;
+        </code>
+    </pre>
+
+    <h3>Filter a Select component based on some value</h3>
+    <p>
+        The earlier example filtered our countries select component based on which continent was selected from our continent's select component.
+        You may not always want your filtering to be based on a value from one select component but probably just some arbitrary value passed from a link, button or other component.
+        The select component exposes a <code class="inline text-red-500">filter()</code> method that allows for runtime filtering.
+    </p>
+
     <h2 id="native">Native Select</h2>
     <p>
         It is possible to use the plain old HTML <code class="inline">&lt;select&gt; </code> element and apply the BladewindUI <code class="inline">bw-raw-select</code> class to change the style to look just like all the other BladewindUI form components.
@@ -1006,7 +1125,17 @@
         <tr>
             <td>max_error</td>
             <td>Please select only %s items</td>
-            <td>Message to display is user tries to select more than is allowed by <code class="inline">true</code>max_selectable</code>. %s is replaced with the number specified in <code class="inline">max_selectable</code></td>
+            <td>Message to display if user tries to select more than is allowed by <code class="inline">true</code>max_selectable</code>. %s is replaced with the number specified in <code class="inline">max_selectable</code></td>
+        </tr>
+        <tr>
+            <td>filter</td>
+            <td><em>blank</em></td>
+            <td>The name of the select component that needs to be filtered. See above example.</td>
+        </tr>
+        <tr>
+            <td>filter_by</td>
+            <td><em>blank</em></td>
+            <td>Which field should be used in filtering the target select component's items. You need to ensure this field exists in your target select component's  <code class="inline">data</code> attribute</td>
         </tr>
     </x-bladewind::table>
 
@@ -1074,7 +1203,10 @@
                 required="true"
                 selected_value="1001"
                 max_selectable="3"
-                searchable="true"  /&gt;
+                searchable="true"
+                filter="countries",
+                filter_by="continent_id"
+            /&gt;
         </code>
     </pre>
 
@@ -1095,6 +1227,7 @@
     <div class="flex items-center"><div class="dot"></div><a href="#onselect">Get selected values</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#custom-functions">Custom functions</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#js-manipulations">JavaScript manipulations</a></div>
+    <div class="flex items-center"><div class="dot"></div><a href="#filtering">Filtering</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#native">Native select</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
 </x-slot:side_nav>
