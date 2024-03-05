@@ -49,11 +49,11 @@
     </p>
 
     <div class="w-96 mx-auto pb-10">
-        <x-bladewind::timeline date="18-JUL" label="You signed up" completed="true" stacked="true" />
-        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed="true" stacked="true" />
-        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed="true" stacked="true" />
-        <x-bladewind::timeline label="Account is being reviewed" stacked="true" />
-        <x-bladewind::timeline label="Account activated" stacked="true" />
+        <x-bladewind::timeline date="18-JUL" label="You signed up" completed stacked />
+        <x-bladewind::timeline date="19-JUL" label="Customer rep assigned" completed />
+        <x-bladewind::timeline date="20-JUL" label="Customer rep called" completed />
+        <x-bladewind::timeline label="Account is being reviewed" stacked />
+        <x-bladewind::timeline label="Account activated" stacked />
     </div>
     <pre class="language-markup line-numbers" data-line="5, 11,17,22,27">
         <code>

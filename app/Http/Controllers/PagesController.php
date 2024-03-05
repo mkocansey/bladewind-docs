@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index()                 { return view('docs.index'); }
-    public function customization()         { return view('docs.customization'); }
+    public function install()               { return view('docs.install'); }
     public function alert()                 { return view('docs.alert'); }
     public function avatar()                { return view('docs.avatar'); }
     public function bell()                  { return view('docs.bell'); }
@@ -15,6 +15,10 @@ class PagesController extends Controller
     public function card()                  { return view('docs.card'); }
     public function centered_content()      { return view('docs.centered-content'); }
     public function checkbox()              { return view('docs.checkbox'); }
+    public function contribute()            { return view('docs.contribute'); }
+    public function customize()             { return view('docs.customize'); }
+    public function colours()               { return view('docs.colours'); }
+    public function darkmode()              { return view('docs.darkmode'); }
     public function datepicker()            { return view('docs.datepicker'); }
     public function dropdown()              { return view('docs.dropdown'); }
     public function dropmenu()              { return view('docs.dropmenu'); }
@@ -51,5 +55,5 @@ class PagesController extends Controller
     public function app_layouts()           { return view('docs.app-layouts'); }
     public function errors()                { return view('docs.error-pages'); }
     public function helper_functions()      { return view('docs.helpers'); }
-    public function spa()                   { return view('docs.spa'); }
+    public function roadmap()               { return view('docs.roadmap'); }
 }

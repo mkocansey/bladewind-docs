@@ -21,30 +21,28 @@
     </nav>
     <x-topbar />
 
-    <div class="h-20"></div>
+    <div class="h-14"></div>
     <div class="sm:max-w-7xl mx-auto sm:pt-10 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse">
-        <nav class="sm:w-64 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible sm:pl-6">
+        <nav class="sm:w-56 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible">
             @include('docs/nav')
         </nav>
 
-        <div class="content-area grow sm:ml-64 pb-16">
-            <div class="px-6">
+        <div class="content-area grow sm:ml-60 pb-16 bg-white">
                 <div class="flex flex-col-reverse sm:flex-row sm:rtl:flex-row-reverse">
-                    <div class="grow sm:w-3/4">
+                    <div class="grow sm:w-3/4 py-8 px-10 rounded-md">
                         <h1 class="page-title">{{$page_title??''}}</h1>
                         {{ $slot ?? '' }}
                     </div>
                     <div class="sm:w-1/4 sm:block hidden grow-0 mb-8">
-                        <nav class="sm:pl-8 sm:rtl:pr-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
-                            <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
-                            <div class="space-y-2">
+                        <nav class="sm:pl-8 sm:rtl:pr-8 sm:fixed sm:h-screen sm:overflow-y-scroll border-dashed border-l border-l-slate-200 pt-8">
+                            <h5 class="text-slate-500 dark:text-slate-300 uppercase font-light text-xs tracking-wider !m-0">Sections</h5>
+                            <div class="space-y-2.5 pt-4 -ml-3.5 pr-4">
                                 {{ $side_nav ?? '' }}
                             </div>
                             @include('docs/ads')
                         </nav>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 
@@ -52,38 +50,6 @@
 
     {{ $scripts ?? '' }}
     <script>
-        addToStorage = (key, val, storageType = 'localStorage') => {
-            if(window.localStorage || window.sessionStorage){
-                (storageType === 'localStorage') ?
-                    localStorage.setItem(key, val) : sessionStorage.setItem(key, val);
-            }
-        }
-
-        getFromStorage = (key, storageType = 'localStorage') => {
-            if(window.localStorage || window.sessionStorage){
-                return (storageType === 'localStorage') ?
-                    localStorage.getItem(key) : sessionStorage.getItem(key);
-            }
-        }
-
-        removeFromStorage = (key, storageType = 'localStorage') => {
-            if(window.localStorage || window.sessionStorage){
-                (storageType === 'localStorage') ?
-                    localStorage.removeItem(key) : sessionStorage.removeItem(key);
-            }
-        }
-
-        Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
-            var linkCopy = document.createElement('a');
-            linkCopy.textContent = 'Copy';
-            linkCopy.addEventListener('click', function () {
-                Prism.plugins.toolbar.copyToClipboard(env);
-            });
-
-            return linkCopy;
-
-        });
-
         switchDirection = (el) => {
             changeCss('.bw-tgl-sp-rtltr', 'rtl:flex-row-reverse');
             (el.checked) ? domEl('html').setAttribute('dir', 'rtl') : domEl('html').setAttribute('dir', 'ltr');

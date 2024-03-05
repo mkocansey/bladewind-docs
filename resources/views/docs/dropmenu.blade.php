@@ -15,7 +15,16 @@
             <td>Sales</td>
             <td>
                 <x-bladewind::dropmenu>
-                    <x-bladewind::dropmenu-item>Edit </x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item class="text-red-500">Edit </x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Delete</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item divider="true"></x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
                     <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
                 </x-bladewind::dropmenu>
             </td>
@@ -124,22 +133,8 @@
             <td>Sales</td>
             <td class="text-right">
                 <x-bladewind::dropmenu>
-                    <x-bladewind::dropmenu-item>
-                        <div class="flex align-middle w-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-300 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                            <span>Edit</span>
-                        </div>
-                    </x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>
-                        <div class="flex align-middle w-full whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-300 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                            </svg>
-                            <span class="pr-4">Invite Other Team Members</span>
-                        </div>
-                    </x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item icon="pencil-square">Edit</x-bladewind::dropmenu-item>
+                    <x-bladewind::dropmenu-item icon="trash">Invite Other Team Members</x-bladewind::dropmenu-item>
                 </x-bladewind::dropmenu>
             </td>
         </tr>
@@ -207,6 +202,9 @@
     </x-bladewind::alert>
 
     <x-slot:side_nav>
+        <div class="flex items-center"><div class="dot"></div><a href="#headers">Header & Dividers</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#icons">With Icons</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#scrollable">Scrollable</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

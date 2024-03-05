@@ -3,7 +3,10 @@ use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',                                 [ PagesController::class, 'index' ]);
-Route::get('customization',                     [ PagesController::class, 'customization' ]);
+Route::get('install',                           [ PagesController::class, 'install' ]);
+Route::get('customize',                         [ PagesController::class, 'customize' ]);
+Route::get('customize/colours',                 [ PagesController::class, 'colours' ]);
+Route::get('customize/darkmode',                [ PagesController::class, 'darkmode' ]);
 Route::get('component/alert',                   [ PagesController::class, 'alert' ]);
 Route::get('component/avatar',                  [ PagesController::class, 'avatar' ]);
 Route::get('component/bell',                    [ PagesController::class, 'bell' ]);
@@ -18,6 +21,7 @@ Route::get('component/empty-state',             [ PagesController::class, 'empty
 Route::get('component/filepicker',              [ PagesController::class, 'filepicker' ]);
 Route::get('component/horizontal-line-graph',   [ PagesController::class, 'line_graph' ]);
 Route::get('laravel8-users',                    [ PagesController::class, 'laravel8' ]);
+Route::get('contribute',                        [ PagesController::class, 'contribute' ]);
 Route::get('component/icon',                    [ PagesController::class, 'icon' ]);
 Route::get('component/input',                   [ PagesController::class, 'input' ]);
 Route::get('component/list-view',               [ PagesController::class, 'list' ]);
@@ -29,6 +33,7 @@ Route::get('component/progress-circle',         [ PagesController::class, 'progr
 Route::get('component/pagination',              [ PagesController::class, 'pagination' ]);
 Route::get('component/radio-button',            [ PagesController::class, 'radiobutton' ]);
 Route::get('component/rating',                  [ PagesController::class, 'rating' ]);
+Route::get('roadmap',                           [ PagesController::class, 'roadmap' ]);
 Route::get('component/select',                  [ PagesController::class, 'select' ]);
 Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
 Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);
@@ -45,4 +50,3 @@ Route::get('component/verification-code',       [ PagesController::class, 'verif
 Route::get('extra/app-layouts',                 [ PagesController::class, 'app_layouts' ]);
 Route::get('extra/error-pages',                 [ PagesController::class, 'errors' ]);
 Route::get('extra/helper-functions',            [ PagesController::class, 'helper_functions' ]);
-Route::get('extra/spa',                         [ PagesController::class, 'spa' ]);
