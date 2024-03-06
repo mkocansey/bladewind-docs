@@ -22,6 +22,7 @@
                     <li>Fix UI inconsistencies across all components.</li>
                     <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
                     <li>Allow minimum and maximum values for numeric input. Example: an input collecting age for adult content should allow a minimum of 16.</li>
+                    <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly.</li>
                 </ul>
             </x-slot:label>
         </x-bladewind::timeline>
@@ -73,7 +74,6 @@
                     <li>The <a href="/component/avatar">Avatar</a> component borders/rings should be customizable.</li>
                     <li>The <a href="/component/avatar">Avatar</a> component should alternatively show labels (if image is missing).</li>
                     <li>The <a href="/component/tag">Tag</a> component should have smaller versions.</li>
-                    <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly.</li>
                 </ul>
             </x-slot:label>
         </x-bladewind::timeline>
