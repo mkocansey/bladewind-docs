@@ -247,6 +247,42 @@
             </x-bladewind::tab-body>
         </x-bladewind::tab-group>
     </p>
+    <p>
+        <x-bladewind::tab-group name="violet-tab" color="violet">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="violet" active="true" label="Active Violet Tab" />
+                <x-bladewind::tab-heading name="inactive-violet" label="Disabled Tab" disabled="true" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="violet" active="true"></x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-violet"></x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+    <p>
+        <x-bladewind::tab-group name="indigo-tab" color="indigo">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="indigo" active="true" label="Active Indigo Tab" />
+                <x-bladewind::tab-heading name="inactive-indigo" label="Disabled Tab" disabled="true" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="indigo" active="true"></x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-indigo"></x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+    <p>
+        <x-bladewind::tab-group name="fuchsia-tab" color="fuchsia">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="fuchsia" active="true" label="Active Fuchsia Tab" />
+                <x-bladewind::tab-heading name="inactive-fuchsia" label="Disabled Tab" disabled="true" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="fuchsia" active="true"></x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-fuchsia"></x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::tab-group name="red-tab" color="red"&gt;
@@ -303,8 +339,9 @@
             <td>blue</td>
             <td>
                 There are nine colors to choose from. <br />
-                <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
+                <code class="inline">primary</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
                 <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code>
             </td>
         </tr>
     </x-bladewind::table>

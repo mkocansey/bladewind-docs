@@ -1,7 +1,6 @@
 <x-app>
     <x-slot:title>Rating Component</x-slot:title>
     <x-slot:page_title>Rating</x-slot:page_title>
-
     <p>
         Displays a five star rating system. The number of stars  highlighted match the rating passed.
         There are nine star colors to choose from but the default is <code class="inline text-red-500">orange</code>.
@@ -114,6 +113,33 @@
                     name="purple-rating" /&gt;
             </code>
         </pre>
+    <p><x-bladewind::rating rating="4" color="violet" name="violet-rating" /></p>
+        <pre class="language-markup line-numbers" data-line="3">
+            <code>
+                &lt;x-bladewind.rating
+                    rating="4"
+                    color="violet"
+                    name="violet-rating" /&gt;
+            </code>
+        </pre>
+    <p><x-bladewind::rating rating="4" color="indigo" name="indigo-rating" /></p>
+        <pre class="language-markup line-numbers" data-line="3">
+            <code>
+                &lt;x-bladewind.rating
+                    rating="4"
+                    color="indigo"
+                    name="indigo-rating" /&gt;
+            </code>
+        </pre>
+    <p><x-bladewind::rating rating="4" color="fuchsia" name="fuchsia-rating" /></p>
+        <pre class="language-markup line-numbers" data-line="3">
+            <code>
+                &lt;x-bladewind.rating
+                    rating="4"
+                    color="fuchsia"
+                    name="fuchsia-rating" /&gt;
+            </code>
+        </pre>
 
     <h2 id="sizes">Different Sizes</h2>
     <p>The BladewindUI rating component comes not just in colors but also sizes. There are three sizes available. The default size is <code class="inline text-red-500">small</code></p>
@@ -224,6 +250,7 @@
                 There are nine colors to choose from. <br />
                 <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
                 <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code>
             </td>
         </tr>
         <tr>

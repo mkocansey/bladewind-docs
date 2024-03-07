@@ -15,70 +15,55 @@
     <p>The BladewindUI tag component allows you to specify different colours. The tags by default are faint in colour with blue being the default colour.
     There are nine colour options to pick from.</p>
     <p>
-        <x-bladewind::tag label="pending" color="red" /> &nbsp;
-        <x-bladewind::tag label="pending" color="yellow" /> &nbsp;
-        <x-bladewind::tag label="pending" color="green" /> &nbsp;
-        <x-bladewind::tag label="pending" color="blue" /> &nbsp;
-        <x-bladewind::tag label="pending" color="pink" /> &nbsp;
-        <x-bladewind::tag label="pending" color="cyan" /> &nbsp;
-        <x-bladewind::tag label="pending" color="orange" /> &nbsp;
-        <x-bladewind::tag label="pending" color="gray" /> &nbsp;
-        <x-bladewind::tag label="pending" color="purple" /> &nbsp;
+        <x-bladewind::tag label="primary" color="primary" /> &nbsp;
+        <x-bladewind::tag label="red" color="red" /> &nbsp;
+        <x-bladewind::tag label="yellow" color="yellow" /> &nbsp;
+        <x-bladewind::tag label="green" color="green" /> &nbsp;
+        <x-bladewind::tag label="blue" color="blue" /> &nbsp;
+        <x-bladewind::tag label="pink" color="pink" /> &nbsp;
+        <x-bladewind::tag label="cyan" color="cyan" /> &nbsp;
+        <x-bladewind::tag label="orange" color="orange" /> &nbsp;
+        <x-bladewind::tag label="gray" color="gray" /> &nbsp;
+        <x-bladewind::tag label="purple" color="purple" /> &nbsp;
+        <x-bladewind::tag label="violet" color="violet" /> &nbsp;
+        <x-bladewind::tag label="indigo" color="indigo" /> &nbsp;
+        <x-bladewind::tag label="fuchsia" color="fuchsia" /> &nbsp;
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tag label="pending" color="red" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="yellow" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="green" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="blue" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="pink" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="cyan" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="orange" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="gray" /&gt;
-
-            &lt;x-bladewind.tag label="pending" color="purple" /&gt;
-
+            &lt;x-bladewind.tag label="pending" color="color-name" /&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers">
+        <code>
+          &lt;x-bladewind.tag label="pending" color="pink" /&gt;
         </code>
     </pre>
 
     <h2 id="dark">Dark Coloured</h2>
     <p>Dark colours in this case have nothing to do with dark mode. These are just a deeper shade of the tag colours. You can get darker shaded tags by setting <code class="inline text-red-500">shade="dark"</code> </p>
     <p>
-        <x-bladewind::tag label="pending" shade="dark" color="red" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="yellow" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="green" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="blue" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="pink" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="cyan" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="orange" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="gray" /> &nbsp;
-        <x-bladewind::tag label="pending" shade="dark" color="purple" /> &nbsp;
+        <x-bladewind::tag label="primary" shade="dark" color="primary" /> &nbsp;
+        <x-bladewind::tag label="red" shade="dark" color="red" /> &nbsp;
+        <x-bladewind::tag label="yellow" shade="dark" color="yellow" /> &nbsp;
+        <x-bladewind::tag label="green" shade="dark" color="green" /> &nbsp;
+        <x-bladewind::tag label="blue" shade="dark" color="blue" /> &nbsp;
+        <x-bladewind::tag label="pink" shade="dark" color="pink" /> &nbsp;
+        <x-bladewind::tag label="cyan" shade="dark" color="cyan" /> &nbsp;
+        <x-bladewind::tag label="orange" shade="dark" color="orange" /> &nbsp;
+        <x-bladewind::tag label="gray" shade="dark" color="gray" /> &nbsp;
+        <x-bladewind::tag label="purple" shade="dark" color="purple" /> &nbsp;
+        <x-bladewind::tag label="violet" shade="dark" color="violet" /> &nbsp;
+        <x-bladewind::tag label="indigo" shade="dark" color="indigo" /> &nbsp;
+        <x-bladewind::tag label="fuchsia" shade="dark" color="fuchsia" /> &nbsp;
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tag label="pending" shade="dark" color="red" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="yellow" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="green" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="blue" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="pink" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="cyan" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="orange" /&gt;
-
-            &lt;x-bladewind.tag label="pending" shade="dark" color="gray" /&gt;
-
+            &lt;x-bladewind.tag label="pending" shade="dark" color="color-name" /&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers">
+        <code>
             &lt;x-bladewind.tag label="pending" shade="dark" color="purple" /&gt;
         </code>
     </pre>
@@ -127,6 +112,26 @@
                 color="pink"
                 class="a1002"
                 onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" /&gt;
+        </code>
+    </pre>
+    <h2 id="tiny">Tiny Tags</h2>
+    <p>
+        Sometimes you need to display tags as hints. For example in a menu bar you may want users to know which features are new by displaying a colourful but tiny <em>new</em> tag next to each new menu item.
+        Setting the <code class="inline text-red-500">tiny="true"</code> attribute will serve such aa purpose. Specifying this attribute on a <code class="inline">x-bladewind::tags</code> component will apply the size to all tags
+        defined within the component. However, specifying the attribute on a <code class="inline">x-bladewind::tag</code> component will only apply it to that single tag.
+    </p>
+    <p><x-bladewind::tag label="just added" tiny="true" color="pink" />  &nbsp;
+        <x-bladewind::tag label="new" tiny="true" color="purple" shade="dark" uppercasing="false" />
+    </p>
+    <pre class="language-markup line-numbers" data-line="4,6">
+        <code>
+            &lt;x-bladewind.tag label="just added" tiny="true" color="pink" /&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers" data-line="4,6">
+        <code>&lt;x-bladewind.tag label="new" tiny="true" color="purple"
+            shade="dark"
+            uppercasing="false"/&gt;
         </code>
     </pre>
 
@@ -383,6 +388,16 @@
             <td>false</td>
             <td>Determines if the tag is fully rounded or not. By default tags have a very subtle roundness. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
+        <tr>
+            <td>tiny</td>
+            <td>false</td>
+            <td>Determines if the size of all the tags in the group is tiny. There are just two sizes, tiny and regular. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>uppercasing</td>
+            <td>true</td>
+            <td>Determines if the text for all the tags in the group is uppercased. If <code class="inline">false</code>, the text text will be displayed as you entered it. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Tag Component</h3>
@@ -437,6 +452,16 @@
             <td>Determines if the tag is only outlined with <code class="inline">color</code> above. Outline tags have no background colour. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>tiny</td>
+            <td>false</td>
+            <td>Determines if the tag size is tiny. There are just tiny and the regular size. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>uppercasing</td>
+            <td>true</td>
+            <td>Determines if the tag text is all uppercase. If <code class="inline">false</code>, the text text will be displayed as you entered it. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>onclick</td>
             <td><em>blank</em></td>
             <td>Javascript function to execute when the close icon is clicked. </td>
@@ -457,6 +482,8 @@
                 required="true"
                 rounded="true"
                 max="3"
+                tiny="false"
+                uppercasing="false"
                 selected_value="laravel,js"
                 error_message="You can select only up to 3 tech stacks"
                 error_heading="Check selection!"&gt;
@@ -475,6 +502,8 @@
                 outline="true"
                 add_id_prefix="false"
                 shade="dark"
+                tiny="false"
+                uppercasing="false"
                 onclick="alert('you clicked on '+ dom_el('.a1002').innerText)" /&gt;
         </code>
     </pre>
@@ -487,6 +516,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#faint">Faint coloured</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#dark">Dark coloured</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#closable">With close icons</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#tiny">Tiny</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#rounded">Rounded</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#outline">Outlined</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#selectable">Selectable tags</a></div>

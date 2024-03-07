@@ -671,6 +671,11 @@
             <td>This slot holds your table header information.</td>
         </tr>
         <tr>
+            <td>uppercasing</td>
+            <td>true</td>
+            <td>Determines if the table headings should be all uppercase. If <code class="inline">false</code>, the text will be displayed as you entered it. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>:data</td>
             <td>null</td>
             <td>Array of elements to generate the table from. When this has a value, there is no need to manually build the table. Ignore this attribute if you prefer to use <code class="inline">data</code> instead.</td>

@@ -56,25 +56,22 @@
     <p>
         Like most of the BladewindUI components, radio-buttones also come in nine colours to enable the components sit better in most designs with various colour schemes.
     </p>
-    <div class="grid grid-cols-3">
-        <div>
-            <x-bladewind::radio-button color="red" checked="true" label="I am a red radio-button" />
-            <x-bladewind::radio-button color="yellow" label="I am a yellow radio-button" />
-            <x-bladewind::radio-button color="green" label="I am a green radio-button" />
-        </div>
-        <div>
-            <x-bladewind::radio-button color="pink" label="I am a pink radio-button" />
-            <x-bladewind::radio-button color="cyan" label="I am a cyan radio-button" />
-            <x-bladewind::radio-button color="black" label="I am a black radio-button" />
-        </div>
-        <div>
-            <x-bladewind::radio-button color="purple" label="I am a purple radio-button" />
-            <x-bladewind::radio-button color="orange" label="I am a orange radio-button" />
-            <x-bladewind::radio-button color="blue" label="I am a blue radio-button" />
-        </div>
+    <div class="grid grid-cols-3 gap-2">
+        <x-bladewind::radio-button color="red" checked="true" label="I am a red radio-button" />
+        <x-bladewind::radio-button color="yellow" label="I am a yellow radio-button" />
+        <x-bladewind::radio-button color="green" label="I am a green radio-button" />
+        <x-bladewind::radio-button color="pink" label="I am a pink radio-button" />
+        <x-bladewind::radio-button color="cyan" label="I am a cyan radio-button" />
+        <x-bladewind::radio-button color="black" label="I am a black radio-button" />
+        <x-bladewind::radio-button color="purple" label="I am a purple radio-button" />
+        <x-bladewind::radio-button color="orange" label="I am a orange radio-button" />
+        <x-bladewind::radio-button color="blue" label="I am a blue radio-button" />
+        <x-bladewind::radio-button color="violet" label="I am a violet radio-button" />
+        <x-bladewind::radio-button color="indigo" label="I am a indigo radio-button" />
+        <x-bladewind::radio-button color="fuchsia" label="I am a fuchsia radio-button" />
     </div>
 
-    <pre class="language-markup line-numbers" data-line="2,7,12,17,22,27,32,37,42">
+    <pre class="language-markup line-numbers" data-line="2,7,12,17,23,28,33,38,43,49,54,59">
         <code>
             &lt;x-bladewind::radio-button
                 color="red"
@@ -120,6 +117,21 @@
                 color="blue"
                 checked="true"
                 label="I am a blue radio-button" /&gt;
+
+            &lt;x-bladewind::radio-button
+                color="violet"
+                checked="true"
+                label="I am a violet radio-button" /&gt;
+
+            &lt;x-bladewind::radio-button
+                color="indigo"
+                checked="true"
+                label="I am a indigo radio-button" /&gt;
+
+            &lt;x-bladewind::radio-button
+                color="fuchsia"
+                checked="true"
+                label="I am a fuchsia radio-button" /&gt;
         </code>
     </pre>
     <h2 id="attributes">Full List Of Attributes</h2>
@@ -168,6 +180,13 @@
             <td>Any additional css classes can be added using this attribute.</td>
         </tr>
         <tr>
+            <td>color</td>
+            <td>blue</td>
+            <td>There are twelve colors to choose from. <br /><code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
+                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
+        </tr>
+        <tr>
             <td>label_css</td>
             <td>mr-6</td>
             <td>Applies styling to the radio button label.</td>
@@ -181,6 +200,7 @@
                 label="I agree to the terms and conditions"
                 checked="false"
                 disabled="false"
+                color="pink"
                 name="tnc"
                 value="yes"
                 class="shadow-sm" /&gt;

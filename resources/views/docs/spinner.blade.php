@@ -5,12 +5,29 @@
     <p>
         Display a spinning icon
     </p>
-
+<div class="space-x-2">
     <x-bladewind::spinner  />
+    <x-bladewind::spinner color="primary"  />
+    <x-bladewind::spinner color="red"  />
+    <x-bladewind::spinner color="yellow"  />
+    <x-bladewind::spinner color="green"  />
+    <x-bladewind::spinner color="purple"  />
+    <x-bladewind::spinner color="pink"  />
+    <x-bladewind::spinner color="orange"  />
+    <x-bladewind::spinner color="cyan"  />
+    <x-bladewind::spinner color="violet"  />
+    <x-bladewind::spinner color="indigo"  />
+    <x-bladewind::spinner color="fuchsia"  />
+</div>
 
     <pre class="language-markup">
         <code>
             &lt;x-bladewind.spinner  /&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.spinner color="purple"  /&gt;
         </code>
     </pre>
 
@@ -61,6 +78,14 @@
             <td>size</td>
             <td>small</td>
             <td><code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>gray</td>
+            <td>Set the colour of the spinner.<br><br /> <code class="inline">primary</code> <code class="inline">blue</code> <code class="inline">red</code>
+                <code class="inline">yellow</code> <code class="inline">green</code><code class="inline">purple</code> <code class="inline">pink</code>
+                <code class="inline">orange</code> <code class="inline">gray</code> <code class="inline">cyan</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
             <td>class</td>

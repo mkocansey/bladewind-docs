@@ -12,12 +12,20 @@
         the attribute <code class="inline text-red-500">tag="a"</code>.
     </p>
     <h2 id="primary">Primary Button</h2>
-    <div class="text-center p-4">
+    <div class="text-center p-4 space-y-2 space-x-2">
         <x-bladewind::button>Subscribe Now</x-bladewind::button>
+        <x-bladewind::button uppercasing="false">Subscribe Now</x-bladewind::button>
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button&gt;subscribe now&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind.button&gt;Subscribe Now&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button uppercasing="false"&gt;
+                Subscribe Now
+            &lt;/x-bladewind.button&gt;
         </code>
     </pre>
     <br />
@@ -26,9 +34,10 @@
     </div>
     <pre class="language-markup">
         <code>
+            &lt;!--
             // this button is created using the &lt;a&gt; tag
             // you can inspect element on the above button to check
-
+            -->
             &lt;x-bladewind.button tag="a"&gt;subscribe now&lt;/x-bladewind.button&gt;
         </code>
     </pre>
@@ -502,6 +511,11 @@
             <code class="inline">yellow</code> <code class="inline">green</code><code class="inline">purple</code> <code class="inline">pink</code>
             <code class="inline">orange</code> <code class="inline">black</code> <code class="inline">cyan</code>
             <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
+        </tr>
+        <tr>
+            <td>uppercasing</td>
+            <td>true</td>
+            <td>Determines if the button text is all uppercase. If <code class="inline">false</code>, the text will be displayed as you entered it. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>can_submit</td>
