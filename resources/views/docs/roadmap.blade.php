@@ -21,6 +21,9 @@
                     <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly. Should should selected option.</li>
                     <li>Include outline option to the <a href="/component/button">Button</a> component.</li>
                     <li>The <a href="/component/alert">Alert</a> component should have a plain option and accept user specified icons or avatars.</li>
+                    <li>The <a href="/component/tag">Tag</a> component should have smaller versions.</li>
+                    <li>Add violet, indigo and fuchsia to all components that support multiple colours.</li>
+                    <li><a href="/component/table">Table</a> component headings should allow for cases other than uppercase.</li>
                 </ul>
             </x-slot:label>
         </x-bladewind::timeline>
@@ -77,7 +80,6 @@
                     <li>Add Placeholder component.</li>
                     <li>The <a href="/component/avatar">Avatar</a> component borders/rings should be customizable.</li>
                     <li>The <a href="/component/avatar">Avatar</a> component should alternatively show labels (if image is missing).</li>
-                    <li>The <a href="/component/tag">Tag</a> component should have smaller versions.</li>
                 </ul>
             </x-slot:label>
         </x-bladewind::timeline>
@@ -88,7 +90,6 @@
                     <li>Fix any issues from 2.7.0 release.</li>
                     <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.</li>
                     <li>Provide more options for how much blur should be behind a <a href="/component/modal">Modal</a> component.</li>
-                    <li><a href="/component/tag">Tag</a> component should have smaller versions.</li>
                     <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly.</li>
                 </ul>
             </x-slot:label>
