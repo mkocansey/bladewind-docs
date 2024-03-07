@@ -383,7 +383,7 @@
             </x-bladewind::dropmenu-item>
             <x-bladewind::dropmenu-item divider />
             <x-bladewind::dropmenu-item hover="false">
-                <x-bladewind::button color="purple" radius="small" size="small" class="w-full">Sign Out</x-bladewind::button>
+                <x-bladewind::button color="indigo" radius="small" size="small" class="w-full">Sign Out</x-bladewind::button>
             </x-bladewind::dropmenu-item>
         </x-bladewind::dropmenu>
     </div>

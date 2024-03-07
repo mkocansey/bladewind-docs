@@ -156,6 +156,67 @@
         </code>
     </pre>
 
+    <h2 id="outline">Outline Buttons</h2>
+    <p>
+        Buttons can exist as outlines only. This can be achieved by setting the attribute <code class="inline text-red-500">outline="true"</code>.
+        The outline picks up the value of the <code class="inline text-red-500">color</code> attribute if you are using a primary button.
+        Secondary buttons just have one colour so a secondary outline button picks up that colour. All other attributes defined on the button like <code class="inline text-red-500">radius</code> are preserved.
+        The button only loses its background colour.
+    </p>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button radius="small" outline>Small Radius</x-bladewind::button>
+        <x-bladewind::button radius="medium" outline color="green">Medium Radius</x-bladewind::button>
+        <x-bladewind::button radius="full" outline color="violet">Full Radius</x-bladewind::button>
+    </div>
+    <br />
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind::button
+                radius="full"
+                outline="true"
+                color="purple">Full Radius&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button type="secondary" radius="none" outline>No Radius</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="small" outline>Small Radius</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="full" outline>Full Radius</x-bladewind::button>
+    </div>
+    <br />
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind::button
+                radius="full"
+                outline="true"
+                type="secondary">Full Radius&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <p>
+        By default, outline buttons use the TailwindCSS <code class="inline">border-4</code> width. You can modify the border width
+        and specify any of the other supported TailwindCSS border widths without the "border-" prefix.
+    </p>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button outline border_width="2">Border 2</x-bladewind::button>
+        <x-bladewind::button outline  border_width="4">Border 4</x-bladewind::button>
+        <x-bladewind::button outline border_width="8">Border 8</x-bladewind::button>
+    </div>
+    <br />
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind::button
+                outline="true"
+                border_width="2"
+                type="secondary">Border 2&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;x-bladewind::button
+                outline="true"
+                border_width="8"
+                type="secondary">Border 8&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
     <h2 id="spinning">With Spinners</h2>
     <p>Buttons can have spinners. This is useful when indicating progress of a form submission or progress of any other action.
     The button spinners use the BladewindUI <a href="/component/spinner">Spinner</a> component.</p>
@@ -258,9 +319,9 @@
 
     <h2 id="coloured">Coloured Button</h2>
     <p>
-        Only primary buttons can take on different colors. If the default blue color doesn't do it for you, there are eight other colour options to pick from.
+        Only primary buttons can take on different colors. If the default blue color doesn't do it for you, there are eleven other colour options to pick from.
     </p>
-    <p>
+    <br/>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <x-bladewind::button color="red">Red is a colour no?</x-bladewind::button>
         <x-bladewind::button color="yellow">Is gold yellow?</x-bladewind::button>
@@ -276,7 +337,11 @@
         <x-bladewind::button color="orange">Get me an Orange</x-bladewind::button>
         <x-bladewind::button>Feeling Blue</x-bladewind::button>
     </div>
-    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <x-bladewind::button color="violet">Violet Moods</x-bladewind::button>
+        <x-bladewind::button color="indigo">Indigo Button</x-bladewind::button>
+        <x-bladewind::button color="fuchsia">Fuchsia Vibes</x-bladewind::button>
+    </div>
 
     <pre class="language-markup line-numbers" data-line="1,5,9,13,17,21,25,29">
         <code>
@@ -474,6 +539,16 @@
             <td>Specifies how round the button should look. <br><br /> <code class="inline">none</code> <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">full</code> </td>
         </tr>
         <tr>
+            <td>outline</td>
+            <td>false</td>
+            <td>Should button be displayed only as an outline. All background colour is lost. <br><br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>border_width</td>
+            <td>4</td>
+            <td>Only used if outline=true. How thick should the button border be. <br><br /> <code class="inline">2</code> <code class="inline">4</code> <code class="inline">8</code></td>
+        </tr>
+        <tr>
             <td>button_text_css</td>
             <td><em>blank</em></td>
             <td>The button text colour has been predetermined by the button colour and respective shades. It is however possible to overwrite the colour of the button text.
@@ -494,6 +569,8 @@
                 disabled="false"
                 class="mt-0"
                 tag="a"
+                outline="true"
+                border_width="2"
                 show_focus_ring="false"
                 radius="medium"
                 icon="lock-closed"
@@ -513,6 +590,7 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#primary">Primary button</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#secondary">Secondary button</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#outline">Outline button</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#spinning">With spinners</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#icons">With icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#submittable">Form submission</a></div>
