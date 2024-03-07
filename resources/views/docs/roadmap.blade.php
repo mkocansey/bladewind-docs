@@ -6,10 +6,6 @@
         The timeline focuses more on releases instead of release dates. Users are encouraged to <a href="/contribute">contribute</a> to move us closer to releases quicker.
     </p>
     <p>
-        <x-bladewind::alert show_close_icon="false" type="warning">
-            The roadmap below does not include integration of Livewire into the current library. That decision will be based on the results of <a href="https://github.com/mkocansey/bladewind/discussions/185" target="_blank">this poll</a>.
-        </x-bladewind::alert>
-        <div class="pt-4"></div>
         <x-bladewind::alert show_close_icon="false" type="info">
             The roadmap below is very flexible and not cast in stone. Contributors can pick and work now on features scheduled for later releases.
         </x-bladewind::alert>
@@ -53,9 +49,6 @@
         <x-bladewind::timeline date="2.6.0" stacked="true">
             <x-slot:label>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Add a Range Slider component.</li>
-                    <li>Add a Time Picker component.</li>
-                    <li>Add an Accordion component.</li>
                     <li>Add a Pagination component.</li>
                     <li>Add option for column headings in the <a href="/component/table">Table</a> component to be sticky.</li>
                     <li>Add column divider option to the <a href="/component/table">Table</a> component.</li>
@@ -129,10 +122,13 @@
         <x-bladewind::timeline date="3.0.0" stacked="true">
             <x-slot:label>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Add Livewire support. <x-bladewind::tag label="tentative" color="orange" /></li>
+                    <li>Add Livewire support.</li>
                     <li>Introduce ready to use layouts.</li>
                     <li>Remove support for Laravel 8 users.</li>
                     <li>The Select component will completely replace the Dropdown component.</li>
+                    <li>Add a Range Slider component.</li>
+                    <li>Add a Time Picker component.</li>
+                    <li>Add an Accordion component.</li>
                 </ul>
             </x-slot:label>
         </x-bladewind::timeline>

@@ -146,6 +146,27 @@
         </code>
     </pre>
     <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="80" color="violet" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.progress-bar percentage="80" color="violet" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="80" color="fuchsia" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.progress-bar percentage="80" color="fuchsia" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="80" color="indigo" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.progress-bar percentage="80" color="indigo" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="90" /></p>
     <pre class="language-markup">
         <code>
@@ -210,6 +231,27 @@
         </code>
     </pre>
     <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="80" shade="dark" color="violet" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="violet" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="80" shade="dark" color="indigo" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="indigo" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="80" shade="dark" color="fuchsia" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="fuchsia" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
     <x-bladewind::progress-bar percentage="90" shade="dark" />
     <pre class="language-markup">
         <code>
@@ -240,8 +282,8 @@
         <tr>
             <td>color</td>
             <td>primary</td>
-            <td>There are nine colors to choose from. <br /><br /><code class="inline">primary</code><code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
-                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code></td>
+            <td>There are twelve colors to choose from. <br /><br /><code class="inline">primary</code><code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
+                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code> <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
             <td>show_percentage_label</td>

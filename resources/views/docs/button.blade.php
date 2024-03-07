@@ -500,7 +500,8 @@
             <td>primary</td>
             <td>Set the colour of the button. The default is picked from what has been defined as the primary colour in your tailwind.config.js file. BladewindUI sets the default to blue. <br /><br><br /> <code class="inline">primary</code> <code class="inline">blue</code> <code class="inline">red</code>
             <code class="inline">yellow</code> <code class="inline">green</code><code class="inline">purple</code> <code class="inline">pink</code>
-            <code class="inline">orange</code> <code class="inline">black</code> <code class="inline">cyan</code></td>
+            <code class="inline">orange</code> <code class="inline">black</code> <code class="inline">cyan</code>
+            <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
             <td>can_submit</td>

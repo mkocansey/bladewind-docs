@@ -59,21 +59,23 @@
     <p>
         Like most of the BladewindUI components, checkboxes also come in nine colours to enable the components sit better in most designs with various colour schemes.
     </p>
-    <div class="grid grid-cols-3">
-        <div>
+    <div class="grid grid-cols-3 gap-2">
+
             <x-bladewind::checkbox color="red" checked="true" label="I am a red checkbox" />
             <x-bladewind::checkbox color="yellow" checked="true" label="I am a yellow checkbox" />
             <x-bladewind::checkbox color="green" checked="true" label="I am a green checkbox" />
-        </div>
-        <div>
+
             <x-bladewind::checkbox color="pink" checked="true" label="I am a pink checkbox" />
             <x-bladewind::checkbox color="cyan" checked="true" label="I am a cyan checkbox" />
             <x-bladewind::checkbox color="black" checked="true" label="I am a black checkbox" />
-        </div>
-        <div>
+
             <x-bladewind::checkbox color="purple" checked="true" label="I am a purple checkbox" />
             <x-bladewind::checkbox color="orange" checked="true" label="I am a orange checkbox" />
             <x-bladewind::checkbox color="blue" checked="true" label="I am a blue checkbox" />
+
+            <x-bladewind::checkbox color="violet" checked="true" label="I am a violet checkbox" />
+            <x-bladewind::checkbox color="indigo" checked="true" label="I am a indigo checkbox" />
+            <x-bladewind::checkbox color="fuchsia" checked="true" label="I am a fuchsia checkbox" />
         </div>
     </div>
 
@@ -167,6 +169,13 @@
             <td>Adds a margin to the bottom of the checkbox to separate it from the next form element. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>color</td>
+            <td>primary</td>
+            <td>Color of the checkbox rings.<br/><br/>
+                <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">black</code> <code class="inline">cyan</code>
+                <code class="inline">orange</code> <code class="inline">purple</code> <code class="inline">pink</code> <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>bw-checkbox</td>
             <td>Any additional css classes can be added using this attribute.</td>
@@ -187,6 +196,7 @@
                 disabled="false"
                 name="tnc"
                 value="yes"
+                color="pink"
                 label_css="font-bold"
                 class="shadow-sm" /&gt;
         </code>

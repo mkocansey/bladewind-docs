@@ -201,6 +201,48 @@
             </code>
         </pre>
     </p>
+    <p><x-bladewind::horizontal-line-graph
+        label="Women Farmers: "
+        percentage="80"
+        color="violet" /></p>
+    <p>
+        <pre class="language-markup line-numbers" data-line="4">
+            <code>
+                &lt;x-bladewind.horizontal-line-graph
+                    label="Women Farmers: "
+                    percentage="80"
+                    color="violet" /&gt;
+            </code>
+        </pre>
+    </p>
+    <p><x-bladewind::horizontal-line-graph
+        label="Women Farmers: "
+        percentage="80"
+        color="indigo" /></p>
+    <p>
+        <pre class="language-markup line-numbers" data-line="4">
+            <code>
+                &lt;x-bladewind.horizontal-line-graph
+                    label="Women Farmers: "
+                    percentage="80"
+                    color="indigo" /&gt;
+            </code>
+        </pre>
+    </p>
+    <p><x-bladewind::horizontal-line-graph
+        label="Women Farmers: "
+        percentage="80"
+        color="fuchsia" /></p>
+    <p>
+        <pre class="language-markup line-numbers" data-line="4">
+            <code>
+                &lt;x-bladewind.horizontal-line-graph
+                    label="Women Farmers: "
+                    percentage="80"
+                    color="fuchsia" /&gt;
+            </code>
+        </pre>
+    </p>
 
     <p><x-bladewind::horizontal-line-graph
         label="Women Farmers: "
@@ -275,6 +317,51 @@
                     label="Women Farmers: "
                     percentage="40"
                     shade="dark" color="pink" /&gt;
+            </code>
+        </pre>
+    </p>
+
+    <p><x-bladewind::horizontal-line-graph
+        label="Women Farmers: "
+        percentage="40"
+        shade="dark" color="fuchsia" /></p>
+    <p>
+        <pre class="language-markup line-numbers" data-line="4">
+            <code>
+                &lt;x-bladewind.horizontal-line-graph
+                    label="Women Farmers: "
+                    percentage="40"
+                    shade="dark" color="fuchsia" /&gt;
+            </code>
+        </pre>
+    </p>
+
+    <p><x-bladewind::horizontal-line-graph
+        label="Women Farmers: "
+        percentage="40"
+        shade="dark" color="indigo" /></p>
+    <p>
+        <pre class="language-markup line-numbers" data-line="4">
+            <code>
+                &lt;x-bladewind.horizontal-line-graph
+                    label="Women Farmers: "
+                    percentage="40"
+                    shade="dark" color="indigo" /&gt;
+            </code>
+        </pre>
+    </p>
+
+    <p><x-bladewind::horizontal-line-graph
+        label="Women Farmers: "
+        percentage="40"
+        shade="dark" color="violet" /></p>
+    <p>
+        <pre class="language-markup line-numbers" data-line="4">
+            <code>
+                &lt;x-bladewind.horizontal-line-graph
+                    label="Women Farmers: "
+                    percentage="40"
+                    shade="dark" color="violet" /&gt;
             </code>
         </pre>
     </p>
@@ -368,8 +455,9 @@
         <tr>
             <td>color</td>
             <td>primary</td>
-            <td>There are nine colors to choose from. <br /><br /><code class="inline">primary</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
-                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code></td>
+            <td>There are twelve colors to choose from. <br /><br /><code class="inline">primary</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
+                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
             <td>shade</td>

@@ -2,53 +2,68 @@
     <x-slot:title>Customizing Theme Colours</x-slot:title>
     <x-slot:page_title>Theme Colours</x-slot:page_title>
 
-    <p>BladewindUI ships with nine colours from the TailwindCSS palette. The default colour used for the BladewindUI components is blue.</p>
+    <p>BladewindUI ships with twelve colours from the TailwindCSS palette. The default colour used for the BladewindUI components is blue.</p>
 
-    <div class="grid-cols-9 grid">
-        <div class="space-y-2.5">
+    <div class="grid-cols-6 grid gap-6">
+        <div class="space-y-1">
             <div>Blue</div>
-            <div class="w-16 bg-blue-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-blue-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-blue-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-blue-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Red</div>
-            <div class="w-16 bg-red-600 h-10 rounded-md"></div>
-            <div class="w-16 bg-red-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-red-600 h-10 rounded-md"></div>
+            <div class="w-24 bg-red-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Amber</div>
-            <div class="w-16 bg-amber-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-amber-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-amber-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-amber-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Emerald</div>
-            <div class="w-16 bg-emerald-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-emerald-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-emerald-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-emerald-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Purple</div>
-            <div class="w-16 bg-purple-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-purple-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-purple-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-purple-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Orange</div>
-            <div class="w-16 bg-orange-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-orange-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-orange-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-orange-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Slate</div>
-            <div class="w-16 bg-slate-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-slate-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-slate-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-slate-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Pink</div>
-            <div class="w-16 bg-pink-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-pink-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-pink-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-pink-100 h-10 rounded-md"></div>
         </div>
-        <div class="space-y-2.5">
+        <div class="space-y-1">
             <div>Cyan</div>
-            <div class="w-16 bg-cyan-500 h-10 rounded-md"></div>
-            <div class="w-16 bg-cyan-100 h-10 rounded-md"></div>
+            <div class="w-24 bg-cyan-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-cyan-100 h-10 rounded-md"></div>
+        </div>
+        <div class="space-y-1">
+            <div>Violet</div>
+            <div class="w-24 bg-violet-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-violet-100 h-10 rounded-md"></div>
+        </div>
+        <div class="space-y-1">
+            <div>Indigo</div>
+            <div class="w-24 bg-indigo-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-indigo-100 h-10 rounded-md"></div>
+        </div>
+        <div class="space-y-1">
+            <div>Fuchsia</div>
+            <div class="w-24 bg-fuchsia-500 h-10 rounded-md"></div>
+            <div class="w-24 bg-fuchsia-100 h-10 rounded-md"></div>
         </div>
     </div>
     <p>&nbsp;</p>
@@ -100,7 +115,10 @@
 
     <h3>If you are feeling geeky</h3>
     <p>The changes to the Tailwind config should be enough to get you your right colours. If however, for some reason you are in your geeky elements and prefer to access all the uncompiled BladewindUI CSS files, you can run the command below.</p>
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-assets --force</code></pre>
+    <pre class="lang-bash command-line">
+        <code>
+            php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-assets --force
+        </code></pre>
     <p>
         You should now have in your <code class="inline">public</code> directory, a <code class="inline">vendor > bladewind > <span class=" text-red-400">assets</span></code> folder containing all the uncompiled tailwind css files.
         You can modify these files to suit your theme specification.

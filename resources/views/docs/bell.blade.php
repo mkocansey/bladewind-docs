@@ -85,7 +85,7 @@
 
     <h2 id="colors">Different Colours</h2>
     <p>
-        The default dot indicator displayed next to the bell is blue. This may not match your app's theme, so it is possible to display the dot indicator in nine different colours by setting the color attribute on the component, like this, <code class="inline text-red-500">color="red"</code>.
+        The default dot indicator displayed next to the bell is blue. This may not match your app's theme, so it is possible to display the dot indicator in different colours by setting the color attribute on the component, like this, <code class="inline text-red-500">color="red"</code>.
     </p>
 
     <div class="text-center p-6">
@@ -106,6 +106,12 @@
         <x-bladewind::bell color="purple" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <x-bladewind::bell color="orange" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <x-bladewind::bell color="violet" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <x-bladewind::bell color="indigo" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <x-bladewind::bell color="fuchsia" />
     </div>
 
     <pre class="language-markup line-numbers">

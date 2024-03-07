@@ -56,6 +56,9 @@
         <div class="text-center"><x-bladewind::progress-circle percentage="65" color="purple" /> <br />Purple</div>
         <div class="text-center"><x-bladewind::progress-circle percentage="65" color="orange" /> <br />Orange</div>
         <div class="text-center"><x-bladewind::progress-circle percentage="65" color="blue" /> <br />Blue</div>
+        <div class="text-center"><x-bladewind::progress-circle percentage="65" color="violet" /> <br />Violet</div>
+        <div class="text-center"><x-bladewind::progress-circle percentage="65" color="indigo" /> <br />Indigo</div>
+        <div class="text-center"><x-bladewind::progress-circle percentage="65" color="fuchsia" /> <br />Fuchsia</div>
     </div>
     <p>
         <pre class="language-markup">
@@ -77,6 +80,9 @@
         <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="purple" /> <br />Purple</div>
         <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="orange" /> <br />Orange</div>
         <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="blue" /> <br />Blue</div>
+        <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="violet" /> <br />Violet</div>
+        <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="indigo" /> <br />Indigo</div>
+        <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="fuchsia" /> <br />Fuchsia</div>
     </div>
     <p>
         <pre class="language-markup line-numbers" data-line="3">
@@ -228,8 +234,9 @@
         <tr>
             <td>color</td>
             <td>blue</td>
-            <td>There are nine colors to choose from. <br /><code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
-                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code></td>
+            <td>There are twelve colors to choose from. <br /><code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">blue</code> <code class="inline">pink</code>
+                <code class="inline">cyan</code> <code class="inline">purple</code> <code class="inline">gray</code> <code class="inline">orange</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
             <td>size</td>
