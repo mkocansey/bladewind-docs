@@ -59,6 +59,18 @@
             <td><code class="inline">tiny</code>  <code class="inline">small</code> <code class="inline">medium</code> <code class="inline">big</code> <code class="inline">xl</code> <code class="inline">xxl</code> <code class="inline">omg</code></td>
         </tr>
     </x-bladewind::table>
+    <h3>Centered Content with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind.centered-content
+                size="medium"/&gt;
+        </code>
+    </pre>
+
+    <x-bladewind::alert show_close_icon="false">
+        The source file for this component is available in <code class="inline">resources > views > components > bladewind > centered-content.blade.php</code>
+    </x-bladewind::alert>
+
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
