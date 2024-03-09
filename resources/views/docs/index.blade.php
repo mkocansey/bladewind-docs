@@ -241,92 +241,90 @@
     <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0">
         Almost all BladewindUI components come in nine different colours and a couple of sizes, where it makes sense to size things up.
     </div>
+
     <div class="max-w-7xl mx-auto">
-        <div class="sm:grid sm:grid-cols-2 pt-10">
+        <div class="sm:grid sm:grid-cols-4 gap-6 pt-10">
             <div class="hidden sm:block">
-                <x-bladewind::avatar image="/assets/images/edwin.jpeg" size="tiny" />
-                <x-bladewind::avatar image="/assets/images/me.jpeg" size="small" />
-                <x-bladewind::avatar image="/assets/images/audrey.jpeg" size="medium" />
-                <x-bladewind::avatar image="/assets/images/francis.png" />
-                <x-bladewind::avatar image="/assets/images/doc.png" size="big" />
-                <x-bladewind::avatar image="/assets/images/rowe.jpeg" size="huge" />
-                <x-bladewind::avatar image="/assets/images/issah.jpg" size="omg" />
-                <div></div>
-                <x-bladewind::button size="tiny">Tiny Button</x-bladewind::button>
-                <x-bladewind::button size="small">Small Button</x-bladewind::button>
-                <x-bladewind::button>Regular Button</x-bladewind::button>
-                <x-bladewind::button size="big">Big Button</x-bladewind::button>
-                <x-bladewind::progress-circle  size="tiny"  percentage="50" />
-                <x-bladewind::progress-circle  size="small"  percentage="40" />
-                <x-bladewind::progress-circle  size="medium"  percentage="75" />
-                <x-bladewind::progress-circle  size="big"  percentage="75" />
-                <x-bladewind::spinner size="xl"  />
-                <x-bladewind::spinner size="medium"  />
-                <x-bladewind::bell size="big" />
-                <x-bladewind::bell />
-                <x-bladewind::toggle  bar="thin"  />
-                <x-bladewind::toggle  />
-                <x-bladewind::toggle  bar="thicker"  />
+                <div class="border-2 border-slate-200 rounded-lg text-center shadow p-3">
+                    <div class="space-y-5 pb-4">
+                        <x-bladewind::avatar image="/assets/images/doc.png" size="huge" show_ring="false"  />
+                        <div class="font-light text-slate-700 text-4xl">Jandel Doe</div>
+                        <x-bladewind::icon name="phone" class="bg-red-500 text-white rounded-full !h-14 !w-14 p-3 rotate-180 mr-4" type="solid" />
+                        <x-bladewind::icon name="phone" class="bg-green-500 text-white rounded-full !h-14 !w-14 p-3" type="solid" />
+                    </div>
+                </div>
             </div>
             <div>
-                <div class="space-y-2 space-x-2 grid grid-cols-2 sm:grid-cols-3">
-                    <div></div>
-                    <div></div>
-                    <div class="hidden sm:block"></div>
-                    <x-bladewind::button color="red" radius="small">Red Button</x-bladewind::button>
-                    <x-bladewind::button color="black" radius="small">Black Button</x-bladewind::button>
-                    <x-bladewind::button color="green" radius="small">Green Button</x-bladewind::button>
-                    <x-bladewind::button color="purple" radius="small">Purple Button</x-bladewind::button>
-                    <x-bladewind::button color="orange" radius="small">Orange Button</x-bladewind::button>
-                    <x-bladewind::button color="cyan" radius="small">Cyan Button</x-bladewind::button>
-                    <x-bladewind::button color="pink" radius="small">Pink Button</x-bladewind::button>
-                    <x-bladewind::button color="yellow" radius="small">Yellow Button</x-bladewind::button>
-                    <x-bladewind::button color="blue" radius="small">Blue Button</x-bladewind::button>
+                <div class="border border-slate-200 rounded-lg">
+                <x-bladewind::list-view compact="true">
+                    <x-bladewind::list-item>
+                        <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
+                        <div class="ml-3">
+                            <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
+                            <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
+                        </div>
+                    </x-bladewind::list-item>
+                    <x-bladewind::list-item>
+                        <x-bladewind::avatar size="small" image="" />
+                        <div class="ml-3">
+                            <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
+                            <div class="text-sm text-slate-500 truncate">fake@person.com</div>
+                        </div>
+                    </x-bladewind::list-item>
+                    <x-bladewind::list-item>
+                        <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
+                        <div class="ml-3">
+                            <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
+                            <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
+                        </div>
+                    </x-bladewind::list-item>
+                    <x-bladewind::list-item>
+                        <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
+                        <div class="ml-3">
+                            <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva</div>
+                            <div class="text-sm text-slate-500 truncate">audrey@munyiva.com</div>
+                        </div>
+                    </x-bladewind::list-item>
+                    <x-bladewind::list-item>
+                        <x-bladewind::avatar size="small" image="/assets/images/francis.png" />
+                        <div class="ml-3">
+                            <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Franis Appiah</div>
+                            <div class="text-sm text-slate-500 truncate">francis@appiah.com</div>
+                        </div>
+                    </x-bladewind::list-item>
+                </x-bladewind::list-view>
                 </div>
-                <div class="grid sm:grid-cols-2 pt-6 gap-6">
-                    <div>
-                        <x-bladewind::progress-bar percentage="20" color="pink" />
-                        <x-bladewind::progress-bar percentage="40" shade="dark" color="pink" />
-                        <x-bladewind::progress-bar percentage="60" color="black" />
-                        <x-bladewind::progress-bar percentage="80" shade="dark" color="black" />
-                        <x-bladewind::progress-bar percentage="90" color="purple" />
-                        <x-bladewind::progress-bar percentage="60" shade="dark" color="purple" />
-                        <x-bladewind::progress-bar percentage="60" color="gray" />
-                        <x-bladewind::progress-bar percentage="80" shade="dark" color="gray" />
-                        <x-bladewind::progress-bar percentage="90" color="yellow" />
-                        <x-bladewind::progress-bar percentage="60" shade="dark" color="yellow" />
-                        <x-bladewind::progress-bar percentage="40" color="green" />
-                        <x-bladewind::progress-bar percentage="60" shade="dark" color="green" />
-                        <x-bladewind::progress-bar percentage="30" color="orange" />
-                        <x-bladewind::progress-bar percentage="70" shade="dark" color="orange" />
-                    </div>
-                    <div class="space-y-2 space-x-2">
+            </div>
+            <div>
+                <div>
+                    <x-bladewind::progress-bar percentage="20" color="pink" />
+                    <x-bladewind::progress-bar percentage="40" shade="dark" color="pink" />
+                    <x-bladewind::progress-bar percentage="60" color="black" />
+                    <x-bladewind::progress-bar percentage="80" shade="dark" color="black" />
+                    <x-bladewind::progress-bar percentage="90" color="purple" />
+                    <x-bladewind::progress-bar percentage="60" shade="dark" color="yellow" />
+                    <x-bladewind::progress-bar percentage="40" color="green" />
+                    <x-bladewind::progress-bar percentage="60" shade="dark" color="green" />
+                    <x-bladewind::progress-bar percentage="30" color="orange" />
+                    <x-bladewind::progress-bar percentage="70" shade="dark" color="orange" />
+                </div>
+                <div class="border border-slate-200 rounded-lg mt-4 p-4">
+                    <h1 class="mb-4">What is your preferred theme?</h1>
+                    <div class="space-x-3">
                         <x-bladewind::toggle color="gray" bar="thicker" checked="true" />
                         <x-bladewind::toggle color="yellow" bar="thicker" checked="true" />
-                        <x-bladewind::toggle color="green" bar="thicker" checked="true" />
-                        <x-bladewind::toggle color="blue" bar="thicker" checked="true" />
-                        <x-bladewind::toggle color="pink" bar="thicker" checked="true" />
-                        <x-bladewind::toggle color="purple" bar="thicker" checked="true" />
-                        <x-bladewind::toggle color="orange" bar="thicker" checked="true" />
                         <x-bladewind::toggle color="cyan" bar="thicker" checked="true" />
-                        <x-bladewind::toggle color="red" bar="thicker" checked="true" />
-                        <x-bladewind::checkbox color="gray" checked="true" />
-                        <x-bladewind::checkbox color="yellow" checked="true" />
-                        <x-bladewind::checkbox color="green" checked="true" />
-                        <x-bladewind::checkbox color="pink" checked="true" />
-                        <x-bladewind::checkbox color="blue" checked="true" />
-                        <x-bladewind::checkbox color="orange" checked="true" />
-                        <x-bladewind::checkbox color="cyan" checked="true" />
-                        <x-bladewind::checkbox color="purple" checked="true" />
-                        <x-bladewind::checkbox color="red" checked="true" />
-                        <x-bladewind::radio-button color="black" checked="true" />
-                        <x-bladewind::radio-button color="yellow" checked="true" />
-                        <x-bladewind::radio-button color="green" checked="true" />
-                        <x-bladewind::radio-button color="pink" checked="true" />
-                        <x-bladewind::radio-button color="blue" checked="true" />
-                        <x-bladewind::radio-button color="orange" checked="true" />
-
                     </div>
+                </div>
+            </div>
+            <div>
+                <div class="border border-slate-200 rounded-lg text-center p-3">
+                    <div class="py-4">Verify your account</div>
+                    <x-bladewind::code />
+                    <x-bladewind::button size="small">Verify</x-bladewind::button>
+                </div>
+                <div class="space-y-5 pb-4">
+                    
                 </div>
             </div>
         </div>
