@@ -16,7 +16,6 @@
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
                     <li>Add alignment option to <a href="/component/timeline">Timeline</a>.</li>
                     <li>Fix UI inconsistencies across all components.</li>
-                    <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
                     <li>Allow minimum and maximum values for numeric input. Example: an input collecting age for adult content should allow a minimum of 16.</li>
                     <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly. Should should selected option.</li>
                     <li>Include outline option to the <a href="/component/button">Button</a> component.</li>
@@ -32,9 +31,12 @@
             <x-slot:label>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
                     <li>Add drag-n-drop to <a href="/component/filepicker">File Picker</a> with ability to upload multiple files.</li>
+                    <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
                     <li>Add Feed component.</li>
                     <li>User can define action buttons alignment for <a href="/component/modal">Modal</a> component</li>
                     <li><a href="/component/tab">Tab</a> component headings should accept icons</li>
+                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.</li>
+                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should have a countdown and resend code link.</li>
                 </ul>
             </x-slot:label>
         </x-bladewind::timeline>
@@ -112,7 +114,6 @@
             <x-slot:label>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
                     <li>Fix any issues from 2.8.0 release.</li>
-                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.</li>
                     <li>Provide more options for how much blur should be behind a <a href="/component/modal">Modal</a> component.</li>
                     <li><a href="/component/tag">Tag</a> component should have smaller versions.</li>
                     <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly.</li>
