@@ -243,7 +243,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto">
-        <div class="sm:grid sm:grid-cols-4 gap-6 pt-10">
+        <div class="sm:grid sm:grid-cols-4 space-y-6 gap-6 pt-10">
             <div class="hidden sm:block">
                 <div class="border-2 border-slate-200 rounded-lg text-center shadow p-3">
                     <div class="space-y-5 pb-4">
@@ -318,13 +318,13 @@
                 </div>
             </div>
             <div>
-                <div class="border border-slate-200 rounded-lg text-center p-3">
+                <div class="border border-slate-300 rounded-lg text-center p-3">
                     <div class="py-4">Verify your account</div>
                     <x-bladewind::code />
                     <x-bladewind::button size="small">Verify</x-bladewind::button>
                 </div>
-                <div class="space-y-5 pb-4">
-                    
+                <div>
+                    <x-bladewind::button size="medium" icon_right="true" color="pink" radius="small" class="w-full mt-5" icon="bell-slash">Unsubscribe</x-bladewind::button>
                 </div>
             </div>
         </div>
