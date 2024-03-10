@@ -314,6 +314,23 @@
         </code>
     </pre>
 
+    <p>
+        By default, icons are positioned on the left of the menu item content. To switch the icon position to the right of the menu item content, set <code class="inline text-red-500">icon_right="true"</code>.
+        Setting the attribute on the <code class="inline">x-bladewind::dropmenu</code> component will shift all menu items in the menu to the right.
+        Alternatively, you can set the attribute on one or more menu items within the Dropmenu component.
+    </p>
+    <pre class="language-markup">
+        <code>
+            ...
+            &lt;x-bladewind::dropmenu icon_right="true"&gt;
+                &lt;x-bladewind::dropmenu-item&gt;
+                ...
+                &lt;/x-bladewind::dropmenu-item&gt;
+            &lt;/x-bladewind::dropmenu&gt;
+            ...
+        </code>
+    </pre>
+
     <h3>Dividers</h3>
     <p>
         You may want to logically divider your Dropmenu into sections. You can either do that with headers or dividers.
@@ -674,6 +691,11 @@
             <td>Should the menu be hidden after clicking on any of the menu items. <br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>icon_right</td>
+            <td>false</td>
+            <td>Align the icon to the right of the menu item. Applies to all items in the menu.<br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>class</td>
             <td><em>blank</em></td>
             <td>Additional css for the menu items container</td>
@@ -702,9 +724,14 @@
             <td>Additional css to apply to the icon.</td>
         </tr>
         <tr>
+            <td>icon_right</td>
+            <td>false</td>
+            <td>Align the icon to the right of the menu item. Applies to the menu item the attribute is declared on.<br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>divider</td>
             <td>false</td>
-            <td>Is this menu item a divider<br />. <code class="inline">true</code> <code class="inline">false</code></td>
+            <td>Is this menu item a divider.<br /> <code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>header</td>
