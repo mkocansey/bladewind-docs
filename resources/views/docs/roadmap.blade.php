@@ -16,7 +16,6 @@
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
                     <li>Add alignment and positioning options to <a href="/component/timeline">Timeline</a>.</li>
                     <li>Fix UI inconsistencies across all components.</li>
-                    <li>Allow minimum and maximum values for numeric input. Example: an input collecting age for adult content should allow a minimum of 16.</li>
                     <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly. Should should selected option.</li>
                     <li>Include outline option to the <a href="/component/button">Button</a> component.</li>
                     <li>The <a href="/component/alert">Alert</a> component should have a plain option and accept user specified icons or avatars.</li>
@@ -31,6 +30,7 @@
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
                     <li>Fix any issues from 2.5.0 release.</li>
+                    <li>Allow minimum and maximum values for numeric input. Example: an input collecting age for adult content should allow a minimum of 16.</li>
                     <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
                     <li>User can define action buttons alignment for <a href="/component/modal">Modal</a> component</li>
                     <li><a href="/component/tab">Tab</a> component headings should accept icons</li>
