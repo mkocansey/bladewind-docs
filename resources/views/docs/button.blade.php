@@ -590,7 +590,7 @@
                 radius="medium"
                 icon="lock-closed"
                 icon_right="false"
-                button_text_css="font-bold text-black
+                button_text_css="font-bold text-black"
                 can_submit="false"&gt;
                 ...
             &lt;/x-bladewind.button&gt;

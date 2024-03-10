@@ -273,7 +273,8 @@
             <td>color</td>
             <td><em>blue</em></td>
             <td>The colour of the dot indicator.
-                <br> <code class="inline">primary</code> <code class="inline">blue</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">pink</code> <code class="inline">cyan</code> <code class="inline">black</code> <code class="inline">purple</code> <code class="inline">orange</code></td>
+                <br> <code class="inline">primary</code> <code class="inline">blue</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">pink</code> <code class="inline">cyan</code> <code class="inline">black</code> <code class="inline">purple</code> <code class="inline">orange</code>
+                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
             <td>animate_dot</td>

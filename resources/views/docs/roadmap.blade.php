@@ -11,7 +11,7 @@
         </x-bladewind::alert>
     </p>
     <x-bladewind.timeline-group position="left" anchor="big" stacked>
-        <x-bladewind::timeline date="2.5.0">
+        <x-bladewind::timeline date="2.5.0" completed>
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
                     <li>Add alignment and positioning options to <a href="/component/timeline">Timeline</a>.</li>
@@ -119,6 +119,7 @@
                     <li>Add Livewire support.</li>
                     <li>Introduce ready to use layouts.</li>
                     <li>Remove support for Laravel 8 users.</li>
+                    <li>Deprecate a couple of attributes in various components.</li>
                     <li>The Select component will completely replace the Dropdown component.</li>
                     <li>Add a Range Slider component.</li>
                     <li>Add a Time Picker component.</li>
