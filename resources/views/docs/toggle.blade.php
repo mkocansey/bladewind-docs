@@ -197,7 +197,7 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#thin-thicker-bar">Thin & thicker bars</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#checked">Checked and disbled</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#checked">Checked and disabled</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
