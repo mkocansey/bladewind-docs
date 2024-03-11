@@ -9,12 +9,12 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div class="bg-gradient-to-tr from-slate-100 to-slate-200 sm:px-10 px-4 sm:pb-20 pb-10 shadow-sm">
+<div class="bg-gradient-to-tr from-slate-100 to-slate-200 sm:px-10 px-4 sm:pb-20 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
     <div class="py-10 sm:pt-10 sm:pb-16"><img src="/assets/images/bladewind-logo.png" alt="logo" class="h-6 sm:h-8 mx-auto" /></div>
-    <div class="sm:text-6xl text-4xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center">
+    <div class="sm:text-6xl text-4xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center">
         The only UI components you'll ever need for your Laravel projects. Truly.
     </div>
-    <div class="sm:text-xl text-base font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4">
+    <div class="sm:text-xl text-base font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 dark:text-dark-500 px-4">
         A collection of over 30 easy-to-customize but elegantly designed blade UI components for your Laravel projects.
     </div>
     <div class="text-center sm:pt-10 pt-6 space-x-2">
@@ -165,11 +165,11 @@
     </div>
 </div>
 
-<div class="bg-white sm:px-10 sm:py-20 py-10 px-4 shadow-sm">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center px-10">
+<div class="bg-white sm:px-10 sm:py-20 py-10 px-4 shadow-sm dark:bg-dark-800">
+    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center px-10">
         There's no Pro or Pro Max. Just <span class="underline">free</span> everything.
     </div>
-    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4">
+    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 dark:text-dark-400 px-4">
         All current and future UI components plus their frequent updates remain free forever. <a href="/contribute" class="text-indigo-500 hover:text-indigo-700">Contributions</a> are welcome.
     </div>
 
@@ -234,28 +234,28 @@
 </div>
 
 
-<div class="bg-white sm:px-10 sm:py-20 py-10 px-4">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center px-10">
+<div class="bg-white sm:px-10 sm:py-20 py-10 px-4 dark:bg-dark-800">
+    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center px-10 dark:text-dark-300">
         One size and colour doesn't fit all. We know that.
     </div>
-    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0">
+    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0 dark:text-dark-300">
         Almost all BladewindUI components come in nine different colours and a couple of sizes, where it makes sense to size things up.
     </div>
 
     <div class="max-w-7xl mx-auto">
-        <div class="sm:grid sm:grid-cols-4 space-y-6 gap-6 pt-10">
+        <div class="sm:grid sm:grid-cols-4 gap-6 pt-10">
             <div class="hidden sm:block">
-                <div class="border-2 border-slate-200 rounded-lg text-center shadow p-3">
+                <div class="border-2 border-slate-200 dark:border-dark-700 rounded-lg text-center shadow p-3">
                     <div class="space-y-5 pb-4">
                         <x-bladewind::avatar image="/assets/images/doc.png" size="huge" show_ring="false"  />
                         <div class="font-light text-slate-700 text-4xl">Jandel Doe</div>
-                        <x-bladewind::icon name="phone" class="bg-red-500 text-white rounded-full !h-14 !w-14 p-3 rotate-180 mr-4" type="solid" />
-                        <x-bladewind::icon name="phone" class="bg-green-500 text-white rounded-full !h-14 !w-14 p-3" type="solid" />
+                        <x-bladewind::icon name="phone" class="bg-red-500 !text-white rounded-full !h-14 !w-14 p-3 rotate-180 mr-4" type="solid" />
+                        <x-bladewind::icon name="phone" class="bg-green-500 !text-white rounded-full !h-14 !w-14 p-3" type="solid" />
                     </div>
                 </div>
             </div>
             <div>
-                <div class="border border-slate-200 rounded-lg">
+                <div class="border border-slate-200 dark:border-dark-700 rounded-lg">
                 <x-bladewind::list-view compact="true">
                     <x-bladewind::list-item>
                         <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
@@ -308,7 +308,7 @@
                     <x-bladewind::progress-bar percentage="30" color="orange" />
                     <x-bladewind::progress-bar percentage="70" shade="dark" color="orange" />
                 </div>
-                <div class="border border-slate-200 rounded-lg mt-4 p-4">
+                <div class="border border-slate-200 dark:border-dark-700 rounded-lg mt-4 p-4">
                     <h1 class="mb-4">What is your preferred theme?</h1>
                     <div class="space-x-3">
                         <x-bladewind::toggle color="gray" bar="thicker" checked="true" />
@@ -318,7 +318,7 @@
                 </div>
             </div>
             <div>
-                <div class="border border-slate-300 rounded-lg text-center p-3">
+                <div class="border border-slate-300 dark:border-dark-700 rounded-lg text-center p-3">
                     <div class="py-4">Verify your account</div>
                     <x-bladewind::code />
                     <x-bladewind::button size="small">Verify</x-bladewind::button>
@@ -331,8 +331,8 @@
     </div>
 </div>
 
-<div class="bg-slate-200 sm:px-10 sm:py-20 py-10 px-4">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center px-10">
+<div class="bg-slate-200 sm:px-10 sm:py-20 py-10 px-4 dark:bg-dark-900">
+    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-300 text-center px-10">
         It's usually one line of code but feature packed.
     </div>
     <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0">

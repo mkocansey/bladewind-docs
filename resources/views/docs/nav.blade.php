@@ -1,23 +1,23 @@
 <h5 class="nav-heading mt-0">Start Here</h5>
-<div class="space-y-3 bg-white sm:mr-4 py-4">
+<div class="space-y-3 bg-white sm:mr-4 py-4 dark:bg-dark-700">
 <div class="flex items-center installation"><div class="dot"></div><a href="/install">Installation</a></div>
     <div class="flex items-center laravel-8"><div class="dot"></div><a href="/laravel8-users">Laravel 8 Users</a></div>
 </div>
 <h5 class="nav-heading">Customize</h5>
-<div class="space-y-3 bg-white mr-4 py-4">
+<div class="space-y-3 bg-white mr-4 py-4 dark:bg-dark-700">
     <div class="flex items-center customization"><div class="dot"></div><a href="/customize">Customization</a></div>
     <div class="flex items-center colours"><div class="dot"></div><a href="/customize/colours">Colours</a></div>
     <div class="flex items-center darkmode"><div class="dot"></div><a href="/customize/darkmode">Dark Mode</a></div>
 </div>
 
 <h5 class="nav-heading">Components</h5>
-<div class="space-y-3 bg-white mr-4 py-4">
+<div class="space-y-3 bg-white mr-4 py-4 dark:bg-dark-700">
     @include('docs.components-list')
 </div>
 
 
 <h5 class="nav-heading">Extras</h5>
-<div class="space-y-3 bg-white mr-4 py-4">
+<div class="space-y-3 bg-white dark:bg-dark-700 mr-4 py-4">
     <div class="flex items-center extra-errors"><div class="dot"></div><a href="/extra/error-pages">Error Pages</a></div>
     <div class="flex items-center extra-helpers"><div class="dot"></div><a href="/extra/helper-functions">Helper Functions</a></div>
     <div class="flex items-center extra-layouts hidden"><div class="dot"></div><a href="/extra/app-layouts">App Layouts</a></div>

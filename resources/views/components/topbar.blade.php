@@ -1,5 +1,4 @@
-<div class="fixed w-full z-40 py-4 px-6 dark:bg-slate-900 bg-gradient-to-r from-indigo-700 to-indigo-900
-     border-b border-b-violet-900 dark:border-0 dark:shadow-slate-800 dark:shadow-sm shadow-lg">
+<div class="fixed w-full z-40 py-4 px-6 bg-gradient-to-r from-indigo-700 to-indigo-900 border-b border-b-violet-900 dark:border-0 dark:shadow-slate-800 dark:shadow-sm shadow-lg dark:bg-dark-900 dark:bg-gradient-to-r dark:from-dark-900 dark:to-dark-950">
     <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between">
             <div onclick="location.href='/'" class="cursor-pointer flex">

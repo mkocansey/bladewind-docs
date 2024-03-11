@@ -2,7 +2,7 @@
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
-<body class="text-gray-500/80 bg-slate-100/80 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
+<body class="text-gray-500/80 bg-slate-100/80 dark:bg-gradient-to-b from-dark-900 to-dark-800 dark:text-dark-400">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -27,7 +27,7 @@
             @include('docs/nav')
         </nav>
 
-        <div class="content-area grow sm:ml-60 pb-16 bg-white">
+        <div class="content-area grow sm:ml-60 pb-16 bg-white dark:bg-dark-800">
                 <div class="flex flex-col-reverse sm:flex-row sm:rtl:flex-row-reverse">
                     <div class="grow sm:w-3/4 py-8 px-10 rounded-md">
                         <h1 class="page-title">{{$page_title??''}}</h1>
