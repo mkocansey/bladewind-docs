@@ -43,6 +43,38 @@
             &lt;x-bladewind.input numeric="true"  /&gt;
         </code>
     </pre>
+    <h3>Minimum & Maximum Values</h3>
+    <p>
+        You may want users to enter a minimum or maximum number when using the numeric input. For example, let's say employees cannot request more than 5 days off per leave request.
+        Your input could restrict the maximum number of days off to 5 when a user is filling the form.
+    </p>
+    <div class="grid grid-cols-2 gap-6">
+        <div><x-bladewind::input placeholder="Minimum is 3" name="input-min" numeric="true" min="3" error_message="Minimum value must be 3" show_error_inline="true" /></div>
+        <div><x-bladewind::input placeholder="Maximum is 12" name="input-max" numeric="true" max="12" error_message="Maximum value must be 12" /></div>
+    </div>
+    <br />
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::input
+        placeholder="Minimum is 3"
+        name="input-min"
+        numeric="true"
+        min="3"
+        error_message="Minimum value must be 3"
+        show_error_inline="true" /&gt;
+</code>
+</pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::input
+        placeholder="Maximum is 12"
+        name="input-max"
+        numeric="true"
+        max="12"
+        error_message="Maximum value must be 12" /&gt;
+</code>
+</pre>
+
     <h2 id="labels-placeholders">Inputs With Labels</h2>
     <p>
         You can display the BladewindUI textbox with labels. Labels present themselves as placeholders but jump to the top border of the textbox when that field has focus.

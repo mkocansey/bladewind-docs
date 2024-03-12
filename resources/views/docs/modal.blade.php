@@ -29,6 +29,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <pre class="language-markup line-numbers" data-line="11,17">
         <code>
             &lt;x-bladewind.button
+                show_close_icon="true"
                 onclick="showModal('tnc-agreement')"&gt;
                 Basic modal
             &lt;/x-bladewind.button&gt;

@@ -76,7 +76,6 @@
             <x-bladewind::checkbox color="violet" checked="true" label="I am a violet checkbox" />
             <x-bladewind::checkbox color="indigo" checked="true" label="I am a indigo checkbox" />
             <x-bladewind::checkbox color="fuchsia" checked="true" label="I am a fuchsia checkbox" />
-        </div>
     </div>
 
     <pre class="language-markup line-numbers" data-line="2,7,12,17,22,27,32,37,42">
