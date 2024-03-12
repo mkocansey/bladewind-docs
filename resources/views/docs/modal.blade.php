@@ -228,9 +228,80 @@
         The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
     </x-bladewind::modal>
 
+    <x-bladewind::modal title="Large File Size" name="iconic" icon="folder-arrow-down" icon_css="bg-gray-200 text-gray-700 p-2.5 rounded-full">
+        The file you are trying to download is very big. Do you still want to continue with the download?
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="Large File Size" type="warning" name="iconic-warning" icon="folder-arrow-down">
+        The file you are trying to download is very big. Do you still want to continue with the download?
+    </x-bladewind::modal>
+    <x-bladewind::modal title="Submit Bug?" type="error" name="iconic-error" icon="bug-ant" ok-button-label="Submit Bug">
+        It appears you stumbled on a bug. Do you want to submit this report to our dev team for fixing?
+    </x-bladewind::modal>
+    <x-bladewind::modal type="info" name="iconic-info" icon="bolt" title="Lightening Coming">
+        There's a terrible storm approaching. Please stay indoors to avoid getting struck by lightening.
+    </x-bladewind::modal>
+    <x-bladewind::modal type="success" name="iconic-success" icon="calendar-days" title="Even Added">
+        Your event, "<b>Meeting with the mobile app developer"</b> has been added successfully.
+        <a href="javascript:hideModal('iconic-success')">Go to event</a>
+    </x-bladewind::modal>
+
+    <h2 id="icons">Using Different Icons</h2>
+    <p>
+        The default types use predefined icons. You may want to use your own icons in the modal component to give your context to your message.
+        You can set the  <code class="inline text-red-500">icon</code> attribute to any icon name on <a href="https://heroicons.com" target="_blank">Heroicons</a>. This modal icon is displayed using the
+        BladewindUI <a href="/component/icon">Icon</a> component. Note the use of the <code class="inline text-red-500">icon_css</code> attribute as well. That is how to apply extra styling to the custom icon.
+    </p>
+    <p>
+        <x-bladewind::button onclick="showModal('iconic')">Custom Icon Modal</x-bladewind::button>
+    </p>
+    <pre class="language-markup line-numbers" data-line="6,7">
+        <code>
+            &lt;x-bladewind.button onclick="showModal('iconic')"&gt;
+                Custom Icon Modal
+            &lt;/x-bladewind.button&gt;
+
+            &lt;x-bladewind.modal
+                icon="folder-arrow-down"
+                icon_css="bg-gray-500 text-white p-2.5 rounded-full"
+                title="Large File Size"
+                name="info"&gt;
+                The file you are trying to download is very big.
+                Do you still want to continue with the download?
+            &lt;/x-bladewind.modal&gt;
+        </code>
+    </pre>
+    <p>
+        You may want to use a custom icon but with one of the predefined states. For example, you may want to display a success modal but you don't like the default <strong>check-circle</strong> icon used.
+        It is possible to use a custom icon with any of the predefined states. Simply set both the <code class="inline text-red-500">type</code> and <code class="inline text-red-500">icon</code> attributes.
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div><x-bladewind::button onclick="showModal('iconic-info')">Info</x-bladewind::button></div>
+        <div><x-bladewind::button onclick="showModal('iconic-error')">Error</x-bladewind::button></div>
+        <div><x-bladewind::button onclick="showModal('iconic-warning')">Warning</x-bladewind::button></div>
+        <div><x-bladewind::button onclick="showModal('iconic-success')">Success</x-bladewind::button></div>
+    </div>
+    <br />
+    <pre class="lang-markup line-numbers" data-line="8,10">
+        <code>
+            &lt;x-bladewind.button
+                onclick="showModal('iconic-info')"&gt;
+                Info
+            &lt;/x-bladewind.button&gt;
+
+            &lt;x-bladewind.modal
+                title="Large File Size"
+                type="warning"
+                name="iconic-warning"
+                icon="folder-arrow-down"&gt;
+                The file you are trying to download is very big.
+                Do you still want to continue with the download?
+            &lt;/x-bladewind.modal&gt;
+        </code>
+    </pre>
     <h2 id="sizes">Different Sizes</h2>
     <p>
-        <x-bladewind::alert show_close_icon="false" show_icon="false">On mobile the modal has just one size</x-bladewind::alert>
+        <x-bladewind::alert show_close_icon="false">On mobile the modal has just one size</x-bladewind::alert>
     </p>
     <p>
         You could tell the above modals looked quite squashed. The BladewindUI modal component comes with a size option that allows your content to breath in the modals.
@@ -287,7 +358,7 @@
     <p>
         <x-bladewind::button onclick="showModal('medium-modal')">Medium Modal</x-bladewind::button>
     </p>
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup line-numbers" data-line="7">
         <code>
             &lt;x-bladewind.button onclick="showModal('medium-modal')"&gt;
                 Medium Modal
@@ -295,6 +366,7 @@
 
             &lt;x-bladewind.modal
                 title="Medium Modal"
+                size="modal"
                 name="medium-modal"&gt;
                 I am the medium sized modal.
                 Also the default if you do not set a size.
@@ -1041,6 +1113,7 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#default">Default modal</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#types">Different types</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#icons">Other icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#actions">Action buttons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#cant-dismiss">Non-dismissible modal</a></div>
