@@ -49,6 +49,42 @@
             &lt;/x-bladewind.table&gt;
         </code>
     </pre>
+    <p>
+        By default the table component does not display a border around the table. You can enable this by setting.
+        <code class="inline text-red-500">has_border="true"</code>
+    </p>
+ <p>
+        <x-bladewind::table has_border>
+            <x-slot name="header">
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+            </x-slot>
+            <tr>
+                <td>Alfred Rowe</td>
+                <td>Outsourcing</td>
+                <td>
+                    alfred@therowe.com
+                </td>
+            </tr>
+            <tr>
+                <td>Michael K. Ocansey</td>
+                <td>Tech</td>
+                <td>
+                    kabutey@gmail.com
+                </td>
+            </tr>
+        </x-bladewind::table>
+    </p>
+
+    <pre class="language-markup line-numbers" data-line="2">
+        <code>
+             &lt;x-bladewind.table
+                has_border="true"&gt;
+                ...
+            &lt;/x-bladewind.table&gt;
+        </code>
+    </pre>
 
     <h2 id="nogaps">No Gaps</h2>
     <p>By default the BladewindUI table  rows are displayed with wide gaps to place more emphasis on each row and it’s content. Each row also has a default hover effect that highlights the left and right borders of the row. These can both be turned off. </p>

@@ -4,7 +4,7 @@
 
     <p>BladewindUI ships with twelve colours from the TailwindCSS palette. The default colour used for the BladewindUI components is blue.</p>
 
-    <div class="grid-cols-6 grid gap-6">
+    <div class="sm:grid-cols-6 grid grid-cols-3 gap-6">
         <div class="space-y-1">
             <div>Blue</div>
             <div class="w-24 bg-blue-500 h-10 rounded-md"></div>
