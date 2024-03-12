@@ -31,7 +31,7 @@
 
         <div class="content-area grow sm:ml-60 pb-16 bg-white dark:bg-dark-800">
                 <div class="flex flex-col-reverse sm:flex-row sm:rtl:flex-row-reverse">
-                    <div class="grow sm:w-3/4 py-8 px-10 rounded-md">
+                    <div class="grow sm:w-3/4 sm:py-8 sm:px-10 p-5 rounded-md">
                         <h1 class="page-title">{{$page_title??''}}</h1>
                         {{ $slot ?? '' }}
                     </div>
