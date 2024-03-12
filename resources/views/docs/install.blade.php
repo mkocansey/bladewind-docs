@@ -17,10 +17,15 @@
     <p>
         Next you need to <b>publish the package assets</b> by running the command below, still at the root of your Laravel project. This will create a <code class="inline">vendor/bladewind</code> directory in your <code class="inline">public</code> directory.
     </p>
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force</code></pre>
+    <pre class="lang-js">
+        <code>
+            php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force
+        </code>
+    </pre>
     <x-bladewind::alert show_close_icon="false" type="warning">
     IMPORTANT: Always publish assets when you update to a new version of BladewindUI since it is likely some CSS and JS might have been updated. See <a href="#update">Update Notes</a> at the bottom of this page.
     </x-bladewind::alert>
+
 <br />
 <br />
 
@@ -143,7 +148,6 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#required">Requirements</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#install">Install</a></div>

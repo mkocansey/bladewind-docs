@@ -25,6 +25,8 @@
     <div class="sm:max-w-7xl mx-auto sm:pt-10 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse">
         <nav class="sm:w-56 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible">
             @include('docs/nav')
+            <div class="h-3"></div>
+            <iframe src="https://github.com/sponsors/mkocansey/button" title="Sponsor mkocansey" height="32" width="92%" style="border: 0; border-radius: 6px;"></iframe>
         </nav>
 
         <div class="content-area grow sm:ml-60 pb-16 bg-white dark:bg-dark-800">

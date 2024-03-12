@@ -9,17 +9,21 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div class="bg-gradient-to-tr from-slate-100 to-slate-200 sm:px-10 px-4 sm:pb-20 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
-    <div class="py-10 sm:pt-10 sm:pb-16"><img src="/assets/images/bladewind-logo.png" alt="logo" class="h-6 sm:h-8 mx-auto" /></div>
-    <div class="sm:text-6xl text-4xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center">
+<div class="bg-gradient-to-tr from-slate-100 to-slate-200 sm:px-10 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
+    <div class="py-10 sm:pt-10 sm:pb-16"><img src="/assets/images/bladewind-logo.png" alt="logo" class="h-4 sm:h-6 mx-auto" /></div>
+    <div class="sm:text-6xl text-3xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center">
         The only UI components you'll ever need for your Laravel projects. Truly.
     </div>
-    <div class="sm:text-xl text-base font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 dark:text-dark-500 px-4">
+    <div class="sm:text-xl text-sm font-light sm:max-w-xl mx-auto text-center text-slate-500 dark:text-dark-500 sm:py-8 px-5 pt-3 pb-6">
         A collection of over 30 easy-to-customize but elegantly designed blade UI components for your Laravel projects.
     </div>
-    <div class="text-center sm:pt-10 pt-6 space-x-2">
-        <x-bladewind::button color="black" tag="a" href="/install" size="huge" radius="small" class="!bg-indigo-600 !inline-block">Get Started</x-bladewind::button>
-        <x-bladewind::button type="secondary" tag="a" href="/install" size="huge" radius="small" class="!inline-block">Documentation</x-bladewind::button>
+    <div class="text-center space-x-2 sm:pb-6 px-6">
+        <div class="sm:block hidden">
+        <x-bladewind::button color="black" tag="a" href="/install" size="big" radius="small" class="!bg-indigo-600 !inline-block">Get Started in our Docs</x-bladewind::button>
+        </div>
+        <div class="sm:hidden">
+        <x-bladewind::button color="black" tag="a" href="/install" size="medium" radius="small" class="!bg-indigo-600 !inline-block w-full">Get Started in our Docs</x-bladewind::button>
+        </div>
     </div>
 </div>
 
@@ -165,29 +169,24 @@
     </div>
 </div>
 
-<div class="bg-white sm:px-10 sm:py-20 py-10 px-4 shadow-sm dark:bg-dark-800">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center px-10">
+<div class="bg-white sm:px-10 sm:py-16 px-6 py-8 shadow-sm dark:bg-dark-800">
+    <div class="text-3xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center px-10">
         There's no Pro or Pro Max. Just <span class="underline">free</span> everything.
     </div>
-    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 dark:text-dark-400 px-4">
+    <div class="text-sm sm:text-xl font-light sm:max-w-xl mx-auto sm:py-8 pt-4 pb-6 text-center text-slate-500 dark:text-dark-400 px-4">
         All current and future UI components plus their frequent updates remain free forever. <a href="/contribute" class="text-indigo-500 hover:text-indigo-700">Contributions</a> are welcome.
     </div>
 
-    <div class="sm:max-w-7xl home-nav mx-auto py-10 sm:grid-cols-5 sm:grid sm:gap-x-6 sm:gap-y-3 space-y-2 space-x-1.5">
-        <div class="hidden"></div>
-        <div class="hidden"></div>
-        <div class="hidden"></div>
-        <div class="hidden"></div>
-        <div class="hidden"></div>
+    <div class="sm:max-w-7xl home-nav mx-auto pt-4 pb-6 sm:grid-cols-5 grid grid-cols-2 sm:gap-6 gap-3">
         @include('docs.components-list', [ 'class' => 'home'])
     </div>
 </div>
 
 <div class="bg-slate-900 sm:px-10 sm:py-20 py-10 px-4">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-200 text-center px-10">
+    <div class="text-3xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-200 text-center px-10">
         BladewindUI components shine even in dark mode.
     </div>
-    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-300 px-3 sm:px-0">
+    <div class="text-sm sm:text-xl font-light sm:max-w-xl mx-auto pt-4 text-center text-slate-300 px-4 sm:px-0">
         Every BladewinUI component is designed with support for dark mode and they are easy to <a href="/customize/darkmode" class="text-yellow-500 hover:text-yellow-700">customize</a>.
     </div>
 
@@ -233,18 +232,17 @@
     </div>
 </div>
 
-
 <div class="bg-white sm:px-10 sm:py-20 py-10 px-4 dark:bg-dark-800">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center px-10 dark:text-dark-300">
+    <div class="text-3xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 text-center px-10 dark:text-dark-300">
         One size and colour doesn't fit all. We know that.
     </div>
-    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0 dark:text-dark-300">
+    <div class="text-sm sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0 dark:text-dark-300">
         Almost all BladewindUI components come in nine different colours and a couple of sizes, where it makes sense to size things up.
     </div>
 
     <div class="max-w-7xl mx-auto">
-        <div class="sm:grid sm:grid-cols-4 gap-6 pt-10">
-            <div class="hidden sm:block">
+        <div class="grid sm:grid-cols-4 grid-cols-1 gap-6 pt-10 pb-6">
+            <div class=" sm:block">
                 <div class="border-2 border-slate-200 dark:border-dark-700 rounded-lg text-center shadow p-3">
                     <div class="space-y-5 pb-4">
                         <x-bladewind::avatar image="/assets/images/doc.png" size="huge" show_ring="false"  />
@@ -332,20 +330,25 @@
 </div>
 
 <div class="bg-slate-200 sm:px-10 sm:py-20 py-10 px-4 dark:bg-dark-900">
-    <div class="text-4xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-300 text-center px-10">
+    <div class="text-3xl sm:text-6xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-300 text-center px-10">
         It's usually one line of code but feature packed.
     </div>
-    <div class="text-base sm:text-xl font-light sm:max-w-xl mx-auto pt-6 text-center text-slate-500 px-4 sm:px-0">
+    <div class="text-sm sm:text-xl font-light sm:max-w-xl mx-auto sm:pt-6 pt-2 text-center text-slate-500 px-4 sm:px-0">
         Laravel makes building web apps simple and fun. No need to make a library meant for the framework any less developer friendly.
     </div>
-    <div class="max-w-3xl mx-auto sm:pt-10">
-        <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27"><code>&lt;x-bladewind::avatar image="/assets/images/edwin.jpeg" /&gt;</code></pre>
-        <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27"><code>&lt;x-bladewind::toggle bar="thicker" /&gt;</code></pre>
-        <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27"><code>&lt;x-bladewind::alert&gt;Your storage is 80% full&lt;/x:bladewind::alert&gt;</code></pre>
-        <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27"><code>&lt;x-bladewind::datepicker type="range" /&gt;</code></pre>
-        <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27"><code>&lt;x-bladewind::filepicker accepted_file_types="images/*" /&gt;</code></pre>
-        <div class="text-center pt-6">
-        <x-bladewind::button tag="a" href="/install" size="huge" radius="small" class="!bg-indigo-600 !inline-block" color="black">Read the Documentation</x-bladewind::button>
+    <div class="max-w-3xl mx-auto sm:pt-10 pt-4">
+        <pre class="language-markup"><code>&lt;x-bladewind::avatar image="/assets/images/edwin.jpeg" /&gt;</code></pre>
+        <pre class="language-markup"><code>&lt;x-bladewind::toggle bar="thicker" /&gt;</code></pre>
+        <pre class="language-markup"><code>&lt;x-bladewind::alert&gt;Your storage is 80% full&lt;/x:bladewind::alert&gt;</code></pre>
+        <pre class="language-markup"><code>&lt;x-bladewind::datepicker type="range" /&gt;</code></pre>
+        <pre class="language-markup"><code>&lt;x-bladewind::filepicker accepted_file_types="images/*" /&gt;</code></pre>
+        <div class="text-center sm:pt-6">
+            <div class="sm:block hidden">
+                <x-bladewind::button color="black" tag="a" href="/install" size="big" radius="small" class="!bg-indigo-600 !inline-block">Get Started in our Docs</x-bladewind::button>
+            </div>
+            <div class="sm:hidden">
+                <x-bladewind::button color="black" tag="a" href="/install" size="medium" radius="small" class="!bg-indigo-600 !inline-block w-full">Get Started in our Docs</x-bladewind::button>
+            </div>
         </div>
     </div>
 </div>
@@ -355,14 +358,13 @@
         <div class="tracking-wider text-xs grow">
             {{\Composer\InstalledVersions::getPrettyVersion('mkocansey/bladewind')}}
         </div>
-        <div class="text-right">
+        <div class="text-right flex gap-4">
+            <iframe src="https://github.com/sponsors/mkocansey/button" title="Sponsor mkocansey" height="32" width="114" style="border: 0; border-radius: 6px;" class="inline-block"></iframe>
             <a href="https://github.com/mkocansey/bladewind" target="_blank" class="text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"><span class="sr-only">BladewindUI on GitHub</span>
                 <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
             </a>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>
