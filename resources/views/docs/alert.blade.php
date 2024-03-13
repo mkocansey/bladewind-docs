@@ -159,7 +159,7 @@
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
             &lt;x-bladewind.alert color="pink" shade="dark"&gt;
-`                I am a pink alert. Dark version. How do I look?
+                I am a pink alert. Dark version. How do I look?
             &lt;/x-bladewind.alert&gt;
         </code>
     </pre>
@@ -176,7 +176,7 @@
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
             &lt;x-bladewind.alert color="cyan" shade="dark"&gt;
-`                I am a cyan alert. Dark version. How do I look?
+                I am a cyan alert. Dark version. How do I look?
             &lt;/x-bladewind.alert&gt;
         </code>
     </pre>
@@ -193,7 +193,7 @@
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
             &lt;x-bladewind.alert color="purple" shade="dark"&gt;
-`                I am a purple alert. Dark version. How do I look?
+                I am a purple alert. Dark version. How do I look?
             &lt;/x-bladewind.alert&gt;
         </code>
     </pre>
@@ -210,7 +210,7 @@
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
             &lt;x-bladewind.alert color="gray" shade="dark"&gt;
-`                I am a gray alert. Dark version. How do I look?
+                I am a gray alert. Dark version. How do I look?
             &lt;/x-bladewind.alert&gt;
         </code>
     </pre>

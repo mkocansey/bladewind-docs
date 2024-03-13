@@ -31,6 +31,8 @@
                     <li>Fixed broken action icons in dynamic <a href="/component/table#dynamic">tables</a>.</li>
                     <li>Added <code class="inline text-red-500">has_border</code> attribute to the <a href="/component/table#dynamic">table</a> component.</li>
                     <li>Improved the <a href="/component/table#dynamic">table</a> row hover effect.</li>
+                    <li>Better display of the <a href="/component/table">table</a> component in mobile view.</li>
+                    <li>Display a suitable message when there is no dynamic data to display in the <a href="/component/table">table</a>.</li>
                     <li>Added <code class="inline text-red-500">icon</code> and <code class="inline text-red-500">icon_css</code> attributes to the <a href="/component/modal#icons">modal</a> component to allow using of custom icons in the modal.</li>
                     <li>Added <code class="inline text-red-500">align_buttons</code> attribute to the <a href="/component/modal#icons">modal</a> component to allow for easy positioning of the action buttons.</li>
                     <li>Improved the overall appearance of the <a href="/component/modal#icons">modal</a> component.<h1 class="w-0 h-0" id="25x"></h1></li>

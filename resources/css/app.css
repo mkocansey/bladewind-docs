@@ -26,7 +26,10 @@
     .navigation a { @apply border-t border-slate-300 pt-4 block w-full pl-6 dark:border-gray-800 }
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
-    pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-900 !mt-4 !mb-7 !py-4 }
+    pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-900 !py-4 !my-5 !text-sm }
+    .line-numbers { @apply !leading-7 }
+    .line-numbers-rows { @apply !leading-[27px] }
+    .copy-to-clipboard-button { @apply !pt-0.5 !pb-1.5 !px-2 mr-2 !rounded-none !text-gray-300 hover:!text-white }
     .home-nav div.home { @apply text-slate-600 !text-center bg-slate-200 rounded-xl hover:bg-slate-400 cursor-pointer hover:text-white inline-block sm:block }
     .home-nav div.home a { @apply block w-full px-5 py-3 sm:p-3  }
     .home-nav div.home div.dot { @apply hidden }

@@ -416,7 +416,7 @@
                     'department' => 'Engineering',
                     'marital_status' => 1
                 ],
-                ;[
+                [
                     'id' => 3,
                     'first_name' => 'Abigail',
                     'last_name' => 'Edwin',
@@ -428,7 +428,7 @@
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::table :data="$staff" /&gt;
+            &lt;x-bladewind.table :data="$staff" /&gt;
         </code>
     </pre>
 
@@ -440,7 +440,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::table data="&#123;&#123; json_encode($staff) }}" /&gt;
+            &lt;x-bladewind.table data="&#123;&#123; json_encode($staff) }}" /&gt;
         </code>
     </pre>
 
@@ -483,13 +483,13 @@
         </x-bladewind::alert>
     </p>
     <x-bladewind::table :data="$staff" exclude_columns="id, marital_status" />
-    <pre class="language-markup line-numbers" data-line="2">
-        <code>
-            &lt;x-bladewind::table
-                exclude_columns="id, marital_status"
-                :data="$staff" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="2">
+<code>
+    &lt;x-bladewind.table
+        exclude_columns="id, marital_status"
+        :data="$staff" /&gt;
+</code>
+</pre>
     <h3>Displaying Action Icons</h3>
     <p>
         Using the table component with dynamic data allows you to specify some extra cool attributes.
@@ -497,15 +497,15 @@
         Each action icon can have the name of the icon, the icon colour (default is the <a href="/component/button#secondary">secondary button</a> colour), a tooltip and the click action of the icon.
         The icons will be displayed in the order they are entered into the array.
     </p>
-    <pre class="language-js line-numbers">
-        <code>
-            $action_icons = [
-                "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
-                "icon:pencil | click:redirect('/user/{id}')",
-                "icon:trash | color:red | click:deleteUser({id}, '{first_name}', '{last_name}')",
-            ];
-        </code>
-    </pre>
+<pre class="language-js line-numbers">
+<code>
+    $action_icons = [
+        "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
+        "icon:pencil | click:redirect('/user/{id}')",
+        "icon:trash | color:red | click:deleteUser({id}, '{first_name}', '{last_name}')",
+    ];
+</code>
+</pre>
     <script>
         sendMessage = (first_name, last_name) => {
             showModal('send-message');
@@ -528,15 +528,15 @@
         This action cannot be reversed.
     </x-bladewind::modal>
 
-    <pre class="language-markup line-numbers" data-line="2,4">
-        <code>
-            &lt;x-bladewind::table
-                exclude_columns="id, marital_status"
-                divider="thin"
-                :action_icons="$action_icons"
-                :data="$staff" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="2,4">
+<code>
+    &lt;x-bladewind.table
+        exclude_columns="id, marital_status"
+        divider="thin"
+        :action_icons="$action_icons"
+        :data="$staff" /&gt;
+</code>
+</pre>
     <p>
         <x-bladewind::table :data="$staff" divider="thin" :action_icons="$action_icons"  exclude_columns="id, marital_status" />
     </p>
@@ -570,19 +570,28 @@
     </x-bladewind::table>
     <br />
     <p>
-        Below are the modals and Javascript functions being called when the icons are clicked.
+        Below are the modals and Javascript functions being called when the icons are clicked. Mind you, the Javascript functions
+        below are just for the documentation. THey need to be your own functions that you will call when the action icons are clicked.
     </p>
     <pre class="line-numbers language-markup">
         <code>
-            &lt;x-bladewind::modal name="send-message" title=""&gt;
-                &lt;div class="mb-6"&gt;The message will be delivered to their company inbox if they are not currently online&lt;/div&gt;
-                &lt;x-bladewind::textarea placeholder="Type message here..." rows="5" /&gt;
-            &lt;/x-bladewind::modal&gt;
+            &lt;!-- send message modal -->
+            &lt;x-bladewind.modal name="send-message" title=""&gt;
+                &lt;div class="mb-6"&gt;
+                    The message will be delivered to their company
+                    inbox if they are not currently online
+                &lt;/div&gt;
+                &lt;x-bladewind.textarea
+                    placeholder="Type message here..." rows="5" /&gt;
+            &lt;/x-bladewind.modal&gt;
 
-            &lt;x-bladewind::modal name="delete-user" type="error" title="Confirm User Deletion"&gt;
+            &lt;!-- delete user modal -->
+            &lt;x-bladewind.modal
+                    name="delete-user"
+                    type="error" title="Confirm User Deletion"&gt;
                 Are you really sure you want to delete &lt;b class="title"&gt;&lt;/b&gt;?
                 This action cannot be reversed.
-            &lt;/x-bladewind::modal&gt;
+            &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
 
@@ -604,6 +613,92 @@
         </code>
     </pre>
 
+    <h3 id="nodata">No Data Returned</h3>
+    <p>
+        When building dynamic table you will most likely be fetching your data from either an API or a database. You will barely be manually creating arrays as we did above.
+        Now with dynamic data, it is likely your API or query will return no records. You can display a custom translatable message in such a case. You can set the
+        <code class="inline text-red-500">no_data_message</code> to any message you wish to display.
+    </p>
+
+    @php
+        $no_staff = $column_aliases = [];
+        $column_aliases = [ 'id' => 'ref #', 'first_name' => 'first name', 'last_name' => 'last name',  'marital_status' => 'married?' ];
+    @endphp
+    <p>
+        <x-bladewind::table :data="$no_staff" no_data_message="The staff directory is empty" />
+    </p>
+
+<pre class="language-html line-numbers" data-line="2,5">
+<code>
+&lt;x-bladewind.table
+    no_data_message="The staff directory is empty"
+    :data="$staff"  /&gt;
+</code>
+</pre>
+<br />
+    <p>
+        The dynamic table builds its column headings from the array keys defined in <code class="inline text-red-500">data</code>.
+        When there are no records to display, the array will be empty, thus, there will be no column headings to deduce. This is why there are no columns displayed with the
+        <strong>no data message</strong>.
+        If you wish to display column headings with the <strong>no data message</strong>, you will need to pass <code class="inline text-red-500">column_aliases</code>.
+    </p>
+    <p>
+        <x-bladewind::table has_border="true" :data="$no_staff" :column_aliases="$column_aliases" no_data_message="The staff directory is empty" />
+    </p>
+
+<pre class="language-php line-numbers">
+<code>
+    $column_aliases = [
+        'id' => 'ref #',
+        'first_name' => 'first name',
+        'last_name' => 'last name',
+        'marital_status' => 'married?'
+    ];
+</code>
+</pre>
+<pre class="language-html line-numbers" data-line="2,4">
+<code>
+&lt;x-bladewind.table
+    has_border="true"
+    no_data_message="The staff directory is empty"
+    :column_aliases="$column_aliases"
+    :data="$staff"  /&gt;
+</code>
+</pre>
+<p>
+    Finally, it is possible to display the <strong>no data message</strong> using the <a href="/component/empty-state">Empty State</a> component.
+    All the attributes of the component are allowed except <code class="inline text-red-500">message</code> and <code class="inline text-red-500">class</code>, since the table component already has its own class attribute,
+    and message here is already <code class="inline text-red-500">no_data_message</code>.
+</p>
+    <p>
+        To display the message in an empty state, set the attribute <code class="inline text-red-500">message_as_empty_state="true"</code>.
+    </p>
+
+    <p>
+        <x-bladewind::table has_border="true"
+            :data="$no_staff"
+            :column_aliases="$column_aliases"
+            no_data_message="The staff directory is empty"
+            message_as_empty_state="true"
+            button_label="add staff member"/>
+    </p>
+<pre class="language-html line-numbers" data-line="6">
+<code>
+&lt;x-bladewind.table
+    :data="$no_staff"
+    has_border="true"
+    :column_aliases="$column_aliases"
+    no_data_message="The staff directory is empty"
+    message_as_empty_state="true"
+    button_label="add staff member" /&gt;
+</code>
+</pre>
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            Check out the <a href="/component/empty-state">Empty State</a> component for information on how to use its attributes.
+        </x-bladewind::alert>
+    </p>
+    <br />
     <h3>Searchable Table Data</h3>
     <p>
         The table component provides a very basic way for users to search through table content.
@@ -615,17 +710,17 @@
         :data="$staff" divider="thin" :action_icons="$action_icons"
         exclude_columns="id, marital_status" />
 
-    <pre class="language-html line-numbers" data-line="2,5">
-        <code>
-            &lt;x-bladewind::table
-                searchable="true"
-                :data="$staff"
-                divider="thin"
-                search_placeholder="Find staff members by name..."
-                :action_icons="$action_icons"
-                exclude_columns="id, marital_status" /&gt;
-        </code>
-    </pre>
+<pre class="language-html line-numbers" data-line="2,5">
+<code>
+    &lt;x-bladewind.table
+        searchable="true"
+        :data="$staff"
+        divider="thin"
+        search_placeholder="Find staff members by name..."
+        :action_icons="$action_icons"
+        exclude_columns="id, marital_status" /&gt;
+</code>
+</pre>
 
     <h3>Aliasing Column Names</h3>
     <p>
@@ -634,24 +729,24 @@
         This attributes accepts a json encoded array.
     </p>
 
-    <pre class="language-js line-numbers">
-        <code>
-            $column_aliases = [
-                'id' => 'ref #',
-                'marital_status' => 'married?'
-            ];
-        </code>
-    </pre>
-    <pre class="language-markup line-numbers" data-line="5">
-        <code>
-            &lt;x-bladewind::table
-                exclude_columns="id"
-                divider="thin"
-                :action_icons="$action_icons"
-                :column_aliases="$column_aliases"
-                :data="$staff" /&gt;
-        </code>
-    </pre>
+<pre class="language-js line-numbers">
+<code>
+    $column_aliases = [
+        'id' => 'ref #',
+        'marital_status' => 'married?'
+    ];
+</code>
+</pre>
+<pre class="language-markup line-numbers" data-line="5">
+<code>
+    &lt;x-bladewind.table
+        exclude_columns="id"
+        divider="thin"
+        :action_icons="$action_icons"
+        :column_aliases="$column_aliases"
+        :data="$staff" /&gt;
+</code>
+</pre>
     <x-bladewind::table
         :data="$staff" divider="thin" :column_aliases="$column_aliases" />
 
@@ -760,6 +855,41 @@
             <td>Search table below...</td>
             <td>Only used when <code class="inline">searchable="true"</code>. Specifies the text to display in the search input field.</td>
         </tr>
+        <tr>
+            <td>no_data_message</td>
+            <td>No records to display</td>
+            <td>Message to display when there is no dynamic data to display.</td>
+        </tr>
+        <tr>
+            <td>message_as_empty_state</td>
+            <td>false</td>
+            <td>When there is no dynamic data to display, should the message be displayed as an empty state. <br /><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td>asset('vendor/bladewind/images/empty-state.svg')</td>
+            <td>Image to display in the empty state component when no dynamic data is available.</td>
+        </tr>
+        <tr>
+            <td>heading</td>
+            <td><em>blank</em></td>
+            <td>Text to display as heading in empty state when no data is available for the dynamic table.</td>
+        </tr>
+        <tr>
+            <td>button_label</td>
+            <td><em>blank</em></td>
+            <td>Label to display on empty state call to action button.</td>
+        </tr>
+        <tr>
+            <td>show_image</td>
+            <td>true</td>
+            <td>Should the empty state component image be displayed.<br /> <code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>onclick</td>
+            <td><em>blank</td>
+            <td>Action to perform on the empty state component call to action button. Only used when displaying dynamic data.</td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Table with all attributes defined</h3>
@@ -770,6 +900,7 @@
                 divided="true"
                 divider="thin"
                 has_shadow="true"
+                has_border="true"
                 compact="true"
                 searchable="false"
                 search_placeholder=""
@@ -780,6 +911,12 @@
                 exclude_columns="id,picture"
                 :action_icons="$action_icons"
                 action_title=""
+                no_data_message="The staff directory is empty"
+                message_as_empty_state="true"
+                button_label="add staff member"
+                image="asset('images/no-data.png')"
+                heading="No Staff"
+                onclick="alert('add a staff')"
                 hover_effect="true"&gt;
 
                 &lt;x-slot name="header"&gt;
