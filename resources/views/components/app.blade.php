@@ -36,7 +36,7 @@
                         {{ $slot ?? '' }}
                     </div>
                     <div class="sm:w-1/4 sm:block hidden grow-0 mb-8">
-                        <nav class="sm:pl-8 sm:rtl:pr-8 sm:fixed sm:h-screen sm:overflow-y-scroll border-dashed border-l border-l-slate-200 pt-8">
+                        <nav class="sm:pl-8 sm:rtl:pr-8 sm:fixed sm:h-screen sm:overflow-y-scroll border-dashed border-l border-l-slate-200 dark:border-l-slate-700 pt-8">
                             <h5 class="text-slate-500 dark:text-slate-300 uppercase font-light text-xs tracking-wider !m-0">Sections</h5>
                             <div class="space-y-2.5 pt-4 -ml-3.5 pr-4">
                                 {{ $side_nav ?? '' }}
