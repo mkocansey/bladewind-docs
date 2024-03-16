@@ -171,6 +171,19 @@
             hide(domEl('.top-bar'), true);
         </code>
     </pre>
+    <h2 id="hidebuttonspinner">hideButtonSpinner</h2>
+    <p>Hide the spinner associated with a button.</p>
+    <pre class="language-js line-numbers">
+        <code>
+            /* ---------------------------------------------------------------
+                element:    name of the button
+            -----------------------------------------------------------------*/
+            hideButtonSpinner(element);
+
+            // example
+            hideButtonSpinner('.save-user');
+        </code>
+    </pre>
 
     <h2 id="hidemodal">hideModal</h2>
     <p>Specifically hides a BladewindUI <a href="/component/modal">Modal</a> component.</p>
@@ -245,6 +258,20 @@
             &lt;form class="signup-form"&gt;...&lt;/form&gt;
 
             serialize('.signup-form');
+        </code>
+    </pre>
+
+    <h2 id="showbuttonspinner">showButtonSpinner</h2>
+    <p>Unhide a spinner associated with a <a href="/component/modal">Button</a> component with <code class="inline">has_spinner="true"</code>.</p>
+    <pre class="language-js line-numbers">
+        <code>
+            /* ---------------------------------------------------------------
+                element:    name of the button
+            -----------------------------------------------------------------*/
+            showButtonSpinner(element);
+
+            // example
+            showButtonSpinner('.save-user');
         </code>
     </pre>
 
@@ -357,11 +384,13 @@
         <div class="flex items-center"><div class="dot"></div><a href="#domels">domEls</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#getfromstorage">getFromStorage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#hide">hide</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#hidebuttonspinner">hideButtonSpinner</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#hidemodal">hideModal</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#hidemodalbuttons">hideModalActionButtons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#isnumberkey">isNumberKey</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#removefromstorage">removeFromStorage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#serialize">serialize</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#showbuttonspinner">showButtonSpinner</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#showmodal">showModal</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#showmodalbuttons">showModalActionButtons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#stringcontains">stringContains</a></div>

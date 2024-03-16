@@ -21,7 +21,7 @@
             &lt;x-bladewind.input type="password"  /&gt;
         </code>
     </pre>
-    <h3>Show Password With The Eye</h3>
+    <h3 id="reveal-password">Reveal Passwords</h3>
     <p>
         The component allows you to specify if the user should be able to view the password they entered by clicking on an eye. This can be achieved by setting
         <code class="inline text-red-500">viewable="true"</code>.
@@ -43,7 +43,7 @@
             &lt;x-bladewind.input numeric="true"  /&gt;
         </code>
     </pre>
-    <h3>Minimum & Maximum Values</h3>
+    <h3 id="min-max">Minimum & Maximum Values</h3>
     <p>
         You may want users to enter a minimum or maximum number when using the numeric input. For example, let's say employees cannot request more than 5 days off per leave request.
         Your input could restrict the maximum number of days off to 5 when a user is filling the form.
@@ -389,7 +389,7 @@
         There are cases where you need to prefix or append something to an input field. For example, you want to prefix a URL input field with 'https://' so your users wouldn't need to type that in everytime.
         Or, when asking your app users for their social media handles you may want to always have the '@' prefix. For now prefixes and suffixes support only text and <a href="/component/icon">icons</a>.
     </p>
-    <h3>Prefixes</h3>
+    <h3 id="prefixes">Prefixes</h3>
     <p class="!mb-4">You can use prefixes even when your input has a label.</p>
     <x-bladewind::input name="site" label="website address" prefix="https://" />
     <pre class="language-markup">
@@ -422,7 +422,7 @@
             &lt;x-bladewind.input name="gh" placeholder="username" prefix="https://github.com/" /&gt;
         </code>
     </pre>
-    <h3>Suffixes</h3>
+    <h3 id="suffixes">Suffixes</h3>
     <p class="!mb-4">Suffixes get appended to the end of the input field</p>
     <x-bladewind::input name="space" placeholder="workspace-name" suffix=".slack.com" />
     <pre class="language-markup">
@@ -440,7 +440,7 @@
         </code>
     </pre>
 
-<h3>Prefix and Suffix Transparency</h3>
+<h3 id="transparency">Prefix and Suffix Transparency</h3>
     <p>
         You can opt for non-transparent prefixes and suffixes by setting the attribute <code class="inline text-red-500">transparent_prefix="false"</code> and/or <code class="inline text-red-500">transparent_suffix="false"</code>.
         You can specify both a prefix and suffix on your input fields.
@@ -480,7 +480,7 @@
                 transparent_suffix="false" /&gt;
         </code>
     </pre>
-    <h2 id="icons">With Icons</h2>
+    <h2 id="icons">Inputs With Icons</h2>
     <p>
         The BladewindUI input field can have an icon for those moments where you want a simple icon to describe the field.
         This is not a different kind of input field. We simply make use of prefixes and suffixes to achieve this effect. All <a href="https://heroicons.com">Heroicons</a> names are supported out of the box.
@@ -576,7 +576,15 @@
 &lt;/svg&gt;' /&gt;
     </code>
     </pre>
-
+<h2 id="clearable">Clearable Inputs</h2>
+    <p>
+        Clearable fields display an x icon when a field has a value entered. Clicking on the x icon deletes the text in the input field. Quite handy and saves users from clicking the backspace several times in say, a search field.
+        This is achieved by setting the <code class="inline text-red-500">clearable="true"</code> attribute. If there is a table that shares the same name as the input field, it will be reset as well. This is useful when
+        displaying searchable BladewindUI <a href="/component/table#searchable">tables</a>.
+    </p>
+    <p>
+        <x-bladewind::input placeholder="I am clearable" clearable/>
+    </p>
 
     <p><h2 id="attributes">Full List Of Attributes</h2></p>
     <p>The table below shows a comprehensive list of all the attributes available for the Input component.</p>
@@ -760,6 +768,14 @@
                 <code class="inline">true</code> <code class="inline">false</code>
             </td>
         </tr>
+        <tr>
+            <td>clearable</td>
+            <td>false</td>
+            <td>
+                Works as a suffix. Appends an 'x' circle for clearing any text that has been entered in the input field.<br />
+                <code class="inline">true</code> <code class="inline">false</code>
+            </td>
+        </tr>
     </x-bladewind::table>
     <h3>Input with all attributes defined</h3>
     <pre class="language-markup line-numbers" data-line="4">
@@ -789,6 +805,7 @@
                 suffix_icon_type="solid"
                 suffix_icon_css=""
                 viewable="false"
+                clearable="false"
             /&gt;
         </code>
     </pre>
@@ -802,13 +819,19 @@
 
         <x-slot:side_nav>
             <div class="flex items-center"><div class="dot"></div><a href="#password">Password Input</a></div>
+            <div class="flex items-center pl-5"><div class="dot"></div><a href="#reveal-password">Reveal passwords</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#numeric">Numeric Input</a></div>
+            <div class="flex items-center pl-5"><div class="dot"></div><a href="#min-max">Min and max validations</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#labels-placeholders">Labels & Placeholders</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#required">Required Input Fields</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#events-validations">Events & Validations</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#javascript">Javascript manipulations</a></div>
            <div class="flex items-center"><div class="dot"></div><a href="#prefix-suffix">Prefixes and suffixes</a></div>
-           <div class="flex items-center"><div class="dot"></div><a href="#icons">With Icons</a></div>
+            <div class="flex items-center pl-5"><div class="dot"></div><a href="#prefixes">Prefixes</a></div>
+            <div class="flex items-center pl-5"><div class="dot"></div><a href="#suffixes">Suffixes</a></div>
+            <div class="flex items-center pl-5"><div class="dot"></div><a href="#transparency">Prefix & suffix transparency</a></div>
+           <div class="flex items-center"><div class="dot"></div><a href="#icons">Inputs with icons</a></div>
+           <div class="flex items-center"><div class="dot"></div><a href="#clearable">Clearable fields</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
         </x-slot:side_nav>
 

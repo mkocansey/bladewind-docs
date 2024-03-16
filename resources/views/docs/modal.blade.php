@@ -242,7 +242,7 @@
     <x-bladewind::modal type="info" name="iconic-info" icon="bolt" title="Lightening Coming">
         There's a terrible storm approaching. Please stay indoors to avoid getting struck by lightening.
     </x-bladewind::modal>
-    <x-bladewind::modal type="success" name="iconic-success" icon="calendar-days" title="Even Added">
+    <x-bladewind::modal type="success" name="iconic-success" icon="calendar-days" title="Event Added">
         Your event, "<b>Meeting with the mobile app developer"</b> has been added successfully.
         <a href="javascript:hideModal('iconic-success')">Go to event</a>
     </x-bladewind::modal>

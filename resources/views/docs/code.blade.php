@@ -1,12 +1,11 @@
 <x-app>
     <x-slot:title>Verification Code Component</x-slot:title>
-    <x-slot:page_title>Verification Code</x-slot:page_title>
+    <x-slot:page_title>Verification Code / OTP</x-slot:page_title>
 
     <p>
-        Display a set of input fields to accept verification code from a user. It is common place to add email and phone number verification to websites these days.
-        These codes range from four to six digits. The verification code Bladewind component however, allows you to specify how many digits you want the enduser to type, by specifying the
-        <code class="inline text-red-500">total_digits</code> attribute. There is no restriction on the maximum value you can specify for the <code class="inline">total_digits</code>.  In a finance app, you could
-        use this to collect account numbers. The default number of digits displayed by the component is four (4). We interchange the words PIN, PIN code and verification code. We mean the same thing.
+        Displays a set of input fields to accept a verification code from a user. It is common place on websites these days to send verification codes via email or mobile.
+        These codes range from four to six digits.  The default number of digits displayed by the component is four (4).
+        In this documentation, we may interchange the words PIN, PIN code and verification code. We mean the same thing.
     </p>
     <br/>
     <p><x-bladewind::code  /></p>
@@ -16,6 +15,10 @@
         </code>
     </pre>
     <br/>
+    <p>The verification code component allows you to specify how many boxes you want to display by specifying the
+        <code class="inline text-red-500">total_digits</code> attribute. There is no restriction on the maximum
+        value you can specify.  In a finance app, you could use this to collect account numbers.
+    </p>
     <br/>
     <p><x-bladewind::code total_digits="5"  /></p>
     <pre class="language-markup">
@@ -23,9 +26,22 @@
             &lt;x-bladewind.code total_digits="5"  /&gt;
         </code>
     </pre>
+    <br />
+    <p>
+        If you don't want the code being entered to be visible, set the
+        <code class="inline text-red-500">mask="true"</code> attribute.
+    </p>
+    <br/>
+    <p><x-bladewind::code mask="true"  /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.code mask="true"  /&gt;
+        </code>
+    </pre>
+
     <h2 id="code">Access the Verification Code</h2>
     <p>
-        What happens after the user enters their verification code? The component creates a hidden input field with the name passed to the <code class="inline text-red-500">name</code> attribute.
+        What happens after the user enters their verification code? The component creates a hidden input field with the name that was passed as the <code class="inline text-red-500">name</code> attribute.
     </p>
         <pre class="language-markup">
             <code>
@@ -41,13 +57,16 @@
     <p>
         You can access the value of <code class="inline">pin_code</code> either via Javascript or via PHP if you intend to post it in a form to your backend.
         The <code class="inline text-red-500">on_verify</code> attribute allows you to specify a function that should be called when the user has entered a value into the last verification code field.
-        This should just be the function name without parentheses and parameters. If you wish to call <code class="inline">verifyPin()</code> after the user enters the pin/code, just type
-        <code class="inline text-red-500">on_verify="verifyPin"</code>. The component passes the code entered by the user to your function, so, your function declaration needs to expect one parameter.
+        This should just be the function name without parentheses and parameters. If you wish to call <code class="inline">verifyPin()</code> after the user enters the code, just type
+        <code class="inline text-red-500">on_verify="verifyPin"</code>. The component passes the code entered by the user to your function, as well as the name of the component, so, your function declaration needs to expect one or two parameters.
         Still using the <em>verifyPin</em> example, your function declaration will be:
     </p>
         <pre class="language-js">
             <code>
-                verifyPin = (code) => {
+                // NOTE: this is not a Bladewind helper function
+                // it should be a function in your project
+
+                verifyPin = (code, name) => {
 
                     // do something here with the code
                 }
@@ -57,19 +76,16 @@
         Let's consider a practical example. Enter any code in the fields below and get notified of the code you entered.
     </p><br />
     <p>
-        <x-bladewind::code total_digits="5" on_verify="checkPin" />
+        <x-bladewind::code on_verify="checkPin" />
         <script>
             checkPin = (code) => {
                 alert(`You entered: ${code}`);
             }
         </script>
     </p>
-        <pre class="language-markup">
+        <pre class="language-markup line-numbers">
             <code>
-                &lt;x-bladewind.code
-                    total_digits="5"
-                    on_verify="checkPin" /&gt;
-
+                &lt;x-bladewind.code on_verify="checkPin" /&gt;
 
                 &lt;script&gt;
                     checkPin = (code) => {
@@ -81,24 +97,34 @@
 
     <h2 id="clearpin">Clear PIN/Code</h2>
     <p>
-        There are cases where you will want to clear the verification code input fields. Probably after a user enters a wrong code, you clear the fields so they can enter the code all over again.
-        There is also the case where you require a pin code to be entered to authorize payments or other actions on your web app.
-        If you have the verification code in a <a href="/component/modal">Modal component</a>, the values entered may persist everytime the modal is opened.
+        There are cases where you will want to clear the verification code input field probably because the user entered a wrong pin and you want them to try entering the pin again.
+        Also, in an SPA app where you probably popup a screen for users to enter a code before performing an action, the last entered may still be in the fields.
+        <code class="inline">clearPin(name)</code> is a Bladewind helper function that easily lets you reset your verification codes. The example below expects the code <strong>2024</strong>
     </p>
     <p>
-        <code class="inline">clearPin(name)</code> is a helper Javascript function that easily lets you reset your verification codes.
+        <x-bladewind::notification />
+        <x-bladewind::code name="clear_me" on_verify="checkPinAndClear" />
+        <script>
+            checkPinAndClear = (code) => {
+                if(code !== 2024) {
+                    clearPin('clear_me');
+                    showNotification('Wrong Code', 'Please enter your code again', 'error');
+                }
+            }
+        </script>
     </p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.code name="pin_code"  /&gt;
+                &lt;x-bladewind.code name="clear_me" on_verify="checkPinAndClear" /&gt;
             </code>
         </pre>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
                 &lt;script&gt;
-                    checkPin = (code) => {
-                        if( code !== '20201') {
-                            clearPin('pin_code');
+                    checkPinAndClear = (code) => {
+                        if(code !== 2024) {
+                            clearPin('clear_me');
+                            showNotification('Wrong Code', 'Please enter your code again', 'error');
                         }
                     }
                 &lt;/script&gt;
@@ -108,30 +134,26 @@
     <h2 id="errors">Displaying Errors</h2>
     <p>
         The verification code component comes with a hidden field that has the error message to display when validation fails for the code the user entered.
-        To make this translatable, the error message is defined on the component using the <code class="inline text-red-500">error_message</code> attribute.
+        To allow for translatable messages, the error message is defined on the component using the <code class="inline text-red-500">error_message</code> attribute.
     </p>
+    <p>The example below expects <strong>2024</strong> as the code. </p><br />
     <p>
-        The error message is displayed by invoking the Javascript helper function <code class="inline">showPinError(name)</code>.
-        It accepts the name provided to the code component as a parameter. The error message can be hidden by calling the
-        <code class="inline">hidePinError(name)</code> Javascript helper function.
+        <x-bladewind::code name="pcode" error_message="Yoh! check your code" on_verify="checkPinShowError" />
     </p>
-    <p>The verification code below is supposed to be <strong>2022</strong>. Enter any other code and see how the error is displayed. </p>
-    <p>
-        <x-bladewind::code name="pcode" error_message="Yoh! check your code" on_verify="checkPinCode" />
-    </p>
-    <pre class="language-markup">
-        <code>
-            &lt;x-bladewind.code
-                name="pcode"
-                error_message="Yoh! check your code"
-                on_verify="checkPinCode" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind.code
+        name="pcode"
+        error_message="Yoh! check your code"
+        on_verify="checkPinShowError" /&gt;
+</code>
+</pre>
     <script>
-       checkPinCode = (code) => {
+        checkPinShowError = (code) => {
             if( code !== '2022') {
                 clearPin('pcode');
                 showPinError('pcode');
+                //
             }
         }
     </script>
@@ -139,47 +161,80 @@
     <pre class="language-markup line-numbers" data-line="4">
         <code>
             &lt;script&gt;
-                checkPinCode = (code) => {
-                    if( code !== '2022') {
+                checkPinShowError = (code) => {
+                    if( code !== 2024) {
                         clearPin('pcode');
-                        // accepts name of the code
-                        // component as a parameter
                         showPinError('pcode');
                     }
                 }
             &lt;/script&gt;
         </code>
     </pre>
+<br />
+    <p>
+        The error message is displayed by invoking the Javascript helper function <code class="inline">showPinError(name)</code>.
+        It accepts the name provided to the code component as a parameter. The error message is automatically hidden by calling the
+        <code class="inline">hidePinError(name)</code> Javascript helper function. The second parameter to this function is what controls
+        the automatic hiding of the error message. If you do not want to automatically close the error message, set the parameter to false.
+    </p>
+    <pre class="language-markup line-numbers" data-line="5">
+        <code>
+            &lt;script&gt;
+                checkPinShowError = (code) => {
+                    ...
+                    // the error message will not hide after 10 seconds
+                    showPinError('pcode', false);
+                    ...
+                }
+            &lt;/script&gt;
+        </code>
+    </pre>
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            From the <a href="#clearpin">Clear PIN</a> example, the error message was displayed in a notification instead of using the inline error. This is also an option.
+        </x-bladewind::alert>
+    </p>
     <h2 id="spinner">Show the Spinner</h2>
     <p>
         The verification code component comes with a hidden spinner that can be made visible by invoking the <code class="inline">showSpinner(name)</code> Javascript helper function.
         It accepts the name provided to the code component as a parameter. The verification code spinner can be useful if your verification is done via an ajax call to an API that may take a second or two.
-        Showing the spinner will let the user know you are performing an action. The error message can be hidden by calling the
-        <code class="inline">hideSpinner(name)</code> Javascript helper function.
+        Showing the spinner will let the user know you are performing an action.
     </p><br />
     <p>
         <x-bladewind::code name="spin_me" on_verify="validatePin" />
     </p>
-    <pre class="language-markup">
+    <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.code
-                name="spin_me"
-                on_verify="validatePin"  /&gt;
+            &lt;x-bladewind.code name="spin_me" on_verify="validatePin"  /&gt;
         </code>
     </pre>
         <script>
-           validatePin = (code) => {
-                showSpinner('spin_me');
+           validatePin = (code, name) => {
+                showSpinner(name);
             }
         </script>
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
             &lt;script&gt;
-                validatePin = (code) => {
-                    showSpinner('spin_me');
+                validatePin = (code, name) => {
+                    showSpinner(name);
                     ajaxCall('/verify/pin', `code=${code}`, ...
                 }
+            &lt;/script&gt;
+        </code>
+    </pre>
+    <br />
+    <p>
+        Since Bladewind does not know how long your Ajax call might take or when your process is complete, it cannot automatically hide the spinner for you. You can do that
+        by calling <code class="inline">hideSpinner(name)</code>, where <code class="inline">name</code> is the name of your verification code field.
+    </p>
+    <pre class="language-markup line-numbers" data-line="3">
+        <code>
+            &lt;script&gt;
+                ...
+                hideSpinner('spin_me');
+                ...
             &lt;/script&gt;
         </code>
     </pre>
@@ -194,32 +249,132 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code
-                name="spin_me"
-                on_verify="spinAndSucceed"  /&gt;
+            &lt;x-bladewind.code name="spin_me_yes" on_verify="spinAndSucceed"  /&gt;
         </code>
     </pre>
     <script>
-        spinAndSucceed = (code) => {
-           showSpinner('spin_me_yes');
+        spinAndSucceed = (code, name) => {
+           showSpinner(name);
            setTimeout(()=>{
-               showPinSuccess('spin_me_yes');
+               showPinSuccess(name);
            }, 5000);
         }
     </script>
-    <pre class="language-markup line-numbers" data-line="3">
+<pre class="language-markup line-numbers" data-line="4">
+<code>
+    &lt;script&gt;
+        spinAndSucceed = (code, name) => {
+            showSpinner(name);
+            setTimeout( () => { showPinSuccess(name); }, 5000);
+        }
+    &lt;/script&gt;
+</code>
+</pre>
+    <h2 id="timer">Countdown To Resend Code</h2>
+    <p>
+        This can be useful for two scenarios. The user never received the code you sent so they will need to request another.
+        The user received a code that somehow does not seem to work and will need to request for a new one. Specifying a value for the
+        <code class="inline text-red-500">timer</code> attribute automatically shows a countdown timer. The attributes accepts number of seconds to countdown to.
+    </p>
+    <p>
+        Bladewind expects you to have an HTML element on your page with <code class="inline">class="bw-code-timer-done"</code>.
+        Ideally this should be hidden. The innerHTML (content) of that element is what will be displayed when the timer is done. This approach provides you the flexibility
+        of handling your code resend anyway you want.
+    </p><br />
+    <div class="bw-code-timer-done hidden">
+        <x-bladewind::button name="send-code" size="tiny" type="secondary" has_spinner="true" onclick="sendNewCode()">
+            send me another code
+        </x-bladewind::button>
+    </div>
+    <p>
+        <x-bladewind::code name="time_me" timer="30" />
+    </p>
+    <pre class="language-markup">
         <code>
-            &lt;script&gt;
-                    spinAndSucceed = (code) => {
-                    showSpinner('spin_me_yes');
-                    setTimeout(()=>{
-                       showPinSuccess('spin_me_yes');
-                    }, 5000);
-                }
-            &lt;/script&gt;
+            &lt;x-bladewind.code name="time_me" timer="30"  /&gt;
         </code>
     </pre>
+    <pre class="language-markup line-numbers" data-line="3,8">
+        <code>
+            &lt;!-- the DIV that contains the content to display when timer is done -->
 
+            &lt;div class="bw-code-timer-done hidden"&gt;
+                &lt;x-bladewind.button
+                    name="send-code"
+                    size="tiny"
+                    type="secondary"
+                    has_spinner="true"
+                    onclick="sendNewCode()"&gt;
+                    send me another code
+                &lt;/x-bladewind.button&gt;
+            &lt;/div&gt;
+        </code>
+    </pre>
+    <script>
+        sendNewCode = () => {
+           showButtonSpinner('.bw-time_me-pin-timer .done .send-code');
+           setTimeout(()=>{
+               showNotification('Code Sent','Please check your email or SMS for a new verification code');
+               hideButtonSpinner('.bw-time_me-pin-timer .done .send-code');
+               hide('.bw-time_me-pin-timer .done .send-code')
+               setFocus('time_me');
+           }, 5000);
+        }
+    </script>
+<pre class="language-markup line-numbers" data-line="5">
+<code>
+    &lt;script&gt;
+        sendNewCode = () => {
+           showButtonSpinner('.bw-time_me-timer .done .send-code');
+           setTimeout( () => {
+               showNotification('Code Sent','Please check your email or SMS for a new verification code');
+                hideButtonSpinner('.bw-time_me-pin-timer .done .send-code');
+                hide('.bw-time_me-pin-timer .done .send-code')
+                setFocus('time_me');
+                clearTimeout();
+           }, 5000);
+        }
+    &lt;/script&gt;
+</code>
+</pre>
+    <h3 id="trigger-timer">Manually Trigger the Timer</h3>
+    <p>
+        There are cases where you may want to manually trigger the timer. For example, you first want the user to have at least entered the code wrongly once or twice before you trigger a countdown.
+        You can do this by calling the <code class="inline">showTimer(name, duration)</code> helper function. The example below expects 2024 as the code. Enter it wrongly two times to trigger the timer.
+    </p>
+    <br />
+    <p>
+        <x-bladewind::code name="trigger_me" on_verify="triggerTimerManually" />
+    </p>
+    <script>
+        let attempts = 0;
+        triggerTimerManually = (code, name) => {
+            if(parseInt(code) !== 2024) {
+                attempts++
+                showPinError(name);
+                clearPin(name);
+            }
+            if(attempts >= 2) showTimer(name, 15);
+        }
+    </script>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.code name="trigger_me" on_verify="triggerTimerManually"  /&gt;
+        </code>
+    </pre>
+    <pre class="language-js line-numbers" data-line="8">
+<code>
+let attempts = 0;
+triggerTimerManually = (code, name) => {
+    if(parseInt(code) !== 2024) {
+        attempts++
+        showPinError(name);
+        clearPin(name);
+    }
+    if(attempts >= 2) showTimer(name, 15);
+}
+</code>
+</pre>
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Spinner component.</p>
     @include('docs/announcement')
@@ -237,7 +392,7 @@
         </tr>
         <tr>
             <td>total_digits</td>
-            <td>6</td>
+            <td>4</td>
             <td>Determines number of input boxes to be created for entry of the verification code. Any realistic number.</td>
         </tr>
         <tr>
@@ -248,26 +403,37 @@
                 This should just be the function name without parentheses and parameters. If you wish to call <code class="inline">verifyPin()</code> after the user enters the pin,
                 just type <code class="inline text-red-500">on_verify="verifyPin"</code>. The component passes the code to your function, so, your function declaration needs to expect one parameter.
                 Still using the <code>verifyPin</code> example, your function declaration should be <code class="inline">verifyPin = (code) => { ... }</code>
-
             </td>
         </tr>
         <tr>
-            <td>error_mesage</td>
+            <td>error_message</td>
             <td>Verification code is invalid</td>
             <td>Error message to display when the verification code entered is invalid</td>
         </tr>
+        <tr>
+            <td>mask</td>
+            <td>false</td>
+            <td>Should the text being entered be hidden like a password field. <br /><code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
+            <td>timer</td>
+            <td>null</td>
+            <td>Determines if the component should automatically display a timer for user to resend verification code. Accepts any positive integer. Counted in seconds. 90 means countdown 90 seconds. Of course the component converts the seconds to user friendly minutes and seconds.</td>
+        </tr>
     </x-bladewind::table>
     <h3>Verification Code with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind.code
-                name="pin-code"
-                total_digits="5"
-                on_verify="verifyPin"
-                has_spinner="false"
-                error_message="please enter the correct pin code"  /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind.code
+        name="pin-code"
+        total_digits="5"
+        on_verify="verifyPin"
+        has_spinner="false"
+        mask="false"
+        timer="15"
+        error_message="please enter the correct code"  /&gt;
+</code>
+</pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > code.blade.php</code>
@@ -280,6 +446,8 @@
         <div class="flex items-center"><div class="dot"></div><a href="#errors">Displaying errors</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#spinner">Show the spinner</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#success">Show success icon</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#timer">Countdown timer</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#trigger-timer">Manually trigger the timer</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

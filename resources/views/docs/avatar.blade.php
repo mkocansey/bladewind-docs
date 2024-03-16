@@ -72,11 +72,19 @@
         You can achieve stackability by setting the <code class="inline text-red-500">stacked="true"</code> attribute on each avatar that you want as part of the stack.
     </p>
     <div class="text-center">
-    <x-bladewind::avatar stacked="true" image="/assets/images/francis.png" />
-    <x-bladewind::avatar stacked="true" image="/assets/images/rowe.jpeg" />
-    <x-bladewind::avatar stacked="true" image="/assets/images/doc.png" />
-    <x-bladewind::avatar stacked="true" image="/assets/images/issah.jpg" />
-    <x-bladewind::avatar stacked="true" image="/assets/images/sarpong.png" />
+        <x-bladewind::avatar stacked="true" image="/assets/images/francis.png" />
+        <x-bladewind::avatar stacked="true" image="/assets/images/rowe.jpeg" />
+        <x-bladewind::avatar stacked="true" image="/assets/images/doc.png" />
+        <x-bladewind::avatar stacked="true" image="/assets/images/issah.jpg" />
+        <x-bladewind::avatar stacked="true" image="/assets/images/sarpong.png" />
+    </div>
+    <br />
+    <div class="text-center">
+        <x-bladewind::avatar stacked="true" image="/assets/images/rowe.jpeg" show_dot />
+        <x-bladewind::avatar stacked="true" image="/assets/images/francis.png" show_dot />
+        <x-bladewind::avatar stacked="true" image="/assets/images/audrey.jpeg" show_dot />
+        <x-bladewind::avatar stacked="true" image="/assets/images/doc.png" show_dot />
+        <x-bladewind::avatar stacked="true" image="/assets/images/issah.jpg" show_dot />
     </div>
     <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,15">

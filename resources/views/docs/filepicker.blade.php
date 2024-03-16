@@ -135,7 +135,7 @@
             placeholder="Profile Picture"
             name="dp"
             selected_value="404.svg"
-            url="https://bladewindui.com/assets/images/404.svg"  />
+            url="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg"  />
     </p>
     <br />
     <p>

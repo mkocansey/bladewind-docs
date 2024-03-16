@@ -41,6 +41,18 @@
             </x-slot:content>
         </x-bladewind::timeline>
 
+        <x-bladewind::timeline date="2.5.2">
+            <x-slot:content>
+                <ul class="list-outside list-disc leading-8 ml-3 text-base">
+                    <li>Fixed dark mode for all components.</li>
+                    <li>Fixed missing attribute for <a href="/component/button#circular">circular button</a> components.</li>
+                    <li>Cleaned up the <a href="/component/notification">Notification</a> component.</li>
+                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.<h1 class="w-0 h-0" id="260"></h1></li>
+                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should have a countdown and resend code link.</li>
+                </ul>
+            </x-slot:content>
+        </x-bladewind::timeline>
+
         <x-bladewind::timeline date="2.5.x">
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
@@ -48,7 +60,7 @@
                     <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
                     <li>User can define action buttons alignment for <a href="/component/modal">Modal</a> component</li>
                     <li><a href="/component/tab">Tab</a> component headings should accept icons</li>
-                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.<h1 class="w-0 h-0" id="260"></h1></li>
+                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.</li>
                     <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should have a countdown and resend code link.</li>
                     <li>Refresh the <a href="/component/statistic">Statistics</a> component. Should allow stacking vertically and horizontally.</li>
                 </ul>

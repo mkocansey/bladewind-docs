@@ -21,12 +21,14 @@
     .content-area p { @apply leading-8 text-slate-600 dark:text-slate-400 mb-7 }
     .content-area a { @apply text-indigo-500 hover:text-indigo-700 }
     .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6 { @apply scroll-mt-24 font-light mb-4 mt-10 block tracking-wide }
-    h2 { @apply font-light text-2xl text-slate-600 dark:text-orange-400 }
+    h2 { @apply font-light text-2xl text-slate-600 dark:text-orange-400 pt-5 }
     h3 { @apply text-xl text-slate-600 }
     .navigation a { @apply border-t border-slate-300 pt-4 block w-full pl-6 dark:border-gray-800 }
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
     pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-900 !py-4 !my-5 !text-sm }
+    code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 inline-block dark:bg-gray-700 }
+    .bw-alert code.inline { @apply  dark:text-gray-400 }
     .line-numbers { @apply !leading-7 }
     .line-numbers-rows { @apply !leading-[27px] }
     .copy-to-clipboard-button { @apply !pt-0.5 !pb-1.5 !px-2 mr-2 !rounded-none !text-gray-300 hover:!text-white }

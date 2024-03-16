@@ -287,22 +287,22 @@
     </x-bladewind::table>
 
     <h3>Progress Circle with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind.progress-circle
-                percentage = "50"
-                color = "red",
-                show_label = "false",
-                show_percent = "false",
-                animate = "true",
-                size="medium"
-                circle_width="50"
-                text_size="50"
-                align="100"
-                valign="0"
-                shade = "faint" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind.progress-circle
+        percentage = "50"
+        color = "red",
+        show_label = "false",
+        show_percent = "false",
+        animate = "true",
+        size="medium"
+        circle_width="50"
+        text_size="50"
+        align="100"
+        valign="0"
+        shade = "faint" /&gt;
+</code>
+</pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > progress-circle.blade.php</code>

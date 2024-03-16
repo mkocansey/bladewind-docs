@@ -6,61 +6,7 @@
         Organize and display data in tabs. The BladewindUI tab component is broken down into two parts.
         The tab headings and the tab content. To prevent erratic behaviour of tabs it is very important to
         provide a value for the <code class="inline text-red-500">name</code> attribute. In fact, the tabs won't be rendered without you specifying a name.
-        There isn't much customization available with the tab component.
-    </p>
-
-    <x-bladewind::tab-group name="staff-loans">
-        <x-slot name="headings">
-            <x-bladewind::tab-heading name="loans" active="true" label="Pending Loans" />
-        </x-slot>
-        <x-bladewind::tab-body>
-            <x-bladewind::tab-content name="loans" active="true">
-                this is content for pending loans
-            </x-bladewind::tab-content>
-        </x-bladewind::tab-body>
-    </x-bladewind::tab-group>
-
-    <pre class="language-markup line-numbers" data-line="1,3,5,12,14">
-        <code>
-            &lt;x-bladewind.tab-group name="staff-loans"&gt;
-
-                &lt;x-slot name="headings"&gt;
-
-                    &lt;x-bladewind.tab-heading
-                        name="loans"
-                        active="true"
-                        label="Pending Loans" /&gt;
-
-                &lt;/x-slot&gt;
-
-                &lt;x-bladewind.tab-body&gt;
-
-                    &lt;x-bladewind.tab-content name="loans" active="true"&gt;
-                        this is content for pending loans
-                    &lt;/x-bladewind.tab-content&gt;
-
-                &lt;/x-bladewind.tab-body&gt;
-
-            &lt;/x-bladewind.tab-group&gt;
-        </code>
-    </pre>
-
-    <p>
-        Let us breakdown what is happening with the tab component. We first define a tab group that will hold all the tab headings
-        and tab content. As stated earlier, it is very important to give this tab group a name.
-        <code class="inline text-red-500">&lt;x-bladewind.tab-group name="staff-loans"&gt;</code>.</p>
-    <p>
-        Next, we need to define the tab headings we will click on to access the tab content. The tab headings are wrapped in a
-        <code class="inline">slot</code> named <code class="inline">headings</code>. <code class="inline text-red-500">&lt;x-slot name="headings"&gt;</code>.
-        The next step is to add the individual tab headings using the <code class="inline text-red-500">&lt;x-bladewind.tab-heading /&gt;</code>.
-        The individual tab headings also need to be named uniquely. The tab heading you want selected by default should have <code class="inline text-red-500">active="true"</code>.
-        This necessarily does not need to be the first tab. If you have four tab headings and the third needs to be selected by default, set <code class="inline text-red-500">active="true"</code> on the third tab heading.
-    </p>
-    <p>
-        The final bit that ties the tab component all together is the <code class="inline text-red-500">&lt;x-bladewind.tab-body&gt;</code>.
-        This is the parent component that holds all the content for each corresponding tab heading. Content for each tab heading needs to be
-        defined in the <code class="inline text-red-500">&lt;x-bladewind.tab-content&gt;</code> tag that has the <b><em>same name</em></b> as it's corresponding tab heading.
-        The tab content that needs to be visible by default also needs to have <code class="inline text-red-500">active="true"</code> set. Let's look at an example of displaying four pictures from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+        The example below uses pictures from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
     </p>
 
     <x-bladewind::tab-group name="free-pics">
@@ -75,11 +21,11 @@
         <x-bladewind::tab-body>
             <x-bladewind::tab-content name="unsplash-1">
                 <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
-                    alt="Picture by Lissete Laverde" />
+                     alt="Picture by Lissete Laverde" />
             </x-bladewind::tab-content>
             <x-bladewind::tab-content name="unsplash-2">
                 <img src="/assets/images/marko-pavlichenko-WiBfaVKtbXo-unsplash.jpg"
-                    alt="Picture by Marko Pavlichenko" />
+                     alt="Picture by Marko Pavlichenko" />
             </x-bladewind::tab-content>
             <x-bladewind::tab-content name="unsplash-3" active="true">
                 <img src="/assets/images/yoonbae-cho-Fes4eLW4mg0-unsplash.jpg" alt="Picture by Yoonbae Cho" />
@@ -95,7 +41,7 @@
         <code>
             &lt;x-bladewind.tab-group name="free-pics"&gt;
 
-                &lt;x-slot name="headings"&gt;
+                &lt;x-slot:headings&gt;
                     &lt;x-bladewind.tab-heading
                         name="unsplash-1" label="Lissete Laverde" /&gt;
 
@@ -107,7 +53,7 @@
 
                     &lt;x-bladewind.tab-heading
                         name="unsplash-4" label="Sam Carter" /&gt;
-                &lt;/x-slot&gt;
+                &lt;/x-slot:headings&gt;
 
                 &lt;x-bladewind.tab-body&gt;
 
@@ -137,6 +83,24 @@
         </code>
     </pre>
 
+    <p>
+        Let us breakdown what is happening with the tab component. We first define a tab group that will hold all the tab headings
+        and tab content. As stated earlier, it is very important to give this tab group a name.
+        <code class="inline text-red-500">&lt;x-bladewind.tab-group name="staff-loans"&gt;</code>.</p>
+    <p>
+        Next, we need to define the tab headings we will click on to access the tab content. The tab headings are wrapped in a
+        <code class="inline">slot</code> named <code class="inline">headings</code>. <code class="inline text-red-500">&lt;x-slot:headings&gt;</code>.
+        The next step is to add the individual tab headings using the <code class="inline text-red-500">&lt;x-bladewind.tab-heading /&gt;</code>.
+        The individual tab headings also need to be named uniquely. The tab heading you want selected by default should have <code class="inline text-red-500">active="true"</code>.
+        This necessarily does not need to be the first tab. If you have four tab headings and the third needs to be selected by default, set <code class="inline text-red-500">active="true"</code> on the third tab heading.
+    </p>
+    <p>
+        The final bit that ties the tab component all together is the <code class="inline text-red-500">&lt;x-bladewind.tab-body&gt;</code>.
+        This is the parent component that holds all the content for each corresponding tab heading. Content for each tab heading needs to be
+        defined in the <code class="inline text-red-500">&lt;x-bladewind.tab-content&gt;</code> tag that has the <b><em>same name</em></b> as it's corresponding tab heading.
+        The tab content that needs to be visible by default also needs to have <code class="inline text-red-500">active="true"</code> set.
+    </p>
+
     <h2 id="colours">Different Colours</h2>
     <p>
         The tab component by default displays the active tab heading and its underline bar as blue. There are nine colours in total to pick from. To set your preferred colour set the <code class="inline text-red-500">color</code> attribute on the <code class="inline text-red-500">&lt;x-bladewind.tab-group&gt;</code> component.
@@ -144,7 +108,7 @@
     <x-bladewind::tab-group name="red-tab" color="red">
         <x-slot name="headings">
             <x-bladewind::tab-heading name="red" active="true" label="Active Red Tab" />
-            <x-bladewind::tab-heading name="inactive-red" label="Inactive Tab" />
+            <x-bladewind::tab-heading name="inactive-red" label="The Other Tab" />
         </x-slot>
         <x-bladewind::tab-body>
             <x-bladewind::tab-content name="red" active="true"></x-bladewind::tab-content>
@@ -155,7 +119,7 @@
         <x-bladewind::tab-group name="yellow-tab" color="yellow">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="yellow" active="true" label="Active Yellow Tab" />
-                <x-bladewind::tab-heading name="inactive-yellow" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-yellow" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="yellow" active="true"></x-bladewind::tab-content>
@@ -167,7 +131,7 @@
         <x-bladewind::tab-group name="green-tab" color="green">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="green" active="true" label="Active Green Tab" />
-                <x-bladewind::tab-heading name="inactive-green" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-green" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="green" active="true"></x-bladewind::tab-content>
@@ -179,7 +143,7 @@
         <x-bladewind::tab-group name="pink-tab" color="pink">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="pink" active="true" label="Active Pink Tab" />
-                <x-bladewind::tab-heading name="inactive-pink" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-pink" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="pink" active="true"></x-bladewind::tab-content>
@@ -191,7 +155,7 @@
         <x-bladewind::tab-group name="cyan-tab" color="cyan">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="cyan" active="true" label="Active Cyan Tab" />
-                <x-bladewind::tab-heading name="inactive-cyan" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-cyan" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="cyan" active="true"></x-bladewind::tab-content>
@@ -203,7 +167,7 @@
         <x-bladewind::tab-group name="gray-tab" color="gray">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="gray" active="true" label="Active Gray Tab" />
-                <x-bladewind::tab-heading name="inactive-gray" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-gray" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="gray" active="true"></x-bladewind::tab-content>
@@ -215,7 +179,7 @@
         <x-bladewind::tab-group name="purple-tab" color="purple">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="purple" active="true" label="Active Purple Tab" />
-                <x-bladewind::tab-heading name="inactive-purple" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-purple" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="purple" active="true"></x-bladewind::tab-content>
@@ -227,7 +191,7 @@
         <x-bladewind::tab-group name="orange-tab" color="orange">
             <x-slot name="headings">
                 <x-bladewind::tab-heading name="orange" active="true" label="Active Orange Tab" />
-                <x-bladewind::tab-heading name="inactive-orange" label="Inactive Tab" />
+                <x-bladewind::tab-heading name="inactive-orange" label="The Other Tab" />
             </x-slot>
             <x-bladewind::tab-body>
                 <x-bladewind::tab-content name="orange" active="true"></x-bladewind::tab-content>
@@ -295,7 +259,7 @@
 
                     &lt;x-bladewind::tab-heading
                         name="inactive-red"
-                        label="Inactive Tab" /&gt;
+                        label="The Other Tab" /&gt;
 
                 &lt;/x-slot&gt;
 
@@ -314,6 +278,148 @@
         </code>
     </pre>
 
+
+    <h2 id="styles">Other Tab Styles</h2>
+    <p>
+        The tab components exist in three different styles. You can specify a preferred style by setting the <code class="inline text-red-500">style</code> attribute.
+        The available styles are <em>simple</em>, <em>system</em> and <em>pills</em>. The default tab style is <em>simple</em>.
+    </p>
+    <h3 id="system">System Tab Style</h3>
+    <br />
+    <x-bladewind::tab-group name="sys-blue-tab" style="system">
+        <x-slot name="headings">
+            <x-bladewind::tab-heading name="sys-blue" active="true" label="Blue System Tab" />
+            <x-bladewind::tab-heading name="inactive-sys-blue" label="The Other Tab" />
+        </x-slot>
+        <x-bladewind::tab-body>
+            <x-bladewind::tab-content name="sys-blue" active="true">
+                <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                     alt="Picture by Lissete Laverde" />
+            </x-bladewind::tab-content>
+            <x-bladewind::tab-content name="inactive-sys-blue">
+                <img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" />
+            </x-bladewind::tab-content>
+        </x-bladewind::tab-body>
+    </x-bladewind::tab-group>
+    <pre class="lang-markup line-numbers" data-line="3">
+        <code>
+                &lt;x-bladewind.tab-group
+                    name="sys-blue-tab"
+                    style="system"&gt;
+
+                    &lt;x-slot:headings&gt;
+                        &lt;x-bladewind.tab-heading
+                            name="sys-blue" active="true" label="Blue System Tab" /&gt;
+                        &lt;x-bladewind.tab-heading
+                            name="inactive-sys-blue" label="The Other Tab" /&gt;
+                    &lt;/x-slot:headings&gt;
+
+                    &lt;x-bladewind.tab-body&gt;
+                        &lt;x-bladewind.tab-content
+                            name="sys-blue" active="true"&gt;...&lt;/x-bladewind.tab-content&gt;
+                        &lt;x-bladewind.tab-content
+                            name="inactive-sys-blue"&gt;...&lt;/x-bladewind.tab-content&gt;
+                    &lt;/x-bladewind.tab-body&gt;
+
+                &lt;/x-bladewind.tab-group&gt;
+        </code>
+    </pre>
+    <br />
+    <p>
+        <x-bladewind::tab-group name="sys-yellow-tab" style="system" color="cyan">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="sys-yellow" active="true" label="Active Cyan Tab" />
+                <x-bladewind::tab-heading name="inactive-sys-yellow" label="The Other Tab" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="sys-yellow" active="true">
+                    <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                         alt="Picture by Lissete Laverde" />
+                </x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-sys-yellow">
+                    <img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" />
+                </x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+    <p>
+        <x-bladewind::tab-group name="sys-gray-tab" style="system" color="gray">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="sys-gray" active="true" label="System gray Tab" />
+                <x-bladewind::tab-heading name="inactive-sys-gray" label="The Other Tab" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="sys-gray" active="true">
+                    <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                         alt="Picture by Lissete Laverde" />
+                </x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-sys-gray">
+                    <img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" />
+                </x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+    <h3 id="pills">Pills tab style</h3>
+    <p>
+        <x-bladewind::tab-group name="pills-blue-tab" style="pills">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="pills-blue" active="true" label="Active Blue Tab" />
+                <x-bladewind::tab-heading name="inactive-pills-blue" label="The Other Tab" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="pills-blue" active="true">
+                    <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                         alt="Picture by Lissete Laverde" />
+                </x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-pills-blue">
+                    <img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" />
+                </x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+    <pre class="lang-markup line-numbers" data-line="3">
+        <code>
+                &lt;x-bladewind.tab-group
+                    name="pills-blue-tab"
+                    style="pills"&gt;
+
+                    &lt;x-slot:headings&gt;
+                        &lt;x-bladewind.tab-heading
+                            name="pills-blue" active="true" label="Blue System Tab" /&gt;
+                        &lt;x-bladewind.tab-heading
+                            name="inactive-pills-blue" label="The Other Tab" /&gt;
+                    &lt;/x-slot:headings&gt;
+
+                    &lt;x-bladewind.tab-body&gt;
+                        &lt;x-bladewind.tab-content
+                            name="pills-blue" active="true"&gt;...&lt;/x-bladewind.tab-content&gt;
+                        &lt;x-bladewind.tab-content
+                            name="inactive-pills-blue"&gt;...&lt;/x-bladewind.tab-content&gt;
+                    &lt;/x-bladewind.tab-body&gt;
+
+                &lt;/x-bladewind.tab-group&gt;
+        </code>
+    </pre>
+    <br />
+    <p>
+        <x-bladewind::tab-group name="pills-pink-tab" color="pink" style="pills">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="pills-pink" active="true" label="Active Pink Tab" />
+                <x-bladewind::tab-heading name="inactive-pills-pink" label="The Other Tab" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="pills-pink" active="true">
+                    <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                         alt="Picture by Lissete Laverde" />
+                </x-bladewind::tab-content>
+                <x-bladewind::tab-content name="inactive-pills-pink">
+                    <img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" />
+                </x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+
+
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Tab component.</p>
     @include('docs/announcement')
@@ -328,6 +434,11 @@
             <td>name</td>
             <td><em>blank</em></td>
             <td>Unique name to identify the tab component by in case there are multiple tab groups on the same page.</td>
+        </tr>
+        <tr>
+            <td>style</td>
+            <td>simple</td>
+            <td>Choose a tab style. <br /><code class="inline">simple</code> <code class="inline">system</code> <code class="inline">pills</code></td>
         </tr>
         <tr>
             <td>headings</td>
@@ -345,6 +456,7 @@
             </td>
         </tr>
     </x-bladewind::table>
+
     <h3>Tab Heading Component Attributes</h3>
 
     <x-bladewind::table striped="true">
@@ -404,7 +516,7 @@
     <h3>Tab with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::tab-group name="red-tab" color="red"&gt;
+            &lt;x-bladewind::tab-group name="red-tab" color="red" style="system"&gt;
                 &lt;x-slot name="headings"&gt;
 
                     &lt;x-bladewind::tab-heading
@@ -417,7 +529,7 @@
                         disabled="true"
                         active="false"
                         url="/profile/settings"
-                        label="Inactive Tab" /&gt;
+                        label="The Other Tab" /&gt;
 
                 &lt;/x-slot&gt;
 
@@ -445,6 +557,9 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#styles">Other tab styles</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#system">System</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#pills">Pills</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

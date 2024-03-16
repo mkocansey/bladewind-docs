@@ -464,7 +464,7 @@
         As you can tell from the above example, the component simply picks the array passed to it and generates a table.
         You can apply all the <a href="#attributes">table attributes</a> to remove the hover effect, remove the gaps or even make the table striped.
     </p>
-    <h3>Excluding and Including Columns</h3>
+    <h3 id="customize-columns">Excluding and Including Columns</h3>
     <p>
         By default, the table picks the keys of the array and generates its table headings.
         Any key with underscores will be replaced with spaces. <b>first_name</b> becomes <b>first name</b>.
@@ -490,7 +490,7 @@
         :data="$staff" /&gt;
 </code>
 </pre>
-    <h3>Displaying Action Icons</h3>
+    <h3 id="action-icons">Displaying Action Icons</h3>
     <p>
         Using the table component with dynamic data allows you to specify some extra cool attributes.
         You can show action icons by passing a json encoded array in the <code class="text-red-500 inline">action_icons</code> attribute.
@@ -699,7 +699,7 @@
         </x-bladewind::alert>
     </p>
     <br />
-    <h3>Searchable Table Data</h3>
+    <h3 id="searchable">Searchable Table Data</h3>
     <p>
         The table component provides a very basic way for users to search through table content.
         If the <code class="text-red-500 inline">searchable="true"</code> attribute is set,
@@ -722,7 +722,7 @@
 </code>
 </pre>
 
-    <h3>Aliasing Column Names</h3>
+    <h3 id="column-aliases">Aliasing Column Names</h3>
     <p>
         There are times your array might contain keys that are not user-friendly enough to be column headings. From our array above assuming we wanted to replace
         <code class="inline">marital_status</code> to <code class="inline">married?</code>, we will set the <code class="text-red-500 inline">column_aliases</code> attribute.
@@ -944,6 +944,11 @@
         <div class="flex items-center"><div class="dot"></div><a href="#totals">Cells for totals</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#shadow">With drop shadow</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#dynamic">Dynamic data</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#customize-columns">Customizing columns</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#action-icons">Action icons</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#nodata">No data message</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#searchable">Searchable data</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#column-aliases">Column aliases</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
     <x-slot name="scripts">
