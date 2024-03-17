@@ -3,7 +3,7 @@
     <x-slot:title>Datepicker Component</x-slot:title>
     <x-slot:page_title>Datepicker</x-slot:page_title>
     <x-bladewind::notification />
-    
+
     <p>
         Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
     </p>
@@ -13,12 +13,13 @@
         </x-bladewind::alert>
     </p>
 
-    <x-bladewind::datepicker  />
-    <pre class="language-markup line-numbers">
+    <x-bladewind::datepicker   />
+    <pre class="language-markup">
         <code>
             &lt;x-bladewind.datepicker  /&gt;
         </code>
     </pre>
+    <br />
 
     <p>
         By default the datepicker fills up the width of its parent container. You can however specify a width of your choice using the datepicker's <code class="inline">css</code> attribute.
@@ -233,6 +234,11 @@
             <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>week_starts</td>
+            <td>sun</td>
+            <td>Choose between Sunday and Monday as the first day of the week. The week_starts value defined by the first datepicker on your page is applied to all other datepickers on the page. <br> <code class="inline">sun</code> <code class="inline">mon</code> </td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>bw-datepicker</td>
             <td>Any additonal css classes can be added using this attribute.</td>
@@ -251,6 +257,7 @@
                 date_to=""
                 default_date=""
                 has_label="true"
+                week_starts="mon"
                 class="shadow-sm" /&gt;
         </code>
     </pre>
