@@ -3,16 +3,12 @@
     <x-slot:page_title>Button</x-slot:page_title>
 
     <p>
-        The default primary colour theme for BladewindUI buttons is blue.
-        It is possible to set a colour attribute to display our button in different colours. These are however a definite list of colours.
-        You can check out our customization notes on how to use a different primary <a name="primary"></a> theme colour if you'd prefer a colour not defined in our list.
+        The default primary colour for BladewindUI buttons is blue.
+        It is possible to set a colour attribute to display the button in different colours, though we advise you set the primary colour to maintain a consistent look across your project.
+        This colour customization needs to be done in your <code>tailwind.config.js</code> file. Check out our customization notes on how to use <a href="/customize/colours">set your colours</a>.
     </p>
-    <p>
-        By default the component uses the <code class="inline">&lt;button&gt;</code> tag to build the button. If you find yourself in the category of developers who prefer to use the <code class="inline">&lt;a&gt;</code> tag for their buttons, you will need to specify
-        the attribute <code class="inline text-red-500">tag="a"</code>.
-    </p>
-    <h2 id="primary">Primary Button</h2>
-    <div class="text-center p-4 space-y-2 space-x-2">
+
+    <div class="text-center p-4 space-y-2 space-x-4">
         <x-bladewind::button>Subscribe Now</x-bladewind::button>
         <x-bladewind::button uppercasing="false">Subscribe Now</x-bladewind::button>
     </div>
@@ -29,6 +25,10 @@
         </code>
     </pre>
     <br />
+    <p>
+        By default the component uses the <code class="inline">&lt;button&gt;</code> tag to build the button. To use the <code class="inline">&lt;a&gt;</code> tag to build the button, you will need to specify
+        the attribute <code class="inline text-red-500">tag="a"</code>.
+    </p>
     <div class="text-center p-4">
         <x-bladewind::button tag="a">Subscribe Now</x-bladewind::button>
     </div>
@@ -42,130 +42,83 @@
         </code>
     </pre>
 
-    <h3>Disabled Button</h3>
-    <div class="text-center p-4">
-        <x-bladewind::button disabled="true">Disabled Button</x-bladewind::button>
+    <h2 id="types">Button Types</h2>
+    <p>
+        BladewindUI buttons come in four types. We believe these four cover what is required in most projects.
+        There are primary, secondary and circular buttons. Outline buttons exist in these three types.
+    </p>
+    <h3 id="primary">Primary Buttons</h3>
+    <p>These buttons depend on the primary colour defined in your project's <code class="inline">tailwind.config.js</code>. <a href="/customize/colours">Please ensure</a> this is defined. </p>
+    <div class="text-center space-y-4 space-x-4">
+        <x-bladewind::button>Primary Button</x-bladewind::button>
+        <x-bladewind::button outline="true">Primary Button</x-bladewind::button>
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button disabled="true"&gt;disabled button&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind.button&gt;Primary Button&lt;/x-bladewind.button&gt;
         </code>
     </pre>
-
-    <h3>Different Sizes</h3>
-    <div class="text-center p-4 space-x-3 space-y-3">
-        <x-bladewind::button size="tiny">Save</x-bladewind::button>
-        <x-bladewind::button size="small">Subscribe</x-bladewind::button>
-        <x-bladewind::button size="regular">Subscribe</x-bladewind::button>
-        <x-bladewind::button size="big">Save User</x-bladewind::button>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button outline="true"&gt;Primary Button&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <h3 id="secondary">Secondary Buttons</h3>
+    <p>The secondary buttons depend on the secondary colour defined in your project's <code class="inline">tailwind.config.js</code>. <a href="/customize/colours">Please ensure</a> this is defined. </p>
+    <div class="text-center space-y-4 space-x-4">
+        <x-bladewind::button type="secondary">Secondary Button</x-bladewind::button>
+        <x-bladewind::button type="secondary" outline="true">Secondary Button</x-bladewind::button>
     </div>
-
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button size="tiny"&gt;Save&lt;/x-bladewind.button&gt;
-        </code>
-    </pre>
-    <pre class="language-markup">
-        <code>
-            &lt;x-bladewind.button size="small"&gt;Subscribe&lt;/x-bladewind.button&gt;
-        </code>
-    </pre>
-    <pre class="language-markup">
-        <code>
-            &lt;x-bladewind.button size="regular"&gt;Subscribe&lt;/x-bladewind.button&gt;
-        </code>
-    </pre>
-    <pre class="language-markup">
-        <code>
-            &lt;x-bladewind.button size="big"&gt;Save User&lt;/x-bladewind.button&gt;
-        </code><a name="secondary"></a>
-    </pre>
-
-    <h2 id="secondary">Secondary Button</h2>
-    <div class="text-center p-4">
-    <x-bladewind::button type="secondary">Subscribe Now</x-bladewind::button>
-   </div>
-    <pre class="language-markup line-numbers" data-line="2">
-        <code>
-            &lt;x-bladewind.button
-                type="secondary"&gt;
-                subscribe now
-            &lt;/x-bladewind.button/&gt;
-        </code>
-    </pre>
-    <h3>Different Sizes</h3>
-    <div class="text-center p-4 space-x-3 space-y-3">
-        <x-bladewind::button type="secondary" size="tiny">Save</x-bladewind::button>
-        <x-bladewind::button type="secondary" size="small">Subscribe</x-bladewind::button>
-        <x-bladewind::button type="secondary" size="regular">Subscribe</x-bladewind::button>
-        <x-bladewind::button type="secondary" size="big">Save User</x-bladewind::button>
-    </div>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind.button
-                 type="secondary"
-                 size="tiny"&gt;Save&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind.button type="secondary"&gt;Secondary Button&lt;/x-bladewind.button&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.button
-                 type="secondary"
-                 size="small"&gt;Subscribe&lt;/x-bladewind.button&gt;
-        </code>
-    </pre>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind.button
-                 type="secondary"
-                 size="regular"&gt;Subscribe&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind.button type="secondary" outline="true"&gt;
+                Secondary Button
+            &lt;/x-bladewind.button&gt;
         </code>
     </pre>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind.button
-                 type="secondary"
-                 size="big"&gt;Save User&lt;/x-bladewind.button&gt;
-        </code>
-    </pre>
 
-    <h3>Different Radii</h3>
-    <div class="text-center p-4 space-x-3 space-y-3">
-        <x-bladewind::button radius="none">No Radius</x-bladewind::button>
-        <x-bladewind::button radius="small">Small Radius</x-bladewind::button>
-        <x-bladewind::button radius="medium">Medium Radius</x-bladewind::button>
-        <x-bladewind::button radius="full">Full Radius</x-bladewind::button>
-    </div>
-    <div class="text-center p-4 space-x-3 space-y-3">
-        <x-bladewind::button type="secondary" radius="none">No Radius</x-bladewind::button>
-        <x-bladewind::button type="secondary" radius="small">Small Radius</x-bladewind::button>
-        <x-bladewind::button type="secondary" radius="medium">Medium Radius</x-bladewind::button>
-        <x-bladewind::button type="secondary" radius="full">Full Radius</x-bladewind::button>
+    <h3 id="circular">Circular Buttons</h3>
+    <p>
+        The Bladewind button component provides a circular option that accepts ONLY icons. The <a href="/component/icon">Icon component page</a> describes how to use icon names.
+        Just like the non-circular buttons, these can exist as primary or secondary and in all colour flavours.
+    </p>
+    <div class="text-center space-y-4 space-x-4">
+        <x-bladewind::button.circle icon="bell-alert" />
+        <x-bladewind::button.circle outline="true" icon="bell-alert" />
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button radius="none">No Radius&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button.circle icon="bell-alert" /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button radius="small">Small Radius&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button.circle outline="true" icon="bell-alert" /&gt;
         </code>
     </pre>
+    <br />
+    <p>
+        Bladewind determines which button type (primary or secondary) to display based on the <code class="inline text-red-500">type</code> attribute. The circular buttons
+        however, set <code class="inline text-red-500">type="circular"</code> so it is technically not possible to define a secondary circular button. A workaround, if you wish to have a
+        secondary circular button is to set <code class="inline text-red-500">color="secondary"</code>
+    </p>
+
+    <div class="text-center">
+        <x-bladewind::button.circle color="secondary" outline="true" icon="bell-alert" />
+    </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button radius="medium">Medium Radius&lt;/x-bladewind::button&gt;
-        </code>
-    </pre>
-    <pre class="language-markup">
-        <code>
-            &lt;!-- this is the default so radius="full" can be omitted -->
-            &lt;x-bladewind::button radius="full">Full Radius&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button.circle color="secondary" outline icon="bell-alert" /&gt;
         </code>
     </pre>
 
-    <h2 id="outline">Outline Buttons</h2>
+    <h3 id="outline">Outline Buttons</h3>
     <p>
         Buttons can exist as outlines only. This can be achieved by setting the attribute <code class="inline text-red-500">outline="true"</code>.
         The outline picks up the value of the <code class="inline text-red-500">color</code> attribute if you are using a primary button.
@@ -173,36 +126,23 @@
         The button only loses its background colour.
     </p>
     <div class="text-center p-4 space-x-3 space-y-3">
-        <x-bladewind::button radius="small" outline>Small Radius</x-bladewind::button>
-        <x-bladewind::button radius="medium" outline color="green">Medium Radius</x-bladewind::button>
-        <x-bladewind::button radius="full" outline color="violet">Full Radius</x-bladewind::button>
+        <x-bladewind::button radius="full" outline color="cyan">Cyan Outline</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="full" outline>Secondary Outline</x-bladewind::button>
     </div>
-    <br />
-    <pre class="language-markup line-numbers" data-line="3">
+    <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button
-                radius="full"
-                outline="true"
-                color="purple">Full Radius&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button radius="full" outline="true" color="cyan">Cyan outline&lt;/x-bladewind.button&gt;
         </code>
     </pre>
-    <div class="text-center p-4 space-x-3 space-y-3">
-        <x-bladewind::button type="secondary" radius="none" outline>No Radius</x-bladewind::button>
-        <x-bladewind::button type="secondary" radius="small" outline>Small Radius</x-bladewind::button>
-        <x-bladewind::button type="secondary" radius="full" outline>Full Radius</x-bladewind::button>
-    </div>
-    <br />
-    <pre class="language-markup line-numbers" data-line="3">
+    <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button
-                radius="full"
-                outline="true"
-                type="secondary">Full Radius&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button radius="full" outline="true" type="secondary">Secondary outline&lt;/x-bladewind.button&gt;
         </code>
-    </pre>
+    </pre><br />
     <p>
-        By default, outline buttons use the TailwindCSS <code class="inline">border-4</code> width. You can modify the border width
-        and specify any of the other supported TailwindCSS border widths without the "border-" prefix.
+        By default, outline buttons use the TailwindCSS <code class="inline">border-2</code> width. You can modify the border width
+        and specify any of the other supported TailwindCSS border widths without the "border-" prefix by setting the
+        <code class="inline text-red-500">border_width</code> attribute.
     </p>
     <div class="text-center p-4 space-x-3 space-y-3">
         <x-bladewind::button outline border_width="2">Border 2</x-bladewind::button>
@@ -210,20 +150,220 @@
         <x-bladewind::button outline border_width="8">Border 8</x-bladewind::button>
     </div>
     <br />
-    <pre class="language-markup line-numbers" data-line="3">
+    <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button
-                outline="true"
-                border_width="2"
-                type="secondary">Border 2&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button outline="true" border_width="2">Border 2&lt;/x-bladewind.button&gt;
         </code>
     </pre>
-    <pre class="language-markup line-numbers" data-line="3">
+    <pre class="language-markup">
         <code>
-            &lt;x-bladewind::button
-                outline="true"
-                border_width="8"
-                type="secondary">Border 8&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind.button outline="true" border_width="4">Border 4&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button outline="true" border_width="8">Border 8&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <h2 id="states">Button States</h2>
+    <p>
+        BladewindUI buttons can exist in a couple of states. Probably states isn't the right term for these but let's stick with that for lack of a better term/
+    </p>
+    <h3 id="norings">No Focus Rings</h3>
+    <div class="text-center p-4">
+        <x-bladewind::button show_focus_ring="false">No Focus Ring</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button show_focus_ring="false"&gt;no focus ring&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+
+    <h3 id="ring-sizes">Different Focus Ring Widths</h3>
+    <div class="text-center p-4 space-x-4 space-y-4">
+        <x-bladewind::button>Default</x-bladewind::button>
+        <x-bladewind::button ring_width="1">Ring 1</x-bladewind::button>
+        <x-bladewind::button ring_width="2">Ring 2</x-bladewind::button>
+        <x-bladewind::button ring_width="4">Ring 4</x-bladewind::button>
+        <x-bladewind::button ring_width="8">Ring 8</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button&gt;default&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button ring_width="1"&gt;ring 1&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button ring_width="2"&gt;ring 2&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button ring_width="4"&gt;ring 4&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button ring_width="8"&gt;ring 8&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+
+    <h3 id="disabled">Disabled Button</h3>
+    <div class="text-center space-x-4 space-y-4">
+        <x-bladewind::button disabled="true">Disabled</x-bladewind::button>
+        <x-bladewind::button disabled="true" type="secondary">Disabled Secondary</x-bladewind::button>
+        <x-bladewind::button disabled="true" outline>Disabled Outline</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button disabled="true"&gt;disabled&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind.button
+                disabled="true"
+                type="secondary"&gt;
+                disabled secondary
+            &lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button disabled outline&gt;disabled outline&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+
+    <h3 id="sizes">Different Sizes</h3>
+    <p>
+        Each button type has a corresponding size. The available sizes are <code class="inline">tiny</code>
+        <code class="inline">small</code> <code class="inline">regular</code> and <code class="inline">big</code>.
+        The default size is <code class="inline">regular</code>.
+    </p>
+    <h4>Tiny</h4>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button size="tiny">tiny</x-bladewind::button>
+        <x-bladewind::button size="tiny" type="secondary">tiny</x-bladewind::button>
+        <x-bladewind::button size="tiny" outline>tiny</x-bladewind::button>
+        <x-bladewind::button.circle size="tiny" icon="bell-alert" />
+        <x-bladewind::button.circle size="tiny" outline icon="bell-alert" />
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button size="tiny"&gt;tiny&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <h4>Small</h4>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button size="small">small</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary">small</x-bladewind::button>
+        <x-bladewind::button size="small" outline>small</x-bladewind::button>
+        <x-bladewind::button.circle size="small" icon="bell-alert" />
+        <x-bladewind::button.circle size="small" outline icon="bell-alert" />
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button size="small"&gt;small&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <h4>Regular / Default</h4>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button>default</x-bladewind::button>
+        <x-bladewind::button type="secondary">default</x-bladewind::button>
+        <x-bladewind::button outline>default</x-bladewind::button>
+        <x-bladewind::button.circle icon="bell-alert" />
+        <x-bladewind::button.circle outline icon="bell-alert" />
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button size="regular"&gt;default&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button&gt;default&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <h4>Big</h4>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button size="big">big</x-bladewind::button>
+        <x-bladewind::button size="big" type="secondary">big</x-bladewind::button>
+        <x-bladewind::button size="big" outline>big</x-bladewind::button>
+        <x-bladewind::button.circle size="big" icon="bell-alert" />
+        <x-bladewind::button.circle size="big" outline icon="bell-alert" />
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button size="big"&gt;big&lt;/x-bladewind.button&gt;
+        </code><a name="secondary"></a>
+    </pre>
+
+    <h3 id="radii">Different Radii</h3>
+    <p>
+        Different developers have different button radius preferences. The default Bladewind buttons go for a full radius making the buttons very rounded.
+        The component provides a way to change the radius of the button by setting the <code class="inline text-red-500">radius</code> attribute.
+    </p>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button radius="none">none</x-bladewind::button>
+        <x-bladewind::button radius="small">Small</x-bladewind::button>
+        <x-bladewind::button radius="medium">Medium</x-bladewind::button>
+        <x-bladewind::button radius="full">Full</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button radius="none">none&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button radius="small">small&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button radius="medium">medium&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;!-- this is the default so radius="full" can be omitted -->
+            &lt;x-bladewind.button radius="full">full&lt;/x-bladewind.button&gt;
+
+            &lt;x-bladewind.button>full&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button type="secondary" radius="none">None</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="small">Small</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="medium">Medium</x-bladewind::button>
+        <x-bladewind::button type="secondary" radius="full">Full</x-bladewind::button>
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button type="secondary" radius="none">none&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button type="secondary" radius="small">small&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.button type="secondary" radius="medium">medium&lt;/x-bladewind.button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;!-- this is the default so radius="full" can be omitted -->
+            &lt;x-bladewind.button type="secondary" radius="full">full&lt;/x-bladewind.button&gt;
+
+            &lt;x-bladewind.button type="secondary">full&lt;/x-bladewind.button&gt;
         </code>
     </pre>
     <h2 id="spinning">With Spinners</h2>
@@ -233,9 +373,10 @@
     attribute. This creates a button with a spinner but, the spinners are hidden by default. The assumption is, you want a button
     with a spinner but you want to show the spinner when the button is clicked. If you want the spinner to be visible by default you can set the
     attribute <code class="inline text-red-500">show_spinner="true"</code>.</p>
-    <div class="text-center p-4">
+    <div class="text-center space-y-4 space-x-4">
         <x-bladewind::button has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button> &nbsp;&nbsp;
         <x-bladewind::button type="secondary" has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button>
+        <x-bladewind::button outline has_spinner="true" show_spinner="true">Saving ...</x-bladewind::button>
     </div>
     <pre class="language-markup line-numbers" data-line="2,3">
         <code>
@@ -251,7 +392,7 @@
         In this case you will need to set the <code class="inline text-red-500">name</code> and <code class="inline text-red-500">onclick</code> attributes of the button.
     </p>
     <div class="text-center p-4">
-        <x-bladewind::button has_spinner="true" name="save-user" onclick="unhide('.save-user .bw-spinner')">Click for my spinner</x-bladewind::button> &nbsp;&nbsp;
+        <x-bladewind::button has_spinner="true" name="save-user" onclick="showButtonSpinner('.save-user')">Click for my spinner</x-bladewind::button> &nbsp;&nbsp;
     </div>
 
     <pre class="language-markup line-numbers" data-line="2-4">
@@ -259,7 +400,7 @@
             &lt;x-bladewind.button
                 has_spinner="true"
                 name="save-user"
-                onclick="unhide('.save-user .bw-spinner')"&gt;
+                onclick="showButtonSpinner('.save-user .bw-spinner')"&gt;
                 Click for my spinner
             &lt;/x-bladewind.button&gt;
         </code>
@@ -275,7 +416,7 @@
     <div class="text-center">
         <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button>
     </div>
-    <pre class="language-markup">
+    <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind.button icon="arrow-path"&gt;
                 Refresh Page
@@ -286,7 +427,7 @@
     <div class="text-center space-x-4">
         <x-bladewind::button type="secondary" icon="arrow-small-right" icon_right="true">Next Chapter</x-bladewind::button>
     </div>
-    <pre class="language-markup">
+    <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind.button
                 type="secondary"
@@ -328,81 +469,132 @@
 
     <h2 id="coloured">Coloured Button</h2>
     <p>
-        Only primary buttons can take on different colors. If the default blue color doesn't do it for you, there are eleven other colour options to pick from.
+        Only primary buttons can take on different colours. Ideally you should define a primary colour and let your primary buttons stick with that but if you need to in rare cases uses
+        other coloured buttons that are different from your primary button colour, this component provides that. A case is where your primary colour is purple but your delete button needs to be red.
+        Set the <code class="inline text-red-500">color</code> attribute to your preferred colour.
     </p>
-    <br/>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <x-bladewind::button color="red">Red is a colour no?</x-bladewind::button>
-        <x-bladewind::button color="yellow">Is gold yellow?</x-bladewind::button>
-        <x-bladewind::button color="green">Let's go green</x-bladewind::button>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-        <x-bladewind::button color="pink">Babies love Pink</x-bladewind::button>
-        <x-bladewind::button color="cyan">Cyan oh Cyan!</x-bladewind::button>
-        <x-bladewind::button color="black">Black is Bae</x-bladewind::button>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-        <x-bladewind::button color="purple">Purple Wheels</x-bladewind::button>
-        <x-bladewind::button color="orange">Get me an Orange</x-bladewind::button>
-        <x-bladewind::button>Feeling Blue</x-bladewind::button>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-        <x-bladewind::button color="violet">Violet Moods</x-bladewind::button>
-        <x-bladewind::button color="indigo">Indigo Button</x-bladewind::button>
-        <x-bladewind::button color="fuchsia">Fuchsia Vibes</x-bladewind::button>
-    </div>
 
-    <pre class="language-markup line-numbers" data-line="1,5,9,13,17,21,25,29">
+    <pre class="language-markup" >
         <code>
-            &lt;x-bladewind.button color="red"&gt;
-                look ma! i am red
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="yellow"&gt;
-                look ma! i am yellow
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="green"&gt;
-                look ma! i am green
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="pink"&gt;
-                look ma! i am pink
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="cyan"&gt;
-                look ma! i am cyan
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="black"&gt;
-                look ma! i am black
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="purple"&gt;
-                look ma! i am purple
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button color="orange"&gt;
-                look ma! i am orange
-            &lt;/x-bladewind.button&gt;
-
-            &lt;x-bladewind.button&gt;look ma! i am blue&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind.button color="red"&gt;red button&lt;/x-bladewind.button&gt;
         </code>
     </pre>
-
+    <br/>
+    <div class="grid grid-cols-3 gap-6">
+        <x-bladewind::button color="red">Red button</x-bladewind::button>
+        <x-bladewind::button color="red" outline>Red outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="red" icon="bell-alert" />
+            <x-bladewind::button.circle color="red" icon="bell-alert" outline />
+        </div>
+    </div>
+    <br />
+    <br />
     <p>
-        The nine colours above are the only ones precompiled into BladewindUI.
-        The default blue colour is tied to the primary colour attribute defined in the tailwind.config.js file.
-        <code class="inline">primary: colors.blue</code>.
+        Simply replace <code class="inline text-red-500">color="red"</code> with your preferred colour.
+    </p>
+    <br />
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="yellow">Yellow button</x-bladewind::button>
+        <x-bladewind::button color="yellow" outline>Yellow outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="yellow" icon="bell-alert" />
+            <x-bladewind::button.circle color="yellow" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="green">Green button</x-bladewind::button>
+        <x-bladewind::button color="green" outline>Green outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="green" icon="bell-alert" />
+            <x-bladewind::button.circle color="green" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="pink">pink button</x-bladewind::button>
+        <x-bladewind::button color="pink" outline>pink outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="pink" icon="bell-alert" />
+            <x-bladewind::button.circle color="pink" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="purple">purple button</x-bladewind::button>
+        <x-bladewind::button color="purple" outline>purple outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="purple" icon="bell-alert" />
+            <x-bladewind::button.circle color="purple" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="black">black button</x-bladewind::button>
+        <x-bladewind::button color="black" outline>black outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="black" icon="bell-alert" />
+            <x-bladewind::button.circle color="black" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="orange">orange button</x-bladewind::button>
+        <x-bladewind::button color="orange" outline>orange outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="orange" icon="bell-alert" />
+            <x-bladewind::button.circle color="orange" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="indigo">indigo button</x-bladewind::button>
+        <x-bladewind::button color="indigo" outline>indigo outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="indigo" icon="bell-alert" />
+            <x-bladewind::button.circle color="indigo" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="fuchsia">fuchsia button</x-bladewind::button>
+        <x-bladewind::button color="fuchsia" outline>fuchsia outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="fuchsia" icon="bell-alert" />
+            <x-bladewind::button.circle color="fuchsia" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="violet">violet button</x-bladewind::button>
+        <x-bladewind::button color="violet" outline>violet outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="violet" icon="bell-alert" />
+            <x-bladewind::button.circle color="violet" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="cyan">cyan button</x-bladewind::button>
+        <x-bladewind::button color="cyan" outline>cyan outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="cyan" icon="bell-alert" />
+            <x-bladewind::button.circle color="cyan" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="blue">blue button</x-bladewind::button>
+        <x-bladewind::button color="blue" outline>blue outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="blue" icon="bell-alert" />
+            <x-bladewind::button.circle color="blue" icon="bell-alert" outline />
+        </div>
+    </div>
+<br /><br />
+    <p>
+        The colours above are the only ones precompiled into BladewindUI.
+        The default blue colour is tied to the <code class="inline">primary: colors.blue</code> attribute defined in the tailwind.config.js file.
         If you wish to use a different primary button colour, say indigo,
         you will need to define that colour in your project's tailwind.config.js file
         and the primary will automatically pick that colour.
-        <a href="/customization#change-theme">There is more on this here.</a>
+        <a href="/customize/colours">There is more on this here.</a>
     </p>
     <p>
         <pre class="language-js line-numbers" data-line="5">
             <code>
-                // tailwind.config.js
+                // your project's tailwind.config.js
                 ...
                 extend: {
                     colors: {
@@ -429,46 +621,6 @@
             &lt;/x-bladewind.button&gt;
         </code>
     </pre>
-
-    <h2 id="circular">Circular Buttons</h2>
-    <p>
-        The Bladewind button component provides a circular option that accepts ONLY icons. The <a href="/component/icon">Icon component page</a> describes how to use icon names.
-        Just like the non-circular buttons, these can exist as primary or secondary and in all colour flavours.
-    </p>
-    <div class="text-center p-4 space-x-4">
-        <x-bladewind::button.circle icon="pencil" />
-        <x-bladewind::button.circle icon="trash" color="red"/>
-        <x-bladewind::button.circle icon="cloud-arrow-down" type="secondary" show_ring="false" />
-    </div>
-
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind.button.circle icon="pencil" /&gt;
-
-            &lt;x-bladewind.button.circle icon="trash" color="red" /&gt;
-
-            &lt;x-bladewind.button.circle icon="refresh" type="secondary" show_ring="false" /&gt;
-        </code>
-    </pre>
-    <p>
-        Circular buttons come in the same sizes as non-circular buttons. Both button shapes are equal in height.
-    </p>
-    <div class="text-center p-4 space-x-4">
-        <x-bladewind::button.circle icon="pencil" size="tiny" />
-        <x-bladewind::button size="tiny">Hello World</x-bladewind::button>
-    </div>
-    <div class="text-center p-4 space-x-4">
-        <x-bladewind::button.circle icon="pencil" size="small" />
-        <x-bladewind::button size="small">Hello World</x-bladewind::button>
-    </div>
-    <div class="text-center p-4 space-x-4">
-        <x-bladewind::button.circle icon="pencil" size="regular" />
-        <x-bladewind::button size="regular">Hello World</x-bladewind::button>
-    </div>
-    <div class="text-center p-4 space-x-4">
-        <x-bladewind::button.circle icon="pencil" size="big" />
-        <x-bladewind::button size="big">Hello World</x-bladewind::button>
-    </div>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Button component.</p>
@@ -560,8 +712,13 @@
         </tr>
         <tr>
             <td>border_width</td>
-            <td>4</td>
+            <td>2</td>
             <td>Only used if outline=true. How thick should the button border be. <br><br /> <code class="inline">2</code> <code class="inline">4</code> <code class="inline">8</code></td>
+        </tr>
+        <tr>
+            <td>ring_width</td>
+            <td><em>blank</em></td>
+            <td>Set the width of the focus ring. <br><br /> <code class="inline">1</code> <code class="inline">2</code> <code class="inline">4</code> <code class="inline">8</code></td>
         </tr>
         <tr>
             <td>button_text_css</td>
@@ -603,15 +760,22 @@
 
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#primary">Primary button</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#secondary">Secondary button</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#outline">Outline button</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#types">Button types</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#primary">Primary</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#secondary">Secondary</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#circular">Circular</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#outline">Outline</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#states">Button states</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#norings">No focus rings</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#ring-sizes">Focus ring widths</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#disabled">Disabled</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#radii">Different radii</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#spinning">With spinners</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#icons">With icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#submittable">Form submission</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#coloured">Coloured button</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#events">Button events</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#circular">Circular buttons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
