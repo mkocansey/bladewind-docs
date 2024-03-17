@@ -11,44 +11,10 @@
         </x-bladewind::alert>
     </p>
     <x-bladewind.timeline-group position="left" anchor="big" stacked>
-        <x-bladewind::timeline date="2.5.0" completed>
+        <x-bladewind::timeline date="all completed" completed>
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Add alignment and positioning options to <a href="/component/timeline">Timeline</a>. </li>
-                    <li>Fix UI inconsistencies across all components.</li>
-                    <li>Refactor the <a href="/component/tab">Dropmenu</a> component and make it more user friendly. Should should selected option.</li>
-                    <li>Include outline option to the <a href="/component/button">Button</a> component.</li>
-                    <li>The <a href="/component/alert">Alert</a> component should have a plain option and accept user specified icons or avatars.</li>
-                    <li>The <a href="/component/tag">Tag</a> component should have smaller versions.<h1 class="w-0 h-0" id="251"></h1></li>
-                    <li>Add violet, indigo and fuchsia to all components that support multiple colours.</li>
-                    <li><a href="/component/table">Table</a> component headings should allow for cases other than uppercase.</li>
-                </ul>
-            </x-slot:content>
-        </x-bladewind::timeline>
-        <x-bladewind::timeline date="2.5.1" completed>
-            <x-slot:content>
-                <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Fixed broken action icons in dynamic <a href="/component/table#dynamic">tables</a>.</li>
-                    <li>Added <code class="inline text-red-500">has_border</code> attribute to the <a href="/component/table#dynamic">table</a> component.</li>
-                    <li>Improved the <a href="/component/table#dynamic">table</a> row hover effect.</li>
-                    <li>Better display of the <a href="/component/table">table</a> component in mobile view.</li>
-                    <li>Display a suitable message when there is no dynamic data to display in the <a href="/component/table">table</a>.</li>
-                    <li>Added <code class="inline text-red-500">icon</code> and <code class="inline text-red-500">icon_css</code> attributes to the <a href="/component/modal#icons">modal</a> component to allow using of custom icons in the modal.</li>
-                    <li>Added <code class="inline text-red-500">align_buttons</code> attribute to the <a href="/component/modal#icons">modal</a> component to allow for easy positioning of the action buttons.</li>
-                    <li>Improved the overall appearance of the <a href="/component/modal#icons">modal</a> component.<h1 class="w-0 h-0" id="25x"></h1></li>
-                    <li>Added minimum and maximum values for numeric input. Example: an input collecting age for adult content should allow a minimum of 16.</li>
-                </ul>
-            </x-slot:content>
-        </x-bladewind::timeline>
-
-        <x-bladewind::timeline date="2.5.2">
-            <x-slot:content>
-                <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Fixed dark mode for all components.</li>
-                    <li>Fixed missing attribute for <a href="/component/button#circular">circular button</a> components.</li>
-                    <li>Cleaned up the <a href="/component/notification">Notification</a> component.</li>
-                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.<h1 class="w-0 h-0" id="260"></h1></li>
-                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should have a countdown and resend code link.</li>
+                    <li>See <a href="https://github.com/mkocansey/bladewind/releases" target="_blank">release notes</a> for all completed versions</li>
                 </ul>
             </x-slot:content>
         </x-bladewind::timeline>
@@ -56,12 +22,10 @@
         <x-bladewind::timeline date="2.5.x">
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Fix any issues from 2.5.1 release.</li>
+                    <li>Fix any issues from current release.</li>
                     <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
                     <li>User can define action buttons alignment for <a href="/component/modal">Modal</a> component</li>
                     <li><a href="/component/tab">Tab</a> component headings should accept icons</li>
-                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should allow masking of input.</li>
-                    <li>The <a href="/component/verification-code">Verification Code</a> or OTP component should have a countdown and resend code link.</li>
                     <li>Refresh the <a href="/component/statistic">Statistics</a> component. Should allow stacking vertically and horizontally.</li>
                 </ul>
             </x-slot:content>
