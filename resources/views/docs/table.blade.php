@@ -500,20 +500,20 @@
 <pre class="language-js line-numbers">
 <code>
     $action_icons = [
-        "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
+        "icon:chat | tip:send message | color:green | click:sendMessage('{first_name}')",
         "icon:pencil | click:redirect('/user/{id}')",
-        "icon:trash | color:red | click:deleteUser({id}, '{first_name}', '{last_name}')",
+        "icon:trash | color:red | click:deleteUser({id}, '{first_name}')",
     ];
 </code>
 </pre>
     <script>
-        sendMessage = (first_name, last_name) => {
+        sendMessage = (first_name) => {
             showModal('send-message');
-            domEl('.bw-send-message .modal-title').innerText = `Send Message to ${first_name} ${last_name}`;
+            domEl('.bw-send-message .modal-title').innerText = `Send Message to ${first_name}`;
         }
-        deleteUser = (id, first_name, last_name) => {
+        deleteUser = (id, first_name) => {
             showModal('delete-user');
-            domEl('.bw-delete-user .title').innerText = `${first_name} ${last_name}`;
+            domEl('.bw-delete-user .title').innerText = `${first_name}`;
         }
         redirect = (url) => {
             window.open(url);
@@ -540,6 +540,7 @@
     <p>
         <x-bladewind::table :data="$staff" divider="thin" :action_icons="$action_icons"  exclude_columns="id, marital_status" />
     </p>
+
     <br />
     <p>
         The icons are displayed from the <code class="inline">$action_icons</code> array above. Let us analyze the first line of the <code class="inline">$action_icons</code> array.
@@ -555,11 +556,11 @@
             <td>On hover of the icon, the user will see a tooltip that says "send user a message"</td>
         </tr>
         <tr>
-            <td><b>click:sendMessage('{first_name}', '{last_name}')</b></td>
+            <td><b>click:sendMessage('{first_name}')</b></td>
             <td>
                 When the icon is clicked, the <b>sendMessage</b> Javascript function is triggered. The function name can be any function that exists in your code.
                 Two parameters are passed to the function. The parameters can be any of the keys that exists in your array. In our earlier example our array contains
-                <b>first_name</b> and <b>last_name</b> keys so we pass this to our function. It is important to wrap strings in a single quote.
+                the <b>first_name</b> key so we pass this to our function. It is important to wrap strings in a single quote.
                 The keys also need to be wrapped in curly braces. The table component will replace <em>'{first_name}'</em> with the actual value of first_name from the array.
             </td>
         </tr>
