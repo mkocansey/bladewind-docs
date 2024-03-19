@@ -192,7 +192,7 @@
     <p>
     <b>What's in your tech stack?</b>
     </p>
-    <div class="space-x-2">
+    <div>
         <x-bladewind::tags color="orange" name="stack" required="true" max="3" error_message="You can select only up to 3 tech stacks" error_heading="Check selection!">
             <x-bladewind::tag label="laravel" value="laravel" />
             <x-bladewind::tag label="javascript" value="js" />
@@ -236,7 +236,7 @@
     <p>
         <b>Where are you hosting apps?</b>
     </p>
-    <div class="space-x-2">
+    <div>
         <x-bladewind::tags color="green" name="host">
             <x-bladewind::tag label="digital ocean" value="do" />
             <x-bladewind::tag label="amazon web services" value="aws" />
@@ -257,7 +257,7 @@
     <p>
         <b>What are your interests?</b>
     </p>
-    <div class="space-x-2">
+    <div>
         <x-bladewind::tags color="gray" name="interests">
             <x-bladewind::tag label="artificial intelligence" value="AI" />
             <x-bladewind::tag label="blockchain" value="blockchain" />
@@ -277,7 +277,7 @@
     </pre>
 
     <p><b>What is your gender?</b></p>
-    <div class="space-x-2">
+    <div>
         <x-bladewind::tags color="blue" name="gender" max="1" error_message="You can select just one gender" error_heading="Yoh!" rounded="true">
             <x-bladewind::tag label="Male"  value="male" />
             <x-bladewind::tag label="female"  value="female" />
@@ -292,6 +292,7 @@
                 name="gender"
                 max="1"
                 rounded="true"
+                class="space-x-2"
                 error_message="You can select just one gender"
                 error_heading="Yoh!"&gt;
 
@@ -307,7 +308,7 @@
         <b>What do you do on friday evenings?</b><br />
         The example below has three values selected by default.
     </p>
-    <div class="space-x-2">
+    <div>
         <x-bladewind::tags color="red" name="fridays" selected_value="hangout,club,sleep">
             <x-bladewind::tag label="hangout with friends" value="hangout" />
             <x-bladewind::tag label="go clubbing" value="club" />
@@ -321,6 +322,7 @@
             &lt;x-bladewind::tags
                 color="red"
                 name="fridays"
+                class="space-x-2"
                 selected_value="hangout,club,sleep"&gt;
 
                 &lt;x-bladewind::tag label="hangout with friends" value="hangout" /&gt;
@@ -397,6 +399,11 @@
             <td>uppercasing</td>
             <td>true</td>
             <td>Determines if the text for all the tags in the group is uppercased. If <code class="inline">false</code>, the text text will be displayed as you entered it. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td>space-x-2 space-y-2</td>
+            <td>Any additional CSS you wish to add to the tags container. Useful if you want to space out the tags for example. Whatever you set overwrites the default so you may need to include classes for spacing.</td>
         </tr>
     </x-bladewind::table>
 

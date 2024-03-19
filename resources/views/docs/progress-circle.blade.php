@@ -45,7 +45,7 @@
         You can display a progress circle in nine different colours by setting the <code class="inline text-red-500">color</code> attribute to the preferred colour.
         Like most BladewindUI components that have colour options, there are two shades, <code class="inline">faint</code> and <code class="inline">dark</code>. The default shade is <code class="inline">faint</code> and the default colour is <code class="inline">blue</code>
     </p>
-    <h3>Faint Colours</h3>
+    <h3 id="faint">Faint Colours</h3>
     <div class="grid grid-cols-3 gap-4">
         <div class="text-center"><x-bladewind::progress-circle percentage="65" color="red" /> <br />Red</div>
         <div class="text-center"><x-bladewind::progress-circle percentage="65" color="yellow" /> <br />Yellow</div>
@@ -69,7 +69,7 @@
         </pre>
     </p>
 
-    <h3>Dark Colours</h3>
+    <h3 id="dark">Dark Colours</h3>
     <div class="grid grid-cols-3 gap-4">
         <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="red" /> <br />Red</div>
         <div class="text-center"><x-bladewind::progress-circle percentage="65" shade="dark" color="yellow" /> <br />Yellow</div>
@@ -310,6 +310,8 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#faint">Faint shade</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#dark">Darker shade</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#custom-size">Custom sizes</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>

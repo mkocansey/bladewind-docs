@@ -17,13 +17,6 @@
                     <x-bladewind::dropmenu-item>Invite to Project </x-bladewind::dropmenu-item>
                     <x-bladewind::dropmenu-item>Assign Task</x-bladewind::dropmenu-item>
                     <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
-{{--                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>Send Message</x-bladewind::dropmenu-item>
-                    <x-bladewind::dropmenu-item>Invite John to Marketing</x-bladewind::dropmenu-item>--}}
                 </x-bladewind::dropmenu>
             </td>
         </tr>
@@ -31,15 +24,15 @@
 
     <pre class="language-markup line-numbers" data-line="3-7">
         <code>
-            &lt;x-bladewind::table hover_effect="false" divider="thin"&gt;
+            &lt;x-bladewind.table hover_effect="false" divider="thin"&gt;
             ...
-            &lt;x-bladewind::dropmenu&gt;
-                &lt;x-bladewind::dropmenu-item&gt;Invite to Project &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item&gt;Assign Task&lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item&gt;Send Message&lt;/x-bladewind::dropmenu-item&gt;
-            &lt;/x-bladewind::dropmenu&gt;
+            &lt;x-bladewind.dropmenu&gt;
+                &lt;x-bladewind.dropmenu-item&gt;Invite to Project &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item&gt;Assign Task&lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item&gt;Send Message&lt;/x-bladewind.dropmenu-item&gt;
+            &lt;/x-bladewind.dropmenu&gt;
             ...
-            &lt;/x-bladewind::table&gt;
+            &lt;/x-bladewind.table&gt;
         </code>
     </pre>
 
@@ -73,34 +66,34 @@
         <code>
             &lt;div class="grid grid-cols-3 gap-6"&gt;
                 &lt;div class="text-center"&gt;
-                    &lt;x-bladewind::dropmenu trigger="musical-note-icon"&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu trigger="musical-note-icon"&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Add to playlist
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Play again
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;/x-bladewind::dropmenu&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 &lt;/div&gt;
                 &lt;div class="text-center"&gt;
-                    &lt;x-bladewind::dropmenu trigger="arrow-down-circle-icon"&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu trigger="arrow-down-circle-icon"&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Download file
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Add to library
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;/x-bladewind::dropmenu&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 &lt;/div&gt;
                 &lt;div class="text-center"&gt;
-                    &lt;x-bladewind::dropmenu trigger="cog-6-tooth-icon"&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu trigger="cog-6-tooth-icon"&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Company settings
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             User settings
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;/x-bladewind::dropmenu&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         </code>
@@ -121,15 +114,15 @@
     <pre class="language-markup line-numbers" data-line="3">
         <code>
             &lt;div class="text-center"&gt;
-                &lt;x-bladewind::dropmenu trigger="musical-note-icon"
+                &lt;x-bladewind.dropmenu trigger="musical-note-icon"
                      trigger_css="bg-pink-600 text-white p-2 rounded-full !h-10 !w-10"&gt;
-                    &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu-item&gt;
                         Add to playlist
-                    &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu-item&gt;
                         Play again
-                    &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;/x-bladewind::dropmenu&gt;
+                    &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;/x-bladewind.dropmenu&gt;
             &lt;/div&gt;
         </code>
     </pre>
@@ -148,16 +141,16 @@
     <pre class="language-markup line-numbers" data-line="4">
         <code>
             &lt;div class="text-center"&gt;
-                &lt;x-bladewind::dropmenu trigger="musical-note-icon"
+                &lt;x-bladewind.dropmenu trigger="musical-note-icon"
                     trigger_css="bg-green-600 text-white p-2 rounded-full !h-10 !w-10"
                     trigger_on="mouseover"&gt;
-                    &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu-item&gt;
                         Add to playlist
-                    &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;x-bladewind::dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;x-bladewind.dropmenu-item&gt;
                         Play again
-                    &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;/x-bladewind::dropmenu&gt;
+                    &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;/x-bladewind.dropmenu&gt;
             &lt;/div&gt;
         </code>
     </pre>
@@ -201,44 +194,44 @@
         <code>
              &lt;div class="grid grid-cols-2 gap-6"&gt;
                 &lt;div class="text-center"&gt;
-                    &lt;x-bladewind::dropmenu&gt;
+                    &lt;x-bladewind.dropmenu&gt;
                         &lt;x-slot:trigger&gt;
-                            &lt;x-bladewind::button type="secondary" size="tiny"&gt;
+                            &lt;x-bladewind.button type="secondary" size="tiny"&gt;
                                 Options
-                            &lt;/x-bladewind::button&gt;
+                            &lt;/x-bladewind.button&gt;
                         &lt;/x-slot:trigger&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Add to playlist
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Play again
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;/x-bladewind::dropmenu&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 &lt;/div&gt;
                 &lt;div class="text-center"&gt;
-                    &lt;x-bladewind::dropmenu&gt;
+                    &lt;x-bladewind.dropmenu&gt;
                         &lt;x-slot:trigger&gt;
                             &lt;div class="flex space-x-2 items-center shadow px-4 rounded-md"&gt;
                                 &lt;div class="grow"&gt;
-                                    &lt;x-bladewind::avatar image="/assets/...png" /&gt;
+                                    &lt;x-bladewind.avatar image="/assets/...png" /&gt;
                                 &lt;/div&gt;
                                 &lt;div class="grow"&gt;
                                     &lt;div&gt;&lt;strong&gt;John C. Doe&lt;/strong&gt;&lt;/div&gt;
                                     &lt;div class="text-sm"&gt;Tech, IT Support&lt;/div&gt;
                                 &lt;/div&gt;
                                 &lt;div&gt;
-                                    &lt;x-bladewind::icon name="chevron-down"
+                                    &lt;x-bladewind.icon name="chevron-down"
                                         class="!h-4 !w-4" /&gt;
                                 &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/x-slot:trigger&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Deactivate my account
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                        &lt;x-bladewind::dropmenu-item&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                        &lt;x-bladewind.dropmenu-item&gt;
                             Delete Profile
-                        &lt;/x-bladewind::dropmenu-item&gt;
-                    &lt;/x-bladewind::dropmenu&gt;
+                        &lt;/x-bladewind.dropmenu-item&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         </code>
@@ -247,6 +240,7 @@
     <p>
         The Dropmenu items are the actual line items within your Dropmenu. Each item can contain any piece of HTML code
         so you completely have control over what action is assigned to each menu item. BladewindUI does not interfere.
+        For convenience, you can specify an <code class="inline text-red-500">onclick</code> attribute.
     </p>
     <p>
         <x-bladewind::alert show_close_icon="false">Dropmenu Items can contain HTML so their content is all up to you</x-bladewind::alert>
@@ -255,10 +249,10 @@
     <div class="text-center">
         <x-bladewind::dropmenu trigger="light-bulb-icon" trigger_css="bg-yellow-400 text-yellow-800 p-2 rounded-full !h-10 !w-10">
             <x-bladewind::dropmenu-item>
-                <a href="/library" target="_blank" class="!text-slate-900">Go to Library</a>
+                <a href="/library" target="_blank">Go to Library</a>
             </x-bladewind::dropmenu-item>
-            <x-bladewind::dropmenu-item>
-                <a href="javascript:showModal('dropmenu-demo')" class="!text-slate-900">Show a Modal</a>
+            <x-bladewind::dropmenu-item onclick="showModal('dropmenu-demo')">
+                Show a Modal
             </x-bladewind::dropmenu-item>
         </x-bladewind::dropmenu>
     </div>
@@ -268,15 +262,15 @@
 <br />
     <pre class="language-markup line-numbers" data-line="4,7">
         <code>
-            &lt;x-bladewind::dropmenu trigger="light-bulb-icon"
+            &lt;x-bladewind.dropmenu trigger="light-bulb-icon"
                 trigger_css="bg-yellow-400 ..."&gt;
-                &lt;x-bladewind::dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item&gt;
                     &lt;a href="/library" target="_blank"&gt;Go to Library&lt;/a&gt;
-                &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item&gt;
-                    &lt;a href="javascript:showModal('dropmenu-demo')"&gt;Show a Modal&lt;/a&gt;
-                &lt;/x-bladewind::dropmenu-item&gt;
-            &lt;/x-bladewind::dropmenu&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item onclick="showModal('dropmenu-demo')"&gt;
+                    Show a Modal
+                &lt;/x-bladewind.dropmenu-item&gt;
+            &lt;/x-bladewind.dropmenu&gt;
         </code>
     </pre>
 
@@ -291,9 +285,9 @@
     <pre class="language-markup">
         <code>
             ...
-            &lt;x-bladewind::dropmenu-item header="true"&gt;
+            &lt;x-bladewind.dropmenu-item header="true"&gt;
                 // define heading here
-            &lt;/x-bladewind::dropmenu-item&gt;
+            &lt;/x-bladewind.dropmenu-item&gt;
             ...
         </code>
     </pre>
@@ -307,9 +301,9 @@
     <pre class="language-markup">
         <code>
             ...
-            &lt;x-bladewind::dropmenu-item icon="square-pencil"&gt;
+            &lt;x-bladewind.dropmenu-item icon="square-pencil"&gt;
                 Edit Profile
-            &lt;/x-bladewind::dropmenu-item&gt;
+            &lt;/x-bladewind.dropmenu-item&gt;
             ...
         </code>
     </pre>
@@ -322,11 +316,11 @@
     <pre class="language-markup">
         <code>
             ...
-            &lt;x-bladewind::dropmenu icon_right="true"&gt;
-                &lt;x-bladewind::dropmenu-item&gt;
+            &lt;x-bladewind.dropmenu icon_right="true"&gt;
+                &lt;x-bladewind.dropmenu-item&gt;
                 ...
-                &lt;/x-bladewind::dropmenu-item&gt;
-            &lt;/x-bladewind::dropmenu&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
+            &lt;/x-bladewind.dropmenu&gt;
             ...
         </code>
     </pre>
@@ -340,7 +334,7 @@
     <pre class="language-markup">
         <code>
             ...
-            &lt;x-bladewind::dropmenu-item divider="true" /&gt;
+            &lt;x-bladewind.dropmenu-item divider="true" /&gt;
             ...
         </code>
     </pre>
@@ -351,9 +345,9 @@
     <pre class="language-markup">
         <code>
             ...
-            &lt;x-bladewind::dropmenu divided="true"&gt;
+            &lt;x-bladewind.dropmenu divided="true"&gt;
                 ...
-            &lt;/x-bladewind::dropmenu&gt;
+            &lt;/x-bladewind.dropmenu&gt;
             ...
         </code>
     </pre>
@@ -407,58 +401,58 @@
 <br />
     <pre class="language-markup line-numbers" data-line="14,30,46">
         <code>
-            &lt;x-bladewind::dropmenu&gt;
+            &lt;x-bladewind.dropmenu&gt;
 
                 &lt;x-slot:trigger&gt;
                     &lt;div class="flex space-x-2 items-center rounded-md"&gt;
                         &lt;div class="grow"&gt;
-                            &lt;x-bladewind::avatar image="/assets/...jpg" /&gt;
+                            &lt;x-bladewind.avatar image="/assets/...jpg" /&gt;
                         &lt;/div&gt;
                         &lt;div&gt;
-                            &lt;x-bladewind::icon name="chevron-down" class="!h-4 !w-4" /&gt;
+                            &lt;x-bladewind.icon name="chevron-down" class="!h-4 !w-4" /&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/x-slot:trigger&gt;
 
-                &lt;x-bladewind::dropmenu-item header="true"&gt;
+                &lt;x-bladewind.dropmenu-item header="true"&gt;
                     &lt;div class="grow"&gt;
                         &lt;div&gt;&lt;strong&gt;Jane A. Doe&lt;/strong&gt;&lt;/div&gt;
                         &lt;div class="text-sm"&gt;@jane-the-coder&lt;/div&gt;
                         &lt;div class="text-sm"&gt;jane@bladewindui.com&lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/x-bladewind::dropmenu-item&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
 
-                &lt;x-bladewind::dropmenu-item icon="pencil-square"&gt;
+                &lt;x-bladewind.dropmenu-item icon="pencil-square"&gt;
                     Edit Profile
-                &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item icon="trash" icon_css="!text-red-300"&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item icon="trash" icon_css="!text-red-300"&gt;
                     &lt;span class="text-red-500"&gt;Delete Profile&lt;/span&gt;
-                &lt;/x-bladewind::dropmenu-item&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
 
-                &lt;x-bladewind::dropmenu-item divider /&gt;
+                &lt;x-bladewind.dropmenu-item divider /&gt;
 
-                &lt;x-bladewind::dropmenu-item icon="computer-desktop"&gt;
+                &lt;x-bladewind.dropmenu-item icon="computer-desktop"&gt;
                     Your Repositories
-                &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item icon="briefcase"&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item icon="briefcase"&gt;
                     Your Projects
-                &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item icon="building-office"&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item icon="building-office"&gt;
                     Your Organizations
-                &lt;/x-bladewind::dropmenu-item&gt;
-                &lt;x-bladewind::dropmenu-item icon="star"&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu-item icon="star"&gt;
                     Your Stars
-                &lt;/x-bladewind::dropmenu-item&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
 
-                &lt;x-bladewind::dropmenu-item divider /&gt;
+                &lt;x-bladewind.dropmenu-item divider /&gt;
 
-                &lt;x-bladewind::dropmenu-item hover="false"&gt;
-                    &lt;x-bladewind::button color="purple" radius="small" size="small" class="w-full"&gt;
+                &lt;x-bladewind.dropmenu-item hover="false"&gt;
+                    &lt;x-bladewind.button color="purple" radius="small" size="small" class="w-full"&gt;
                         Sign Out
-                    &lt;/x-bladewind::button&gt;
-                &lt;/x-bladewind::dropmenu-item&gt;
+                    &lt;/x-bladewind.button&gt;
+                &lt;/x-bladewind.dropmenu-item&gt;
 
-            &lt;/x-bladewind::dropmenu&gt;
+            &lt;/x-bladewind.dropmenu&gt;
         </code>
     </pre>
 
@@ -561,10 +555,10 @@
             <br />
             <pre class="language-markup line-numbers" data-line="14,30,46">
                 <code>
-                    &lt;x-bladewind::dropmenu
+                    &lt;x-bladewind.dropmenu
                         position="left"&gt;
                     ...
-                    &lt;/x-bladewind::dropmenu&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 </code>
             </pre>
         </div>
@@ -572,10 +566,10 @@
             <br />
             <pre class="language-markup line-numbers" data-line="14,30,46">
                 <code>
-                    &lt;x-bladewind::dropmenu
+                    &lt;x-bladewind.dropmenu
                         position="right"&gt;
                     ...
-                    &lt;/x-bladewind::dropmenu&gt;
+                    &lt;/x-bladewind.dropmenu&gt;
                 </code>
             </pre>
         </div>
@@ -634,9 +628,9 @@
     <br />
     <pre class="language-markup line-numbers" data-line="14,30,46">
         <code>
-            &lt;x-bladewind::dropmenu scrollable="true"&gt;
+            &lt;x-bladewind.dropmenu scrollable="true"&gt;
             ...
-            &lt;/x-bladewind::dropmenu&gt;
+            &lt;/x-bladewind.dropmenu&gt;
         </code>
     </pre>
 
@@ -717,6 +711,11 @@
             <td>icon</td>
             <td><em>blank</em></td>
             <td>Any Heroicon icon to display as prefix to the menu item.</td>
+        </tr>
+        <tr>
+            <td>dir</td>
+            <td><em>blank</em></td>
+            <td>Directory to load the icon from. See the <a href="/component/icon#custom-dir">Icon</a> component for usage.</td>
         </tr>
         <tr>
             <td>icon_css</td>

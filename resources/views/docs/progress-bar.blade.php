@@ -89,7 +89,7 @@
         You can display a progress bar in nine different colours by setting the color attribute on the progress bar, like this, <code class="inline text-red-500">color="red"</code>.
         Like most BladewindUI components that have colour options, there are two shades, <code class="inline">faint</code>, and <code class="inline">dark</code>. The default shade is <code class="inline">faint</code>
     </p>
-    <h3>Faint Colours</h3>
+    <h3 id="faint">Faint Colours</h3>
     <p><x-bladewind::progress-bar percentage="10" color="red" /></p>
         <pre class="language-markup">
             <code>
@@ -173,7 +173,7 @@
             &lt;x-bladewind.progress-bar percentage="90" /&gt;
         </code>
     </pre>
-    <h3>Dark Colours</h3>
+    <h3 id="dark">Dark Colours</h3>
     <p><x-bladewind::progress-bar percentage="10" color="red" shade="dark" /></p>
         <pre class="language-markup">
             <code>
@@ -351,6 +351,8 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#faint">Faint shade</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#dark">Darker shade</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

@@ -111,7 +111,7 @@
         </code>
     </pre>
 
-    <h3>Change Placeholder Text</h3>
+    <h3 id="placeholder">Change Placeholder Text</h3>
     <p>
         <x-bladewind::select name="country2" placeholder="What is your nationality" :data="$countries" />
     </p>
@@ -170,7 +170,7 @@
         </code>
     </pre>
 
-    <h3>Selecting a Value By Default</h3>
+    <h3 id="default">Selecting a Value By Default</h3>
     <p>
         Like with the regular HTML &lt;select&gt; field, it is possible to have an item selected by default when the page loads. Useful when editing records.
     </p>
@@ -186,7 +186,7 @@
                 :data="$countries" /&gt;
         </code>
     </pre>
-    <h3>Required Field</h3>
+    <h3 id="required">Required Field</h3>
     <p>
         Setting a select as required appends a red asterisk to the placeholder text.
     </p>
@@ -203,7 +203,7 @@
                 :data="$countries" /&gt;
         </code>
     </pre>
-    <h3>Disabled Select</h3>
+    <h3 id="disabled">Disabled Select</h3>
     <p>
         A disabled select has a 50% opacity and a cursor indicating the field cannot be accessed.
     </p>
@@ -219,7 +219,7 @@
                 :data="$countries" /&gt;
         </code>
     </pre>
-    <h3>Readonly Select</h3>
+    <h3 id="readonly">Readonly Select</h3>
     <p>
         A readonly select is quite visible but cannot be opened to view the list of items.
     </p>
@@ -418,7 +418,7 @@
         Once you set a positive integer, the restriction on selection will be applied. You can set what error message should be displayed when the user tries to select more than is allowed.
         You can set the <code class="inline text-red-500">max_error_message</code> attribute.
     </p>
-    <h3>Automatic Selection of Items</h3>
+    <h3 id="automatic">Automatic Selection of Items</h3>
     <p>
         You can auto select some of the items in the component by default, for example when in edit mode. To select multiple items, you will need to specify them as a comma separated list.
     </p>
@@ -683,7 +683,7 @@
             </td>
         </tr>
     </x-bladewind::table>
-    <h3>A Practical Example</h3>
+    <h3 id="example">A Practical Example</h3>
     <p>
         <x-bladewind::select name="from-js" placeholder="Your country" data="manual">
             <x-bladewind::select-item label="Burkina Faso" value="bf" />
@@ -754,7 +754,7 @@
     </pre>
 
     <h2 id="filtering">Filtering</h2>
-    <h3>Dynamically filter a table based on selected values</h3>
+    <h3 id="table">Dynamically filter a table based on selected values</h3>
     <p>
         In this next example (<a href="https://github.com/mkocansey/bladewind/issues/154#issuecomment-1742930457" target="_blank">inspired by this comment</a>) we will filter an employee directory based on what departments are selected in the multi select component.
         Each employee card in the employee directory below is generated using the BladewindUI <a href="/component/card#contact">Contact card component</a>.
@@ -894,7 +894,7 @@
         </code>
     </pre>
 
-    <h3 id="s2sfiltering">Filter a Select component based on the value of another Select component</h3>
+    <h3 id="another-select">Filter a Select component based on the value of another Select component</h3>
     <p>
         Let's dig right into an example.
         Let's say you have two select components, continents and countries. You want to display a list of countries based on which continent was selected.
@@ -998,7 +998,7 @@
         </code>
     </pre>
 
-    <h3>Filter a Select component based on some value</h3>
+    <h3 id="another-value">Filter a Select component based on some value</h3>
     <p>
         The earlier example filtered our countries select component based on which continent was selected from our continent's select component.
         You may not always want your filtering to be based on a value from one select component but probably just some arbitrary value passed from a link, button or other component.
@@ -1292,15 +1292,25 @@
 
 <x-slot:side_nav>
     <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#placeholder">Change placeholder text</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#default">Default values</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#required">Required field</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#disabled">Disabled</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#readonly">Readonly</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#flags">With country flags</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#images">With images</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#searchable">Searchable select</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#multiple">Multiple select</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#automatic">Automatic selection</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#non-dynamic">Non dynamic items</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#onselect">Get selected values</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#custom-functions">Custom functions</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#js-manipulations">JavaScript manipulations</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#example">A practical example</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#filtering">Filtering</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#table">Dynamically filter a table <br />based on selected values</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#another-select">Filter a Select component <br />based on the value of <br />another Select component</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#another-value">Filter a Select component <br />based on some value</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#native">Native select</a></div>
     <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
 </x-slot:side_nav>

@@ -71,7 +71,7 @@
         This can be achieved by setting the <code class="inline text-red-500">type</code> attribute on the modal component. The default <code class="inline text-red-500">type=""</code>.
         All the type attribute does is append the appropriate icons that match the type of modal.
     </p>
-    <h3>Info Modal</h3>
+    <h3 id="info">Info Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">type="info"</code> on the modal component. The default icon changes to a blue info icon.
     </p>
@@ -93,7 +93,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Error Modal</h3>
+    <h3 id="error">Error Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">type="error"</code> on the modal component. The default icon changes to a red exclamation mark.
     </p>
@@ -114,7 +114,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Warning Modal</h3>
+    <h3 id="warning">Warning Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">type="warning"</code> on the modal component. The default icon changes to a yellow bell icon.
     </p>
@@ -136,7 +136,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Success Modal</h3>
+    <h3 id="success">Success Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">type="success"</code> on the modal component. The default icon changes to a green thumbs up icon.
     </p>
@@ -158,7 +158,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Stretched Action Buttons</h3>
+    <h3 id="stretched">Stretched Action Buttons</h3>
     <p>
         Some users prefer to have their action buttons span the entire width of the modal. To achieve this simply set <code class="inline text-red-500">stretched_action_buttons="true"</code> on the modal component.
     </p>
@@ -182,7 +182,7 @@
         </code>
     </pre>
 
-    <h3>No Backdrop Blurring</h3>
+    <h3 id="no-backdrop">No Backdrop Blurring</h3>
     <p>
         If you want the backdrop of the modals to be clear to reveal the content behind the modal you can set <code class="inline text-red-500">blur_backdrop="false"</code>.
     </p>
@@ -309,7 +309,7 @@
         This can be achieved by setting the <code class="inline text-red-500">size</code> attribute on the modal component. The default <code class="inline text-red-500">size="small"</code>.
         Below are all the available sizes. All sizes are the same on mobile.
     </p>
-    <h3>Tiny Modal</h3>
+    <h3 id="tiny">Tiny Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="tiny"</code> on the modal component.
     </p>
@@ -330,7 +330,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Small Modal</h3>
+    <h3 id="small">Small Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="small"</code> on the modal component.
     </p>
@@ -351,7 +351,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Medium Modal</h3>
+    <h3 id="medium">Medium Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="medium"</code> on the modal component.
         This is the default so it is not really necessary to set the attribute on the component if you want to use the medium modal size.
@@ -374,7 +374,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Big Modal</h3>
+    <h3 id="big">Big Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="big"</code> on the modal component.
     </p>
@@ -396,7 +396,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Large Modal</h3>
+    <h3 id="large">Large Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="large"</code> on the modal component.
     </p>
@@ -418,7 +418,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>XL Modal</h3>
+    <h3 id="xl">XL Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="xl"</code> on the modal component.
     </p>
@@ -440,7 +440,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>OMG Modal a.k.a Full Width Modal</h3>
+    <h3 id="omg">OMG Modal a.k.a Full Width Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="omg"</code> on the modal component.
     </p>
@@ -502,7 +502,7 @@
     <x-bladewind::modal title="No Okay Button" name="no-okay" ok_button_label="">
         I have no okay button. Just cancel this thing and let's all go home.
     </x-bladewind::modal>
-    <h3>No Cancel Button</h3>
+    <h3 id="no-cancel">No Cancel Button</h3>
     <p>
         <x-bladewind::button onclick="showModal('no-cancel')">No cancel button</x-bladewind::button>
     </p>
@@ -520,7 +520,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>No Okay Button</h3>
+    <h3 id="no-okay">No Okay Button</h3>
     <p>
         <x-bladewind::button onclick="showModal('no-okay')" class="mt-2 sm:mt-0">No okay button</x-bladewind::button>
     </p>
@@ -540,7 +540,7 @@
         </code>
     </pre>
 
-    <h3>Hiding Both Action Buttons</h3>
+    <h3 id="no-buttons">Hiding Both Action Buttons</h3>
     <p>
         Your guess is right. To hide both the okay and cancel buttons you can set
         <code class="inline text-red-500">cancel_button_label=""</code> and <code class="inline text-red-500">ok_button_label=""</code>. However, there is a shorter way to achieve this.
@@ -568,7 +568,7 @@
             &lt;/x-bladewind.modal&gt;
         </code>
     </pre>
-    <h3>Action Button Actions</h3>
+    <h3 id="btn-actions">Action Button Actions</h3>
     <p>
         By default both action buttons close the modal. It is possible to change these default actions. To achieve this you will need to
         set the <code class="inline text-red-500">cancel_button_action</code> and <code class="inline text-red-500">ok_button_action</code> attributes.
@@ -680,6 +680,7 @@
         There may be instances where you want to load a form in a modal and only submit the form when the user clicks on the Okay or Save action button.
         Submitting the form should also happen ONLY if all validations have passed. The modal component itself does not provide a magical way of achieving this but the code below implements the logic we just described.
     </p>
+    <h3 id="validate">Validate and Submit Form</h3>
     <p>
         <x-bladewind::button onclick="showModal('form-mode')" icon="lock" class="text-white">Edit Profile</x-bladewind::button>
     </p>
@@ -759,7 +760,7 @@
         By default BladewindUI modals close when either of the action buttons are clicked. To prevent our modal from closing when the user clicks on the Update button, we
         set the <code class="inline text-red-500">close_after_action="false"</code> attribute.
     </p>
-    <h3>Using Ajax</h3>
+    <h3 id="ajax">Using Ajax</h3>
     <p>
         In the next example our form is submitted via Ajax. The example makes use of the <a href="/component/process-indicator">Process Indicator</a> component to show progress.
     </p>
@@ -903,7 +904,7 @@
         are all <a href="/extra/helper-functions">helper functions</a> available in BladewindUI.
     </p>
 
-    <h3>Option 3. Probably the easiest option</h3>
+    <h3 id="submit">Option 3. Probably the easiest option</h3>
     <p>
         The third and final option is to hide the Okay button of the modal and let the submit button sit in the form itself. The modal will only have a cancel button to close the form if needed.
     </p>
@@ -1114,11 +1115,31 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#default">Default modal</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#types">Different types</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#info">Info</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#error">Error</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#warning">Warning</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#success">Success</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#stretched">Stretched buttons</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-backdrop">No backdrop</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#icons">Other icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#tiny">Tiny</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#small">Small</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#medium">Medium</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#big">Big</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#large">Large</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#xl">XL</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#omg">Full width</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#actions">Action buttons</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-cancel">No cancel button</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-okay">No okay button</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-buttons">No buttons</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#btn-actions">Custom actions</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#cant-dismiss">Non-dismissible modal</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#forms">Form submissions</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#validate">Validate & submit</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#ajax">Ajax example</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#submit">Submit button in form</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
