@@ -26,7 +26,7 @@
         </x-bladewind::modal>
     </p>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <pre class="language-markup line-numbers" data-line="11,17">
+    <pre class="language-markup line-numbers" data-line="2,3,8,13,19">
         <code>
             &lt;x-bladewind.button
                 show_close_icon="true"

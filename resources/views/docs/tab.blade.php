@@ -493,6 +493,21 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Tab Body Component Attributes</h3>
+
+    <x-bladewind::table striped="true">
+        <x-slot name="header">
+            <th>Option</th>
+            <th>Default</th>
+            <th>Available Values</th>
+        </x-slot>
+        <tr>
+            <td>class</td>
+            <td><em>blank</em></td>
+            <td>Any additional Tailwind CSS classes to apply to the tab body container. This is the container all tab contents sit in.</td>
+        </tr>
+    </x-bladewind::table>
+
     <h3>Tab Content Component Attributes</h3>
 
     <x-bladewind::table striped="true">
@@ -510,6 +525,11 @@
             <td>active</td>
             <td>false</td>
             <td>Specifies if the tab should be selected by default. If this content's corresponding tab heading is active, this must also be set to active. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td><em>blank</em></td>
+            <td>Any additional Tailwind CSS classes to apply to the tab content container. Applies to a specific tab content.</td>
         </tr>
     </x-bladewind::table>
 
@@ -533,14 +553,15 @@
 
                 &lt;/x-slot&gt;
 
-                &lt;x-bladewind::tab-body&gt;
+                &lt;x-bladewind::tab-body class="p-2"&gt;
 
                     &lt;x-bladewind::tab-content
                         name="red"
-                        active="true"&gt;&lt;/x-bladewind::tab-content&gt;
+                        class="border border-gray-100"
+                        active="true"&gt;...&lt;/x-bladewind::tab-content&gt;
 
                     &lt;x-bladewind::tab-content
-                        name="inactive-red"&gt;&lt;/x-bladewind::tab-content&gt;
+                        name="inactive-red"&gt;...&lt;/x-bladewind::tab-content&gt;
 
                 &lt;/x-bladewind::tab-body&gt;
 

@@ -1,25 +1,26 @@
 /**
- ** helper functions for BladeWind UI components using vanilla JS
- ** September 2021 by @mkocansey <@mkocansey>
+ * helper functions for BladeWind UI components using vanilla JS
+ * September 2021 by @mkocansey <@mkocansey>
+ * refactored on Mar-20-2024 to support ES6
  **/
 const current_modal = [];
 let el_name;
 
-var domEl = (element) => {
+export const domEl = (element) => {
     return dom_el(element);
 }
-var dom_el = (element) => {
+export const dom_el = (element) => {
     return (document.querySelector(element) != null) ? document.querySelector(element) : false;
 }
 
-var domEls = (element) => {
+export const domEls = (element) => {
     return dom_els(element);
 }
-var dom_els = (element) => {
+export const dom_els = (element) => {
     return (document.querySelectorAll(element).length > 0) ? document.querySelectorAll(element) : false;
 }
 
-var validateForm = (form) => {
+export const validateForm = (form) => {
     let has_error = 0;
     let BreakException = {};
     try {
@@ -58,7 +59,7 @@ var validateForm = (form) => {
     return has_error === 0;
 }
 
-var clearErrors = (obj) => {
+export const clearErrors = (obj) => {
     let el = obj.el;
     let el_parent = obj.el_parent;
     let el_name = obj.el_name;
@@ -77,18 +78,18 @@ var clearErrors = (obj) => {
 }
 
 // usage:  onkeypress="return isNumberKey(event)"
-var isNumberKey = (event, with_dots = 1) => {
+export const isNumberKey = (event, with_dots = 1) => {
     let accepted_keys = (with_dots === 1) ? /[\d\b\\.]/ : /\d\b/;
     if (!event.key.toString().match(accepted_keys) && event.keyCode !== 8 && event.keyCode !== 9) {
         event.preventDefault();
     }
 }
 
-var callUserFunction = (func) => {
+export const callUserFunction = (func) => {
     if (func !== '' && func !== undefined) eval(func);
 };
 
-var serialize = (form) => {
+export const serialize = (form) => {
     let data = new FormData(dom_el(form));
     let obj = {};
     for (let [key, value] of data) {
@@ -107,15 +108,15 @@ var serialize = (form) => {
     return obj;
 }
 
-var stringContains = (str, keyword) => {
+export const stringContains = (str, keyword) => {
     if (typeof (str) !== 'string') return false;
     return (str.indexOf(keyword) !== -1);
 }
 
-var doNothing = () => {
+export const doNothing = () => {
 }
 
-var changeCssForDomArray = (elements, css, mode = 'add') => {
+export const changeCssForDomArray = (elements, css, mode = 'add') => {
     if (dom_els(elements).length > 0) {
         dom_els(elements).forEach((el) => {
             changeCss(el, css, mode, true);
@@ -123,7 +124,7 @@ var changeCssForDomArray = (elements, css, mode = 'add') => {
     }
 }
 
-var changeCss = (element, css, mode = 'add', elementIsDomObject = false) => {
+export const changeCss = (element, css, mode = 'add', elementIsDomObject = false) => {
     // css can be comma separated
     // if elementIsDomObject don't run it through dom_el
     if ((!elementIsDomObject && dom_el(element) != null) || (elementIsDomObject && element != null)) {
@@ -144,7 +145,7 @@ var changeCss = (element, css, mode = 'add', elementIsDomObject = false) => {
     }
 }
 
-var showModal = (element) => {
+export const showModal = (element) => {
     unhide(`.bw-${element}-modal`);
     document.body.classList.add('overflow-hidden');
     dom_el(`.bw-${element}-modal`).focus();
@@ -154,7 +155,7 @@ var showModal = (element) => {
     });
 }
 
-var hideModal = (element) => {
+export const hideModal = (element) => {
     animateCSS(`.bw-${element}`, 'zoomOut').then(() => {
         hide(`.bw-${element}-modal`);
         current_modal.pop();
@@ -163,35 +164,35 @@ var hideModal = (element) => {
     });
 }
 
-var showButtonSpinner = (element) => {
+export const showButtonSpinner = (element) => {
     unhide(`${element} .bw-spinner`);
 }
 
-var hideButtonSpinner = (element) => {
+export const hideButtonSpinner = (element) => {
     hide(`${element} .bw-spinner`);
 }
 
-var showModalActionButtons = (element) => {
+export const showModalActionButtons = (element) => {
     unhide(`.bw-${element} .modal-footer`);
 }
 
-var hideModalActionButtons = (element) => {
+export const hideModalActionButtons = (element) => {
     hide(`.bw-${element} .modal-footer`);
 }
 
-var hide = (element, elementIsDomObject = false) => {
+export const hide = (element, elementIsDomObject = false) => {
     if ((!elementIsDomObject && dom_el(element) != null) || (elementIsDomObject && element != null)) {
         changeCss(element, 'hidden', 'add', elementIsDomObject);
     }
 }
 
-var unhide = (element, elementIsDomObject = false) => {
+export const unhide = (element, elementIsDomObject = false) => {
     if ((!elementIsDomObject && dom_el(element) != null) || (elementIsDomObject && element != null)) {
         changeCss(element, 'hidden', 'remove', elementIsDomObject);
     }
 }
 
-var animateCSS = (element, animation) =>
+export const animateCSS = (element, animation) =>
     new Promise((resolve, reject) => {
         const animationName = `animate__${animation}`;
         const node = document.querySelector(element);
@@ -208,28 +209,28 @@ var animateCSS = (element, animation) =>
         node.addEventListener('animationend', handleAnimationEnd, {once: true});
     });
 
-var addToStorage = (key, val, storageType = 'localStorage') => {
+export const addToStorage = (key, val, storageType = 'localStorage') => {
     if (window.localStorage || window.sessionStorage) {
         (storageType === 'localStorage') ?
             localStorage.setItem(key, val) : sessionStorage.setItem(key, val);
     }
 }
 
-var getFromStorage = (key, storageType = 'localStorage') => {
+export const getFromStorage = (key, storageType = 'localStorage') => {
     if (window.localStorage || window.sessionStorage) {
         return (storageType === 'localStorage') ?
             localStorage.getItem(key) : sessionStorage.getItem(key);
     }
 }
 
-var removeFromStorage = (key, storageType = 'localStorage') => {
+export const removeFromStorage = (key, storageType = 'localStorage') => {
     if (window.localStorage || window.sessionStorage) {
         (storageType === 'localStorage') ?
             localStorage.removeItem(key) : sessionStorage.removeItem(key);
     }
 }
 
-var goToTab = (el, color, context) => {
+export const goToTab = (el, color, context) => {
     let context_ = context.replace(/-/g, '_');
     let tab_content = dom_el('.bw-tc-' + el);
     if (tab_content === null) {
@@ -247,7 +248,7 @@ var goToTab = (el, color, context) => {
     unhide(tab_content, true);
 }
 
-var positionPrefix = (el, mode = 'blur') => {
+export const positionPrefix = (el, mode = 'blur') => {
     let transparency = dom_el(`.dv-${el} .prefix`).getAttribute('data-transparency');
     let offset = (transparency === '1') ? -5 : 7;
     let prefix_width = ((dom_el(`.dv-${el} .prefix`).offsetWidth) + offset) * 1;
@@ -275,14 +276,14 @@ var positionPrefix = (el, mode = 'blur') => {
     }
 }
 
-var positionSuffix = (el) => {
+export const positionSuffix = (el) => {
     let transparency = dom_el(`.dv-${el} .suffix`).getAttribute('data-transparency');
     let offset = (transparency === '1') ? -5 : 7;
     let suffix_width = ((dom_el(`.dv-${el} .suffix`).offsetWidth) + offset) * 1;
     dom_el(`input.${el}`).style.paddingRight = `${suffix_width}px`;
 }
 
-var togglePassword = (el, mode) => {
+export const togglePassword = (el, mode) => {
     let input_field = dom_el(`input.${el}`);
     if (mode === 'show') {
         input_field.setAttribute('type', 'text');
@@ -295,14 +296,14 @@ var togglePassword = (el, mode) => {
     }
 }
 
-var filterTable = (keyword, table) => {
+export const filterTable = (keyword, table) => {
     domEls(`${table} tbody tr`).forEach((tr) => {
         (tr.innerText.toLowerCase().includes(keyword.toLowerCase())) ?
             unhide(tr, true) : hide(tr, true);
     });
 }
 
-var selectTag = (value, name) => {
+export const selectTag = (value, name) => {
     let input = domEl(`input[name="${name}"]`);
     let max_selection = input.getAttribute('data-max-selection');
     let tag = domEl(`.bw-${name}-${value}`);
@@ -329,13 +330,13 @@ var selectTag = (value, name) => {
     stripComma(input)
 }
 
-var stripComma = (el) => {
+export const stripComma = (el) => {
     if (el.value.startsWith(',')) {
         el.value = el.value.replace(/^,/, '');
     }
 }
 
-var highlightSelectedTags = (values, name) => {
+export const highlightSelectedTags = (values, name) => {
     if (values !== '') {
         let values_array = values.split(',');
         for (let x = 0; x < values_array.length; x++) {
@@ -344,7 +345,7 @@ var highlightSelectedTags = (values, name) => {
     }
 }
 
-var compareDates = (el1, el2, message, inline) => {
+export const compareDates = (el1, el2, message, inline) => {
     let date1_el = dom_el(`.${el1}`);
     let date2_el = dom_el(`.${el2}`);
 
@@ -366,7 +367,7 @@ var compareDates = (el1, el2, message, inline) => {
 }
 
 
-var trapFocusInModal = (event) => {
+export const trapFocusInModal = (event) => {
     let modal_name = current_modal[(current_modal.length - 1)];
     if (modal_name !== undefined) {
         const focusableElements = dom_els(`.bw-${modal_name}-modal input:not([type='hidden']):not([class*='hidden']), .bw-${modal_name}-modal button:not([class*="hidden"]),  .bw-${modal_name}-modal a:not([class*="hidden"])`);
@@ -384,7 +385,7 @@ var trapFocusInModal = (event) => {
     }
 }
 
-var checkMinMax = (min, max, el) => {
+export const checkMinMax = (min, max, el) => {
     let field = dom_el(`.${el}`);
     let minimum = parseInt(min);
     let maximum = parseInt(max);
@@ -404,7 +405,7 @@ var checkMinMax = (min, max, el) => {
     }
 }
 
-var makeClearable = (el) => {
+export const makeClearable = (el) => {
     let field = dom_el(`.${el}`);
     let suffix_element = dom_el(`.${el}-suffix svg`);
     let table_element = el.replace('bw_search_', 'table.').replace('_', '-');
@@ -413,17 +414,4 @@ var makeClearable = (el) => {
         suffix_element.setAttribute('onclick', `dom_el(\'.${el}\').value=''; hide(this, true); ${clearing_function}`);
     }
     (field.value !== '') ? unhide(suffix_element, true) : hide(suffix_element, true);
-}
-
-var convertToBase64 = (file, el) => {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-        const base64String = reader.result;//.replace('data:', '').replace(/^.+,/, '');
-        dom_el(el).value = base64String;
-    };
-    reader.readAsDataURL(file);
-}
-
-var allowedFileSize = (file_size, max_size) => {
-    return (file_size <= ((max_size) * 1) * 1000000);
 }
