@@ -19,10 +19,10 @@
     </div>
     <div class="text-center space-x-2 sm:pb-6 px-6">
         <div class="sm:block hidden">
-        <x-bladewind::button color="black" tag="a" href="/install" size="big" radius="small" class="!bg-indigo-600 !inline-block">Get Started in our Docs</x-bladewind::button>
+        <x-bladewind::button color="black" tag="a" href="/install" size="big" radius="small" class="!bg-indigo-600 !inline-block">Get Started Now</x-bladewind::button>
         </div>
         <div class="sm:hidden">
-        <x-bladewind::button color="black" tag="a" href="/install" size="medium" radius="small" class="!bg-indigo-600 !inline-block w-full">Get Started in our Docs</x-bladewind::button>
+        <x-bladewind::button color="black" tag="a" href="/install" size="medium" radius="small" class="!bg-indigo-600 !inline-block w-full">Get Started Now</x-bladewind::button>
         </div>
     </div>
 </div>
