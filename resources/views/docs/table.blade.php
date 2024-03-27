@@ -349,7 +349,7 @@
     </pre>
 
     <h2 id="shadow">Table With Drop Shadow</h2>
-    <p>You can add a subtle shadow effect to your BladewindUI tables by setting <code class="inline text-red-500">has_shadow="true"</code>. </p>
+    <p>You can add a subtle shadow effect to your BladewindUI tables by setting <code class="inline text-red-500">has_shadow="true"</code></p>
 
     <x-bladewind::table striped="true" divider="thin" has_shadow="true">
         <x-slot name="header">

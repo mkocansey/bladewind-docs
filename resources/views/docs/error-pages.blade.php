@@ -37,9 +37,10 @@
 
     <pre class="language-markup line-numbers" data-line="6, 12">
         <code>
-            // this is a layout file specific to the documentation that
-            // just gets rid of the left navigation
-            // it is not available as a component
+            &lt;!--
+            x-frameless is a layout file specific to the documentation that
+            just gets rid of the left navigation. It is not available as a component
+            -->
             &lt;x-frameless title="404 | Page not found"&gt;
 
                 &lt;x-bladewind::error

@@ -1210,6 +1210,13 @@
             <td><em>blank</em></td>
             <td>Which key in the target select component's  <code class="inline">data</code>, should be used in filtering its items.</td>
         </tr>
+        <tr>
+            <td>modular</td>
+            <td>false</td>
+            <td>Determines if script tags sued within the component should have <code class="inline text-red-500">type="module"</code>. Useful sometimes when working with Vite js.
+            <br/><code class="inline">true</code>  <code class="inline">true</code>
+            </td>
+        </tr>
     </x-bladewind::table>
 
 

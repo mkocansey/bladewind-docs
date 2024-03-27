@@ -699,6 +699,13 @@
             <td>right</td>
             <td>How should the menu items be positioned relative to the trigger. <br /><code class="inline">right</code> <code class="inline">left</code></td>
         </tr>
+        <tr>
+            <td>modular</td>
+            <td>false</td>
+            <td>Determines if script tags sued within the component should have <code class="inline text-red-500">type="module"</code>. Useful sometimes when working with Vite js.
+                <br/><code class="inline">true</code>  <code class="inline">true</code>
+            </td>
+        </tr>
     </x-bladewind::table>
     <h3>Dropmenu Item Component Attributes</h3>
     <x-bladewind::table striped="true">
