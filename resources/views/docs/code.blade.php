@@ -8,10 +8,17 @@
         In this documentation, we may interchange the words PIN, PIN code and verification code. We mean the same thing.
     </p>
     <br/>
-    <p><x-bladewind::code  /></p>
+    <p><x-bladewind::code /></p>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind.code  /&gt;
+        </code>
+    </pre>
+    <br/>
+    <p><x-bladewind::code size="big" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind.code size="big"  /&gt;
         </code>
     </pre>
     <br/>
@@ -394,6 +401,11 @@ triggerTimerManually = (code, name) => {
             <td>total_digits</td>
             <td>4</td>
             <td>Determines number of input boxes to be created for entry of the verification code. Any realistic number.</td>
+        </tr>
+        <tr>
+            <td>size</td>
+            <td><em>blank</em></td>
+            <td>Displays the input boxes at either small or big sizes. Default is small.<br /> <code class="inline">small</code> <code class="inline">big</code> </td>
         </tr>
         <tr>
             <td>on_verify</td>
