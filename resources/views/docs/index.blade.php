@@ -193,20 +193,20 @@
     <div class="sm:max-w-7xl home-nav mx-auto pt-10">
         <div class="grid sm:grid-cols-3 grid-cols-1 gap-6">
             <div>
-                <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none" title="Your profile">
+                <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none !border-0" title="Your profile">
                     <div class="flex">
-                        <div> <x-bladewind::avatar image="/assets/images/francis.png" stacked="true" size="huge" class="!mx-auto" /></div>
+                        <div> <x-bladewind::avatar show_ring="false" image="/assets/images/francis.png" stacked="true" size="huge" class="!mx-auto" /></div>
                         <div class="grow pl-10">
                             <h1 class="text-slate-400 text-2xl tracking-wider">John C. Doe</h1>
                             <h2 class="text-slate-400 text-sm tracking-wider">john.doe@bladewindui.com</h2>
                             <div class="-mt-1.5 -ml-1"> <x-bladewind::rating :rating="4" color="purple" /></div>
-                            <x-bladewind::button size="small" radius="small" color="purple" icon="pencil-square" class="my-6">Edit Profile</x-bladewind::button>
+                            <x-bladewind::button size="small" radius="small" color="purple" icon="pencil-square" class="mt-6 mb-2">Edit Profile</x-bladewind::button>
                         </div>
                     </div>
                 </x-bladewind::card>
             </div>
             <div>
-                <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none mnos" title="Mobile Network Penetration">
+                <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none  !border-0 mnos" title="Mobile Network Penetration">
                     <x-bladewind::horizontal-line-graph label="MTN: " percentage="55" color="yellow" shade="dark" class="text-slate-400" />
                     <x-bladewind::horizontal-line-graph label="Vodafone: " percentage="30" color="red" shade="dark" class="text-slate-400 py-3" />
                     <x-bladewind::horizontal-line-graph label="AirtelTigo: " percentage="65" color="blue" shade="dark" class="text-slate-400" />
@@ -214,7 +214,7 @@
                 </x-bladewind::card>
             </div>
             <div>
-                <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none" reduce_padding>
+                <x-bladewind::card has_shaodw="false" class="!bg-slate-800  !border-0 !shadow-none" reduce_padding>
                     <x-bladewind::empty-state show_image="false">
                         <div class="pt-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -222,7 +222,7 @@
                         </svg>
                         </div>
                         <p class="py-7 text-slate-500">You have no biometric data uploaded</p>
-                        <x-bladewind::button color="red" size="small">
+                        <x-bladewind::button color="red" size="small" class="mb-1.5">
                             Add biometric info
                         </x-bladewind::button>
                     </x-bladewind::empty-state>
