@@ -11,7 +11,8 @@
     *::-webkit-scrollbar-thumb { background-color: var(--secondary); border-radius: 11px; border: 3px solid var(--primary); }
     body { font-family: 'Inter', ui-sans-serif, system-ui,-apple-system,BlinkMacSystemFont,sans-serif !important; }
     .pre-font { font-family: 'Inconsolata','Source Code Pro', monospace !important; }
-    nav a { @apply hover:text-slate-700 dark:hover:text-dark-300 text-sm font-light tracking-wide }
+    nav a { @apply text-gray-700 dark:hover:text-dark-300 text-sm font-light tracking-wide }
+    nav div.flex { @apply hover:bg-gradient-to-r hover:from-indigo-50 hover:to-white hover:dark:from-dark-600 hover:dark:bg-dark-600 hover:text-indigo-500 }
     .nav-heading { @apply font-semibold text-xs text-black tracking-wider uppercase px-4 pt-6 pb-0 sm:mr-4 bg-white dark:bg-dark-800 dark:text-dark-600 }
     .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 ml-3 rtl:ml-2 }
     .active .dot { @apply border border-indigo-400 bg-indigo-400 }
