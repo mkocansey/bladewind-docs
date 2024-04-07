@@ -98,6 +98,8 @@
                 error_message:  message to display if the end date is less than start date
                 error_inline:   determines if message is displayed inline. Default is in the notification
             -----------------------------------------------------------------*/
+            compareDates(date1_field, date2_field error_message, error_inline);
+
             compareDates(
                 'task_begins',
                 'task_ends'

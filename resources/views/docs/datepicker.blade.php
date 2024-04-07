@@ -53,9 +53,11 @@
 
     <p>
         The default placeholder texts for the range datepicker are <b>From</b> and <b>To</b>. These can however, be modified using the <code class="inline text-red-500">date_from_label</code> and <code class="inline text-red-500">date_to_label</code> attributes. These attributes only work if <code class="inline text-red-500">type="range"</code>.
-    </p>
-    <x-bladewind::datepicker type="range" date_from_label="start date" date_to_label="end date"  />
-
+    Also, we introduced <code class="text-red-500 inline">stacked="true"</code> to stack the datepickers vertically.</p>
+    <div class="max-w-sm">
+        <x-bladewind::datepicker type="range" stacked="true" date_from_label="start date" date_to_label="end date"  />
+    </div>
+<br />
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind.datepicker
@@ -65,10 +67,9 @@
         </code>
     </pre>
 
-    <h3>Show As a Required Field</h3>
+    <h3 id="required">Show As a Required Field</h3>
     <p>An asterisk is appended to the placeholder text when <code class="inline text-red-500">required="true"</code>.</p>
-    <x-bladewind::datepicker css="!w-44" required="true"  />
-
+    <x-bladewind::datepicker required="true"  />
 
     <pre class="language-markup line-numbers">
         <code>
@@ -76,7 +77,7 @@
         </code>
     </pre>
 
-    <h3>Validating The Range Picker</h3>
+    <h3 id="validation">Validating The Range Picker</h3>
     <p>
         The date range picker comes with optional date validation. This validation only checks to ensure the
         end date is not less than the start date. To enforce validation of the date range picker, set
@@ -92,24 +93,27 @@
         <x-bladewind::datepicker type="range" date_from_label="task starts" date_to_label="task due" date-from-name="validate1" date-to-name="validate2"
              validate="true" validation_message="Seriously!, you know your task cannot end before you even got started"  />
     </p>
-    <pre class="language-markup line-numbers" data-line="5">
-        <code>
-            &lt;x-bladewind::datepicker
-                type="range"
-                date_from_label="task starts"
-                date_to_label="task due"
-                validate="true"
-                validation_message="Seriously!, you know your task cannot end before you even got started"  /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="5">
+<code>
+&lt;x-bladewind::datepicker
+    type="range"
+    date_from_label="task starts"
+    date_to_label="task due"
+    validate="true"
+    validation_message="Seriously!, you know your task cannot end before you even got started"  /&gt;
+</code>
+</pre>
 
     <p>
         By default, the error validation message is displayed in the BladewindUI notification component. You will need
-        to ensure you have this on your page for the error message to be visible. If you prefer to display the error
+        to ensure you have the <code class="inline">x-bladewind.notification</code> component on your page for the error message to be visible. If you prefer to display the error
         message inline, under the date fields, simply set <code class="inline text-red-500">show_error_inline="true"</code>
     </p>
     <p>
-        The validation is handled by the <a href="/extra/helper-functions#comparedates"><code class="inline">compareDates(date1_field, date2_field, error_message, show_error_inline)</code></a> helper function and returns a boolean.
+        The validation is handled by the <a href="/extra/helper-functions#comparedates"><code class="inline">compareDates()</code></a> helper function and returns a boolean (0 or 1).
+        False (0) means there was an error. The range datepicker places the start date next to the end date. There are cases where your display will require you to have
+        your end date below the start. In this case you will need to use two datepickers. You can still use this helper function to
+        validate your start and end dates.
     </p>
 
     <h2 id="formats">Date Formats</h2>
@@ -234,6 +238,11 @@
             <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>onblur</td>
+            <td><em>blank</td>
+            <td>Custom function to call when the datepicker loses focus. This can be the entire function with parameters. Bladewind does not interfere with this.</td>
+        </tr>
+        <tr>
             <td>week_starts</td>
             <td>sun</td>
             <td>Choose between Sunday and Monday as the first day of the week. The week_starts value defined by the first datepicker on your page is applied to all other datepickers on the page. <br> <code class="inline">sun</code> <code class="inline">mon</code> </td>
@@ -242,6 +251,31 @@
             <td>class</td>
             <td>bw-datepicker</td>
             <td>Any additonal css classes can be added using this attribute.</td>
+        </tr>
+        <tr>
+            <td>validate</td>
+            <td>false</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to enforce if the start date should not be greater than the end date. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>validation_message</td>
+            <td>Your end date cannot be less than your start date</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code>. Message to display if there is a validation error.</td>
+        </tr>
+        <tr>
+            <td>show_error_inline</td>
+            <td>false</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to specify how the error should be displayed. By default, it is displayed in the Bladewind <a href=/component/notification"">Notification</a> component. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>use_placeholder</td>
+            <td>true</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the placeholder should be explicitly used instead of labels. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>stacked</td>
+            <td>true</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the datepickers should be stacked vertically. <br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
     </x-bladewind::table>
 
@@ -257,6 +291,12 @@
                 date_to=""
                 default_date=""
                 has_label="true"
+                validate="false"
+                show_error_inline="true"
+                stacked="true"
+                use_placeholder="false"
+                validation_message="end date before start date! Really?"
+                onblur="copyDate('copy_from', 'copy_to')"
                 week_starts="mon"
                 class="shadow-sm" /&gt;
         </code>
@@ -280,6 +320,8 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#range">Range datepicker</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#required">Show as required</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#validation">Validation</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#formats">Date formats</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#defaults">With default values</a></div>
         <div class="flex items-center hidden"><div class="dot"></div><a href="#timepicker">With Timepicker</a></div>
