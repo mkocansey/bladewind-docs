@@ -16,7 +16,7 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-circle percentage="45" /&gt;
+            &lt;x-bladewind::progress-circle percentage="45" /&gt;
         </code>
     </pre>
 
@@ -63,7 +63,7 @@
     <p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-circle percentage="10" color="red" /&gt;
+                &lt;x-bladewind::progress-circle percentage="10" color="red" /&gt;
                 ...
             </code>
         </pre>
@@ -87,7 +87,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.progress-circle
+                &lt;x-bladewind::progress-circle
                     percentage="10"
                     shade="dark"
                     color="red" /&gt;
@@ -112,7 +112,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="2">
             <code>
-                &lt;x-bladewind.progress-circle
+                &lt;x-bladewind::progress-circle
                     size="tiny"
                     percentage="10" /&gt;
 
@@ -289,7 +289,7 @@
     <h3>Progress Circle with all attributes defined</h3>
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind.progress-circle
+    &lt;x-bladewind::progress-circle
         percentage = "50"
         color = "red",
         show_label = "false",

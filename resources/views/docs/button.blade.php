@@ -14,14 +14,14 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button&gt;Subscribe Now&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button&gt;Subscribe Now&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button uppercasing="false"&gt;
+            &lt;x-bladewind::button uppercasing="false"&gt;
                 Subscribe Now
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <br />
@@ -38,7 +38,7 @@
             // this button is created using the &lt;a&gt; tag
             // you can inspect element on the above button to check
             -->
-            &lt;x-bladewind.button tag="a"&gt;subscribe now&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button tag="a"&gt;subscribe now&lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -55,12 +55,12 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button&gt;Primary Button&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button&gt;Primary Button&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button outline="true"&gt;Primary Button&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button outline="true"&gt;Primary Button&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h3 id="secondary">Secondary Buttons</h3>
@@ -71,14 +71,14 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button type="secondary"&gt;Secondary Button&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button type="secondary"&gt;Secondary Button&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.button type="secondary" outline="true"&gt;
+            &lt;x-bladewind::button type="secondary" outline="true"&gt;
                 Secondary Button
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -94,12 +94,12 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button.circle icon="bell-alert" /&gt;
+            &lt;x-bladewind::button.circle icon="bell-alert" /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button.circle outline="true" icon="bell-alert" /&gt;
+            &lt;x-bladewind::button.circle outline="true" icon="bell-alert" /&gt;
         </code>
     </pre>
     <br />
@@ -114,7 +114,7 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button.circle color="secondary" outline icon="bell-alert" /&gt;
+            &lt;x-bladewind::button.circle color="secondary" outline icon="bell-alert" /&gt;
         </code>
     </pre>
 
@@ -131,12 +131,12 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button radius="full" outline="true" color="cyan">Cyan outline&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button radius="full" outline="true" color="cyan">Cyan outline&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button radius="full" outline="true" type="secondary">Secondary outline&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button radius="full" outline="true" type="secondary">Secondary outline&lt;/x-bladewind::button&gt;
         </code>
     </pre><br />
     <p>
@@ -152,17 +152,17 @@
     <br />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button outline="true" border_width="2">Border 2&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button outline="true" border_width="2">Border 2&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button outline="true" border_width="4">Border 4&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button outline="true" border_width="4">Border 4&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button outline="true" border_width="8">Border 8&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button outline="true" border_width="8">Border 8&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h2 id="states">Button States</h2>
@@ -175,7 +175,7 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button show_focus_ring="false"&gt;no focus ring&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button show_focus_ring="false"&gt;no focus ring&lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -189,27 +189,27 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button&gt;default&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button&gt;default&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button ring_width="1"&gt;ring 1&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button ring_width="1"&gt;ring 1&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button ring_width="2"&gt;ring 2&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button ring_width="2"&gt;ring 2&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button ring_width="4"&gt;ring 4&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button ring_width="4"&gt;ring 4&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button ring_width="8"&gt;ring 8&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button ring_width="8"&gt;ring 8&lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -221,21 +221,21 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button disabled="true"&gt;disabled&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button disabled="true"&gt;disabled&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 disabled="true"
                 type="secondary"&gt;
                 disabled secondary
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button disabled outline&gt;disabled outline&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button disabled outline&gt;disabled outline&lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -255,7 +255,7 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button size="tiny"&gt;tiny&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button size="tiny"&gt;tiny&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h4>Small</h4>
@@ -268,7 +268,7 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button size="small"&gt;small&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button size="small"&gt;small&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h4>Regular / Default</h4>
@@ -281,12 +281,12 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button size="regular"&gt;default&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button size="regular"&gt;default&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button&gt;default&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button&gt;default&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h4>Big</h4>
@@ -299,7 +299,7 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button size="big"&gt;big&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button size="big"&gt;big&lt;/x-bladewind::button&gt;
         </code><a name="secondary"></a>
     </pre>
 
@@ -316,25 +316,25 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button radius="none">none&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button radius="none">none&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button radius="small">small&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button radius="small">small&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button radius="medium">medium&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button radius="medium">medium&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
             &lt;!-- this is the default so radius="full" can be omitted -->
-            &lt;x-bladewind.button radius="full">full&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button radius="full">full&lt;/x-bladewind::button&gt;
 
-            &lt;x-bladewind.button>full&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button>full&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <div class="text-center p-4 space-x-3 space-y-3">
@@ -345,25 +345,25 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button type="secondary" radius="none">none&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button type="secondary" radius="none">none&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button type="secondary" radius="small">small&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button type="secondary" radius="small">small&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.button type="secondary" radius="medium">medium&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button type="secondary" radius="medium">medium&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
             &lt;!-- this is the default so radius="full" can be omitted -->
-            &lt;x-bladewind.button type="secondary" radius="full">full&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button type="secondary" radius="full">full&lt;/x-bladewind::button&gt;
 
-            &lt;x-bladewind.button type="secondary">full&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button type="secondary">full&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h2 id="spinning">With Spinners</h2>
@@ -380,11 +380,11 @@
     </div>
     <pre class="language-markup line-numbers" data-line="2,3">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 has_spinner="true"
                 show_spinner="true"&gt;
                 Saving...
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <p>
@@ -397,12 +397,12 @@
 
     <pre class="language-markup line-numbers" data-line="2-4">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 has_spinner="true"
                 name="save-user"
                 onclick="showButtonSpinner('.save-user .bw-spinner')"&gt;
                 Click for my spinner
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h2 id="icons">With Icons</h2>
@@ -418,9 +418,9 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.button icon="arrow-path"&gt;
+            &lt;x-bladewind::button icon="arrow-path"&gt;
                 Refresh Page
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <br />
@@ -429,12 +429,12 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 type="secondary"
                 icon="arrow-small-right"
                 icon_right="true""&gt;
                 Next Chapter
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -461,9 +461,9 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 can_submit="true"
-                class="mx-auto block"&gt;click me to submit&lt;/x-bladewind.button&gt;
+                class="mx-auto block"&gt;click me to submit&lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -476,7 +476,7 @@
 
     <pre class="language-markup" >
         <code>
-            &lt;x-bladewind.button color="red"&gt;red button&lt;/x-bladewind.button&gt;
+            &lt;x-bladewind::button color="red"&gt;red button&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <br/>
@@ -615,10 +615,10 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 onclick="alert('you clicked me')"&gt;
                 click me to submit
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
 
@@ -732,7 +732,7 @@
     <h3>Button with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.button
+            &lt;x-bladewind::button
                 type="secondary"
                 size="big"
                 name="btn-subscribe"
@@ -750,7 +750,7 @@
                 button_text_css="font-bold text-black"
                 can_submit="false"&gt;
                 ...
-            &lt;/x-bladewind.button&gt;
+            &lt;/x-bladewind::button&gt;
         </code>
     </pre>
 

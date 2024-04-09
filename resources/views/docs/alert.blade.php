@@ -17,30 +17,30 @@
     <x-bladewind::alert class="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind::alert>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.alert&gt;
+            &lt;x-bladewind::alert&gt;
                 Your subscription is expiring in 19 days.
                 &lt;a href="#"&gt;Renew now&lt;/a&gt;
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Error</h3>
     <x-bladewind::alert type="error" class="mb-3">You do not have permission to upload files</x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 type="error"&gt;
                 You do not have permission to upload files
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Warning</h3>
     <x-bladewind::alert type="warning" class="mb-3">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 type="warning"&gt;
                 Well, this is your first warning. Do that again and I'll wipe your hard disk
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
@@ -48,24 +48,24 @@
     <x-bladewind::alert type="success" class="mb-3">Files were successfully uploaded</x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 type="success"&gt;
                 Files were successfully uploaded
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
     <h2 id="dark">Dark Coloured Alerts</h2>
-    <p>If you are into darker colours, you can set the <code class="inline text-red-500">shade="dark"</code> attribute on the alert component to get darker colours.</p>
+    <p>You can set the <code class="inline text-red-500">shade="dark"</code> attribute on the alert component to get darker colours.</p>
     <h3>Info</h3>
     <x-bladewind::alert shade="dark">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 shade="dark"&gt;
                 Your subscription is expiring in 19 days.
                 &lt;a href="#" class="!text-white/70"&gt;Renew now&lt;/a&gt;
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
@@ -73,9 +73,9 @@
     <x-bladewind::alert type="error" shade="dark">You do not have permission to upload files</x-bladewind::alert>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.alert type="error" shade="dark"&gt;
+            &lt;x-bladewind::alert type="error" shade="dark"&gt;
                 You do not have permission to upload files
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
@@ -84,9 +84,9 @@
     <x-bladewind::alert type="warning" shade="dark">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.alert type="warning" shade="dark"&gt;
+            &lt;x-bladewind::alert type="warning" shade="dark"&gt;
                 Well, this is your first warning. Do that again and I'll wipe your hard disk
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
@@ -94,9 +94,9 @@
     <x-bladewind::alert type="success" shade="dark">Files were successfully uploaded</x-bladewind::alert>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert type="success" shade="dark"&gt;
+            &lt;x-bladewind::alert type="success" shade="dark"&gt;
                 Files were successfully uploaded
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
@@ -106,25 +106,25 @@
     <x-bladewind::alert shade="dark" show_icon="false" show_close_icon="false">Your subscription is expiring in 19 days. <a href="#" class="!text-white/70">Renew now</a></x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="3,4">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 shade="dark"
                 show_icon="false"
                 show_close_icon="false"&gt;
                 Your subscription is expiring in 19 days.
                 &lt;a href="#" class="!text-white/70"&gt;Renew now&lt;/a&gt;
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Error</h3>
     <x-bladewind::alert type="error" shade="dark" show_close_icon="false">You do not have permission to upload files</x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 type="error"
                 shade="dark"
                 show_close_icon="false"&gt;
                 You do not have permission to upload files
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
@@ -132,13 +132,13 @@
     <x-bladewind::alert type="warning" shade="dark" show_icon="false">Well, this is your first warning. Do that again and I'll wipe your hard disk</x-bladewind::alert>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 type="warning"
                 shade="dark"
                 show_icon="false"&gt;
                 Well, this is your first warning.
                 Do that again and I'll wipe your hard disk
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h2 id="colours">More Colours</h2>
@@ -151,16 +151,16 @@
     <p><x-bladewind::alert color="pink" shade="dark">I am a pink alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="pink"&gt;
+            &lt;x-bladewind::alert color="pink"&gt;
                 I am a pink alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="pink" shade="dark"&gt;
+            &lt;x-bladewind::alert color="pink" shade="dark"&gt;
                 I am a pink alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Cyan</h3>
@@ -168,16 +168,16 @@
     <p><x-bladewind::alert color="cyan" shade="dark">I am a cyan alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="cyan"&gt;
+            &lt;x-bladewind::alert color="cyan"&gt;
                 I am a cyan alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="cyan" shade="dark"&gt;
+            &lt;x-bladewind::alert color="cyan" shade="dark"&gt;
                 I am a cyan alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Purple</h3>
@@ -185,16 +185,16 @@
     <p><x-bladewind::alert color="purple" shade="dark">I am a purple alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="purple"&gt;
+            &lt;x-bladewind::alert color="purple"&gt;
                 I am a purple alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="purple" shade="dark"&gt;
+            &lt;x-bladewind::alert color="purple" shade="dark"&gt;
                 I am a purple alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Gray</h3>
@@ -202,16 +202,16 @@
     <p><x-bladewind::alert color="gray" shade="dark">I am a gray alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="gray"&gt;
+            &lt;x-bladewind::alert color="gray"&gt;
                 I am a gray alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="gray" shade="dark"&gt;
+            &lt;x-bladewind::alert color="gray" shade="dark"&gt;
                 I am a gray alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Violet</h3>
@@ -219,16 +219,16 @@
     <p><x-bladewind::alert color="violet" shade="dark">I am a violet alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="violet"&gt;
+            &lt;x-bladewind::alert color="violet"&gt;
                 I am a violet alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="violet" shade="dark"&gt;
+            &lt;x-bladewind::alert color="violet" shade="dark"&gt;
                 I am a violet alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Indigo</h3>
@@ -236,16 +236,16 @@
     <p><x-bladewind::alert color="indigo" shade="dark">I am a indigo alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="indigo"&gt;
+            &lt;x-bladewind::alert color="indigo"&gt;
                 I am a indigo alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="indigo" shade="dark"&gt;
+            &lt;x-bladewind::alert color="indigo" shade="dark"&gt;
                 I am a indigo alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Fuchsia</h3>
@@ -253,16 +253,16 @@
     <p><x-bladewind::alert color="fuchsia" shade="dark">I am a fuchsia alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="fuchsia"&gt;
+            &lt;x-bladewind::alert color="fuchsia"&gt;
                 I am a fuchsia alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="fuchsia" shade="dark"&gt;
+            &lt;x-bladewind::alert color="fuchsia" shade="dark"&gt;
                 I am a fuchsia alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Orange</h3>
@@ -270,16 +270,16 @@
     <p><x-bladewind::alert color="orange" shade="dark">I am a orange alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="orange"&gt;
+            &lt;x-bladewind::alert color="orange"&gt;
                 I am a orange alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="orange" shade="dark"&gt;
+            &lt;x-bladewind::alert color="orange" shade="dark"&gt;
                 I am a orange alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Transparent</h3>
@@ -287,46 +287,46 @@
     <p><x-bladewind::alert color="transparent" shade="dark">I am a transparent alert. Dark version. How do I look?</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="transparent"&gt;
+            &lt;x-bladewind::alert color="transparent"&gt;
                 I am a transparent alert. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="transparent" shade="dark"&gt;
+            &lt;x-bladewind::alert color="transparent" shade="dark"&gt;
                 I am a transparent alert. Dark version. How do I look?
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 
     <h2 id="icons">Other Icons & Avatars</h2>
     <h3>Icons</h3>
     <p>
-        We saw earlier, the four prebuilt alerts had their corresponding icons. All other alerts do not have any prefxing icons.
-        You can define an icon by setting the <code class="inline text-red-500">icon</code> attribute to any of the icon names on <a href="https://heroicons.com" target="_blank">Heroicons</a>.
+        We saw earlier, the four prebuilt alerts had their corresponding icons. All other alerts do not have corresponding icons.
+        You can display an icon by setting the <code class="inline text-red-500">icon</code> attribute to any of the icon names on <a href="https://heroicons.com" target="_blank">Heroicons</a>.
     </p>
 
     <x-bladewind::alert color="indigo" icon="bell-alert">No more alarm snoozing. Wake up!</x-bladewind::alert>
     <p><x-bladewind::alert color="indigo" shade="dark" icon="currency-dollar">Your BladewindUI subscription is expiring soon. Pay up!</x-bladewind::alert></p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="indigo" icon="bell-alert"&gt;
+            &lt;x-bladewind::alert color="indigo" icon="bell-alert"&gt;
                 No more alarm snoozing. Wake up
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="indigo" shade="dark"
+            &lt;x-bladewind::alert color="indigo" shade="dark"
                 icon="currency-dollar"&gt;
                 Your BladewindUI subscription is expiring soon. Pay up!
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <p>
-        The icons come at a default size that might not suit your needs.
-        To modify the css of the icon, set the <code class="inline text-red-500">icon_avatar_css</code> attribute to your preferred TailwindCSS classes.
+        If the default icon size does not suit your needs, you can modify the css of the icon by setting
+        the <code class="inline text-red-500">icon_avatar_css</code> attribute to your preferred TailwindCSS classes.
     </p>
     <p>
         <x-bladewind::alert color="cyan" shade="dark" icon="currency-dollar" icon_avatar_css="!h-16 !w-16 opacity-60">
@@ -337,13 +337,13 @@
     </p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="cyan" shade="dark"
+            &lt;x-bladewind::alert color="cyan" shade="dark"
                 icon="currency-dollar"
                  icon_avatar_css="!h-16 !w-16 opacity-60"&gt;
                 &lt;div&gt;&lt;strong&gt;Subscription overdue&lt;/strong&gt;&lt;/div&gt;
                 Your BladewindUI subscription is overdue by 3 months. Please pay
                 before the 30th of this month to avoid losing your information.
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <h3>Avatars</h3>
@@ -357,16 +357,16 @@
     </p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="violet" shade="dark"
+            &lt;x-bladewind::alert color="violet" shade="dark"
                 avatar="/assets/images/issah.jpg"&gt;
                 Jane has been added to your friends list
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <p>
         The default avatar size used in the alert is <code class="inline">tiny</code>. Other sizes are available <a href="/component/avatar">here</a> and can be changed by
-        setting the <code class="inline text-red-500">size</code> attribute of the component. This attribute will only take effect when using an avatar. We can also add additional css
-        by setting the <code class="inline text-red-500">icon_avatar_css</code> attribute.
+        setting the <code class="inline text-red-500">size</code> attribute of the component. This attribute will only take effect when using an avatar.
+        You can also add additional css to the avatar by setting the <code class="inline text-red-500">icon_avatar_css</code> attribute.
     </p>
     <p>
         <x-bladewind::alert color="cyan" shade="dark" avatar="/assets/images/doc.png" size="regular" show_ring="true">
@@ -377,7 +377,7 @@
     </p>
     <pre class="language-markup line-numbers" data-lines="1">
         <code>
-            &lt;x-bladewind.alert color="cyan"
+            &lt;x-bladewind::alert color="cyan"
                 shade="dark"
                 avatar="/images/...jpg"
                 size="big"
@@ -388,7 +388,7 @@
                 your professional network.
                 &lt;div class="text-sm opacity-70"&gt;2 days ago&lt;/div&gt;
 
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
     <p>
@@ -527,7 +527,7 @@
     <h3>Alert with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.alert
+            &lt;x-bladewind::alert
                 type="warning"
                 shade="dark"
                 show_close_icon="false"
@@ -540,7 +540,7 @@
                 size="small"
                 class="rounded-lg shadow-sm"&gt;
                 Stay safe. Wash your hands for 20 seconds
-            &lt;/x-bladewind.alert&gt;
+            &lt;/x-bladewind::alert&gt;
         </code>
     </pre>
 

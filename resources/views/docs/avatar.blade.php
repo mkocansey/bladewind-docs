@@ -3,10 +3,10 @@
     <x-slot:page_title>Avatar</x-slot:page_title>
 
     <p>
-        The avatar component allows you to display a rounded picture at the usual avatar size. This size is of course customizable.
-        This component can be useful for displaying pictures of logged-in users, a contacts list, directory of employees etc.
-        The avatar component can either display a single image or a horizontal stack of images. Images are displayed as inline-block elements.
-        A default image is used when the <code class="inline">image</code> attribute is either blank or not specified.
+        The avatar component allows you to display a rounded picture at different sizes.
+        This component can be useful for displaying pictures of logged-in users, a contact list, directory of employees, etc.
+        The avatar component can either display a single image or a horizontal stack of images.
+        A default placeholder image is used when the <code class="inline">image</code> attribute is either blank or not specified.
     </p>
 
     <h2 id="single">Single Avatar</h2>
@@ -15,13 +15,9 @@
     </div>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.avatar image="/path/to/the/image/file" /&gt;
+            &lt;x-bladewind::avatar image="/path/to/the/image/file" /&gt;
         </code>
     </pre>
-    <br />
-    <p>
-        The avatar component expects a value for its <code class="inline">image</code> attribute. A default image is however, used if the attribute is either blank or not specified.
-    </p>
     <h2 id="sizes">Different Sizes</h2>
     <p>You can specify a size for the avatar. See the full <a href="#attributes">list of attributes</a> for the available sizes. The default size is <code class="inline text-red-500">regular</code></p>
     <div class="text-center">
@@ -36,31 +32,31 @@
     <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,19,23,27">
         <code>
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             size="tiny" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             size="small" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             size="medium" /&gt;
 
             // this is the default
-            &lt;x-bladewind.avatar
+            &lt;x-bladewind::avatar
             image="/path/to/the/image/file" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             size="big" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             size="huge" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             size="omg" /&gt;
         </code><a name="stack"></a>
@@ -89,19 +85,19 @@
     <br />
     <pre class="language-markup line-numbers" data-line="3,7,11,15">
         <code>
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             stacked="true" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             stacked="true" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             stacked="true" /&gt;
 
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             image="/path/to/the/image/file"
             stacked="true" /&gt;
 
@@ -119,7 +115,7 @@
     <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             show_dot="true"
             image="/path/to/the/image/file" /&gt;
         </code>
@@ -135,7 +131,7 @@
     <br />
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-        &lt;x-bladewind.avatar
+        &lt;x-bladewind::avatar
             show_dot="true"
             dot_placement="top"
             image="/path/to/the/image/file" /&gt;
@@ -153,15 +149,15 @@
     <br />
     <pre class="language-markup line-numbers" data-line="2,6,10">
         <code>
-        &lt;x-bladewind.avatar show_dot="true"
+        &lt;x-bladewind::avatar show_dot="true"
             dot_color="primary"
             image="/path/to/the/image/file" /&gt;
 
-        &lt;x-bladewind.avatar show_dot="true"
+        &lt;x-bladewind::avatar show_dot="true"
             dot_color="gray"
             image="/path/to/the/image/file" /&gt;
 
-        &lt;x-bladewind.avatar show_dot="true"
+        &lt;x-bladewind::avatar show_dot="true"
             dot_color="red"
             image="/path/to/the/image/file" /&gt;
         </code>
@@ -231,7 +227,7 @@
     <h3 class="pb-2 ">Avatar with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.avatar
+            &lt;x-bladewind::avatar
                 image="/path/to/the/image/file"
                 alt="company logo"
                 size="big"

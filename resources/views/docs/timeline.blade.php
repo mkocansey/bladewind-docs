@@ -14,18 +14,18 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 date="10 days ago"
                 content="You signed up"/&gt;
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 date="8 days ago"
                 content="Customer rep assigned"/&gt;
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 date="8 days ago"
                 content="Customer rep called"/&gt;
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 content="Account is being reviewed"/&gt;
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 content="Account activated"/&gt;
         </code>
     </pre>
@@ -43,7 +43,7 @@
     <x-bladewind::timeline content="Account activated" anchor="big" />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 anchor="big"
                 date="10 days ago"
                 content="You signed up"/&gt;
@@ -65,7 +65,7 @@
     <x-bladewind::timeline content="Account activated"  />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 completed="true"
                 date="10 days ago"
                 content="You signed up"/&gt;
@@ -82,7 +82,7 @@
 
     <pre class="language-markup line-numbers" data-line="2,3">
         <code>
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 completed="true"
                 anchor="big"
                 date="10 days ago"
@@ -115,31 +115,31 @@
 
 <pre class="language-markup line-numbers" data-line="1">
     <code>
-            &lt;x-bladewind.timeline-group stacked="true"&gt;
+            &lt;x-bladewind::timeline-group stacked="true"&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="just now"
                     content="database server restarted" /&gt;
 
-                &lt;x-bladewind.timeline date="30 minutes ago"&gt;
+                &lt;x-bladewind::timeline date="30 minutes ago"&gt;
                     &lt;x-slot:content&gt;
                         &lt;a&gt;2 endpoints&lt;/a&gt; are failing on bladewindui-data EC2
                         bucket. You may want to login and check the logs
                     &lt;/x-slot:content&gt;
-                &lt;/x-bladewind.timeline&gt;
+                &lt;/x-bladewind::timeline&gt;
 
-                &lt;x-bladewind.timeline date="1 hour ago"&gt;
+                &lt;x-bladewind::timeline date="1 hour ago"&gt;
                     &lt;x-slot:content&gt;
                         There have been 200 failed log in attempts from
                         &lt;a&gt;mike@bladewindui.com&lt;/a&gt;. Possibly a DDos attack
                         attempt. Secure the server.
                     &lt;/x-slot:content&gt;
-                &lt;/x-bladewind.timeline&gt;
+                &lt;/x-bladewind::timeline&gt;
 
-                &lt;x-bladewind.timeline date="Yesterday"
+                &lt;x-bladewind::timeline date="Yesterday"
                     content="Data recovery completed with 2 errors" /&gt;
 
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
     </code>
 </pre>
 <p>
@@ -166,17 +166,17 @@
 <br />
 <pre class="language-markup line-numbers" data-line="2">
     <code>
-            &lt;x-bladewind.timeline-group
+            &lt;x-bladewind::timeline-group
                 completed="true"
                 stacked="true"&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="just now"
                     content="database server restarted" /&gt;
 
                 ...
 
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
     </code>
 </pre>
 
@@ -200,23 +200,23 @@
 <br />
 <pre class="language-markup line-numbers" data-line="2">
     <code>
-            &lt;x-bladewind.timeline-group
+            &lt;x-bladewind::timeline-group
                 completed="true"
                 anchor="big"
                 stacked="true"&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="just now"
                     content="database server restarted" /&gt;
 
                 ...
 
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 date="Yesterday"
                 content="Data recovery completed with 2 errors"
                 completed="false" /&gt;
 
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
     </code>
 </pre>
 
@@ -228,7 +228,7 @@
         It is possible to use any <a href="https://heroicons.com" target="_blank">Heroicons</a> icon as your timeline's anchor.
         Just set the attribute <code class="inline text-red-500">icon="name-of-icon"</code>.
         You can use different icons for every timeline. If you intend to use the same icons for all anchors in your timeline, consider
-        wrapping your timelines in a <code class="inline">x-bladewind.timeline-group</code> component and setting
+        wrapping your timelines in a <code class="inline">x-bladewind::timeline-group</code> component and setting
         <code class="inline text-red-500">icon="name-of-icon"</code> on that instead.
     </p>
     <p>
@@ -246,34 +246,34 @@
     </x-bladewind::timeline-group>
     <pre class="language-markup line-numbers" data-line="5,9,13,17,21">
         <code>
-            &lt;x-bladewind.timeline-group anchor="big" completed="true"&gt;
+            &lt;x-bladewind::timeline-group anchor="big" completed="true"&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="10 days ago"
                     content="You signed up"
                     icon="bell-alert" /&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="8 days ago"
                     content="Customer rep assigned"
                     icon="bolt" /&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="8 days ago"
                     content="Customer rep called"
                     icon="chat-bubble-bottom-center-text" /&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     content="Account is being reviewed"
                     icon="key"
                     completed="false" /&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     content="Account activated"
                     icon="map-pin"
                     completed="false" /&gt;
 
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
         </code>
     </pre>
     <h3>Anchor Avatars</h3>
@@ -291,19 +291,19 @@
     </x-bladewind::timeline-group>
     <pre class="language-markup line-numbers" data-line="6,11">
         <code>
-            &lt;x-bladewind.timeline-group&gt;
+            &lt;x-bladewind::timeline-group&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="10 days ago"
                     content="You signed up"
                     avatar="/assets/images/pic1.jpg" /&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="8 days ago"
                     content="Customer rep assigned"
                     avatar="/assets/images/pic2.jpg" /&gt;
             ...
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
         </code>
     </pre>
 
@@ -336,16 +336,16 @@
     <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.timeline-group
+            &lt;x-bladewind::timeline-group
                 position="left"
                 anchor="big"&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="10 days ago"
                     content="You signed up"
                     avatar="/assets/images/pic1.jpg" /&gt;
             ...
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
         </code>
     </pre>
 <h3>Left Positioning for Stacked Timelines</h3>
@@ -367,26 +367,26 @@
     <br />
     <pre class="language-markup line-numbers" data-line="2,3">
         <code>
-            &lt;x-bladewind.timeline-group
+            &lt;x-bladewind::timeline-group
                 position="left"
                 stacked="true"
                 color="pink"&gt;
 
-                &lt;x-bladewind.timeline
+                &lt;x-bladewind::timeline
                     date="30 minutes ago"&gt;
                      &lt;x-slot:content&gt;
                         &lt;a&gt;2 endpoints&lt;/a&gt; are failing on
                         bladewindui-data EC2 bucket.
                         You may want to login and check the logs
                     &lt;/x-slot:content&gt;
-                &lt;x-bladewind.timeline/&gt;
+                &lt;x-bladewind::timeline/&gt;
             ...
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
         </code>
     </pre>
     <h3>Left Alignment</h3>
     <p>
-        Alignments only work for stacked timelines and only for the <code>x-bladewind.timeline</code> component.
+        Alignments only work for stacked timelines and only for the <code>x-bladewind::timeline</code> component.
         By default, stacked timeline content is aligned to the right of the anchor.
         If you wish to flip a stacked timeline to the left, set the <code class="inline text-red-500">align_left="true"</code> attribute on that specific timeline.
     </p>
@@ -413,7 +413,7 @@
     <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.timeline-group
+            &lt;x-bladewind::timeline-group
                 position="right"
                 anchor="big"&gt;
 
@@ -446,7 +446,7 @@
                     date="Yesterday"
                     content="Data recovery completed with 2 errors" /&gt;
 
-            &lt;/x-bladewind.timeline-group&gt;
+            &lt;/x-bladewind::timeline-group&gt;
         </code>
     </pre>
 
@@ -658,7 +658,7 @@
     <h3>Timeline with all attributes defined</h3>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.timeline-group
+            &lt;x-bladewind::timeline-group
                 stacked="true"
                 anchor="big"
                 anchor_css="pl-9"
@@ -672,7 +672,7 @@
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.timeline
+            &lt;x-bladewind::timeline
                 stacked="true"
                 anchor="big"
                 anchor_css="pl-9"

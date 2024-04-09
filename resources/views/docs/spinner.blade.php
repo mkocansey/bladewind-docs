@@ -22,12 +22,12 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.spinner  /&gt;
+            &lt;x-bladewind::spinner  /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.spinner color="purple"  /&gt;
+            &lt;x-bladewind::spinner color="purple"  /&gt;
         </code>
     </pre>
 
@@ -36,7 +36,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.spinner size="medium"  /&gt;
+            &lt;x-bladewind::spinner size="medium"  /&gt;
         </code>
     </pre>
 
@@ -44,7 +44,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.spinner size="big"  /&gt;
+            &lt;x-bladewind::spinner size="big"  /&gt;
         </code>
     </pre>
 
@@ -52,7 +52,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.spinner size="xl"  /&gt;
+            &lt;x-bladewind::spinner size="xl"  /&gt;
         </code>
     </pre>
 
@@ -60,7 +60,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.spinner size="omg"  /&gt;
+            &lt;x-bladewind::spinner size="omg"  /&gt;
         </code>
     </pre>
 
@@ -97,7 +97,7 @@
     <h3>Spinner with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.spinner
+            &lt;x-bladewind::spinner
                 size="medium"
                 class="m-0" /&gt;
         </code>

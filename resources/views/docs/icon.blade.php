@@ -12,7 +12,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.icon name="swatch" /&gt;
+            &lt;x-bladewind::icon name="swatch" /&gt;
         </code>
     </pre>
     <p>
@@ -24,7 +24,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.icon
+            &lt;x-bladewind::icon
                 name="video-camera-slash" class="!h-16 !w-16 text-amber-500" /&gt;
         </code>
     </pre>
@@ -33,7 +33,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.icon
+            &lt;x-bladewind::icon
                 name="microphone"
                 class="!h-14 !w-14 !text-white bg-pink-400 p-4 rounded-full
                         cursor-pointer hover:bg-pink-500 hover:p-3" /&gt;
@@ -44,7 +44,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.icon
+            &lt;x-bladewind::icon
                 name="speaker-wave"
                 class="!h-14 !w-14 text-cyan-500 p-3 animate-bounce rounded-md
                         cursor-pointer bg-white border-2 border-cyan-500
@@ -62,7 +62,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.icon name="swatch" type="solid" /&gt;
+            &lt;x-bladewind::icon name="swatch" type="solid" /&gt;
         </code>
     </pre>
     <div class="text-center">
@@ -70,7 +70,7 @@
     </div>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.icon
+            &lt;x-bladewind::icon
                 name="video-camera-slash"
                 type="solid"
                 class="!h-16 !w-16 text-amber-500" /&gt;
@@ -94,7 +94,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code class="!whitespace-pre-wrap">
-            &lt;x-bladewind.icon name='&lt;svg class="h-24 w-24 inline-block dark:!fill-dark-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+            &lt;x-bladewind::icon name='&lt;svg class="h-24 w-24 inline-block dark:!fill-dark-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M6.72 9.56H5.78C3.7 9.56 2 7.86003 2 5.78003C2 3.70003 3.7 2 5.78 2H7.67001C9.23001 2 10.5 3.28002 10.5 4.83002V7.39001V17.1C10.5 18.14 9.64999 18.99 8.60999 18.99C7.56999 18.99 6.72 18.14 6.72 17.1V9.56Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/&gt;
 &lt;path d="M5.77985 6.72003C5.25985 6.72003 4.83984 6.30009 4.83984 5.78009C4.83984 5.26009 5.25985 4.84009 5.77985 4.84009" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/&gt;
 &lt;path d="M17.28 13.52V9.56H18.22C20.3 9.56 22 7.86003 22 5.78003C22 3.70003 20.3 2 18.22 2H16.33C14.77 2 13.5 3.28002 13.5 4.83002V7.39001V17.1C13.5 18.14 14.35 18.99 15.39 18.99C16.43 18.99 17.28 18.14 17.28 17.1" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/&gt;
@@ -112,7 +112,7 @@
     </div>
     <pre class="language-markup line-numbers">
         <code class="!whitespace-pre-wrap">
-            &lt;x-bladewind.icon name='&lt;svg class="h-24 w-24 inline-block dark:!fill-dark-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+            &lt;x-bladewind::icon name='&lt;svg class="h-24 w-24 inline-block dark:!fill-dark-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;path d="M16.2702 9.10001L14.3002 8.25001C14.1402 8.18001 14.0002 7.97001 14.0002 7.79001V4.79001C14.0002 3.85001 13.3102 2.74001 12.4702 2.31001C12.1702 2.16001 11.8202 2.16001 11.5202 2.31001C10.6802 2.74001 9.99023 3.86001 9.99023 4.80001V7.80001C9.99023 7.98001 9.85023 8.19001 9.69023 8.26001L4.11023 10.67C3.49023 10.92 2.99023 11.69 2.99023 12.36V13.65C2.99023 14.49 3.62023 14.9 4.39023 14.57L9.30023 12.45C9.68023 12.28 10.0002 12.49 10.0002 12.91V15.76C10.0002 15.99 9.87023 16.31 9.71023 16.47L7.44023 18.75C7.20023 18.99 7.09023 19.45 7.20023 19.78L7.64023 21.11C7.82023 21.69 8.48024 21.97 9.02024 21.69L11.3502 19.73C11.7002 19.43 12.2802 19.43 12.6302 19.73L14.9602 21.69C15.5002 21.96 16.1602 21.69 16.3602 21.11L16.8002 19.78C16.9102 19.46 16.8002 18.99 16.5602 18.75L14.2902 16.47C14.1202 16.31 13.9902 15.99 13.9902 15.76V12.91C13.9902 12.49 14.3002 12.29 14.6902 12.45L19.6002 14.57C20.3702 14.9 21.0002 14.49 21.0002 13.65V12.36C21.0002 11.69 20.5002 10.92 19.8802 10.66" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;
 &lt;/svg&gt;' /&gt;
         </code>
@@ -174,7 +174,7 @@
     </div>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.icon
+            &lt;x-bladewind::icon
                 name="discount-circle"
                 dir="assets/images"
                 class="h-24 w-24" /&gt;
@@ -215,7 +215,7 @@
     <h3>Icon with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.icon
+            &lt;x-bladewind::icon
                 name="video-camera-slash"
                 type="solid"
                 dir="assets/images"

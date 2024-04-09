@@ -8,7 +8,7 @@
     <p>
         This Select component is an improvement on our <a href="/component/dropdown">Dropdown</a> component and offers more stripped down options with a nicer look. If you
         are currently using the Dropdown component in your forms for basic user input collection, you can simply replace <code class="inline">x-bladewind.dropdown</code>
-        with <code class="inline">x-bladewind.select</code> and everything will work fine.
+        with <code class="inline">x-bladewind::select</code> and everything will work fine.
     </p>
     <p>
         <x-bladewind::alert type="error" show_close_icon="false">
@@ -91,7 +91,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country"
                 :data="$countries" /&gt;
         </code>
@@ -105,7 +105,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country"
                 data="&#123;&#123; json_encode($countries) }}" /&gt;
         </code>
@@ -117,7 +117,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country2"
                 placeholder="What is your nationality"
                 :data="$countries" /&gt;
@@ -149,7 +149,7 @@
 
     <pre class="language-markup line-numbers" data-line="3,4">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country_mixed"
                 label_key="country"
                 value_key="code"
@@ -179,7 +179,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country-select"
                 selected_value="gh"
                 placeholder="What is your nationality"
@@ -196,7 +196,7 @@
     </div>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country-select2"
                 required="true"
                 placeholder="What is your nationality"
@@ -212,7 +212,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country-dis"
                 disabled="true"
                 placeholder="What is your nationality"
@@ -228,7 +228,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country-ro"
                 readonly="true"
                 placeholder="What is your nationality"
@@ -252,7 +252,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country"
                 label_key="country"
                 value_key="code"
@@ -319,7 +319,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="staff"
                 placeholder="Assign task to"
                 label_key="name"
@@ -374,7 +374,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                  name="country4"
                  searchable="true"
                  label_key="country"
@@ -400,7 +400,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="7">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country-multi"
                 searchable="true"
                 label_key="country"
@@ -427,7 +427,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country-multi2"
                 searchable="true"
                 selected_value="gh, gm, ci, bf"
@@ -450,11 +450,11 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-           &lt;x-bladewind.select name="gender" placeholder="Select Gender" data="manual"&gt;
-                &lt;x-bladewind.select-item label="Male" value="male" /&gt;
-                &lt;x-bladewind.select-item label="Female" value="female" /&gt;
-                &lt;x-bladewind.select-item label="Prefer not to say" value="other" /&gt;
-           &lt;/x-bladewind.select&gt;
+           &lt;x-bladewind::select name="gender" placeholder="Select Gender" data="manual"&gt;
+                &lt;x-bladewind::select-item label="Male" value="male" /&gt;
+                &lt;x-bladewind::select-item label="Female" value="female" /&gt;
+                &lt;x-bladewind::select-item label="Prefer not to say" value="other" /&gt;
+           &lt;/x-bladewind::select&gt;
         </code>
     </pre>
     <p>
@@ -469,7 +469,7 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-           &lt;x-bladewind.select
+           &lt;x-bladewind::select
                 name="tags"
                 placeholder="Tags for this music"
                 multiple="true"
@@ -482,7 +482,7 @@
                 &lt;x-bladewind::select-item label="Trance" value="trance" /&gt;
                 &lt;x-bladewind::select-item label="For Coder's" value="devs" /&gt;
 
-           &lt;/x-bladewind.select&gt;
+           &lt;/x-bladewind::select&gt;
         </code>
     </pre>
     <p>
@@ -509,7 +509,7 @@
         <code>
             &lt;form ...&gt;
             ...
-            &lt;x-bladewind.select name="country" ... /&gt;
+            &lt;x-bladewind::select name="country" ... /&gt;
             &lt;/form&gt;
         </code>
     </pre>
@@ -620,7 +620,7 @@
     <pre class="language-markup">
         <code>
             // the following component declaration
-            &lt;x-bladewind.select name="country-multiple" placeholder="Select a country" /&gt;
+            &lt;x-bladewind::select name="country-multiple" placeholder="Select a country" /&gt;
         </code>
     </pre>
     <pre class="language-js">
@@ -661,8 +661,8 @@
             <td>Select one of the component values. The value you pass needs to exist in the Select's list of items else the command will simply be ignored.
                 This does not work for multiple values yet. You can use it on a mutiple select to select multiple values but you will need to call the method multiple times.
                 <br /><br />
-                <code class="inline">bw_country_multiple.selectByValue('gh');</code>
-                <code class="inline">bw_country_multiple.selectByValue('ng');</code>
+                <code class="inline">bw_country_multiple::selectByValue('gh');</code>
+                <code class="inline">bw_country_multiple::selectByValue('ng');</code>
             </td>
         </tr>
         <tr>
@@ -692,8 +692,8 @@
         </x-bladewind::select>
     </p>
     <div class="space-x-4 text-center">
-        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.selectByValue('gh')">Select Ghana</x-bladewind::button>
-        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.selectByValue('ng')">Select Nigeria</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js::selectByValue('gh')">Select Ghana</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js::selectByValue('ng')">Select Nigeria</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.disable()">Disable</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.reset()">Reset</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.enable()">Enable</x-bladewind::button>
@@ -707,8 +707,8 @@
         </x-bladewind::select>
     </p>
     <div class="space-x-4 text-center">
-        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.selectByValue('gh')">Select Ghana</x-bladewind::button>
-        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.selectByValue('ng')">Select Nigeria</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js::selectByValue('gh')">Select Ghana</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js::selectByValue('ng')">Select Nigeria</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.disable()">Disable</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.reset()">Reset</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.enable()">Enable</x-bladewind::button>
@@ -716,21 +716,21 @@
 <br />
     <pre class="language-markup line-numbers" data-line="9,14,19,24,29">
         <code>
-            &lt;x-bladewind.select name="from-js" placeholder="Your country" data="manual"&gt;
-                &lt;x-bladewind.select-item label="Burkina Faso" value="bf" /&gt;
-                &lt;x-bladewind.select-item label="Ghana" value="gh" /&gt;
-                &lt;x-bladewind.select-item label="Nigeria" value="ng" /&gt;
-            &lt;/x-bladewind.select&gt;
+            &lt;x-bladewind::select name="from-js" placeholder="Your country" data="manual"&gt;
+                &lt;x-bladewind::select-item label="Burkina Faso" value="bf" /&gt;
+                &lt;x-bladewind::select-item label="Ghana" value="gh" /&gt;
+                &lt;x-bladewind::select-item label="Nigeria" value="ng" /&gt;
+            &lt;/x-bladewind::select&gt;
 
             &lt;div class="space-x-4 text-center"&gt;
 
                 &lt;x-bladewind.button size="small" type="secondary"
-                    onclick="bw_from_js.selectByValue('gh')"&gt;
+                    onclick="bw_from_js::selectByValue('gh')"&gt;
                     Select Ghana
                 &lt;/x-bladewind.button&gt;
 
                 &lt;x-bladewind.button size="small" type="secondary"
-                    onclick="bw_from_js.selectByValue('ng')"&gt;
+                    onclick="bw_from_js::selectByValue('ng')"&gt;
                     Select Nigeria
                 &lt;/x-bladewind.button&gt;
 
@@ -833,18 +833,18 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="department"
                 onselect="filterEmployees"
                 placeholder="filter by department"
                 data="manual"
                 multiple="true"&gt;
-                &lt;x-bladewind.select-item label="Field Workers" value="field" /&gt;
-                &lt;x-bladewind.select-item label="Finance" value="finance" /&gt;
-                &lt;x-bladewind.select-item label="Tech" value="tech" /&gt;
-                &lt;x-bladewind.select-item label="Marketing" value="marketing" /&gt;
-                &lt;x-bladewind.select-item label="Operations" value="operations" /&gt;
-            &lt;/x-bladewind.select&gt;
+                &lt;x-bladewind::select-item label="Field Workers" value="field" /&gt;
+                &lt;x-bladewind::select-item label="Finance" value="finance" /&gt;
+                &lt;x-bladewind::select-item label="Tech" value="tech" /&gt;
+                &lt;x-bladewind::select-item label="Marketing" value="marketing" /&gt;
+                &lt;x-bladewind::select-item label="Operations" value="operations" /&gt;
+            &lt;/x-bladewind::select&gt;
         </code>
     </pre>
     <p>
@@ -1268,7 +1268,7 @@
     <h3>Select with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.select
+            &lt;x-bladewind::select
                 name="country"
                 placeholder="What is your nationality"
                 onselect="confirmSelection"

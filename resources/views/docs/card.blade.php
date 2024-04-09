@@ -17,18 +17,18 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.card&gt;
+            &lt;x-bladewind::card&gt;
                 // the card content goes here
-            &lt;/x-bladewind.card&gt;
+            &lt;/x-bladewind::card&gt;
         </code>
     </pre>
     <x-bladewind::card title="most recent activity"></x-bladewind::card>
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.card title="recent activity"&gt;
+            &lt;x-bladewind::card title="recent activity"&gt;
                 // the card content goes here
-            &lt;/x-bladewind.card&gt;
+            &lt;/x-bladewind::card&gt;
         </code>
     </pre>
 
@@ -76,7 +76,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.card title="invoice details"&gt;
+            &lt;x-bladewind::card title="invoice details"&gt;
 
                 &lt;x-bladewind.table striped="true"&gt;
                     &lt;x-slot name="header"&gt;
@@ -92,7 +92,7 @@
                     ...
                 &lt;/x-bladewind.table&gt;
 
-            &lt;/x-bladewind.card&gt;
+            &lt;/x-bladewind::card&gt;
         </code>
     </pre>
     <h3>Huge Navigation Items</h3>
@@ -126,20 +126,20 @@
         <code>
             &lt;div class="grid grid-cols-3 gap-5"&gt;
 
-                &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
+                &lt;x-bladewind::card class="cursor-pointer hover:shadow-gray-300"&gt;
                     &lt;svg ...&gt;...&lt;/svg&gt;
                     &lt;span class="text-center ..."&gt;Projects&lt;/span&gt;
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-                &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
+                &lt;x-bladewind::card class="cursor-pointer hover:shadow-gray-300"&gt;
                     &lt;svg...&gt;...&lt;/svg&gt;
                     &lt;span class="text-center ..."&gt;Tasks&lt;/span&gt;
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-                &lt;x-bladewind.card class="cursor-pointer hover:shadow-gray-300"&gt;
+                &lt;x-bladewind::card class="cursor-pointer hover:shadow-gray-300"&gt;
                     &lt;svg...&gt;...&lt;/svg&gt;
                     &lt;span class="text-center ..."&gt;Ideas&lt;/span&gt;
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
             &lt;/div&gt;
         </code>
@@ -225,7 +225,7 @@
         <code>
             &lt;div class="grid grid-cols-2 gap-3"&gt;
 
-                &lt;x-bladewind.card compact="true"&gt;
+                &lt;x-bladewind::card compact="true"&gt;
                     &lt;div class="flex items-center"&gt;
                         &lt;div&gt;
                             &lt;x-bladewind.avatar image="/path/to/the/image/file" /&gt;
@@ -243,19 +243,19 @@
                             &lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-                &lt;x-bladewind.card compact="true"&gt;
+                &lt;x-bladewind::card compact="true"&gt;
                     ...
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-                &lt;x-bladewind.card compact="true"&gt;
+                &lt;x-bladewind::card compact="true"&gt;
                     ...
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-                &lt;x-bladewind.card compact="true"&gt;
+                &lt;x-bladewind::card compact="true"&gt;
                     ...
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
             &lt;/div&gt;
         </code>
@@ -332,7 +332,7 @@
 
     <pre class="language-markup line-numbers" data-line="3, 17">
         <code>
-            &lt;x-bladewind.card&gt;
+            &lt;x-bladewind::card&gt;
 
                 &lt;x-slot:header&gt;
                     &lt;div class="flex px-4 pt-2 pb-3"&gt;
@@ -361,7 +361,7 @@
                     &lt;/div&gt;
                 &lt;/x-slot:footer&gt;
 
-            &lt;/x-bladewind.card&gt;
+            &lt;/x-bladewind::card&gt;
         </code>
     </pre>
 
@@ -420,7 +420,7 @@
     <h3 class="pb-2 ">Card with all attributes defined</h3>
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind.card
+    &lt;x-bladewind::card
         title="recent updates"
         has_shadow="true"
         hover_effect="false"
@@ -432,7 +432,7 @@
 
         ...
 
-    &lt;/x-bladewind.card&gt;
+    &lt;/x-bladewind::card&gt;
 </code>
 </pre>
 

@@ -10,13 +10,13 @@
     <p><x-bladewind::rating name="star-rating" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.rating name="star-rating" /&gt;
+                &lt;x-bladewind::rating name="star-rating" /&gt;
             </code>
         </pre>
     <p><x-bladewind::rating type="heart" name="heart-rating" /></p>
         <pre class="language-markup line-numbers" data-line="2">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     type="heart"
                     name="heart-rating" /&gt;
             </code>
@@ -24,7 +24,7 @@
     <p><x-bladewind::rating type="thumbsup" name="thumb-rating" /></p>
         <pre class="language-markup line-numbers" data-line="2">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     type="thumbsup"
                     name="thumb-rating" /&gt;
             </code>
@@ -36,7 +36,7 @@
     <p><x-bladewind::rating rating="1" color="red" name="red-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="1"
                     color="red"
                     name="red-rating" /&gt;
@@ -47,7 +47,7 @@
     </p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="2"
                     color="yellow"
                     name="yellow-rating" /&gt;
@@ -56,7 +56,7 @@
     <p><x-bladewind::rating rating="3" color="green" name="green-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="3"
                     color="green"
                     name="green-rating" /&gt;
@@ -65,7 +65,7 @@
     <p><x-bladewind::rating rating="4" color="blue" name="blue-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="4"
                     color="blue"
                     name="blue-rating" /&gt;
@@ -74,7 +74,7 @@
     <p><x-bladewind::rating rating="5" color="pink" name="pink-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="5"
                     color="pink"
                     name="pink-rating" /&gt;
@@ -83,7 +83,7 @@
     <p><x-bladewind::rating rating="1" color="cyan" name="cyan-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="1"
                     color="cyan"
                     name="cyan-rating" /&gt;
@@ -92,13 +92,13 @@
     <p><x-bladewind::rating name="orange-rating" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.rating name="orange-rating" /&gt;
+                &lt;x-bladewind::rating name="orange-rating" /&gt;
             </code>
         </pre>
     <p><x-bladewind::rating rating="3" color="gray" name="gray-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="3"
                     color="gray"
                     name="gray-rating" /&gt;
@@ -107,7 +107,7 @@
     <p><x-bladewind::rating rating="4" color="purple" name="purple-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="4"
                     color="purple"
                     name="purple-rating" /&gt;
@@ -116,7 +116,7 @@
     <p><x-bladewind::rating rating="4" color="violet" name="violet-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="4"
                     color="violet"
                     name="violet-rating" /&gt;
@@ -125,7 +125,7 @@
     <p><x-bladewind::rating rating="4" color="indigo" name="indigo-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="4"
                     color="indigo"
                     name="indigo-rating" /&gt;
@@ -134,7 +134,7 @@
     <p><x-bladewind::rating rating="4" color="fuchsia" name="fuchsia-rating" /></p>
         <pre class="language-markup line-numbers" data-line="3">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="4"
                     color="fuchsia"
                     name="fuchsia-rating" /&gt;
@@ -146,13 +146,13 @@
     <p><x-bladewind::rating rating="2" name="small-rating" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.rating rating="2" name="small-rating" /&gt;
+                &lt;x-bladewind::rating rating="2" name="small-rating" /&gt;
             </code>
         </pre>
     <p><x-bladewind::rating rating="3" type="thumbsup" size="medium" name="medium-rating" /></p>
         <pre class="language-markup line-numbers" data-line="2">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     size="medium"
                     type="thumbsup"
                     rating="3"
@@ -162,7 +162,7 @@
     <p><x-bladewind::rating rating="2" type="heart" name="big-rating" size="big" /></p>
         <pre class="language-markup line-numbers" data-line="2">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     size="big"
                     type="heart"
                     rating="2"
@@ -187,7 +187,7 @@
     </p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.rating
+                &lt;x-bladewind::rating
                     rating="2"
                     name="small-rating"
                     onclick="saveRating('small-rating')" /&gt;
@@ -202,7 +202,7 @@
                         // dom_el() is a helper function in BladewindUI
                         // access the value of the element
 
-                        let element_value = dom_el(`.rating-value-${element}`).value;
+                        let element_value = dom_el(`::rating-value-${element}`).value;
 
                         // now that you have the rating value you can save it
                         // maybe via an ajax call.. completely up to you
@@ -225,7 +225,7 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.rating rating="4" clickable="false" /&gt;
+            &lt;x-bladewind::rating rating="4" clickable="false" /&gt;
         </code>
     </pre>
 
@@ -282,7 +282,7 @@
     <h3>Rating with all attributes defined</h3>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.rating
+            &lt;x-bladewind::rating
                 type="heart"
                 name="album-rating"
                 rating="3"

@@ -14,7 +14,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.bell /&gt;
+            &lt;x-bladewind::bell /&gt;
         </code>
     </pre>
 
@@ -29,7 +29,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.bell show_dot="false" /&gt;
+            &lt;x-bladewind::bell show_dot="false" /&gt;
         </code>
     </pre>
 
@@ -44,7 +44,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.bell animate_dot="true" /&gt;
+            &lt;x-bladewind::bell animate_dot="true" /&gt;
         </code>
     </pre>
 
@@ -59,7 +59,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.bell invert="true" /&gt;
+            &lt;x-bladewind::bell invert="true" /&gt;
         </code>
     </pre>
 
@@ -74,12 +74,12 @@
     <pre class="language-markup">
         <code>
             // size="small" can be omitted since it is the default
-            &lt;x-bladewind.bell size="small" /&gt;
+            &lt;x-bladewind::bell size="small" /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.bell size="big" /&gt;
+            &lt;x-bladewind::bell size="big" /&gt;
         </code>
     </pre>
 
@@ -116,23 +116,23 @@
 
     <pre class="language-markup line-numbers">
         <code>
-        &lt;x-bladewind.bell color="primary" /&gt;
+        &lt;x-bladewind::bell color="primary" /&gt;
 
-        &lt;x-bladewind.bell color="red" /&gt;
+        &lt;x-bladewind::bell color="red" /&gt;
 
-        &lt;x-bladewind.bell color="yellow" /&gt;
+        &lt;x-bladewind::bell color="yellow" /&gt;
 
-        &lt;x-bladewind.bell color="green" /&gt;
+        &lt;x-bladewind::bell color="green" /&gt;
 
-        &lt;x-bladewind.bell color="pink" /&gt;
+        &lt;x-bladewind::bell color="pink" /&gt;
 
-        &lt;x-bladewind.bell color="cyan" /&gt;
+        &lt;x-bladewind::bell color="cyan" /&gt;
 
-        &lt;x-bladewind.bell color="black" /&gt;
+        &lt;x-bladewind::bell color="black" /&gt;
 
-        &lt;x-bladewind.bell color="purple" /&gt;
+        &lt;x-bladewind::bell color="purple" /&gt;
 
-        &lt;x-bladewind.bell color="orange" /&gt;
+        &lt;x-bladewind::bell color="orange" /&gt;
 
         </code><a name="events"></a>
     </pre>
@@ -198,7 +198,7 @@
         <code>
             &lt;x-bladewind::dropmenu&gt;
                 &lt;x-slot name="trigger"&gt;
-                    &lt;x-bladewind.bell /&gt;
+                    &lt;x-bladewind::bell /&gt;
                 &lt;/x-slot&gt;
                 &lt;x-bladewind.dropmenu-item&gt;
                     &lt;x-bladewind.list-view transparent="true"&gt;
@@ -242,7 +242,7 @@
             <br /><br />
             <pre class="language-markup line-numbers" data-line="3">
                 <code>
-                    &lt;x-bladewind.bell
+                    &lt;x-bladewind::bell
                         onmouseover="alert('..')" /&gt;
                 </code>
             </pre>
@@ -253,7 +253,7 @@
             <br /><br />
             <pre class="language-markup line-numbers" data-line="3">
                 <code>
-                    &lt;x-bladewind.bell
+                    &lt;x-bladewind::bell
                         onclick="alert('...')" /&gt;
                 </code>
             </pre>
@@ -301,7 +301,7 @@
     <h3>Bell with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.bell
+            &lt;x-bladewind::bell
                 color="pink"
                 show_dot="false"
                 animate_dot="true"

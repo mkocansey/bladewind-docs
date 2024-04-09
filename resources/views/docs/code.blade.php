@@ -11,14 +11,14 @@
     <p><x-bladewind::code /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code  /&gt;
+            &lt;x-bladewind::code  /&gt;
         </code>
     </pre>
     <br/>
     <p><x-bladewind::code size="big" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code size="big"  /&gt;
+            &lt;x-bladewind::code size="big"  /&gt;
         </code>
     </pre>
     <br/>
@@ -30,7 +30,7 @@
     <p><x-bladewind::code total_digits="5"  /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code total_digits="5"  /&gt;
+            &lt;x-bladewind::code total_digits="5"  /&gt;
         </code>
     </pre>
     <br />
@@ -42,7 +42,7 @@
     <p><x-bladewind::code mask="true"  /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code mask="true"  /&gt;
+            &lt;x-bladewind::code mask="true"  /&gt;
         </code>
     </pre>
 
@@ -52,7 +52,7 @@
     </p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.code name="pin_code"  /&gt;
+                &lt;x-bladewind::code name="pin_code"  /&gt;
             </code>
         </pre>
     <p>The above will create the input fields for the verification codes and create the hidden input below</p>
@@ -92,7 +92,7 @@
     </p>
         <pre class="language-markup line-numbers">
             <code>
-                &lt;x-bladewind.code on_verify="checkPin" /&gt;
+                &lt;x-bladewind::code on_verify="checkPin" /&gt;
 
                 &lt;script&gt;
                     checkPin = (code) => {
@@ -122,7 +122,7 @@
     </p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.code name="clear_me" on_verify="checkPinAndClear" /&gt;
+                &lt;x-bladewind::code name="clear_me" on_verify="checkPinAndClear" /&gt;
             </code>
         </pre>
         <pre class="language-markup line-numbers" data-line="4">
@@ -149,7 +149,7 @@
     </p>
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind.code
+    &lt;x-bladewind::code
         name="pcode"
         error_message="Yoh! check your code"
         on_verify="checkPinShowError" /&gt;
@@ -212,7 +212,7 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.code name="spin_me" on_verify="validatePin"  /&gt;
+            &lt;x-bladewind::code name="spin_me" on_verify="validatePin"  /&gt;
         </code>
     </pre>
         <script>
@@ -256,7 +256,7 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code name="spin_me_yes" on_verify="spinAndSucceed"  /&gt;
+            &lt;x-bladewind::code name="spin_me_yes" on_verify="spinAndSucceed"  /&gt;
         </code>
     </pre>
     <script>
@@ -298,7 +298,7 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code name="time_me" timer="30"  /&gt;
+            &lt;x-bladewind::code name="time_me" timer="30"  /&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-line="3,8">
@@ -366,7 +366,7 @@
     </script>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.code name="trigger_me" on_verify="triggerTimerManually"  /&gt;
+            &lt;x-bladewind::code name="trigger_me" on_verify="triggerTimerManually"  /&gt;
         </code>
     </pre>
     <pre class="language-js line-numbers" data-line="8">
@@ -436,7 +436,7 @@ triggerTimerManually = (code, name) => {
     <h3>Verification Code with all attributes defined</h3>
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind.code
+    &lt;x-bladewind::code
         name="pin-code"
         total_digits="5"
         on_verify="verifyPin"

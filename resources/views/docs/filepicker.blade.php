@@ -9,7 +9,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.filepicker name="logo" /&gt;
+            &lt;x-bladewind::filepicker name="logo" /&gt;
         </code>
     </pre>
 
@@ -21,7 +21,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 name="proof_of_payment"
                 required="true"
                 placeholder="Upload proof of payment"  /&gt;
@@ -39,7 +39,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 name="pdf_only"
                 placeholder="Upload a PDF"
                 accepted_file_types=".pdf"  /&gt;
@@ -57,7 +57,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 name="pdf_only"
                 placeholder="Upload a PDF"
                 max_file_size="1"
@@ -123,7 +123,7 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 url="https://bladewindui.com/images/404.svg"
                 placeholder="Profile Picture"
                 name="dp" /&gt;
@@ -149,7 +149,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 url="https://bladewindui.com/images/404.svg"
                 selected_value="404.svg"
                 placeholder="Profile Picture"
@@ -186,7 +186,7 @@
 <p>The preview below is displayed when the <code class="inline text-red-500">url</code> passed in edit mode is not an image.
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 url="https://bladewindui.com/files/2023-Financials.pdf"
                 selected_value="2023-Financials.pdf"
                 placeholder="Select Report"
@@ -319,7 +319,7 @@
     <h3>Filepicker with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.filepicker
+            &lt;x-bladewind::filepicker
                 name="profile_pic"
                 required="false"
                 placeholder="Choose a profile picture"

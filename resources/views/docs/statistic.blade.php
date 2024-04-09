@@ -11,7 +11,7 @@
         </div>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.statistic number="34,500,100" label="Total payments" /&gt;
+                &lt;x-bladewind::statistic number="34,500,100" label="Total payments" /&gt;
             </code>
         </pre>
         <p>By default the label is placed above the number. If you prefer to display it below the number set <code class="inline text-red-500">label_position="bottom"</code>.</p>
@@ -21,7 +21,7 @@
         </div>
         <pre class="language-markup line-numbers" data-line="2">
             <code>
-                &lt;x-bladewind.statistic
+                &lt;x-bladewind::statistic
                     label_position="bottom"
                     number="34,500,100"
                     label="Total payments" /&gt;
@@ -231,7 +231,7 @@
     <h3 class="pb-2 ">Statistic with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.statistic
+            &lt;x-bladewind::statistic
                 label="Total payments"
                 label_position="bottom"
                 number="34,500,100"
@@ -246,7 +246,7 @@
                     &lt;svg&gt;...&lt;/svg&gt;
                 &lt;/x-slot&gt;
 
-            &lt;/x-bladewind.statistic&gt;
+            &lt;/x-bladewind::statistic&gt;
         </code>
     </pre>
 

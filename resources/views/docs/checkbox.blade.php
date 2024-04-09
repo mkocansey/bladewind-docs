@@ -10,7 +10,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.checkbox  /&gt;
+            &lt;x-bladewind::checkbox  /&gt;
         </code>
     </pre>
 
@@ -18,7 +18,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.checkbox
+            &lt;x-bladewind::checkbox
                 label="I agree to the terms and conditions"  /&gt;
         </code>
     </pre>
@@ -27,7 +27,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.checkbox
+            &lt;x-bladewind::checkbox
                 label="I agree to the &lt;a href='/terms'&gt;terms and conditions&lt;/a&gt;"  /&gt;
         </code>
     </pre>
@@ -36,7 +36,7 @@
     <pre class="language-markup line-numbers" data-line="3">
         <code>
             <code>
-            &lt;x-bladewind.checkbox
+            &lt;x-bladewind::checkbox
                 label="I am checked by default"
                 checked="true"  /&gt;
         </code>
@@ -48,7 +48,7 @@
     <pre class="language-markup line-numbers" data-line="3">
         <code>
             <code>
-            &lt;x-bladewind.checkbox
+            &lt;x-bladewind::checkbox
                 label="I am disabled"
                 disabled="true"  /&gt;
         </code>
@@ -189,7 +189,7 @@
     <h3>Checkbox with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.checkbox
+            &lt;x-bladewind::checkbox
                 label="I agree to the terms and conditions"
                 checked="false"
                 disabled="false"

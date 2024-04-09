@@ -8,7 +8,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.label name="logo" /&gt;
+            &lt;x-bladewind::label name="logo" /&gt;
         </code>
     </pre>
 
@@ -20,7 +20,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.label
+            &lt;x-bladewind::label
                 name="proof_of_payment"
                 required="true"
                 placeholder="Upload proof of payment"  /&gt;
@@ -38,7 +38,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.label
+            &lt;x-bladewind::label
                 name="pdf_only"
                 placeholder="Upload a PDF"
                 accepted_file_types=".pdf"  /&gt;
@@ -56,7 +56,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.label
+            &lt;x-bladewind::label
                 name="pdf_only"
                 placeholder="Upload a PDF"
                 max_file_size="1"
@@ -105,7 +105,7 @@
     <h3>label with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.label
+            &lt;x-bladewind::label
                 name="profile_pic"
                 required="false"
                 placeholder="Choose a profile picture"

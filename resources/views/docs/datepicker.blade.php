@@ -16,7 +16,7 @@
     <x-bladewind::datepicker   />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.datepicker  /&gt;
+            &lt;x-bladewind::datepicker  /&gt;
         </code>
     </pre>
     <br />
@@ -32,7 +32,7 @@
     <pre class="language-markup line-numbers" data-line="2">
         <code>
             &lt;div class="w-40"&gt;
-                &lt;x-bladewind.datepicker placeholder="Invoice Date"  /&gt;
+                &lt;x-bladewind::datepicker placeholder="Invoice Date"  /&gt;
             &lt;/div&gt;
         </code>
     </pre>
@@ -47,7 +47,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.datepicker type="range"  /&gt;
+            &lt;x-bladewind::datepicker type="range"  /&gt;
         </code>
     </pre>
 
@@ -60,7 +60,7 @@
 <br />
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.datepicker
+            &lt;x-bladewind::datepicker
                 type="range"
                 date_from_label="start date"
                 date_to_label="end date" /&gt;
@@ -73,7 +73,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.datepicker required="true"  /&gt;
+            &lt;x-bladewind::datepicker required="true"  /&gt;
         </code>
     </pre>
 
@@ -124,27 +124,27 @@
     <x-bladewind::datepicker name="date1" type="range" format="dd-mm-yyyy"  />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.datepicker name="date1" type="range" format="dd-mm-yyyy" /&gt;
+            &lt;x-bladewind::datepicker name="date1" type="range" format="dd-mm-yyyy" /&gt;
         </code>
     </pre>
     <x-bladewind::datepicker name="date2" format="mm-dd-yyyy"  />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.datepicker name="date2" format="mm-dd-yyyy" /&gt;
+            &lt;x-bladewind::datepicker name="date2" format="mm-dd-yyyy" /&gt;
         </code>
     </pre>
 
     <x-bladewind::datepicker name="date3" format="D d M, Y" type="range"  />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.datepicker name="date3" format="D d M, Y" type="range" /&gt;
+            &lt;x-bladewind::datepicker name="date3" format="D d M, Y" type="range" /&gt;
         </code>
     </pre>
 
     <x-bladewind::datepicker name="date4" format="yyyy-mm-dd"  />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.datepicker name="date4" format="yyyy-mm-dd" /&gt;
+            &lt;x-bladewind::datepicker name="date4" format="yyyy-mm-dd" /&gt;
         </code>
     </pre>
 
@@ -157,7 +157,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.datepicker default_date="2021-12-03"  /&gt;
+            &lt;x-bladewind::datepicker default_date="2021-12-03"  /&gt;
         </code>
     </pre>
 
@@ -168,7 +168,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.datepicker
+            &lt;x-bladewind::datepicker
                 type="range"
                 default_date_from="2021-12-03"
                 default_date_to="2022-01-03"  /&gt;
@@ -282,7 +282,7 @@
     <h3>Datepicker with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.datepicker
+            &lt;x-bladewind::datepicker
                 name="invoice_date"
                 type="single"
                 required="false"

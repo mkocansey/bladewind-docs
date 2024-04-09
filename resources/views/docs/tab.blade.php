@@ -39,71 +39,71 @@
 
     <pre class="language-markup line-numbers" data-line="3,17">
         <code>
-            &lt;x-bladewind.tab-group name="free-pics"&gt;
+            &lt;x-bladewind::tab-group name="free-pics"&gt;
 
                 &lt;x-slot:headings&gt;
-                    &lt;x-bladewind.tab-heading
+                    &lt;x-bladewind::tab-heading
                         name="unsplash-1" label="Lissete Laverde" /&gt;
 
-                    &lt;x-bladewind.tab-heading
+                    &lt;x-bladewind::tab-heading
                         name="unsplash-2" label="Marko Pavlichenko" /&gt;
 
-                    &lt;x-bladewind.tab-heading
+                    &lt;x-bladewind::tab-heading
                         name="unsplash-3" active="true" label="Yoonbae Cho" /&gt;
 
-                    &lt;x-bladewind.tab-heading
+                    &lt;x-bladewind::tab-heading
                         name="unsplash-4" label="Sam Carter" /&gt;
                 &lt;/x-slot:headings&gt;
 
-                &lt;x-bladewind.tab-body&gt;
+                &lt;x-bladewind::tab-body&gt;
 
-                    &lt;x-bladewind.tab-content name="unsplash-1"&gt;
+                    &lt;x-bladewind::tab-content name="unsplash-1"&gt;
                         &lt;img src="/path/to/the/image/file"
                             alt="Picture by Lissete Laverde" /&gt;
-                    &lt;/x-bladewind.tab-content&gt;
+                    &lt;/x-bladewind::tab-content&gt;
 
-                    &lt;x-bladewind.tab-content name="unsplash-2"&gt;
+                    &lt;x-bladewind::tab-content name="unsplash-2"&gt;
                         &lt;img src="/path/to/the/image/file"
                             alt="Picture by Marko Pavlichenko" /&gt;
-                    &lt;/x-bladewind.tab-content&gt;
+                    &lt;/x-bladewind::tab-content&gt;
 
-                    &lt;x-bladewind.tab-content name="unsplash-3" active="true"&gt;
+                    &lt;x-bladewind::tab-content name="unsplash-3" active="true"&gt;
                         &lt;img src="/path/to/the/image/file"
                             alt="Picture by Yoonbae Cho" /&gt;
-                    &lt;/x-bladewind.tab-content&gt;
+                    &lt;/x-bladewind::tab-content&gt;
 
-                    &lt;x-bladewind.tab-content name="unsplash-4"&gt;
+                    &lt;x-bladewind::tab-content name="unsplash-4"&gt;
                         &lt;img src="/path/to/the/image/file"
                             alt="Picture by Sam Carter" /&gt;
-                    &lt;/x-bladewind.tab-content&gt;
+                    &lt;/x-bladewind::tab-content&gt;
 
-                &lt;/x-bladewind.tab-body&gt;
+                &lt;/x-bladewind::tab-body&gt;
 
-            &lt;/x-bladewind.tab-group&gt;
+            &lt;/x-bladewind::tab-group&gt;
         </code>
     </pre>
 
     <p>
         Let us breakdown what is happening with the tab component. We first define a tab group that will hold all the tab headings
         and tab content. As stated earlier, it is very important to give this tab group a name.
-        <code class="inline text-red-500">&lt;x-bladewind.tab-group name="staff-loans"&gt;</code>.</p>
+        <code class="inline text-red-500">&lt;x-bladewind::tab-group name="staff-loans"&gt;</code>.</p>
     <p>
         Next, we need to define the tab headings we will click on to access the tab content. The tab headings are wrapped in a
         <code class="inline">slot</code> named <code class="inline">headings</code>. <code class="inline text-red-500">&lt;x-slot:headings&gt;</code>.
-        The next step is to add the individual tab headings using the <code class="inline text-red-500">&lt;x-bladewind.tab-heading /&gt;</code>.
+        The next step is to add the individual tab headings using the <code class="inline text-red-500">&lt;x-bladewind::tab-heading /&gt;</code>.
         The individual tab headings also need to be named uniquely. The tab heading you want selected by default should have <code class="inline text-red-500">active="true"</code>.
         This necessarily does not need to be the first tab. If you have four tab headings and the third needs to be selected by default, set <code class="inline text-red-500">active="true"</code> on the third tab heading.
     </p>
     <p>
-        The final bit that ties the tab component all together is the <code class="inline text-red-500">&lt;x-bladewind.tab-body&gt;</code>.
+        The final bit that ties the tab component all together is the <code class="inline text-red-500">&lt;x-bladewind::tab-body&gt;</code>.
         This is the parent component that holds all the content for each corresponding tab heading. Content for each tab heading needs to be
-        defined in the <code class="inline text-red-500">&lt;x-bladewind.tab-content&gt;</code> tag that has the <b><em>same name</em></b> as it's corresponding tab heading.
+        defined in the <code class="inline text-red-500">&lt;x-bladewind::tab-content&gt;</code> tag that has the <b><em>same name</em></b> as it's corresponding tab heading.
         The tab content that needs to be visible by default also needs to have <code class="inline text-red-500">active="true"</code> set.
     </p>
 
     <h2 id="colours">Different Colours</h2>
     <p>
-        The tab component by default displays the active tab heading and its underline bar as blue. There are nine colours in total to pick from. To set your preferred colour set the <code class="inline text-red-500">color</code> attribute on the <code class="inline text-red-500">&lt;x-bladewind.tab-group&gt;</code> component.
+        The tab component by default displays the active tab heading and its underline bar as blue. There are nine colours in total to pick from. To set your preferred colour set the <code class="inline text-red-500">color</code> attribute on the <code class="inline text-red-500">&lt;x-bladewind::tab-group&gt;</code> component.
     </p>
     <x-bladewind::tab-group name="red-tab" color="red">
         <x-slot name="headings">
@@ -303,25 +303,25 @@
     </x-bladewind::tab-group>
     <pre class="lang-markup line-numbers" data-line="3">
         <code>
-                &lt;x-bladewind.tab-group
+                &lt;x-bladewind::tab-group
                     name="sys-blue-tab"
                     style="system"&gt;
 
                     &lt;x-slot:headings&gt;
-                        &lt;x-bladewind.tab-heading
+                        &lt;x-bladewind::tab-heading
                             name="sys-blue" active="true" label="Blue System Tab" /&gt;
-                        &lt;x-bladewind.tab-heading
+                        &lt;x-bladewind::tab-heading
                             name="inactive-sys-blue" label="The Other Tab" /&gt;
                     &lt;/x-slot:headings&gt;
 
-                    &lt;x-bladewind.tab-body&gt;
-                        &lt;x-bladewind.tab-content
-                            name="sys-blue" active="true"&gt;...&lt;/x-bladewind.tab-content&gt;
-                        &lt;x-bladewind.tab-content
-                            name="inactive-sys-blue"&gt;...&lt;/x-bladewind.tab-content&gt;
-                    &lt;/x-bladewind.tab-body&gt;
+                    &lt;x-bladewind::tab-body&gt;
+                        &lt;x-bladewind::tab-content
+                            name="sys-blue" active="true"&gt;...&lt;/x-bladewind::tab-content&gt;
+                        &lt;x-bladewind::tab-content
+                            name="inactive-sys-blue"&gt;...&lt;/x-bladewind::tab-content&gt;
+                    &lt;/x-bladewind::tab-body&gt;
 
-                &lt;/x-bladewind.tab-group&gt;
+                &lt;/x-bladewind::tab-group&gt;
         </code>
     </pre>
     <br />
@@ -379,25 +379,25 @@
     </p>
     <pre class="lang-markup line-numbers" data-line="3">
         <code>
-                &lt;x-bladewind.tab-group
+                &lt;x-bladewind::tab-group
                     name="pills-blue-tab"
                     style="pills"&gt;
 
                     &lt;x-slot:headings&gt;
-                        &lt;x-bladewind.tab-heading
+                        &lt;x-bladewind::tab-heading
                             name="pills-blue" active="true" label="Blue System Tab" /&gt;
-                        &lt;x-bladewind.tab-heading
+                        &lt;x-bladewind::tab-heading
                             name="inactive-pills-blue" label="The Other Tab" /&gt;
                     &lt;/x-slot:headings&gt;
 
-                    &lt;x-bladewind.tab-body&gt;
-                        &lt;x-bladewind.tab-content
-                            name="pills-blue" active="true"&gt;...&lt;/x-bladewind.tab-content&gt;
-                        &lt;x-bladewind.tab-content
-                            name="inactive-pills-blue"&gt;...&lt;/x-bladewind.tab-content&gt;
-                    &lt;/x-bladewind.tab-body&gt;
+                    &lt;x-bladewind::tab-body&gt;
+                        &lt;x-bladewind::tab-content
+                            name="pills-blue" active="true"&gt;...&lt;/x-bladewind::tab-content&gt;
+                        &lt;x-bladewind::tab-content
+                            name="inactive-pills-blue"&gt;...&lt;/x-bladewind::tab-content&gt;
+                    &lt;/x-bladewind::tab-body&gt;
 
-                &lt;/x-bladewind.tab-group&gt;
+                &lt;/x-bladewind::tab-group&gt;
         </code>
     </pre>
     <br />
@@ -443,7 +443,7 @@
         <tr>
             <td>headings</td>
             <td><em>blank</em></td>
-            <td>This is a slot that accepts one or more <code class="inline">&lt;x-bladewind.tab-heading&gt;</code> components</td>
+            <td>This is a slot that accepts one or more <code class="inline">&lt;x-bladewind::tab-heading&gt;</code> components</td>
         </tr>
         <tr>
             <td>color</td>

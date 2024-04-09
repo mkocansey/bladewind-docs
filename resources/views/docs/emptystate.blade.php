@@ -16,11 +16,11 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.empty-state
+            &lt;x-bladewind::empty-state
                 message="Awesome! You have no documents to approve."
                 button_label="Go to Dashboard"
                 onclick="alert('you clicked me')"&gt;
-            &lt;/x-bladewind.empty-state&gt;
+            &lt;/x-bladewind::empty-state&gt;
         </code>
     </pre>
     <p>
@@ -34,12 +34,12 @@
         onclick="alert('you clicked me')"></x-bladewind::empty-state>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.empty-state
+            &lt;x-bladewind::empty-state
                 message="You have not saved any gists to your GitHub account"
                 image="/assets/images/no-code.svg"
                 button_label="Create Gist"
                 onclick="alert('you clicked me')"&gt;
-            &lt;/x-bladewind.empty-state&gt;
+            &lt;/x-bladewind::empty-state&gt;
         </code>
     </pre>
     <p>
@@ -55,13 +55,13 @@
     </x-bladewind::empty-state>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.empty-state
+            &lt;x-bladewind::empty-state
                 message="You have not saved any gists to your GitHub account"
                 heading="Create Gists Already"
                 image="/assets/images/no-code.svg"
                 button_label="Create Gist"
                 onclick="alert('you clicked me')"&gt;
-            &lt;/x-bladewind.empty-state&gt;
+            &lt;/x-bladewind::empty-state&gt;
         </code>
     </pre>
 
@@ -80,7 +80,7 @@
     </x-bladewind::empty-state>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.empty-state
+            &lt;x-bladewind::empty-state
                 show_image="false"&gt;
 
                 &lt;svg&gt;
@@ -91,7 +91,7 @@
                     Add biometric info
                 &lt;/x-bladewind.button&gt;
 
-            &lt;/x-bladewind.empty-state&gt;
+            &lt;/x-bladewind::empty-state&gt;
         </code>
     </pre>
 
@@ -112,11 +112,11 @@
             &lt;x-bladewind.card title="Recent Activities" css="w-3/4 mx-auto"&gt;
                 &lt;br /&gt;
 
-                &lt;x-bladewind.empty-state
+                &lt;x-bladewind::empty-state
                     image="/assets/images/no-activity.svg"
                     message="Your recent activites list will take shape as
                             &lt;br/&gt; soon as your organization has some activty"&gt;
-                &lt;/x-bladewind.empty-state&gt;
+                &lt;/x-bladewind::empty-state&gt;
 
             &lt;/x-bladewind.card&gt;
         </code>
@@ -175,7 +175,7 @@
     <h3>Empty State with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.empty-state
+            &lt;x-bladewind::empty-state
                 message="Hey!! You cleaned up your inbox nicely"
                 button_label="Compose a message"
                 onclick="goToRoute('new-message')"
@@ -183,7 +183,7 @@
                 show_image="true"
                 heading="Nothing to see here"
                 class="shadow-sm"&gt;
-            &lt;/x-bladewind.empty-state&gt;
+            &lt;/x-bladewind::empty-state&gt;
         </code>
     </pre>
 

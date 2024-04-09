@@ -8,7 +8,7 @@
     <p><x-bladewind::toggle /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.toggle  /&gt;
+            &lt;x-bladewind::toggle  /&gt;
         </code>
     </pre>
     <p>
@@ -19,13 +19,13 @@
     <p><x-bladewind::toggle label="Send me quarterly newsletters" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.toggle label="Send me quarterly newsletters"  /&gt;
+            &lt;x-bladewind::toggle label="Send me quarterly newsletters"  /&gt;
         </code>
     </pre>
     <p><x-bladewind::toggle label="Send me quarterly newsletters" label_position="right" /></p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 label="Send me quarterly newsletters"
                 label_position="right"  /&gt;
         </code>
@@ -38,7 +38,7 @@
     <p><x-bladewind::toggle label="Send me quarterly newsletters" justified="true" /></p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 label="Send me quarterly newsletters"
                 justified="true"  /&gt;
         </code>
@@ -52,7 +52,7 @@
     <p><x-bladewind::toggle label="Send me quarterly newsletters" bar="thin" /></p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 label="Send me quarterly newsletters"
                 bar="thin"  /&gt;
         </code>
@@ -60,7 +60,7 @@
     <p><x-bladewind::toggle label="Send me quarterly newsletters" bar="thicker" /></p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 label="Send me quarterly newsletters"
                 bar="thicker"  /&gt;
         </code>
@@ -73,7 +73,7 @@
     <p><x-bladewind::toggle label="I am checked at birth" checked="true" /></p>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 checked="true"
                 label="I am checked at birth" /&gt;
         </code>
@@ -81,7 +81,7 @@
     <p><x-bladewind::toggle label="You can't push me around" disabled="true" /></p>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 disabled="true"
                 label="I am checked at birth" /&gt;
         </code>
@@ -89,7 +89,7 @@
     <p><x-bladewind::toggle label="I am checked but you still can't push me around" disabled="true" checked="true" /></p>
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 checked="true" disabled="true"
                 label="I am checked at birth" /&gt;
         </code>
@@ -106,15 +106,15 @@
         <x-bladewind::toggle color="purple" checked="true" /> &nbsp;&nbsp; <x-bladewind::toggle color="orange" checked="true" /> &nbsp;&nbsp;
         <x-bladewind::toggle checked="true" /> &nbsp;&nbsp;
     </p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="red" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="yellow" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="green" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="pink" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="cyan" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="gray" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="purple" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="orange" /&gt;</code></pre></p>
-    <p><pre class="language-markup"><code>&lt;x-bladewind.toggle color="blue" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="red" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="yellow" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="green" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="pink" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="cyan" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="gray" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="purple" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="orange" /&gt;</code></pre></p>
+    <p><pre class="language-markup"><code>&lt;x-bladewind::toggle color="blue" /&gt;</code></pre></p>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Toggle component.</p>
@@ -177,7 +177,7 @@
     <h3>Toggle with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.toggle
+            &lt;x-bladewind::toggle
                 color="purple"
                 label="Send me quarterly newsletters"
                 label_position="right"

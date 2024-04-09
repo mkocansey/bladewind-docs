@@ -11,7 +11,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="55.8" /&gt;
         </code>
@@ -38,18 +38,18 @@
 
                 &lt;x-bladewind.card title="Mobile Money Penetration"&gt;
 
-                    &lt;x-bladewind.horizontal-line-graph
+                    &lt;x-bladewind::horizontal-line-graph
                         label="MTN: "
                         percentage="55"
                         color="yellow" /&gt;
 
-                    &lt;x-bladewind.horizontal-line-graph
+                    &lt;x-bladewind::horizontal-line-graph
                         label="Vodafone: "
                         percentage="30"
                         color="red"
                         class="py-3" /&gt;
 
-                    &lt;x-bladewind.horizontal-line-graph
+                    &lt;x-bladewind::horizontal-line-graph
                         label="AirtelTigo: "
                         percentage="15"
                         color="blue" /&gt;
@@ -58,18 +58,18 @@
 
                 &lt;x-bladewind.card title="Farmer age ratio"&gt;
 
-                    &lt;x-bladewind.horizontal-line-graph
+                    &lt;x-bladewind::horizontal-line-graph
                         label="Above 60: "
                         percentage="33"
                         color="cyan" /&gt;
 
-                    &lt;x-bladewind.horizontal-line-graph
+                    &lt;x-bladewind::horizontal-line-graph
                         label="Between 40 - 60: "
                         percentage="43"
                         color="purple"
                         class="py-3" /&gt;
 
-                    &lt;x-bladewind.horizontal-line-graph
+                    &lt;x-bladewind::horizontal-line-graph
                         label="Under 40: "
                         percentage="24"
                         color="gray" /&gt;
@@ -94,7 +94,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="10"
                 color="red" /&gt;
@@ -108,7 +108,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="20"
                 color="yellow"/&gt;
@@ -122,7 +122,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="30"
                 color="green" /&gt;
@@ -135,7 +135,7 @@
         color="pink" />
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="40"
                 color="pink" /&gt;
@@ -149,7 +149,7 @@
 
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="50"
                     color="cyan" /&gt;
@@ -164,7 +164,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="60"
                     color="gray" /&gt;
@@ -179,7 +179,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="70"
                     color="purple" /&gt;
@@ -194,7 +194,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="80"
                     color="orange" /&gt;
@@ -208,7 +208,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="80"
                     color="violet" /&gt;
@@ -222,7 +222,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="80"
                     color="indigo" /&gt;
@@ -236,7 +236,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="80"
                     color="fuchsia" /&gt;
@@ -251,7 +251,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="90" /&gt;
             </code>
@@ -268,7 +268,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="10"
                     shade="dark" color="red" /&gt;
@@ -283,7 +283,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="20"
                     shade="dark" color="yellow" /&gt;
@@ -298,7 +298,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="30"
                     shade="dark" color="green" /&gt;
@@ -313,7 +313,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="40"
                     shade="dark" color="pink" /&gt;
@@ -328,7 +328,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="40"
                     shade="dark" color="fuchsia" /&gt;
@@ -343,7 +343,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="40"
                     shade="dark" color="indigo" /&gt;
@@ -358,7 +358,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="40"
                     shade="dark" color="violet" /&gt;
@@ -373,7 +373,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="50"
                     shade="dark" color="cyan" /&gt;
@@ -388,7 +388,7 @@
     <p>
         <pre class="language-markup line-numbers" data-line="4">
             <code>
-                &lt;x-bladewind.horizontal-line-graph
+                &lt;x-bladewind::horizontal-line-graph
                     label="Women Farmers: "
                     percentage="60"
                     shade="dark" color="gray" /&gt;
@@ -403,7 +403,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="70"
                 shade="dark" color="purple" /&gt;
@@ -417,7 +417,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="80"
                 shade="dark" color="orange" /&gt;
@@ -431,7 +431,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage="90"
                 shade="dark" /&gt;
@@ -486,7 +486,7 @@
     <h3>Horizontal Line Graph with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.horizontal-line-graph
+            &lt;x-bladewind::horizontal-line-graph
                 label="Women Farmers: "
                 percentage = "50"
                 color = "red",

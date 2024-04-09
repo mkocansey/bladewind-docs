@@ -10,7 +10,7 @@
 
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.notification /&gt;
+            &lt;x-bladewind::notification /&gt;
         </code>
     </pre>
     <p>
@@ -148,7 +148,7 @@
     <h3>Notification with all attributes defined</h3>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.notification position="top right" /&gt;
+            &lt;x-bladewind::notification position="top right" /&gt;
         </code>
     </pre>
 

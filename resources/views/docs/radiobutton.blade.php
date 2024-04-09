@@ -11,7 +11,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.radio-button name="tnc"  /&gt;
+            &lt;x-bladewind::radio-button name="tnc"  /&gt;
         </code>
     </pre>
 
@@ -23,10 +23,10 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.radio-button label="Action" name="genre"  /&gt;
-            &lt;x-bladewind.radio-button label="Comedy" name="genre"  /&gt;
-            &lt;x-bladewind.radio-button label="Drama" name="genre"  /&gt;
-            &lt;x-bladewind.radio-button label="Thriller" name="genre" /&gt;
+            &lt;x-bladewind::radio-button label="Action" name="genre"  /&gt;
+            &lt;x-bladewind::radio-button label="Comedy" name="genre"  /&gt;
+            &lt;x-bladewind::radio-button label="Drama" name="genre"  /&gt;
+            &lt;x-bladewind::radio-button label="Thriller" name="genre" /&gt;
         </code>
     </pre>
 
@@ -34,7 +34,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.radio-button
+            &lt;x-bladewind::radio-button
                 label="I am checked by default"
                 checked="true"
                 name="check_me"  /&gt;
@@ -46,7 +46,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.radio-button
+            &lt;x-bladewind::radio-button
                 label="I am disabled"
                 disabled="true"  /&gt;
         </code>
@@ -196,7 +196,7 @@
     <h3>Radio button with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.radio-button
+            &lt;x-bladewind::radio-button
                 label="I agree to the terms and conditions"
                 checked="false"
                 disabled="false"

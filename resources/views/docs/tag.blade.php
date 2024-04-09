@@ -7,7 +7,7 @@
     <p><x-bladewind::tag label="pending" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.tag label="pending"  /&gt;
+            &lt;x-bladewind::tag label="pending"  /&gt;
         </code>
     </pre>
     <h2 id="faint">Faint Coloured</h2>
@@ -31,12 +31,12 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tag label="pending" color="color-name" /&gt;
+            &lt;x-bladewind::tag label="pending" color="color-name" /&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-          &lt;x-bladewind.tag label="pending" color="pink" /&gt;
+          &lt;x-bladewind::tag label="pending" color="pink" /&gt;
         </code>
     </pre>
 
@@ -59,12 +59,12 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tag label="pending" shade="dark" color="color-name" /&gt;
+            &lt;x-bladewind::tag label="pending" shade="dark" color="color-name" /&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tag label="pending" shade="dark" color="purple" /&gt;
+            &lt;x-bladewind::tag label="pending" shade="dark" color="purple" /&gt;
         </code>
     </pre>
 
@@ -76,10 +76,10 @@
     <p><x-bladewind::tag label="pending" can_close="true" />  &nbsp;  <x-bladewind::tag label="pending" can_close="true" color="pink" /></p>
     <pre class="language-markup line-numbers" data-line="2,5">
         <code>
-            &lt;x-bladewind.tag label="pending"
+            &lt;x-bladewind::tag label="pending"
                 can_close="true" /&gt;
 
-            &lt;x-bladewind.tag label="pending"
+            &lt;x-bladewind::tag label="pending"
                 can_close="true"
                 color="pink" /&gt;
         </code>
@@ -99,14 +99,14 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.tag
+            &lt;x-bladewind::tag
                 label="marketing"
                 can_close="true"
                 add_id_prefix="false"
                 id="a1001"
                 onclick="alert('you clicked on '+ dom_el('#a1001').innerText)" /&gt;
 
-            &lt;x-bladewind.tag
+            &lt;x-bladewind::tag
                 label="accounting"
                 can_close="true"
                 color="pink"
@@ -125,11 +125,11 @@
     </p>
     <pre class="language-markup line-numbers" data-line="4,6">
         <code>
-            &lt;x-bladewind.tag label="just added" tiny="true" color="pink" /&gt;
+            &lt;x-bladewind::tag label="just added" tiny="true" color="pink" /&gt;
         </code>
     </pre>
     <pre class="language-markup line-numbers" data-line="4,6">
-        <code>&lt;x-bladewind.tag label="new" tiny="true" color="purple"
+        <code>&lt;x-bladewind::tag label="new" tiny="true" color="purple"
             shade="dark"
             uppercasing="false"/&gt;
         </code>
@@ -143,10 +143,10 @@
     <p><x-bladewind::tag label="pending" rounded="true" />  &nbsp;  <x-bladewind::tag label="pending" can_close="true" color="pink" rounded="true" /></p>
     <pre class="language-markup line-numbers" data-line="2,5">
         <code>
-            &lt;x-bladewind.tag label="pending"
+            &lt;x-bladewind::tag label="pending"
                 rounded="true" /&gt;
 
-            &lt;x-bladewind.tag label="pending"
+            &lt;x-bladewind::tag label="pending"
                 can_close="true"
                 rounded="true"
                 color="pink" /&gt;
@@ -160,9 +160,9 @@
     <p><x-bladewind::tag label="pending" outline="true" color="pink" />  &nbsp;  <x-bladewind::tag label="pending" can_close="true" color="pink" outline="true" shade="dark" /></p>
     <pre class="language-markup line-numbers" data-line="4,6">
         <code>
-            &lt;x-bladewind.tag label="pending" outline="true" color="pink" /&gt;
+            &lt;x-bladewind::tag label="pending" outline="true" color="pink" /&gt;
 
-            &lt;x-bladewind.tag label="pending" can_close="true"
+            &lt;x-bladewind::tag label="pending" can_close="true"
                 outline="true"
                 color="pink"
                 shade="dark" /&gt;
@@ -483,7 +483,7 @@
     <h3 class="pb-2 ">Tags with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tags
+            &lt;x-bladewind::tags
                 name="stack"
                 color="orange"
                 required="true"
@@ -499,7 +499,7 @@
     <h3 class="pb-2 ">Tag with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.tag
+            &lt;x-bladewind::tag
                 label="accounting"
                 can_close="true"
                 color="pink"

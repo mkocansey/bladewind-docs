@@ -83,7 +83,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country"
                 :data="$countries" /&gt;
         </code>
@@ -96,7 +96,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country"
                 data="&#123;&#123; json_encode($countries) }} /&gt;
         </code>
@@ -108,7 +108,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country2"
                 placeholder="What is your nationality"
                 :data="$countries" /&gt;
@@ -140,7 +140,7 @@
 
     <pre class="language-markup line-numbers" data-line="3,4">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country"
                 label_key="country"
                 value_key="code"
@@ -168,7 +168,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country-select"
                 selected_value="gh"
                 placeholder="What is your nationality"
@@ -189,7 +189,7 @@
     <link href="{{ asset('vendor/bladewind/css/flags.css') }}" rel="stylesheet" />
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country"
                 label_key="country"
                 value_key="code"
@@ -249,7 +249,7 @@
     </pre>
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="staff"
                 label_key="name"
                 value_key="id"
@@ -311,7 +311,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                  name="country4"
                  searchable="true"
                  label_key="country"
@@ -330,7 +330,7 @@
         <code>
             &lt;form ...&gt;
             ...
-            &lt;x-bladewind.dropdown name="country" ... /&gt;
+            &lt;x-bladewind::dropdown name="country" ... /&gt;
             &lt;/form&gt;
         </code>
     </pre>
@@ -411,7 +411,7 @@
     <x-bladewind::dropdown name="country5" data="{{ json_encode($countries) }}" flag_key="value" url_key="url" />
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country5"
                 data="&#123;{ json_encode($countries) }}"
                 url_key="url"
@@ -426,7 +426,7 @@
 
     <pre class="language-markup line-numbers" data-line="3">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 ...
                 append_value_to_url="true" /&gt;
         </code>
@@ -438,7 +438,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 ...
                 append_value_to_url="true"
                 append_value_to_url_as="code" /&gt;
@@ -555,7 +555,7 @@
     <h3>Dropdown with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.dropdown
+            &lt;x-bladewind::dropdown
                 name="country"
                 placeholder="What is your nationality"
                 onselect="confirmSelection"

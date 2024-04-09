@@ -10,14 +10,14 @@
     <p><x-bladewind::textarea name="comment" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.textarea  /&gt;
+            &lt;x-bladewind::textarea  /&gt;
         </code>
     </pre>
     <h3>Add Placeholder Text</h3>
     <p><x-bladewind::textarea placeholder="Comment" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.textarea placeholder="Comment"  /&gt;
+            &lt;x-bladewind::textarea placeholder="Comment"  /&gt;
         </code>
     </pre>
     <h3>With Labels</h3>
@@ -28,7 +28,7 @@
     <p><x-bladewind::textarea label="Comment" /></p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.textarea label="Comment"  /&gt;
+            &lt;x-bladewind::textarea label="Comment"  /&gt;
         </code>
     </pre>
     <h3>Required Fields</h3>
@@ -38,7 +38,7 @@
     <p><x-bladewind::textarea label="Comment" required="true" /></p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.textarea required="true" label="Comment"  /&gt;
+            &lt;x-bladewind::textarea required="true" label="Comment"  /&gt;
         </code>
     </pre>
     <p>
@@ -56,13 +56,13 @@
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.texarea
+            &lt;x-bladewind::textarea
                 name="events"
                 label="Comment"
                 required="true"
                 onfocus="changeCss('.events', '!border-2,!border-red-400')"
                 onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"&gt;
-            &lt;/x-bladewind.textarea&gt;
+            &lt;/x-bladewind::textarea&gt;
         </code>
     </pre>
 
@@ -133,7 +133,7 @@
     <h3 class="pb-2 ">Textarea with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.textarea
+            &lt;x-bladewind::textarea
                 name="message"
                 label="Enter message"
                 placeholder=""

@@ -12,7 +12,7 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="36" /&gt;
+            &lt;x-bladewind::progress-bar percentage="36" /&gt;
         </code>
     </pre>
 
@@ -25,7 +25,7 @@
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="36" show_percentage_label="true" /&gt;
+            &lt;x-bladewind::progress-bar percentage="36" show_percentage_label="true" /&gt;
         </code>
     </pre>
 
@@ -45,7 +45,7 @@
     </p>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.progress-bar
+            &lt;x-bladewind::progress-bar
                 percentage="53"
                 show_percentage_label_inline="false"
                 percentage_label_position="top center"
@@ -58,7 +58,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.progress-bar
+            &lt;x-bladewind::progress-bar
                 percentage="75"
                 show_percentage_label_inline="false"
                 percentage_label_position="top right"
@@ -76,7 +76,7 @@
 
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.progress-bar
+            &lt;x-bladewind::progress-bar
                 percentage="75"
                 show_percentage_label_inline="false"
                 percentage_suffix="complete"
@@ -93,91 +93,91 @@
     <p><x-bladewind::progress-bar percentage="10" color="red" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="10" color="red" /&gt;
+                &lt;x-bladewind::progress-bar percentage="10" color="red" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="20" color="yellow" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="20" color="yellow"/&gt;
+            &lt;x-bladewind::progress-bar percentage="20" color="yellow"/&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="30" color="green" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="30" color="green" /&gt;
+            &lt;x-bladewind::progress-bar percentage="30" color="green" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="40" color="pink" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="40" color="pink" /&gt;
+            &lt;x-bladewind::progress-bar percentage="40" color="pink" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="50" color="cyan" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="50" color="cyan" /&gt;
+            &lt;x-bladewind::progress-bar percentage="50" color="cyan" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="60" color="gray" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="60" color="gray" /&gt;
+            &lt;x-bladewind::progress-bar percentage="60" color="gray" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="70" color="purple" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="70" color="purple" /&gt;
+            &lt;x-bladewind::progress-bar percentage="70" color="purple" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" color="orange" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" color="orange" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" color="orange" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" color="violet" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" color="violet" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" color="violet" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" color="fuchsia" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" color="fuchsia" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" color="fuchsia" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" color="indigo" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" color="indigo" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" color="indigo" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="90" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="90" /&gt;
+            &lt;x-bladewind::progress-bar percentage="90" /&gt;
         </code>
     </pre>
     <h3 id="dark">Dark Colours</h3>
     <p><x-bladewind::progress-bar percentage="10" color="red" shade="dark" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="10" shade="dark" color="red" /&gt;
+                &lt;x-bladewind::progress-bar percentage="10" shade="dark" color="red" /&gt;
             </code>
         </pre>
     </p>
@@ -185,77 +185,77 @@
     <p><x-bladewind::progress-bar percentage="20" shade="dark" color="yellow" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="20" shade="dark" color="yellow" /&gt;
+                &lt;x-bladewind::progress-bar percentage="20" shade="dark" color="yellow" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="30" shade="dark" color="green" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="30" shade="dark" color="green" /&gt;
+                &lt;x-bladewind::progress-bar percentage="30" shade="dark" color="green" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="40" shade="dark" color="pink" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="40" shade="dark" color="pink" /&gt;
+                &lt;x-bladewind::progress-bar percentage="40" shade="dark" color="pink" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="50" shade="dark" color="cyan" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="50" shade="dark" color="cyan" /&gt;
+                &lt;x-bladewind::progress-bar percentage="50" shade="dark" color="cyan" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="60" shade="dark" color="gray" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="60" shade="dark" color="gray" /&gt;
+                &lt;x-bladewind::progress-bar percentage="60" shade="dark" color="gray" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="70" shade="dark" color="purple" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind.progress-bar percentage="70" shade="dark" color="purple" /&gt;
+                &lt;x-bladewind::progress-bar percentage="70" shade="dark" color="purple" /&gt;
             </code>
         </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" shade="dark" color="orange" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="orange" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" shade="dark" color="orange" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" shade="dark" color="violet" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="violet" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" shade="dark" color="violet" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" shade="dark" color="indigo" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="indigo" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" shade="dark" color="indigo" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <p><x-bladewind::progress-bar percentage="80" shade="dark" color="fuchsia" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="80" shade="dark" color="fuchsia" /&gt;
+            &lt;x-bladewind::progress-bar percentage="80" shade="dark" color="fuchsia" /&gt;
         </code>
     </pre>
     <div class="h-3"></div>
     <x-bladewind::progress-bar percentage="90" shade="dark" />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.progress-bar percentage="90" shade="dark" /&gt;
+            &lt;x-bladewind::progress-bar percentage="90" shade="dark" /&gt;
         </code>
     </pre>
     {{-- <p>
@@ -332,7 +332,7 @@
     <h3>Progress Bar with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.progress-bar
+            &lt;x-bladewind::progress-bar
                 percentage = "50"
                 color = "red",
                 show_percentage_label = "false",

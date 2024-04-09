@@ -13,13 +13,13 @@
 
     <pre class="language-markup line-numbers" data-line="1">
         <code>
-            &lt;x-bladewind.centered-content size="tiny"&gt;
+            &lt;x-bladewind::centered-content size="tiny"&gt;
 
-                &lt;x-bladewind.card&gt;
+                &lt;x-bladewind::card&gt;
                     this content is centered in this column
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-            &lt;/x-bladewind.centered-content&gt;
+            &lt;/x-bladewind::centered-content&gt;
         </code>
     </pre>
 
@@ -34,13 +34,13 @@
 
     <pre class="language-markup line-numbers" data-line="1">
         <code>
-            &lt;x-bladewind.centered-content size="small"&gt;
+            &lt;x-bladewind::centered-content size="small"&gt;
 
-                &lt;x-bladewind.card&gt;
+                &lt;x-bladewind::card&gt;
                     this content is centered in this column
-                &lt;/x-bladewind.card&gt;
+                &lt;/x-bladewind::card&gt;
 
-            &lt;/x-bladewind.centered-content&gt;
+            &lt;/x-bladewind::centered-content&gt;
         </code>
     </pre>
 
@@ -62,7 +62,7 @@
     <h3>Centered Content with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.centered-content
+            &lt;x-bladewind::centered-content
                 size="medium"/&gt;
         </code>
     </pre>

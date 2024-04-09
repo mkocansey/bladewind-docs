@@ -44,13 +44,13 @@
 
     <pre class="language-markup line-numbers" data-line="3,5,19">
         <code>
-            &lt;x-bladewind.card&gt;
+            &lt;x-bladewind::card&gt;
 
-                &lt;x-bladewind.list-view&gt;
+                &lt;x-bladewind::list-view&gt;
 
-                    &lt;x-bladewind.list-item&gt;
+                    &lt;x-bladewind::list-item&gt;
 
-                        &lt;x-bladewind.avatar
+                        &lt;x-bladewind::avatar
                             size="small"
                             image="/path/to/the/image/file" /&gt;
                         &lt;div class="ml-3"&gt;
@@ -64,8 +64,8 @@
 
                     &lt;/x-bladewind::list-item&gt
 
-                    &lt;x-bladewind.list-item&gt;
-                        &lt;x-bladewind.avatar
+                    &lt;x-bladewind::list-item&gt;
+                        &lt;x-bladewind::avatar
                             size="small"
                             image="/path/to/the/image/file"
                         &lt;div class="ml-3"&gt;
@@ -85,7 +85,7 @@
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
-        The <code class="inline">&lt;x-bladewind.list-item&gt;</code> component creates a flex container.
+        The <code class="inline">&lt;x-bladewind::list-item&gt;</code> component creates a flex container.
     </x-bladewind::alert>
     <p>
         By default the list view component sits on a white background. You can remove this by setting the <code class="inline text-red-500">transparent="true"</code> attribute. You can then set a different background colour using the <code class="inline text-red-500">class</code> attribute.
@@ -124,11 +124,11 @@
 
     <pre class="language-markup line-numbers" data-line="1">
         <code>
-            &lt;x-bladewind.list-view transparent="true"&gt;
+            &lt;x-bladewind::list-view transparent="true"&gt;
 
-                &lt;x-bladewind.list-item&gt;
+                &lt;x-bladewind::list-item&gt;
 
-                    &lt;x-bladewind.avatar
+                    &lt;x-bladewind::avatar
                         size="small"
                         image="/path/to/the/image/file" /&gt;
                     &lt;div class="ml-3"&gt;
@@ -175,11 +175,11 @@
     <h3>List View with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.list-view compact="true" transparent="true" class="bg-yellow-50"&gt;
+            &lt;x-bladewind::list-view compact="true" transparent="true" class="bg-yellow-50"&gt;
 
-                &lt;x-bladewind.list-item&gt;
+                &lt;x-bladewind::list-item&gt;
 
-                    &lt;x-bladewind.avatar
+                    &lt;x-bladewind::avatar
                         size="small"
                         image="/path/to/the/image/file" /&gt;
                     &lt;div class="ml-3"&gt;

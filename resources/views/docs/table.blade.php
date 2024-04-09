@@ -30,7 +30,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-             &lt;x-bladewind.table&gt;
+             &lt;x-bladewind::table&gt;
                 &lt;x-slot name="header"&gt;
                     &lt;th&gt;Name&lt;/th&gt;
                     &lt;th&gt;Department&lt;/th&gt;
@@ -46,7 +46,7 @@
                     &lt;td&gt;Tech&lt;/td&gt;
                     &lt;td&gt;kabutey@gmail.com&lt;/td&gt;
                 &lt;/tr&gt;
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
     <p>
@@ -79,10 +79,10 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-             &lt;x-bladewind.table
+             &lt;x-bladewind::table
                 has_border="true"&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -114,14 +114,14 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-             &lt;x-bladewind.table
+             &lt;x-bladewind::table
                 divider="thin"&gt;
                 &lt;x-slot name="header"&gt;
                     &lt;th&gt;Name&lt;/th&gt;
                     ...
                 &lt;/x-slot&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -153,14 +153,14 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-             &lt;x-bladewind.table
+             &lt;x-bladewind::table
                 divided="false"&gt;
                 &lt;x-slot name="header"&gt;
                     &lt;th&gt;Name&lt;/th&gt;
                     ...
                 &lt;/x-slot&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -190,7 +190,7 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-                &lt;x-bladewind.table
+                &lt;x-bladewind::table
                     hover_effect="false"
                     divider="thin"&gt;
 
@@ -199,7 +199,7 @@
                     ...
                 &lt;/x-slot&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
     <h2 id="compact">Compact</h2>
@@ -228,7 +228,7 @@
 <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-                &lt;x-bladewind.table
+                &lt;x-bladewind::table
                     compact="true"
                     divider="thin"&gt;
 
@@ -237,7 +237,7 @@
                     ...
                 &lt;/x-slot&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -289,7 +289,7 @@
 
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.table
+            &lt;x-bladewind::table
                 striped="true"
                 divider="thin"&gt;
 
@@ -298,7 +298,7 @@
                     ...
                 &lt;/x-slot&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -331,7 +331,7 @@
 
     <pre class="language-markup line-numbers" data-line="10">
         <code>
-            &lt;x-bladewind.table striped="true" divider="thin"&gt;
+            &lt;x-bladewind::table striped="true" divider="thin"&gt;
 
                 &lt;x-slot name="header"&gt;
                     &lt;th&gt;Name&lt;/th&gt;
@@ -344,7 +344,7 @@
                         7,300.00
                     &lt;/td&gt;
                 &lt;/tr&gt;
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -377,7 +377,7 @@
     <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind.table
+            &lt;x-bladewind::table
                 has_shadow="true"
                 striped="true"
                 divider="thin"&gt;
@@ -387,7 +387,7 @@
                     ...
                 &lt;/x-slot&gt;
                 ...
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 
@@ -428,7 +428,7 @@
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.table :data="$staff" /&gt;
+            &lt;x-bladewind::table :data="$staff" /&gt;
         </code>
     </pre>
 
@@ -440,7 +440,7 @@
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.table data="&#123;&#123; json_encode($staff) }}" /&gt;
+            &lt;x-bladewind::table data="&#123;&#123; json_encode($staff) }}" /&gt;
         </code>
     </pre>
 
@@ -485,7 +485,7 @@
     <x-bladewind::table :data="$staff" exclude_columns="id, marital_status" />
 <pre class="language-markup line-numbers" data-line="2">
 <code>
-    &lt;x-bladewind.table
+    &lt;x-bladewind::table
         exclude_columns="id, marital_status"
         :data="$staff" /&gt;
 </code>
@@ -530,7 +530,7 @@
 
 <pre class="language-markup line-numbers" data-line="2,4">
 <code>
-    &lt;x-bladewind.table
+    &lt;x-bladewind::table
         exclude_columns="id, marital_status"
         divider="thin"
         :action_icons="$action_icons"
@@ -631,7 +631,7 @@
 
 <pre class="language-html line-numbers" data-line="2,5">
 <code>
-&lt;x-bladewind.table
+&lt;x-bladewind::table
     no_data_message="The staff directory is empty"
     :data="$staff"  /&gt;
 </code>
@@ -659,7 +659,7 @@
 </pre>
 <pre class="language-html line-numbers" data-line="2,4">
 <code>
-&lt;x-bladewind.table
+&lt;x-bladewind::table
     has_border="true"
     no_data_message="The staff directory is empty"
     :column_aliases="$column_aliases"
@@ -685,7 +685,7 @@
     </p>
 <pre class="language-html line-numbers" data-line="6">
 <code>
-&lt;x-bladewind.table
+&lt;x-bladewind::table
     :data="$no_staff"
     has_border="true"
     :column_aliases="$column_aliases"
@@ -713,7 +713,7 @@
 
 <pre class="language-html line-numbers" data-line="2,5">
 <code>
-    &lt;x-bladewind.table
+    &lt;x-bladewind::table
         searchable="true"
         :data="$staff"
         divider="thin"
@@ -740,7 +740,7 @@
 </pre>
 <pre class="language-markup line-numbers" data-line="5">
 <code>
-    &lt;x-bladewind.table
+    &lt;x-bladewind::table
         exclude_columns="id"
         divider="thin"
         :action_icons="$action_icons"
@@ -896,7 +896,7 @@
     <h3>Table with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.table
+            &lt;x-bladewind::table
                 striped="true"
                 divided="true"
                 divider="thin"
@@ -928,7 +928,7 @@
                 ...
                 &lt;/tr&gt;
 
-            &lt;/x-bladewind.table&gt;
+            &lt;/x-bladewind::table&gt;
         </code>
     </pre>
 

@@ -10,7 +10,7 @@
     <p><x-bladewind::input name="fnaln" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input  /&gt;
+            &lt;x-bladewind::input  /&gt;
         </code>
     </pre>
     <h2 id="password">Password Input</h2>
@@ -18,7 +18,7 @@
     <p><x-bladewind::input type="password" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input type="password"  /&gt;
+            &lt;x-bladewind::input type="password"  /&gt;
         </code>
     </pre>
     <h3 id="reveal-password">Reveal Passwords</h3>
@@ -31,7 +31,7 @@
     <p><x-bladewind::input type="password" name="passwed" viewable="true" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input type="password" suffix="eye"  /&gt;
+            &lt;x-bladewind::input type="password" suffix="eye"  /&gt;
         </code>
     </pre>
     <h2 id="numeric">Numeric Input</h2>
@@ -40,7 +40,7 @@
     <p><x-bladewind::input numeric="true" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input numeric="true"  /&gt;
+            &lt;x-bladewind::input numeric="true"  /&gt;
         </code>
     </pre>
     <h3 id="min-max">Minimum & Maximum Values</h3>
@@ -83,14 +83,14 @@
     <p><x-bladewind::input label="Full name" /></p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.input label="Full name"  /&gt;
+            &lt;x-bladewind::input label="Full name"  /&gt;
         </code>
     </pre>
     <h3>Placeholder Text</h3>
     <p><x-bladewind::input placeholder="Full name" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input placeholder="Full name"  /&gt;
+            &lt;x-bladewind::input placeholder="Full name"  /&gt;
         </code>
     </pre>
     <h3>What Happens When Both Placeholder and Label are Set</h3>
@@ -102,7 +102,7 @@
     <p><x-bladewind::input name="mobile" label="Mobile" placeholder="000.0000.000" show_placeholder_always="true"  /></p>
         <pre class="language-markup line-numbers">
             <code>
-                &lt;x-bladewind.input
+                &lt;x-bladewind::input
                     name="mobile" label="Mobile" placeholder="000.0000.000" /&gt;
             </code>
         </pre>
@@ -114,7 +114,7 @@
     <p><x-bladewind::input name="mobile2" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
         <pre class="language-markup line-numbers">
             <code>
-                &lt;x-bladewind.input name="mobile"
+                &lt;x-bladewind::input name="mobile"
                     label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                     placeholder="000.0000.000"
                     show_placeholder_always="true" /&gt;
@@ -127,7 +127,7 @@
     <p><x-bladewind::input label="Full name" required="true" /></p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.input required="true" label="Full name"  /&gt;
+            &lt;x-bladewind::input required="true" label="Full name"  /&gt;
         </code>
     </pre>
     <h2 id="events-validations">Events</h2>
@@ -140,7 +140,7 @@
         onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')" /></p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind.input
+            &lt;x-bladewind::input
                 name="events"
                 label="Full name"
                 required="true"
@@ -189,7 +189,7 @@
                         This is a sign up form example to demonstrate how to validate forms using Bladewind.
                     &lt;/p&gt;
 
-                    &lt;x-bladewind.input
+                    &lt;x-bladewind::input
                         name="fname"
                         required="true"
                         label="Full Name"
@@ -197,12 +197,12 @@
 
                     &lt;div class="flex gap-4"&gt;
 
-                        &lt;x-bladewind.input
+                        &lt;x-bladewind::input
                             name="email"
                             required="true"
                             label="Email" /&gt;
 
-                        &lt;x-bladewind.input
+                        &lt;x-bladewind::input
                             name="mobile"
                             label="Mobile"
                             numeric="true" /&gt;
@@ -322,14 +322,14 @@
         <code>
             ...
             &lt;div class="flex gap-4"&gt;
-                &lt;x-bladewind.input name="full_name" required="true"  label="Full name" /&gt;
-                &lt;x-bladewind.input name="age_camp" label="How old are you?"
+                &lt;x-bladewind::input name="full_name" required="true"  label="Full name" /&gt;
+                &lt;x-bladewind::input name="age_camp" label="How old are you?"
                     required="true" numeric="true" with_dots="true" /&gt;
             &lt;/div&gt;
             &lt;b class="guardian-info py-2 block hidden"&gt;Who is your guardian?&lt;/b&gt;
             &lt;div class="guardian flex gap-4 hidden"&gt;
-                &lt;x-bladewind.input name="guardian_name_camp" required="true" label="Guardian's Name" /&gt;
-                &lt;x-bladewind.input name="guardian_email_camp"
+                &lt;x-bladewind::input name="guardian_name_camp" required="true" label="Guardian's Name" /&gt;
+                &lt;x-bladewind::input name="guardian_email_camp"
                     label="Guardian's email"
                     onkeyup="showAddress(this.value)" /&gt;
             &lt;/div&gt;
@@ -394,7 +394,7 @@
     <x-bladewind::input name="site" label="website address" prefix="https://" />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input name="site" label="website address" prefix="https://" /&gt;
+            &lt;x-bladewind::input name="site" label="website address" prefix="https://" /&gt;
         </code>
     </pre>
     <p class="!mb-3 !pt-8">You can drop the label and use a placeholder instead.</p>
@@ -404,22 +404,22 @@
     <x-bladewind::input name="gh" placeholder="username" prefix="https://github.com/" />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input name="site2" placeholder="website address" prefix="https://" /&gt;
+            &lt;x-bladewind::input name="site2" placeholder="website address" prefix="https://" /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input name="usd" placeholder="0.00" prefix="USD" /&gt;
+            &lt;x-bladewind::input name="usd" placeholder="0.00" prefix="USD" /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input name="twitter" placeholder="Twitter handle" prefix="@" /&gt;
+            &lt;x-bladewind::input name="twitter" placeholder="Twitter handle" prefix="@" /&gt;
         </code>
     </pre>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input name="gh" placeholder="username" prefix="https://github.com/" /&gt;
+            &lt;x-bladewind::input name="gh" placeholder="username" prefix="https://github.com/" /&gt;
         </code>
     </pre>
     <h3 id="suffixes">Suffixes</h3>
@@ -427,13 +427,13 @@
     <x-bladewind::input name="space" placeholder="workspace-name" suffix=".slack.com" />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input name="space" placeholder="workspace-name" suffix=".slack.com" /&gt;
+            &lt;x-bladewind::input name="space" placeholder="workspace-name" suffix=".slack.com" /&gt;
         </code>
     </pre>
     <x-bladewind::input name="tnc" placeholder="Your bio. Keep it brief and nice" suffix='<a href="#">See some good examples</a>' />
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind.input
+            &lt;x-bladewind::input
                 name="tnc"
                 placeholder="Your bio. Keep it brief and nice"
                 suffix='&lt;a href="#"&gt;See some good examples&lt;/a&gt;' /&gt;
@@ -448,7 +448,7 @@
     <x-bladewind::input name="usdbg" placeholder="0.00" prefix="USD" numeric transparent_prefix="false" />
     <pre class="language-markup line-numbers" data-line="5">
         <code>
-            &lt;x-bladewind.input
+            &lt;x-bladewind::input
                 name="usdbg"
                 placeholder="0.00"
                 prefix="USD"
@@ -471,7 +471,7 @@
     <x-bladewind::input name="spacexx" placeholder="workspace-name" prefix="https://" suffix=".slack.com" transparent_prefix="false" transparent_suffix="false" />
     <pre class="language-markup line-numbers" data-line="3,4,6,7">
         <code>
-            &lt;x-bladewind.input
+            &lt;x-bladewind::input
                 name="spacexx"
                 prefix="https://"
                 transparent_prefix="false"
@@ -506,26 +506,26 @@
         <code>
             &lt;x-bladewind.centered-content size="small"&gt;
 
-                &lt;x-bladewind.input
+                &lt;x-bladewind::input
                     name="fullname"
                     placeholder="John T. Doe"
                     prefix="user"
                     prefix_is_icon="true" /&gt;
 
-                &lt;x-bladewind.input
+                &lt;x-bladewind::input
                     name="emailic"
                     placeholder="me@bladewindui.com"
                     prefix="envelope"
                     prefix_is_icon="true" /&gt;
 
                 &lt;div class="flex gap-4"&gt;
-                    &lt;x-bladewind.input
+                    &lt;x-bladewind::input
                         name="fon"
                         placeholder="0000.000.00"
                         prefix="phone"
                         prefix_is_icon="true" /&gt;
 
-                    &lt;x-bladewind.input
+                    &lt;x-bladewind::input
                         name="passw" type="password"
                         placeholder="Password"
                         prefix="key"
@@ -550,7 +550,7 @@
 
     <pre class="language-markup line-numbers">
     <code class="!whitespace-pre-wrap">
-    &lt;x-bladewind.input
+    &lt;x-bladewind::input
     name="www"
     placeholder="website address"
     prefix_is_icon="true"
@@ -566,7 +566,7 @@
 
     <pre class="language-markup line-numbers">
     <code class="!whitespace-pre-wrap">
-    &lt;x-bladewind.input
+    &lt;x-bladewind::input
     name="www"
     placeholder="website address"
     prefix_is_icon="true"
@@ -780,7 +780,7 @@
     <h3>Input with all attributes defined</h3>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind.input
+            &lt;x-bladewind::input
                 name="pin"
                 label="Enter PIN"
                 placeholder=""
