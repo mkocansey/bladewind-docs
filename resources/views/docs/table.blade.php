@@ -2,6 +2,7 @@
     <x-slot:title>Table Component</x-slot:title>
     <x-slot:page_title>Table</x-slot:page_title>
 
+    <div class="sm:dark:bg-dark-900 sm:dark:p-6">
     <p>Display tabular data beautifully in a simple way. </p>
     <p>This component like all other BladewindUI components is simple to use with a few options to customise the component to suit your app needs. A BladewindUI table consists of two parts. The table header and the table body. </p>
     <p>
@@ -308,17 +309,17 @@
     <x-bladewind::table striped="true" divider="thin">
         <x-slot name="header">
             <th>Item</th>
-            <th class="text-center">Quantity</th>
-            <th class="text-right">Price (GHS)</th>
+            <th class="!text-center">Quantity</th>
+            <th class="!text-right">Price (GHS)</th>
         </x-slot>
         <tr>
             <td>Office furniture</td>
-            <td class="text-center">2</td>
+            <td class="!text-center">2</td>
             <td class="text-right">4,300.00</td>
         </tr>
         <tr>
             <td>HP Laser Jet Printer</td>
-            <td class="text-center">1</td>
+            <td class="!text-center">1</td>
             <td class="text-right">3,000.00</td>
         </tr>
         <tr>
@@ -935,6 +936,7 @@
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > table.blade.php</code>
     </x-bladewind::alert>
+    </div>
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#nogaps">No Gaps</a></div>

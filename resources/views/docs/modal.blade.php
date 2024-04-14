@@ -474,7 +474,7 @@
         I am the medium sized modal. Also the default if you do not set a size.
     </x-bladewind::modal>
     <x-bladewind::modal size="big" title="Big Modal" name="big-modal">
-        English can be quite confusing. How is big different from large? You be the judge!
+        English can be quite confusing. How is big different from large? You're the best person to judge!
     </x-bladewind::modal>
     <x-bladewind::modal size="large" title="Large Modal" name="large-modal">
         I am the large modal. If I am not large enough to contain your needs, check out my xl brother.

@@ -44,15 +44,15 @@
     </x-bladewind::modal>
     <script>
         var m;
-        deletePayment = function(mode) {
+        deletePayment = (mode) => {
             m = mode;
-            hide('::processing-delete');
+            hide('.processing-delete');
             hide('.delete-payment-yes');
             hide('.delete-payment-no');
             showModal('delete-paymentz');
-            unhide('::processing-delete');
+            unhide('.processing-delete');
             setTimeout(function() {
-                hide('::processing-delete');
+                hide('.processing-delete');
                 hide('.delete-payment-yes');
                 hide('.delete-payment-no');
                 (m == 'pass') ? unhide('.delete-payment-yes'): unhide('.delete-payment-no');
