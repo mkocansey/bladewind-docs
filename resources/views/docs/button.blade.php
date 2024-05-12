@@ -2,10 +2,14 @@
     <x-slot:title>Button Component</x-slot:title>
     <x-slot:page_title>Button</x-slot:page_title>
 
+    <x-bladewind::alert type="warning" show_close_icon="false">
+        The primary and secondary colours for BladewindUI buttons is picked from what you define in your <code class="inline">tailwind.confis.js</code> file as <a href="/customize/colours">described here</a>.
+        If you don't set this, your buttons will be transparent.
+    </x-bladewind::alert>
+
+    <br />
     <p>
-        The default primary colour for BladewindUI buttons is blue.
-        It is possible to set a colour attribute to display the button in different colours, though we advise you set the primary colour to maintain a consistent look across your project.
-        This colour customization needs to be done in your <code>tailwind.config.js</code> file. Check out our customization notes on how to use <a href="/customize/colours">set your colours</a>.
+        This documentation website has set the primary colour theme to <b>indigo</b> to match the website theme. All BladewindUI components will use this primary colour to maintain consistency.
     </p>
 
     <div class="text-center p-4 space-y-2 space-x-4">
@@ -469,8 +473,8 @@
 
     <h2 id="coloured">Coloured Button</h2>
     <p>
-        Only primary buttons can take on different colours. Ideally you should define a primary colour and let your primary buttons stick with that but if you need to in rare cases uses
-        other coloured buttons that are different from your primary button colour, this component provides that. A case is where your primary colour is purple but your delete button needs to be red.
+        Only primary buttons can take on different colours. Ideally you should <a href="/customize/colours">define a primary colour</a> and let your primary buttons stick with that. If you need to in rare cases, use
+        other coloured buttons that are different from your primary button colour, this component provides that. An example of such a case is where your primary colour is purple but your delete buttons need to be red for emphasis.
         Set the <code class="inline text-red-500">color</code> attribute to your preferred colour.
     </p>
 

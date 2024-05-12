@@ -1213,7 +1213,7 @@
         <tr>
             <td>modular</td>
             <td>false</td>
-            <td>Determines if script tags sued within the component should have <code class="inline text-red-500">type="module"</code>. Useful sometimes when working with Vite js.
+            <td>Determines if script tags used within the component should have <code class="inline text-red-500">type="module"</code>. Useful sometimes when working with Vite js.
             <br/><code class="inline">true</code>  <code class="inline">true</code>
             </td>
         </tr>

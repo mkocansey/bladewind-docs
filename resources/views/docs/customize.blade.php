@@ -64,10 +64,71 @@
         The language files will now be available in your project's <code class="inline">lang > vendor > bladewind</code> directory. You can now add more languages or edit the language files that were published.
     </p>
 
+    <h2 id="defaults">Setting Global Defaults</h2>
+    <p>
+        The BladewindUI library has made some default UI decisions which may be different from what you need in your projects. For example, all <a href="/component/tag">Tag</a> and <a href="/component/button">Button</a>
+        component texts are always uppercase. To make them lowercase, you will need to set <code class="inline text-red-500">uppercasing="false"</code>.
+        If you need all your buttons in lowercase, that means you will be typing a lot of <code class="inline text-red-500">uppercasing="false"</code>.
+        Now what if you also need all your buttons to be <b>small</b> and to have <b>no focus rings</b>, your code every time will be
+    </p>
+    <pre class="lang-markup">
+        <code> &lt;x-bladewind-button show_focus_ring="false" size="small" uppercasing="false"&gt
+            Save
+        &lt;/x-bladewind-button&gt;</code>
+    </pre>
+    <p>
+        Mehn!! This is crazily tedious. Won't it be great to just type the code below to get a button looking the way you'd want for your project?
+    </p>
+    <pre class="lang-markup">
+        <code> &lt;x-bladewind-button&gtSave&lt;/x-bladewind-button&gt;</code>
+    </pre>
+    <p>
+        To achieve this, simply publish the BladewindUI config file by running the code below from the root of your proejct.
+    </p>
+    <pre class="lang-bash"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-config --force</code></pre><br />
+    <p>
+        You will now have a <code class="inline">your project root > config > bladewind.php</code> file with some boilerplate code you can edit or add to.
+        Every BladewindUI component is defined as an array key with some default values. Whatever attributes you wish to define as a default should be
+        defined within its corresponding tag's array key. The code below is for the above example where we want all our buttons to be small, have no
+        focus rings and not be uppercase.
+    </p>
+    <p>
+    <pre class="lang-php">
+    <code>
+        // config/bladewind.php
+
+    ...
+
+    /*
+    |--------------------------------------------------------------------------
+    | Button component
+    |--------------------------------------------------------------------------
+    */
+    'button' => [
+        'size' => 'small',
+        'show_focus_ring' => false,
+        'uppercasing' => false,
+        'radius' => 'medium',
+        'tag' => 'button',
+
+        // define default attributes for all circular buttons
+        'circle' => [
+            'size' => 'regular',
+        ]
+    ],
+    ...
+    </code>
+    </pre>
+    </p>
+    <x-bladewind::alert type="warning" show_close_icon="false">
+        It is very important to ensure the attribute spelling as defined in the docs matches what you define in the config file.
+        Example, we have in the docs show_focus_rings. The same attribute must be defined in the config file.
+    </x-bladewind::alert>
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#noprefix">Remove bladewind prefix</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#change-it-all">Change everything</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#datepicker-translations">Translating the Datepicker</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#defaults">Setting global defaults</a></div>
     </x-slot:side_nav>
 
     <x-slot name="scripts">

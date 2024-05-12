@@ -135,7 +135,7 @@
             <th>Available Values</th>
         </x-slot>
         <tr>
-            <td>postion</td>
+            <td>position</td>
             <td>top right</td>
             <td>
                 Defines where the notification should be displayed. Available values are

@@ -404,7 +404,7 @@ triggerTimerManually = (code, name) => {
         </tr>
         <tr>
             <td>size</td>
-            <td><em>blank</em></td>
+            <td>small</td>
             <td>Displays the input boxes at either small or big sizes. Default is small.<br /> <code class="inline">small</code> <code class="inline">big</code> </td>
         </tr>
         <tr>

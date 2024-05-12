@@ -849,7 +849,7 @@
         </tr>
         <tr>
             <td>searchable</td>
-            <td>false/td>
+            <td>false</td>
             <td>Specify if the table is searchable. When <code class="inline">true</code>, a search input is placed above the table.<br /><br/><code class="inline">true</code><code class="inline">false</code></td>
         </tr>
         <tr>

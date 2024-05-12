@@ -406,11 +406,6 @@
             <td>Displays an extra shadow on hover of the card.. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
         </tr>
         <tr>
-            <td>compact</td>
-            <td>false</td>
-            <td>Reduces padding around the card. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
-        </tr>
-        <tr>
             <td>class</td>
             <td>bw-card</td>
             <td>Any additional css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">class="!rounded-none"</code>.</td>
