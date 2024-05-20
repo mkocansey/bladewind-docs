@@ -176,35 +176,35 @@
         specifying a value for the <code class="inline text-red-500">label</code> attribute. The label will only be displayed if the <code class="inline text-red-500">image</code> cannot be found.
     </p>
     <div class="text-center space-x-3">
-        <x-bladewind::avatar dotted="true" label="MO" />
-        <x-bladewind::avatar label="MK" />
+        <x-bladewind::avatar dotted="true" label="MO" image="na" />
+        <x-bladewind::avatar label="MK" image="na" />
     </div>
     <br />
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind::avatar dotted="true" label="MO" /&gt;
+    &lt;x-bladewind::avatar dotted="true" label="MO" image="na" /&gt;
 </code>
 </pre>
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind::avatar label="MK" /&gt;
+    &lt;x-bladewind::avatar label="MK" image="na" /&gt;
 </code>
 </pre>
 <br />
 <div class="text-center">
     <x-bladewind::avatars stacked="true" dotted="true" plus="34">
-        <x-bladewind::avatar label="SF" />
-        <x-bladewind::avatar label="ZH" />
-        <x-bladewind::avatar label="RB" />
+        <x-bladewind::avatar label="SF" image="404" />
+        <x-bladewind::avatar label="ZH" image="404" />
+        <x-bladewind::avatar label="RB" image="404" />
     </x-bladewind::avatars>
 </div>
 <br />
 <pre class="language-markup line-numbers" data-line="3">
 <code>
 &lt;x-bladewind::avatars stacked="true" dotted="true" plus="34"&gt;
-    &lt;x-bladewind::avatar label="SF" /&gt;
-    &lt;x-bladewind::avatar label="ZH" /&gt;
-    &lt;x-bladewind::avatar label="RB" /&gt;
+    &lt;x-bladewind::avatar label="SF" image="404" /&gt;
+    &lt;x-bladewind::avatar label="ZH" image="404" /&gt;
+    &lt;x-bladewind::avatar label="RB" image="404" /&gt;
 &lt;/x-bladewind::avatars&gt;
 </code>
 </pre>
