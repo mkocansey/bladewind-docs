@@ -368,6 +368,7 @@
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Card component.</p>
     @include('docs/announcement')
+    <h3 class="pb-2 ">Card Component Attributes</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
             <th>Option</th>
@@ -431,7 +432,7 @@
 </code>
 </pre>
 
-    <h3 class="pb-2 ">Contact Card with all attributes defined</h3>
+    <h3 class="pb-2 ">Contact Card Component Attributes</h3>
     <p>The table below shows a comprehensive list of all the attributes available for the Contact Card component.</p>
     <x-bladewind::table striped="true">
         <x-slot name="header">

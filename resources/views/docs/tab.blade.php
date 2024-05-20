@@ -419,6 +419,71 @@
         </x-bladewind::tab-group>
     </p>
 
+    <h2 id="icons">With Icons</h2>
+    <p>
+        You can display icon prefixes in tab headings. This uses the BladewindUI <a href="/component/icon">Icon component</a> so all Heroicons are supported.
+        You can change how the icon looks by setting the <code class="inline text-red-500">icon_css</code> attribute.
+        The Heroicons outline icons are used by default. To use the solid icons instead, set <code class="inline text-red-500">icon_type="solid"</code>.
+        The <code class="inline text-red-500">icon_dir</code> attribute allows you to specify which directory to pick your custom icons from.
+    </p>
+    <p>
+        <x-bladewind::tab-group name="tab-icon">
+            <x-slot name="headings">
+                <x-bladewind::tab-heading name="icon-blue" active="true" icon="shopping-cart" label="Shopping List" />
+                <x-bladewind::tab-heading name="icon-inactive" label="Previous Purchases" icon="shopping-bag" />
+                <x-bladewind::tab-heading name="icon-solid" label="Solid Icon" icon="shopping-bag" icon_type="solid" />
+                <x-bladewind::tab-heading name="icon-solid-css" label="Icon Css Applied" icon="fire" icon_type="solid" icon_css="!rounded-full !bg-orange-500 text-white size-6 p-1" />
+            </x-slot>
+            <x-bladewind::tab-body>
+                <x-bladewind::tab-content name="icon-blue" active="true">
+                    <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                         alt="Picture by Lissete Laverde" />
+                </x-bladewind::tab-content>
+                <x-bladewind::tab-content name="icon-inactive">
+                    <img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" />
+                </x-bladewind::tab-content>
+                <x-bladewind::tab-content name="icon-solid">
+                    <img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg" alt="Picture by Lissete Laverde" />
+                </x-bladewind::tab-content>
+            </x-bladewind::tab-body>
+        </x-bladewind::tab-group>
+    </p>
+    <pre class="lang-markup line-numbers" data-line="4,8,11,16">
+        <code>
+&lt;x-bladewind::tab-group name="tab-icon"&gt;
+    &lt;x-slot name="headings"&gt;
+        &lt;x-bladewind::tab-heading name="icon-blue" active="true"
+            icon="shopping-cart"
+            label="Shopping List" /&gt;
+        &lt;x-bladewind::tab-heading name="icon-inactive"
+            label="Previous Purchases"
+            icon="shopping-bag" /&gt;
+        &lt;x-bladewind::tab-heading name="icon-solid"
+            label="Solid Icon"
+            icon="shopping-bag"
+            icon_type="solid" /&gt;
+        &lt;x-bladewind::tab-heading name="icon-solid-css" label="Icon Css Applied"
+            icon="fire"
+            icon_type="solid"
+            icon_css="!rounded-full !bg-orange-500 text-white size-6 p-1" /&gt;
+    &lt;/x-slot&gt;
+    &lt;x-bladewind::tab-body&gt;
+        &lt;x-bladewind::tab-content name="icon-blue" active="true"&gt;
+            &lt;img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg"
+                 alt="Picture by Lissete Laverde" /&gt;
+        &lt;/x-bladewind::tab-content&gt;
+        &lt;x-bladewind::tab-content name="icon-inactive"&gt;
+            &lt;img src="/assets/images/sam-carter-JU1SVl4smHM-unsplash.jpg" alt="Picture by Sam Carter" /&gt;
+        &lt;/x-bladewind::tab-content&gt;
+        &lt;x-bladewind::tab-content name="icon-solid"&gt;
+            &lt;img src="/assets/images/lissete-laverde-z9Ropm8edsw-unsplash.jpg" alt="Picture by Lissete Laverde" /&gt;
+        &lt;/x-bladewind::tab-content&gt;
+    &lt;/x-bladewind::tab-body&gt;
+&lt;/x-bladewind::tab-group&gt;
+        </code>
+    </pre>
+    <br />
+
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Tab component.</p>
@@ -490,6 +555,28 @@
             <td>default</td>
             <td>By default tabs switch to their respective content. If you prefer your tab headings to load other urls when clicked on, set this attribute.
             This url is called using <code class="inline">location.href</code></td>
+        </tr>
+        <tr>
+            <td>icon</td>
+            <td>null</td>
+            <td>Specify the icon prefix to display with the tab heading. See <a href="/component/icon">the Icon component</a> for what icons can be used.</td>
+        </tr>
+        <tr>
+            <td>icon_css</td>
+            <td><em>blank</em></td>
+            <td>Additional CSS to modify the look of the icon.</td>
+        </tr>
+        <tr>
+            <td>icon_dir</td>
+            <td><em>blank</em></td>
+            <td>If you have your own custom icons you wish to use instead of Heroicons, specify the directory to load the icons from.
+                See the <code class="inline text-red-500">dir</code> attribute in <a href="/component/icon">the Icon component</a> for how to reference your paths.</td>
+        </tr>
+        <tr>
+            <td>icon_type</td>
+            <td>outline</td>
+            <td>Choose if you prefer outline or solid icons.
+            <br /> <code class="inline">solid</code> <code class="inline">outline</code></td>
         </tr>
     </x-bladewind::table>
 
@@ -581,6 +668,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#styles">Other tab styles</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#system">System</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#pills">Pills</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#icons">With icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

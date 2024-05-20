@@ -122,7 +122,7 @@
     </p>
     <x-bladewind::alert type="warning" show_close_icon="false">
         It is very important to ensure the attribute spelling as defined in the docs matches what you define in the config file.
-        Example, we have in the docs show_focus_rings. The same attribute must be defined in the config file.
+        Example, we have in the docs show_focus_ring. The same attribute must be defined in the config file.
     </x-bladewind::alert>
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#noprefix">Remove bladewind prefix</a></div>

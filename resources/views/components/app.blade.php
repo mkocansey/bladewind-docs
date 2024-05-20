@@ -2,14 +2,14 @@
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
-<body class="text-gray-500/80 bg-slate-100/80 dark:bg-gradient-to-b from-dark-900 to-dark-800 dark:text-dark-400">
+<body class="text-gray-500/80 bg-slate-200/50 dark:bg-dark-700 dark:text-dark-400">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <nav class="w-[280px] z-50 py-6 bg-white/95 border-l border-gray-200 fixed right-0 top-0 h-screen shadow-2xl
-        hidden sm:hidden dark:bg-gray-900 dark:border-gray-800 shadow-blue-300 dark:shadow-slate-800 overflow-y-scroll navigation">
+        hidden sm:hidden dark:bg-dark-900 dark:border-gray-800 shadow-blue-300 dark:shadow-slate-800 overflow-y-scroll navigation">
         <div class="text-right cursor-pointer"
              onclick="animateCSS('.navigation','slideOutRight').then((message) => { hide('.navigation'); });">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline mr-4" fill="none" viewBox="0 0 24 24"
@@ -21,17 +21,17 @@
     </nav>
     <x-topbar />
 
-    <div class="h-14"></div>
-    <div class="sm:max-w-7xl mx-auto sm:pt-10 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse">
+    <div class="h-24"></div>
+    <div class="sm:max-w-7xl mx-auto sm:pt-4 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse bg-white dark:bg-dark-800/80">
         <nav class="sm:w-56 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible">
             @include('docs/nav')
             <div class="h-3"></div>
             <iframe src="https://github.com/sponsors/mkocansey/button" title="Sponsor mkocansey" height="32" width="92%" style="border: 0; border-radius: 6px;"></iframe>
         </nav>
 
-        <div class="content-area grow sm:ml-60 pb-16 bg-white dark:bg-dark-800">
+        <div class="content-area grow sm:ml-60 pb-16">
                 <div class="flex flex-col-reverse sm:flex-row sm:rtl:flex-row-reverse">
-                    <div class="grow sm:w-3/4 sm:py-8 sm:px-10 p-5 rounded-md">
+                    <div class="grow sm:w-3/4 sm:py-5 sm:px-5 p-5 rounded-md">
                         <h1 class="page-title">{{$page_title??''}}</h1>
                         {{ $slot ?? '' }}
                     </div>
