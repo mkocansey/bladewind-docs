@@ -9,6 +9,11 @@
         <a href="#header-footer">header and a footer</a>.
         There’s also <a href="#contact">contact cards</a> which are very specific for displaying contact details. These options should take care of a lot of card needs.
     </p>
+    <div class="dark:hidden">
+        <x-bladewind::alert show_close_icon="false">
+            The cards stand out much better on a non-white background colour. <a href="javascript:changeCss('.doc-layout', '!bg-gray-100')">Show me</a>
+        </x-bladewind::alert>
+    </div>
     <h2 id="basic">Basic Card</h2>
     <p>
         This just gives you the card frame with the option to define a heading text or card title.

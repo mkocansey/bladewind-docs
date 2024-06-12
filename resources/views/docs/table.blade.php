@@ -2,9 +2,10 @@
     <x-slot:title>Table Component</x-slot:title>
     <x-slot:page_title>Table</x-slot:page_title>
 
-    <div class="sm:dark:bg-dark-900 sm:dark:p-6">
+    <div>
     <p>Display tabular data beautifully in a simple way. </p>
     <p>This component like all other BladewindUI components is simple to use with a few options to customise the component to suit your app needs. A BladewindUI table consists of two parts. The table header and the table body. </p>
+
     <p>
         <x-bladewind::table>
             <x-slot name="header">
@@ -14,16 +15,30 @@
             </x-slot>
             <tr>
                 <td>Alfred Rowe</td>
-                <td>Outsourcing</td>
+                <td>Consulting</td>
                 <td>
                     alfred@therowe.com
                 </td>
             </tr>
             <tr>
+                <td>Abigail Edwin</td>
+                <td>Quality Assurance</td>
+                <td>
+                    abigail@edwin.com
+                </td>
+            </tr>
+            <tr>
                 <td>Michael K. Ocansey</td>
-                <td>Tech</td>
+                <td>Development</td>
                 <td>
                     kabutey@gmail.com
+                </td>
+            </tr>
+            <tr>
+                <td>John C. Doe</td>
+                <td>Virtual Reality</td>
+                <td>
+                    johncdoe@faked.com
                 </td>
             </tr>
         </x-bladewind::table>
@@ -63,16 +78,30 @@
             </x-slot>
             <tr>
                 <td>Alfred Rowe</td>
-                <td>Outsourcing</td>
+                <td>Consulting</td>
                 <td>
                     alfred@therowe.com
                 </td>
             </tr>
             <tr>
+                <td>Abigail Edwin</td>
+                <td>Quality Assurance</td>
+                <td>
+                    abigail@edwin.com
+                </td>
+            </tr>
+            <tr>
                 <td>Michael K. Ocansey</td>
-                <td>Tech</td>
+                <td>Development</td>
                 <td>
                     kabutey@gmail.com
+                </td>
+            </tr>
+            <tr>
+                <td>John C. Doe</td>
+                <td>Virtual Reality</td>
+                <td>
+                    johncdoe@faked.com
                 </td>
             </tr>
         </x-bladewind::table>
@@ -99,16 +128,30 @@
         </x-slot>
         <tr>
             <td>Alfred Rowe</td>
-            <td>Outsourcing</td>
+            <td>Consulting</td>
             <td>
                 alfred@therowe.com
             </td>
         </tr>
         <tr>
+            <td>Abigail Edwin</td>
+            <td>Quality Assurance</td>
+            <td>
+                abigail@edwin.com
+            </td>
+        </tr>
+        <tr>
             <td>Michael K. Ocansey</td>
-            <td>Tech</td>
+            <td>Development</td>
             <td>
                 kabutey@gmail.com
+            </td>
+        </tr>
+        <tr>
+            <td>John C. Doe</td>
+            <td>Virtual Reality</td>
+            <td>
+                johncdoe@faked.com
             </td>
         </tr>
     </x-bladewind::table>
@@ -138,16 +181,30 @@
         </x-slot>
         <tr>
             <td>Alfred Rowe</td>
-            <td>Outsourcing</td>
+            <td>Consulting</td>
             <td>
                 alfred@therowe.com
             </td>
         </tr>
         <tr>
+            <td>Abigail Edwin</td>
+            <td>Quality Assurance</td>
+            <td>
+                abigail@edwin.com
+            </td>
+        </tr>
+        <tr>
             <td>Michael K. Ocansey</td>
-            <td>Tech</td>
+            <td>Development</td>
             <td>
                 kabutey@gmail.com
+            </td>
+        </tr>
+        <tr>
+            <td>John C. Doe</td>
+            <td>Virtual Reality</td>
+            <td>
+                johncdoe@faked.com
             </td>
         </tr>
     </x-bladewind::table>
@@ -175,16 +232,30 @@
         </x-slot>
         <tr>
             <td>Alfred Rowe</td>
-            <td>Outsourcing</td>
+            <td>Consulting</td>
             <td>
                 alfred@therowe.com
             </td>
         </tr>
         <tr>
+            <td>Abigail Edwin</td>
+            <td>Quality Assurance</td>
+            <td>
+                abigail@edwin.com
+            </td>
+        </tr>
+        <tr>
             <td>Michael K. Ocansey</td>
-            <td>Tech</td>
+            <td>Development</td>
             <td>
                 kabutey@gmail.com
+            </td>
+        </tr>
+        <tr>
+            <td>John C. Doe</td>
+            <td>Virtual Reality</td>
+            <td>
+                johncdoe@faked.com
             </td>
         </tr>
     </x-bladewind::table>
@@ -213,16 +284,30 @@
         </x-slot>
         <tr>
             <td>Alfred Rowe</td>
-            <td>Outsourcing</td>
+            <td>Consulting</td>
             <td>
                 alfred@therowe.com
             </td>
         </tr>
         <tr>
+            <td>Abigail Edwin</td>
+            <td>Quality Assurance</td>
+            <td>
+                abigail@edwin.com
+            </td>
+        </tr>
+        <tr>
             <td>Michael K. Ocansey</td>
-            <td>Tech</td>
+            <td>Development</td>
             <td>
                 kabutey@gmail.com
+            </td>
+        </tr>
+        <tr>
+            <td>John C. Doe</td>
+            <td>Virtual Reality</td>
+            <td>
+                johncdoe@faked.com
             </td>
         </tr>
     </x-bladewind::table>
@@ -253,37 +338,37 @@
         </x-slot>
         <tr>
             <td>Alfred Rowe</td>
-            <td>Outsourcing</td>
+            <td>Consulting</td>
             <td>
                 alfred@therowe.com
             </td>
         </tr>
         <tr>
-            <td>Arsone Gandote</td>
-            <td>Outsourcing</td>
+            <td>Abigail Edwin</td>
+            <td>Quality Assurance</td>
             <td>
-                arson@outsourcing.com
+                abigail@edwin.com
             </td>
         </tr>
         <tr>
             <td>Michael K. Ocansey</td>
-            <td>Tech</td>
+            <td>Development</td>
             <td>
                 kabutey@gmail.com
             </td>
         </tr>
         <tr>
-            <td>Michel Lellatom</td>
-            <td>Animations</td>
+            <td>John C. Doe</td>
+            <td>Virtual Reality</td>
             <td>
-                wecolossal@gmail.com
+                johncdoe@faked.com
             </td>
         </tr>
         <tr>
-            <td>Nora Abena Dankwa</td>
-            <td>Animations</td>
+            <td>Jane Ama Doe</td>
+            <td>Virtual Reality</td>
             <td>
-                norabenashine@gmail.com
+                jane.doe@faked.com
             </td>
         </tr>
     </x-bladewind::table>
@@ -293,6 +378,60 @@
             &lt;x-bladewind::table
                 striped="true"
                 divider="thin"&gt;
+
+                &lt;x-slot name="header"&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    ...
+                &lt;/x-slot&gt;
+                ...
+            &lt;/x-bladewind::table&gt;
+        </code>
+    </pre>
+
+    <h2 id="celled">Celled Table</h2>
+    <p>If you want your tables looking like an excel spreadsheet with each cell having all round borders, set <code class="inline text-red-500">celled="true"</code>. </p>
+
+    <x-bladewind::table celled="true" divider="thin">
+        <x-slot name="header">
+            <th>Name</th>
+            <th>Department</th>
+            <th>Earnings</th>
+            <th>Tax</th>
+            <th>Amt. Due</th>
+        </x-slot>
+        <tr>
+            <td>Alfred Rowe</td>
+            <td>Consulting</td>
+            <td>1,200</td>
+            <td>120</td>
+            <td>1,080</td>
+        </tr>
+        <tr>
+            <td>Abigail Edwin</td>
+            <td>Quality Assurance</td>
+            <td>1,500</td>
+            <td>135</td>
+            <td>1,365</td>
+        </tr>
+        <tr>
+            <td>Michael K. Ocansey</td>
+            <td>Development</td>
+            <td>1,390</td>
+            <td>125</td>
+            <td>1,265</td>
+        </tr>
+        <tr>
+            <td>John C. Doe</td>
+            <td>Virtual Reality</td>
+            <td>1,100</td>
+            <td>98</td>
+            <td>98</td>
+        </tr>
+    </x-bladewind::table>
+
+    <pre class="language-markup line-numbers" data-line="1">
+        <code>
+            &lt;x-bladewind::table celled="true"&gt;
 
                 &lt;x-slot name="header"&gt;
                     &lt;th&gt;Name&lt;/th&gt;
@@ -391,6 +530,259 @@
             &lt;/x-bladewind::table&gt;
         </code>
     </pre>
+
+    <h2 id="selectable">Selectable Rows</h2>
+    <p>There are cases you may want to show users which rows they have selected. You can achieve that by setting <code class="inline text-red-500">selectable="true"</code> on the table.
+        Now, any time a user clicks on a row it will be selected. Clicking on multiple rows will select them all. Clicking on a row that is already selected will unselect it. The
+        cursor changes to <code class="inline">cursor-pointer</code> when a table is defined as selectable. Cool shortcuts like Ctrl+Click or Shift+Click do not work here.</p>
+
+    <x-bladewind::table selectable="true" divider="thin">
+        <x-slot:header>
+            <th>Item</th>
+            <th class="!text-center">Quantity</th>
+            <th class="!text-right">Unit Price (GHS)</th>
+        </x-slot:header>
+        <tr>
+            <td>Office furniture</td>
+            <td class="text-center">2</td>
+            <td class="text-right">4,300.00</td>
+        </tr>
+        <tr>
+            <td>HP Laser Jet Printer</td>
+            <td class="text-center">1</td>
+            <td class="text-right">3,000.00</td>
+        </tr>
+        <tr>
+            <td>Macbook Pro M3 (13'')</td>
+            <td class="text-center">4</td>
+            <td class="text-right">24,300.00</td>
+        </tr>
+        <tr>
+            <td>iPhone 15 Pro Max</td>
+            <td class="text-center">12</td>
+            <td class="text-right">19,000.00</td>
+        </tr>
+        <tr>
+            <td>Laptop Sleeve (Black)</td>
+            <td class="text-center">5</td>
+            <td class="text-right">800.00</td>
+        </tr>
+    </x-bladewind::table>
+    <br />
+    <pre class="language-markup line-numbers" data-line="1">
+        <code>
+            &lt;x-bladewind::table selectable="true" divider="thin"&gt;
+                &lt;x-slot name="header"&gt;
+                    &lt;th&gt;Item&lt;/th&gt;
+                    &lt;th&gt;Quantity&lt;/th&gt;
+                    &lt;th&gt;Unit Price (GHS)&lt;/th&gt;
+                &lt;/x-slot&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Office furniture&lt;/td&gt;
+                    &lt;td class="text-center"&gt;2&lt;/td&gt;
+                    &lt;td class="text-right"&gt;4,300.00&lt;/td&gt;
+                &lt;/tr&gt;
+                ...
+            &lt;/x-bladewind::table&gt;
+        </code>
+    </pre>
+<h3 id="checkable">Checkable</h3>
+    <p>
+        We can take the selectable tables one step further by introducing checkboxes for every row. This is achieved by setting <code class="inline text-red-500">checkable="true"</code> on the table.
+        Each row should now have a checkbox injected as the first column. If a table heading exists, a checkbox is also injected as the first column in the table heading.
+        This becomes the master checkbox for checking or unchecking all other checkboxes at once. The state changes to a partial selected checkbox if some of the checkboxes are checked.
+    </p>
+
+        <x-bladewind::table selectable="true" divider="thin" checkable="true">
+            <x-slot:header>
+                <th>Item</th>
+                <th class="!text-center">Quantity</th>
+                <th class="!text-right">Unit Price (GHS)</th>
+            </x-slot:header>
+            <tr>
+                <td>Office furniture</td>
+                <td class="text-center">2</td>
+                <td class="text-right">4,300.00</td>
+            </tr>
+            <tr>
+                <td>HP Laser Jet Printer</td>
+                <td class="text-center">1</td>
+                <td class="text-right">3,000.00</td>
+            </tr>
+            <tr>
+                <td>Macbook Pro M3 (13'')</td>
+                <td class="text-center">4</td>
+                <td class="text-right">24,300.00</td>
+            </tr>
+            <tr>
+                <td>iPhone 15 Pro Max</td>
+                <td class="text-center">12</td>
+                <td class="text-right">19,000.00</td>
+            </tr>
+            <tr>
+                <td>Laptop Sleeve (Black)</td>
+                <td class="text-center">5</td>
+                <td class="text-right">800.00</td>
+            </tr>
+        </x-bladewind::table>
+        <br />
+        <pre class="language-markup line-numbers" data-line="2">
+        <code>
+            &lt;x-bladewind::table selectable="true" checkable="true" divider="thin"&gt;
+                &lt;x-slot name="header"&gt;
+                    &lt;th&gt;Item&lt;/th&gt;
+                    &lt;th&gt;Quantity&lt;/th&gt;
+                    &lt;th&gt;Unit Price (GHS)&lt;/th&gt;
+                &lt;/x-slot&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Office furniture&lt;/td&gt;
+                    &lt;td class="text-center"&gt;2&lt;/td&gt;
+                    &lt;td class="text-right"&gt;4,300.00&lt;/td&gt;
+                &lt;/tr&gt;
+                ...
+            &lt;/x-bladewind::table&gt;
+        </code>
+    </pre>
+    <p>
+        Having selectable table rows definitely means you will want to do something with the selected values.
+        <strong>You will need to append unique IDs</strong> (<code class="inline text-red-500">data-id="your-uuid-value"</code>)
+        <strong>to your table rows in order for Bladewind to recognize and return them.</strong>
+    </p>
+    <p>
+        You will also need to provide a name for the table. This will be the name of the input field that holds the
+        comma separated list of table row IDs that are selected.
+    </p>
+    <br />
+    <pre class="language-markup line-numbers" data-line="2,8,13">
+        <code>
+            &lt;x-bladewind::table selectable="true" checkable="true" divider="thin"
+                name="office_supplies"&gt;
+                &lt;x-slot name="header"&gt;
+                    &lt;th&gt;Item&lt;/th&gt;
+                    &lt;th&gt;Quantity&lt;/th&gt;
+                    &lt;th&gt;Unit Price (GHS)&lt;/th&gt;
+                &lt;/x-slot&gt;
+                &lt;tr data-id="1"&gt;
+                    &lt;td&gt;Office furniture&lt;/td&gt;
+                    &lt;td class="text-center"&gt;2&lt;/td&gt;
+                    &lt;td class="text-right"&gt;4,300.00&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr data-id="2"&gt;
+                    &lt;td&gt;HP Laser Jet Printer&lt;/td&gt;
+                    &lt;td class="text-center"&gt;2&lt;/td&gt;
+                    &lt;td class="text-right"&gt;4,300.00&lt;/td&gt;
+                &lt;/tr&gt;
+                ...
+            &lt;/x-bladewind::table&gt;
+        </code>
+    </pre>
+    <br />
+    <p>
+        We now have a hidden input  injected on the page right after the table.
+        <code class="inline">&lt;input type="hidden" name="office_supplies" class="office_supplies" /&gt</code>. We can now
+        access the value of this input field using JavaScript or via a form submission if your table is placed within a form.
+        In the example below we delete all table rows that are selected. Select more than one row.
+    </p>
+    <br />
+    <x-bladewind::card reduce_padding="true">
+        <div class="office-supplies-actions p-3 bg-gray-100/50 dark:bg-dark-700 rounded-lg hidden">
+            <x-bladewind::button size="tiny" type="secondary" outline="true" icon="trash" color="red" onclick="deleteRows()">Delete</x-bladewind::button>
+        </div>
+        <x-bladewind::table selectable="true" divider="thin" checkable="true" name="office_supplies">
+            <x-slot:header>
+                <th>Item</th>
+                <th class="!text-center">Quantity</th>
+                <th class="!text-right">Unit Price (GHS)</th>
+            </x-slot:header>
+            <tr data-id="12">
+                <td>Office furniture</td>
+                <td class="text-center">2</td>
+                <td class="text-right">4,300.00</td>
+            </tr>
+            <tr data-id="13">
+                <td>HP Laser Jet Printer</td>
+                <td class="text-center">1</td>
+                <td class="text-right">3,000.00</td>
+            </tr>
+            <tr data-id="14">
+                <td>Macbook Pro M3 (13'')</td>
+                <td class="text-center">4</td>
+                <td class="text-right">24,300.00</td>
+            </tr>
+            <tr data-id="15">
+                <td>iPhone 15 Pro Max</td>
+                <td class="text-center">12</td>
+                <td class="text-right">19,000.00</td>
+            </tr>
+            <tr data-id="16">
+                <td>Laptop Sleeve (Black)</td>
+                <td class="text-center">5</td>
+                <td class="text-right">800.00</td>
+            </tr>
+        </x-bladewind::table>
+    </x-bladewind::card>
+
+    <pre class="language-html line-numbers" data-line="14,21">
+        <code>
+    &lt;x-bladewind::card reduce_padding="true"&gt;
+        &lt;!-- the delete button -->
+        &lt;div class="office-supplies-actions p-3 bg-gray-100/50 rounded-lg hidden"&gt;
+            &lt;x-bladewind::button size="tiny"
+                type="secondary" outline="true"
+                icon="trash" color="red"
+                onclick="deleteRows()"&gt;
+                Delete
+            &lt;/x-bladewind::button&gt;
+        &lt;/div&gt;
+
+        &lt;x-bladewind::table selectable="true" divider="thin"
+            checkable="true"
+            name="office_supplies"&gt;
+            &lt;x-slot:header&gt;
+                &lt;th&gt;Item&lt;/th&gt;
+                &lt;th class="!text-center"&gt;Quantity&lt;/th&gt;
+                &lt;th class="!text-right"&gt;Unit Price (GHS)&lt;/th&gt;
+            &lt;/x-slot:header&gt;
+            &lt;tr data-id="12"&gt;
+                &lt;td&gt;Office furniture&lt;/td&gt;
+                &lt;td class="text-center"&gt;2&lt;/td&gt;
+                &lt;td class="text-right"&gt;4,300.00&lt;/td&gt;
+            &lt;/tr&gt;
+            ...
+        &lt;/x-bladewind::table&gt;
+    &lt;/x-bladewind::card&gt;
+        </code>
+    </pre>
+    <p>
+        The above code will draw the table and let Bladewind do its checkboxing magic. You will however, need to write the code
+        for working with the values of the selected table rows. The <code class="inline font-bold">deleteRows()</code> Javascript function below is what handles deleting of the
+        rows selected by the user from the example above. <code class="inline font-bold">deleteRow()</code> is not a BladewindUI helper function.
+    </p>
+
+        <pre class="language-js line-numbers" data-line="14,21">
+        <code>
+    // domEl(), domEls() and hide() are BladewindUI helper functions
+    deleteRows = () => {
+        // Our table is named 'office_supplies' so input.office_supplies is
+        // the hidden field Bladewind will write IDs of all selected rows to
+        const selectedRows = domEl('input.office_supplies').value.split(',');
+
+        // next we loop over all the rows of our 'office_supplies' table and
+        // hide any row that's having the value of its 'data-id' attribute
+        // in the selected rows array
+        const tableRows = domEls('table.office_supplies tr');
+        tableRows.forEach(row => {
+            if(selectedRows.indexOf(row.getAttribute('data-id')) !== -1) {
+                hide(row, true);
+                hide('.office-supplies-actions');
+                domEl('input.office_supplies').value = '';
+            }
+        });
+    }
+        </code>
+    </pre>
+
+
 
     <h2 id="dynamic">Display a Table From Dynamic Data</h2>
     <p>
@@ -750,8 +1142,13 @@
 </code>
 </pre>
     <x-bladewind::table
-        :data="$staff" divider="thin" :column_aliases="$column_aliases" />
+        :data="$staff" divider="thin" :column_aliases="$column_aliases" selectable="true" checkable="true" />
 
+<br />
+    <x-bladewind::alert show_close_icon="false">
+        You can define <strong>selectable="true"</strong> and <strong>checkable="true"</strong> on dynamic tables. In this case, the "data-id" attribute
+        of each row in the table is automatically set using the "id" value defined in the data array.
+    </x-bladewind::alert>
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>
     @include('docs/announcement')
@@ -883,6 +1280,11 @@
             <td>Label to display on empty state call to action button.</td>
         </tr>
         <tr>
+            <td>celled</td>
+            <td>false</td>
+            <td>Display each cell with borders all round. Like you get in an excel sheet.<br /> <code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>show_image</td>
             <td>true</td>
             <td>Should the empty state component image be displayed.<br /> <code class="inline">true</code><code class="inline">false</code></td>
@@ -944,8 +1346,11 @@
         <div class="flex items-center"><div class="dot"></div><a href="#nohover">No hover effect</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#compact">Reduce Paddings</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#striped">Striped table</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#celled">Celled table</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#totals">Cells for totals</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#shadow">With drop shadow</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#selectable">Selectable rows</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#checkable">Checkable rows</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#dynamic">Dynamic data</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#customize-columns">Customizing columns</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#action-icons">Action icons</a></div>
@@ -957,6 +1362,22 @@
     <x-slot name="scripts">
         <script>
             selectNavigationItem('.component-table');
+
+            domEl('input.office_supplies').addEventListener('change', (event) => {
+                (event.target.value !== '') ? unhide('.office-supplies-actions') : hide('.office-supplies-actions');
+            });
+
+            deleteRows = () => {
+                let selectedRows = domEl('input.office_supplies').value.split(',');
+                let tableRows = domEls('table.office_supplies tr');
+                tableRows.forEach(row => {
+                    if(selectedRows.indexOf(row.getAttribute('data-id')) !== -1) {
+                        hide(row, true);
+                        hide('.office-supplies-actions');
+                        domEl('input.office_supplies').value = '';
+                    }
+                });
+            }
         </script>
     </x-slot>
 </x-app>

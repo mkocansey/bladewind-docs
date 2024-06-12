@@ -32,6 +32,7 @@
 <div class="{{ $css }} component-table"><div class="dot"></div><a href="/component/table">Table</a></div>
 <div class="{{ $css }} component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
 <div class="{{ $css }} component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
+<div class="{{ $css }} component-theme-switcher"><div class="dot"></div><a href="/component/theme-switcher">Theme Switcher</a></div>
 <div class="{{ $css }} component-timeline"><div class="dot"></div><a href="/component/timeline">Timeline</a></div>
 {{--<div class="{{ $css }} component-timepicker hidden"><div class="dot"></div><a href="/component/timepicker">Timepicker</a></div>--}}
 <div class="{{ $css }} component-tooltip hidden"><div class="dot"></div><a href="/component/tooltip">Tooltip</a></div>

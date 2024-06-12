@@ -12,15 +12,19 @@
             This component builds on the code by <a href="https://tailwindcomponents.com/u/mithicher" target="_blank">mithicher</a> available <a href="https://tailwindcomponents.com/component/datepicker-with-tailwindcss-and-alpinejs" target="_blank">here</a>
         </x-bladewind::alert>
     </p>
+    <x-bladewind::datepicker name="invoice_date_2" x-text="$refs.invoice_date_2._x_model.get()"  />
 
-    <x-bladewind::datepicker   />
+    <script>
+        const inputElement = document.querySelector('input[x-ref="invoice_date_2"]');
+        // inputElement._x_model.set('New value');
+    </script>
+
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::datepicker  /&gt;
         </code>
     </pre>
     <br />
-
     <p>
         By default the datepicker fills up the width of its parent container. You can however specify a width of your choice using the datepicker's <code class="inline">css</code> attribute.
     </p>
@@ -277,6 +281,14 @@
             <td>true</td>
             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the datepickers should be stacked vertically. <br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
+        <tr>
+            <td>size</td>
+            <td>medium</td>
+            <td>
+                Sizing of the input to match button sizes in case you have a datepicker and a button on one line.<br />
+                <code class="inline">tiny</code> <code class="inline">small</code><code class="inline">regular</code> <code class="inline">big</code>
+            </td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Datepicker with all attributes defined</h3>
@@ -331,6 +343,11 @@
     <x-slot name="scripts">
         <script>
             selectNavigationItem('.component-datepicker');
+            // document.addEventListener('alpine:init', () => {
+            // document.addEventListener('DOMContentLoaded', () => {
+            // window.setTimeout(() =>{
+            //     setDatepickerValue('invoice_date_2', '2020-10-10');
+            // });
         </script>
     </x-slot>
 </x-app>

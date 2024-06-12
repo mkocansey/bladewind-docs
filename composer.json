@@ -13,7 +13,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "mkocansey/bladewind": "~2.5"
+        "mkocansey/bladewind": "^2.6"
     },
     "require-dev": {
         "deployer/deployer": "^7.0",
@@ -43,8 +43,7 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-public --force",
-            "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-components --force"
+            "@php artisan vendor:publish --tag=bladewind-public --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

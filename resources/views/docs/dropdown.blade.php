@@ -2,9 +2,8 @@
     <x-slot:title>Dropdown Component</x-slot:title>
     <x-slot:page_title>Dropdown</x-slot:page_title>
 
-    <x-bladewind::alert show_close_icon="false">
-        You should probably use the <a href="/component/select">Select component</a> instead if you simply want the features of the HTML Select form field with
-        the options to search and select multiple items.
+    <x-bladewind::alert type="error" show_close_icon="false">
+        This component will soon be deprecated. You should use the <a href="/component/select">Select component</a> instead.
     </x-bladewind::alert>
 <br />
     <p>

@@ -136,11 +136,11 @@
         </x-slot>
         <tr>
             <td>position</td>
-            <td>top right</td>
+            <td>top-right</td>
             <td>
                 Defines where the notification should be displayed. Available values are
-                <code class="inline">top right</code> <code class="inline">bottom right</code>
-                <code class="inline">top left</code> <code class="inline">bottom left</code>
+                <code class="inline">top-right</code> <code class="inline">bottom-right</code>
+                <code class="inline">top-left</code> <code class="inline">bottom-left</code>
             </td>
         </tr>
     </x-bladewind::table>
@@ -148,7 +148,7 @@
     <h3>Notification with all attributes defined</h3>
     <pre class="language-markup line-numbers" data-line="4">
         <code>
-            &lt;x-bladewind::notification position="top right" /&gt;
+            &lt;x-bladewind::notification position="top-right" /&gt;
         </code>
     </pre>
 

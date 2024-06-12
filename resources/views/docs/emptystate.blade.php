@@ -133,7 +133,7 @@
         </x-slot>
         <tr>
             <td>image</td>
-            <td>bladewind/images/empty-state.svg</td>
+            <td>/vendor/bladewind/images/empty-state.svg</td>
             <td>Image to display.</td>
         </tr>
         <tr>

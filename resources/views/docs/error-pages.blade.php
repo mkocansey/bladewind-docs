@@ -45,7 +45,8 @@
 
                 &lt;x-bladewind::error
                     heading="Page not found"
-                    description="The page you requested does not exist. We have a caffeine-induced bot working overtime to find it for you"
+                    description="The page you requested does not exist.
+                        We have a caffeine-induced bot working overtime to find it for you"
                     button_text="Back to docs"
                     button_url="/extra/error-pages"&gt;
 
@@ -107,7 +108,8 @@
         <code>
             &lt;x-bladewind::error
                 heading="Page not found"
-                description="The page you requested does not exist. We have a caffeine-induced bot working overtime to find it for you"
+                description="The page you requested does not exist.
+                We have a caffeine-induced bot working overtime to find it for you"
                 button_text="Back to docs"
                 button_url="/extra/error-pages"&gt;
 

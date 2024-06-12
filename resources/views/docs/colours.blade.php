@@ -79,17 +79,14 @@
       colors: {
         primary: colors.blue,
         secondary: colors.slate,
-        dark: colors.slate,
-        success: colors.emerald,
-        error: colors.red,
-        warning: colors.amber,
-        info: colors.blue
+        dark: colors.gray,
+        green: colors.emerald,
       }
 },
     </code>
     </pre>
 <p>
-    To change the colours used above, simply define overwriting values in your project's <code class="inline">tailwind.config.js</code>.
+    If the default colours used in the library fit your project's colour theme you don't need to perform this next step. To change the colours used above, simply define overwriting values in your project's <code class="inline">tailwind.config.js</code>.
 </p>
     <pre class="language-js line-numbers" data-line="5">
     <code>
@@ -100,10 +97,7 @@
         primary: colors.indigo,
         secondary: colors.zinc,
         dark: colors.gray,
-        success: colors.green,
-        error: colors.rose,
-        warning: colors.orange,
-        info: colors.blue
+        green: colors.emerald,
       }
 },
     </code>
@@ -117,15 +111,37 @@
     <p>The changes to the Tailwind config should be enough to get you your right colours. If however, for some reason you are in your geeky elements and prefer to access all the uncompiled BladewindUI CSS files, you can run the command below.</p>
     <pre class="lang-bash command-line">
         <code>
-            php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-assets --force
+            php artisan vendor:publish --tag=bladewind-assets --force
         </code></pre>
     <p>
         You should now have in your <code class="inline">public</code> directory, a <code class="inline">vendor > bladewind > <span class=" text-red-400">assets</span></code> folder containing all the uncompiled tailwind css files.
         You can modify these files to suit your theme specification.
-        <a href="https://laravel.com/docs/9.x/mix" target="_blank">Refer to this article</a> if you are not familiar with compiling assets in Laravel.
+        <a href="https://laravel.com/docs/11.x/vite" target="_blank">Refer to this article</a> if you are not familiar with compiling assets in Laravel.
     </p>
+    <h2 id="debug">Debug Compilation Issues</h2>
+    <p>
+        As explained earlier, BladewindUI allows you to define your own colour theme in your project's <code class="inline">tailwind.config.js</code> file.
+        The BladewindUI styles will get compiled once you build your assets. Since <a href="/install#publishing">publishing</a> the
+        BladewindUI assets is completely optional, your components will still exist in <code class="inline">vendor/mkocansey/bladewind</code> if you have not published the Bladewind components.
+        In that case you will need to tell Tailwind to also compile the CSS classes in <code class="inline">vendor/mkocansey/bladewind</code> as shown in the code below.
+    </p>
+    <pre class="language-js line-numbers" data-line="8">
+    <code>
+        // your-project/tailwind.config.js
+        ...
+        module.exports = {
+          darkMode: 'class',
+          content: [
+              "./resources/**/*.blade.php",
+              "./resources/**/*.js",
+              "./vendor/mkocansey/bladewind/resources/views/**/*.blade.php",
+          ],
+        ...
+    </code>
+    </pre>
 
     <x-slot:side_nav>
+        <div class="flex items-center"><div class="dot"></div><a href="#debug">Debug compile issues</a></div>
     </x-slot:side_nav>
 
     <x-slot name="scripts">

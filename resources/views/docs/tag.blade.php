@@ -401,6 +401,16 @@
             <td>Determines if the text for all the tags in the group is uppercased. If <code class="inline">false</code>, the text text will be displayed as you entered it. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>shade</td>
+            <td>faint</td>
+            <td>Determines if the tags should have a faint or darker color shade.<br /> <br /><code class="inline">faint</code> <code class="inline">dark</code></td>
+        </tr>
+        <tr>
+            <td>outline</td>
+            <td>false</td>
+            <td>Determines if the tag is only outlined with <code class="inline">color</code> above. Outline tags have no background colour. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>space-x-2 space-y-2</td>
             <td>Any additional CSS you wish to add to the tags container. Useful if you want to space out the tags for example. Whatever you set overwrites the default so you may need to include classes for spacing.</td>

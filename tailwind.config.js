@@ -3,20 +3,16 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   darkMode: 'class',
   content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./vendor/mkocansey/bladewind/resources/views/**/*.blade.php",
   ],
   theme: {
     extend: {
         colors: {
             primary: colors.indigo,
             secondary: colors.slate,
-            green: colors.emerald,
-            dark: colors.gray,
-            success: colors.emerald,
-            error: colors.red,
-            warning: colors.amber,
-            info: colors.blue
+            dark: colors.gray
         }
     },
   },

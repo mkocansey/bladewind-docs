@@ -45,7 +45,7 @@
     <p>
         Updates that touch the css and js files require the library's assets to be republished. Run the command below to republish the library's css and js files.
     </p>
-     <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force</code></pre>
+     <pre class="lang-bash command-line"><code>php artisan vendor:publish --tag=bladewind-public --force</code></pre>
      <p>
          <x-bladewind::alert type="info" show_close_icon="false">
              To prevent any changes you made earlier from being overwritten by updates, we advise you to make all changes that overwrite Bladewind css classes in your project's css file instead of editing the Bladewind css file directly. Your project's css file should always be included <b>after</b> the Bladewind css file.
@@ -59,7 +59,7 @@
         </code>. Currently the available languages contributed by the community are English, French, Italian, Arabic, German, Chinese, Spanish and Indonesian. You can add more languages as you see fit or even modify the existing translations. If you want to do this for just your project you will first need to publish the language files by running the command below from the root of your project.
         You can <a href="/contribute">contribute</a> a new language translation.
     </p>
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-lang --force</code></pre><br />
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --tag=bladewind-lang --force</code></pre><br />
     <p>
         The language files will now be available in your project's <code class="inline">lang > vendor > bladewind</code> directory. You can now add more languages or edit the language files that were published.
     </p>
@@ -85,7 +85,7 @@
     <p>
         To achieve this, simply publish the BladewindUI config file by running the code below from the root of your proejct.
     </p>
-    <pre class="lang-bash"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-config --force</code></pre><br />
+    <pre class="lang-bash"><code>php artisan vendor:publish --tag=bladewind-config --force</code></pre><br />
     <p>
         You will now have a <code class="inline">your project root > config > bladewind.php</code> file with some boilerplate code you can edit or add to.
         Every BladewindUI component is defined as an array key with some default values. Whatever attributes you wish to define as a default should be
@@ -124,6 +124,12 @@
         It is very important to ensure the attribute spelling as defined in the docs matches what you define in the config file.
         Example, we have in the docs show_focus_ring. The same attribute must be defined in the config file.
     </x-bladewind::alert>
+    <br />
+    <x-bladewind::alert type="error" show_close_icon="false">
+        Remember to always to clear your configuration cache if you make any changes to the configuration file by running the command below from the root of your project.
+    </x-bladewind::alert>
+    <pre class="lang-bash"><code>php artisan config:clear</code></pre>
+    <br />
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#noprefix">Remove bladewind prefix</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#change-it-all">Change everything</a></div>

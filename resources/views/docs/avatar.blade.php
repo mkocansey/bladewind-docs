@@ -64,7 +64,7 @@
 
     <h2 id="stack">Stacked Avatars</h2>
     <p>
-        Stacked avatars have an overlapping effect. The component will not restrict you from stacking avatars of different sizes but, for a more appealing visual effect, stacking images of the same size is advised.
+        Stacked avatars are a series of avatars overlapping each other. The component will not restrict you from stacking avatars of different sizes but, for a more appealing visual effect, stacking images of the same size is advised.
         You can achieve 'stackability' by using the <code class="inline text-red-500">x-bladewind::avatars</code> component and setting  <code class="inline text-red-500">stacked="true"</code>.
     </p>
     <div class="text-center">

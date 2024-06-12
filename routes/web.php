@@ -43,6 +43,7 @@ Route::get('component/tag',                     [ PagesController::class, 'tag' 
 Route::get('component/textarea',                [ PagesController::class, 'textarea' ]);
 Route::get('component/textbox',                 [ PagesController::class, 'input' ]);
 Route::get('component/timeline',                [ PagesController::class, 'timeline' ]);
+Route::get('component/theme-switcher',          [ PagesController::class, 'theme_switcher' ]);
 Route::get('component/timepicker',              [ PagesController::class, 'timepicker' ]);
 Route::get('component/toggle',                  [ PagesController::class, 'toggle' ]);
 Route::get('component/tooltip',                 [ PagesController::class, 'tooltip' ]);

@@ -2,7 +2,7 @@
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
-<body class="text-gray-500/80 bg-slate-200/50 dark:bg-dark-700 dark:text-dark-400">
+<body class="body text-gray-500/80 bg-white dark:bg-dark-700 dark:text-dark-400">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -21,8 +21,8 @@
     </nav>
     <x-topbar />
 
-    <div class="h-24"></div>
-    <div class="sm:max-w-7xl mx-auto sm:pt-4 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse bg-white dark:bg-dark-800/80">
+    <div class="h-16"></div>
+    <div class="sm:max-w-7xl mx-auto sm:pt-4 pt-5 sm:flex sm:flex-row sm:rtl:flex-row-reverse bg-white dark:bg-dark-700 doc-layout">
         <nav class="sm:w-56 sm:fixed h-0 sm:h-screen sm:overflow-y-scroll main-nav sm:pb-44 invisible sm:visible">
             @include('docs/nav')
             <div class="h-3"></div>
@@ -31,12 +31,12 @@
 
         <div class="content-area grow sm:ml-60 pb-16">
                 <div class="flex flex-col-reverse sm:flex-row sm:rtl:flex-row-reverse">
-                    <div class="grow sm:w-3/4 sm:py-5 sm:px-5 p-5 rounded-md">
+                    <div class="grow sm:w-3/4 sm:py-5 sm:px-5 p-5 rounded-md adoc">
                         <h1 class="page-title">{{$page_title??''}}</h1>
                         {{ $slot ?? '' }}
                     </div>
                     <div class="sm:w-1/4 sm:block hidden grow-0 mb-8">
-                        <nav class="sm:pl-8 sm:rtl:pr-8 sm:fixed sm:h-screen sm:overflow-y-scroll border-dashed border-l border-l-slate-200 dark:border-l-slate-700 pt-8">
+                        <nav class="side-nav sm:pl-8 sm:rtl:pr-8 sm:fixed sm:h-screen sm:overflow-y-scroll border-dashed border-l border-l-slate-200 dark:border-l-slate-700 pt-8">
                             <h5 class="text-slate-500 dark:text-slate-300 uppercase font-light text-xs tracking-wider !m-0">Sections</h5>
                             <div class="space-y-2.5 pt-4 -ml-3.5 pr-4">
                                 {{ $side_nav ?? '' }}

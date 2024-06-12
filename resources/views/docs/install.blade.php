@@ -15,11 +15,11 @@
 
     <pre class="lang-bash command-line"><code>composer require mkocansey/bladewind</code></pre>
     <p>
-        Next you need to <b>publish the package assets</b> by running the command below, still at the root of your Laravel project. This will create a <code class="inline">vendor/bladewind</code> directory in your <code class="inline">public</code> directory.
+        Next you need to <b>publish the package's public assets</b> by running the command below, still at the root of your Laravel project. This will create a <code class="inline">vendor/bladewind</code> directory in your <code class="inline">public</code> directory.
     </p>
     <pre class="lang-js">
         <code>
-            php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force
+            php artisan vendor:publish --tag=bladewind-public --force
         </code>
     </pre>
     <x-bladewind::alert show_close_icon="false" type="warning">
@@ -89,8 +89,8 @@
         You will notice from the example above we had to use two colons after <code class="inline">x-bladewind</code>. This is because we are serving the views from the package's directory in <code class="inline">vendor/mkocansey</code>.
         To use the usual dot syntax when calling Laravel components, you will need to publish the BladewindUI views to your views directory using the command below.
     </p>
-
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-components --force</code></pre>
+{{-- --provider="Mkocansey\Bladewind\BladewindServiceProvider"--}}
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --tag=bladewind-components --force</code></pre>
     <p>The Bladewind components now exist in your <code class="inline">resources > views > components > bladewind</code> directory. You can now access any of the Bladewind components using the dot syntax.</p>
 
     <pre class="language-markup">
@@ -99,7 +99,7 @@
         </code>
     </pre>
     <p class="text-center">
-        <x-bladewind.button>Save User</x-bladewind.button>
+        <x-bladewind::button>Save User</x-bladewind::button>
     </p>
 
 <br />
@@ -115,12 +115,12 @@
     <p>
         It is important to republish the assets after every update to pull in any new css and js changes. Run the command below to publish the BladewindUI assets.
     </p>
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force</code></pre>
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --tag=bladewind-public --force</code></pre>
 
     <p>
         If you access the BladewindUI components using the dot syntax, you will need to also republish the components view files by running the command below.
     </p>
-    <pre class="lang-bash command-line"><code>php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-components --force</code></pre>
+    <pre class="lang-bash command-line"><code>php artisan vendor:publish --tag=bladewind-components --force</code></pre>
 
     <p>
         To automate publishing of the BladewindUI files every time you run  <code class="inline">composer update</code>, you can add the following lines to your <code class="inline">composer.json</code> file under the <code class="inline">scripts</code> key.
@@ -133,10 +133,10 @@
         ...
             "post-update-cmd": [
                 "@php artisan vendor:publish --tag=laravel-assets --ansi",
-                "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-public --force",
+                "@php artisan vendor:publish --tag=bladewind-public --force",
                 // add this next line if you also want to automatically publish
                 // the components to your resources > views > components directory
-                "@php artisan vendor:publish --provider=\"Mkocansey\\Bladewind\\BladewindServiceProvider\" --tag=bladewind-components --force"
+                "@php artisan vendor:publish --tag=bladewind-components --force"
             ],
             ...
         </code>
@@ -151,8 +151,9 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#required">Requirements</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#install">Install</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#publishing">Publishing Components</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#publishing">Publishing components</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#update">Updating BladewindUI</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="/customize/colours">Define your theme colours</a></div>
     </x-slot:side_nav>
     <x-slot name="scripts">
         <script>

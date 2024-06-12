@@ -3,6 +3,24 @@
     <x-slot name="title">Super simple but elegant Laravel blade-based UI component library using TailwindCSS and vanilla Javascript</x-slot>
 </x-meta>
 <body class="text-gray-500/80 bg-slate-100 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
+<div class="sm:hidden block absolute right-4 -top-2">
+    <a href="#" onclick="animateCSS('.navigation','slideInRight');" class="ml-4 text-slate-400 dark:hover:text-slate-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </a>
+</div>
+<nav class="w-[280px] z-50 py-6 bg-white/95 border-l border-gray-200 fixed right-0 top-0 h-screen shadow-2xl
+        hidden sm:hidden dark:bg-dark-900 dark:border-gray-800 shadow-blue-300 dark:shadow-slate-800 overflow-y-scroll navigation">
+    <div class="text-right cursor-pointer"
+         onclick="animateCSS('.navigation','slideOutRight').then((message) => { hide('.navigation'); });">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline mr-4" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </div>
+    @include('docs/nav')
+</nav>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -11,7 +29,7 @@
 
 <div class="bg-gradient-to-tr from-slate-100 to-slate-200 sm:px-10 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
     <div class="py-10 sm:pt-10 sm:pb-16"><img src="/assets/images/bladewind-logo.png" alt="logo" class="h-4 sm:h-6 mx-auto" /></div>
-    <div class="sm:text-6xl text-3xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center">
+    <div class="sm:text-6xl text-3xl font-bold sm:max-w-4xl mx-auto text-slate-700 dark:text-dark-200 text-center px-6 sm:px-0">
         The only UI components you'll ever need for your Laravel projects. For real.
     </div>
     <div class="sm:text-xl text-sm font-light sm:max-w-xl mx-auto text-center text-slate-500 dark:text-dark-500 sm:py-8 px-5 pt-3 pb-6">
@@ -19,10 +37,10 @@
     </div>
     <div class="text-center space-x-2 sm:pb-6 px-6">
         <div class="sm:block hidden">
-        <x-bladewind::button color="black" tag="a" href="/install" size="big" radius="small" class="!bg-indigo-600 !inline-block">Get Started Now</x-bladewind::button>
+            <x-bladewind::button tag="a" href="/install" size="big">Get Started Now</x-bladewind::button>
         </div>
         <div class="sm:hidden">
-        <x-bladewind::button color="black" tag="a" href="/install" size="medium" radius="small" class="!bg-indigo-600 !inline-block w-full">Get Started Now</x-bladewind::button>
+            <x-bladewind::button tag="a" href="/install" class="w-full" size="medium">Get Started Now</x-bladewind::button>
         </div>
     </div>
 </div>
@@ -316,10 +334,10 @@
         <pre class="language-markup"><code>&lt;x-bladewind::filepicker accepted_file_types="images/*" /&gt;</code></pre>
         <div class="text-center sm:pt-6">
             <div class="sm:block hidden">
-                <x-bladewind::button color="black" tag="a" href="/install" size="big" radius="small" class="!bg-indigo-600 !inline-block">Get Started Now</x-bladewind::button>
+                <x-bladewind::button tag="a" href="/install" size="big">Get Started Now</x-bladewind::button>
             </div>
             <div class="sm:hidden">
-                <x-bladewind::button color="black" tag="a" href="/install" size="medium" radius="small" class="!bg-indigo-600 !inline-block w-full">Get Started Now</x-bladewind::button>
+                <x-bladewind::button tag="a" href="/install" class="w-full" size="medium">Get Started Now</x-bladewind::button>
             </div>
         </div>
     </div>

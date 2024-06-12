@@ -47,6 +47,7 @@ class PagesController extends Controller
     public function tab()                   { return view('docs.tab'); }
     public function table()                 { return view('docs.table'); }
     public function textarea()              { return view('docs.textarea'); }
+    public function theme_switcher()        { return view('docs.theme-switcher'); }
     public function timeline()              { return view('docs.timeline'); }
     public function timepicker()            { return view('docs.timepicker'); }
     public function toggle()                { return view('docs.toggle'); }

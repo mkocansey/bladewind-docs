@@ -291,7 +291,7 @@
             <x-bladewind::input name="full_name" required="true"  label="Full name" />
             <x-bladewind::input name="age_camp" label="How old are you?" required="true" numeric="true" with_dots="true" />
         </div>
-        <b class="guardian-info py-2 block hidden">Who is your guardian?</b>
+        <b class="guardian-info pt-2 pb-5 block hidden">Who is your guardian?</b>
         <div class="guardian flex gap-4 hidden">
             <x-bladewind::input name="guardian_name_camp" required="true"  label="Guardian's Name" />
             <x-bladewind::input name="guardian_email_camp" label="Guardian's email" onkeyup="showAddress(this.value)" />
@@ -586,6 +586,43 @@
         <x-bladewind::input placeholder="I am clearable" clearable/>
     </p>
 
+<h2 id="sizes">Input Field Sizes</h2>
+    <p>
+        The input field comes in sizes to match the various button sizes. This is useful if you wish to have an input field and a button on one line.
+        Set the <code class="inline text-red-500">size</code> attribute to achieve this. The <code class="inline">tiny</code> size is not supported for input fields because it was just too tiny to make UX sense.
+    </p>
+    <br />
+    <div class="flex space-x-3">
+        <div><x-bladewind::input label="I am small" size="small"/></div>
+        <div><x-bladewind::button size="small">Small</x-bladewind::button></div>
+    </div>
+    <div class="flex space-x-3">
+        <div><x-bladewind::input label="I am regular" size="regular"/></div>
+        <div><x-bladewind::button size="regular">Regular</x-bladewind::button></div>
+    </div>
+    <div class="flex space-x-3">
+        <div><x-bladewind::input label="I am medium" size="medium"/></div>
+        <div><x-bladewind::button size="medium">Medium</x-bladewind::button></div>
+    </div>
+    <div class="flex space-x-3">
+        <div><x-bladewind::input label="I am big" size="big"/></div>
+        <div><x-bladewind::button size="big">Big button</x-bladewind::button></div>
+    </div>
+    <p>
+    </p>
+    <pre class="language-markup">
+    <code class="!whitespace-pre-wrap">&lt;x-bladewind::input label="I am small" size="small" /&gt;</code>
+    </pre>
+    <pre class="language-markup">
+    <code class="!whitespace-pre-wrap">&lt;x-bladewind::input label="I am regular" /&gt;</code>
+    </pre>
+    <pre class="language-markup">
+    <code class="!whitespace-pre-wrap">&lt;x-bladewind::input label="I am medium" size="medium" /&gt;</code>
+    </pre>
+    <pre class="language-markup">
+    <code class="!whitespace-pre-wrap">&lt;x-bladewind::input label="I am big" size="big" /&gt;</code>
+    </pre>
+
     <p><h2 id="attributes">Full List Of Attributes</h2></p>
     <p>The table below shows a comprehensive list of all the attributes available for the Input component.</p>
     @include('docs/announcement')
@@ -776,6 +813,14 @@
                 <code class="inline">true</code> <code class="inline">false</code>
             </td>
         </tr>
+        <tr>
+            <td>size</td>
+            <td>medium</td>
+            <td>
+                Sizing of the input to match button sizes in case you have an input and a button on one line.<br />
+                <code class="inline">small</code> <code class="inline">regular</code><code class="inline">medium</code> <code class="inline">big</code>
+            </td>
+        </tr>
     </x-bladewind::table>
     <h3>Input with all attributes defined</h3>
     <pre class="language-markup line-numbers" data-line="4">
@@ -794,6 +839,7 @@
                 with_dots="true"
                 show_placeholder_always="true"
                 selected_value=""
+                size="medium"
                 prefix="Email"
                 transparent_prefix="false"
                 prefix_is_icon="false"
@@ -832,6 +878,7 @@
             <div class="flex items-center pl-5"><div class="dot"></div><a href="#transparency">Prefix & suffix transparency</a></div>
            <div class="flex items-center"><div class="dot"></div><a href="#icons">Inputs with icons</a></div>
            <div class="flex items-center"><div class="dot"></div><a href="#clearable">Clearable fields</a></div>
+           <div class="flex items-center"><div class="dot"></div><a href="#sizes">Input sizes</a></div>
             <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
         </x-slot:side_nav>
 

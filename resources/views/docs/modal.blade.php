@@ -21,7 +21,7 @@
         <x-bladewind::modal name="tnc-agreement" show_close_icon="true">
             Please agree to the terms and conditions of the agreement before proceeding. By clicking the OKAY button you agree to let your machine explode 💥
         </x-bladewind::modal>
-        <x-bladewind::modal name="tnc-agreement-titled" title="Agree or Disagree">
+        <x-bladewind::modal name="tnc-agreement-titled" show_close_icon="true" title="Agree or Disagree">
             Please agree to the terms and conditions of the agreement before proceeding.
         </x-bladewind::modal>
     </p>
@@ -580,15 +580,17 @@
     </p>
     <x-bladewind::modal
         size="big"
-        center_action_buttons="true"
         type="warning"
         title="Confirm User Deletion"
         ok_button_action="alert('as you wish')"
-        cancel_button_action="alert('good choice')" close_after_action="false"
-        name="custom-actions" ok_button_label="Yes, delete" cancel_button_label="don't delete">
+        cancel_button_action="alert('good choice')"
+        close_after_action="false"
+        name="custom-actions"
+        ok_button_label="Yes, delete"
+        cancel_button_label="don't delete">
         Are you sure you want to delete this user? This action cannot be undone.
     </x-bladewind::modal>
-    <pre class="language-markup line-numbers" data-line="7,10,11">
+    <pre class="language-markup line-numbers" data-line="9-11">
         <code>
             &lt;x-bladewind::button onclick="showModal('custom-actions')"&gt;
                 CLick me for custom actions
@@ -596,7 +598,6 @@
 
             &lt;x-bladewind::modal
                 size="big"
-                center_action_buttons="true"
                 type="warning"
                 title="Confirm User Deletion"
                 ok_button_action="alert('as you wish')"
@@ -611,11 +612,7 @@
     </pre>
 
     <p>
-        You will notice from the custom actions example above that we introduced a new attribute, <code class="inline text-red-500">center_action_buttons="true"</code>. This centres the action buttons in the action bar.
-        By default, they are right aligned and might look off when using the small or medium modal sizes.
-    </p>
-    <p>
-        We also introduced the attribute <code class="inline text-red-500">close_after_action="false"</code>.
+        You will notice from the custom actions example above that we introduced the attribute <code class="inline text-red-500">close_after_action="false"</code>.
         By default, the modal is dismissed after clicking any of the action buttons. Setting this attribute to <code class="inline text-red-500">false</code> will ensure the modal stays open after clicking any of the action buttons.
     </p>
     <h3>Close Icon</h3>
@@ -624,6 +621,24 @@
         To enable this, you will need to set <code class="text-red-500 inline">show_close_icon="true"</code>. <a href="javascript:showModal('tnc-agreement')">Here is an example.</a>
     </p>
 
+    <h3 id="alignment">Alignment of the Action Buttons</h3>
+    <p>
+        By default the action buttons are right aligned but left aligned if the modal <code class="inline text-red-500">size="tiny"</code>. To change the alignment of the action buttons, set the <code class="inline text-red-500">align_buttons</code> attribute to either left, center or right.
+    </p>
+    <div class="flex space-x-3">
+        <x-bladewind::button onclick="showModal('go-left')">buttons left</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('go-center')">buttons center</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('go-right')">buttons right</x-bladewind::button>
+    </div>
+    <x-bladewind::modal type="warning"  title="Confirm User Deletion"  align_buttons="left"  name="go-left">
+        Are you sure you want to delete this user? This action cannot be undone.
+    </x-bladewind::modal>
+    <x-bladewind::modal type="warning"  title="Confirm User Deletion"  align_buttons="center"  name="go-center">
+        Are you sure you want to delete this user? This action cannot be undone.
+    </x-bladewind::modal>
+    <x-bladewind::modal type="warning"  title="Confirm User Deletion"  align_buttons="right"  name="go-right">
+        Are you sure you want to delete this user? This action cannot be undone.
+    </x-bladewind::modal>
     <h2 id="cant-dismiss">Non-Dismissible Modal</h2>
     <p>By default the modal component can be closed using the backdrop or any of the action buttons. There are cases when you really don't want the user to dismiss the modal until a choice has been made or an action has been performed.</p>
     <p>Getting this result is simple. Just set <code class="inline text-red-500">backdrop_can_close="false"</code>. If you are using the modals with the action buttons you will also need to set the actions of each button. See <a href="#actions">Action Buttons</a> above.</p>
@@ -684,7 +699,7 @@
     <p>
         <x-bladewind::button onclick="showModal('form-mode')" icon="lock" class="text-white">Edit Profile</x-bladewind::button>
     </p>
-    <x-bladewind::modal backdrop_can_close="false" name="form-mode" ok_button_action="saveProfile()" center_action_buttons="true" ok_button_label="Update" close_after_action="false">
+    <x-bladewind::modal backdrop_can_close="false" name="form-mode" ok_button_action="saveProfile()" ok_button_label="Update" close_after_action="false">
         <form method="get" action="" class="profile-form">
             @csrf
             <b>Edit Your Profile</b>
@@ -715,7 +730,7 @@
                 ok_button_action="saveProfile()"
                 ok_button_label="Update"
                 close_after_action="false"
-                center_action_buttons="true"&gt;
+                &gt;
 
                 &lt;form method="post" action="" class="profile-form"&gt;
                     @@csrf
@@ -767,7 +782,7 @@
     <p>
         <x-bladewind::button onclick="showModal('form-mode-ajax')" icon="lock" class="text-white">Edit Profile Ajax</x-bladewind::button>
     </p>
-    <x-bladewind::modal backdrop_can_close="false" name="form-mode-ajax" ok_button_action="saveProfileAjax()" center_action_buttons="true" ok_button_label="Update" close_after_action="false">
+    <x-bladewind::modal backdrop_can_close="false" name="form-mode-ajax" ok_button_action="saveProfileAjax()"  ok_button_label="Update" close_after_action="false">
         <form method="get" action="" class="profile-form-ajax">
             @csrf
             <b>Edit Your Profile</b>
@@ -823,7 +838,7 @@
         &lt;x-bladewind::modal
             backdrop_can_close="false"
             name="form-mode-ajax"
-            center_action_buttons="true"
+
             ok_button_action="saveProfileAjax()"
             ok_button_label="Update"
             close_after_action="false"&gt;
@@ -911,7 +926,7 @@
     <p>
         <x-bladewind::button onclick="showModal('form-mode-simple')">Edit Profile Simple</x-bladewind::button>
     </p>
-    <x-bladewind::modal backdrop_can_close="false" name="form-mode-simple" ok_button_label="" center_action_buttons="true">
+    <x-bladewind::modal backdrop_can_close="false" name="form-mode-simple" ok_button_label="" >
         <form method="get" action="" class="profile-form-simple" onsubmit="return saveProfileSimple()">
             @csrf
             <b>Edit Your Profile</b>
@@ -940,7 +955,7 @@
             backdrop_can_close="false"
             name="form-mode-simple"
             ok_button_label=""
-            center_action_buttons="true"&gt;
+            &gt;
 
             &lt;form method="get" action="" class="profile-form-simple"
                   onsubmit="return saveProfileSimple()"&gt;
@@ -1050,9 +1065,9 @@
             <td>Specify whether the action buttons should be displayed.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
-            <td>center_action_buttons</td>
-            <td>true</td>
-            <td>Specify whether the action buttons should be centered in the action bar.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>align_buttons</td>
+            <td>right</td>
+            <td>Specify how the action buttons should be aligned in the modal footer.<br> <code class="inline">left</code> <code class="inline">center</code> <code class="inline">right</code> </td>
         </tr>
         <tr>
             <td>stretch_action_buttons</td>
@@ -1099,7 +1114,7 @@
                 show_action_buttons="false"
                 show_close_icon="true"
                 blur_backdrop="false"
-                center_action_buttons="true"
+
                 size="medium"
                 class="shadow-sm"&gt;
                 ...
@@ -1135,6 +1150,7 @@
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-okay">No okay button</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-buttons">No buttons</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#btn-actions">Custom actions</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#alignment">Button alignment</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#cant-dismiss">Non-dismissible modal</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#forms">Form submissions</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#validate">Validate & submit</a></div>

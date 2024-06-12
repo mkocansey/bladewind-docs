@@ -287,7 +287,8 @@
         Bladewind expects you to have an HTML element on your page with <code class="inline">class="bw-code-timer-done"</code>.
         Ideally this should be hidden. The innerHTML (content) of that element is what will be displayed when the timer is done. This approach provides you the flexibility
         of handling your code resend anyway you want.
-    </p><br />
+    </p>
+    <br />
     <div class="bw-code-timer-done hidden">
         <x-bladewind::button name="send-code" size="tiny" type="secondary" has_spinner="true" onclick="sendNewCode()">
             send me another code
@@ -344,6 +345,11 @@
     &lt;/script&gt;
 </code>
 </pre>
+    <p>
+        Once the countdown is done, the content of your <code class="inline">bw-code-timer-done</code> DIV is copied into a DIV that can be accessed using the class <code class="inline">.bw-[name-of-code-field]-pin-timer .done</code>.
+        From our above example, our resend code content will be copied into a DIV accessible with <code class="inline">.bw-time_me-pin-timer .done</code>. That is how come our <code class="inline">showButtonSpinner()</code>
+        line was targeting the button at <code class="inline">.bw-time_me-pin-timer .done .send-code</code>.
+    </p>
     <h3 id="trigger-timer">Manually Trigger the Timer</h3>
     <p>
         There are cases where you may want to manually trigger the timer. For example, you first want the user to have at least entered the code wrongly once or twice before you trigger a countdown.

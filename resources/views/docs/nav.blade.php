@@ -18,6 +18,6 @@
     <div class="flex items-center extra-errors"><div class="dot"></div><a href="/extra/error-pages">Error Pages</a></div>
     <div class="flex items-center extra-helpers"><div class="dot"></div><a href="/extra/helper-functions">Helper Functions</a></div>
     <div class="flex items-center extra-layouts hidden"><div class="dot"></div><a href="/extra/app-layouts">App Layouts</a></div>
-    <div class="flex items-center roadmap"><div class="dot"></div><a href="/roadmap">Roadmap</a></div>
+    <div class="flex items-center roadmap"><div class="dot"></div><a href="https://github.com/users/mkocansey/projects/2/views/3" target="_blank">Roadmap</a></div>
     <div class="flex items-center contribute"><div class="dot"></div><a href="/contribute">Contribution Guide</a></div>
 </div>

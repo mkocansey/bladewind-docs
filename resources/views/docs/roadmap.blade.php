@@ -19,18 +19,6 @@
             </x-slot:content>
         </x-bladewind::timeline>
 
-        <x-bladewind::timeline date="2.5.x">
-            <x-slot:content>
-                <ul class="list-outside list-disc leading-8 ml-3 text-base">
-                    <li>Fix any issues from current release.</li>
-                    <li>Stacked <a href="/component/avatar">Avatars</a> should display number of pictures not displayed (eg. +22).</li>
-                    <li>User can define action buttons alignment for <a href="/component/modal">Modal</a> component</li>
-                    <li><a href="/component/tab">Tab</a> component headings should accept icons</li>
-                    <li>Refresh the <a href="/component/statistic">Statistics</a> component. Should allow stacking vertically and horizontally.</li>
-                </ul>
-            </x-slot:content>
-        </x-bladewind::timeline>
-
         <x-bladewind::timeline date="2.6.0">
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
@@ -121,9 +109,6 @@
     </x-bladewind.timeline-group>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#250">2.5.0</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#251">2.5.1</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#25x">2.5.x</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#260">2.6.0</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#26x">2.6.x</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#270">2.7.0</a></div>

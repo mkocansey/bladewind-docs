@@ -86,7 +86,7 @@
         This structure is all you need to render a BladewindUI select.
         The default array keys used to render the select are <code class="inline text-red-500">label</code> and <code class="inline text-red-500">value</code>.
     </p>
-    <p>
+    <p class="flex space-x-1">
         <x-bladewind::select name="country" :data="$countries" data="{{ json_encode($countries) }}" />
     </p>
     <pre class="language-markup line-numbers" data-line="3">
@@ -692,8 +692,8 @@
         </x-bladewind::select>
     </p>
     <div class="space-x-4 text-center">
-        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js::selectByValue('gh')">Select Ghana</x-bladewind::button>
-        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js::selectByValue('ng')">Select Nigeria</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.selectByValue('gh')">Select Ghana</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.selectByValue('ng')">Select Nigeria</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.disable()">Disable</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.reset()">Reset</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_from_js.enable()">Enable</x-bladewind::button>
@@ -707,8 +707,8 @@
         </x-bladewind::select>
     </p>
     <div class="space-x-4 text-center">
-        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js::selectByValue('gh')">Select Ghana</x-bladewind::button>
-        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js::selectByValue('ng')">Select Nigeria</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.selectByValue('gh')">Select Ghana</x-bladewind::button>
+        <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.selectByValue('ng')">Select Nigeria</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.disable()">Disable</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.reset()">Reset</x-bladewind::button>
         <x-bladewind::button size="small" type="secondary" onclick="bw_multiple_from_js.enable()">Enable</x-bladewind::button>
@@ -1215,6 +1215,14 @@
             <td>false</td>
             <td>Determines if script tags used within the component should have <code class="inline text-red-500">type="module"</code>. Useful sometimes when working with Vite js.
             <br/><code class="inline">true</code>  <code class="inline">true</code>
+            </td>
+        </tr>
+        <tr>
+            <td>size</td>
+            <td>medium</td>
+            <td>
+                Sizing of the select to match other input and button sizes.<br />
+                <code class="inline">small</code> <code class="inline">regular</code><code class="inline">medium</code> <code class="inline">big</code>
             </td>
         </tr>
     </x-bladewind::table>

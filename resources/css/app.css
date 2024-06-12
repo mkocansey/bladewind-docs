@@ -8,27 +8,29 @@
     * { scrollbar-width: thin; scrollbar-color: var(--secondary) var(--primary); }
     *::-webkit-scrollbar { @apply w-1 h-1 }
     *::-webkit-scrollbar-track {  @apply bg-slate-100/10 dark:bg-dark-700/5 }
-    *::-webkit-scrollbar-thumb { @apply bg-slate-200 dark:bg-dark-800 border-4 rounded-md }
+    *::-webkit-scrollbar-thumb { @apply bg-slate-200 dark:bg-dark-600/40 border-4 rounded-md }
     body { font-family: 'Inter', ui-sans-serif, system-ui,-apple-system,BlinkMacSystemFont,sans-serif !important; }
     .pre-font { font-family: 'Inconsolata','Source Code Pro', monospace !important; }
     nav a { @apply text-gray-700 hover:text-indigo-500 dark:text-dark-400 dark:hover:text-dark-300 text-sm font-light tracking-wide }
     /*nav div.flex { @apply hover:bg-gradient-to-r hover:from-indigo-50 hover:to-white hover:dark:from-dark-600 hover:dark:bg-dark-600 hover:text-indigo-500 }*/
-    .nav-heading { @apply font-semibold text-xs text-black tracking-wider uppercase px-6 pt-6 pb-0 sm:mr-4 dark:text-dark-600 dark:pb-3 }
+    .nav-heading { @apply font-semibold text-xs text-black tracking-wider uppercase px-6 pt-6 pb-0 sm:mr-4 dark:text-dark-200 }
     .dot { @apply border border-slate-300 inline-block h-2 w-2 rounded-full mr-2 ml-6 rtl:ml-2 }
     .active .dot { @apply border border-indigo-400 bg-indigo-400 }
     .active { @apply  border-l-2 border-l-indigo-600 bg-gradient-to-r from-indigo-50 to-white dark:from-dark-600 dark:bg-dark-600 }
     .active a { @apply text-indigo-500 py-1.5 dark:text-indigo-200 }
-    .page-title { @apply font-light tracking-wide text-3xl text-slate-800  mb-6 dark:text-slate-500 }
-    .content-area p { @apply leading-8 text-slate-600 dark:text-slate-400 mb-7 }
-    .content-area a { @apply text-indigo-500 hover:text-indigo-700 }
-    .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6 { @apply scroll-mt-24 font-light mb-4 mt-10 block tracking-wide }
-    h2 { @apply font-light text-2xl text-slate-600 dark:text-orange-400 pt-5 }
-    h3 { @apply text-xl text-slate-600 }
+    .page-title { @apply font-bold text-4xl text-slate-700  mb-9 dark:text-slate-300 }
+    .adoc p { @apply leading-8 text-slate-600 dark:text-slate-400 mb-7 }
+    .adoc a { @apply text-indigo-400 hover:underline }
+    .side-nav a { @apply text-indigo-500 hover:text-black }
+    .adoc h2, .adoc h3, .adoc h4, .adoc h5, .adoc h6 { @apply scroll-mt-24 font-bold mb-4 mt-10 block tracking-wide }
+    h2 { @apply !font-light text-2xl text-slate-600 dark:text-orange-400 pt-5 }
+    h3 { @apply text-xl text-slate-600 dark:text-orange-400 !font-light }
     .navigation a { @apply border-t border-slate-300 pt-4 block w-full pl-6 dark:border-gray-800 }
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
     pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-900 !py-4 !my-5 !text-sm }
-    code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 inline-block dark:bg-gray-700 }
+    code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 inline-block dark:bg-gray-800/50 }
+    code.text-red-500 { @apply dark:text-red-300 }
     .bw-alert code.inline { @apply  dark:text-gray-400 }
     .line-numbers { @apply !leading-7 }
     .line-numbers-rows { @apply !leading-[27px] }

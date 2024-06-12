@@ -1,15 +1,14 @@
 <x-app>
     <x-slot:title>Button Component</x-slot:title>
     <x-slot:page_title>Button</x-slot:page_title>
-
     <x-bladewind::alert type="warning" show_close_icon="false">
-        The primary and secondary colours for BladewindUI buttons is picked from what you define in your <code class="inline">tailwind.confis.js</code> file as <a href="/customize/colours">described here</a>.
+        The primary and secondary colours for BladewindUI buttons is picked from what you define in your <code class="inline">tailwind.config.js</code> file as <a href="/customize/colours">described here</a>.
         If you don't set this, your buttons will be transparent.
     </x-bladewind::alert>
-
+<x-bladewind::notification />
     <br />
     <p>
-        This documentation website has set the primary colour theme to <b>indigo</b> to match the website theme. All BladewindUI components will use this primary colour to maintain consistency.
+        This documentation website has set the primary colour theme to <b>indigo</b> so all BladewindUI components will use this primary colour to maintain consistency.
     </p>
 
     <div class="text-center p-4 space-y-2 space-x-4">
@@ -92,7 +91,7 @@
         The Bladewind button component provides a circular option that accepts ONLY icons. The <a href="/component/icon">Icon component page</a> describes how to use icon names.
         Just like the non-circular buttons, these can exist as primary or secondary and in all colour flavours.
     </p>
-    <div class="text-center space-y-4 space-x-4">
+    <div class="text-center space-x-4">
         <x-bladewind::button.circle icon="bell-alert" />
         <x-bladewind::button.circle outline="true" icon="bell-alert" />
     </div>
@@ -293,6 +292,24 @@
             &lt;x-bladewind::button&gt;default&lt;/x-bladewind::button&gt;
         </code>
     </pre>
+    <h4>Medium</h4>
+    <div class="text-center p-4 space-x-3 space-y-3">
+        <x-bladewind::button size="medium">medium</x-bladewind::button>
+        <x-bladewind::button size="medium" type="secondary">medium</x-bladewind::button>
+        <x-bladewind::button size="medium" outline>medium</x-bladewind::button>
+        <x-bladewind::button.circle size="medium" icon="bell-alert" />
+        <x-bladewind::button.circle size="medium" outline icon="bell-alert" />
+    </div>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind::button size="medium"&gt;medium&lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind::button.circle size="medium"&gt;medium&lt;/x-bladewind::button.circle&gt;
+        </code>
+    </pre>
     <h4>Big</h4>
     <div class="text-center p-4 space-x-3 space-y-3">
         <x-bladewind::button size="big">big</x-bladewind::button>
@@ -325,7 +342,9 @@
     </pre>
     <pre class="language-markup">
         <code>
+            &lt;!-- this is the default so radius="small" can be omitted -->
             &lt;x-bladewind::button radius="small">small&lt;/x-bladewind::button&gt;
+            &lt;x-bladewind::button>small&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <pre class="language-markup">
@@ -335,10 +354,7 @@
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;!-- this is the default so radius="full" can be omitted -->
             &lt;x-bladewind::button radius="full">full&lt;/x-bladewind::button&gt;
-
-            &lt;x-bladewind::button>full&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <div class="text-center p-4 space-x-3 space-y-3">
@@ -364,10 +380,7 @@
     </pre>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;!-- this is the default so radius="full" can be omitted -->
             &lt;x-bladewind::button type="secondary" radius="full">full&lt;/x-bladewind::button&gt;
-
-            &lt;x-bladewind::button type="secondary">full&lt;/x-bladewind::button&gt;
         </code>
     </pre>
     <h2 id="spinning">With Spinners</h2>
@@ -404,7 +417,7 @@
             &lt;x-bladewind::button
                 has_spinner="true"
                 name="save-user"
-                onclick="showButtonSpinner('.save-user .bw-spinner')"&gt;
+                onclick="showButtonSpinner('.save-user')"&gt;
                 Click for my spinner
             &lt;/x-bladewind::button&gt;
         </code>
@@ -419,10 +432,18 @@
     <br />
     <div class="text-center">
         <x-bladewind::button icon="arrow-path">Refresh page</x-bladewind::button>
+        <x-bladewind::button icon="arrow-path" icon_right="true">Refresh page</x-bladewind::button>
     </div>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::button icon="arrow-path"&gt;
+                Refresh Page
+            &lt;/x-bladewind::button&gt;
+        </code>
+    </pre>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::button icon="arrow-path" icon_right="true"&gt;
                 Refresh Page
             &lt;/x-bladewind::button&gt;
         </code>
@@ -528,6 +549,14 @@
         <div class="space-x-4">
             <x-bladewind::button.circle color="purple" icon="bell-alert" />
             <x-bladewind::button.circle color="purple" icon="bell-alert" outline />
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-5">
+        <x-bladewind::button color="gray">gray button</x-bladewind::button>
+        <x-bladewind::button color="gray" outline>gray outline</x-bladewind::button>
+        <div class="space-x-4">
+            <x-bladewind::button.circle color="gray" icon="bell-alert" />
+            <x-bladewind::button.circle color="gray" icon="bell-alert" outline />
         </div>
     </div>
     <div class="grid grid-cols-3 gap-4 mt-5">
@@ -638,12 +667,12 @@
         <tr>
             <td>type</td>
             <td>primary</td>
-            <td><code class="inline">primary</code> <code class="inline">secondary</code></td>
+            <td>Type of button to display. <br /><br /><code class="inline">primary</code> <code class="inline">secondary</code></td>
         </tr>
         <tr>
             <td>size</td>
             <td>regular</td>
-            <td><code class="inline">tiny</code> <code class="inline">small</code> <code class="inline">regular</code> <code class="inline">big</code></td>
+            <td>Specify the size of the button. These sizes match input field sizes to maintain consistency. <br /><br /><code class="inline">tiny</code> <code class="inline">small</code> <code class="inline">regular</code> <code class="inline">medium</code> <code class="inline">big</code></td>
         </tr>
         <tr>
             <td>name</td>
@@ -786,6 +815,10 @@
     <x-slot:scripts>
         <script>
             selectNavigationItem('.component-button');
+
+            paymentProcessed = (data) => {
+                console.log(data);
+            }
         </script>
     </x-slot:scripts>
 </x-app>

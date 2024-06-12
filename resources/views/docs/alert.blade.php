@@ -1,17 +1,18 @@
 <x-app>
     <x-slot:title>Alert Component</x-slot:title>
     <x-slot:page_title>Alert</x-slot:page_title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
     <p>
         The alert component is useful for displaying messages intended to get the attention of your end users.
         BladewindUI alerts are in two variants. Dark alerts and faint alerts. Dark here is not to be confused with dark mode.
         This just provides a darker shade of the colour used, depending on what type of alert is displayed.
     </p>
     <p>
-        BladewindUI alerts are displayed inline by default. You may want to check out the <a href="/component/notification">Notification</a> component if you want something more intrusive.
-        For each colour shade there are four prebuilt alert types, <code class="inline">info</code> <code class="inline">error</code> <code class="inline">warning</code> and <code class="inline">success</code>.
+        BladewindUI alerts are displayed inline by default. You may want to check out the <a href="/component/notification">Notification</a>
+        component if you want a more attention-seeking alert.
+        For each colour shade there are four prebuilt alert types: <code class="inline">info</code> <code class="inline">error</code> <code class="inline">warning</code> and <code class="inline">success</code>.
         These four prebuilt alerts are the commonly used types and come with their default icons. It is however, possible to use other <a href="#colours">colours</a> and <a href="#icons">icons</a> in your alerts.
     </p>
-
     <h2 id="faint">Faint Coloured Alerts</h2>
     <h3 class="!mt-4">Info</h3>
     <x-bladewind::alert class="mb-3">Your subscription is expiring in 19 days. <a href="#">Renew now</a></x-bladewind::alert>
@@ -143,8 +144,8 @@
     </pre>
     <h2 id="colours">More Colours</h2>
     <p>
-        Like most BladewindUI components, the Alert component can take on any of the <a href="/customize/colours">colours</a> defined in our palette. All colours work for both the
-        <code class="inline">dark</code> and <code class="inline">faint</code> shades
+        Like most BladewindUI components, the Alert component can be displayed in any of the <a href="/customize/colours">colours</a> defined in our <a href="/customize/colours">palette</a>. All colours work for both the
+        <code class="inline">dark</code> and <code class="inline">faint</code> shades.
     </p>
     <h3>Pink</h3>
     <x-bladewind::alert color="pink" >I am a pink alert. How do I look?</x-bladewind::alert>
@@ -303,7 +304,7 @@
     <h2 id="icons">Other Icons & Avatars</h2>
     <h3>Icons</h3>
     <p>
-        We saw earlier, the four prebuilt alerts had their corresponding icons. All other alerts do not have corresponding icons.
+        As seen above, the four prebuilt alerts (error, warning, info, success) have their corresponding icons. All other alerts do not have corresponding icons.
         You can display an icon by setting the <code class="inline text-red-500">icon</code> attribute to any of the icon names on <a href="https://heroicons.com" target="_blank">Heroicons</a>.
     </p>
 
@@ -432,28 +433,6 @@
         </x-bladewind::dropmenu>
     </div>
     </p>
-    <h2 id="customize-colours">Customizing Alert Colors</h2>
-    <p>
-        BladewindUI defines the colours used for the four prebuilt alert types in the <code class="inline">tailwind.config.js</code> file. The properties defined are specified below.
-        To change the colours you will need to define the corresponding <code class="inline">colors</code> key and colour values in your project's <code class="inline">tailwind.config.js</code>.
-    </p>
-    <pre class="line-numbers language-js">
-        <code>
-...
-  theme: {
-    extend: {
-      colors: {
-        ...
-        success: colors.emerald,
-        error: colors.red,
-        warning: colors.amber,
-        info: colors.blue
-      }
-    },
-  }
-...
-        </code>
-    </pre>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Alert component.</p>

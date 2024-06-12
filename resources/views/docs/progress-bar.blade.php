@@ -297,8 +297,8 @@
         </tr>
         <tr>
             <td>percentage_label_position</td>
-            <td>top left</td>
-            <td>Specifies the placement of the percentage label. <br /><code class="inline">top left</code> <code class="inline">top center</code> <code class="inline">top right</code> <code class="inline">bottom left</code> <code class="inline">bottom center</code> <code class="inline">bottom right</code></td>
+            <td>top-left</td>
+            <td>Specifies the placement of the percentage label. <br /><code class="inline">top-left</code> <code class="inline">top-center</code> <code class="inline">top-right</code> <code class="inline">bottom-left</code> <code class="inline">bottom-center</code> <code class="inline">bottom-right</code></td>
         </tr>
         <tr>
             <td>shade</td>
@@ -337,7 +337,7 @@
                 color = "red",
                 show_percentage_label = "false",
                 show_percentage_label_inline = "true",
-                percentage_label_position = "top left",
+                percentage_label_position = "top-left",
                 shade = "faint",
                 percentage_prefix = "uploading content: ",
                 percentage_suffix = "completed",
