@@ -161,6 +161,11 @@
             <td>Display a simple <a href="https://quilljs.com" target="_blank">Quill</a> toolbar on top of the textarea. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>except</td>
+            <td><em>blank</em></td>
+            <td>Define formatting options to exclude from the toolbar. Accepts a comma separated list of options.</td>
+        </tr>
+        <tr>
             <td>placeholder</td>
             <td><em>blank</em></td>
             <td>Placeholder text to display in the textarea element. </td>
@@ -168,7 +173,7 @@
         <tr>
             <td>rows</td>
             <td>3</td>
-            <td>Specifies the height of the textarea in rows. Can be any positive whole number. </td>
+            <td>Specifies the height of the textarea in rows. Can be any positive whole number. This is ignored when in toolbar mode.</td>
         </tr>
         <tr>
             <td>selected_value</td>
@@ -187,6 +192,7 @@
     add_clearing="false"
     required="true"
     toolbar="true"
+    except="align, bold, italic"
     show_error_inline="false"
     error_heading="Error"
     error_message="A comment is required"
