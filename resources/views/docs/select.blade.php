@@ -89,13 +89,13 @@
     <p class="flex space-x-1">
         <x-bladewind::select name="country" :data="$countries" data="{{ json_encode($countries) }}" />
     </p>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+&lt;x-bladewind::select
+    name="country"
+    :data="$countries" /&gt;
+</code>
+</pre>
 
     <p>
         <x-bladewind::alert show_close_icon="false">
@@ -103,29 +103,51 @@
         </x-bladewind::alert>
     </p>
 
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country"
-                data="&#123;&#123; json_encode($countries) }}" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::select
+        name="country"
+        data="&#123;&#123; json_encode($countries) }}" /&gt;
+</code>
+</pre>
 
     <h3 id="placeholder">Change Placeholder Text</h3>
     <p>
         <x-bladewind::select name="country2" placeholder="What is your nationality" :data="$countries" />
     </p>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country2"
-                placeholder="What is your nationality"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
-
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::select
+        name="country2"
+        placeholder="What is your nationality"
+        :data="$countries" /&gt;
+</code>
+</pre>
+    <h3 id="use-labels">Use labels instead of placeholders</h3>
     <p>
-        Of course it is not feasible to always rewrite your arrays to use the <code class="inline">value</code> and <code class="inline">label</code> keys expected by the component. There is a solution.
+        Placeholders in the Select component behave just like placeholders in input fields.
+        They tell the user what to enter into the field. Once the user enters a value, the placeholder is gone.
+        Labels on the other hand are always visible even after the user has selected a value from the Select component.
+        The BladewindUI Select defaults to using placeholders. To use labels, set the <code class="inline text-red-500">label</code> attribute.
+        When both a placeholder and label are defined, the label takes precedence.
+    </p>
+    <p><x-bladewind::select name="labels" :data="$countries" data="{{ json_encode($countries) }}" label="Where are you from?" required="true" /></p>
+<pre class="language-html line-numbers">
+<code>
+&lt;x-bladewind::select name="labels" required="true" :data="$countries"
+    label="WWhere are you from?"/&gt;
+</code>
+</pre>
+    <p><x-bladewind::select name="clear_labels" :data="$countries" data="{{ json_encode($countries) }}" clearable="true" label="Where are you from?" /></p>
+<pre class="language-html line-numbers">
+<code>
+&lt;x-bladewind::select name="clear_labels" label="WWhere are you from?"
+    :data="$countries" /&gt;
+</code>
+</pre>
+    <h3 id="keys">Setting the value and label keys</h3>
+    <p>
+        It is not feasible to always rewrite your arrays to use the <code class="inline">value</code> and <code class="inline">label</code> keys expected by the component. There is a solution.
         Assuming we changed our array to the structure below.
     </p>
 
@@ -147,28 +169,28 @@
         Using our array above we will end up with <code class="inline text-red-500">label_key="country"</code> and <code class="inline text-red-500">value_key="code"</code>.
     </p>
 
-    <pre class="language-markup line-numbers" data-line="3,4">
-        <code>
-            &lt;x-bladewind::select
-                name="country_mixed"
-                label_key="country"
-                value_key="code"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3,4">
+<code>
+    &lt;x-bladewind::select
+        name="country_mixed"
+        label_key="country"
+        value_key="code"
+        :data="$countries" /&gt;
+</code>
+</pre>
     <p>
         <x-bladewind::select name="country_mixed" label_key="country" value_key="code" data="{{json_encode($countries_mixed_keys)}}" />
     </p>
     <p>
         Just for some perspective, what we are trying to mimic here is the html implementation of a <code class="inline text-red-500">select</code> form element.
     </p>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;select name="country"...&gt;
-                &lt;option value="gh"&gt;Ghana&lt;/option&gt;
-            &lt;/select&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;select name="country"...&gt;
+        &lt;option value="gh"&gt;Ghana&lt;/option&gt;
+    &lt;/select&gt;
+</code>
+</pre>
 
     <h3 id="default">Selecting a Value By Default</h3>
     <p>
@@ -177,15 +199,15 @@
     <p>
         <x-bladewind::select name="country-select" placeholder="What is your nationality" data="{{json_encode($countries)}}" selected_value="gh" />
     </p>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country-select"
-                selected_value="gh"
-                placeholder="What is your nationality"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::select
+        name="country-select"
+        selected_value="gh"
+        placeholder="What is your nationality"
+        :data="$countries" /&gt;
+</code>
+</pre>
     <h3 id="required">Required Field</h3>
     <p>
         Setting a select as required appends a red asterisk to the placeholder text.
@@ -194,15 +216,15 @@
         <x-bladewind::select name="country-select2" placeholder="What is your nationality" required="true" data="{{json_encode($countries)}}" />
         <x-bladewind::button type="secondary" onclick="validateForm('.required-select')">Validate Field</x-bladewind::button>
     </div>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country-select2"
-                required="true"
-                placeholder="What is your nationality"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::select
+        name="country-select2"
+        required="true"
+        placeholder="What is your nationality"
+        :data="$countries" /&gt;
+</code>
+</pre>
     <h3 id="disabled">Disabled Select</h3>
     <p>
         A disabled select has a 50% opacity and a cursor indicating the field cannot be accessed.
@@ -396,19 +418,20 @@
         This will be a 2 finger scroll on Macs.
     </p>
     <p>
-        <x-bladewind::select name="country-multi" multiple="true" searchable="true" :data="$countries" flag_key="value" max-selectable="3" />
+        <x-bladewind::select name="country-multi" multiple="true" searchable="true" :data="$countries" flag_key="value" max-selectable="3" label="Select a country" />
     </p>
     <pre class="language-markup line-numbers" data-line="7">
         <code>
-            &lt;x-bladewind::select
-                name="country-multi"
-                searchable="true"
-                label_key="country"
-                value_key="code"
-                flag_key="code"
-                multiple="true"
-                max_selectable="3"
-                :data="$countries" /&gt;
+    &lt;x-bladewind::select
+        name="country-multi"
+        searchable="true"
+        label_key="country"
+        value_key="code"
+        flag_key="code"
+        multiple="true"
+        label="Select a country"
+        max_selectable="3"
+        :data="$countries" /&gt;
         </code>
     </pre>
     <p>
@@ -1111,6 +1134,11 @@
             <td>Default text displayed on the select</td>
         </tr>
         <tr>
+            <td>label</td>
+            <td>null</td>
+            <td>Text displayed on the select <strong>as a label</strong></td>
+        </tr>
+        <tr>
             <td>onselect</td>
             <td><em>blank</em></td>
             <td>Custom function to call when an item in the select is selected. <b>This should just be the name of the custom function, without parenthesis</b>. For example <code class="inline text-red-500">assignToProject</code>.
@@ -1279,6 +1307,7 @@
             &lt;x-bladewind::select
                 name="country"
                 placeholder="What is your nationality"
+                label="What is your nationality"
                 onselect="confirmSelection"
                 data="&#123;&#123; json_encode($countries)}} "
                 value_key="code"
@@ -1308,6 +1337,8 @@
 <x-slot:side_nav>
     <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#placeholder">Change placeholder text</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#use-labels">Using labels</a></div>
+    <div class="flex items-center pl-5"><div class="dot"></div><a href="#keys">Setting keys to display</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#default">Default values</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#required">Required field</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#disabled">Disabled</a></div>

@@ -14,7 +14,7 @@
         </code>
     </pre>
     <h3>Add Placeholder Text</h3>
-    <p><x-bladewind::textarea placeholder="Comment" /></p>
+    <p><x-bladewind::textarea placeholder="Comment" name="test"  /></p>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::textarea placeholder="Comment"  /&gt;
@@ -65,6 +65,48 @@
             &lt;/x-bladewind::textarea&gt;
         </code>
     </pre>
+    <h2 id="toolbar">Simple Toolbar</h2>
+    <p>
+        The textarea can display simple toolbar by setting <code class="inline text-red-500">toolbar="true"</code>.
+        The toolbar assets are include from the <a href="https://quilljs.com" target="_blank">Quill website</a>.
+    </p>
+    <p><x-bladewind::textarea placeholder="Comment" toolbar="true" /></p>
+
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::textarea
+        placeholder="Comment" toolbar="true"&gt;&lt;/x-bladewind::textarea&gt;
+</code>
+</pre>
+    <p>
+        The formatting options listed on the toolbar are
+        <code class="inline">bold</code>,
+        <code class="inline">italic</code>,
+        <code class="inline">underline</code>,
+        <code class="inline">align</code>,
+        <code class="inline">indent</code>,
+        <code class="inline">link</code>,
+        <code class="inline">color</code>,
+        <code class="inline">background</code>,
+        <code class="inline">list</code>,
+        <code class="inline">image</code>,
+        <code class="inline">blockquote</code>,
+        <code class="inline">code-block</code> and
+        <code class="inline">clean</code>. To remove some of the formatting options from the toolbar, set the
+        <code class="inline text-red-500">except</code> attribute and provide a comma separated list of the formatting
+        options to remove.
+    </p>
+    <p>
+        <x-bladewind::textarea
+            placeholder="Comment"
+            toolbar="true" except="align, indent, color, background" /></p>
+    <pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::textarea
+        except="align, indent, color, background"
+        placeholder="Comment" toolbar="true"&gt;&lt;/x-bladewind::textarea&gt;
+</code>
+</pre>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Textarea component.</p>
@@ -114,6 +156,11 @@
             <td>Specifies if an 8px margin should be added to the bottom of the element. This ensures your form fields are evenly spaced by default. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>toolbar</td>
+            <td>false</td>
+            <td>Display a simple <a href="https://quilljs.com" target="_blank">Quill</a> toolbar on top of the textarea. <br /><br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>placeholder</td>
             <td><em>blank</em></td>
             <td>Placeholder text to display in the textarea element. </td>
@@ -131,21 +178,22 @@
     </x-bladewind::table>
     <p>&nbsp;</p>
     <h3 class="pb-2 ">Textarea with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::textarea
-                name="message"
-                label="Enter message"
-                placeholder=""
-                add_clearing="false"
-                required="true"
-                show_error_inline="false"
-                error_heading="Error"
-                error_message="A comment is required"
-                rows="5"
-                selected_value="" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+&lt;x-bladewind::textarea
+    name="message"
+    label="Enter message"
+    placeholder=""
+    add_clearing="false"
+    required="true"
+    toolbar="true"
+    show_error_inline="false"
+    error_heading="Error"
+    error_message="A comment is required"
+    rows="5"
+    selected_value="" /&gt;&lt;/x-bladewind::textarea&gt;
+</code>
+</pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > textarea.blade.php</code>
@@ -153,6 +201,7 @@
     <p>&nbsp;</p>
 
     <x-slot:side_nav>
+        <div class="flex items-center"><div class="dot"></div><a href="#toolbar">Simple toolbar</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
