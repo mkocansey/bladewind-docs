@@ -71,9 +71,9 @@
     As stated earlier, the default colour used for the BladewindUI components is blue. If your primary theme is not blue, you can change this in a few steps. This assumes you have some basic knowledge of <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.</p>
 
     <p>Below if the tailwind.config.js file that ships with the library.</p>
-    <pre class="language-js line-numbers">
+<pre class="language-js line-numbers">
     <code>
-        // your-project/vendor/mkocansey/bladewind/tailwind.config.js
+// your-project/vendor/mkocansey/bladewind/tailwind.config.js
   theme: {
     extend: {
       colors: {
@@ -83,8 +83,8 @@
         green: colors.emerald,
       }
 },
-    </code>
-    </pre>
+</code>
+</pre>
 <p>
     If the default colours used in the library fit your project's colour theme you don't need to perform this next step. To change the colours used above, simply define overwriting values in your project's <code class="inline">tailwind.config.js</code>.
 </p>
@@ -119,6 +119,11 @@
         <a href="https://laravel.com/docs/11.x/vite" target="_blank">Refer to this article</a> if you are not familiar with compiling assets in Laravel.
     </p>
     <h2 id="debug">Debug Compilation Issues</h2>
+    <p>
+    <x-bladewind::alert show_close_icon="false">
+        Consider the information below if your styles don't seem to be compiling or components appear transparent.
+    </x-bladewind::alert>
+    </p>
     <p>
         As explained earlier, BladewindUI allows you to define your own colour theme in your project's <code class="inline">tailwind.config.js</code> file.
         The BladewindUI styles will get compiled once you build your assets. Since <a href="/install#publishing">publishing</a> the

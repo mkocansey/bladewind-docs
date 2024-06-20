@@ -1290,6 +1290,11 @@
             <td>Should the empty state component image be displayed.<br /> <code class="inline">true</code><code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>transparent</td>
+            <td>false</td>
+            <td>Should the empty table be transparent. ALl background colours are removed to enable the table sit well on any dark mode background colour.<br /> <code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>onclick</td>
             <td><em>blank</td>
             <td>Action to perform on the empty state component call to action button. Only used when displaying dynamic data.</td>
@@ -1306,6 +1311,7 @@
                 has_shadow="true"
                 has_border="true"
                 compact="true"
+                transparent="true"
                 searchable="false"
                 search_placeholder=""
                 name="staff-table"

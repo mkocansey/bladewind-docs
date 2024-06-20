@@ -64,6 +64,30 @@
         </code>
     </pre>
 <br />
+<p>
+The final step is to define your primary secondary and dark mode colours in your project's <code class="inline">tailwind.config.js</code> file.
+You can choose any of the  <a href="https://tailwindcss.com/docs/customizing-colors" target="_blank">TailwindCSS</a> colours as defined on their website. Also, read our docs on <a href="https://bladewindui.com/customize/colours">customizing colours</a>.
+</p>
+<pre class="language-js line-numbers">
+    <code>
+// your-project/tailwind.config.js
+...
+  theme: {
+    extend: {
+      colors: {
+        primary: colors.blue,
+        secondary: colors.slate,
+        dark: colors.gray,
+      }
+},
+...
+</code>
+</pre>
+<p>
+    <x-bladewind::alert show_close_icon="false">
+    Save your changes and generate your project's CSS as you normally would with Vite or Mix.
+    </x-bladewind::alert>
+</p>
 <br />
     <p>You are now ready to start using any of the BladewindUI components in your application</p>
 
