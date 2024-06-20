@@ -87,6 +87,7 @@
 </pre>
 <p>
     If the default colours used in the library fit your project's colour theme you don't need to perform this next step. To change the colours used above, simply define overwriting values in your project's <code class="inline">tailwind.config.js</code>.
+    This documentation website uses indigo as its primary colour.
 </p>
     <pre class="language-js line-numbers" data-line="5">
     <code>
