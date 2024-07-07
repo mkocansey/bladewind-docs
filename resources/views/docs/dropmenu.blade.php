@@ -634,6 +634,13 @@
         </code>
     </pre>
 
+    <p>
+        <x-bladewind::alert show_close_icon="false">
+            If you have multiple Dropmenus on your page and experience issues with only the first Dropmenu showing and
+            subsequent ones not showing, set modular="true" on the very first Dropmenu component on your page.
+        </x-bladewind::alert>
+    </p>
+
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Dropmenu component.</p>
     @include('docs/announcement')

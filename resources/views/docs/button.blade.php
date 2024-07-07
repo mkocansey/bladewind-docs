@@ -815,10 +815,6 @@
     <x-slot:scripts>
         <script>
             selectNavigationItem('.component-button');
-
-            paymentProcessed = (data) => {
-                console.log(data);
-            }
         </script>
     </x-slot:scripts>
 </x-app>

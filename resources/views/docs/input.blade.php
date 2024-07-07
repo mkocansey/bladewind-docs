@@ -7,7 +7,8 @@
         The default is <code class="inline text-red-500">input type="text"</code>. This Bladewind component simply wraps the HTML input so you are free to use all the various
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes" target="_blank">input attributes</a> available in HTML.
     </p>
-    <p><x-bladewind::input name="fnaln" /></p>
+    <p><x-bladewind::input name="fnaln" placeholder="name and age" /></p>
+
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::input  /&gt;

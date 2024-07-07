@@ -21,7 +21,7 @@
                 [ 'label' => 'Benin', 'value' => 'bj' ],
                 [ 'label' => 'Burkina Faso', 'value' => 'bf' ],
                 [ 'label' => 'Ghana', 'value' => 'gh' ],
-                [ 'label' => 'Nigeria', 'value' => 'ng' ],
+                [ 'label' => 'Nigeria & Naija', 'value' => 'ng' ],
                 [ 'label' => 'Kenya', 'value' => 'ke' ]
             ];
             $countries_mixed_keys = [

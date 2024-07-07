@@ -208,6 +208,11 @@
             <td>Should the static component be displayed with a shadow. <br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>has_border</td>
+            <td>true</td>
+            <td>Should the static component be displayed with a border. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>show_spinner</td>
             <td>false</td>
             <td>Should the static component be displayed with a <a href="/component/spinner">Spinner</a>. <br /><code class="inline">true</code> <code class="inline">false</code></td>
@@ -239,6 +244,7 @@
                 currency_position="right"
                 icon_position="right"
                 has_shadow="false"
+                has_border="false"
                 show_spinner="true"
                 class="m-0"&gt;
 
