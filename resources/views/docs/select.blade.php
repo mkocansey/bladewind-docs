@@ -246,7 +246,7 @@
         A readonly select is quite visible but cannot be opened to view the list of items.
     </p>
     <p>
-        <x-bladewind::select name="country-ro" placeholder="What is your nationality" readonly="true" data="{{json_encode($countries)}}" />
+        <x-bladewind::select name="country-ro" placeholder="What is your nationality" readonly="true" data="{{json_encode($countries)}}" selected-value="gh" />
     </p>
     <pre class="language-markup line-numbers" data-line="3">
         <code>

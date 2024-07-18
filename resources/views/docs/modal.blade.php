@@ -182,23 +182,30 @@
         </code>
     </pre>
 
-    <h3 id="no-backdrop">No Backdrop Blurring</h3>
+    <h2 id="blur-intensity">Backdrop Blur Intensity</h2>
     <p>
-        If you want the backdrop of the modals to be clear to reveal the content behind the modal you can set <code class="inline text-red-500">blur_backdrop="false"</code>.
+        The backdrop can be customized to have different intensities of the blur by specifying <code class="inline text-red-500">blur_size</code>.
+        The available values are <code class="inline">none</code>, <code class="inline">small</code>, <code class="inline">medium</code>, <code class="inline">large</code>, <code class="inline">xl</code>, <code class="inline">xxl</code>, <code class="inline">omg</code>.
     </p>
-    <p>
-        <x-bladewind::button onclick="showModal('noblur')">No Backdrop Blurring</x-bladewind::button>
-    </p>
+    <div class="space-y-2 space-x-2">
+        <x-bladewind::button onclick="showModal('noblur')">no blur</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('smallblur')">small blur</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('mediumblur')">medium blur</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('largeblur')">large blur</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('xlblur')">xl blur</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('xxlblur')">xxl blur</x-bladewind::button>
+        <x-bladewind::button onclick="showModal('omgblur')">omg blur</x-bladewind::button>
+    </div>
 
-    <pre class="language-markup line-numbers" data-line="6">
+    <pre class="language-markup line-numbers" data-line="7">
         <code>
             &lt;x-bladewind::button onclick="showModal('noblur')"&gt;
-                No Backdrop Blurring
+                No Blur
             &lt;/x-bladewind::button&gt;
 
            &lt;x-bladewind::modal
                 title="See Through Me"
-                blur_backdrop="true"
+                blur_size="none"
                 name="noblur"&gt;
                 The backdrop of this modal is not blurred.
                 You can see all the content behind the backdrop.
@@ -225,7 +232,31 @@
         Cool right?
     </x-bladewind::modal>
 
-    <x-bladewind::modal title="See Through Me" name="noblur" blur_backdrop="false">
+    <x-bladewind::modal title="See Through Me" name="noblur" blur_size="none">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="Small Blur" name="smallblur" blur_size="small">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="Medium Blur" name="mediumblur" blur_size="medium">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="Large Blur" name="largeblur" blur_size="large">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="XL Blur" name="xlblur" blur_size="xl">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="XXL Blur" name="xxlblur" blur_size="xxl">
+        The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
+    </x-bladewind::modal>
+
+    <x-bladewind::modal title="OMG Blur" name="omgblur" blur_size="omg">
         The backdrop of this modal is not blurred. You can see all the content behind the backdrop.
     </x-bladewind::modal>
 
@@ -1055,9 +1086,14 @@
             <td>Specify whether clicking on the modal backdrop should close the modal.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
-            <td>blur_backdrop</td>
-            <td>true</td>
-            <td>Specify whether the backdrop of the modal should be blurred.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>blur_size</td>
+            <td>medium</td>
+            <td>Specify the intensity of the backdrop blur.<br>
+                <code class="inline">none</code> <code class="inline">small</code>
+                <code class="inline">medium</code> <code class="inline">large</code>
+                <code class="inline">xl</code> <code class="inline">xxl</code>
+                <code class="inline">omg</code>
+            </td>
         </tr>
         <tr>
             <td>show_action_buttons</td>
@@ -1113,7 +1149,7 @@
                 backdrop_can_close="false"
                 show_action_buttons="false"
                 show_close_icon="true"
-                blur_backdrop="false"
+                blur_size="xxl"
 
                 size="medium"
                 class="shadow-sm"&gt;
@@ -1135,7 +1171,7 @@
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#warning">Warning</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#success">Success</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#stretched">Stretched buttons</a></div>
-        <div class="flex items-center pl-5"><div class="dot"></div><a href="#no-backdrop">No backdrop</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#blur-intensity">Backdrop Blur Intensity</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#icons">Other icons</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#sizes">Different sizes</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#tiny">Tiny</a></div>

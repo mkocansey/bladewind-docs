@@ -707,6 +707,13 @@
             <td>How should the menu items be positioned relative to the trigger. <br /><code class="inline">right</code> <code class="inline">left</code></td>
         </tr>
         <tr>
+            <td>padded</td>
+            <td>false</td>
+            <td>Should the container for the menu items be padded.
+                <br/><code class="inline">true</code>  <code class="inline">true</code>
+            </td>
+        </tr>
+        <tr>
             <td>modular</td>
             <td>false</td>
             <td>Determines if script tags used within the component should have <code class="inline text-red-500">type="module"</code>. Useful sometimes when working with Vite js.
@@ -757,6 +764,13 @@
             <td>Should this menu item change its background colour on mouseover.<br /> <code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>padded</td>
+            <td>false</td>
+            <td>Should the menu item be padded.
+                <br/><code class="inline">true</code>  <code class="inline">true</code>
+            </td>
+        </tr>
+        <tr>
             <td>class</td>
             <td><em>blank</em></td>
             <td>Additional css to add to the menu item.</td>
@@ -773,6 +787,7 @@
                 trigger_on="mouseover"
                 divided="true"
                 scrollable="true"
+                padded="true"
                 height="150"
                 hide_after_click="true"
                 position="left"
@@ -782,6 +797,7 @@
                     icon="pencil-square"
                     icon_css="text-red-400"
                     divider="false"
+                    padded="false"
                     header="false"
                     hover="false"
                     class="p-2"&gt;
