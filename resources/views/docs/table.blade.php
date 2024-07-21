@@ -782,8 +782,21 @@
         </code>
     </pre>
 
-
-
+<p>
+    <x-bladewind::alert show_close_icon="false">
+        If you want to by default select rows when your table loads, for example, in edit mode you want to display to the user the previous rows they selected.
+        Set the <code class="inline text-red-500">selected_value</code> attribute on the table. This accepts a comma separated list of IDs.
+    </x-bladewind::alert>
+</p>
+<pre class="language-html line-numbers" data-line="3">
+<code>
+&lt;x-bladewind::table selectable="true" divider="thin"
+    checkable="true"
+    selected_value="2,4,19,23"
+    name="office_supplies"&gt;
+    ...
+</code>
+</pre>
     <h2 id="dynamic">Display a Table From Dynamic Data</h2>
     <p>
         There is no point manually building a table tediously when you have an array that contains everything you want to display as a table.
@@ -1149,6 +1162,58 @@
         You can define <strong>selectable="true"</strong> and <strong>checkable="true"</strong> on dynamic tables. In this case, the "data-id" attribute
         of each row in the table is automatically set using the "id" value defined in the data array.
     </x-bladewind::alert>
+
+        @php
+            $staff = [
+                [ 'id' => 1, 'first_name' => 'Michael', 'last_name' => 'Ocansey',   'department' => 'Engineering', 'email' => 'mike@email.com' ],
+                [ 'id' => 2, 'first_name' => 'Alfred',  'last_name' => 'Rowe',     'department' => 'Engineering', 'email' => 'alfred@rowe.com' ],
+                [ 'id' => 3, 'first_name' => 'Abigail',   'last_name' => 'Edwin',    'department' => 'Engineering', 'email' => 'abi@edwin.com' ],
+                [ 'id' => 4, 'first_name' => 'John', 'last_name' => 'Doe',   'department' => 'Sales', 'email' => 'john@doe.com' ],
+                [ 'id' => 5, 'first_name' => 'Janet',  'last_name' => 'Doe',     'department' => 'Sales', 'email' => 'jane@email.com' ],
+                [ 'id' => 6, 'first_name' => 'Michael',   'last_name' => 'Sarpong',    'department' => 'Sales', 'email' => 'mike@sarpong.com' ],
+            ];
+        @endphp
+    <h3 id="groupby">Grouping Rows</h3>
+    <p>
+        Let's assume you have a table of employees and wish to group these employees by department, so all staff in Marketing will be under the marketing heading and so on.
+        This can be achieved by specifying the <code class="inline text-red-500">groupby</code> attribute on the table.
+        The value of <code class="inline text-red-500">groupby</code> will need to be any of the keys in your array .
+    </p>
+    <p>
+        From the employee example above, we will set our grouping on the <code class="inline">department</code> key which happens to be to repeated for our employees. <code class="inline text-red-500">groupby="department"</code>.
+    </p>
+
+<pre class="language-js line-numbers">
+<code>
+    $staff = [
+        [
+            'id' => 1,
+            'first_name' => 'Michael',
+            'last_name' => 'Ocansey',
+            'department' => 'Engineering',
+            'email' => 'mike@email.com'
+        ],
+    ]
+    ...
+</code>
+</pre>
+<pre class="language-markup line-numbers" data-line="4">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="id"
+        divider="thin"
+        groupby="department"
+        :data="$staff" /&gt;
+</code>
+</pre>
+    <x-bladewind::table
+        :data="$staff" divider="thin" :column_aliases="$column_aliases" groupby="department" />
+
+<br />
+    <x-bladewind::alert show_close_icon="false">
+        You can define <strong>selectable="true"</strong> and <strong>checkable="true"</strong> on dynamic tables. In this case, the "data-id" attribute
+        of each row in the table is automatically set using the "id" value defined in the data array.
+    </x-bladewind::alert>
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>
     @include('docs/announcement')
@@ -1266,7 +1331,7 @@
         </tr>
         <tr>
             <td>image</td>
-            <td>asset('vendor/bladewind/images/empty-state.svg')</td>
+            <td class="whitespace-nowrap">empty-state.svg</td>
             <td>Image to display in the empty state component when no dynamic data is available.</td>
         </tr>
         <tr>
@@ -1296,8 +1361,18 @@
         </tr>
         <tr>
             <td>onclick</td>
-            <td><em>blank</td>
+            <td><em>blank</em></td>
             <td>Action to perform on the empty state component call to action button. Only used when displaying dynamic data.</td>
+        </tr>
+        <tr>
+            <td>groupby</td>
+            <td><em>blank</em></td>
+            <td>Key of column to group rows by. The key needs to exist in the array you are displaying your data from. Works only for dynamic tables.</td>
+        </tr>
+        <tr>
+            <td>selected_value</td>
+            <td>null</td>
+            <td>Comma separated list of row IDs to select when the table is rendered.</td>
         </tr>
     </x-bladewind::table>
 
@@ -1326,6 +1401,8 @@
                 button_label="add staff member"
                 image="asset('images/no-data.png')"
                 heading="No Staff"
+                groupby="department"
+                selected_value="2,3,4"
                 onclick="alert('add a staff')"
                 hover_effect="true"&gt;
 
@@ -1363,6 +1440,7 @@
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#nodata">No data message</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#searchable">Searchable data</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#column-aliases">Column aliases</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#groupby">Group rows</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
     <x-slot name="scripts">

@@ -29,7 +29,7 @@
     .navigation div.dot { @apply hidden }
     .navigation h5 { @apply pl-6 }
     pre { @apply rounded-xl !bg-slate-700 dark:!bg-gray-800/70 dark:drop-shadow-lg !py-4 !my-5 !text-sm }
-    code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 inline-block dark:bg-gray-800/50 }
+    code.inline { @apply bg-gray-200/80 text-sm px-2 py-1 rounded-lg mb-1 mr-1 inline-block dark:bg-gray-800/50 }
     code.text-red-500 { @apply dark:text-red-300 }
     .bw-alert code.inline { @apply  dark:text-gray-400 }
     .line-numbers { @apply !leading-7 }
