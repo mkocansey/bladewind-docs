@@ -8,30 +8,31 @@
 
     <x-bladewind::checkbox  />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::checkbox  /&gt;
-        </code>
-    </pre>
+<pre class="language-markup">
+<code>
+    &lt;x-bladewind::checkbox  /&gt;
+</code>
+</pre>
+    <br />
 
     <x-bladewind::checkbox label="I agree to the terms and conditions"  />
 
-    <pre class="language-markup line-numbers">
+    <pre class="language-markup">
         <code>
-            &lt;x-bladewind::checkbox
-                label="I agree to the terms and conditions"  /&gt;
+            &lt;x-bladewind::checkbox label="I agree to the terms and conditions"  /&gt;
         </code>
     </pre>
 
+    <br />
     <x-bladewind::checkbox label="I agree to the &nbsp;<a href='/terms'>terms and conditions</a>"  />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::checkbox
-                label="I agree to the &lt;a href='/terms'&gt;terms and conditions&lt;/a&gt;"  /&gt;
-        </code>
-    </pre>
-
+<pre class="language-markup line-numbers">
+<code>
+&lt;x-bladewind::checkbox
+    label="I agree to the &lt;a href='/terms'&gt;terms and conditions&lt;/a&gt;"  /&gt;
+</code>
+</pre>
+<br />
     <x-bladewind::checkbox label="I am checked by default" checked="true"  />
     <pre class="language-markup line-numbers" data-line="3">
         <code>
@@ -42,7 +43,7 @@
         </code>
         </code>
     </pre>
-
+<br />
     <x-bladewind::checkbox label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
     <x-bladewind::checkbox label="I am checked and disabled" disabled="true" checked="true"  />
     <pre class="language-markup line-numbers" data-line="3">
@@ -124,6 +125,22 @@
                 color="blue"
                 checked="true"
                 label="I am a blue checkbox" /&gt;
+        </code>
+    </pre>
+    <h3>Checkboxes and forms</h3>
+    <p>
+        When using checkboxes with forms, it is always good practice to give the checkbox a name and value.
+        That way, when the form is submitted, the value of the checkbox can be retrieved from its name. It is important to
+        note that, in some cases, if the user does not select the checkbox, the name of the checkbox will be ignored completely from your payload.
+    </p>
+
+    <x-bladewind::checkbox name="notify_me" value="1" label="Send me weekly newsletters" />
+    <pre class="language-markup line-numbers">
+        <code>
+&lt;x-bladewind::checkbox
+            name="notify_me"
+            value="1"
+            label="Send me weekly newsletters" /&gt;
         </code>
     </pre>
 

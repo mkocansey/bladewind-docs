@@ -54,7 +54,7 @@
 
     <h2 id="coloured">Coloured Checkboxes</h2>
     <p>
-        Like most of the BladewindUI components, radio-buttones also come in nine colours to enable the components sit better in most designs with various colour schemes.
+        Like most of the BladewindUI components, radio-buttons also come in nine colours to enable the components sit better in most designs with various colour schemes.
     </p>
     <div class="grid grid-cols-3 gap-2">
         <x-bladewind::radio-button color="red" checked="true" label="I am a red radio-button" />
@@ -132,6 +132,23 @@
                 color="fuchsia"
                 checked="true"
                 label="I am a fuchsia radio-button" /&gt;
+        </code>
+    </pre>
+
+    <h3>Radio buttons and forms</h3>
+    <p>
+        When using radio buttons with forms, it is always good practice to give the radio button a name and value.
+        That way, when the form is submitted, the value of the radio button can be retrieved from its name. It is important to
+        note that, in some cases, if the user does not select the radio button, the name of the radio button will be ignored completely from your payload.
+    </p>
+
+    <x-bladewind::radio-button name="notify_me" value="1" label="Send me weekly newsletters" />
+    <pre class="language-markup line-numbers">
+        <code>
+&lt;x-bladewind::radio-button
+            name="notify_me"
+            value="1"
+            label="Send me weekly newsletters" /&gt;
         </code>
     </pre>
     <h2 id="attributes">Full List Of Attributes</h2>

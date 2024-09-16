@@ -8,6 +8,16 @@
         Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
     </p>
     <p>
+        <x-bladewind::alert show_close_icon="false" type="error">
+            This component requires the AlpineJS library to work. Ensure you include the script below if you don't have AlpineJS already in your project.
+        </x-bladewind::alert>
+    </p>
+    <pre class="lang-markup">
+        <code>
+            &lt;script src="//unpkg.com/alpinejs" defer&gt;&lt;/script&gt;
+        </code>
+    </pre>
+    <p>
         <x-bladewind::alert show_close_icon="false" type="info">
             This component builds on the code by <a href="https://tailwindcomponents.com/u/mithicher" target="_blank">mithicher</a> available <a href="https://tailwindcomponents.com/component/datepicker-with-tailwindcss-and-alpinejs" target="_blank">here</a>
         </x-bladewind::alert>
