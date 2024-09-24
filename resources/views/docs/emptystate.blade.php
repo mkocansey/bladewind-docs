@@ -24,8 +24,9 @@
         </code>
     </pre>
     <p>
-        The above example uses the default empty state image that comes bundled with BladewindUI. This image is available in the <code class="inline">public > bladewind > images > empty-state.svg</code> directory.
-        The default image is used if you leave out the <code class="inline text-red-500">image=""</code> attribute of the Empty State component.
+        The above example uses the default empty state image that comes bundled with BladewindUI. This image is available at <code class="inline">public > vendor > bladewind > images > empty-state.svg</code>.
+        The default image is used if you leave out the <code class="inline text-red-500">image</code> attribute of the Empty State component. You can use your own images by setting the
+        <code class="inline text-red-500">image</code> attribute. Bladewind searches for your file from the <code class="inline">public</code> directory.
     </p>
     <x-bladewind::empty-state
         message="You have not saved any gists to your GitHub account"
@@ -73,7 +74,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
         </svg>
-        <p>You have no biometric data available</p>
+        <div class="pb-3">You have no biometric data available</div>
         <x-bladewind::button color="red" size="small">
             Add biometric info
         </x-bladewind::button>
@@ -103,7 +104,7 @@
     <x-bladewind::card title="Recent Activities" css="w-3/4 mx-auto">
         <x-bladewind::empty-state
             image="/assets/images/no-activity.svg"
-            message="Your recent activites list will take shape as<br/> soon as your organization has some activty">
+            message="Your recent activities list will take shape as<br/> soon as your organization has some activity">
         </x-bladewind::empty-state>
     </x-bladewind::card>
 
@@ -168,7 +169,12 @@
         <tr>
             <td>class</td>
             <td>bw-empty-state</td>
-            <td>Any additonal css classes can be added using this attribute.</td>
+            <td>Any additional css classes can be added using this attribute.</td>
+        </tr>
+        <tr>
+            <td>image_css</td>
+            <td><em>blank</em></td>
+            <td>Any additional css classes to be applied to the image.</td>
         </tr>
     </x-bladewind::table>
 
@@ -182,6 +188,7 @@
                 image="/assets/images/empty-inbox.png"
                 show_image="true"
                 heading="Nothing to see here"
+                image_css="!h-32"
                 class="shadow-sm"&gt;
             &lt;/x-bladewind::empty-state&gt;
         </code>

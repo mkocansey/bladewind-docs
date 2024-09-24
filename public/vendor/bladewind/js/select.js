@@ -5,6 +5,7 @@ class BladewindSelect {
     searchInput;
     selectItems;
     isMultiple;
+    required;
     displayArea;
     formInput;
     maxSelection;
@@ -24,11 +25,13 @@ class BladewindSelect {
         this.searchInput = `${this.itemsContainer} .bw_search`;
         this.selectItems = `${this.itemsContainer} .bw-select-items .bw-select-item`;
         this.isMultiple = (dom_el(this.rootElement).getAttribute('data-multiple') === 'true');
+        this.required = (dom_el(this.rootElement).getAttribute('data-required') === 'true');
         this.formInput = `input.bw-${this.name}`;
         dom_el(this.displayArea).style.maxWidth = `${(dom_el(this.rootElement).offsetWidth - 40)}px`;
         this.maxSelection = -1;
-        this.canClear = false;
+        this.canClear = (!this.required && !this.isMultiple);
         this.enabled = true;
+        this.selectedItem = null;
     }
 
     activate = (options = {}) => {
@@ -40,11 +43,47 @@ class BladewindSelect {
             this.search();
             this.manualModePreSelection();
             this.selectItem();
+            this.enableKeyboardNavigation();
         } else {
             this.selectItem();
             this.enabled = false;
         }
     }
+
+    enableKeyboardNavigation = () => {
+        dom_el(this.rootElement).addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                unhide(this.itemsContainer);
+                dom_el(this.searchInput).focus()
+            }
+            if (e.key === "Tab") {
+                hide(this.itemsContainer);
+            }
+
+            if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+                e.preventDefault();
+                let els = [...dom_els(this.selectItems)].filter((el) => {
+                    if (el.classList.contains('hidden')) {
+                        return false;
+                    }
+
+                    return el.getAttribute('data-unselectable') === null;
+                });
+
+                if (!this.selectedItem) {
+                    this.selectedItem = e.key === 'ArrowDown' ? els[0] : els[els.length - 1];
+                } else {
+                    let idx = els.indexOf(this.selectedItem);
+
+                    this.selectedItem = e.key === 'ArrowDown' ? els[idx + 1] : els[idx - 1];
+                }
+                this.setValue(this.selectedItem);
+                this.callUserFunction(this.selectedItem);
+            }
+        });
+    }
+
 
     clearable = () => {
         this.canClear = true;
@@ -89,10 +128,13 @@ class BladewindSelect {
         dom_els(this.selectItems).forEach((el) => {
             let selected = (el.getAttribute('data-selected') !== null);
             if (selected) this.setValue(el);
-            el.addEventListener('click', () => {
-                this.setValue(el);
-                this.callUserFunction(el);
-            });
+            let isSelectable = (el.getAttribute('data-unselectable') === null);
+            if(isSelectable) {
+                el.addEventListener('click', () => {
+                    this.setValue(el);
+                    this.callUserFunction(el);
+                });
+            }
         });
     }
 
@@ -136,7 +178,7 @@ class BladewindSelect {
                         e.stopImmediatePropagation();
                     });
                 }
-            } /*else {
+            } else {
                 if (input.value.includes(this.selectedValue)) {
                     this.unsetValue(item);
                 } else {
@@ -151,7 +193,7 @@ class BladewindSelect {
                     this.moveLabel();
                 }
                 this.scrollbars();
-            }*/
+            }
             stripComma(input);
             changeCss(`${this.clickArea}`, '!border-red-400', 'remove');
         }
@@ -278,7 +320,7 @@ class BladewindSelect {
         if (user_function !== null && user_function !== undefined) {
             callUserFunction(
                 `${user_function}(
-                '${item.getAttribute('data-value')}', 
+                '${item.getAttribute('data-value')}',
                 '${item.getAttribute('data-label')}',
                 '${dom_el(this.formInput).value}')`
             );
