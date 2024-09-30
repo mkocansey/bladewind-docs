@@ -71,7 +71,7 @@
             &lt;x-bladewind::slider min="18" max="35" /&gt;
         </code>
     </pre>
-    <h2 id="form">Range Selection</h2>
+    <h2 id="range">Range Selection</h2>
     <p>
         There are cases where you need to let users select a minimum and maximum value. For example, a video streaming app may want to restrict
         content for kids between a range say 4 to 9. Setting the slider attribute <code class="inline text-red-500">range="true"</code> displays two
