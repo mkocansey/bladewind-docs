@@ -174,10 +174,10 @@
         </code>
     </pre>
     <h3 id="dark">Dark Colours</h3>
-    <p><x-bladewind::progress-bar percentage="10" color="red" shade="dark" /></p>
+    <p><x-bladewind::progress-bar percentage="50" color="red" shade="dark" /></p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind::progress-bar percentage="10" shade="dark" color="red" /&gt;
+                &lt;x-bladewind::progress-bar percentage="50" shade="dark" color="red" /&gt;
             </code>
         </pre>
     </p>
@@ -252,12 +252,32 @@
         </code>
     </pre>
     <div class="h-3"></div>
-    <x-bladewind::progress-bar percentage="90" shade="dark" />
+    <x-bladewind::progress-bar percentage="60" shade="dark" />
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::progress-bar percentage="90" shade="dark" /&gt;
         </code>
     </pre>
+    <h2 id="striped">Striped and Animated</h2>
+    <div class="h-3"></div>
+    <p><x-bladewind::progress-bar percentage="60" shade="dark" color="red" striped="true" /></p>
+    <pre class="language-markup">
+        <code>
+            &lt;x-bladewind::progress-bar percentage="60" shade="dark" color="red" striped="true" /&gt;
+        </code>
+    </pre>
+    <div class="h-3"></div>
+    <x-bladewind::progress-bar percentage="50" color="violet" shade="dark" animated="true" striped="true" />
+<pre class="language-markup line-numbers" data-line="5,6">
+<code>
+    &lt;x-bladewind::progress-bar
+        percentage="50"
+        shade="dark"
+        color="violet"
+        striped="true"
+        animated="true" /&gt;
+</code>
+</pre>
     {{-- <p>
     <h2>Dynamic Progression </h2>
     </p>
@@ -327,23 +347,35 @@
             <td>bw-progress-bar</td>
             <td>Any additional css you wish to add.</td>
         </tr>
+        <tr>
+            <td>striped</td>
+            <td>false</td>
+            <td>Determines if the progress bar should be striped. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>animated</td>
+            <td>false</td>
+            <td>Determines if the <b>striped</b> progress bar should be animated. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Progress Bar with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::progress-bar
-                percentage = "50"
-                color = "red",
-                show_percentage_label = "false",
-                show_percentage_label_inline = "true",
-                percentage_label_position = "top-left",
-                shade = "faint",
-                percentage_prefix = "uploading content: ",
-                percentage_suffix = "completed",
-                class="m-0" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+&lt;x-bladewind::progress-bar
+    percentage="50"
+    color="red"
+    show_percentage_label="false"
+    show_percentage_label_inline="true"
+    percentage_label_position="top-left"
+    shade="faint"
+    percentage_prefix="uploading content: "
+    percentage_suffix="completed"
+    striped="true"
+    animated="true"
+    class="m-0" /&gt;
+</code>
+</pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > progress-bar.blade.php</code>
@@ -353,6 +385,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#colours">Different colours</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#faint">Faint shade</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#dark">Darker shade</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#striped">Striped & animated</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 

@@ -39,10 +39,11 @@ class PagesController extends Controller
 
     public function progress_circle()       { return view('docs.progress-circle'); }
     public function pagination()            { return view('docs.pagination'); }
+    public function select()                { return view('docs.select'); }
+    public function slider()                { return view('docs.slider'); }
+    public function statistic()             { return view('docs.statistic'); }
     public function spinner()               { return view('docs.spinner'); }
 
-    public function select()                { return view('docs.select'); }
-    public function statistic()             { return view('docs.statistic'); }
     public function tag()                   { return view('docs.tag'); }
     public function tab()                   { return view('docs.tab'); }
     public function table()                 { return view('docs.table'); }

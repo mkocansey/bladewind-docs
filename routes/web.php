@@ -35,6 +35,7 @@ Route::get('component/radio-button',            [ PagesController::class, 'radio
 Route::get('component/rating',                  [ PagesController::class, 'rating' ]);
 Route::get('roadmap',                           [ PagesController::class, 'roadmap' ]);
 Route::get('component/select',                  [ PagesController::class, 'select' ]);
+Route::get('component/slider',                  [ PagesController::class, 'slider' ]);
 Route::get('component/spinner',                 [ PagesController::class, 'spinner' ]);
 Route::get('component/statistic',               [ PagesController::class, 'statistic' ]);
 Route::get('component/tab',                     [ PagesController::class, 'tab' ]);
