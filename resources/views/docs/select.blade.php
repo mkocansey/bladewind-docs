@@ -50,7 +50,7 @@
                 [
                     'id' => '1003',
                     'name' => 'Michael K. Ocansey',
-                    'picture' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7n9_1gR1PQc9MSg7ss7CSF2SV_Flmv11aDg&usqp=CAU',
+                    'picture' => 'https://gravatar.com/userimage/39184104/59e28edd323d0bca5bb9d125d564ae12.jpeg?size=256',
                 ],
                 [
                     'id' => '1004',

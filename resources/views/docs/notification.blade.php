@@ -73,7 +73,7 @@
         <x-bladewind::button
             onclick="showNotification(
                 'Delete Failed',
-                'Your message could not be deleted. Try again', 'error')">error</x-bladewind::button> &nbsp;
+                'Your message could not be deleted. Try again')">error</x-bladewind::button> &nbsp;
         <x-bladewind::button class="mt-2 sm:mt-0"
             onclick="showNotification(
                 'Low Disk Space',
@@ -124,6 +124,36 @@
             Multiple notifications can be triggered. In this case, they are displayed as a stack in chronological order. The latest notification is always on top.
         </x-bladewind::alert>
     </p>
+    <h3>Targeting Existing Notifications</h3>
+    <p>
+        By default, the BladewindUI notification components creates a new notification every time the <code class="inline">showNotification()</code> function is called.
+        Let's take for example, you have a file picker that triggers an error an time the user selects the wrong file type. Typically a notification takes 15 seconds to
+        be hidden. If your user selects the wrong file quickly 3 times, the same error message will be displayed three times. </p>
+    <p>To prevent that behaviour, you can
+        give the notification a <code class="inline">name</code>. BladewindUI will check if a notification with that name already exists. If it does, it will re-render the
+        existing notification. If it does not, it will create a new notification.
+    </p>
+    <p>
+        <x-bladewind::button
+            onclick="showNotification(
+                'Delete Failed',
+                'Your message could not be deleted. Try again', 'error', 15, 'regular', 'same_one')">Same Notification</x-bladewind::button> &nbsp;
+    </p>
+
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind.button
+                onclick="showNotification(
+                    'Delete Failed',
+                    'Your message could not be deleted. Try again',
+                    'error',
+                    15,
+                    'regular',
+                    'same_one')"&gt;
+                Same Notification
+            &lt;/x-bladewind.button&gt; &nbsp;
+        </code>
+    </pre>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Notification component.</p>
