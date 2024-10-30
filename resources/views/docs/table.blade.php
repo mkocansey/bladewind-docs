@@ -1115,7 +1115,7 @@
     </p>
     <x-bladewind::table searchable="true" search_placeholder="Find staff members by name..."
         :data="$staff" divider="thin" :action_icons="$action_icons"
-        exclude_columns="id, marital_status" />
+        exclude_columns="id, marital_status" include_columns="first_name, last_name, department" />
 
 <pre class="language-html line-numbers" data-line="2,5">
 <code>
