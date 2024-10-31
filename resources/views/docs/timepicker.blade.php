@@ -1,111 +1,91 @@
 <x-app>
     <x-slot name="title">Timepicker Component</x-slot>
     <h1 class="page-title">Timepicker</h1>
-    <div class="flex flex-col-reverse sm:flex-row">
-        <div class="grow sm:w-3/4">
             <p>
                 Display a timepicker.
             </p>
-            
-            <x-bladewind::timepicker  />
-            <div class="py-2"></div>
-            {{-- <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.timepicker  /&gt;
-                </code>
-            </pre>
-            <br/>
-            <p>
-                By default the timepicker fills up the width of its parent container. You can however specify a width of your choice using the timepicker's <code class="inline">css</code> attribute.
-            </p>
-            <p>You can also change the placeholder text from the default <code>Select a date</code>.</p>
-            <x-bladewind::timepicker 
-                css="!w-40" 
-                placeholder="Invoice Date"  />
-            <div class="py-2"></div>            
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.timepicker 
-                        css="!w-40" 
-                        placeholder="Invoice Date"  /&gt;
-                </code><a name="range"></a>
-            </pre>
-            <div class="pb-10"></div>
-            
-            <h2 class="pb-2 ">Range timepicker</h2>
-            <p>
-                This range timepicker isn't your typical date range selection. This option simply saves you from manually embedding the timepicker two times. 
-                Specifying <code class="inline text-red-500">type="range"</code> will create two separate timepicker boxes for start and end dates.
-            </p>
-            <x-bladewind::timepicker type="range"  />
+            <x-bladewind::timepicker name="event_time"  />
             <div class="py-2"></div>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker type="range"  /&gt;
+                    &lt;x-bladewind::timepicker  /&gt;
                 </code>
             </pre>
-            <div class="py-2"></div>
-            <br />
+            <h3>Time Formats</h3>
             <p>
-                The default placeholder texts for the range timepicker are <b>From</b> and <b>To</b>. These can however, be modified using the <code class="inline text-red-500">date_from_label</code> and <code class="inline text-red-500">date_to_label</code> attributes. These attributes only work if <code class="inline text-red-500">type="range"</code>.
+                By default the timepicker displays time in the 12 hour format. This format has hours from 1 to 12 and an AM/PM suffix.
+                To change this to a 24 hour format, set <code class="inline text-red-500">format="24"</code>. The 24 hour time format gets rid
+                of AM/PM suffix and displays the hours from 01 to 00. Note how the hours in 24 hour format are double digits.
             </p>
-            <x-bladewind::timepicker type="range" date_from_label="start date" date_to_label="end date"  />
-            <div class="py-2"></div>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind::timepicker 
-                        type="range" 
-                        date_from_label="start date" 
-                        date_to_label="end date" /&gt;
-                </code>
-            </pre>
 
-            <div class="pb-10"></div>
-            
-            <h3 class="pb-2 ">Show As a Required Field</h3>
+            <x-bladewind::timepicker format="24" />
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker format="24"  /&gt;
+                </code>
+            </pre>
+            <h3>Required Fields</h3>
             <p>An asterisk is appended to the placeholder text when <code class="inline text-red-500">required="true"</code>.</p>
-            <x-bladewind::timepicker css="!w-44" required="true"  />
-            
-            <div class="py-2"></div>
+            <x-bladewind::timepicker required="true"  />
+
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::timepicker required="true"  /&gt;
-                </code><a name="defaults"></a>
+                </code>
             </pre>
-            <br />
-            <div class="pb-10"></div>
-            
-            <h2 class="pb-2 ">With Default Values</h2>
+
+            <h3>Default Values</h3>
             <p>
-                There are times you will want the timepicker to load prepopulated with a default value. This is useful when in edit mode or when using filters and you want to show the user what dates they filtered by.
+                There are times you will want the timepicker to be prepopulated with a default time. This is useful when in edit mode.
+                To achieve this, set the <code class="text-red-500 inline">selected</code> attribute to the time you will like to display.
+                The format of the time you set will depend on the <code class="text-red-500 inline">format</code> defined on the timepicker.
             </p>
-            <x-bladewind::timepicker css="!w-44" default_date="2021-12-03"  />
-            <div class="py-2"></div>
+            <x-bladewind::timepicker selected="3:25pm"  />
+            <x-bladewind::timepicker required="true" selected="3:25pm"  />
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker default_date="2021-12-03"  /&gt;
+                    &lt;x-bladewind::timepicker selected="3:25pm"  /&gt;
+                </code>
+            </pre>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker required="true" selected="3:25pm"  /&gt;
                 </code>
             </pre>
             <br />
-            <p>
-                It is possible to have default dates for a range timepicker also.
-            </p>
-            <x-bladewind::timepicker type="range" default_date_from="2021-12-03" default_date_to="2022-01-03"  />
-            <div class="py-2"></div>
+            <x-bladewind::timepicker format="24" selected="03:25"  />
+            <x-bladewind::timepicker required="true" format="24" selected="03:25"  />
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker 
-                        type="range" 
-                        default_date_from="2021-12-03" 
-                        default_date_to="2022-01-03"  /&gt;
+                    &lt;x-bladewind::timepicker format="24" selected="03:25"  /&gt;
                 </code>
             </pre>
-            <div class="py-2"></div>
-            <br /> --}}
-            
-           <a name="attributes"></a>
-           <div>&nbsp;</div>
-           
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker required="true" format="24" selected="03:25"  /&gt;
+                </code>
+            </pre>
+
+        <h3>Form Values</h3>
+    <p>
+        Typically in a form, you should specify a name for your timepicker component. A default random name is generated if no name is specified.
+        The component is split into three form fields when using the 12 hour format and two form fields when using the 24 hour format. Let's assume in our
+        form the timepicker is named <code class="inline">event_time</code>. A hidden input is created with the name specified. In this case
+        <code class="inline">event_time</code>.
+    </p>
+    <p>
+        When your form is submitted, you will be able to retrieve the time as shown below.
+    </p>
+    <pre class="language-php line-numbers">
+        <code>
+            // if format="12" (default)
+            $request->event_time; // outputs 1:25PM
+
+            // if format="24"
+            $request->event_time; // outputs 01:25
+        </code>
+    </pre>
+
             <p>&nbsp;</p>
             <h2>Full List Of Attributes</h2>
             <p>The table below shows a comprehensive list of all the attributes available for the timepicker component.</p>
@@ -129,7 +109,7 @@
                 <tr>
                     <td>default_date</td>
                     <td><em>blank</em></td>
-                    <td>In case you are editing a form, the value passed will be set on the value attribute of the timepicker input. 
+                    <td>In case you are editing a form, the value passed will be set on the value attribute of the timepicker input.
                     <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
                 </tr>
                 <tr>
@@ -172,11 +152,11 @@
             <h3 class="pb-2 ">timepicker with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind.timepicker 
+                    &lt;x-bladewind.timepicker
                         name="invoice_date"
                         type="single"
                         required="false"
-                        placeholder="Invoice Date" 
+                        placeholder="Invoice Date"
                         date_from=""
                         date_to=""
                         default_date=""
@@ -184,35 +164,20 @@
                 </code>
             </pre>
 
-            <p>&nbsp;</p>
-            <x-bladewind::alert show_close_icon="false">
-                The source file for this component is available in <code class="inline">resources > views > components > bladewind > timepicker.blade.php</code>
-            </x-bladewind::alert><br/>
-            <x-bladewind::alert show_close_icon="false">
-                The source language (translation) files for this component are available in <code class="inline">lang/en/timepicker.php</code> and <code class="inline">lang/fr/timepicker.php</code>
-            </x-bladewind::alert><br />
-            <x-bladewind::alert show_close_icon="false">
-                The source javascript file for this component is available in <code class="inline">public/bladewind/js/timepicker.js</code>
-            </x-bladewind::alert>
-            <p>&nbsp;</p>
-
-        </div>
-        <div class="sm:w-1/4 grow-0 mb-8">
-            <nav class="sm:pl-8 sm:fixed sm:h-screen sm:overflow-y-scroll -mt-6">
-                <h5 class="mb-3 my-7 font-semibold text-slate-900 dark:text-slate-200">Sections</h5></li>
-                <div class="space-y-2">
-                    <div class="flex items-center"><div class="dot"></div><a href="#range">Range timepicker</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="#defaults">With default values</a></div>
-                    <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
-                </div>
-            </nav>
-        </div>
-    </div>
-
+    <p>&nbsp;</p>
+    <x-bladewind::alert show_close_icon="false">
+        The source file for this component is available in <code class="inline">resources > views > components > bladewind > timepicker.blade.php</code>
+    </x-bladewind::alert><br/>
+    <x-bladewind::alert show_close_icon="false">
+        The source language (translation) files for this component are available in <code class="inline">lang/[lang]/timepicker.php</code>
+    </x-bladewind::alert><br />
+    <p>&nbsp;</p>
+    <x-slot:side_nav>
+        <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
+    </x-slot:side_nav>
     <x-slot name="scripts">
-    
         <script>
-            selectNavigationItem('.component-timepicker');
+            selectNavigationItem('.component-theme-switcher');
         </script>
     </x-slot>
 </x-app>

@@ -540,7 +540,6 @@ const partition = (arr, fn) => {
  * @return {void}
  */
 var filterTable = (keyword, table, field, tableData) => {
-    console.log(JSON.stringify(tableData, null, 2));
     const [showList, hideList] = partition(tableData, (row) => {
         if (field) {
             return row[field].toLowerCase().match(keyword.toLowerCase());
@@ -550,14 +549,11 @@ var filterTable = (keyword, table, field, tableData) => {
     });
 
     hideList.forEach((row) => {
-        // console.log(domEl(`${table} tbody tr[data-id='${row.id}']`));
-        console.log(row.id, domEl(`${table} tbody tr[data-id='${row.id}']`));
         hide(domEl(`${table} tbody tr[data-id='${row.id}']`), true);
     });
     showList.forEach((row) => {
         const elem = domEl(`${table} tbody tr[data-id='${row.id}']`);
         if (elem) {
-            console.log('showlist', elem);
             unhide(elem, true);
         }
     });
@@ -573,7 +569,6 @@ var filterTable = (keyword, table, field, tableData) => {
  */
 let debounceTimerId;
 const filterTableDebounced = (keyword, table, field = null, delay = 0, minLength = 0, tableData = {}) => {
-    console.log(JSON.stringify(tableData, null, 2));
     if (keyword.length >= minLength) {
         return (...args) => {
             clearTimeout(debounceTimerId);
