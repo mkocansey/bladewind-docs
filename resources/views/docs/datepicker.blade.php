@@ -328,7 +328,7 @@
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > datepicker.blade.php</code>
     </x-bladewind::alert><br />
     <x-bladewind::alert show_close_icon="false">
-        The source language (translation) files for this component are available in <code class="inline">vendor/mkocansey/bladewind/lang/(ar|en|cn|de|fr|it)/datepicker.php</code>
+        The source language (translation) files for this component are available in <code class="inline">vendor/mkocansey/bladewind/lang/[lang]/datepicker.php</code>
     </x-bladewind::alert><br />
     <x-bladewind::alert show_close_icon="false">
         The source javascript file for this component is available in <code class="inline">public/vendor/bladewind/js/datepicker.js</code>
@@ -353,11 +353,6 @@
     <x-slot name="scripts">
         <script>
             selectNavigationItem('.component-datepicker');
-            // document.addEventListener('alpine:init', () => {
-            // document.addEventListener('DOMContentLoaded', () => {
-            // window.setTimeout(() =>{
-            //     setDatepickerValue('invoice_date_2', '2020-10-10');
-            // });
         </script>
     </x-slot>
 </x-app>

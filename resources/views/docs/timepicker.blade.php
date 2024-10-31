@@ -99,68 +99,51 @@
                 <tr>
                     <td>name</td>
                     <td>bw-timepicker</td>
-                    <td>This name can be accessed when the input is submitted in the form. The name is also available as part of the css classes.</td>
+                    <td>This name can be accessed when the input is submitted in the form.</td>
                 </tr>
                 <tr>
-                    <td>type</td>
-                    <td>single</td>
-                    <td><code class="inline">single</code> <code class="inline">range</code></td>
+                    <td>format</td>
+                    <td>12</td>
+                    <td>The format time should be displayed in. <code class="inline">12</code> <code class="inline">24</code></td>
                 </tr>
                 <tr>
-                    <td>default_date</td>
+                    <td>selected</td>
                     <td><em>blank</em></td>
-                    <td>In case you are editing a form, the value passed will be set on the value attribute of the timepicker input.
-                    <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
+                    <td>In edit mode, the value passed will be set as the default time.</td>
                 </tr>
                 <tr>
-                    <td>default_date_from</td>
-                    <td><em>blank</em></td>
-                    <td>Default date to set for the <em>From</em> date when using the range timepicker.</td>
+                    <td>hour_label</td>
+                    <td>HH</td>
+                    <td>Label to display for the hour dropdown.</td>
                 </tr>
                 <tr>
-                    <td>default_date_to</td>
-                    <td><em>blank</em></td>
-                    <td>Default date to set for the <em>To</em> date when using the range timepicker.</td>
+                    <td>minute_label</td>
+                    <td>MM</td>
+                    <td>Label to display for the minute dropdown.</td>
                 </tr>
                 <tr>
-                    <td>date_from_label</td>
-                    <td>From</td>
-                    <td>Placeholder text to display for the <code>From</code> date. Applicable only to range timepickers.</td>
-                </tr>
-                <tr>
-                    <td>date_to_label</td>
-                    <td>To</td>
-                    <td>Placeholder text to display for the <code>To</code> date. Applicable only to range timepickers.</td>
-                </tr>
-                <tr>
-                    <td>placeholder</td>
-                    <td>Select a date</td>
-                    <td>Placeholder text to display</td>
+                    <td>format_label</td>
+                    <td>--</td>
+                    <td>Label to display for the format dropdown.</td>
                 </tr>
                 <tr>
                     <td>required</td>
                     <td>false</td>
                     <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
-                <tr>
-                    <td>css</td>
-                    <td>bw-timepicker</td>
-                    <td>Any additonal css classes can be added using this attribute.</td>
-                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
-            <h3 class="pb-2 ">timepicker with all attributes defined</h3>
+            <h3 class="pb-2 ">Timepicker with all attributes defined</h3>
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind.timepicker
-                        name="invoice_date"
-                        type="single"
+                        name="start_time"
+                        format="24"
                         required="false"
-                        placeholder="Invoice Date"
-                        date_from=""
-                        date_to=""
-                        default_date=""
-                        css="shadow-sm" /&gt;
+                        hour_label="hh"
+                        minute_label="mm"
+                        format_label="AM/PM"
+                        selected="12:35AM" /&gt;
                 </code>
             </pre>
 
