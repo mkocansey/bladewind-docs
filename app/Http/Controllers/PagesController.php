@@ -33,7 +33,8 @@ class PagesController extends Controller
     public function radiobutton()           { return view('docs.radiobutton'); }
     public function rating()                { return view('docs.rating'); }
     public function modal()                 { return view('docs.modal'); }
-    public function notification()          { return view('docs.notification'); }
+    public function notification()           { return view('docs.notification'); }
+    public function number()                { return view('docs.number'); }
     public function process_indicator()     { return view('docs.process-indicator'); }
     public function progress_bar()          { return view('docs.progress-bar'); }
 

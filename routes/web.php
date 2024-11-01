@@ -26,7 +26,8 @@ Route::get('component/icon',                    [ PagesController::class, 'icon'
 Route::get('component/input',                   [ PagesController::class, 'input' ]);
 Route::get('component/list-view',               [ PagesController::class, 'list' ]);
 Route::get('component/modal',                   [ PagesController::class, 'modal' ]);
-Route::get('component/notification',            [ PagesController::class, 'notification' ]);
+Route::get('component/notification',             [ PagesController::class, 'notification' ]);
+Route::get('component/number',                  [ PagesController::class, 'number' ]);
 Route::get('component/process-indicator',       [ PagesController::class, 'process_indicator' ]);
 Route::get('component/progress-bar',            [ PagesController::class, 'progress_bar' ]);
 Route::get('component/progress-circle',         [ PagesController::class, 'progress_circle' ]);

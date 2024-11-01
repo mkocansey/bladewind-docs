@@ -867,6 +867,10 @@ button.bw-dropdown:focus{--tw-border-opacity:1;border-color:rgb(96 165 250 / var
 .size-\[18px\]{width:18px;height:18px;}
 .size-\[9px\]{width:9px;height:9px;}
 .size-3{width:0.75rem;height:0.75rem;}
+.\!size-8{width:2rem !important;height:2rem !important;}
+.size-9{width:2.25rem;height:2.25rem;}
+.size-4{width:1rem;height:1rem;}
+.\!size-12{width:3rem !important;height:3rem !important;}
 .\!h-14{height:3.5rem !important;}
 .\!h-2{height:0.5rem !important;}
 .\!h-24{height:6rem !important;}
@@ -926,6 +930,12 @@ button.bw-dropdown:focus{--tw-border-opacity:1;border-color:rgb(96 165 250 / var
 .\!w-32{width:8rem !important;}
 .w-\[100px\]{width:100px;}
 .w-\[105px\]{width:105px;}
+.w-40{width:10rem;}
+.w-44{width:11rem;}
+.w-48{width:12rem;}
+.w-52{width:13rem;}
+.w-64{width:16rem;}
+.w-56{width:14rem;}
 .min-w-28{min-width:7rem;}
 .min-w-full{min-width:100%;}
 .max-w-2xl{max-width:42rem;}
@@ -1167,6 +1177,7 @@ to{transform:rotate(360deg);}}
 .fill-slate-400{fill:#94a3b8;}
 .\!stroke-2{stroke-width:2 !important;}
 .stroke-2{stroke-width:2;}
+.\!stroke-1{stroke-width:1 !important;}
 .object-cover{-o-object-fit:cover;object-fit:cover;}
 .object-center{-o-object-position:center;object-position:center;}
 .\!p-0{padding:0px !important;}
@@ -1209,6 +1220,14 @@ to{transform:rotate(360deg);}}
 .px-3{padding-left:0.75rem;padding-right:0.75rem;}
 .py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem;}
 .\!px-2{padding-left:0.5rem !important;padding-right:0.5rem !important;}
+.\!py-2{padding-top:0.5rem !important;padding-bottom:0.5rem !important;}
+.\!py-1{padding-top:0.25rem !important;padding-bottom:0.25rem !important;}
+.\!py-1\.5{padding-top:0.375rem !important;padding-bottom:0.375rem !important;}
+.\!py-\[6px\]{padding-top:6px !important;padding-bottom:6px !important;}
+.\!py-\[5px\]{padding-top:5px !important;padding-bottom:5px !important;}
+.\!py-\[7px\]{padding-top:7px !important;padding-bottom:7px !important;}
+.\!py-\[8px\]{padding-top:8px !important;padding-bottom:8px !important;}
+.\!py-\[8\.5px\]{padding-top:8.5px !important;padding-bottom:8.5px !important;}
 .\!pb-0{padding-bottom:0px !important;}
 .\!pl-9{padding-left:2.25rem !important;}
 .\!pr-0{padding-right:0px !important;}
@@ -1274,10 +1293,12 @@ to{transform:rotate(360deg);}}
 .leading-5{line-height:1.25rem;}
 .leading-6{line-height:1.5rem;}
 .leading-8{line-height:2rem;}
+.leading-none{line-height:1;}
 .tracking-tighter{letter-spacing:-0.05em;}
 .tracking-wide{letter-spacing:0.025em;}
 .tracking-wider{letter-spacing:0.05em;}
 .tracking-widest{letter-spacing:0.1em;}
+.tracking-normal{letter-spacing:0em;}
 .\!text-gray-400{--tw-text-opacity:1 !important;color:rgb(156 163 175 / var(--tw-text-opacity)) !important;}
 .\!text-gray-600{--tw-text-opacity:1 !important;color:rgb(75 85 99 / var(--tw-text-opacity)) !important;}
 .\!text-red-400{--tw-text-opacity:1 !important;color:rgb(248 113 113 / var(--tw-text-opacity)) !important;}
@@ -1405,6 +1426,26 @@ to{transform:rotate(360deg);}}
 .duration-150{transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
 .ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
+.placeholder\:mx-auto::-moz-placeholder{margin-left:auto;margin-right:auto;}
+.placeholder\:mx-auto::placeholder{margin-left:auto;margin-right:auto;}
+.placeholder\:-mt-5::-moz-placeholder{margin-top:-1.25rem;}
+.placeholder\:-mt-5::placeholder{margin-top:-1.25rem;}
+.placeholder\:flex::-moz-placeholder{display:flex;}
+.placeholder\:flex::placeholder{display:flex;}
+.placeholder\:pb-10::-moz-placeholder{padding-bottom:2.5rem;}
+.placeholder\:pb-10::placeholder{padding-bottom:2.5rem;}
+.placeholder\:align-middle::-moz-placeholder{vertical-align:middle;}
+.placeholder\:align-middle::placeholder{vertical-align:middle;}
+.placeholder\:text-sm::-moz-placeholder{font-size:0.875rem;line-height:1.25rem;}
+.placeholder\:text-sm::placeholder{font-size:0.875rem;line-height:1.25rem;}
+.placeholder\:text-base::-moz-placeholder{font-size:1rem;line-height:1.5rem;}
+.placeholder\:text-base::placeholder{font-size:1rem;line-height:1.5rem;}
+.placeholder\:text-xs::-moz-placeholder{font-size:0.75rem;line-height:1rem;}
+.placeholder\:text-xs::placeholder{font-size:0.75rem;line-height:1rem;}
+.placeholder\:font-normal::-moz-placeholder{font-weight:400;}
+.placeholder\:font-normal::placeholder{font-weight:400;}
+.placeholder\:leading-7::-moz-placeholder{line-height:1.75rem;}
+.placeholder\:leading-7::placeholder{line-height:1.75rem;}
 .after\:h-5::after{content:var(--tw-content);height:1.25rem;}
 .after\:h-8::after{content:var(--tw-content);height:2rem;}
 .after\:w-5::after{content:var(--tw-content);width:1.25rem;}

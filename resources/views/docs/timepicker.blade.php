@@ -145,7 +145,7 @@
                     <td>The format time should be displayed in. <code class="inline">12</code> <code class="inline">24</code></td>
                 </tr>
                 <tr>
-                    <td>selected</td>
+                    <td>selected_value</td>
                     <td><em>blank</em></td>
                     <td>In edit mode, the value passed will be set as the default time.</td>
                 </tr>
@@ -199,7 +199,7 @@
     placeholder="Start Time"
     label="Start Time"
     style="inline"
-    selected="12:35AM" /&gt;
+    selected_value="12:35AM" /&gt;
 </code>
 </pre>
 

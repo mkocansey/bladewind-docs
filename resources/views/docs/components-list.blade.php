@@ -19,6 +19,7 @@
 <div class="{{ $css }} component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
 <div class="{{ $css }} component-modal"><div class="dot"></div><a href="/component/modal">Modal</a></div>
 <div class="{{ $css }} component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>
+<div class="{{ $css }} component-number"><div class="dot"></div><a href="/component/number">Number</a></div>
 {{--<div class="{{ $css }} component-pagination hidden"><div class="dot"></div><a href="/component/pagination" class="opacity-40">Pagination</a></div>--}}
 <div class="{{ $css }} component-process-indicator"><div class="dot"></div><a href="/component/process-indicator">Process Indicator</a></div>
 <div class="{{ $css }} component-progress-bar"><div class="dot"></div><a href="/component/progress-bar">Progress Bar</a></div>
