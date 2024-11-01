@@ -2,15 +2,23 @@
     <x-slot name="title">Timepicker Component</x-slot>
     <h1 class="page-title">Timepicker</h1>
             <p>
-                Display a timepicker.
+                Display a timepicker. There are two styles to choose from. Popup and inline. The default is popup.
             </p>
-            <x-bladewind::timepicker name="event_time"  />
-            <div class="py-2"></div>
+
+            <x-bladewind::timepicker   />
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::timepicker  /&gt;
                 </code>
             </pre>
+            <br />
+            <x-bladewind::timepicker style="inline"  />
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker style="inline"  /&gt;
+                </code>
+            </pre>
+
             <h3>Time Formats</h3>
             <p>
                 By default the timepicker displays time in the 12 hour format. This format has hours from 1 to 12 and an AM/PM suffix.
@@ -24,13 +32,33 @@
                     &lt;x-bladewind::timepicker format="24"  /&gt;
                 </code>
             </pre>
+            <br />
+            <x-bladewind::timepicker style="inline" format="24" />
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker style="inline" format="24"  /&gt;
+                </code>
+            </pre>
             <h3>Required Fields</h3>
             <p>An asterisk is appended to the placeholder text when <code class="inline text-red-500">required="true"</code>.</p>
-            <x-bladewind::timepicker required="true"  />
 
+            <x-bladewind::timepicker required="true"  /> &nbsp;&nbsp;&nbsp;
+            <x-bladewind::timepicker label="HH:MM" required="true"  />
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::timepicker required="true"  /&gt;
+                </code>
+            </pre>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker label="HH:MM" required="true"  /&gt;
+                </code>
+            </pre>
+    <br />
+            <x-bladewind::timepicker style="inline" required="true"  />
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::timepicker style="inline" required="true"  /&gt;
                 </code>
             </pre>
 
@@ -40,37 +68,47 @@
                 To achieve this, set the <code class="text-red-500 inline">selected</code> attribute to the time you will like to display.
                 The format of the time you set will depend on the <code class="text-red-500 inline">format</code> defined on the timepicker.
             </p>
-            <x-bladewind::timepicker selected="3:25pm"  />
-            <x-bladewind::timepicker required="true" selected="3:25pm"  />
+            <x-bladewind::timepicker selected_value="3:25PM"  />
+            <x-bladewind::timepicker selected_value="03:25" format="24" />
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker selected="3:25pm"  /&gt;
+                    &lt;x-bladewind::timepicker selected_value="3:25PM"  /&gt;
                 </code>
             </pre>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker required="true" selected="3:25pm"  /&gt;
+                    &lt;x-bladewind::timepicker selected_value="03:25" format="24" /&gt;
                 </code>
             </pre>
             <br />
-            <x-bladewind::timepicker format="24" selected="03:25"  />
-            <x-bladewind::timepicker required="true" format="24" selected="03:25"  />
+            <x-bladewind::timepicker style="inline" selected_value="3:25PM"  />
+            <x-bladewind::timepicker style="inline" format="24" selected_value="03:25"  />
+            <x-bladewind::timepicker required="true" style="inline" format="24" selected_value="03:25"  />
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker format="24" selected="03:25"  /&gt;
+                    &lt;x-bladewind::timepicker style="inline" selected_value="3:25PM"  /&gt;
                 </code>
             </pre>
             <pre class="language-markup line-numbers">
                 <code>
-                    &lt;x-bladewind::timepicker required="true" format="24" selected="03:25"  /&gt;
+                    &lt;x-bladewind::timepicker style="inline" format="24" selected_value="03:25"  /&gt;
                 </code>
             </pre>
+<pre class="language-markup line-numbers">
+<code>
+&lt;x-bladewind::timepicker
+    required="true"
+    style="inline"
+    format="24"
+    selected_value="03:25"  /&gt;
+</code>
+</pre>
 
         <h3>Form Values</h3>
     <p>
-        Typically in a form, you should specify a name for your timepicker component. A default random name is generated if no name is specified.
-        The component is split into three form fields when using the 12 hour format and two form fields when using the 24 hour format. Let's assume in our
-        form the timepicker is named <code class="inline">event_time</code>. A hidden input is created with the name specified. In this case
+        Typically in a form, you should specify a <code class="inline">name</code> for your timepicker component. A default random name is generated if no name is specified.
+        Let's assume in our
+        form the timepicker is named <code class="inline">event_time</code>. An input is created with the name specified. In this case
         <code class="inline">event_time</code>.
     </p>
     <p>
@@ -124,7 +162,22 @@
                 <tr>
                     <td>format_label</td>
                     <td>--</td>
-                    <td>Label to display for the format dropdown.</td>
+                    <td>This applies only if using the inline timepicker. Label to display for the time format dropdown.</td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td>HH:MM</td>
+                    <td>This applies only if using the popup style. Placeholder to display in the input field.</td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td><em>blank</em></td>
+                    <td>This applies only if using the popup style. Label to display in the input field. The label behaves just like in the BladewindUI <a href="/component/input">Input component</a></td>
+                </tr>
+                <tr>
+                    <td>style</td>
+                    <td>popup</td>
+                    <td>Determines how to display the timepicker.<br> <code class="inline">popup</code> <code class="inline">inline</code> </td>
                 </tr>
                 <tr>
                     <td>required</td>
@@ -134,18 +187,21 @@
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Timepicker with all attributes defined</h3>
-            <pre class="language-markup line-numbers">
-                <code>
-                    &lt;x-bladewind.timepicker
-                        name="start_time"
-                        format="24"
-                        required="false"
-                        hour_label="hh"
-                        minute_label="mm"
-                        format_label="AM/PM"
-                        selected="12:35AM" /&gt;
-                </code>
-            </pre>
+<pre class="language-markup line-numbers">
+<code>
+&lt;x-bladewind.timepicker
+    name="start_time"
+    format="24"
+    required="false"
+    hour_label="hh"
+    minute_label="mm"
+    format_label="AM/PM"
+    placeholder="Start Time"
+    label="Start Time"
+    style="inline"
+    selected="12:35AM" /&gt;
+</code>
+</pre>
 
     <p>&nbsp;</p>
     <x-bladewind::alert show_close_icon="false">
