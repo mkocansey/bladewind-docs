@@ -7,6 +7,7 @@ Route::get('install',                           [ PagesController::class, 'insta
 Route::get('customize',                         [ PagesController::class, 'customize' ]);
 Route::get('customize/colours',                 [ PagesController::class, 'colours' ]);
 Route::get('customize/darkmode',                [ PagesController::class, 'darkmode' ]);
+Route::get('component/accordion',               [ PagesController::class, 'accordion' ]);
 Route::get('component/alert',                   [ PagesController::class, 'alert' ]);
 Route::get('component/avatar',                  [ PagesController::class, 'avatar' ]);
 Route::get('component/bell',                    [ PagesController::class, 'bell' ]);

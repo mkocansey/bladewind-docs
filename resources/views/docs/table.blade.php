@@ -6,6 +6,9 @@
     <p>Display tabular data beautifully in a simple way. </p>
     <p>This component like all other BladewindUI components is simple to use with a few options to customise the component to suit your app needs. A BladewindUI table consists of two parts. The table header and the table body. </p>
 
+    @php
+        $users = include resource_path('views/docs/users.php');
+    @endphp
     <p>
         <x-bladewind::table>
             <x-slot name="header">
@@ -1214,6 +1217,274 @@
         You can define <strong>selectable="true"</strong> and <strong>checkable="true"</strong> on dynamic tables. In this case, the "data-id" attribute
         of each row in the table is automatically set using the "id" value defined in the data array.
     </x-bladewind::alert>
+    <h2 id="sorting">Sorting</h2>
+    <p>
+        A BladewindUI table that accepts dynamic data can become sortable by setting <code class="inline text-red-500">sortable="true"</code>. Automatically, all columns in the table
+        can be clicked on to sort the table. Each sortable column has a filter icon next to the column heading.
+    </p>
+    <x-bladewind::table :data="$users" exclude_columns="member_id,email" :sortable="true" :limit="5" />
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="member_id, email"
+        sortable="true"
+        limit="5"
+        :data="$users" /&gt;
+</code>
+</pre>
+    <p>
+        From the above table you can see every column in the table has a filter icon next to the column heading indicating that the column is sortable.
+        There are cases you will want to sort your table using only very specific columns. This can be achieved by setting the <code class="inline text-red-500">sortable_columns</code> attribute to a comma separated list of
+        columns you want to make sortable.
+    </p>
+    <x-bladewind::table :data="$users" exclude_columns="member_id,email" :sortable="true" :limit="5" sortable_columns="first_name, last_name" />
+<pre class="language-markup line-numbers" data-line="3,5">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="member_id, email"
+        sortable="true"
+        limit="5"
+        sortable_columns="first_name, last_name"
+        :data="$users" /&gt;
+</code>
+</pre>
+    <h2 id="pagination">Pagination</h2>
+    <p>
+        Pagination is useful for displaying a long list of data in sizable chunks that make it easy to look over the data.
+        The BladewindUI table can be paginated when dealing with dynamic data by setting <code class="inline text-red-500">paginated="true"</code>.
+        This will display pagination controls at the end of the table. Multiple tables on the same page can be paginated. The
+        <code class="inline text-red-500">page_size</code> attribute determines how many rows are displayed per page. The default value is 25.
+    </p>
+    <p>
+        For convenience, paginated tables can display row numbers to make it easy to validate row counts. This is not enabled by default.
+        To turn on row numbers set <code class="inline text-red-500">show_row_numbers="true"</code>.
+    </p>
+    <x-bladewind::table :data="$users" exclude_columns="member_id,email" :paginated="true" :page_size="5" :show_row_numbers="true" />
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="member_id, email"
+        paginated="true"
+        page_size="5"
+        show_row_numbers="true"
+        :data="$users" /&gt;
+</code>
+</pre>
+<x-bladewind::alert show_close_icon="true">When using <code class="inline text-red-500">show_row_numbers="true"</code> and <code class="inline text-red-500">sortable="true"</code>,
+    it is important to note that the row numbering is not reordered to match the sorted data. Row numbers 1, 2, 3, 4 might end up as 4, 1, 2, 3</x-bladewind::alert>
+    <br />
+<p>
+    You may not always want to start displaying your table rows from page 1. Maybe, the user bookmarked a record that is on page 6 and you want to jump to that on page load.
+    This can be achieved by setting the <code class="inline text-red-500">default_page</code> attribute. The value of <code class="inline text-red-500">default_page</code> is
+    set to 1 if the value provided is greater than the <code class="inline">total_pages</code>.
+</p>
+<x-bladewind::table :data="$users" exclude_columns="member_id,email" :paginated="true" :page_size="5" :show_row_numbers="true" default_page="15" />
+<pre class="language-markup line-numbers" data-line="3,6">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="member_id, email"
+        paginated="true"
+        page_size="5"
+        show_row_numbers="true"
+        default_page="15"
+        :data="$users" /&gt;
+</code>
+</pre>
+    <h2 id="custom-layout">Custom Table Layouts</h2>
+    <p>
+        Pagination is automagically applied to a BladewindUI table that accepts dynamic data. By default the table layout is flat. Every key in the array/data is created as a column.
+        Sometimes you may want to have a custom table layout that merges various columns into one but you still want to enjoy the library's pagination.
+        Still set <code class="inline text-red-500">paginated="true"</code> and <code class="inline text-red-500">:data="$your_data"</code> but, in this case you will be responsible for manually setting up a few things on the data rows.
+        You will also need to include the pagination component manually. You will also need to set <code class="inline text-red-500">layout="custom"</code>
+    </p>
+<x-bladewind::table :paginated="true" :page_size="$page_size = 5" :default_page="$default_page = 6" :show_row_numbers="true" :data="$users" layout="custom">
+    <x-slot:header>
+        <th>Member ID</th>
+        <th>User Details</th>
+        <th>Contact Details</th>
+    </x-slot:header>
+    <tbody>
+        @foreach($users as $user)
+            @php
+                // set avatar url
+                $image = ($loop->even) ? 'male.png' : 'female.png';
+            @endphp
+            <tr {{pagination_row($loop->iteration, $page_size, $default_page)}}>
+                <td class="!w-1 !pr-0"><div class="pt-3">{{$user['member_id']}}</div> </td>
+                <td>
+                    <div class="flex space-x-3">
+                        <div><x-bladewind::avatar image="/assets/images/{{$image}}" size="small" /></div>
+                        <div>
+                            <div class="text-base font-semibold">{{$user['first_name']}} {{$user['last_name']}}</div>
+                            <div>{{$user['company_name']}}</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>{{$user['mobile']}} <x-bladewind::icon name="chat-bubble-left-ellipsis" class="!size-4" /></div>
+                    <div><a href="#">{{$user['email']}}</a></div>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</x-bladewind::table>
+<pre class="language-markup line-numbers" data-line="2,4,6,22">
+<code>
+&lt;x-bladewind::table
+    layout="custom"
+    :paginated="true"
+    :page_size="$page_size = 5"
+    :data="$users"
+    :default_page="$default_page = 6"&gt;
+
+    &lt;x-slot:header&gt;
+        &lt;th&gt;Member ID&lt;/th&gt;
+        &lt;th&gt;User Details&lt;/th&gt;
+        &lt;th&gt;Contact Details&lt;/th&gt;
+    &lt;/x-slot:header&gt;
+
+    &lt;tbody&gt;
+    @verbatim
+        @foreach($users as $user)
+            @php
+                // set avatar url
+                $image = ($loop->even) ? 'male.png' : 'female.png';
+            @endphp
+            &lt;tr {{pagination_row($loop->iteration, $page_size, $default_page)}} &gt;
+                &lt;td class="!w-1 !pr-0"&gt;&lt;div class="pt-3"&gt;{{$user['member_id']}}&lt;/div&gt; &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="flex space-x-3"&gt;
+                        &lt;div&gt;&lt;x-bladewind::avatar image="/assets/images/{{$image}}" size="small" /&gt;&lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;div class="text-base font-semibold"&gt;{{$user['first_name']}} {{$user['last_name']}}&lt;/div&gt;
+                            &lt;div&gt;{{$user['company_name']}}&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div&gt;{{$user['mobile']}}&lt;/div&gt;
+                    &lt;div&gt;&lt;a href="#"&gt;{{$user['email']}}&lt;/a&gt;&lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        @endforeach
+    @endverbatim
+    &lt;/tbody&gt;
+&lt;/x-bladewind::table&gt;
+</code>
+</pre>
+<p>
+    Let's breakdown the example above. Pay attention to lines 2, 4, 6 and 22. Let's talk about line 22 first.
+    The pagination widget relies  on a couple of attributes defined on the data rows to work properly. A typical data row in a
+    pagination table looks like this:
+</p>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;tr data-id="12" data-page="1" class="hidden"&gt; ... &lt;/tr&gt;
+    ...
+    &lt;tr data-id="34" data-page="6"&gt; ... &lt;/tr&gt;
+    &lt;tr data-id="35" data-page="6"&gt; ... &lt;/tr&gt;
+    ...
+    &lt;tr data-id="272" data-page="9" class="hidden"&gt; ... &lt;/tr&gt;
+</code>
+</pre>
+<p>
+    As we loop to generate the table rows, any row that has its <code class="inline text-red-500">data-page</code> attribute not corresponding to the <code class="inline text-red-500">default_page</code> is set to <code class="inline text-red-500">class="hidden"</code>.
+    So from our example above, we set <code class="inline text-red-500">default_page="6"</code>, any row that is not on page 6 will need to be hidden. Generating these attributes required for pagination can be a headache so a helper function is provided.
+</p>
+<p>
+    Adding <code class="inline">pagination_row($row_number, $page_size, $default_page)</code> to each row will generate the attributes required by the pagination widget.<br />
+    <code class="inline">$row_number</code> is the current iteration/$index of the loop. Start with 1 not 0.<br />
+    <code class="inline">$page_size</code> is how many records should be displayed per page.<br />
+    <code class="inline">$default_page</code> is which page to select by default.<br /><br />
+    Note how on line 4 we defined <code class="inline text-red-500">:page_size="$page_size = 5"</code>. This simply makes the variable <code class="inline">$page_size</code> available for us to use later when calling
+    <code class="inline">pagination_row($row_number, <b>$page_size</b>, $default_page)</code>. This is simply to avoid repetition and nothing more. We could have alternatively decided to do what's below.
+</p>
+        <pre class="language-markup line-numbers" data-line="3,4,8">
+<code>
+&lt;x-bladewind::table
+    ...
+    page_size="5"
+    default_page="6"&gt;
+    ...
+    @verbatim
+        @foreach($users as $user)
+            &lt;tr {{pagination_row($loop->iteration, 5, 6)}} &gt;
+            ...
+        @endforeach
+    @endverbatim
+    &lt;/tbody&gt;
+&lt;/x-bladewind::table&gt;
+</code>
+</pre><br />
+<p>
+    From the example above, if we later change <code class="inline text-red-500">page_size="20"</code>, we will need to also update <code class="inline">pagination_row($loop->iteration, 20, 6)</code>.
+</p>
+
+<h2 id="pagination-styles">Pagination Styles</h2>
+<p>
+    There are three pagination styles to choose from. The default style is <code class="inline">arrows</code>. The page
+    number is displayed by default for the <code class="inline">arrows</code> pagination style.
+    When you set the <code class="inline text-red-500">show_total_pages="true"</code> attribute, the page number is displayed as a fraction (a/b),
+    where 'a' is the current page and 'b' is the total number of pages.
+</p>
+<p>
+    The pagination totals label (<em>Showing 1 to 5 of 222 records</em>) can be hidden by setting <code class="inline text-red-500">show_total="false"</code>. This is turned on by default.
+    Content of the label can be changed by setting the <code class="inline text-red-500">total_label</code> attribute. The default is <code class="inline">Showing :a to :b of :c records</code>.
+    There are 3 placeholders, :a, :b, and :c. The alphabets used for the placeholders need to be maintained.
+</p>
+<p>
+    <code class="inline">:a</code> - the starting row number of the current page.<br />
+    <code class="inline">:b</code> - the ending row number of the current page.<br />
+    <code class="inline">:c</code> - the total records. <br/><br/>
+
+    <code class="inline text-red-500">total_label=":a - :b of :c"</code> will display: <em>1 - 5 of 50</em>
+    <br />
+    <code class="inline text-red-500">total_label="Showing :a - :b"</code> will display: <em>Showing 1 - 5</em>
+</p>
+<h3>Arrows</h3>
+<x-bladewind::table :data="$users" exclude_columns="member_id,email" :paginated="true" :page_size="5" :show_row_numbers="true" default_page="15" show_total_pages="true" total_label="Records :a - :b" />
+<pre class="language-markup line-numbers" data-line="3,5,7,9">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="member_id, email"
+        paginated="true"
+        page_size="5"
+        total_label="Records :a - :b"
+        show_row_numbers="true"
+        pagination_style="arrows"
+        :data="$users"
+        show_total_pages="true"/&gt;
+</code>
+</pre>
+
+<h3>Dropdown</h3>
+<p>
+    Set <code class="inline text-red-500">pagination_style="dropdown"</code> on the table component.
+</p>
+<x-bladewind::table :data="$users" exclude_columns="member_id,email" :paginated="true" :page_size="5" :show_row_numbers="true" default_page="15" show_total_pages="true" total_label="Records :a - :b" pagination_style="dropdown" />
+
+<h3>Numbers</h3>
+<p>
+    Set <code class="inline text-red-500">pagination_style="numbers"</code> on the table component.
+</p>
+<x-bladewind::table :data="$users" exclude_columns="member_id,email" :paginated="true" :page_size="5" :show_row_numbers="true" default_page="15" show_total_pages="true" total_label="Records :a - :b" pagination_style="numbers" />
+<pre class="language-markup line-numbers" data-line="7">
+<code>
+    &lt;x-bladewind::table
+        exclude_columns="member_id, email"
+        paginated="true"
+        page_size="5"
+        total_label="Records :a - :b"
+        show_row_numbers="true"
+        pagination_style="numbers"
+        :data="$users"
+        show_total_pages="true"/&gt;
+</code>
+</pre>
+
+
+
+
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Table component.</p>
     @include('docs/announcement')
@@ -1279,6 +1550,11 @@
             <td>data</td>
             <td>null</td>
             <td><b>Json encoded</b> array of elements to generate the table from. When this has a value, there is no need to manually build the table. Ignore this attribute if you prefer to use <code class="inline">:data</code> instead..</td>
+        </tr>
+        <tr>
+            <td>layout</td>
+            <td>auto</td>
+            <td>Determines if the component should automatically build the table or not.<br /> <code class="inline">auto</code> <code class="inline">custom</code></td>
         </tr>
         <tr>
             <td>exclude_columns</td>
@@ -1374,6 +1650,80 @@
             <td>null</td>
             <td>Comma separated list of row IDs to select when the table is rendered.</td>
         </tr>
+        <tr>
+            <td>show_row_numbers</td>
+            <td>false</td>
+            <td>Should each row have its number displayed as the first column. <br/><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>sortable</td>
+            <td>false</td>
+            <td>Should the table be sortable. <br /> <code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>sortable_columns</td>
+            <td>[]</td>
+            <td>By default you can click on all columns to sort the table if <code class="inline text-red-500">sortable="true"</code>. To restrict this behaviour, provide a comma separated list of columns that should be clickable for sorting..</td>
+        </tr>
+        <tr>
+            <td>paginated</td>
+            <td>false</td>
+            <td>Should the table be paginated.  <br/><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>pagination_style</td>
+            <td>arrows</td>
+            <td>How should the pagination controls be displayed. <br/> <code class="inline">arrows</code><code class="inline">dropdown</code><code class="inline">numbers</code></td>
+        </tr>
+        <tr>
+            <td>page_size</td>
+            <td>25</td>
+            <td>How many rows should be displayed per page.</td>
+        </tr>
+        <tr>
+            <td>show_total</td>
+            <td>true</td>
+            <td>Should the pagination total be displayed. <br/><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_page_number</td>
+            <td>true</td>
+            <td>This only applies when <code class="inline text-red-500">pagination_style="arrows"</code>. Should the current page number be displayed between the previous and next buttons. <br/><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_total_pages</td>
+            <td>false</td>
+            <td>By default only the current page number is displayed. When this is <code class="inline">true</code>, the page number will be displayed as currentPage/totalPages. Example: 3/20. meaning on page 3 out of 20. <br/><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>default_page</td>
+            <td>1</td>
+            <td>When <code class="inline text-red-500">pagination="true"</code>, what should be the default selected page. Useful if you want to load any page other than 1.</td>
+        </tr>
+        <tr>
+            <td>limit</td>
+            <td>null</td>
+            <td>How many rows should be displayed in total. You can have a total of 100 rows but want to explicitly set the table to display ONLY 20. Set <code class="inline text-red-500">limit="20"</code>.</td>
+        </tr>
+        <tr>
+            <td>total_label</td>
+            <td>Showing :a to :b of :c records</td>
+            <td>Applicable when <code class="inline text-red-500">show_total="true"</code>. How should the label be displayed. Note there are 3 placeholders, :a, :b, and :c. These placeholders need to exist in your label to properly replace the values.<br/>
+                :a - the starting row number of the current page.<br />
+                :b - the ending row number of the current page. <br />
+                :c - the total records. <br/><br/>
+                <code class="inline text-red-500">total_label=":a - :b of :c"</code> <br/>will become: <strong>1 - 5 of 50</strong><br /><br/>
+                <code class="inline text-red-500">total_label="Showing :a - :b"</code> <br />will become: <strong>Showing 1 - 5</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>layout</td>
+            <td>auto</td>
+            <td>Applicable when <code class="inline text-red-500">data</code> is not manual. By default the library builds a flat table from the array data. Each array key becomes its own column. This allows you to build your own complex layout.<br/>
+                <code class="inline">auto</code>
+                <code class="inline">custom</code>
+            </td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Table with all attributes defined</h3>
@@ -1404,6 +1754,16 @@
                 groupby="department"
                 selected_value="2,3,4"
                 onclick="alert('add a staff')"
+                sortable="false",
+                paginated="false",
+                pagination_style="arrows",
+                page_size="25",
+                show_row_numbers="false",
+                show_page_number="false",
+                show_total="true",
+                limit="40"
+                layout="custom"
+                total_label="Showing :a to :b of :c records",
                 hover_effect="true"&gt;
 
                 &lt;x-slot name="header"&gt;
@@ -1441,6 +1801,10 @@
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#searchable">Searchable data</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#column-aliases">Column aliases</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#groupby">Group rows</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#sorting">Sorting <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4" /></a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#pagination">Pagination <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4" /></a></div>
+        <div class="flex items-center pl-10"><div class="dot"></div><a href="#custom-layout">Custom layout</a></div>
+        <div class="flex items-center pl-10"><div class="dot"></div><a href="#pagination-styles">Styles</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
     <x-slot name="scripts">

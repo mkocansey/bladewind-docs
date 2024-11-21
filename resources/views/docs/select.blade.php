@@ -10,6 +10,7 @@
         are currently using the Dropdown component in your forms for basic user input collection, you can simply replace <code class="inline">x-bladewind.dropdown</code>
         with <code class="inline">x-bladewind::select</code> and everything will work fine.
     </p>
+
     <p>
         <x-bladewind::alert type="error" show_close_icon="false">
             If you have multiple select components on a page, it is important to give each one a <b>unique</b> name. Failure to do this will result in erratic behaviour of the component.

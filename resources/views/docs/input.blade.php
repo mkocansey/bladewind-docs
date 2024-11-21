@@ -7,7 +7,8 @@
         The default is <code class="inline text-red-500">input type="text"</code>. This Bladewind component simply wraps the HTML input so you are free to use all the various
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes" target="_blank">input attributes</a> available in HTML.
     </p>
-    <p><x-bladewind::input name="fnaln" placeholder="name and age" /></p>
+
+    <p><x-bladewind::input name="fnaln" placeholder="name and age" x-mask="99/99/9999" /></p>
 
     <pre class="language-markup">
         <code>
@@ -32,7 +33,7 @@
     <p><x-bladewind::input type="password" name="passwed" viewable="true" /></p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::input type="password" suffix="eye"  /&gt;
+            &lt;x-bladewind::input type="password" viewable="true"  /&gt;
         </code>
     </pre>
     <h2 id="numeric">Numeric Input</h2>

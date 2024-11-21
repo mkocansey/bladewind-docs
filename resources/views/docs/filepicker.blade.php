@@ -20,12 +20,12 @@
         placeholder="Upload proof of payment"  />
 
     <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::filepicker
-                name="proof_of_payment"
-                required="true"
-                placeholder="Upload proof of payment"  /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    name="proof_of_payment"
+    required="true"
+    placeholder="Upload proof of payment"  /&gt;
+</code>
     </pre>
 
     <h2 id="file-types">Accept Only Specific File Types</h2>
@@ -38,12 +38,12 @@
     <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only" accepted_file_types=".pdf"  />
 
     <pre class="language-markup line-numbers" data-line="4">
-        <code>
-            &lt;x-bladewind::filepicker
-                name="pdf_only"
-                placeholder="Upload a PDF"
-                accepted_file_types=".pdf"  /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    name="pdf_only"
+    placeholder="Upload a PDF"
+    accepted_file_types=".pdf"  /&gt;
+</code>
     </pre>
 
     <h2 id="file-sizes">Restrict File Sizes</h2>
@@ -56,13 +56,13 @@
     <x-bladewind::filepicker placeholder="Upload a PDF" name="pdf_only_1mb" accepted_file_types=".pdf" max_file_size="1"  />
 
     <pre class="language-markup line-numbers" data-line="4">
-        <code>
-            &lt;x-bladewind::filepicker
-                name="pdf_only"
-                placeholder="Upload a PDF"
-                max_file_size="1"
-                accepted_file_types=".pdf"  /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    name="pdf_only"
+    placeholder="Upload a PDF"
+    max_file_size="1"
+    accepted_file_types=".pdf"  /&gt;
+</code>
     </pre>
 
     <h2 id="edit-mode">Edit Mode</h2>
@@ -122,12 +122,12 @@
     </p>
 
     <pre class="language-markup line-numbers" data-line="2">
-        <code>
-            &lt;x-bladewind::filepicker
-                url="https://bladewindui.com/images/404.svg"
-                placeholder="Profile Picture"
-                name="dp" /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    url="https://bladewindui.com/images/404.svg"
+    placeholder="Profile Picture"
+    name="dp" /&gt;
+</code>
     </pre>
 
     <p>
@@ -148,13 +148,13 @@
         FILE_NAME here refers to the exact value of the file as received from your API or database.
     </p>
     <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::filepicker
-                url="https://bladewindui.com/images/404.svg"
-                selected_value="404.svg"
-                placeholder="Profile Picture"
-                name="dp" /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    url="https://bladewindui.com/images/404.svg"
+    selected_value="404.svg"
+    placeholder="Profile Picture"
+    name="dp" /&gt;
+</code>
     </pre>
     <p>
         From the example above, if the user does not select a new file and submits the form, BladewindUI will send back "404.svg" as the value of the file since that was what it received in edit mode and the user made no changes.
@@ -185,13 +185,13 @@
 <h3>Non Image Files</h3>
 <p>The preview below is displayed when the <code class="inline text-red-500">url</code> passed in edit mode is not an image.
     <pre class="language-markup line-numbers" data-line="2">
-        <code>
-            &lt;x-bladewind::filepicker
-                url="https://bladewindui.com/files/2023-Financials.pdf"
-                selected_value="2023-Financials.pdf"
-                placeholder="Select Report"
-                name="report" /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    url="https://bladewindui.com/files/2023-Financials.pdf"
+    selected_value="2023-Financials.pdf"
+    placeholder="Select Report"
+    name="report" /&gt;
+</code>
     </pre>
     <p>
         <x-bladewind::filepicker
@@ -246,6 +246,11 @@
             $file_b64 = $request-&gt;b64_report;
         </code>
     </pre>
+    <br />
+    <p>
+        In some hosting cases where you have no control over <code class="inline">post_max_size</code> and <code class="inline">upload_max_filesize</code>, you may want to set <code class="inline text-red-500">base64="false"</code>.
+        This will ensure the base64 version of the uploaded file is not submitted with the posted form data.
+    </p>
     <h3>Value While In Edit Mode</h3>
     <p>
         The <a href="#edit-mode">Edit Mode</a> section has extensively highlighted this but in summary, if a <code class="inline">selected_value</code> is passed to the Filepicker
@@ -310,6 +315,11 @@
             <td>Useful in edit mode. Full path to the file to be displayed in the filepicker. If the url ends with an image file a preview is displayed, otherwise the <code class="inline">selected_value</code> will be displayed.</td>
         </tr>
         <tr>
+            <td>base64</td>
+            <td>true</td>
+            <td>Determines if the generated base64 data should be submitted with the form. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+        </tr>
+        <tr>
             <td>required</td>
             <td>false</td>
             <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
@@ -318,16 +328,17 @@
 
     <h3>Filepicker with all attributes defined</h3>
     <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::filepicker
-                name="profile_pic"
-                required="false"
-                placeholder="Choose a profile picture"
-                accepted_file_types=".jpg, .png"
-                selected_value="404.svg"
-                selected_value_class="h-72"
-                url="https://bladewindui.com/images/404.svg" /&gt;
-        </code>
+<code>
+&lt;x-bladewind::filepicker
+    name="profile_pic"
+    required="false"
+    placeholder="Choose a profile picture"
+    accepted_file_types=".jpg, .png"
+    selected_value="404.svg"
+    selected_value_class="h-72"
+    base64="false"
+    url="https://bladewindui.com/images/404.svg" /&gt;
+</code>
     </pre>
 
     <x-bladewind::alert show_close_icon="false">

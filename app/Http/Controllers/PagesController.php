@@ -8,6 +8,7 @@ class PagesController extends Controller
 {
     public function index()                 { return view('docs.index'); }
     public function install()               { return view('docs.install'); }
+    public function accordion()             { return view('docs.accordion'); }
     public function alert()                 { return view('docs.alert'); }
     public function avatar()                { return view('docs.avatar'); }
     public function bell()                  { return view('docs.bell'); }
