@@ -13,7 +13,6 @@ class BladewindSelect {
     selectedValue;
     canClear;
     enabled;
-    metaData;
 
 
     constructor(name, placeholder) {
@@ -33,7 +32,6 @@ class BladewindSelect {
         this.canClear = (!this.required && !this.isMultiple);
         this.enabled = true;
         this.selectedItem = null;
-        this.metaData = domEl(this.rootElement).getAttribute('data-meta-data') || null;
     }
 
     activate = (options = {}) => {
@@ -122,12 +120,12 @@ class BladewindSelect {
      * manually checking if each select-item should be selected or not.
      */
     manualModePreSelection = () => {
-        let selectMode = domEl(`${this.rootElement}`).getAttribute('data-type');
-        let selectedValue = domEl(`${this.rootElement}`).getAttribute('data-selected-value');
-        if (selectMode === 'manual' && selectedValue !== null) {
+        let select_mode = domEl(`${this.rootElement}`).getAttribute('data-type');
+        let selected_value = domEl(`${this.rootElement}`).getAttribute('data-selected-value');
+        if (select_mode === 'manual' && selected_value !== null) {
             domEls(this.selectItems).forEach((el) => {
                 let item_value = el.getAttribute('data-value');
-                if (item_value === selectedValue) el.setAttribute('data-selected', true);
+                if (item_value === selected_value) el.setAttribute('data-selected', true);
             });
         }
     }
@@ -169,7 +167,6 @@ class BladewindSelect {
         unhide(this.displayArea);
 
         if (this.toFilter) {
-            (new BladewindSelect(this.toFilter, '')).reset();
             this.filter(this.toFilter, this.selectedValue);
         }
 
@@ -239,10 +236,7 @@ class BladewindSelect {
             }
             stripComma(input);
             this.callUserFunction(item);
-            if (this.toFilter) {
-                (new BladewindSelect(this.toFilter, '')).reset();
-                this.clearFilter(this.toFilter);
-            }
+            this.clearFilter(this.toFilter);
         }
     }
 
@@ -328,16 +322,13 @@ class BladewindSelect {
     }
 
     callUserFunction = (item) => {
-        let userFunction = item ? item.getAttribute('data-user-function') : null;
-        console.log(userFunction);
-        if (userFunction !== null && userFunction !== undefined) {
-            let meta = (this.metaData) ? JSON.parse(JSON.stringify(this.metaData)) : null;
+        let user_function = item ? item.getAttribute('data-user-function') : null;
+        if (user_function !== null && user_function !== undefined) {
             callUserFunction(
-                `${userFunction}(
+                `${user_function}(
                 '${item.getAttribute('data-value')}',
                 '${item.getAttribute('data-label')}',
-                '${domEl(this.formInput).value}',
-                ${meta})`
+                '${domEl(this.formInput).value}')`
             );
         }
     }
@@ -349,32 +340,31 @@ class BladewindSelect {
 
     maxSelectableExceeded = () => {
         let input = domEl(this.formInput);
-        let totalSelected = (input.value.split(',')).length;
-        return ((this.maxSelection !== -1) && totalSelected === this.maxSelection);
+        let total_selected = (input.value.split(',')).length;
+        return ((this.maxSelection !== -1) && total_selected === this.maxSelection);
     }
 
     filter = (element, by = '') => {
         this.toFilter = element;
         if (by !== '') { //this.selectedValue
             domEls(`.bw-select-${element}  .bw-select-items .bw-select-item`).forEach((el) => {
-                const filterValue = el.getAttribute('data-filter-value');
-                (filterValue === by) ? unhide(el, true) : hide(el, true);
+                const filter_value = el.getAttribute('data-filter-value');
+                (filter_value === by) ? unhide(el, true) : hide(el, true);
             });
         }
     }
 
     clearFilter = (element, by = '') => {
         if (element) {
-            // (new BladewindSelect(element, '')).reset();
-            const elementItems = `.bw-select-${element}  .bw-select-items .bw-select-item`;
+            const element_items = `.bw-select-${element}  .bw-select-items .bw-select-item`;
             if (by === '') { // clear all filters
-                domEls(elementItems).forEach((el) => {
+                domEls(element_items).forEach((el) => {
                     unhide(el, true);
                 });
             } else { // clear specific values' filters
-                domEls(elementItems).forEach((el) => {
-                    const filterValue = el.getAttribute('data-filter-value');
-                    (filterValue === this.selectedValue) ? hide(el, true) : unhide(el, true);
+                domEls(element_items).forEach((el) => {
+                    const filter_value = el.getAttribute('data-filter-value');
+                    (filter_value === this.selectedValue) ? hide(el, true) : unhide(el, true);
                 });
             }
         }
