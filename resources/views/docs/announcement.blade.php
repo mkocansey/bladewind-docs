@@ -1,0 +1,1 @@
+<p><x-bladewind::alert type="warning" showCloseIcon="false">IMPORTANT: Projects running Laravel 8 <a href="/laravel8-users">please read this</a></x-bladewind::alert></p>
