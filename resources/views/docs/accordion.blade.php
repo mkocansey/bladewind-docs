@@ -106,10 +106,11 @@
     ...
 &lt;/x-bladewind::accordion&gt;
 </code>
-</pre><br />
+</pre>
+    <h2 id="multiple">Open Multiple Accordion Items</h2>
 <p>By default only one accordion can stay open at any point in time. You can disable this feature by setting <code class="inline text-red-500">can_open_multiple="true"</code>. Now any closed accordion that is clicked will be opened. Likewise, any accordion that is closed will open when clicked.</p>
 
-    <x-bladewind::accordion :can_open_multiple="true" grouped="false" color="red">
+    <x-bladewind::accordion :can_open_multiple="true">
         <x-bladewind::accordion.item title="What is BladewindUI?">
             <p>
                 BladewindUI is a collection of super simple but elegant Laravel blade-based UI components using TailwindCSS and vanilla Javascript. When I decided to move away from JQuery, that indirectly meant I had to find an alternative to the lovely Semantic UI components I had gotten so used to. Well, that was how these components were born.
@@ -136,6 +137,106 @@
 <code>
 &lt;x-bladewind::accordion
     can_open_multiple="true"&gt;
+    &lt;x-bladewind::accordion.item title="What is BladewindUI?"&gt;
+        &lt;p&gt;
+            BladewindUI is a collection...
+        &lt;/p&gt;
+    &lt;/x-bladewind::accordion.item&gt;
+    &lt;x-bladewind::accordion.item title="How can I install the latest version of the library?"&gt;
+        &lt;div&gt;
+            At the root of your Laravel...
+        &lt;/div&gt;
+    &lt;/x-bladewind::accordion.item&gt;
+    &lt;x-bladewind::accordion.item title="How can I customize the library for my theme?"&gt;
+        &lt;div&gt;
+            BladewindUI has been designed ...
+        &lt;/div&gt;
+    &lt;/x-bladewind::accordion.item&gt;
+&lt;/x-bladewind::accordion&gt;
+</code>
+</pre>
+
+<h2 id="standalone">Accordions Should Stand Alone</h2>
+<p>
+    The examples above have all the accordion items within one card element. Each accordion is separated by a line.
+    To separate accordion items so they stand alone, set <code class="inline text-red-500">grouped="false"</code>.
+
+    <x-bladewind::accordion grouped="false">
+        <x-bladewind::accordion.item title="What is BladewindUI?">
+            <p>
+                BladewindUI is a collection of super simple but elegant Laravel blade-based UI components using TailwindCSS and vanilla Javascript. When I decided to move away from JQuery, that indirectly meant I had to find an alternative to the lovely Semantic UI components I had gotten so used to. Well, that was how these components were born.
+            </p>
+        </x-bladewind::accordion.item>
+        <x-bladewind::accordion.item title="How can I install the latest version of the library?">
+            <div>
+                At the root of your Laravel project, type the following composer command in your terminal to pull in the package.
+                <pre class="language-php line-numbers"><code>composer require mkocansey/bladewind</code></pre>
+                Next you need to publish the package's public assets by running the command below, still at the root of your Laravel project. This will create a vendor/bladewind directory in your public directory.
+            </div>
+        </x-bladewind::accordion.item>
+        <x-bladewind::accordion.item title="How can I customize the library for my theme?">
+            <div>
+                BladewindUI has been designed to not interfere with the existing components in your project. Probably you just want to take this for a spin before deciding if BladewindUI components will be the only components
+                you use in your project. Once installed, all BladewindUI components are invoked by default from your <code class="inline">project's vendor > mkocansey > bladewind</code> directory. Per Laravel convention, this results in you having to type the
+                <code class="inline text-red-500">&lt;x-bladewind</code> prefix everytime you want to use a BladewindUI component.
+            </div>
+        </x-bladewind::accordion.item>
+    </x-bladewind::accordion>
+
+
+    <pre class="language-markup line-numbers" data-line="2">
+<code>
+&lt;x-bladewind::accordion
+    grouped="false"&gt;
+    &lt;x-bladewind::accordion.item title="What is BladewindUI?"&gt;
+        &lt;p&gt;
+            BladewindUI is a collection...
+        &lt;/p&gt;
+    &lt;/x-bladewind::accordion.item&gt;
+    &lt;x-bladewind::accordion.item title="How can I install the latest version of the library?"&gt;
+        &lt;div&gt;
+            At the root of your Laravel...
+        &lt;/div&gt;
+    &lt;/x-bladewind::accordion.item&gt;
+    &lt;x-bladewind::accordion.item title="How can I customize the library for my theme?"&gt;
+        &lt;div&gt;
+            BladewindUI has been designed ...
+        &lt;/div&gt;
+    &lt;/x-bladewind::accordion.item&gt;
+&lt;/x-bladewind::accordion&gt;
+</code>
+</pre>
+<h2 id="colors">Colourful Accordions</h2>
+<p>
+    You can define the background colour of the accordion by setting the <code class="inline text-red-500">color</code> attribute. This is only enforced if <code class="inline text-red-500">grouped="false"</code>
+
+    <x-bladewind::accordion grouped="false" color="yellow">
+        <x-bladewind::accordion.item title="What is BladewindUI?">
+            <p>
+                BladewindUI is a collection of super simple but elegant Laravel blade-based UI components using TailwindCSS and vanilla Javascript. When I decided to move away from JQuery, that indirectly meant I had to find an alternative to the lovely Semantic UI components I had gotten so used to. Well, that was how these components were born.
+            </p>
+        </x-bladewind::accordion.item>
+        <x-bladewind::accordion.item title="How can I install the latest version of the library?">
+            <div>
+                At the root of your Laravel project, type the following composer command in your terminal to pull in the package.
+                <pre class="language-php line-numbers"><code>composer require mkocansey/bladewind</code></pre>
+                Next you need to publish the package's public assets by running the command below, still at the root of your Laravel project. This will create a vendor/bladewind directory in your public directory.
+            </div>
+        </x-bladewind::accordion.item>
+        <x-bladewind::accordion.item title="How can I customize the library for my theme?">
+            <div>
+                BladewindUI has been designed to not interfere with the existing components in your project. Probably you just want to take this for a spin before deciding if BladewindUI components will be the only components
+                you use in your project. Once installed, all BladewindUI components are invoked by default from your <code class="inline">project's vendor > mkocansey > bladewind</code> directory. Per Laravel convention, this results in you having to type the
+                <code class="inline text-red-500">&lt;x-bladewind</code> prefix everytime you want to use a BladewindUI component.
+            </div>
+        </x-bladewind::accordion.item>
+    </x-bladewind::accordion>
+
+
+    <pre class="language-markup line-numbers" data-line="2">
+<code>
+&lt;x-bladewind::accordion
+    grouped="false"&gt;
     &lt;x-bladewind::accordion.item title="What is BladewindUI?"&gt;
         &lt;p&gt;
             BladewindUI is a collection...
@@ -249,11 +350,9 @@
     </x-bladewind::accordion>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#faint">Faint coloured accordions</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#dark">Dark coloured accordions</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#iconless">Without icons</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#colours">More colours</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#icons">Other icons & avatars</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#multiple">Open multiple accordions</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#standalone">Standalone accordions</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#colors">Colourful accordions</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
