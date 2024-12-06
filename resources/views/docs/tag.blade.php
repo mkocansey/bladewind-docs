@@ -196,7 +196,7 @@
         <x-bladewind::tags color="orange" name="stack" required="true" max="3" error_message="You can select only up to 3 tech stacks" error_heading="Check selection!">
             <x-bladewind::tag label="laravel" value="laravel" />
             <x-bladewind::tag label="javascript" value="js" />
-            <x-bladewind::tag label="node js" value="node" />
+            <x-bladewind::tag label="node js" value="node js" />
             <x-bladewind::tag label="tailwindcss" value="tailwind" />
             <x-bladewind::tag label="c-sharp" value="cs" />
         </x-bladewind::tags>
@@ -213,7 +213,7 @@
 
                 &lt;x-bladewind::tag label="laravel" value="laravel" /&gt;
                 &lt;x-bladewind::tag label="javascript" value="js" /&gt;
-                &lt;x-bladewind::tag label="node js" value="node" /&gt;
+                &lt;x-bladewind::tag label="node js" value="node js" /&gt;
                 &lt;x-bladewind::tag label="tailwindcss" value="tailwind" /&gt;
                 &lt;x-bladewind::tag label="c-sharp" value="cs" /&gt;
 

@@ -46,6 +46,10 @@ task('config', [
 desc('run composer update');
 task('deploy:run_composer', function(){
     writeln('RUN COMPOSER ================================================================================');
+
+    // Ensure NVM is loaded and correct Node.js version is used
+    $nvmInit = 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 18';
+
     cd(get('deploy_path'));
     run('cp .env current/'); //rm -f composer.lock &&
     cd(get('deploy_path').'/current');
@@ -55,18 +59,9 @@ task('deploy:run_composer', function(){
     run('php artisan config:clear && php artisan view:clear');
     run('php artisan route:clear && php artisan clear-compiled && php artisan optimize');
     run('php artisan migrate --force');
-    run('sudo chown -R $USER:www-data bootstrap/cache && sudo chown -R $USER:www-data database');
-    run('pwd && npm install');
-    run('npm run build');
+    run("$nvmInit && sudo rm -rf package-lock.json && npm install");
+    run("$nvmInit && npm run build");
     run('sudo /usr/sbin/service php8.4-fpm reload');
-    /*cd(get('deploy_path'));
-    run('sudo chgrp -R www-data current/database && touch current/database/database.sqlite'); //rm -f composer.lock &&
-    run('sudo cp .env current/ && sudo chgrp -R www-data current/storage'); //rm -f composer.lock &&
-    cd(get('deploy_path').'/current');
-    run('composer update'); //rm -f composer.lock &&  --ignore-platform-reqs --no-scripts // /usr/local/bin/
-    run('php artisan migrate --force && php artisan config:clear && php artisan cache:clear && php artisan view:clear && php artisan route:clear && php artisan clear-compiled && php artisan optimize');
-    run('php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-public --force'); //php artisan vendor:publish --provider="Mkocansey\Bladewind\BladewindServiceProvider" --tag=bladewind-components --force &&
-    run('sudo /usr/sbin/service php8.4-fpm reload');*/
 });
 
 after('deploy:failed', 'deploy:unlock');

@@ -59,6 +59,7 @@ You are now ready to start using any of the BladewindUI components in your appli
 <br /><br />
 ### Components Include
 
+- **[Accordion](https://bladewindui.com/component/accordion)**
 - **[Alert](https://bladewindui.com/component/alert)**
 - **[Avatar](https://bladewindui.com/component/avatar)**
 - **[Bell](https://bladewindui.com/component/bell)**

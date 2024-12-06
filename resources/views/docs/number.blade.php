@@ -6,10 +6,17 @@
             </p>
 
             <x-bladewind::number />
+            <div class="mb-2"></div>
+            <x-bladewind::number step="10" />
 
             <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::number  /&gt;
+                </code>
+            </pre>
+            <pre class="language-markup line-numbers">
+                <code>
+                    &lt;x-bladewind::number step="10"  /&gt;
                 </code>
             </pre>
     <br />
@@ -192,6 +199,11 @@
                     <td>Determines if the field should have an asterisk appended to it or not. <br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
                 <tr>
+                    <td>step</td>
+                    <td>1</td>
+                    <td>By how what number should the value of the component be increased or decreased. </td>
+                </tr>
+                <tr>
                     <td>class</td>
                     <td><em>blank</em></td>
                     <td>Any extra css to apply to the input field. Useful if for example you need more room for the numbers. You can set the width. </td>
@@ -210,6 +222,7 @@
     transparent_icons="true"
     min="18"
     max="65"
+    step="10"
     with_dots="false"
     selected_value="12" /&gt;
 </code>
