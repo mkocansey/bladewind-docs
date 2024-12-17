@@ -8,7 +8,52 @@
 
     @php
         $users = include resource_path('views/docs/users.php');
+        $action_icons = [
+            "icon:pencil | click:redirect('/user/{id}')",
+        ];
+        $list = [
+                [
+                  "id" => 1,
+                  "created_at" => null,
+                  "updated_at" => "2024-12-11 10:27:30",
+                  "name" => "emergency",
+                  "matched_state" => "Evacuation",
+                  "uuid" => "eeb69ecd-e202-4b70-bc18-7581428d6294",
+                ],
+                [
+                  "id" => 2,
+                  "created_at" => null,
+                  "updated_at" => "2024-12-11 10:30:10",
+                  "name" => "lockdown",
+                  "matched_state" => "Lockdown",
+                  "uuid" => "3c73fec5-92d8-4539-82c1-088d63dd9af9",
+                ],
+                [
+                  "id" => 3,
+                  "created_at" => null,
+                  "updated_at" => null,
+                  "name" => "Test Evacuation",
+                  "matched_state"=> null,
+                  "uuid" => "441b69ad-5541-4ea2-af3b-3ba4b4a26a20",
+                ],
+              ]
     @endphp
+
+        <x-bladewind::table
+            :data="$list"
+            :action_icons="$action_icons"
+            has_shadow="true"
+            searchable="true"
+            search_placeholder="{{ __('Search...') }}"
+            search_field="name"
+            search_min_length=3
+            search_debounce=400
+            sortable="true"
+            divider="thin"
+            paginated="true"
+            page_size="20"
+            include_columns="name,uuid,matched_state"
+        />
     <p>
         <x-bladewind::table>
             <x-slot name="header">
