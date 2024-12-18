@@ -5,6 +5,10 @@
     <div>
     <p>Display tabular data beautifully in a simple way. </p>
     <p>This component like all other BladewindUI components is simple to use with a few options to customise the component to suit your app needs. A BladewindUI table consists of two parts. The table header and the table body. </p>
+
+    @php
+        $users = include resource_path('views/docs/users.php');
+    @endphp
     <p>
         <x-bladewind::table>
             <x-slot name="header">
