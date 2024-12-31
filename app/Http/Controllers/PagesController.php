@@ -16,6 +16,7 @@ class PagesController extends Controller
     public function card()                  { return view('docs.card'); }
     public function centered_content()      { return view('docs.centered-content'); }
     public function checkbox()              { return view('docs.checkbox'); }
+    public function checkcard()             { return view('docs.checkcard'); }
     public function contribute()            { return view('docs.contribute'); }
     public function customize()             { return view('docs.customize'); }
     public function colours()               { return view('docs.colours'); }

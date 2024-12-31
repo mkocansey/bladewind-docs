@@ -9,6 +9,7 @@
 <div class="{{ $css }} component-card"><div class="dot"></div><a href="/component/card">Card</a></div>
 <div class="{{ $css }} component-centered-content"><div class="dot"></div><a href="/component/centered-content">Centered Content</a></div>
 <div class="{{ $css }} component-checkbox"><div class="dot"></div><a href="/component/checkbox">Checkbox</a></div>
+<div class="{{ $css }} component-checkcard"><div class="dot"></div><a href="/component/checkcard">CheckCard  <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
 <div class="{{ $css }} component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker</a></div>
 <div class="{{ $css }} component-dropdown"><div class="dot"></div><a href="/component/dropdown">Dropdown</a></div>
 <div class="{{ $css }} component-dropmenu"><div class="dot"></div><a href="/component/dropmenu">Dropmenu</a></div>
