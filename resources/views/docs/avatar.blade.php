@@ -173,39 +173,45 @@
     <h2 id="labels">Labels</h2>
     <p>
         You may have seen this on websites where the initials of your name are displayed if you have not set a profile image. You can achieve this here by
-        specifying a value for the <code class="inline text-red-500">label</code> attribute. The label will only be displayed if the <code class="inline text-red-500">image</code> cannot be found.
+        specifying a value for the <code class="inline text-red-500">label</code> attribute. A label is also displayed when the <code class="inline text-red-500">image</code> specified is three or less characters long.
     </p>
     <div class="text-center space-x-3">
-        <x-bladewind::avatar dotted="true" label="MO" image="na" />
-        <x-bladewind::avatar label="MK" image="na" />
+        <x-bladewind::avatar dotted="true" label="MO" />
+        <x-bladewind::avatar label="MK" />
+        <x-bladewind::avatar image="PP" />
     </div>
     <br />
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind::avatar dotted="true" label="MO" image="na" /&gt;
+    &lt;x-bladewind::avatar dotted="true" label="MO" /&gt;
 </code>
 </pre>
 <pre class="language-markup line-numbers">
 <code>
-    &lt;x-bladewind::avatar label="MK" image="na" /&gt;
+    &lt;x-bladewind::avatar label="MK" /&gt;
+</code>
+</pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::avatar image="PP" /&gt;
 </code>
 </pre>
 <br />
 <br />
 <div class="text-center">
     <x-bladewind::avatars stacked="true" dotted="true" plus="34">
-        <x-bladewind::avatar label="SF" image="404" />
-        <x-bladewind::avatar label="ZH" image="404" />
-        <x-bladewind::avatar label="RB" image="404" />
+        <x-bladewind::avatar label="SF" />
+        <x-bladewind::avatar label="ZH" />
+        <x-bladewind::avatar label="RB" />
     </x-bladewind::avatars>
 </div>
 <br />
 <pre class="language-markup line-numbers" data-line="3">
 <code>
 &lt;x-bladewind::avatars stacked="true" dotted="true" plus="34"&gt;
-    &lt;x-bladewind::avatar label="SF" image="404" /&gt;
-    &lt;x-bladewind::avatar label="ZH" image="404" /&gt;
-    &lt;x-bladewind::avatar label="RB" image="404" /&gt;
+    &lt;x-bladewind::avatar label="SF" /&gt;
+    &lt;x-bladewind::avatar label="ZH" /&gt;
+    &lt;x-bladewind::avatar label="RB" /&gt;
 &lt;/x-bladewind::avatars&gt;
 </code>
 </pre>
@@ -301,7 +307,7 @@
     <h3 class="pb-2 ">Avatars with all attributes defined</h3>
 <pre class="language-markup line-numbers">
 <code>
-&lt;x-bladewind::avatar
+&lt;x-bladewind::avatars
     size="big"
     show_ring="false"
     dotted="true"
@@ -325,7 +331,7 @@
         <tr>
             <td>image</td>
             <td><em class="text-xs">public/vendor/bladewind/images/avatar.png</em></td>
-            <td>The url to the image file. By default a generic headshot image is used if no url is passed.</td>
+            <td>The url to the image file. By default a generic headshot image is used if no url is passed. The image will be displayed as a label if it is three characters long or less.</td>
         </tr>
         <tr>
             <td>alt</td>
@@ -365,7 +371,7 @@
         <tr>
             <td>label</td>
             <td>null</td>
-            <td>This is displayed when the <code class="inline">image</code> cannot be found and a value exists for <code class="inline">label</code></td>
+            <td>Text to display in place of an image. Usually two characters.</td>
         </tr>
         <tr>
             <td>show_ring</td>
