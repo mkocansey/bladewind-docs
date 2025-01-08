@@ -1577,7 +1577,7 @@
             </td>
         </tr>
         <tr>
-            <td>action_title</td>
+            <td>actions_title</td>
             <td>actions</td>
             <td>Heading of the column that shows the actions.</td>
         </tr>
