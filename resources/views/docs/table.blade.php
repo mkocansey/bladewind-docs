@@ -1114,7 +1114,7 @@
         The table component provides a very basic way for users to search through table content.
         If the <code class="text-red-500 inline">searchable="true"</code> attribute is set,
         a search field is placed above the table that makes it possible to search through any column of the table.
-        By placeholder text for the search input can be replaced by setting the <code class="text-red-500 inline">search_placeholder</code> attribute on the table.
+        The placeholder text for the search input can be replaced by setting the <code class="text-red-500 inline">search_placeholder</code> attribute on the table. Non-dynamic tables can also be searchable.
     </p>
     <x-bladewind::table searchable="true" search_placeholder="Find staff members by name..."
         :data="$staff" divider="thin" :action_icons="$action_icons"
@@ -1210,7 +1210,7 @@
 </code>
 </pre>
     <x-bladewind::table
-        :data="$staff" divider="thin" :column_aliases="$column_aliases" groupby="department" />
+        :data="$staff" divider="thin" :column_aliases="$column_aliases" groupby="department" exclude_columns="last_name" />
 
 <br />
     <x-bladewind::alert show_close_icon="false">
@@ -1273,7 +1273,7 @@
 <x-bladewind::alert show_close_icon="false">When using <code class="inline text-red-500">show_row_numbers="true"</code> and <code class="inline text-red-500">sortable="true"</code>,
     it is important to note that the row numbering is not reordered to match the sorted data. Row numbers 1, 2, 3, 4 might end up as 4, 1, 2, 3</x-bladewind::alert>
     <br />
-<x-bladewind::alert show_close_icon="false">When sorting paginated tables, the sorting is only applied to the current page and not the entire table.</x-bladewind::alert>
+<x-bladewind::alert show_close_icon="false">When searching or sorting paginated tables, the search or sorting is only applied to the current page and not the entire table.</x-bladewind::alert>
     <br />
 <p>
     You may not always want to start displaying your table rows from page 1. Maybe, the user bookmarked a record that is on page 6 and you want to jump to that on page load.

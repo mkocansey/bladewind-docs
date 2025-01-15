@@ -143,6 +143,11 @@
             <td>Specifies whether the image should be displayed or not. Set this to <code>false</code> if you intend to control the entire content of the empty state component. <code class="inline">true</code><code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>image_size</td>
+            <td>medium</td>
+            <td>Specifies the size of the image. <br /><code class="inline">small</code><code class="inline">medium</code><code class="inline">large</code><code class="inline">xl</code><code class="inline">omg</code></td>
+        </tr>
+        <tr>
             <td>button_label</td>
             <td><em>blank</em></td>
             <td>Text to display on the call to action button.</td>
@@ -188,6 +193,7 @@
                 image="/assets/images/empty-inbox.png"
                 show_image="true"
                 heading="Nothing to see here"
+                size="xl"
                 image_css="!h-32"
                 class="shadow-sm"&gt;
             &lt;/x-bladewind::empty-state&gt;
