@@ -63,7 +63,7 @@
     "repositories": {
         "mkocansey/bladewind": {
             "type": "path",
-            "url": "/Users/mkocansey/projects/kursor/bladewind"
+            "url": "/Users/mkocansey/projects/kursor/bladewindui"
         }
     }
 }

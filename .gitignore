@@ -29,3 +29,4 @@ deploy.php
 deploy.php
 /public/vendor
 /public/vendor
+dev-composer.json

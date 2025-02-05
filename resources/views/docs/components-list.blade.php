@@ -10,8 +10,8 @@
 <div class="{{ $css }} component-centered-content"><div class="dot"></div><a href="/component/centered-content">Centered Content</a></div>
 <div class="{{ $css }} component-checkbox"><div class="dot"></div><a href="/component/checkbox">Checkbox</a></div>
 <div class="{{ $css }} component-checkcard"><div class="dot"></div><a href="/component/checkcard">CheckCard  <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
-<div class="{{ $css }} component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker</a></div>
-<div class="{{ $css }} component-dropdown"><div class="dot"></div><a href="/component/dropdown">Dropdown</a></div>
+<div class="{{ $css }} component-colorpicker"><div class="dot"></div><a href="/component/colorpicker">Colorpicker  <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
+<div class="{{ $css }} component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
 <div class="{{ $css }} component-dropmenu"><div class="dot"></div><a href="/component/dropmenu">Dropmenu</a></div>
 <div class="{{ $css }} component-empty-state"><div class="dot"></div><a href="/component/empty-state">Empty State</a></div>
 <div class="{{ $css }} component-filepicker"><div class="dot"></div><a href="/component/filepicker">Filepicker</a></div>

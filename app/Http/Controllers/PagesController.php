@@ -16,13 +16,13 @@ class PagesController extends Controller
     public function card()                  { return view('docs.card'); }
     public function centered_content()      { return view('docs.centered-content'); }
     public function checkbox()              { return view('docs.checkbox'); }
+    public function colorpicker()           { return view('docs.colorpicker'); }
     public function checkcard()             { return view('docs.checkcard'); }
     public function contribute()            { return view('docs.contribute'); }
     public function customize()             { return view('docs.customize'); }
     public function colours()               { return view('docs.colours'); }
     public function darkmode()              { return view('docs.darkmode'); }
     public function datepicker()            { return view('docs.datepicker'); }
-    public function dropdown()              { return view('docs.dropdown'); }
     public function dropmenu()              { return view('docs.dropmenu'); }
     public function emptystate()            { return view('docs.emptystate'); }
     public function filepicker()            { return view('docs.filepicker'); }

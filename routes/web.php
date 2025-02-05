@@ -16,8 +16,8 @@ Route::get('component/card',                    [ PagesController::class, 'card'
 Route::get('component/centered-content',        [ PagesController::class, 'centered_content' ]);
 Route::get('component/checkbox',                [ PagesController::class, 'checkbox' ]);
 Route::get('component/checkcard',               [ PagesController::class, 'checkcard' ]);
+Route::get('component/colorpicker',             [ PagesController::class, 'colorpicker' ]);
 Route::get('component/datepicker',              [ PagesController::class, 'datepicker' ]);
-Route::get('component/dropdown',                [ PagesController::class, 'dropdown' ]);
 Route::get('component/dropmenu',                [ PagesController::class, 'dropmenu' ]);
 Route::get('component/empty-state',             [ PagesController::class, 'emptystate' ]);
 Route::get('component/filepicker',              [ PagesController::class, 'filepicker' ]);

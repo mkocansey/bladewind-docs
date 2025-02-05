@@ -1,13 +1,33 @@
 <x-app>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <x-slot:title>Datepicker Component</x-slot:title>
     <x-slot:page_title>Datepicker</x-slot:page_title>
     <x-bladewind::notification />
 
     <p>
-        Display a datepicker so user can select a date. The datepicker component is locale friendly. Months and days of the week are translated.
+        Display a calendar so user can select a date. The calendar component is locale friendly. Months and days are translated.
     </p>
+    <p>
+        <x-bladewind::alert show_close_icon="false" type="error">
+            This component requires the AlpineJS library to work. Ensure you include the script below if you don't have AlpineJS already in your project.
+        </x-bladewind::alert>
+    </p>
+    <pre class="lang-markup">
+        <code>
+            &lt;script src="//unpkg.com/alpinejs" defer&gt;&lt;/script&gt;
+        </code>
+    </pre>
+    <p>
+        <x-bladewind::alert show_close_icon="false" type="info">
+            This component builds on the code by <a href="https://tailwindcomponents.com/u/mithicher" target="_blank">mithicher</a> available <a href="https://tailwindcomponents.com/component/datepicker-with-tailwindcss-and-alpinejs" target="_blank">here</a>
+        </x-bladewind::alert>
+    </p>
+    <x-bladewind::datepicker name="invoice_date_2"   />
 
-    <x-bladewind::datepicker />
+    <script>
+        const inputElement = document.querySelector('input[x-ref="invoice_date_2"]');
+        // inputElement._x_model.set('New value');
+    </script>
 
     <pre class="language-markup">
         <code>
@@ -31,17 +51,17 @@
         </code>
     </pre>
 
-    <h2 id="range">Range Calendar</h2>
+    <h2 id="range">Range Datepicker</h2>
     <p>
-        The range datepicker allows you to select a range of dates by setting <code class="inline text-red-500">range="true"</code>.
-        In the input field, the range of dates selected are separated with a dash (-). For example, a selected date range will be displayed in the input as
-        <b>2025-01-10 - 2025-01-31</b>.
+        This range datepicker isn't your typical date range selection you will find on airline websites.
+        This option simply saves you from manually embedding the datepicker two times.
+        Specifying <code class="inline text-red-500">type="range"</code> will create two separate datepicker boxes for start and end dates.
     </p>
-    <x-bladewind::datepicker range="true"  />
+    <x-bladewind::datepicker type="range"  />
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::datepicker range="true"  /&gt;
+            &lt;x-bladewind::datepicker type="range"  /&gt;
         </code>
     </pre>
 
@@ -147,22 +167,25 @@
     <p>
         There are times you will want the datepicker to load prepopulated with a default value. This is useful when in edit mode or when using filters and you want to show the user what dates they filtered by.
     </p>
-    <x-bladewind::datepicker class="!w-44" selected_value="2021-12-03"  />
+    <x-bladewind::datepicker css="!w-44" default_date="2021-12-03"  />
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::datepicker selected_value="2021-12-03"  /&gt;
+            &lt;x-bladewind::datepicker default_date="2021-12-03"  /&gt;
         </code>
     </pre>
 
     <p>
         It is possible to have default dates for a range datepicker also.
     </p>
-    <x-bladewind::datepicker range="true" selected_value="2025-02-03 - 2025-02-23"  />
+    <x-bladewind::datepicker type="range" default_date_from="2021-12-03" default_date_to="2022-01-03"  />
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::datepicker range="true" selected_value="2021-12-03 - 2022-01-03"  /&gt;
+            &lt;x-bladewind::datepicker
+                type="range"
+                default_date_from="2021-12-03"
+                default_date_to="2022-01-03"  /&gt;
         </code>
     </pre>
 
@@ -197,8 +220,10 @@
             &lt;x-bladewind::datepicker min_date="{{date('Y-m-01')}}" max_date="{{date('Y-m-t')}}" /&gt;
         </code>
     </pre>
+
+
     <h2 id="attributes">Full List Of Attributes</h2>
-    <p>The table below shows a comprehensive list of all the attributes available for the Calendar component.</p>
+    <p>The table below shows a comprehensive list of all the attributes available for the Datepicker component.</p>
     @include('docs/announcement')
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -212,15 +237,25 @@
             <td>This name can be accessed when the input is submitted in the form. The name is also available as part of the css classes.</td>
         </tr>
         <tr>
-            <td>range</td>
-            <td>false</td>
-            <td>Allow range selection. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+            <td>type</td>
+            <td>single</td>
+            <td><code class="inline">single</code> <code class="inline">range</code></td>
         </tr>
         <tr>
-            <td>selected_value</td>
+            <td>default_date</td>
             <td><em>blank</em></td>
             <td>In case you are editing a form, the value passed will be set on the value attribute of the datepicker input.
                 <code class="inline text-red-500">&lt;input type="text" <b>value=""</b> ../&gt;</code></td>
+        </tr>
+        <tr>
+            <td>default_date_from</td>
+            <td><em>blank</em></td>
+            <td>Default date to set for the <em>From</em> date when using the range datepicker.</td>
+        </tr>
+        <tr>
+            <td>default_date_to</td>
+            <td><em>blank</em></td>
+            <td>Default date to set for the <em>To</em> date when using the range datepicker.</td>
         </tr>
         <tr>
             <td>min_date</td>
@@ -233,12 +268,20 @@
             <td>Restrict the date to end at this. Any dates after this will be disabled and grayed out.</td>
         </tr>
         <tr>
+            <td>date_from_label</td>
+            <td>From</td>
+            <td>Placeholder text to display for the <code>From</code> date. Applicable only to range datepickers.</td>
+        </tr>
+        <tr>
+            <td>date_to_label</td>
+            <td>To</td>
+            <td>Placeholder text to display for the <code>To</code> date. Applicable only to range datepickers.</td>
+        </tr>
+        <tr>
             <td>format</td>
             <td>yyyy-mm-dd</td>
-            <td>How date should be formatted.<br /><code class="inline">yyyy-mm-dd</code>
+            <td>How date should be formatted.<code class="inline">yyyy-mm-dd</code>
                 <code class="inline">dd-mm-yyyy</code> <code class="inline">mm-dd-yyyy</code>
-                <code class="inline">yyyy/mm/dd</code>
-                <code class="inline">dd/mm/yyyy</code> <code class="inline">mm/dd/yyyy</code>
                 <code class="inline">D d M, Y</code></td>
         </tr>
         <tr>
@@ -247,56 +290,50 @@
             <td>Placeholder text to display</td>
         </tr>
         <tr>
-            <td>label</td>
-            <td>Select a date</td>
-            <td>Label text to display</td>
-        </tr>
-        <tr>
             <td>required</td>
             <td>false</td>
             <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>onblur</td>
+            <td><em>blank</td>
+            <td>Custom function to call when the datepicker loses focus. This can be the entire function with parameters. Bladewind does not interfere with this.</td>
+        </tr>
+        <tr>
             <td>week_starts</td>
-            <td>sunday</td>
-            <td>Choose between Sunday and Monday as the first day of the week. <br> <code class="inline">sunday</code> <code class="inline">monday</code> </td>
+            <td>sun</td>
+            <td>Choose between Sunday and Monday as the first day of the week. The week_starts value defined by the first datepicker on your page is applied to all other datepickers on the page. <br> <code class="inline">sun</code> <code class="inline">mon</code> </td>
         </tr>
         <tr>
             <td>class</td>
             <td>bw-datepicker</td>
-            <td>Any additional css classes can be added using this attribute.</td>
+            <td>Any additonal css classes can be added using this attribute.</td>
         </tr>
-        {{--
-         <tr>
-             <td>onblur</td>
-             <td><em>blank</td>
-             <td>Custom function to call when the datepicker loses focus. This can be the entire function with parameters. Bladewind does not interfere with this.</td>
-         </tr>
-         <tr>
-             <td>validate</td>
-             <td>false</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to enforce if the start date should not be greater than the end date. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>
-         <tr>
-             <td>validation_message</td>
-             <td>Your end date cannot be less than your start date</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code>. Message to display if there is a validation error.</td>
-         </tr>
-         <tr>
-             <td>show_error_inline</td>
-             <td>false</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify how the error should be displayed. By default, it is displayed in the Bladewind <a href=/component/notification"">Notification</a> component. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>
-         <tr>
-             <td>use_placeholder</td>
-             <td>true</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the placeholder should be explicitly used instead of labels. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>
-         <tr>
-             <td>stacked</td>
-             <td>true</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the datepickers should be stacked vertically. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>--}}
+        <tr>
+            <td>validate</td>
+            <td>false</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to enforce if the start date should not be greater than the end date. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>validation_message</td>
+            <td>Your end date cannot be less than your start date</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code>. Message to display if there is a validation error.</td>
+        </tr>
+        <tr>
+            <td>show_error_inline</td>
+            <td>false</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to specify how the error should be displayed. By default, it is displayed in the Bladewind <a href=/component/notification"">Notification</a> component. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>use_placeholder</td>
+            <td>true</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the placeholder should be explicitly used instead of labels. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>stacked</td>
+            <td>true</td>
+            <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the datepickers should be stacked vertically. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
         <tr>
             <td>size</td>
             <td>medium</td>
@@ -307,22 +344,27 @@
         </tr>
     </x-bladewind::table>
 
-    <h3>Calendar with all attributes defined</h3>
+    <h3>Datepicker with all attributes defined</h3>
     <pre class="language-markup line-numbers">
-<code>
-    &lt;x-bladewind::datepicker
-        name="invoice_date"
-        range="true"
-        required="false"
-        placeholder="Invoice Date"
-        selected_value=""
-        format="dd/mm/yyyy"
-        min_date="01/11/2025"
-        max_date="01/12/2025"
-        week_starts="monday"
-        size="big"
-        class="shadow-sm" /&gt;
-</code>
+        <code>
+            &lt;x-bladewind::datepicker
+                name="invoice_date"
+                type="single"
+                required="false"
+                placeholder="Invoice Date"
+                date_from=""
+                date_to=""
+                default_date=""
+                has_label="true"
+                validate="false"
+                show_error_inline="true"
+                stacked="true"
+                use_placeholder="false"
+                validation_message="end date before start date! Really?"
+                onblur="copyDate('copy_from', 'copy_to')"
+                week_starts="mon"
+                class="shadow-sm" /&gt;
+        </code>
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
@@ -334,8 +376,12 @@
     <x-bladewind::alert show_close_icon="false">
         The source javascript file for this component is available in <code class="inline">public/vendor/bladewind/js/datepicker.js</code>
     </x-bladewind::alert><br />
+    <x-bladewind::alert show_close_icon="false">
+        This component REQUIRES AlpineJs. This is not included in the library so you will need to include this for the datepicker to work.
+        <code class="inline">&lt;script defer src="//unpkg.com/alpinejs"&gt;&lt;/script&gt;</code>
+    </x-bladewind::alert><br />
 
-    <a href="/customize#datepicker-translations">Read the notes</a> on how to modify the Calendar translations
+    <a href="/customization">Read the notes</a> on how to modify the Datepicker translations.
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#range">Range datepicker</a></div>

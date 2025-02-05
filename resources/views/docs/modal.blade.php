@@ -1031,6 +1031,79 @@
         function returns false when validation fails or true if otherwise. That is really all we need to do in this case. One of these three options should hopefully serve your use-case.
     </p>
 
+    <h2 id="placeholders">Replacing Placeholders</h2>
+    <p>
+        There are times you will want to replace placeholders in the content of your modals. An example is when you are deleting a record and want the user to confirm.
+        Your message might look something like: <b>Do you really want to delete Michael Ocansey as an admin?</b> Achieving this can be challenging without placeholders, especially when using one modal to handle actions from data that is generated dynamically.
+        With placeholders your message will now become, <b>Do you really want to delete :name as an admin?</b>
+    </p>
+
+    <x-bladewind::table>
+        <x-slot name="header">
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th></th>
+        </x-slot>
+        <tr>
+            <td>Alfred Rowe</td>
+            <td>Outsourcing</td>
+            <td>alfred@therowe.com</td>
+            <td><x-bladewind::button size="tiny" color="red" onclick="showModal('placeholder-example', {auth_user: 'mike', name: 'Alfred Rowe'})">Delete</x-bladewind::button></td>
+        </tr>
+        <tr>
+            <td>Michael K. Ocansey</td>
+            <td>Tech</td>
+            <td>kabutey@gmail.com</td>
+            <td><x-bladewind::button size="tiny" color="red" onclick="showModal('placeholder-example', {auth_user: 'mike', name: 'Michael K. Ocansey'})">Delete</x-bladewind::button></td>
+        </tr>
+        <tr>
+            <td>Adam Nsiah</td>
+            <td>Tech</td>
+            <td>adam@nsiah.com</td>
+            <td><x-bladewind::button size="tiny" color="red" onclick="showModal('placeholder-example', {auth_user: 'mike', name: 'Adam Nsiah'})">Delete</x-bladewind::button></td>
+        </tr>
+    </x-bladewind::table>
+    <p>
+
+    </p>
+    <x-bladewind::modal name="placeholder-example" title="Confirm" type="error">
+        Hey :auth_user, to delete <b>:name</b>, first delete all the pictures they have uploaded
+    </x-bladewind::modal>
+
+    <pre class="line-numbers language-markup" data-line="5,9">
+        <code>
+        &lt;x-bladewind::modal
+            name="placeholder-example"
+            title="Confirm"
+            type="error"&gt;
+            Hey :auth_user, to delete &lt;b&gt;:name&lt;/b&gt;,
+            first delete all the pictures they have uploaded
+        &lt;/x-bladewind::modal&gt;
+        </code>
+    </pre>
+    <pre class="line-numbers language-markup" data-line="12,13">
+        <code>
+&lt;x-bladewind::table&gt;
+    ...
+    &lt;tr&gt;
+        &lt;td>Alfred Rowe&lt;/td&gt;
+        &lt;td>Outsourcing&lt;/td&gt;
+        &lt;td>alfred@therowe.com&lt;/td&gt;
+        &lt;td>
+            &lt;x-bladewind::button
+            size="tiny"
+            color="red"
+            onclick="showModal('placeholder-example', {
+                auth_user: 'mike',
+                name: 'Alfred Rowe'
+            })">Delete&lt;/x-bladewind::button>&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+&lt;/x-bladewind::table&gt;
+        </code>
+    </pre>
+
     <h2 id="attributes">Full List Of Attributes</h2>
     <p>The table below shows a comprehensive list of all the attributes available for the Modal component.</p>
     @include('docs/announcement')
@@ -1192,6 +1265,7 @@
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#validate">Validate & submit</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#ajax">Ajax example</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#submit">Submit button in form</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#placeholders">Replacing placeholders</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
     </x-slot:side_nav>
 
