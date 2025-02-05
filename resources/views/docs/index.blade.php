@@ -2,6 +2,7 @@
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <x-slot name="title">Super simple but elegant Laravel blade-based UI component library using TailwindCSS and vanilla Javascript</x-slot>
 </x-meta>
+<x-bladewind::notification />
 <body class="text-gray-500/80 bg-slate-100 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
 <div class="sm:hidden block absolute right-4 -top-2">
     <a href="#" onclick="animateCSS('.navigation','slideInRight');" class="ml-4 text-slate-400 dark:hover:text-slate-300">
@@ -101,15 +102,15 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                     <?php
-                        $countries = [
+                        $hobbies = [
                             [ 'label' => 'Archery', 'value' => 'bj' ],
-                            [ 'label' => 'Basketball', 'value' => 'bb' ],
+                            [ 'label' => 'Basketball', 'value' => 'bk' ],
                             [ 'label' => 'Baseball', 'value' => 'bb' ],
                             [ 'label' => 'Dog Walking', 'value' => 'dw' ],
                             [ 'label' => 'Swimming', 'value' => 'sw' ],
                         ];
                     ?>
-                        <x-bladewind::select  name="country-multi" searchable="true" multiple="true" max_selectable="3" :data="$countries" placeholder="Pick your hobbies" />
+                        <x-bladewind::select  name="hobbies" searchable="true" multiple="true" max_selectable="3" :data="$hobbies" placeholder="Pick your hobbies" />
                     </div>
                     <div><x-bladewind::rating name="star-rating" size="medium"  color="cyan"/></div>
 
