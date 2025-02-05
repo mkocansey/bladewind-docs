@@ -216,7 +216,7 @@
     </x-slot:side_nav>
     <x-slot name="scripts">
         <script>
-            selectNavigationItem('.component-theme-switcher');
+            selectNavigationItem('.component-timepicker');
         </script>
     </x-slot>
 </x-app>

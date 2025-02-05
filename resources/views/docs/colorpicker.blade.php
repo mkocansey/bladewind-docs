@@ -1,6 +1,6 @@
 <x-app>
-    <x-slot:title>Colour Picker Component</x-slot:title>
-    <x-slot:page_title>Colour Picker</x-slot:page_title>
+    <x-slot:title>Colorpicker Component</x-slot:title>
+    <x-slot:page_title>Colorpicker</x-slot:page_title>
     <x-bladewind::notification />
 
     <p>
