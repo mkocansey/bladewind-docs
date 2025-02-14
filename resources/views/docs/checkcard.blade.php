@@ -45,7 +45,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-3">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <x-bladewind::checkcards.card name="hosting" value="AWS" title="Amazon Web Services">
                 A subsidiary of Amazon that provides on-demand cloud computing platforms & APIs on a metered, pay-as-you-go basis
             </x-bladewind::checkcards.card>
@@ -75,7 +75,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-small">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <x-bladewind::checkcards.card value="AWS">
                 Amazon Web Services
             </x-bladewind::checkcards.card>
@@ -125,7 +125,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-max" max="3">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <x-bladewind::checkcards.card value="AWS">
                 Amazon Web Services
             </x-bladewind::checkcards.card>
@@ -177,7 +177,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-errors" max="3" show_error="true">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <x-bladewind::checkcards.card value="AWS">
                 Amazon Web Services
             </x-bladewind::checkcards.card>
@@ -227,7 +227,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-auto" max="3" show_error="true" auto_select_new="false">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <x-bladewind::checkcards.card value="AWS">
                 Amazon Web Services
             </x-bladewind::checkcards.card>
@@ -290,7 +290,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-icons">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <x-bladewind::checkcards.card value="AWS" title="AWS" icon="cloud-arrow-up">
                 A copy of your messages will be backed up to Amazon Web Services. You can retrieve them when setting up a new device.
             </x-bladewind::checkcards.card>
@@ -326,7 +326,7 @@
     </p>
 
     <x-bladewind::checkcards name="hosting-avatar" max="2">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <x-bladewind::checkcards.card value="mike" title="Michael Ocansey" avatar="/assets/images/me.jpeg">
                 Follow Michael K. Ocansey to know when they post any new articles and code snippets.
             </x-bladewind::checkcards.card>
@@ -363,7 +363,7 @@
         The checkmark icon colour changes to match the colour of the border.
     </p>
     <x-bladewind::checkcards name="hosting-colours" border_color="red">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <x-bladewind::checkcards.card value="AWS" title="AWS" icon="cloud-arrow-up">
                 Your messages will be backed up to Amazon Web Services.
             </x-bladewind::checkcards.card>
@@ -389,7 +389,7 @@
     </pre>
     <br />
     <x-bladewind::checkcards name="hosting-colours2" border_color="orange" color="orange">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <x-bladewind::checkcards.card value="AWS" title="AWS" icon="cloud-arrow-up">
                 Your messages will be backed up to Amazon Web Services.
             </x-bladewind::checkcards.card>
@@ -415,7 +415,7 @@
     </pre>
     <br />
     <x-bladewind::checkcards name="hosting-avatar2" max="2" border_color="purple" color="purple">
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <x-bladewind::checkcards.card value="mike" title="Michael Ocansey" avatar="MO">
                 Follow Michael K. Ocansey to know when they post any new articles and code snippets.
             </x-bladewind::checkcards.card>

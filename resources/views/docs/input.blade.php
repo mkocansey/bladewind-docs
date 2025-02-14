@@ -1,14 +1,13 @@
 <x-app>
     <x-slot:title>Input Component</x-slot:title>
     <x-slot:page_title>Input</x-slot:page_title>
-
+    <x-bladewind::notification/>
     <p>
         Displays a text input element. This is also commonly known as a text box. This component in fact works for all the possible values of <code class="inline text-red-500">&lt;input type="" .../&gt;</code>.
         The default is <code class="inline text-red-500">input type="text"</code>. This Bladewind component simply wraps the HTML input so you are free to use all the various
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes" target="_blank">input attributes</a> available in HTML.
     </p>
-
-    <p><x-bladewind::input name="fnaln" placeholder="name and age" x-mask="99/99/9999" /></p>
+    <p><x-bladewind::input name="fnaln" placeholder="Full name" /></p>
 
     <pre class="language-markup">
         <code>
@@ -102,26 +101,26 @@
         Having a placeholder text that is longer than your label text results in some parts of the placeholder text sticking out under the label. If you want the placeholder to still be shown even when there is a label, set <code class="inline text-red-500">show_placeholder_always="true"</code>
     </p>
     <p><x-bladewind::input name="mobile" label="Mobile" placeholder="000.0000.000" show_placeholder_always="true"  /></p>
-        <pre class="language-markup line-numbers">
-            <code>
-                &lt;x-bladewind::input
-                    name="mobile" label="Mobile" placeholder="000.0000.000" /&gt;
-            </code>
-        </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::input
+        name="mobile" label="Mobile" placeholder="000.0000.000" /&gt;
+</code>
+</pre>
     <p>
         From the example above you will notice the placeholder is sticking out under the label. This is because the placeholder text is longer than the label.
         This is why Bladewind hides the placeholder when the label is set. One way to fix this is by appending non breaking spaces to your label till the placeholder text is covered.
         This is an ugly solution.
     </p>
     <p><x-bladewind::input name="mobile2" label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" placeholder="000.0000.000" show_placeholder_always="true" /></p>
-        <pre class="language-markup line-numbers">
-            <code>
-                &lt;x-bladewind::input name="mobile"
-                    label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-                    placeholder="000.0000.000"
-                    show_placeholder_always="true" /&gt;
-            </code>
-        </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::input name="mobile"
+        label="Mobile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        placeholder="000.0000.000"
+        show_placeholder_always="true" /&gt;
+</code>
+</pre>
     <h2 id="required">Required Fields</h2>
     <p>
         This either adds a red asterisk sign to the placeholder text or a red star to the label of the input field.
@@ -140,16 +139,16 @@
     <p><x-bladewind::input name="events" label="Full name" required="true"
         onfocus="changeCss('.events', '!border-2,!border-red-400')"
         onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')" /></p>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::input
-                name="events"
-                label="Full name"
-                required="true"
-                onfocus="changeCss('.events', '!border-2,!border-red-400')"
-                onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"  /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::input
+        name="events"
+        label="Full name"
+        required="true"
+        onfocus="changeCss('.events', '!border-2,!border-red-400')"
+        onblur="changeCss('.events', '!border-2,!border-red-400', 'remove')"  /&gt;
+</code>
+</pre>
     <h3>Validating Required Fields</h3>
     <p>
         Bladewind comes with a very handy Javascript helper function (<code class="inline text-red-500">validateForm(element)</code>) for validating input and textarea fields that have the attribute <code class="inline text-red-500">required='true"</code> set.
@@ -178,64 +177,66 @@
     <p>
         Let's take a look at the code for the form and then proceed to break it down.
     </p>
-    <pre class="language-markup line-numbers" data-line="1,5,16,22,33,35, 36">
-        <code>
-            &lt;x-bladewind.notification /&gt;
+<pre class="language-markup line-numbers" data-line="1,5,16,22,33,35, 36">
+<code>
+    &lt;x-bladewind.notification /&gt;
 
-            &lt;x-bladewind.card&gt;
+    &lt;x-bladewind.card&gt;
 
-                &lt;form method="get" class="signup-form"&gt;
+        &lt;form method="get" class="signup-form"&gt;
 
-                    &lt;h1 class="my-2 text-2xl font-light text-blue-900/80"&gt;Create Account&lt;/h1&gt;
-                    &lt;p class="mt-3 mb-6 text-blue-900/80 text-sm"&gt;
-                        This is a sign up form example to demonstrate how to validate forms using Bladewind.
-                    &lt;/p&gt;
+            &lt;h1 class="my-2 text-2xl font-light text-blue-900/80"&gt;
+                Create Account&lt;/h1&gt;
+            &lt;p class="mt-3 mb-6 text-blue-900/80 text-sm"&gt;
+                This is a sign up form example to demonstrate
+                how to validate forms using Bladewind.
+            &lt;/p&gt;
 
-                    &lt;x-bladewind::input
-                        name="fname"
-                        required="true"
-                        label="Full Name"
-                        error_message="You will need to enter your full name" /&gt;
+            &lt;x-bladewind::input
+                name="fname"
+                required="true"
+                label="Full Name"
+                error_message="You will need to enter your full name" /&gt;
 
-                    &lt;div class="flex gap-4"&gt;
+            &lt;div class="flex gap-4"&gt;
 
-                        &lt;x-bladewind::input
-                            name="email"
-                            required="true"
-                            label="Email" /&gt;
+                &lt;x-bladewind::input
+                    name="email"
+                    required="true"
+                    label="Email" /&gt;
 
-                        &lt;x-bladewind::input
-                            name="mobile"
-                            label="Mobile"
-                            numeric="true" /&gt;
+                &lt;x-bladewind::input
+                    name="mobile"
+                    label="Mobile"
+                    numeric="true" /&gt;
 
-                    &lt;/div&gt;
+            &lt;/div&gt;
 
-                    &lt;x-bladewind.textarea
-                        required="true"
-                        name="bio"
-                        error_message="Yoh! write something nice about yourself"
-                        show_error_inline="true"
-                        label="Describe yourself"&gt;&lt;/x-bladewind.textarea&gt;
+            &lt;x-bladewind.textarea
+                required="true"
+                name="bio"
+                error_message="Yoh! write something nice about yourself"
+                show_error_inline="true"
+                label="Describe yourself"&gt;&lt;/x-bladewind.textarea&gt;
 
-                    &lt;div class="text-center"&gt;
+            &lt;div class="text-center"&gt;
 
-                        &lt;x-bladewind.button
-                            name="btn-save"
-                            has_spinner="true"
-                            type="primary"
-                            can_submit="true"
-                            class="mt-3"&gt;
-                            Sign Up Today
-                        &lt;/x-bladewind.button&gt;
+                &lt;x-bladewind.button
+                    name="btn-save"
+                    has_spinner="true"
+                    type="primary"
+                    can_submit="true"
+                    class="mt-3"&gt;
+                    Sign Up Today
+                &lt;/x-bladewind.button&gt;
 
-                    &lt;/div&gt;
+            &lt;/div&gt;
 
-                &lt;/form&gt;
+        &lt;/form&gt;
 
-            &lt;/x-bladewind.card&gt;
-        </code>
-    </pre>
+    &lt;/x-bladewind.card&gt;
+</code>
+</pre>
     <p>
         Error messages can either be displayed inline or using the <a href="/component/notification">Bladewind notification</a> component.
         You will notice we included the Notification component on line 1. On line 5 we have a form with a class of <code class="inline">signup-form</code>.
@@ -343,18 +344,18 @@
         From the above form, we want to perform an action when the value of the <code class="inline">age_camp</code> input field changes.
         The resultant HTML code generated for the input field is below.
     </p>
-    <pre class="language-markup line-numbers" data-line="2">
-        <code>
-            &lt;input
-                class="bw-input peer required age_camp placeholder-transparent dark:placeholder-transparent"
-                type="text"
-                id="age_camp"
-                name="age_camp"
-                value=""
-                autocomplete="off"
-                placeholder="How old are you?" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="2">
+<code>
+    &lt;input
+        class="bw-input peer required age_camp placeholder-transparent dark:placeholder-transparent"
+        type="text"
+        id="age_camp"
+        name="age_camp"
+        value=""
+        autocomplete="off"
+        placeholder="How old are you?" /&gt;
+</code>
+</pre>
     <p>
         The name we provided to the Input component has been used as part of the <code class="inline">class</code> names of the component.
         This makes it easy for us to access the component in Javascript. Below is the script that performs the hiding and unhiding of the DIVs based on the value of the age input.
@@ -433,14 +434,14 @@
         </code>
     </pre>
     <x-bladewind::input name="tnc" placeholder="Your bio. Keep it brief and nice" suffix='<a href="#">See some good examples</a>' />
-    <pre class="language-markup">
-        <code>
-            &lt;x-bladewind::input
-                name="tnc"
-                placeholder="Your bio. Keep it brief and nice"
-                suffix='&lt;a href="#"&gt;See some good examples&lt;/a&gt;' /&gt;
-        </code>
-    </pre>
+<pre class="language-markup">
+<code>
+    &lt;x-bladewind::input
+        name="tnc"
+        placeholder="Your bio. Keep it brief and nice"
+        suffix='&lt;a href="#"&gt;See some good examples&lt;/a&gt;' /&gt;
+</code>
+</pre>
 
 <h3 id="transparency">Prefix and Suffix Transparency</h3>
     <p>
@@ -448,40 +449,40 @@
         You can specify both a prefix and suffix on your input fields.
     </p>
     <x-bladewind::input name="usdbg" placeholder="0.00" prefix="USD" numeric transparent_prefix="false" />
-    <pre class="language-markup line-numbers" data-line="5">
-        <code>
-            &lt;x-bladewind::input
-                name="usdbg"
-                placeholder="0.00"
-                prefix="USD"
-                transparent_prefix="false"
-                numeric /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="5">
+<code>
+    &lt;x-bladewind::input
+        name="usdbg"
+        placeholder="0.00"
+        prefix="USD"
+        transparent_prefix="false"
+        numeric /&gt;
+</code>
+</pre>
     <br/>
     <x-bladewind::input name="spacex" placeholder="workspace-name" suffix=".slack.com" transparent_suffix="false" />
-    <pre class="language-markup line-numbers" data-line="4">
-        <code>
-            &lt;x-bladewind::input
-                name="spacex"
-                placeholder="workspace-name"
-                transparent_suffix="false"
-                suffix=".slack.com" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="4">
+<code>
+    &lt;x-bladewind::input
+        name="spacex"
+        placeholder="workspace-name"
+        transparent_suffix="false"
+        suffix=".slack.com" /&gt;
+</code>
+</pre>
     <br/>
     <x-bladewind::input name="spacexx" placeholder="workspace-name" prefix="https://" suffix=".slack.com" transparent_prefix="false" transparent_suffix="false" />
-    <pre class="language-markup line-numbers" data-line="3,4,6,7">
-        <code>
-            &lt;x-bladewind::input
-                name="spacexx"
-                prefix="https://"
-                transparent_prefix="false"
-                placeholder="workspace-name"
-                suffix=".slack.com"
-                transparent_suffix="false" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3,4,6,7">
+<code>
+    &lt;x-bladewind::input
+        name="spacexx"
+        prefix="https://"
+        transparent_prefix="false"
+        placeholder="workspace-name"
+        suffix=".slack.com"
+        transparent_suffix="false" /&gt;
+</code>
+</pre>
     <h2 id="icons">Inputs With Icons</h2>
     <p>
         The BladewindUI input field can have an icon for those moments where you want a simple icon to describe the field.
@@ -550,25 +551,27 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
 </svg>' prefix_is_icon="true" />
 
-    <pre class="language-markup line-numbers">
-    <code class="!whitespace-pre-wrap">
-    &lt;x-bladewind::input
+<pre class="language-markup line-numbers">
+<code class="!whitespace-pre-wrap">
+&lt;x-bladewind::input
     name="www"
     placeholder="website address"
     prefix_is_icon="true"
-    prefix='&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"&gt;
+    prefix='&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none"
+    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="w-6 h-6"&gt;
 &lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /&gt;
 &lt;/svg&gt;' /&gt;
-    </code>
-    </pre>
+</code>
+</pre>
     <br />
     <x-bladewind::input name="www2" placeholder="website address" transparent_prefix="false" prefix='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
 </svg>' prefix_is_icon="true" />
 
-    <pre class="language-markup line-numbers">
-    <code class="!whitespace-pre-wrap">
-    &lt;x-bladewind::input
+<pre class="language-markup line-numbers">
+<code class="!whitespace-pre-wrap">
+&lt;x-bladewind::input
     name="www"
     placeholder="website address"
     prefix_is_icon="true"
@@ -576,8 +579,8 @@
     prefix='&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"&gt;
 &lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /&gt;
 &lt;/svg&gt;' /&gt;
-    </code>
-    </pre>
+</code>
+</pre>
 <h2 id="clearable">Clearable Inputs</h2>
     <p>
         Clearable fields display an x icon when a field has a value entered. Clicking on the x icon deletes the text in the input field. Quite handy and saves users from clicking the backspace several times in say, a search field.
@@ -825,7 +828,7 @@
         </tr>
     </x-bladewind::table>
     <h3>Input with all attributes defined</h3>
-    <pre class="language-markup line-numbers" data-line="4">
+    <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::input
                 name="pin"

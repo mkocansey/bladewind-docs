@@ -5,8 +5,9 @@
                 Display a timepicker. There are two styles to choose from. Popup and inline. The default is popup.
             </p>
 
-            <x-bladewind::timepicker   />
-            <pre class="language-markup line-numbers">
+            <x-bladewind::timepicker/>
+
+    <pre class="language-markup line-numbers">
                 <code>
                     &lt;x-bladewind::timepicker  /&gt;
                 </code>
@@ -23,7 +24,7 @@
             <p>
                 By default the timepicker displays time in the 12 hour format. This format has hours from 1 to 12 and an AM/PM suffix.
                 To change this to a 24 hour format, set <code class="inline text-red-500">format="24"</code>. The 24 hour time format gets rid
-                of AM/PM suffix and displays the hours from 01 to 00. Note how the hours in 24 hour format are double digits.
+                of AM/PM suffix and displays the hours from 00 to 23. Note how the hours in 24 hour format are double digits.
             </p>
 
             <x-bladewind::timepicker format="24" />
