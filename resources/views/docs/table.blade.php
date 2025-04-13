@@ -226,8 +226,8 @@
     </pre>
 
     <h2 id="nohover">No Hover Effect</h2>
-    <p>To remove the beautiful green side border effect when users hover on each row, set the hover attribute to false, like this, <code class="inline text-red-500">hover_effect="false"</code>. </p>
-    <x-bladewind::table hover_effect="false" divider="thin">
+    <p>To remove the beautiful green side border effect when users hover on each row, set the hover attribute to false, like this, <code class="inline text-red-500">has_hover="false"</code>. </p>
+    <x-bladewind::table has_hover="false" divider="thin">
         <x-slot name="header">
             <th>Name</th>
             <th>Department</th>
@@ -266,7 +266,7 @@
     <pre class="language-markup line-numbers" data-line="2">
         <code>
                 &lt;x-bladewind::table
-                    hover_effect="false"
+                    has_hover="false"
                     divider="thin"&gt;
 
                 &lt;x-slot name="header"&gt;
@@ -1519,7 +1519,7 @@
             <td>Determines how wide the gaps are between table rows. <br /><code class="inline">regular</code> <code class="inline">thin</code></td>
         </tr>
         <tr>
-            <td>hover_effect</td>
+            <td>has_hover</td>
             <td>false</td>
             <td>Determines if the borders of the table rows light up when hovered over. The value should be passed as a string, not boolean.<br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
@@ -1766,7 +1766,7 @@
                 limit="40"
                 layout="custom"
                 total_label="Showing :a to :b of :c records",
-                hover_effect="true"&gt;
+                has_hover="true"&gt;
 
                 &lt;x-slot name="header"&gt;
                     ...

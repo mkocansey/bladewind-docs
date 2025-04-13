@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'docs/index');
@@ -15,6 +16,7 @@ Route::view('component/button', 'docs/button');
 Route::view('component/card', 'docs/card');
 Route::view('component/centered-content', 'docs/centered-content');
 Route::view('component/checkbox', 'docs/checkbox');
+Route::view('component/chart', 'docs/chart');
 Route::view('component/checkcard', 'docs/checkcard');
 Route::view('component/datepicker', 'docs/datepicker');
 Route::view('component/colorpicker', 'docs/colorpicker');
@@ -22,7 +24,6 @@ Route::view('component/dropmenu', 'docs/dropmenu');
 Route::view('component/empty-state', 'docs/emptystate');
 Route::view('component/filepicker', 'docs/filepicker');
 Route::view('component/horizontal-line-graph', 'docs/horizontal-line-graph');
-Route::view('laravel8-users', 'docs/laravel8');
 Route::view('contribute', 'docs/contribute');
 Route::view('component/icon', 'docs/icon');
 Route::view('component/input', 'docs/input');
@@ -55,3 +56,7 @@ Route::view('component/verification-code', 'docs/code');
 Route::view('extra/app-layouts', 'docs/app-layouts');
 Route::view('extra/error-pages', 'docs/error-pages');
 Route::view('extra/helper-functions', 'docs/helpers');
+Route::post('/upload', [FileUploadController::class, 'upload'])->name('upload');
+Route::post('/upload-delete', [FileUploadController::class, 'delete']);
+Route::post('/manual-upload', [FileUploadController::class, 'manual_upload']);
+Route::post('/base64-upload', [FileUploadController::class, 'base64_upload']);

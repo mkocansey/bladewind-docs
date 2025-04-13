@@ -310,7 +310,6 @@ const showModal = (element, placeholders = {}) => {
     animateCSS(`.bw-${element}`, 'zoomIn').then(() => {
         currentModal[index] = element;
         if (Object.keys(placeholders).length > 0) {
-            console.log(placeholders.length);
             const modalBody = domEl(`.bw-${element}-modal .modal-body`);
             if (!window.originalContent) {
                 window.originalContent = modalBody.innerHTML;

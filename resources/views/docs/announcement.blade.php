@@ -1,1 +1,1 @@
-<p><x-bladewind::alert type="warning" showCloseIcon="false">IMPORTANT: Projects running Laravel 8 <a href="/laravel8-users">please read this</a></x-bladewind::alert></p>
+<p><x-bladewind::alert type="warning" showCloseIcon="false">IMPORTANT: All component text/labels can be found in lang/bladewind.php. You can translate these into your preferred languages</x-bladewind::alert></p>

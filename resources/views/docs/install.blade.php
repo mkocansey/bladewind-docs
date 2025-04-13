@@ -3,12 +3,14 @@
     <x-slot:page_title>Getting Started</x-slot:page_title>
     <p>
         BladewindUI is a collection of super simple but elegant Laravel blade-based UI components using TailwindCSS and vanilla Javascript.
-        When I decided to move away from JQuery, that indirectly meant I had to find an alternative to the lovely <a href="https://semantic-ui.com/" target="_blank">Semantic UI</a> components I had gotten so used to.
-        Well, that was how these components were born.
+        While building our Cropchain and Velociti apps at <a href="https://agrocenta.com/platforms.html" target="_blank">AgroCenta</a>,
+        we needed to ensure the UI stayed consistent across all the apps.
+        We couldn't afford to duplicate code since an update to a component in one app meant updating that component across all apps.
+        That's how BladewindUI was born. A set of UI elements that enabled us to achieve a consistent UI.
     </p>
     <h2 id="required">Requirements </h2>
-    <p>Bladewind components are purely Laravel blade components sprinkled with some <a href="https://tailwindcss.com">TailwindCSS</a> sauce. This means you absolutely need to be using Bladewind in a Laravel project. The package has the following dependencies:</p>
-    <p>- PHP >= 7.3 <br />- Laravel >= 8.x</p>
+    <p>Bladewind components are purely Laravel blade components sprinkled with some <a href="https://tailwindcss.com">TailwindCSS</a> sauce. This means you absolutely need to be using BladewindUI in a Laravel project. The package has the following dependencies:</p>
+    <p>- PHP >= 8.0 <br />- Laravel >= 9.x</p>
 
     <h2 id="install">Install</h2>
     <p>At the root of your Laravel project, type the following composer command in your terminal to pull in the package.</p>
@@ -67,22 +69,23 @@
 <br />
     <p>You are now ready to start using any of the BladewindUI components in your application</p>
 
+    <p class="text-center">
+        <x-bladewind::button>Save User</x-bladewind::button>
+    </p>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::button&gt;Save User&lt;/x-bladewind::button&gt;
         </code>
     </pre>
-    <p class="text-center">
-        <x-bladewind::button>Save User</x-bladewind::button>
+    <br />
+    <p>
+        <x-bladewind::code />
     </p>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::code /&gt;
         </code>
     </pre>
-    <p>
-        <x-bladewind::code />
-    </p>
 <p>
     <x-bladewind::alert show_close_icon="false">
 You can define your primary, secondary and dark mode colours in your project's <code class="inline">tailwind.config.js</code> file. More on <a href="https://bladewindui.com/customize/colours">customizing colours</a> here.

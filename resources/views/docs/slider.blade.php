@@ -27,9 +27,11 @@
         The example below also sets the <code class="inline text-red-500">selected</code> attribute. This is useful in edit mode to specify the slider number the user already selected.
         This can also be used to set the default value for the slider.
     </p>
+    <div class="space-y-6">
     <x-bladewind::slider selected="50" color="cyan" />
     <x-bladewind::slider selected="30" color="pink" />
     <x-bladewind::slider selected="70" color="indigo" />
+    </div>
     <pre class="language-markup">
         <code>
             &lt;x-bladewind::slider selected="50" color="cyan" /&gt;

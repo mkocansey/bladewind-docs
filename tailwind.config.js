@@ -5,7 +5,8 @@ export default {
   content: [
       "./resources/**/*.blade.php",
       "./resources/**/*.js",
-      "./vendor/mkocansey/bladewind/resources/views/**/*.blade.php",
+      "./vendor/mkocansey/bladewind/resources/views/components/**/*.blade.php",
+      "./public/vendor/bladewind/js/*.js",
   ],
   theme: {
     extend: {

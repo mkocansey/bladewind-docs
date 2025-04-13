@@ -73,7 +73,7 @@
         <x-bladewind::button
             onclick="showNotification(
                 'Delete Failed',
-                'Your message could not be deleted. Try again')">error</x-bladewind::button> &nbsp;
+                'Your message could not be deleted. Try again','error')">error</x-bladewind::button> &nbsp;
         <x-bladewind::button class="mt-2 sm:mt-0"
             onclick="showNotification(
                 'Low Disk Space',
