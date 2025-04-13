@@ -544,17 +544,17 @@
     <pre class="language-markup line-numbers">
         <code>
            &lt;x-bladewind::select name="gender" placeholder="Select Gender" data="manual"&gt;
-                &lt;x-bladewind::select-item label="Male" value="male" /&gt;
-                &lt;x-bladewind::select-item label="Female" value="female" /&gt;
-                &lt;x-bladewind::select-item label="Prefer not to say" value="other" /&gt;
+                &lt;x-bladewind::select.item label="Male" value="male" /&gt;
+                &lt;x-bladewind::select.item label="Female" value="female" /&gt;
+                &lt;x-bladewind::select.item label="Prefer not to say" value="other" /&gt;
            &lt;/x-bladewind::select&gt;
         </code>
     </pre>
     <p>
         <x-bladewind::select name="gender" placeholder="Select Gender" data="manual">
-            <x-bladewind::select-item label="Male" value="male" />
-            <x-bladewind::select-item label="Female" value="female" />
-            <x-bladewind::select-item label="Prefer not to say" value="other" />
+            <x-bladewind::select.item label="Male" value="male" />
+            <x-bladewind::select.item label="Female" value="female" />
+            <x-bladewind::select.item label="Prefer not to say" value="other" />
         </x-bladewind::select>
     </p>
     <p>
@@ -568,24 +568,24 @@
                 multiple="true"
                 searchable="true" data="manual"&gt;
 
-                &lt;x-bladewind::select-item label="Pop" value="pop" image="/path/to/image" /&gt;
-                &lt;x-bladewind::select-item label="Hip" value="hip" flag="gh" /&gt;
-                &lt;x-bladewind::select-item label="Trendy" value="trendy" flag="ng" /&gt;
-                &lt;x-bladewind::select-item label="GenZ" value="genz" image="/path/to/image" /&gt;
-                &lt;x-bladewind::select-item label="Trance" value="trance" /&gt;
-                &lt;x-bladewind::select-item label="For Coder's" value="devs" /&gt;
+                &lt;x-bladewind::select.item label="Pop" value="pop" image="/path/to/image" /&gt;
+                &lt;x-bladewind::select.item label="Hip" value="hip" flag="gh" /&gt;
+                &lt;x-bladewind::select.item label="Trendy" value="trendy" flag="ng" /&gt;
+                &lt;x-bladewind::select.item label="GenZ" value="genz" image="/path/to/image" /&gt;
+                &lt;x-bladewind::select.item label="Trance" value="trance" /&gt;
+                &lt;x-bladewind::select.item label="For Coder's" value="devs" /&gt;
 
            &lt;/x-bladewind::select&gt;
         </code>
     </pre>
     <p>
         <x-bladewind::select name="tags" placeholder="Tags for this music" multiple="true" searchable="true" data="manual">
-            <x-bladewind::select-item label="Pop" value="pop" image="{{ asset('assets/images/edwin.jpeg') }}" />
-            <x-bladewind::select-item label="Hip" value="hip" flag="gh" />
-            <x-bladewind::select-item label="Trendy" value="trendy" flag="ng" />
-            <x-bladewind::select-item label="GenZ" value="genz" image="{{ asset('assets/images/audrey.jpeg') }}" />
-            <x-bladewind::select-item label="Trance" value="trance" />
-            <x-bladewind::select-item label="For Coder's" value="devs" />
+            <x-bladewind::select.item label="Pop" value="pop" image="{{ asset('assets/images/edwin.jpeg') }}" />
+            <x-bladewind::select.item label="Hip" value="hip" flag="gh" />
+            <x-bladewind::select.item label="Trendy" value="trendy" flag="ng" />
+            <x-bladewind::select.item label="GenZ" value="genz" image="{{ asset('assets/images/audrey.jpeg') }}" />
+            <x-bladewind::select.item label="Trance" value="trance" />
+            <x-bladewind::select.item label="For Coder's" value="devs" />
         </x-bladewind::select>
     </p>
     <p>
@@ -649,9 +649,9 @@
 
     <div class="grid grid-cols-2 gap-4">
         <x-bladewind::select name="cusfxns" placeholder="Your country" data="manual" onselect="prependDialingCode">
-            <x-bladewind::select-item label="Burkina Faso" value="bf" />
-            <x-bladewind::select-item label="Ghana" value="gh" />
-            <x-bladewind::select-item label="Nigeria" value="ng" />
+            <x-bladewind::select.item label="Burkina Faso" value="bf" />
+            <x-bladewind::select.item label="Ghana" value="gh" />
+            <x-bladewind::select.item label="Nigeria" value="ng" />
         </x-bladewind::select>
         <x-bladewind::input name="mobile" numeric="true" prefix="+xxx" suffix="device-phone-mobile" suffix_is_icon="true" transparent_prefix="false" placeholder="Mobile" />
     </div>
@@ -666,9 +666,9 @@
                     data="manual"
                     onselect="prependDialingCode"&gt;
 
-                    &lt;x-bladewind::select-item label="Burkina Faso" value="bf" /&gt;
-                    &lt;x-bladewind::select-item label="Ghana" value="gh" /&gt;
-                    &lt;x-bladewind::select-item label="Nigeria" value="ng" /&gt;
+                    &lt;x-bladewind::select.item label="Burkina Faso" value="bf" /&gt;
+                    &lt;x-bladewind::select.item label="Ghana" value="gh" /&gt;
+                    &lt;x-bladewind::select.item label="Nigeria" value="ng" /&gt;
 
                 &lt;/x-bladewind::select&gt;
 
@@ -779,9 +779,9 @@
     <h3 id="example">A Practical Example</h3>
     <p>
         <x-bladewind::select name="from-js" placeholder="Your country" data="manual">
-            <x-bladewind::select-item label="Burkina Faso" value="bf" />
-            <x-bladewind::select-item label="Ghana" value="gh" />
-            <x-bladewind::select-item label="Nigeria" value="ng" />
+            <x-bladewind::select.item label="Burkina Faso" value="bf" />
+            <x-bladewind::select.item label="Ghana" value="gh" />
+            <x-bladewind::select.item label="Nigeria" value="ng" />
         </x-bladewind::select>
     </p>
     <div class="space-x-4 text-center">
@@ -794,9 +794,9 @@
 <br />
     <p>
         <x-bladewind::select name="multiple-from-js" placeholder="Your country"  multiple="true" data="manual">
-            <x-bladewind::select-item label="Burkina Faso" value="bf" />
-            <x-bladewind::select-item label="Ghana" value="gh" />
-            <x-bladewind::select-item label="Nigeria" value="ng" />
+            <x-bladewind::select.item label="Burkina Faso" value="bf" />
+            <x-bladewind::select.item label="Ghana" value="gh" />
+            <x-bladewind::select.item label="Nigeria" value="ng" />
         </x-bladewind::select>
     </p>
     <div class="space-x-4 text-center">
@@ -810,9 +810,9 @@
     <pre class="language-markup line-numbers" data-line="9,14,19,24,29">
         <code>
             &lt;x-bladewind::select name="from-js" placeholder="Your country" data="manual"&gt;
-                &lt;x-bladewind::select-item label="Burkina Faso" value="bf" /&gt;
-                &lt;x-bladewind::select-item label="Ghana" value="gh" /&gt;
-                &lt;x-bladewind::select-item label="Nigeria" value="ng" /&gt;
+                &lt;x-bladewind::select.item label="Burkina Faso" value="bf" /&gt;
+                &lt;x-bladewind::select.item label="Ghana" value="gh" /&gt;
+                &lt;x-bladewind::select.item label="Nigeria" value="ng" /&gt;
             &lt;/x-bladewind::select&gt;
 
             &lt;div class="space-x-4 text-center"&gt;
@@ -871,11 +871,11 @@
 
     <div class="bg-slate-100">
         <x-bladewind::select name="department" placeholder="filter by department" data="manual" multiple="true" onselect="filterEmployees">
-            <x-bladewind::select-item label="Field Workers" value="field" />
-            <x-bladewind::select-item label="Finance" value="finance" />
-            <x-bladewind::select-item label="Tech" value="tech" />
-            <x-bladewind::select-item label="Marketing" value="marketing" />
-            <x-bladewind::select-item label="Operations" value="operations" />
+            <x-bladewind::select.item label="Field Workers" value="field" />
+            <x-bladewind::select.item label="Finance" value="finance" />
+            <x-bladewind::select.item label="Tech" value="tech" />
+            <x-bladewind::select.item label="Marketing" value="marketing" />
+            <x-bladewind::select.item label="Operations" value="operations" />
         </x-bladewind::select>
     </div>
     <div class="grid sm:grid-cols-2 gap-4">
@@ -932,11 +932,11 @@
                 placeholder="filter by department"
                 data="manual"
                 multiple="true"&gt;
-                &lt;x-bladewind::select-item label="Field Workers" value="field" /&gt;
-                &lt;x-bladewind::select-item label="Finance" value="finance" /&gt;
-                &lt;x-bladewind::select-item label="Tech" value="tech" /&gt;
-                &lt;x-bladewind::select-item label="Marketing" value="marketing" /&gt;
-                &lt;x-bladewind::select-item label="Operations" value="operations" /&gt;
+                &lt;x-bladewind::select.item label="Field Workers" value="field" /&gt;
+                &lt;x-bladewind::select.item label="Finance" value="finance" /&gt;
+                &lt;x-bladewind::select.item label="Tech" value="tech" /&gt;
+                &lt;x-bladewind::select.item label="Marketing" value="marketing" /&gt;
+                &lt;x-bladewind::select.item label="Operations" value="operations" /&gt;
             &lt;/x-bladewind::select&gt;
         </code>
     </pre>
@@ -1016,10 +1016,10 @@
     <x-bladewind::card reduce_padding="true">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <x-bladewind::select name="continent" placeholder="Select Continent" data="manual" filter="continent-country" add_clearing="false">
-                <x-bladewind::select-item label="Africa" value="af" />
-                <x-bladewind::select-item label="Asia" value="as" />
-                <x-bladewind::select-item label="Europe" value="eu" />
-                <x-bladewind::select-item label="North America" value="na" />
+                <x-bladewind::select.item label="Africa" value="af" />
+                <x-bladewind::select.item label="Asia" value="as" />
+                <x-bladewind::select.item label="Europe" value="eu" />
+                <x-bladewind::select.item label="North America" value="na" />
             </x-bladewind::select>
             <x-bladewind::select name="continent-country" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
         </div>
@@ -1059,10 +1059,10 @@
             &lt;x-bladewind::select name="continent" placeholder="Select Continent"
                 filter="continent-country"
                 data="manual"&gt;
-                &lt;x-bladewind::select-item label=Africa" value="af" /&gt;
-                &lt;x-bladewind::select-item label="Asia" value="as" /&gt;
-                &lt;x-bladewind::select-item label="Europe" value="eu" /&gt;
-                &lt;x-bladewind::select-item label="North America" value="na" /&gt;
+                &lt;x-bladewind::select.item label=Africa" value="af" /&gt;
+                &lt;x-bladewind::select.item label="Asia" value="as" /&gt;
+                &lt;x-bladewind::select.item label="Europe" value="eu" /&gt;
+                &lt;x-bladewind::select.item label="North America" value="na" /&gt;
             &lt;/x-bladewind::select&gt;
         </code>
     </pre>
@@ -1443,7 +1443,8 @@
     </pre>
 
 <x-bladewind::alert show_close_icon="false">
-    The source file for this component is available in <code class="inline">resources > views > components > bladewind > select.blade.php</code>
+    The source file for this component is available in <code class="inline">resources > views > components > bladewind > select > index.blade.php</code> and
+    <code class="inline">resources > views > components > bladewind > select > item.blade.php</code>
 </x-bladewind::alert> <br />
 <x-bladewind::alert show_close_icon="false">
     The javascript source file for this component is available in <code class="inline">public/vendor/bladewind/assets/js/select.js</code>

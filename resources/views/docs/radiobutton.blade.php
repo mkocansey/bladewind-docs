@@ -7,131 +7,131 @@
         The default radio button colour is blue but there are nine colours available to choose from.
     </p>
 
-    <x-bladewind::radio-button name="tnc" />
+    <x-bladewind::radio name="tnc" />
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::radio-button name="tnc"  /&gt;
+            &lt;x-bladewind::radio name="tnc"  /&gt;
         </code>
     </pre>
 
     <h3>What kind of movies do you like?</h3>
-    <x-bladewind::radio-button label="Action" name="genre"  />
-    <x-bladewind::radio-button label="Comedy" name="genre"  />
-    <x-bladewind::radio-button label="Drama" name="genre"  />
-    <x-bladewind::radio-button label="Thriller" name="genre" />
+    <x-bladewind::radio label="Action" name="genre"  />
+    <x-bladewind::radio label="Comedy" name="genre"  />
+    <x-bladewind::radio label="Drama" name="genre"  />
+    <x-bladewind::radio label="Thriller" name="genre" />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::radio-button label="Action" name="genre"  /&gt;
-            &lt;x-bladewind::radio-button label="Comedy" name="genre"  /&gt;
-            &lt;x-bladewind::radio-button label="Drama" name="genre"  /&gt;
-            &lt;x-bladewind::radio-button label="Thriller" name="genre" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::radio label="Action" name="genre"  /&gt;
+    &lt;x-bladewind::radio label="Comedy" name="genre"  /&gt;
+    &lt;x-bladewind::radio label="Drama" name="genre"  /&gt;
+    &lt;x-bladewind::radio label="Thriller" name="genre" /&gt;
+</code>
+</pre>
 
-    <x-bladewind::radio-button label="I am checked by default" checked="true" name="check_me"  />
+    <x-bladewind::radio label="I am checked by default" checked="true" name="check_me"  />
 
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::radio-button
-                label="I am checked by default"
-                checked="true"
-                name="check_me"  /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::radio
+        label="I am checked by default"
+        checked="true"
+        name="check_me"  /&gt;
+</code>
+</pre>
 
-    <x-bladewind::radio-button label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
-    <x-bladewind::radio-button label="I am checked and disabled" disabled="true" checked="true"  />
+    <x-bladewind::radio label="I am disabled" disabled="true"  /> &nbsp;&nbsp;
+    <x-bladewind::radio label="I am checked and disabled" disabled="true" checked="true"  />
 
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::radio-button
-                label="I am disabled"
-                disabled="true"  /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+    &lt;x-bladewind::radio
+        label="I am disabled"
+        disabled="true"  /&gt;
+</code>
+</pre>
 
     <h2 id="coloured">Coloured Checkboxes</h2>
     <p>
-        Like most of the BladewindUI components, radio-buttons also come in nine colours to enable the components sit better in most designs with various colour schemes.
+        Like most of the BladewindUI components, radios also come in nine colours to enable the components sit better in most designs with various colour schemes.
     </p>
     <div class="grid grid-cols-3 gap-2">
-        <x-bladewind::radio-button color="red" checked="true" label="I am a red radio-button" />
-        <x-bladewind::radio-button color="yellow" label="I am a yellow radio-button" />
-        <x-bladewind::radio-button color="green" label="I am a green radio-button" />
-        <x-bladewind::radio-button color="pink" label="I am a pink radio-button" />
-        <x-bladewind::radio-button color="cyan" label="I am a cyan radio-button" />
-        <x-bladewind::radio-button color="black" label="I am a black radio-button" />
-        <x-bladewind::radio-button color="purple" label="I am a purple radio-button" />
-        <x-bladewind::radio-button color="orange" label="I am a orange radio-button" />
-        <x-bladewind::radio-button color="blue" label="I am a blue radio-button" />
-        <x-bladewind::radio-button color="violet" label="I am a violet radio-button" />
-        <x-bladewind::radio-button color="indigo" label="I am a indigo radio-button" />
-        <x-bladewind::radio-button color="fuchsia" label="I am a fuchsia radio-button" />
+        <x-bladewind::radio color="red" checked="true" label="I am a red radio" />
+        <x-bladewind::radio color="yellow" label="I am a yellow radio" />
+        <x-bladewind::radio color="green" label="I am a green radio" />
+        <x-bladewind::radio color="pink" label="I am a pink radio" />
+        <x-bladewind::radio color="cyan" label="I am a cyan radio" />
+        <x-bladewind::radio color="black" label="I am a black radio" />
+        <x-bladewind::radio color="purple" label="I am a purple radio" />
+        <x-bladewind::radio color="orange" label="I am a orange radio" />
+        <x-bladewind::radio color="blue" label="I am a blue radio" />
+        <x-bladewind::radio color="violet" label="I am a violet radio" />
+        <x-bladewind::radio color="indigo" label="I am a indigo radio" />
+        <x-bladewind::radio color="fuchsia" label="I am a fuchsia radio" />
     </div>
 
     <pre class="language-markup line-numbers" data-line="2,7,12,17,23,28,33,38,43,49,54,59">
         <code>
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="red"
                 checked="true"
-                label="I am a red radio-button" /&gt;
+                label="I am a red radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="yellow"
                 checked="true"
-                label="I am a yellow radio-button" /&gt;
+                label="I am a yellow radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="green"
                 checked="true"
-                label="I am a green radio-button" /&gt;
+                label="I am a green radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="pink"
                 checked="true"
-                label="I am a pink radio-button" /&gt;
+                label="I am a pink radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="cyan"
                 checked="true"
-                label="I am a cyan radio-button" /&gt;
+                label="I am a cyan radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="black"
                 checked="true"
-                label="I am a black radio-button" /&gt;
+                label="I am a black radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="purple"
                 checked="true"
-                label="I am a purple radio-button" /&gt;
+                label="I am a purple radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="orange"
                 checked="true"
-                label="I am a orange radio-button" /&gt;
+                label="I am a orange radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="blue"
                 checked="true"
-                label="I am a blue radio-button" /&gt;
+                label="I am a blue radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="violet"
                 checked="true"
-                label="I am a violet radio-button" /&gt;
+                label="I am a violet radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="indigo"
                 checked="true"
-                label="I am a indigo radio-button" /&gt;
+                label="I am a indigo radio" /&gt;
 
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 color="fuchsia"
                 checked="true"
-                label="I am a fuchsia radio-button" /&gt;
+                label="I am a fuchsia radio" /&gt;
         </code>
     </pre>
 
@@ -142,10 +142,10 @@
         note that, in some cases, if the user does not select the radio button, the name of the radio button will be ignored completely from your payload.
     </p>
 
-    <x-bladewind::radio-button name="notify_me" value="1" label="Send me weekly newsletters" />
+    <x-bladewind::radio name="notify_me" value="1" label="Send me weekly newsletters" />
     <pre class="language-markup line-numbers">
         <code>
-&lt;x-bladewind::radio-button
+&lt;x-bladewind::radio
             name="notify_me"
             value="1"
             label="Send me weekly newsletters" /&gt;
@@ -213,7 +213,7 @@
     <h3>Radio button with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::radio-button
+            &lt;x-bladewind::radio
                 label="I agree to the terms and conditions"
                 checked="false"
                 disabled="false"
@@ -225,7 +225,7 @@
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
-        The source file for this component is available in <code class="inline">resources > views > components > bladewind > radio-button.blade.php</code>
+        The source file for this component is available in <code class="inline">resources > views > components > bladewind > radio.blade.php</code>
     </x-bladewind::alert>
 
     <x-slot:side_nav>

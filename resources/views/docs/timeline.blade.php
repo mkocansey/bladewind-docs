@@ -98,7 +98,7 @@
         the attribute <code class="inline text-red-500">stacked="true"</code>. When timelines are stacked, all content is displayed to the right of the anchor.
     </p>
 
-    <x-bladewind::timeline-group stacked="true">
+    <x-bladewind::timelines stacked="true">
         <x-bladewind::timeline date="just now" content="database server restarted" />
         <x-bladewind::timeline date="30 minutes ago">
             <x-slot:content>
@@ -111,11 +111,11 @@
             </x-slot:content>
         </x-bladewind::timeline>
         <x-bladewind::timeline date="Yesterday" content="Data recovery completed with 2 errors" />
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
 
 <pre class="language-markup line-numbers" data-line="1">
     <code>
-            &lt;x-bladewind::timeline-group stacked="true"&gt;
+            &lt;x-bladewind::timelines stacked="true"&gt;
 
                 &lt;x-bladewind::timeline
                     date="just now"
@@ -139,17 +139,17 @@
                 &lt;x-bladewind::timeline date="Yesterday"
                     content="Data recovery completed with 2 errors" /&gt;
 
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
     </code>
 </pre>
 <p>
-    Notice we introduced a <code class="inline">x-bladewind::timeline-group</code> component in the above example. This is completely optional but saves us from
+    Notice we introduced a <code class="inline">x-bladewind::timelines</code> component in the above example. This is completely optional but saves us from
     writing <code class="inline text-red-500">stacked="true"</code> on each tag component. The alternative is to have
     <code class="inline">&lt;x-bladewind::timeline stacked="true" .../&gt;</code> for every timeline we want to stack.
 </p>
 <h3>Stacked and all completed</h3>
     <br />
-<x-bladewind::timeline-group stacked="true" completed="true">
+<x-bladewind::timelines stacked="true" completed="true">
     <x-bladewind::timeline date="just now" content="database server restarted" />
     <x-bladewind::timeline date="30 minutes ago">
         <x-slot:content>
@@ -162,11 +162,11 @@
         </x-slot:content>
     </x-bladewind::timeline>
     <x-bladewind::timeline date="Yesterday" content="Data recovery completed with 2 errors" />
-</x-bladewind::timeline-group>
+</x-bladewind::timelines>
 <br />
 <pre class="language-markup line-numbers" data-line="2">
     <code>
-            &lt;x-bladewind::timeline-group
+            &lt;x-bladewind::timelines
                 completed="true"
                 stacked="true"&gt;
 
@@ -176,13 +176,13 @@
 
                 ...
 
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
     </code>
 </pre>
 
 <h3>Stacked and completed with anchor="big"</h3>
     <br />
-<x-bladewind::timeline-group
+<x-bladewind::timelines
     stacked="true" completed="true" anchor="big">
     <x-bladewind::timeline date="just now" content="database server restarted" />
     <x-bladewind::timeline date="30 minutes ago">
@@ -196,11 +196,11 @@
         </x-slot:content>
     </x-bladewind::timeline>
     <x-bladewind::timeline date="Yesterday" content="Data recovery completed with 2 errors" completed="false" />
-</x-bladewind::timeline-group>
+</x-bladewind::timelines>
 <br />
 <pre class="language-markup line-numbers" data-line="2">
     <code>
-            &lt;x-bladewind::timeline-group
+            &lt;x-bladewind::timelines
                 completed="true"
                 anchor="big"
                 stacked="true"&gt;
@@ -216,7 +216,7 @@
                 content="Data recovery completed with 2 errors"
                 completed="false" /&gt;
 
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
     </code>
 </pre>
 
@@ -228,7 +228,7 @@
         It is possible to use any <a href="https://heroicons.com" target="_blank">Heroicons</a> icon as your timeline's anchor.
         Just set the attribute <code class="inline text-red-500">icon="name-of-icon"</code>.
         You can use different icons for every timeline. If you intend to use the same icons for all anchors in your timeline, consider
-        wrapping your timelines in a <code class="inline">x-bladewind::timeline-group</code> component and setting
+        wrapping your timelines in a <code class="inline">x-bladewind::timelines</code> component and setting
         <code class="inline text-red-500">icon="name-of-icon"</code> on that instead.
     </p>
     <p>
@@ -237,16 +237,16 @@
         </x-bladewind::alert>
     </p>
 
-    <x-bladewind::timeline-group anchor="big" completed="true" color="red">
+    <x-bladewind::timelines anchor="big" completed="true" color="red">
         <x-bladewind::timeline date="10 days ago" content="You signed up" icon="bell-alert" />
         <x-bladewind::timeline date="8 days ago" content="Customer rep assigned" icon="bolt" />
         <x-bladewind::timeline date="8 days ago" content="Customer rep called" icon="chat-bubble-bottom-center-text" />
         <x-bladewind::timeline content="Account is being reviewed" icon="key" completed="false" />
         <x-bladewind::timeline content="Account activated" icon="map-pin" completed="false" />
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
     <pre class="language-markup line-numbers" data-line="5,9,13,17,21">
         <code>
-            &lt;x-bladewind::timeline-group anchor="big" completed="true"&gt;
+            &lt;x-bladewind::timelines anchor="big" completed="true"&gt;
 
                 &lt;x-bladewind::timeline
                     date="10 days ago"
@@ -273,7 +273,7 @@
                     icon="map-pin"
                     completed="false" /&gt;
 
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
         </code>
     </pre>
     <h3>Anchor Avatars</h3>
@@ -282,16 +282,16 @@
         Just set the attribute <code class="inline text-red-500">avatar="url-to-image"</code>. By default avatars use the <code class="inline text-red-500">size="small"</code> attribute of the Avatar component do display small images.
     </p>
 
-    <x-bladewind::timeline-group anchor="big">
+    <x-bladewind::timelines anchor="big">
         <x-bladewind::timeline date="10 days ago" content="You signed up" avatar="/assets/images/doc.png" />
         <x-bladewind::timeline date="8 days ago" content="Customer rep assigned" avatar="/assets/images/francis.png" />
         <x-bladewind::timeline date="8 days ago" content="Customer rep called" avatar="/assets/images/me.jpeg" />
         <x-bladewind::timeline content="Account is being reviewed" avatar="/assets/images/issah.jpg" />
         <x-bladewind::timeline content="Account activated" avatar="/assets/images/rowe.jpeg" />
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
     <pre class="language-markup line-numbers" data-line="6,11">
         <code>
-            &lt;x-bladewind::timeline-group&gt;
+            &lt;x-bladewind::timelines&gt;
 
                 &lt;x-bladewind::timeline
                     date="10 days ago"
@@ -303,7 +303,7 @@
                     content="Customer rep assigned"
                     avatar="/assets/images/pic2.jpg" /&gt;
             ...
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
         </code>
     </pre>
 
@@ -315,7 +315,7 @@
     </p>
     <p>
         Positioning and aligning can get confusing so lets break it down. You can <strong>only</strong> position a
-        <code class="inline">x-bladewind::timeline-group</code> component. By default it is centre aligned. We can position the component
+        <code class="inline">x-bladewind::timelines</code> component. By default it is centre aligned. We can position the component
         to the <code class="inline">left</code> or to the <code class="inline">center</code>.
     </p>
     <p>
@@ -326,17 +326,17 @@
 
     <h3>Left Positioning</h3>
     <p>Note how the entire timeline group is moved to the left of the page.</p><br />
-    <x-bladewind::timeline-group anchor="big" position="left">
+    <x-bladewind::timelines anchor="big" position="left">
         <x-bladewind::timeline date="10 days ago" content="You signed up" avatar="/assets/images/doc.png" />
         <x-bladewind::timeline date="8 days ago" content="Customer rep assigned" avatar="/assets/images/francis.png" />
         <x-bladewind::timeline date="8 days ago" content="Customer rep called" avatar="/assets/images/me.jpeg" />
         <x-bladewind::timeline content="Account is being reviewed" avatar="/assets/images/issah.jpg" />
         <x-bladewind::timeline content="Account activated" avatar="/assets/images/rowe.jpeg" />
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
     <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind::timeline-group
+            &lt;x-bladewind::timelines
                 position="left"
                 anchor="big"&gt;
 
@@ -345,12 +345,12 @@
                     content="You signed up"
                     avatar="/assets/images/pic1.jpg" /&gt;
             ...
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
         </code>
     </pre>
 <h3>Left Positioning for Stacked Timelines</h3>
     <p>Note how the timeline fills the entire width of the page. If you do not want this, you can place the timeline group in a parent element that has a fixed width.</p>
-    <x-bladewind::timeline-group color="pink"  stacked="true" position="left">
+    <x-bladewind::timelines color="pink"  stacked="true" position="left">
         <x-bladewind::timeline date="just now" content="database server restarted" />
         <x-bladewind::timeline date="30 minutes ago">
             <x-slot:content>
@@ -363,11 +363,11 @@
             </x-slot:content>
         </x-bladewind::timeline>
         <x-bladewind::timeline date="Yesterday" content="Data recovery completed with 2 errors" completed="false" />
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
     <br />
     <pre class="language-markup line-numbers" data-line="2,3">
         <code>
-            &lt;x-bladewind::timeline-group
+            &lt;x-bladewind::timelines
                 position="left"
                 stacked="true"
                 color="pink"&gt;
@@ -381,7 +381,7 @@
                     &lt;/x-slot:content&gt;
                 &lt;x-bladewind::timeline/&gt;
             ...
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
         </code>
     </pre>
     <h3>Left Alignment</h3>
@@ -396,7 +396,7 @@
         </x-bladewind::alert>
     </p>
     <br />
-    <x-bladewind::timeline-group color="indigo" stacked="true">
+    <x-bladewind::timelines color="indigo" stacked="true">
         <x-bladewind::timeline date="just now" content="database server restarted" align_left="true" />
         <x-bladewind::timeline date="30 minutes ago">
             <x-slot:content>
@@ -409,11 +409,11 @@
             </x-slot:content>
         </x-bladewind::timeline>
         <x-bladewind::timeline date="Yesterday" content="Data recovery completed with 2 errors" />
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
     <br />
     <pre class="language-markup line-numbers" data-line="2">
         <code>
-            &lt;x-bladewind::timeline-group
+            &lt;x-bladewind::timelines
                 position="right"
                 anchor="big"&gt;
 
@@ -446,7 +446,7 @@
                     date="Yesterday"
                     content="Data recovery completed with 2 errors" /&gt;
 
-            &lt;/x-bladewind::timeline-group&gt;
+            &lt;/x-bladewind::timelines&gt;
         </code>
     </pre>
 
@@ -658,7 +658,7 @@
     <h3>Timeline with all attributes defined</h3>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::timeline-group
+            &lt;x-bladewind::timelines
                 stacked="true"
                 anchor="big"
                 anchor_css="pl-9"
@@ -690,7 +690,7 @@
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
-        The source file for this component is available in <code class="inline">resources > views > components > bladewind > timeline-group.blade.php</code>,
+        The source file for this component is available in <code class="inline">resources > views > components > bladewind > timelines.blade.php</code>,
         <code class="inline">resources > views > components > bladewind > timeline.blade.php</code>
     </x-bladewind::alert>
     <p>&nbsp;</p>
