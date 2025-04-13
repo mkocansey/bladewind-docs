@@ -545,45 +545,142 @@ $data = [
             <th>Available Values</th>
         </x-slot>
         <tr>
-            <td>color</td>
-            <td><em>blue</em></td>
-            <td>The colour of the dot indicator.
-                <br> <code class="inline">primary</code> <code class="inline">blue</code> <code class="inline">red</code> <code class="inline">yellow</code> <code class="inline">green</code> <code class="inline">pink</code> <code class="inline">cyan</code> <code class="inline">black</code> <code class="inline">purple</code> <code class="inline">orange</code>
-                <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
+            <td>name</td>
+            <td>random</td>
+            <td>The name of the chart for DOM accessibility</td>
         </tr>
         <tr>
-            <td>animate_dot</td>
-            <td>false</td>
-            <td>Determines if the dot should be animated or not.</td>
+            <td>labels</td>
+            <td>[]</td>
+            <td>An array of labels to display in the chart.</td>
         </tr>
         <tr>
-            <td>size</td>
-            <td>small</td>
-            <td>Defines the size of the bell. <br><code class="inline">small</code> <code class="inline">big</code></td>
+            <td>data</td>
+            <td>[]</td>
+            <td>An array of data points to display in the chart. Alternatively, this can be a comprehensive array of chart data and other properties.</td>
         </tr>
         <tr>
-            <td>show_dot</td>
+            <td>options</td>
+            <td>[]</td>
+            <td>An array of chart options as provided in the <a href="https://www.chartjs.org/docs/latest/general/options.html" target="_blank">Chart.js documentation</a>.</td>
+        </tr>
+        <tr>
+            <td>plugins</td>
+            <td>[]</td>
+            <td>An array of chart options as provided in the <a href="https://www.chartjs.org/docs/latest/general/options.html" target="_blank">Chart.js documentation</a>.</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>bar</td>
+            <td>Type of chart to display.<br> <code class="inline">area</code> <code class="inline">bar</code><code class="inline">bubble</code> <code class="inline">doughnut</code><code class="inline">line</code> <code class="inline">pie</code><code class="inline">polar</code> <code class="inline">radar</code><code class="inline">scatter</code> </td>
+        </tr>
+        <tr>
+            <td>show_axis_lines</td>
             <td>true</td>
-            <td>Defines if the dot indicator should be displayed by default.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Show the lines on both the x and y axes. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
-            <td>invert</td>
+            <td>show_x_axis_lines</td>
+            <td>true</td>
+            <td>Show the lines on the x axis. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_y_axis_lines</td>
+            <td>true</td>
+            <td>Show the lines on the y axis. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_axis_labels</td>
+            <td>true</td>
+            <td>Show the labels on both the x and y axes. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_x_axis_labels</td>
+            <td>true</td>
+            <td>Show the labels on the x axis. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_y_axis_labels</td>
+            <td>true</td>
+            <td>Show the labels on the y axis. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_borders</td>
+            <td>true</td>
+            <td>Show the borders around the chart. These are the main x and y axes lines.. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_x_border</td>
+            <td>true</td>
+            <td>Show the border on the x axis. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_y_border</td>
+            <td>true</td>
+            <td>Show the border on the y axis. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>show_line</td>
             <td>false</td>
-            <td>Defines if the bell should be displayed as white.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
+            <td>Only applicable to scatter charts. Show the line that connects the dots. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td><em>blank</em></td>
+            <td>Title of the chart</td>
+        </tr>
+        <tr>
+            <td>show_legend</td>
+            <td>true</td>
+            <td>Display the chart legend. <br /> <code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>legend_position</td>
+            <td>top</td>
+            <td>Where should the legend be placed. <br /> <code class="inline">top</code> <code class="inline">right</code><code class="inline">bottom</code> <code class="inline">left</code><code class="inline">chartArea</code></td>
+        </tr>
+        <tr>
+            <td>legend_alignment</td>
+            <td>center</td>
+            <td>How should the legend text be aligned. <br /> <code class="inline">start</code> <code class="inline">center</code> <code class="inline">end</code></td>
+        </tr>
+        <tr>
+            <td>bg_color</td>
+            <td><em>blank</em></td>
+            <td>Defines the background colour of the charts not the canvas. For example when defined for bar charts, each bar picks this colour. Accepts rgb, hex and normal colour names. <br/> <br /> <code class="inline">green</code> <code class="inline">#fff333</code> <code class="inline">rgba(0, 0, 0, 0.1)</code></td>
+        </tr>
+        <tr>
+            <td>border_color</td>
+            <td><em>blank</em></td>
+            <td>Defines the border colour of the charts. For example when defined for bar charts, the border of each bar picks this colour. Accepts rgb, hex and normal colour names.<br /><br /> <code class="inline">green</code> <code class="inline">#fff333</code> <code class="inline">rgba(0, 0, 0, 0.1)</code></td>
+        </tr>
+        <tr>
+            <td>border_width</td>
+            <td>1</td>
+            <td>Defines how thick the border of each chart item should be. Must be numeric value above 0.</td>
         </tr>
     </x-bladewind::table>
 
     <h3>Chart with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::bell
-                color="pink"
-                show_dot="false"
-                animate_dot="true"
-                invert="true"
-                size="big" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::chart
+        :labels="$labels"
+        :data="$data"
+        :options="$options"
+        :plugins="$plugins"
+        name="population"
+        type="line"
+        bg_color="green"
+        border_color="yellow"
+        border_width="3"
+        show_axis_lines="false"
+        show_axis_labels="false"
+        show_borders="false"
+        show_legend="false"
+        title="Population Distribution" /&gt;
+</code>
+</pre>
 
     <p>
         <x-bladewind::alert show_close_icon="false">
