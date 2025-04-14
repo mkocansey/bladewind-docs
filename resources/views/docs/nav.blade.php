@@ -4,6 +4,7 @@
     <div class="flex items-center customization"><div class="dot"></div><a href="/customize">Customization</a></div>
     <div class="flex items-center colours"><div class="dot"></div><a href="/customize/colours">Colours</a></div>
     <div class="flex items-center darkmode"><div class="dot"></div><a href="/customize/darkmode">Dark Mode</a></div>
+    <div class="flex items-center upgrade"><div class="dot"></div><a href="https://github.com/mkocansey/bladewind/releases/tag/v3.0.0" target="_blank">v3.0 Release Notes</a></div>
 </div>
 
 <h5 class="nav-heading">Components</h5>
