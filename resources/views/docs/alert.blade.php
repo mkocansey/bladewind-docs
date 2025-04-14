@@ -394,41 +394,41 @@
     <p>
     <div class="text-center">
         <x-bladewind::dropmenu trigger="bell-alert-icon" trigger_css="bg-cyan-500 rounded-full text-white p-2 !h-10 !w-10" hide_after_click="false">
-            <x-bladewind::dropmenu-item header="true">
+            <x-bladewind::dropmenu.item header="true">
                 <div class="space-y-0.5">
                     <div>You have 5 new notifications</div>
                     <div class="text-sm text-gray-400">Updated 4 days ago</div>
                     <div class="text-sm"><a href="#">Mark all as read</a></div>
                 </div>
-            </x-bladewind::dropmenu-item>
-            <x-bladewind::dropmenu-item hover="false">
+            </x-bladewind::dropmenu.item>
+            <x-bladewind::dropmenu.item hover="false">
                 <x-bladewind::alert color="transparent" icon="calendar" icon_avatar_css="bg-indigo-500 text-white p-2 !w-12 !h-12 rounded-full mt-0.5" show_close_icon="false">
                     <div><strong>Meeting starts in 5 minutes</strong></div>
                     Functional specification meeting
                     <div class="text-sm opacity-70">10 minutes ago</div>
                 </x-bladewind::alert>
-            </x-bladewind::dropmenu-item>
-            <x-bladewind::dropmenu-item hover="false">
+            </x-bladewind::dropmenu.item>
+            <x-bladewind::dropmenu.item hover="false">
                 <x-bladewind::alert color="transparent" avatar="/assets/images/doc.png" size="regular">
                     <div><strong>New friend request</strong></div>
                     Jane C. Doe wants to be your friend.
                     <div class="text-sm opacity-70">2 days ago</div>
                 </x-bladewind::alert>
-            </x-bladewind::dropmenu-item>
-            <x-bladewind::dropmenu-item hover="false">
+            </x-bladewind::dropmenu.item>
+            <x-bladewind::dropmenu.item hover="false">
                 <x-bladewind::alert color="transparent" avatar="/assets/images/francis.png" size="regular">
                     <div><strong>New friend request</strong></div>
                     John A. Doe wants to be your friend.
                     <div class="text-sm opacity-70">2 days ago</div>
                 </x-bladewind::alert>
-            </x-bladewind::dropmenu-item>
-            <x-bladewind::dropmenu-item hover="false">
+            </x-bladewind::dropmenu.item>
+            <x-bladewind::dropmenu.item hover="false">
                 <x-bladewind::alert color="transparent" icon="server-stack" icon_avatar_css="bg-pink-500 text-white p-2 !w-12 !h-12 rounded-full mt-0.5">
                     <div><strong>Server not responding</strong></div>
                     Ping to <i>bladewind-data-23</i> <br /> is returning constant time outs
                     <div class="text-sm opacity-70">2 days ago</div>
                 </x-bladewind::alert>
-            </x-bladewind::dropmenu-item>
+            </x-bladewind::dropmenu.item>
         </x-bladewind::dropmenu>
     </div>
     </p>
