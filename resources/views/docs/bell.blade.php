@@ -152,8 +152,8 @@
                 <x-bladewind::bell />
             </x-slot>
             <x-bladewind::dropmenu.item>
-                <x-bladewind::list-view transparent="true">
-                    <x-bladewind::list-item>
+                <x-bladewind::listview transparent="true">
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
                         <div class="mx-1 pt-1">
                             <div class="text-sm">
@@ -161,8 +161,8 @@
                                 <div class="text-xs">3 hours ago</div>
                             </div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="" />
                         <div class="mx-1 pt-1">
                             <div class="text-sm">
@@ -170,8 +170,8 @@
                                 <div class="text-xs">3 hours ago</div>
                             </div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
                         <div class="mx-1 pt-1">
                             <div class="text-sm">
@@ -179,8 +179,8 @@
                                 <div class="text-xs">3 hours ago</div>
                             </div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
                         <div class="mx-1 pt-1">
                             <div class="text-sm">
@@ -188,8 +188,8 @@
                                 <div class="text-xs">3 hours ago</div>
                             </div>
                         </div>
-                    </x-bladewind::list-item>
-                </x-bladewind::list-view>
+                    </x-bladewind::listview.item>
+                </x-bladewind::listview>
             </x-bladewind::dropmenu.item>
         </x-bladewind::dropmenu>
     </div>
@@ -201,9 +201,9 @@
                     &lt;x-bladewind::bell /&gt;
                 &lt;/x-slot&gt;
                 &lt;x-bladewind.dropmenu.item&gt;
-                    &lt;x-bladewind.list-view transparent="true"&gt;
+                    &lt;x-bladewind.listview transparent="true"&gt;
 
-                        &lt;x-bladewind.list-item&gt;
+                        &lt;x-bladewind.listview.item&gt;
                             &lt;x-bladewind.avatar size="small" image="..." /&gt;
                             &lt;div class="mx-1 pt-1"&gt;
                                 &lt;div class="text-sm"&gt;
@@ -214,17 +214,17 @@
                                     &lt;div class="text-xs"&gt;3 hours ago&lt;/div&gt;
                                 &lt;/div&gt;
                             &lt;/div&gt;
-                        &lt;/x-bladewind.list-item&gt;
+                        &lt;/x-bladewind.listview.item&gt;
 
-                        &lt;x-bladewind.list-item&gt;
+                        &lt;x-bladewind.listview.item&gt;
                             ...
-                        &lt;/x-bladewind.list-item&gt;
+                        &lt;/x-bladewind.listview.item&gt;
 
-                        &lt;x-bladewind.list-item&gt;
+                        &lt;x-bladewind.listview.item&gt;
                             ...
-                        &lt;/x-bladewind.list-item&gt;
+                        &lt;/x-bladewind.listview.item&gt;
 
-                    &lt;/x-bladewind.list-view&gt;
+                    &lt;/x-bladewind.listview&gt;
                 &lt;/x-bladewind.dropmenu.item&gt;
             &lt;/x-bladewind.dropmenu&gt;
 

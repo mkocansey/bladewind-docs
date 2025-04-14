@@ -248,43 +248,43 @@
             </div>
             <div>
                 <div class="border border-slate-200 dark:border-dark-700 rounded-lg">
-                <x-bladewind::list-view compact="true">
-                    <x-bladewind::list-item>
+                <x-bladewind::listview compact="true">
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
                         <div class="ml-3">
                             <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
                             <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="" />
                         <div class="ml-3">
                             <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
                             <div class="text-sm text-slate-500 truncate">fake@person.com</div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
                         <div class="ml-3">
                             <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
                             <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
                         <div class="ml-3">
                             <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Carolyn Velociti</div>
                             <div class="text-sm text-slate-500 truncate">carolyn@velociti.com</div>
                         </div>
-                    </x-bladewind::list-item>
-                    <x-bladewind::list-item>
+                    </x-bladewind::listview.item>
+                    <x-bladewind::listview.item>
                         <x-bladewind::avatar size="small" image="/assets/images/francis.png" />
                         <div class="ml-3">
                             <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Franis Appiah</div>
                             <div class="text-sm text-slate-500 truncate">francis@appiah.com</div>
                         </div>
-                    </x-bladewind::list-item>
-                </x-bladewind::list-view>
+                    </x-bladewind::listview.item>
+                </x-bladewind::listview>
                 </div>
             </div>
             <div>
