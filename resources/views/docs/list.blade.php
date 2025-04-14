@@ -11,34 +11,34 @@
 
     <x-bladewind::card reduce_padding="true">
         <x-bladewind::listview compact="true">
-            <x-bladewind::list-item>
+            <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
                 <div class="ml-3">
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
                     <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
                 </div>
-            </x-bladewind::list-item>
-            <x-bladewind::list-item>
+            </x-bladewind::listview.item>
+            <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="" />
                 <div class="ml-3">
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
                     <div class="text-sm text-slate-500 truncate">fake@person.com</div>
                 </div>
-            </x-bladewind::list-item>
-            <x-bladewind::list-item>
+            </x-bladewind::listview.item>
+            <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
                 <div class="ml-3">
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
                     <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
                 </div>
-            </x-bladewind::list-item>
-            <x-bladewind::list-item>
+            </x-bladewind::listview.item>
+            <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
                 <div class="ml-3">
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva</div>
                     <div class="text-sm text-slate-500 truncate">audrey@munyiva.com</div>
                 </div>
-            </x-bladewind::list-item>
+            </x-bladewind::listview.item>
         </x-bladewind::listview>
     </x-bladewind::card>
 
@@ -48,7 +48,7 @@
 
                 &lt;x-bladewind::listview&gt;
 
-                    &lt;x-bladewind::list-item&gt;
+                    &lt;x-bladewind::listview.item&gt;
 
                         &lt;x-bladewind::avatar
                             size="small"
@@ -62,9 +62,9 @@
                             &lt;/div&gt;
                         &lt;/div&gt;
 
-                    &lt;/x-bladewind::list-item&gt
+                    &lt;/x-bladewind::listview.item&gt
 
-                    &lt;x-bladewind::list-item&gt;
+                    &lt;x-bladewind::listview.item&gt;
                         &lt;x-bladewind::avatar
                             size="small"
                             image="/path/to/the/image/file"
@@ -76,7 +76,7 @@
                                 kabutey@gmail.com
                             &lt;/div&gt;
                         &lt;/div&gt;
-                    &lt;/x-bladewind::list-item&gt;
+                    &lt;/x-bladewind::listview.item&gt;
                     ...
                 &lt;/x-bladewind::listview&gt;
 
@@ -85,48 +85,48 @@
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
-        The <code class="inline">&lt;x-bladewind::list-item&gt;</code> component creates a flex container.
+        The <code class="inline">&lt;x-bladewind::listview.item&gt;</code> component creates a flex container.
     </x-bladewind::alert>
     <p>
         By default the list view component sits on a white background. You can remove this by setting the <code class="inline text-red-500">transparent="true"</code> attribute. You can then set a different background colour using the <code class="inline text-red-500">class</code> attribute.
     </p>
 
     <x-bladewind::listview transparent="true">
-        <x-bladewind::list-item>
+        <x-bladewind::listview.item>
             <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
             <div class="ml-3">
                 <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
                 <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
             </div>
-        </x-bladewind::list-item>
-        <x-bladewind::list-item>
+        </x-bladewind::listview.item>
+        <x-bladewind::listview.item>
             <x-bladewind::avatar size="small" image="" />
             <div class="ml-3">
                 <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
                 <div class="text-sm text-slate-500 truncate">fake@person.com</div>
             </div>
-        </x-bladewind::list-item>
-        <x-bladewind::list-item>
+        </x-bladewind::listview.item>
+        <x-bladewind::listview.item>
             <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
             <div class="ml-3">
                 <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
                 <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
             </div>
-        </x-bladewind::list-item>
-        <x-bladewind::list-item>
+        </x-bladewind::listview.item>
+        <x-bladewind::listview.item>
             <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
             <div class="ml-3">
                 <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva</div>
                 <div class="text-sm text-slate-500 truncate">audrey@munyiva.com</div>
             </div>
-        </x-bladewind::list-item>
+        </x-bladewind::listview.item>
     </x-bladewind::listview>
 
     <pre class="language-markup line-numbers" data-line="1">
         <code>
             &lt;x-bladewind::listview transparent="true"&gt;
 
-                &lt;x-bladewind::list-item&gt;
+                &lt;x-bladewind::listview.item&gt;
 
                     &lt;x-bladewind::avatar
                         size="small"
@@ -140,7 +140,7 @@
                         &lt;/div&gt;
                     &lt;/div&gt;
 
-                &lt;/x-bladewind::list-item&gt;
+                &lt;/x-bladewind::listview.item&gt;
                 ...
             &lt;/x-bladewind::listview&gt;
         </code><a name="attributes"></a>
@@ -177,7 +177,7 @@
         <code>
             &lt;x-bladewind::listview compact="true" transparent="true" class="bg-yellow-50"&gt;
 
-                &lt;x-bladewind::list-item&gt;
+                &lt;x-bladewind::listview.item&gt;
 
                     &lt;x-bladewind::avatar
                         size="small"
@@ -191,7 +191,7 @@
                         &lt;/div&gt;
                     &lt;/div&gt;
 
-                &lt;/x-bladewind::list-item&gt;
+                &lt;/x-bladewind::listview.item&gt;
                 ...
             &lt;/x-bladewind::listview&gt;
         </code>
@@ -199,7 +199,7 @@
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > listview.blade.php</code> and
-        <code class="inline">resources > views > components > bladewind > list-item.blade.php</code>
+        <code class="inline">resources > views > components > bladewind > listview.item.blade.php</code>
     </x-bladewind::alert>
 
     <x-slot:side_nav>
