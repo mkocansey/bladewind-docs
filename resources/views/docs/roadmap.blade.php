@@ -10,7 +10,7 @@
             The roadmap below is very flexible and not cast in stone. Contributors can pick and work now on features scheduled for later releases.
         </x-bladewind::alert>
     </p>
-    <x-bladewind::timeline-group position="left" anchor="big" stacked>
+    <x-bladewind::timelines position="left" anchor="big" stacked>
         <x-bladewind::timeline date="all completed" completed>
             <x-slot:content>
                 <ul class="list-outside list-disc leading-8 ml-3 text-base">
@@ -106,7 +106,7 @@
             </x-slot:content>
         </x-bladewind::timeline>
 
-    </x-bladewind::timeline-group>
+    </x-bladewind::timelines>
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#260">2.6.0</a></div>
