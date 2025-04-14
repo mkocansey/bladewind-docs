@@ -151,7 +151,7 @@
             <x-slot name="trigger">
                 <x-bladewind::bell />
             </x-slot>
-            <x-bladewind::dropmenu-item>
+            <x-bladewind::dropmenu.item>
                 <x-bladewind::list-view transparent="true">
                     <x-bladewind::list-item>
                         <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
@@ -190,7 +190,7 @@
                         </div>
                     </x-bladewind::list-item>
                 </x-bladewind::list-view>
-            </x-bladewind::dropmenu-item>
+            </x-bladewind::dropmenu.item>
         </x-bladewind::dropmenu>
     </div>
 
@@ -200,7 +200,7 @@
                 &lt;x-slot name="trigger"&gt;
                     &lt;x-bladewind::bell /&gt;
                 &lt;/x-slot&gt;
-                &lt;x-bladewind.dropmenu-item&gt;
+                &lt;x-bladewind.dropmenu.item&gt;
                     &lt;x-bladewind.list-view transparent="true"&gt;
 
                         &lt;x-bladewind.list-item&gt;
@@ -225,7 +225,7 @@
                         &lt;/x-bladewind.list-item&gt;
 
                     &lt;/x-bladewind.list-view&gt;
-                &lt;/x-bladewind.dropmenu-item&gt;
+                &lt;/x-bladewind.dropmenu.item&gt;
             &lt;/x-bladewind.dropmenu&gt;
 
         </code>
