@@ -402,6 +402,11 @@
             This attribute only works if header and footer are not set. <br /><code class="inline">true</code>  <code class="inline">false</code></td>
         </tr>
         <tr>
+            <td>no_padding</td>
+            <td>false</td>
+            <td>This completes the padding within the card. Content will touch the edges of the card. <br /><code class="inline">true</code>  <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>has_shadow</td>
             <td>true</td>
             <td>This controls if the card should have a shadow effect. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
@@ -426,6 +431,7 @@
         has_shadow="true"
         has_hover="false"
         compact="false"
+        no_padding="true"
         class="!rounded-none"&gt;
 
         &lt;x-slot:header&gt;...&lt;/x-slot:header&gt;

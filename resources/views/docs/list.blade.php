@@ -9,32 +9,32 @@
         need to factor that into your design when using this component.
     </p>
 
-    <x-bladewind::card reduce_padding="true">
+    <x-bladewind::card no-padding="true">
         <x-bladewind::listview compact="true">
             <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="/assets/images/me.jpeg" />
-                <div class="ml-3">
+                <div>
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey</div>
                     <div class="text-sm text-slate-500 truncate">mike@bladewindui.com</div>
                 </div>
             </x-bladewind::listview.item>
             <x-bladewind::listview.item>
-                <x-bladewind::avatar size="small" image="" />
-                <div class="ml-3">
+                <x-bladewind::avatar size="small" image="AJ" bg_color="orange" />
+                <div>
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson</div>
                     <div class="text-sm text-slate-500 truncate">fake@person.com</div>
                 </div>
             </x-bladewind::listview.item>
             <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="/assets/images/issah.jpg" />
-                <div class="ml-3">
+                <div>
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald</div>
                     <div class="text-sm text-slate-500 truncate">kate.gee@gmail.com</div>
                 </div>
             </x-bladewind::listview.item>
             <x-bladewind::listview.item>
                 <x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" />
-                <div class="ml-3">
+                <div>
                     <div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva</div>
                     <div class="text-sm text-slate-500 truncate">audrey@munyiva.com</div>
                 </div>
@@ -44,43 +44,38 @@
 
     <pre class="language-markup line-numbers" data-line="3,5,19">
         <code>
-            &lt;x-bladewind::card&gt;
-
-                &lt;x-bladewind::listview&gt;
-
-                    &lt;x-bladewind::listview.item&gt;
-
-                        &lt;x-bladewind::avatar
-                            size="small"
-                            image="/path/to/the/image/file" /&gt;
-                        &lt;div class="ml-3"&gt;
-                            &lt;div class="text-sm font-medium text-slate-900"&gt;
-                                Michael K. Ocansey
-                            &lt;/div&gt;
-                            &lt;div class="text-sm text-slate-500 truncate"&gt;
-                                kabutey@gmail.com
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-
-                    &lt;/x-bladewind::listview.item&gt
-
-                    &lt;x-bladewind::listview.item&gt;
-                        &lt;x-bladewind::avatar
-                            size="small"
-                            image="/path/to/the/image/file"
-                        &lt;div class="ml-3"&gt;
-                            &lt;div class="text-sm font-medium text-slate-900"&gt;
-                                Michael K. Ocansey
-                            &lt;/div&gt;
-                            &lt;div class="text-sm text-slate-500 truncate"&gt;
-                                kabutey@gmail.com
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/x-bladewind::listview.item&gt;
-                    ...
-                &lt;/x-bladewind::listview&gt;
-
-            &lt;/x-bladewind::card&gt;
+&lt;x-bladewind::card no-padding="true"&gt;
+    &lt;x-bladewind::listview compact="true"&gt;
+        &lt;x-bladewind::listview.item&gt;
+            &lt;x-bladewind::avatar size="small" image="/assets/images/me.jpeg" /&gt;
+            &lt;div&gt;
+                &lt;div class="text-sm font-medium text-slate-900 dark:text-slate-200">Michael K. Ocansey&lt;/div&gt;
+                &lt;div class="text-sm text-slate-500 truncate">mike@bladewindui.com&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/x-bladewind::listview.item&gt;
+        &lt;x-bladewind::listview.item&gt;
+            &lt;x-bladewind::avatar size="small" image="AJ" bg_color="orange" /&gt;
+            &lt;div&gt;
+                &lt;div class="text-sm font-medium text-slate-900 dark:text-slate-200">Anonymous Jackson&lt;/div&gt;
+                &lt;div class="text-sm text-slate-500 truncate">fake@person.com&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/x-bladewind::listview.item&gt;
+        &lt;x-bladewind::listview.item&gt;
+            &lt;x-bladewind::avatar size="small" image="/assets/images/issah.jpg" /&gt;
+            &lt;div&gt;
+                &lt;div class="text-sm font-medium text-slate-900 dark:text-slate-200">Catherine Gerald&lt;/div&gt;
+                &lt;div class="text-sm text-slate-500 truncate">kate.gee@gmail.com&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/x-bladewind::listview.item&gt;
+        &lt;x-bladewind::listview.item&gt;
+            &lt;x-bladewind::avatar size="small" image="/assets/images/audrey.jpeg" /&gt;
+            &lt;div&gt;
+                &lt;div class="text-sm font-medium text-slate-900 dark:text-slate-200">Audrey Munyiva&lt;/div&gt;
+                &lt;div class="text-sm text-slate-500 truncate">audrey@munyiva.com&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/x-bladewind::listview.item&gt;
+    &lt;/x-bladewind::listview&gt;
+    &lt;/x-bladewind::card&gt;
         </code>
     </pre>
 
