@@ -228,6 +228,13 @@
             <td>Only applicable when <code class="inline text-red-500">icon</code> has a value. <br /><code class="inline">left</code> <code class="inline">right</code></td>
         </tr>
         <tr>
+            <td>url</td>
+            <td>null</td>
+            <td>Url to visit when the card is clicked. When you specify a url like <b>"/some-url"</b> , it will be opened using the Bladewind <code class="inline">redirect()</code> Javascript helper function.
+                Specifying a function call like <b>"performSomeAction(some_id)"</b> will trigger <code class="inline">javascript:performSomeAction(some_id)</code> when the link is clicked.
+                Finally, a url like <b>"https://mydomain.com/some-url" will be opened with <code class="inline">window.open()</code>.</td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>bw-spinner</td>
             <td>Any additional CSS you wish to add. You can add css to help you uniquely identify a statistic.</td>

@@ -404,7 +404,7 @@
         <tr>
             <td>no_padding</td>
             <td>false</td>
-            <td>This completes the padding within the card. Content will touch the edges of the card. <br /><code class="inline">true</code>  <code class="inline">false</code></td>
+            <td>This completely removes the padding within the card. Content will touch the edges of the card. <br /><code class="inline">true</code>  <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>has_shadow</td>
@@ -415,6 +415,13 @@
             <td>has_hover</td>
             <td>false</td>
             <td>Displays an extra shadow on hover of the card.. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>null</td>
+            <td>Url to visit when the card is clicked. When you specify a url like <b>"/some-url"</b> , it will be opened using the Bladewind <code class="inline">redirect()</code> Javascript helper function.
+                Specifying a function call like <b>"performSomeAction(some_id)"</b> will trigger <code class="inline">javascript:performSomeAction(some_id)</code> when the link is clicked.
+                Finally, a url like <b>"https://mydomain.com/some-url" will be opened with <code class="inline">window.open()</code>.</td>
         </tr>
         <tr>
             <td>class</td>
@@ -432,6 +439,7 @@
         has_hover="false"
         compact="false"
         no_padding="true"
+        url="/user"
         class="!rounded-none"&gt;
 
         &lt;x-slot:header&gt;...&lt;/x-slot:header&gt;
@@ -497,6 +505,23 @@
             <td>Displays an extra shadow on hover of the card.. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
         </tr>
         <tr>
+            <td>centered</td>
+            <td>false</td>
+            <td>Displays contact card vertically. <br /><code class="inline">true</code>  <code class="inline">false</code> </td>
+        </tr>
+        <tr>
+            <td>no_padding</td>
+            <td>false</td>
+            <td>This completely removes the padding within the card. Content will touch the edges of the card. <br /><code class="inline">true</code>  <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>null</td>
+            <td>Url to visit when the card is clicked. When you specify a url like <b>"/some-url"</b> , it will be opened using the Bladewind <code class="inline">redirect()</code> Javascript helper function.
+                Specifying a function call like <b>"performSomeAction(some_id)"</b> will trigger <code class="inline">javascript:performSomeAction(some_id)</code> when the link is clicked.
+                Finally, a url like <b>"https://mydomain.com/some-url" will be opened with <code class="inline">window.open()</code>.</td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>bw-contact-card</td>
             <td>Any additional css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">class="!rounded-none"</code>.</td>
@@ -515,6 +540,9 @@
         department="Tech"
         birthday="01-May-2000"
         has_hover="true"
+        centered="true"
+        no_padding="true"
+        url="viewUserDetails(id)"
         class="!rounded-none"&gt;
 
         // you can define additional content here
