@@ -415,6 +415,11 @@
             <td>space-x-2 space-y-2</td>
             <td>Any additional CSS you wish to add to the tags container. Useful if you want to space out the tags for example. Whatever you set overwrites the default so you may need to include classes for spacing.</td>
         </tr>
+        <tr>
+            <td>nonce</td>
+            <td>null</td>
+            <td>Used when implementing context security policies and require to pass a nonce to inline scripts. For convenience, you can set your <code class="inline">nonce</code> value in the <code class="inline">config/bladewind.php</code> file under the "script" key. This value will be used everywhere nonce is required. </td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Tag Component</h3>

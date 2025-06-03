@@ -1721,10 +1721,15 @@
         <tr>
             <td>layout</td>
             <td>auto</td>
-            <td>Applicable when <code class="inline text-red-500">data</code> is not manual. By default the library builds a flat table from the array data. Each array key becomes its own column. This allows you to build your own complex layout.<br/>
+            <td> This allows you to build your own complex layout. Applicable when <code class="inline text-red-500">data</code> is not manual. By default the library builds a flat table from the array data. Each array key becomes its own column heading.<br/>
                 <code class="inline">auto</code>
                 <code class="inline">custom</code>
             </td>
+        </tr>
+        <tr>
+            <td>nonce</td>
+            <td>null</td>
+            <td>Used when implementing context security policies and require to pass a nonce to inline scripts. For convenience, you can set your <code class="inline">nonce</code> value in the <code class="inline">config/bladewind.php</code> file under the "script" key. This value will be used everywhere nonce is required. </td>
         </tr>
     </x-bladewind::table>
 

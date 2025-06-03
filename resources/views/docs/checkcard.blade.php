@@ -569,6 +569,11 @@
             <td><em>blank</em></td>
             <td>Any additional CSS you wish to add to the checkcards container.</td>
         </tr>
+        <tr>
+            <td>nonce</td>
+            <td>null</td>
+            <td>Used when implementing context security policies and require to pass a nonce to inline scripts. For convenience, you can set your <code class="inline">nonce</code> value in the <code class="inline">config/bladewind.php</code> file under the "script" key. This value will be used everywhere nonce is required. </td>
+        </tr>
     </x-bladewind::table>
 
     <h3>Checkcard Component</h3>

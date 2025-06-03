@@ -266,37 +266,11 @@
             <td>bw-datepicker</td>
             <td>Any additional css classes can be added using this attribute.</td>
         </tr>
-        {{--
-         <tr>
-             <td>onblur</td>
-             <td><em>blank</td>
-             <td>Custom function to call when the datepicker loses focus. This can be the entire function with parameters. Bladewind does not interfere with this.</td>
-         </tr>
-         <tr>
-             <td>validate</td>
-             <td>false</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to enforce if the start date should not be greater than the end date. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>
-         <tr>
-             <td>validation_message</td>
-             <td>Your end date cannot be less than your start date</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code>. Message to display if there is a validation error.</td>
-         </tr>
-         <tr>
-             <td>show_error_inline</td>
-             <td>false</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify how the error should be displayed. By default, it is displayed in the Bladewind <a href=/component/notification"">Notification</a> component. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>
-         <tr>
-             <td>use_placeholder</td>
-             <td>true</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the placeholder should be explicitly used instead of labels. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>
-         <tr>
-             <td>stacked</td>
-             <td>true</td>
-             <td>Applied if <code class="inline text-red-500">type="range"</code> to specify if the datepickers should be stacked vertically. <br /><code class="inline">true</code> <code class="inline">false</code></td>
-         </tr>--}}
+        <tr>
+            <td>nonce</td>
+            <td>null</td>
+            <td>Used when implementing context security policies and require to pass a nonce to inline scripts. For convenience, you can set your <code class="inline">nonce</code> value in the <code class="inline">config/bladewind.php</code> file under the "script" key. This value will be used everywhere nonce is required. </td>
+        </tr>
         <tr>
             <td>size</td>
             <td>medium</td>

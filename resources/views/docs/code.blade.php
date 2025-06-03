@@ -438,6 +438,11 @@ triggerTimerManually = (code, name) => {
             <td>null</td>
             <td>Determines if the component should automatically display a timer for user to resend verification code. Accepts any positive integer. Counted in seconds. 90 means countdown 90 seconds. Of course the component converts the seconds to user friendly minutes and seconds.</td>
         </tr>
+        <tr>
+            <td>nonce</td>
+            <td>null</td>
+            <td>Used when implementing context security policies and require to pass a nonce to inline scripts. For convenience, you can set your <code class="inline">nonce</code> value in the <code class="inline">config/bladewind.php</code> file under the "script" key. This value will be used everywhere nonce is required. </td>
+        </tr>
     </x-bladewind::table>
     <h3>Verification Code with all attributes defined</h3>
 <pre class="language-markup line-numbers">

@@ -185,6 +185,11 @@
                     <td>false</td>
                     <td>Determines if the placeholder text should have an asterisk appended to it or not. Value needs to be set as a string not boolean.<br> <code class="inline">true</code> <code class="inline">false</code> </td>
                 </tr>
+                <tr>
+                    <td>nonce</td>
+                    <td>null</td>
+                    <td>Used when implementing context security policies and require to pass a nonce to inline scripts. For convenience, you can set your <code class="inline">nonce</code> value in the <code class="inline">config/bladewind.php</code> file under the "script" key. This value will be used everywhere nonce is required. </td>
+                </tr>
             </x-bladewind::table>
             <p>&nbsp;</p>
             <h3 class="pb-2 ">Timepicker with all attributes defined</h3>

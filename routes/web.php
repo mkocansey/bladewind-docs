@@ -34,7 +34,6 @@ Route::view('component/number', 'docs/number');
 Route::view('component/process-indicator', 'docs/process-indicator');
 Route::view('component/progress-bar', 'docs/progress-bar');
 Route::view('component/progress-circle', 'docs/progress-circle');
-Route::view('component/pagination', 'docs/pagination');
 Route::view('component/radio-button', 'docs/radiobutton');
 Route::view('component/rating', 'docs/rating');
 Route::view('roadmap', 'docs/roadmap');
