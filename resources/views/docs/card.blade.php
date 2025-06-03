@@ -271,7 +271,6 @@
         This card component is very specific to rendering contacts. It is not useful for anything else. It saves you from having to manually build a contact card like we did in the earlier examples. A default avatar is used if one is not provided.
     </p>
    <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:space-y-0 space-y-8">
-
        <x-bladewind::contact-card
            has_hover="true"
            compact="true"
@@ -301,6 +300,29 @@
         birthday="01-May-2000" /&gt;
 </code>
 </pre>
+<br />
+<p>
+    Setting <code class="inline text-red-500">centered="true"</code> reformats the contact card and vertically aligns and centers the content.
+</p>
+    <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:space-y-0 space-y-12">
+        <x-bladewind::contact-card
+            centered="true"
+            name="Jane A. Doe"
+            mobile="+233.444.456.542"
+            image="/assets/images/doc.png"
+            position="Senior Medical Officer"
+            email="doc@hospital.com"
+            birthday="01-May-2000" />
+        <x-bladewind::contact-card
+            name="Michael K. Ocansey"
+            mobile="+233.123.456.789"
+            department="Tech Team"
+            image="/assets/images/me.jpeg"
+            position="Senior Dev"
+            email="mike@bladewindui.com"
+            centered="true"
+            birthday="01-May-2000" />
+    </div>
 
     <h2 id="header-footer">Header and Footer</h2>
     <p>
