@@ -818,12 +818,12 @@
             &lt;div class="space-x-4 text-center"&gt;
 
                 &lt;x-bladewind.button size="small" type="secondary"
-                    onclick="bw_from_js::selectByValue('gh')"&gt;
+                    onclick="bw_from_js.selectByValue('gh')"&gt;
                     Select Ghana
                 &lt;/x-bladewind.button&gt;
 
                 &lt;x-bladewind.button size="small" type="secondary"
-                    onclick="bw_from_js::selectByValue('ng')"&gt;
+                    onclick="bw_from_js.selectByValue('ng')"&gt;
                     Select Nigeria
                 &lt;/x-bladewind.button&gt;
 
