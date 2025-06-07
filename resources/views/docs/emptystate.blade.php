@@ -148,6 +148,11 @@
             <td>Specifies the size of the image. <br /><code class="inline">small</code><code class="inline">medium</code><code class="inline">large</code><code class="inline">xl</code><code class="inline">omg</code></td>
         </tr>
         <tr>
+            <td>for_select</td>
+            <td>false</td>
+            <td>Is the empty state going to be used by a select component. When <code class="inline">true</code>, the empty state is hidden and only visible in the select component that references the <code class="inline">name</code> of this empty state. <br /><br /><code class="inline">true</code><code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>button_label</td>
             <td><em>blank</em></td>
             <td>Text to display on the call to action button.</td>

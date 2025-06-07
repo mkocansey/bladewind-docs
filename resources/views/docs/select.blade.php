@@ -428,20 +428,36 @@
     <h3>Display as Empty State</h3>
     <p>
         As seen from the example above, the empty message is displayed as a single line in a select item. It is possible to
-        leverage the BladewindUI <a href="/component/empty-state">Empty State</a> component to display the empty message. This can be achieved by setting <code class="inline text-red-500">empty_state="true"</code>.
-        Since all we are doing is use the <a href="/component/empty-state">Empty State</a> component, the same attributes apply but with an <code class="inline">empty_state_</code> prefix.
-        <code class="inline text-red-500">empty_state_message</code> allows you to set the message to display in the empty state.
+        leverage the BladewindUI <a href="/component/empty-state">Empty State</a> component to display the empty message.
+        This can be achieved by setting the <code class="inline text-red-500">empty_state_from</code> attribute. You should already have
+        defined the empty state on the same page as your select component and given it a name.
+    </p>
+    <p>
+        <code class="inline text-red-500">empty_state_from="no_users"</code> means there is an empty state with the name <code class="inline">no_users</code>.
+        The select component will look for this empty state component and display its content anytime it needs to display an empty (no content) state. To ensure the
+        empty state component is not displayed on the page, set <code class="inline text-red-500">for_select="true"</code> on the empty state component.
     </p>
     <div class="grid grid-cols-2 gap-6">
+        <x-bladewind::empty-state
+            name="no_docs"
+            for_select="true"
+            message="Awesome! You have no documents to approve.">
+        </x-bladewind::empty-state>
+        <x-bladewind::empty-state
+            name="no_users"
+            for_select="true"
+            message="TThere are currently no users in your workspace. We need to fix that"
+            button_label="Add User"
+            image="/assets/images/user.png"
+            onclick="showModal('new-user')">
+        </x-bladewind::empty-state>
+    </div>
+    <div class="grid grid-cols-2 gap-6">
         <div>
-            <x-bladewind::select name="empty_users2" searchable="true" :data="$users" empty_state="true" empty_state_onclick="alert('do something')" />
+            <x-bladewind::select searchable="true" :data="$users" empty_state_from="no_docs" />
         </div>
         <div>
-            <x-bladewind::select name="empty_users3" :data="$users" empty_state="true"
-                                 empty_state_message="There are currently no users in your workspace. We need to fix that"
-                                 empty_state_image="/assets/images/user.png"
-                                 empty_state_button_label="New User"
-                                 empty_state_onclick="showModal('new-user')" />
+            <x-bladewind::select searchable="true" :data="$users" empty_state_from="no_users" />
         </div>
     </div>
     <x-bladewind::modal backdrop_can_close="false" name="new-user" ok_button_label="Save">
@@ -454,26 +470,37 @@
         <x-bladewind::input numeric="true" name="mobile" label="Mobile" />
     </x-bladewind::modal>
 
-<pre class="language-markup line-numbers" data-line="5">
+<pre class="language-markup line-numbers" data-line="2,3">
 <code>
-&lt;x-bladewind::select
-    name="empty_users2"
-    searchable="true"
-    :data="$users"
-    empty_state="true"
-    empty_state_onclick="alert('do something')" /&gt;
+&lt;x-bladewind::empty-state
+    name="no_docs"
+    for_select="true"
+    message="Awesome! You have no documents to approve."&gt;
+&lt;/x-bladewind::empty-state&gt;
 </code>
 </pre>
-<pre class="language-markup line-numbers" data-line="4-8">
+<pre class="language-markup line-numbers" data-line="2">
 <code>
-&lt;x-bladewind::select
-     name="empty_users3"
-     :data="$users"
-     empty_state="true"
-     empty_state_message="There are currently no users in your workspace. We need to fix that"
-     empty_state_image="/assets/images/user.png"
-     empty_state_button_label="New User"
-     empty_state_onclick="showModal('new-user')" /&gt;
+&lt;x-bladewind::select searchable="true" :data="$users"
+    empty_state_from="no_docs" /&gt;
+</code>
+</pre>
+    <br />
+<pre class="language-markup line-numbers" data-line="2,3">
+<code>
+&lt;x-bladewind::empty-state
+    name="no_users"
+    for_select="true"
+    message="TThere are currently no users in your workspace. We need to fix that"
+    button_label="Add User"
+    image="/assets/images/user.png"
+    onclick="showModal('new-user')"&gt;&lt;/x-bladewind::empty-state&gt;
+</code>
+</pre>
+<pre class="language-markup line-numbers" data-line="2">
+<code>
+&lt;x-bladewind::select searchable="true" :data="$users"
+    empty_state_from="no_users" /&gt;
 </code>
 </pre>
     <h2 id="multiple">Select Multiple Items</h2>
@@ -773,6 +800,13 @@
                 <br /><br />
                 <code class="inline">bw_continents.clearFilter('countries', 'AF');</code>
                 <code class="inline">bw_countries.clearFilter('countries');</code>
+            </td>
+        </tr>
+        <tr>
+            <td>addItem(element, label, value)</td>
+            <td>Add an item to the element.
+                <br /><br />
+                <code class="inline">bw_countries.addItem('Liberia', 'LR');</code>
             </td>
         </tr>
     </x-bladewind::table>
