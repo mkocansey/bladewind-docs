@@ -18,7 +18,7 @@
                 [ 'label' => 'Benin', 'value' => 'bj' ],
                 [ 'label' => 'Burkina Faso', 'value' => 'bf' ],
                 [ 'label' => 'Ghana', 'value' => 'gh' ],
-                [ 'label' => 'Nigeria & Naija', 'value' => 'ng' ],
+                [ 'label' => 'Nigeria', 'value' => 'ng' ],
                 [ 'label' => 'Kenya', 'value' => 'ke' ]
             ];
             $countries_mixed_keys = [
@@ -229,15 +229,15 @@
     <p>
         <x-bladewind::select name="country-dis" placeholder="What is your nationality" disabled="true" data="{{json_encode($countries)}}" />
     </p>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country-dis"
-                disabled="true"
-                placeholder="What is your nationality"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+&lt;x-bladewind::select
+    name="country-dis"
+    disabled="true"
+    placeholder="What is your nationality"
+    :data="$countries" /&gt;
+</code>
+</pre>
     <h3 id="readonly">Readonly Select</h3>
     <p>
         A readonly select is quite visible but cannot be opened to view the list of items.
@@ -245,15 +245,15 @@
     <p>
         <x-bladewind::select name="country-ro" placeholder="What is your nationality" readonly="true" data="{{json_encode($countries)}}" selected-value="gh" />
     </p>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                name="country-ro"
-                readonly="true"
-                placeholder="What is your nationality"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+&lt;x-bladewind::select
+    name="country-ro"
+    readonly="true"
+    placeholder="What is your nationality"
+    :data="$countries" /&gt;
+</code>
+</pre>
 
     <h2 id="flags">With Country Flags</h2>
     <p>
@@ -269,16 +269,16 @@
     <p>
         <x-bladewind::select name="country3" data="{{json_encode($countries)}}" flag_key="value" />
     </p>
-    <pre class="language-markup line-numbers" data-line="5">
-        <code>
-            &lt;x-bladewind::select
-                name="country"
-                label_key="country"
-                value_key="code"
-                flag_key="code"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="5">
+<code>
+&lt;x-bladewind::select
+    name="country"
+    label_key="country"
+    value_key="code"
+    flag_key="code"
+    :data="$countries" /&gt;
+</code>
+</pre>
 
     <x-bladewind::alert show_close_icon="false">
         For flags to work you will need to include the following stylesheet. It is deliberately not compiled into the core BladewindUI css because not everyone needs flags.
@@ -336,17 +336,17 @@
             placeholder="Assign task to"
             image_key="picture" />
     </p>
-    <pre class="language-markup line-numbers" data-line="5">
-        <code>
-            &lt;x-bladewind::select
-                name="staff"
-                placeholder="Assign task to"
-                label_key="name"
-                value_key="id"
-                image_key="picture"
-                :data="$staff" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="5">
+<code>
+&lt;x-bladewind::select
+    name="staff"
+    placeholder="Assign task to"
+    label_key="name"
+    value_key="id"
+    image_key="picture"
+    :data="$staff" /&gt;
+</code>
+</pre>
 
     <h2 id="searchable">Searchable Select</h2>
     <p>
@@ -391,17 +391,17 @@
     <p>
         <x-bladewind::select name="country4" searchable="true" data="{{json_encode($countries)}}" flag_key="value" />
     </p>
-    <pre class="language-markup line-numbers" data-line="3">
-        <code>
-            &lt;x-bladewind::select
-                 name="country4"
-                 searchable="true"
-                 label_key="country"
-                 value_key="code"
-                 flag_key="code"
-                 :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="3">
+<code>
+&lt;x-bladewind::select
+     name="country4"
+     searchable="true"
+     label_key="country"
+     value_key="code"
+     flag_key="code"
+     :data="$countries" /&gt;
+</code>
+</pre>
 
     <h2 id="empty">Empty Select</h2>
     <p>
@@ -517,20 +517,20 @@
     <p>
         <x-bladewind::select name="country-multi" multiple="true" searchable="true" :data="$countries" flag_key="value" max-selectable="3" label="Select a country" />
     </p>
-    <pre class="language-markup line-numbers" data-line="7">
-        <code>
-    &lt;x-bladewind::select
-        name="country-multi"
-        searchable="true"
-        label_key="country"
-        value_key="code"
-        flag_key="code"
-        multiple="true"
-        label="Select a country"
-        max_selectable="3"
-        :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="7">
+<code>
+&lt;x-bladewind::select
+    name="country-multi"
+    searchable="true"
+    label_key="country"
+    value_key="code"
+    flag_key="code"
+    multiple="true"
+    label="Select a country"
+    max_selectable="3"
+    :data="$countries" /&gt;
+</code>
+</pre>
     <p>
         If you try to select more than 3 items from the select component above, you will not be able to.
         This is achieved by setting the
@@ -545,19 +545,19 @@
     <p>
         <x-bladewind::select name="country-multi2" multiple="true" searchable="true" data="{{json_encode($countries)}}" flag_key="value" selected_value="gh, gm, ci, bf" />
     </p>
-    <pre class="language-markup line-numbers" data-line="4">
-        <code>
-            &lt;x-bladewind::select
-                name="country-multi2"
-                searchable="true"
-                selected_value="gh, gm, ci, bf"
-                label_key="country"
-                value_key="code"
-                flag_key="code"
-                multiple="true"
-                :data="$countries" /&gt;
-        </code>
-    </pre>
+<pre class="language-markup line-numbers" data-line="4">
+<code>
+&lt;x-bladewind::select
+    name="country-multi2"
+    searchable="true"
+    selected_value="gh, gm, ci, bf"
+    label_key="country"
+    value_key="code"
+    flag_key="code"
+    multiple="true"
+    :data="$countries" /&gt;
+</code>
+</pre>
 
     <h2 id="non-dynamic">Manually Building a Select</h2>
     <p>
@@ -802,13 +802,13 @@
                 <code class="inline">bw_countries.clearFilter('countries');</code>
             </td>
         </tr>
-        <tr>
+       {{-- <tr>
             <td>addItem(element, label, value)</td>
             <td>Add an item to the element.
                 <br /><br />
                 <code class="inline">bw_countries.addItem('Liberia', 'LR');</code>
             </td>
-        </tr>
+        </tr>--}}
     </x-bladewind::table>
     <h3 id="example">A Practical Example</h3>
     <p>
@@ -1052,10 +1052,17 @@
             <x-bladewind::select name="continent" placeholder="Select Continent" data="manual" filter="continent-country" add_clearing="false">
                 <x-bladewind::select.item label="Africa" value="af" />
                 <x-bladewind::select.item label="Asia" value="as" />
+                <x-bladewind::select.item label="Australia" value="au" />
                 <x-bladewind::select.item label="Europe" value="eu" />
                 <x-bladewind::select.item label="North America" value="na" />
             </x-bladewind::select>
-            <x-bladewind::select name="continent-country" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
+            <x-bladewind::select
+                name="continent-country"
+                placeholder="Select Country"
+                searchable="true"
+                empty-placeholder="no countries available"
+                data="{{json_encode($countries)}}"
+                label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
         </div>
     </x-bladewind::card>
 <br />
@@ -1120,6 +1127,7 @@
                 searchable="true"
                 data="json_encode($countries)"
                 filter_by="continent_code"
+                empty-placeholder="no countries available"
                 label_key="name"
                 value_key="name"&gt;
         </code>
@@ -1201,7 +1209,7 @@
         This option has no searchability and does only what the HTML select element is capable of doing.
     </p>
     <p>
-        <select class="bw-raw-select">
+        <select class="bw-select bw-raw-select">
             <option value="">Are you above 18?</option>
             <option value="yes">Yep! I am</option>
             <option value="no">Nope but tell no one</option>

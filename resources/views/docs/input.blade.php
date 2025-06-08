@@ -252,15 +252,15 @@
         Lastly, our textarea component defines a new attribute on line 36. The <code class="inline text-red-500">show_error_inline="true"</code> attribute will display the
         error message beneath the field the attribute was set on.
     </p>
-    <p>Below is the javascript that triggers the validation of the form. <code class="inline">dom_el</code>, <code class="inline">unhide</code> and <code class="inline">validateForm</code> are helper functions in the package.</p>
+    <p>Below is the javascript that triggers the validation of the form. <code class="inline">domEl</code>, <code class="inline">unhide</code> and <code class="inline">validateForm</code> are helper functions in the package.</p>
     <pre class="language-js line-numbers" data-line="">
         <code>
             /**
-            dom_el(), validateForm(), hide() and unhide()
+            domEl(), validateForm(), hide() and unhide()
             are helper functions available in BladewindUI
             **/
 
-            dom_el('.signup-form').addEventListener('submit', function (e){
+            domEl('.signup-form').addEventListener('submit', function (e){
                 e.preventDefault();
                 signUp();
             });
@@ -302,7 +302,7 @@
         <x-bladewind::input name="guardian_address" placeholder="Guardian's address" class="hidden" />
     </x-bladewind::card>
     <script>
-        dom_el('.age_camp').addEventListener('keyup', (el) => {
+        domEl('.age_camp').addEventListener('keyup', (el) => {
             if(el.target.value !== ''  && el.target.value < 18 ){
                 unhide('.guardian-info');
                 unhide('.guardian');
@@ -366,8 +366,8 @@
     </p>
     <pre class="language-js line-numbers" data-line="2">
         <code>
-        // dom_el, unhide and hide are helper functions in BladewindUI
-        dom_el('.age_camp').addEventListener('keyup', (el) => {
+        // domEl, unhide and hide are helper functions in BladewindUI
+        domEl('.age_camp').addEventListener('keyup', (el) => {
             if(el.target.value !== ''  && el.target.value < 18 ){
                 unhide('.guardian-info');
                 unhide('.guardian');
@@ -896,7 +896,7 @@
         <script>
             selectNavigationItem('.component-input');
 
-            dom_el('.signup-form').addEventListener('submit', function (e){
+            domEl('.signup-form').addEventListener('submit', function (e){
                 e.preventDefault();
                 signUp();
             });
