@@ -59,3 +59,13 @@ Route::post('/upload', [FileUploadController::class, 'upload'])->name('upload');
 Route::post('/upload-delete', [FileUploadController::class, 'delete']);
 Route::post('/manual-upload', [FileUploadController::class, 'manual_upload']);
 Route::post('/base64-upload', [FileUploadController::class, 'base64_upload']);
+
+// Test route for BladewindServiceProvider
+Route::get('/test-bladewind', function () {
+    try {
+        app()->register(\Mkocansey\Bladewind\BladewindServiceProvider::class);
+        return 'Bladewind service provider registered successfully!';
+    } catch (Exception $e) {
+        return 'Error registering Bladewind service provider: ' . $e->getMessage();
+    }
+});

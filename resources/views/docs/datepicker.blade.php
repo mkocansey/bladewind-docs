@@ -45,22 +45,6 @@
         </code>
     </pre>
 
-    <p>
-        The default placeholder texts for the range datepicker are <b>From</b> and <b>To</b>. These can however, be modified using the <code class="inline text-red-500">date_from_label</code> and <code class="inline text-red-500">date_to_label</code> attributes. These attributes only work if <code class="inline text-red-500">type="range"</code>.
-        Also, we introduced <code class="text-red-500 inline">stacked="true"</code> to stack the datepickers vertically.</p>
-    <div class="max-w-sm">
-        <x-bladewind::datepicker type="range" stacked="true" date_from_label="start date" date_to_label="end date"  />
-    </div>
-    <br />
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::datepicker
-                type="range"
-                date_from_label="start date"
-                date_to_label="end date" /&gt;
-        </code>
-    </pre>
-
     <h3 id="required">Show As a Required Field</h3>
     <p>An asterisk is appended to the placeholder text when <code class="inline text-red-500">required="true"</code>.</p>
     <x-bladewind::datepicker required="true"  />
@@ -70,45 +54,6 @@
             &lt;x-bladewind::datepicker required="true"  /&gt;
         </code>
     </pre>
-
-    <h3 id="validation">Validating The Range Picker</h3>
-    <p>
-        The date range picker comes with optional date validation. This validation only checks to ensure the
-        end date is not less than the start date. To enforce validation of the date range picker, set
-        <code class="inline text-red-500">validate="true"</code>. This is only applied if <code class="inline text-red-500">type="range"</code>.
-    </p>
-    <p>
-        When you activate validation,
-        you will need to provide the message to be displayed when a user selects an end date
-        that is less than the start date. This is provided as an option to make it translatable.
-        Set <code class="text-red-500 inline">validation_message="your message here"</code>
-    </p>
-    <p>
-        <x-bladewind::datepicker type="range" date_from_label="task starts" date_to_label="task due" date-from-name="validate1" date-to-name="validate2"
-                                 validate="true" validation_message="Seriously!, you know your task cannot end before you even got started"  />
-    </p>
-    <pre class="language-markup line-numbers" data-line="5">
-<code>
-&lt;x-bladewind::datepicker
-    type="range"
-    date_from_label="task starts"
-    date_to_label="task due"
-    validate="true"
-    validation_message="Seriously!, you know your task cannot end before you even got started"  /&gt;
-</code>
-</pre>
-
-    <p>
-        By default, the error validation message is displayed in the BladewindUI notification component. You will need
-        to ensure you have the <code class="inline">x-bladewind.notification</code> component on your page for the error message to be visible. If you prefer to display the error
-        message inline, under the date fields, simply set <code class="inline text-red-500">show_error_inline="true"</code>
-    </p>
-    <p>
-        The validation is handled by the <a href="/extra/helper-functions#comparedates"><code class="inline">compareDates()</code></a> helper function and returns a boolean (0 or 1).
-        False (0) means there was an error. The range datepicker places the start date next to the end date. There are cases where your display will require you to have
-        your end date below the start. In this case you will need to use two datepickers. You can still use this helper function to
-        validate your start and end dates.
-    </p>
 
     <h2 id="formats">Date Formats</h2>
     <p>
@@ -314,7 +259,6 @@
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#range">Range datepicker</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#required">Show as required</a></div>
-        <div class="flex items-center pl-5"><div class="dot"></div><a href="#validation">Validation</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#formats">Date formats</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#defaults">With default values</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#minmax">Min and max dates</a></div>

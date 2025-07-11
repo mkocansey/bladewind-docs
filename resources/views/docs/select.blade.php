@@ -446,7 +446,7 @@
         <x-bladewind::empty-state
             name="no_users"
             for_select="true"
-            message="TThere are currently no users in your workspace. We need to fix that"
+            message="There are currently no users in your workspace. We need to fix that"
             button_label="Add User"
             image="/assets/images/user.png"
             onclick="showModal('new-user')">

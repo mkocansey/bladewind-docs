@@ -228,8 +228,8 @@
     </x-bladewind::modal>
 
     <x-bladewind::modal title="Stretched Buttons" name="stretched" stretch_action_buttons="true">
-        The action buttons in this modal have been stretched. This means each button gets its own line.
-        Cool right?
+        DTOs are the best approach to convert validated data into an object, especially for more complex data structures. They provide type safety, clear structure, and easy validation.
+        If you need a quick solution and your data is relatively simple, you can use json_decode() to convert the validated array to an object.
     </x-bladewind::modal>
 
     <x-bladewind::modal title="See Through Me" name="noblur" blur_size="none">
@@ -839,7 +839,6 @@
     <script>
         saveProfileAjax = () => {
             if(validateForm('.profile-form-ajax')){
-                // show process indicator while you make your ajax call
                 unhide('.profile-updating');
                 hide('.profile-form-ajax');
                 hideModalActionButtons('form-mode-ajax');

@@ -129,7 +129,7 @@
                     // showModal() and unhide() are helper functions
                     // available in BladewindUI
                     showModal('delete-paymentz');
-                    unhide('::processing-delete');
+                    unhide('.processing-delete');
 
                     // this example only shows a specific outcome
                     // after 3 seconds based on which button was clicked.
@@ -148,7 +148,7 @@
 
                 hideHideables = () => {
                     // hide() is a helper function available in BladewindUI
-                    hide('::processing-delete');
+                    hide('.processing-delete');
                     hide('.delete-payment-yes');
                     hide('.delete-payment-no');
                 }

@@ -11,8 +11,8 @@
 <div class="{{ $css }} component-chart"><div class="dot"></div><a href="/component/chart">Chart <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
 <div class="{{ $css }} component-checkbox"><div class="dot"></div><a href="/component/checkbox">Checkbox</a></div>
 <div class="{{ $css }} component-checkcard"><div class="dot"></div><a href="/component/checkcard">CheckCard  <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
-<div class="{{ $css }} component-colorpicker"><div class="dot"></div><a href="/component/colorpicker">Colorpicker  <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
-<div class="{{ $css }} component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
+<div class="{{ $css }} component-colorpicker"><div class="dot"></div><a href="/component/colorpicker">Colorpicker</a></div>
+<div class="{{ $css }} component-datepicker"><div class="dot"></div><a href="/component/datepicker">Datepicker</a></div>
 <div class="{{ $css }} component-dropmenu"><div class="dot"></div><a href="/component/dropmenu">Dropmenu</a></div>
 <div class="{{ $css }} component-empty-state"><div class="dot"></div><a href="/component/empty-state">Empty State</a></div>
 <div class="{{ $css }} component-filepicker"><div class="dot"></div><a href="/component/filepicker">Filepicker <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
@@ -22,7 +22,7 @@
 <div class="{{ $css }} component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
 <div class="{{ $css }} component-modal"><div class="dot"></div><a href="/component/modal">Modal</a></div>
 <div class="{{ $css }} component-notification"><div class="dot"></div><a href="/component/notification">Notification</a></div>
-<div class="{{ $css }} component-number"><div class="dot"></div><a href="/component/number">Number <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-4 ml-1" /></a></div>
+<div class="{{ $css }} component-number"><div class="dot"></div><a href="/component/number">Number</a></div>
 <div class="{{ $css }} component-process-indicator"><div class="dot"></div><a href="/component/process-indicator">Process Indicator</a></div>
 <div class="{{ $css }} component-progress-bar"><div class="dot"></div><a href="/component/progress-bar">Progress Bar</a></div>
 <div class="{{ $css }} component-progress-circle"><div class="dot"></div><a href="/component/progress-circle">Progress Circle</a></div>
