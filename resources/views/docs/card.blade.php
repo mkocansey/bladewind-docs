@@ -285,6 +285,7 @@
             mobile="+233.123.456.789"
             department="Tech Team"
             position="Senior Dev"
+            image="/assets/images/male.png"
             email="mike@bladewindui.com"
             birthday="01-May-2000" />
    </div>
@@ -304,15 +305,23 @@
 <p>
     Setting <code class="inline text-red-500">centered="true"</code> reformats the contact card and vertically aligns and centers the content.
 </p>
-    <div class="sm:grid sm:grid-cols-2 sm:gap-4 md:space-y-0 space-y-12">
+    <div class="sm:grid sm:grid-cols-3 sm:gap-4 md:space-y-0 space-y-12">
         <x-bladewind::contact-card
             centered="true"
-            name="Jane A. Doe"
+            name="Jane C. Doe"
             mobile="+233.444.456.542"
             image="/assets/images/doc.png"
             position="Senior Medical Officer"
             email="doc@hospital.com"
             birthday="01-May-2000" />
+        <x-bladewind::contact-card
+            centered="true"
+            name="Abigail Edwin"
+            mobile="+233.444.432.123"
+            image="/assets/images/edwin.jpeg"
+            position="Senior Mobile Developer"
+            email="abi@edwin.com"
+            birthday="22-July-1990" />
         <x-bladewind::contact-card
             name="Michael K. Ocansey"
             mobile="+233.123.456.789"

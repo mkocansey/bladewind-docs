@@ -3,11 +3,11 @@
     <x-slot name="title">{{$title}}</x-slot>
 </x-meta>
 <body class="body text-gray-500/80 bg-white dark:bg-dark-700 dark:text-dark-400">
-    <!-- Google Tag Manager (noscript) -->
+    @env('production')
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T58CKRW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    @endenv
     <nav class="w-[280px] z-50 py-6 bg-white/95 border-l border-gray-200 fixed right-0 top-0 h-screen shadow-2xl
         hidden sm:hidden dark:bg-dark-900 dark:border-gray-800 shadow-blue-300 dark:shadow-slate-800 overflow-y-scroll navigation">
         <div class="text-right cursor-pointer"
