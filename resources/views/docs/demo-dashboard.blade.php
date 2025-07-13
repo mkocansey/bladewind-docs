@@ -136,13 +136,5 @@
                 showModal('phone-modal');
             }
         }
-        showPage = (page) => {
-            domEls('.demo-nav a').forEach((el) => {
-                el.classList.remove('font-bold');
-                hide('.'+el.getAttribute('data-page'));
-            });
-            domEl('.demo-nav a[data-page="'+page+'"]').classList.add('font-bold');
-            unhide('.'+page);
-        }
     </script>
 </div>

@@ -4,7 +4,7 @@
 </x-meta>
 <x-bladewind::notification />
 <body class="text-gray-500/80 bg-slate-100 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
-    <div class="sm:hidden block absolute right-4 -top-2">
+    <div class="md:hidden block absolute right-4 top-1">
         <a href="#" onclick="animateCSS('.navigation','slideInRight');" class="ml-4 text-slate-400 dark:hover:text-slate-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -24,30 +24,27 @@
         @include('docs/nav')
     </nav>
 
-    <div class="bg-gradient-to-tr from-indigo-900 via-black to-violet-500 sm:px-10 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
+    <div class="bg-gradient-to-tr from-indigo-900 via-black to-violet-500 sm:px-10 px-5 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
         <div class="sm:max-w-7xl mx-auto flex justify-between items-center py-7">
             <div>
-                <img src="/assets/images/bw-logo-white.png" alt="logo" class="h-4 sm:h-7 mx-auto opacity-80" />
+                <img src="/assets/images/bw-logo-white.png" alt="logo" class="h-7 mx-auto opacity-80" />
             </div>
-            <div class="flex justify-end items-center space-x-5">
+            <div class="hidden md:flex justify-end items-center space-x-5">
                 <a href="/install" class="text-white/70 hover:text-white/80 pr-6 border-r border-dashed border-r-white/20 tracking-wider">Docs</a>
                 <x-topright />
             </div>
         </div>
-        <div class="sm:text-6xl tracking-wide font-bold text-3xl sm:max-w-5xl mx-auto text-fuchsia-100 dark:text-dark-200 text-center px-6 sm:px-3 pt-20 font-bladewind">
+        <div class="sm:text-6xl tracking-wide font-bold text-3xl sm:max-w-5xl mx-auto text-fuchsia-100 dark:text-dark-200 text-center px-6 pt-10 md:px-3 md:pt-20 font-bladewind">
             Beautifully crafted UI components for your Laravel applications.
         </div>
         <div class="sm:text-2xl text-sm font-light tracking-wide sm:max-w-2xl mx-auto text-center text-slate-100 dark:text-dark-500 sm:py-8 px-5 pt-3 pb-6">
-            Just <code class="font-bladewind2 text-xl">`composer require mkocansey/bladewind`</code> and start combining our elements to build something amazing.
+            Just <code class="font-bladewind2 md:text-xl text-sm">`composer require mkocansey/bladewind`</code> and start combining our elements to build something amazing.
         </div>
         <div class="text-center sm:py-6 px-6">
-            <div class="sm:block hidden">
-                <x-bladewind::button radius="full" color="orange" tag="a" href="/install" size="big" class="font-bladewind">Get Started Now</x-bladewind::button>
-            </div>
-            <div class="sm:hidden">
-                <x-bladewind::button tag="a" href="/install" class="w-full" size="medium">Get Started Now</x-bladewind::button>
-            </div>
+            <x-bladewind::button radius="full" color="orange" tag="a" href="/install" size="big" class="font-bladewind w-full md:w-fit">Get Started Now</x-bladewind::button>
         </div>
+
+        <div class="hidden sm:block">
         <div class="relative mx-auto flex max-w-screen justify-center overflow-hidden p-8">
             <div style="--fade-distance: 20px; --fade-duration: 1.2s" class="relative w-full max-w-7xl rounded-xl bg-default animate-fadeInUp delay-500">
                 <div class="pointer-events-none absolute inset-0 m-3 rounded-3xl border border-white/20 bg-default/20 mix-blend-plus-lighter animate-fadeInDown delay-700"></div>
@@ -57,6 +54,8 @@
                         @include('docs.demo-dashboard')
                         @include('docs.demo-employees')
                         @include('docs.demo-jobs')
+                        @include('docs.demo-signup')
+                        @include('docs.demo-signin')
                     </div>
                     <x-bladewind::modal title="Send Birthday Wishes" name="birthday-wishes-modal" size="large" ok-button-label="Send Wishes"
                                         ok-button-action="showNotification('Wishes sent successfully', 'The wishes have been sent successfully to the birthday fella! They sure will feel happy', 'success')">
@@ -84,6 +83,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 
     <div class="bg-slate-200 sm:px-10 sm:py-20 py-10 px-4 shadow-sm dark:bg-dark-700">
@@ -100,12 +100,7 @@
             <pre class="language-markup"><code>&lt;x-bladewind::datepicker type="range" /&gt;</code></pre>
             <pre class="language-markup"><code>&lt;x-bladewind::filepicker accepted_file_types="images/*" /&gt;</code></pre>
             <div class="text-center sm:pt-6">
-                <div class="sm:block hidden">
-                    <x-bladewind::button tag="a" href="/install" size="big" radius="full" color="orange">Get Started Now</x-bladewind::button>
-                </div>
-                <div class="sm:hidden">
-                    <x-bladewind::button tag="a" href="/install" class="w-full" size="medium">Get Started Now</x-bladewind::button>
-                </div>
+                <x-bladewind::button radius="full" color="orange" tag="a" href="/install" size="big" class="font-bladewind hidden md:inline-block">Get Started Now</x-bladewind::button>
             </div>
         </div>
     </div>

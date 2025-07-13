@@ -63,9 +63,9 @@
         </pre>
     <p>
         You can access the value of <code class="inline">pin_code</code> either via Javascript or via PHP if you intend to post it in a form to your backend.
-        The <code class="inline text-red-500">on_verify</code> attribute allows you to specify a function that should be called when the user has entered a value into the last verification code field.
+        The <code class="inline text-red-500">onverify</code> attribute allows you to specify a function that should be called when the user has entered a value into the last verification code field.
         This should just be the function name without parentheses and parameters. If you wish to call <code class="inline">verifyPin()</code> after the user enters the code, just type
-        <code class="inline text-red-500">on_verify="verifyPin"</code>. The component passes the code entered by the user to your function, as well as the name of the component, so, your function declaration needs to expect one or two parameters.
+        <code class="inline text-red-500">onverify="verifyPin"</code>. The component passes the code entered by the user to your function, as well as the name of the component, so, your function declaration needs to expect one or two parameters.
         Still using the <em>verifyPin</em> example, your function declaration will be:
     </p>
         <pre class="language-js">
@@ -83,7 +83,7 @@
         Let's consider a practical example. Enter any code in the fields below and get notified of the code you entered.
     </p><br />
     <p>
-        <x-bladewind::code on_verify="checkPin" />
+        <x-bladewind::code onverify="checkPin" />
         <script>
             checkPin = (code) => {
                 alert(`You entered: ${code}`);
@@ -92,7 +92,7 @@
     </p>
         <pre class="language-markup line-numbers">
             <code>
-                &lt;x-bladewind::code on_verify="checkPin" /&gt;
+                &lt;x-bladewind::code onverify="checkPin" /&gt;
 
                 &lt;script&gt;
                     checkPin = (code) => {
@@ -110,7 +110,7 @@
     </p>
     <p>
         <x-bladewind::notification />
-        <x-bladewind::code name="clear_me" on_verify="checkPinAndClear" />
+        <x-bladewind::code name="clear_me" onverify="checkPinAndClear" />
         <script>
             checkPinAndClear = (code) => {
                 if(code !== 2024) {
@@ -122,7 +122,7 @@
     </p>
         <pre class="language-markup">
             <code>
-                &lt;x-bladewind::code name="clear_me" on_verify="checkPinAndClear" /&gt;
+                &lt;x-bladewind::code name="clear_me" onverify="checkPinAndClear" /&gt;
             </code>
         </pre>
         <pre class="language-markup line-numbers" data-line="4">
@@ -145,14 +145,14 @@
     </p>
     <p>The example below expects <strong>2024</strong> as the code. </p><br />
     <p>
-        <x-bladewind::code name="pcode" error_message="Yoh! check your code" on_verify="checkPinShowError" />
+        <x-bladewind::code name="pcode" error_message="Yoh! check your code" onverify="checkPinShowError" />
     </p>
 <pre class="language-markup line-numbers">
 <code>
     &lt;x-bladewind::code
         name="pcode"
         error_message="Yoh! check your code"
-        on_verify="checkPinShowError" /&gt;
+        onverify="checkPinShowError" /&gt;
 </code>
 </pre>
     <script>
@@ -208,11 +208,11 @@
         Showing the spinner will let the user know you are performing an action.
     </p><br />
     <p>
-        <x-bladewind::code name="spin_me" on_verify="validatePin" />
+        <x-bladewind::code name="spin_me" onverify="validatePin" />
     </p>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::code name="spin_me" on_verify="validatePin"  /&gt;
+            &lt;x-bladewind::code name="spin_me" onverify="validatePin"  /&gt;
         </code>
     </pre>
         <script>
@@ -252,11 +252,11 @@
         It accepts the name provided to the code component as a parameter. In the example  below, the spinner shows after the code is entered and disappears to give way to the checkmark after 5 seconds.
     </p><br />
     <p>
-        <x-bladewind::code name="spin_me_yes" on_verify="spinAndSucceed" />
+        <x-bladewind::code name="spin_me_yes" onverify="spinAndSucceed" />
     </p>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::code name="spin_me_yes" on_verify="spinAndSucceed"  /&gt;
+            &lt;x-bladewind::code name="spin_me_yes" onverify="spinAndSucceed"  /&gt;
         </code>
     </pre>
     <script>
@@ -357,7 +357,7 @@
     </p>
     <br />
     <p>
-        <x-bladewind::code name="trigger_me" on_verify="triggerTimerManually" />
+        <x-bladewind::code name="trigger_me" onverify="triggerTimerManually" />
     </p>
     <script>
         let attempts = 0;
@@ -372,7 +372,7 @@
     </script>
     <pre class="language-markup">
         <code>
-            &lt;x-bladewind::code name="trigger_me" on_verify="triggerTimerManually"  /&gt;
+            &lt;x-bladewind::code name="trigger_me" onverify="triggerTimerManually"  /&gt;
         </code>
     </pre>
     <pre class="language-js line-numbers" data-line="8">
@@ -414,12 +414,12 @@ triggerTimerManually = (code, name) => {
             <td>Displays the input boxes at either small or big sizes. Default is small.<br /> <code class="inline">small</code> <code class="inline">big</code> </td>
         </tr>
         <tr>
-            <td>on_verify</td>
+            <td>onverify</td>
             <td><em>blank</em></td>
             <td>
                 Function to call after user has finished entering the codes. When passed, this function will be triggered when the user enters a number into the last input field.
                 This should just be the function name without parentheses and parameters. If you wish to call <code class="inline">verifyPin()</code> after the user enters the pin,
-                just type <code class="inline text-red-500">on_verify="verifyPin"</code>. The component passes the code to your function, so, your function declaration needs to expect one parameter.
+                just type <code class="inline text-red-500">onverify="verifyPin"</code>. The component passes the code to your function, so, your function declaration needs to expect one parameter.
                 Still using the <code>verifyPin</code> example, your function declaration should be <code class="inline">verifyPin = (code) => { ... }</code>
             </td>
         </tr>
@@ -450,7 +450,7 @@ triggerTimerManually = (code, name) => {
     &lt;x-bladewind::code
         name="pin-code"
         total_digits="5"
-        on_verify="verifyPin"
+        onverify="verifyPin"
         has_spinner="false"
         mask="false"
         timer="15"

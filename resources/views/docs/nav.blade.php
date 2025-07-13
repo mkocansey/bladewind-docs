@@ -1,4 +1,4 @@
-<h5 class="nav-heading mt-0">Start Here</h5>
+<h5 class="nav-heading mt-0 pb-4 md:pb-0">Start Here</h5>
 <div class="space-y-3 sm:mr-4 sm:p-0 sm:py-4 pt-0 pb-4">
 <div class="flex items-center installation"><div class="dot"></div><a href="/install">Installation</a></div>
     <div class="flex items-center customization"><div class="dot"></div><a href="/customize">Customization</a></div>

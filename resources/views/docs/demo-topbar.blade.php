@@ -1,10 +1,12 @@
-<div class="flex p-4 border-b border-slate-300 dark:border-dark-700 justify-between items-center">
+<div class="flex p-4 border-b border-slate-300 dark:border-dark-700 justify-between items-center demo-topbar">
     <div class="flex items-center space-x-4">
         <img src="/assets/images/icon.png" class="h-5" />
         <div class="border-l border-dashed border-slate-500 dark:border-dark-700 pl-4 flex space-x-4 demo-nav tracking-wide">
             <a href="javascript:showPage('demo-dashboard')" class="font-bold text-slate-600 dark:text-dark-400 hover:text-slate-800 dark:hover:text-dark-200" data-page="demo-dashboard">Dashboard</a>
             <a href="javascript:showPage('demo-employees')" class="text-slate-600 dark:text-dark-400 hover:text-slate-800 dark:hover:text-dark-200" data-page="demo-employees">Employees</a>
             <a href="javascript:showPage('demo-jobs')" class="text-slate-600 dark:text-dark-400 hover:text-slate-800 dark:hover:text-dark-200" data-page="demo-jobs">Jobs</a>
+            <a href="javascript:showPage('demo-signup')" class="text-slate-600 dark:text-dark-400 hover:text-slate-800 dark:hover:text-dark-200 hidden" data-page="demo-signup">Sign Up</a>
+            <a href="javascript:showPage('demo-signin')" class="text-slate-600 dark:text-dark-400 hover:text-slate-800 dark:hover:text-dark-200 hidden" data-page="demo-signin">Sign In</a>
         </div>
     </div>
     <div class="flex justify-between space-x-6 items-center">
@@ -68,10 +70,10 @@
                     <div class="text-sm">jane@bladewindui.com</div>
                 </div>
             </x-bladewind::dropmenu.item>
-            <x-bladewind::dropmenu.item icon="lock-closed">
+            <x-bladewind::dropmenu.item icon="lock-closed" onclick="showPage('demo-signup');">
                 Sign Up Flow
             </x-bladewind::dropmenu.item>
-            <x-bladewind::dropmenu.item icon="lock-open">
+            <x-bladewind::dropmenu.item icon="lock-open" onclick="showPage('demo-signin');">
                 Sign In Flow
             </x-bladewind::dropmenu.item>
             <x-bladewind::dropmenu.item divider />
@@ -88,3 +90,14 @@
         </x-bladewind::dropmenu>
     </div>
 </div>
+<script>
+    showPage = (page) => {
+        domEls('.demo-nav a').forEach((el) => {
+            el.classList.remove('font-bold');
+            hide('.'+el.getAttribute('data-page'));
+            (page.indexOf('sign') != -1) ? hide('.demo-topbar') : unhide('.demo-topbar');
+        });
+        domEl('.demo-nav a[data-page="'+page+'"]').classList.add('font-bold');
+        unhide('.'+page);
+    }
+</script>
