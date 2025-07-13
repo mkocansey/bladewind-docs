@@ -9,7 +9,7 @@
     </div>
     <div class="flex justify-between space-x-6 items-center">
         <x-bladewind::icon name="magnifying-glass" class="size-5" />
-        <x-bladewind::dropmenu>
+        <x-bladewind::dropmenu hide_after_click="false">
             <x-slot:trigger>
                 <x-bladewind::bell animate_dot="true" />
             </x-slot:trigger>

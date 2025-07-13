@@ -126,42 +126,43 @@
     <div class="text-3xl sm:text-6xl sm:max-w-4xl mx-auto text-slate-200 text-center px-10 font-bladewind">
         BladewindUI components shine even in dark mode.
     </div>
-    <div class="text-sm sm:text-xl font-light sm:max-w-xl mx-auto pt-4 text-center text-slate-300 px-4 sm:px-0 font-bladewind">
-        Every BladewinUI component is designed with support for dark mode and they are easy to <a href="/customize/darkmode" class="text-yellow-500 hover:text-yellow-700">customize</a>.
+    <div class="text-sm sm:text-2xl font-light sm:max-w-xl mx-auto pt-4 text-center text-slate-300 px-4 sm:px-0 font-bladewind tracking-wide">
+        <a href="/customize/darkmode" class="text-yellow-500 hover:text-yellow-700">Customizing</a> dark mode in BladewinUI is as easy as setting your preferred dark colour and voila!.
     </div>
 
-    <div class="sm:max-w-7xl home-nav mx-auto pt-10">
+    <div class="sm:max-w-7xl home-nav mx-auto pt-16">
         <div class="grid sm:grid-cols-3 grid-cols-1 gap-6">
             <div>
                 <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none !border-0" title="Your profile">
                     <div class="flex">
                         <div> <x-bladewind::avatar show_ring="false" image="/assets/images/francis.png" stacked="true" size="huge" class="!mx-auto" /></div>
                         <div class="grow pl-10">
-                            <h1 class="text-slate-400 text-2xl tracking-wider">John C. Doe</h1>
-                            <h2 class="text-slate-400 text-sm tracking-wider">john.doe@bladewindui.com</h2>
-                            <div class="-mt-1.5 -ml-1"> <x-bladewind::rating :rating="4" color="purple" /></div>
-                            <x-bladewind::button size="small" radius="small" color="purple" icon="pencil-square" class="mt-6 mb-2">Edit Profile</x-bladewind::button>
+                            <div class="text-slate-400 text-2xl tracking-wider">John C. Doe</div>
+                            <div class="text-slate-400 text-sm tracking-wider">john.doe@bladewindui.com</div>
+                            <div class="-mt-3 -ml-1 mb-6"> <x-bladewind::rating :rating="4" color="purple" /></div>
+                            <x-bladewind::button size="small" radius="small" color="purple" icon="pencil-square">Edit Profile</x-bladewind::button>
                         </div>
                     </div>
                 </x-bladewind::card>
             </div>
             <div>
                 <x-bladewind::card has_shaodw="false" class="!bg-slate-800 !shadow-none  !border-0 mnos" title="Mobile Network Penetration">
+                    <div class="py-2">
                     <x-bladewind::horizontal-line-graph label="MTN: " percentage="55" color="yellow" shade="dark" class="text-slate-400" />
                     <x-bladewind::horizontal-line-graph label="Vodafone: " percentage="30" color="red" shade="dark" class="text-slate-400 py-3" />
                     <x-bladewind::horizontal-line-graph label="AirtelTigo: " percentage="65" color="blue" shade="dark" class="text-slate-400" />
-                    <x-bladewind::horizontal-line-graph label="Telecel: " percentage="33" color="green" class="py-3 text-slate-400" shade="dark"  />
+                    </div>
                 </x-bladewind::card>
             </div>
             <div>
                 <x-bladewind::card has_shaodw="false" class="!bg-slate-800  !border-0 !shadow-none" reduce_padding>
                     <x-bladewind::empty-state show_image="false">
-                        <div class="pt-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-12 mx-auto text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
                         </svg>
                         </div>
-                        <p class="py-7 text-slate-500">You have no biometric data uploaded</p>
+                        <p class="py-5 text-slate-500">You have no biometric data uploaded</p>
                         <x-bladewind::button color="red" size="small" class="mb-1.5">
                             Add biometric info
                         </x-bladewind::button>
@@ -172,7 +173,7 @@
     </div>
 </div>
 
-<div class="w-full py-8 px-5 dark:bg-slate-900 text-slate-400">
+<div class="w-full py-8 px-5 bg-slate-900 text-slate-400">
     <div class="max-w-7xl mx-auto flex">
         <div class="tracking-wider text-xs grow">
             {{\Composer\InstalledVersions::getPrettyVersion('mkocansey/bladewind')}}
