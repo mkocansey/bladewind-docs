@@ -1203,7 +1203,7 @@
 <pre class="language-markup line-numbers" data-line="4">
 <code>
     &lt;x-bladewind::table
-        exclude_columns="id"
+        exclude_columns="last_name"
         divider="thin"
         groupby="department"
         :data="$staff" /&gt;
