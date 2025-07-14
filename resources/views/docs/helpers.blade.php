@@ -24,7 +24,7 @@
         </code>
     </pre>
 
-    <h2 id="animatecss">animateCSS</h2>
+    <h2 id="animatecss">animateCss</h2>
     <p>Animates any element in the DOM. Works with any of the <a href="https://animate.style/" target="_blank">animation classes</a> from animate.css by Daniel Eden.
     The animation class names should be used without the <code class="inline">animate__</code> prefix.</p>
     <pre class="language-js line-numbers">
@@ -33,10 +33,10 @@
                 element:     css class that identifies the element to animate
                 animation:   animation class to be applied to element
             -----------------------------------------------------------------*/
-            animateCSS(element, animation);
+            animateCss(element, animation);
 
             // example
-            animateCSS('.navigation','slideInRight');
+            animateCss('.navigation','slideInRight');
 
         </code>
     </pre>
@@ -399,7 +399,7 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#addtostorage">addToStorage</a></div>
-        <div class="flex items-center"><div class="dot"></div><a href="#animatecss">animateCSS</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#animatecss">animateCss</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#changecss">changeCss</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#changecssfordomarray">changeCssForDomArray</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#comparedates">compareDates</a></div>

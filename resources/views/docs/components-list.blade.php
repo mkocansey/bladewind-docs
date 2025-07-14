@@ -29,6 +29,7 @@
 <div class="{{ $css }} component-radio-button"><div class="dot"></div><a href="/component/radio-button">Radio Button</a></div>
 <div class="{{ $css }} component-rating"><div class="dot"></div><a href="/component/rating">Rating</a></div>
 <div class="{{ $css }} component-select"><div class="dot"></div><a href="/component/select">Select</a></div>
+<div class="{{ $css }} component-shimmer"><div class="dot"></div><a href="/component/shimmer">Shimmer</a></div>
 <div class="{{ $css }} component-slider"><div class="dot"></div><a href="/component/slider">Slider</a></div>
 <div class="{{ $css }} component-spinner"><div class="dot"></div><a href="/component/spinner">Spinner</a></div>
 <div class="{{ $css }} component-statistic"><div class="dot"></div><a href="/component/statistic">Statistic</a></div>

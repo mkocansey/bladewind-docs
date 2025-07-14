@@ -1786,10 +1786,14 @@
     </pre>
 
     <x-bladewind::alert show_close_icon="false">
-        The source file for this component is available in <code class="inline">resources > views > components > bladewind > table.blade.php</code>
+        The source file for this component is available in <code class="inline">resources > views > components > bladewind > table.blade.php</code> and <code class="inline">public > vendor > bladewind > js > table.js</code>
+    </x-bladewind::alert>
+<br />
+    <x-bladewind::alert type="error" show_close_icon="false">
+        The table component requires its corresponding Javascript file to be included in your project. The file is located at <code class="inline">public/vendor/bladewind/js/table.js</code>. Publish the file using <code class="inline">php artisan vendor:publish --tag=bladewind-public</code>.
     </x-bladewind::alert>
     </div>
-
+<p>&nbsp;</p>
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#nogaps">No Gaps</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#nodivider">No divider</a></div>

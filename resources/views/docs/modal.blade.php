@@ -405,28 +405,6 @@
             &lt;/x-bladewind::modal&gt;
         </code>
     </pre>
-    <h3 id="big">Big Modal</h3>
-    <p>
-        This requires that you set <code class="inline text-red-500">size="big"</code> on the modal component.
-    </p>
-    <p>
-        <x-bladewind::button onclick="showModal('big-modal')">Big Modal</x-bladewind::button>
-    </p>
-    <pre class="language-markup line-numbers" data-line="6">
-        <code>
-            &lt;x-bladewind::button onclick="showModal('big-modal')"&gt;
-                Big Modal
-            &lt;/x-bladewind::button&gt;
-
-            &lt;x-bladewind::modal
-                size="big"
-                title="Big Modal"
-                name="big-modal"&gt;
-                English can be quite confusing.
-                How is big different from large? You be the judge!
-            &lt;/x-bladewind::modal&gt;
-        </code>
-    </pre>
     <h3 id="large">Large Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="large"</code> on the modal component.
@@ -495,6 +473,37 @@
             &lt;/x-bladewind::modal&gt;
         </code>
     </pre>
+    <h3>Modal Size Table</h3>
+    <x-bladewind::table>
+        <x-slot:header>
+            <th>Size</th>
+            <th>CSS Class</th>
+        </x-slot:header>
+        <tr>
+            <td>tiny</td>
+            <td>sm:w-72</td>
+        </tr>
+        <tr>
+            <td>small</td>
+            <td>sm:w-96</td>
+        </tr>
+        <tr>
+            <td>medium</td>
+            <td>sm:w-[32rem]</td>
+        </tr>
+        <tr>
+            <td>large</td>
+            <td>sm:w-[60rem]</td>
+        </tr>
+        <tr>
+            <td>xl</td>
+            <td>sm:w-[86rem]</td>
+        </tr>
+        <tr>
+            <td>omg</td>
+            <td>max-w-screen</td>
+        </tr>
+    </x-bladewind::table>
     <x-bladewind::modal size="tiny" title="Tiny Modal" name="tiny-modal">
         I am the tiniest in the modal family. I am probably rarely used.
     </x-bladewind::modal>
@@ -825,11 +834,11 @@
             <x-bladewind::input numeric="true" name="mobile2" label="Mobile" />
         </form>
         <x-bladewind::processing
-            name="profile-updating"
+            name="updating-profile"
             message="Updating your profile." />
 
         <x-bladewind::process-complete
-            name="profile-update-yes"
+            name="profile-updated"
             process_completed_as="passed"
             button_label="Done"
             button_action="hideModal('form-mode-ajax')"
@@ -839,8 +848,8 @@
     <script>
         saveProfileAjax = () => {
             if(validateForm('.profile-form-ajax')){
-                unhide('.profile-updating');
                 hide('.profile-form-ajax');
+                unhide('.updating-profile');
                 hideModalActionButtons('form-mode-ajax');
                 // make the call
                 makeAjaxCall(serialize('.profile-form-ajax'));
@@ -854,9 +863,9 @@
             // will make a call and post all the data
             setTimeout(() => {
                 // do these when your ajax call is done saving your data
-                hide('.profile-updating');
-                unhide('.profile-update-yes')
-            }, 5000);
+                hide('.updating-profile');
+                unhide('.profile-updated')
+            }, 3000);
         }
     </script>
 
@@ -1163,7 +1172,7 @@
             <td>Specify the intensity of the backdrop blur.<br>
                 <code class="inline">none</code> <code class="inline">small</code>
                 <code class="inline">medium</code> <code class="inline">large</code>
-                <code class="inline">xl</code> <code class="inline">xxl</code>
+                <code class="inline">xl</code>
                 <code class="inline">omg</code>
             </td>
         </tr>
@@ -1186,7 +1195,7 @@
             <td>size</td>
             <td>big</td>
             <td>Defines the size of the modal. Arranged from smallest to largest. <br> <code class="inline">tiny</code> <code class="inline">small</code> <code class="inline">medium</code>
-            <code class="inline">big</code> <code class="inline">large</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
+             <code class="inline">large</code> <code class="inline">xl</code> <code class="inline">omg</code></td>
         </tr>
         <tr>
             <td>show_close_icon</td>
