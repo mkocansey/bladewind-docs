@@ -5,7 +5,6 @@
 <x-bladewind::notification />
 <body class="text-gray-500/80 bg-slate-100 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
     <div class="md:hidden block absolute right-4 top-1">
-        <a href="#" onclick="animateCSS('.navigation','slideInRight');" class="ml-4 text-slate-400 dark:hover:text-slate-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -15,7 +14,7 @@
     <nav class="w-[280px] z-50 py-6 bg-white/95 border-l border-gray-200 fixed right-0 top-0 h-screen shadow-2xl
             hidden sm:hidden dark:bg-dark-900 dark:border-gray-800 shadow-blue-300 dark:shadow-slate-800 overflow-y-scroll navigation">
         <div class="text-right cursor-pointer"
-             onclick="animateCSS('.navigation','slideOutRight').then((message) => { hide('.navigation'); });">
+             onclick="animateCss('.navigation','slideOutRight').then((message) => { hide('.navigation'); });">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline mr-4" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -45,7 +44,7 @@
         </div>
 
         <div class="hidden sm:block">
-        <div class="relative mx-auto flex max-w-screen justify-center overflow-hidden p-8">
+        <div class="relative mx-auto flex w-full justify-center overflow-hidden p-8">
             <div style="--fade-distance: 20px; --fade-duration: 1.2s" class="relative w-full max-w-7xl rounded-xl bg-default animate-fadeInUp delay-500">
                 <div class="pointer-events-none absolute inset-0 m-3 rounded-3xl border border-white/20 bg-default/20 mix-blend-plus-lighter animate-fadeInDown delay-700"></div>
                 <div class="relative z-10 min-h-[700px] rounded-md bg-gray-200 dark:bg-dark-800 animate-fadeInLeft delay-1000 m-8">
@@ -57,7 +56,7 @@
                         @include('docs.demo-signup')
                         @include('docs.demo-signin')
                     </div>
-                    <x-bladewind::modal title="Send Birthday Wishes" name="birthday-wishes-modal" size="large" ok-button-label="Send Wishes"
+                    <x-bladewind::modal title="Send Birthday Wishes" name="birthday-wishes-modal" ok-button-label="Send Wishes"
                                         ok-button-action="showNotification('Wishes sent successfully', 'The wishes have been sent successfully to the birthday fella! They sure will feel happy', 'success')">
                         <div class="space-y-4 pt-4">
                             <p class="text-gray-600 dark:text-dark-300">Enter your custom message for <b>:name</b>.</p>
@@ -67,7 +66,7 @@
                             </x-bladewind::textarea>
                         </div>
                     </x-bladewind::modal>
-                    <x-bladewind::modal title="Send a Message" name="chat-modal" size="large" ok-button-label="Send message"
+                    <x-bladewind::modal title="Send a Message" name="chat-modal" ok-button-label="Send message"
                                         ok-button-action="showNotification('Message sent successfully', 'The message has been sent successfully. If you scheduled this, we got you covered.', 'success')">
                         <div class="space-y-4 pt-4">
                             <x-bladewind::input label="Subject" name="subject" prefix="chat-bubble-bottom-center" :prefix-is-icon="true" />
