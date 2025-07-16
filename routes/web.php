@@ -38,6 +38,7 @@ Route::view('component/radio-button', 'docs/radiobutton');
 Route::view('component/rating', 'docs/rating');
 Route::view('roadmap', 'docs/roadmap');
 Route::view('component/select', 'docs/select');
+Route::view('component/shimmer', 'docs/shimmer');
 Route::view('component/slider', 'docs/slider');
 Route::view('component/spinner', 'docs/spinner');
 Route::view('component/statistic', 'docs/statistic');
