@@ -405,6 +405,29 @@
             &lt;/x-bladewind::modal&gt;
         </code>
     </pre>
+    <h3 id="medium">Big Modal</h3>
+    <p>
+        This requires that you set <code class="inline text-red-500">size="big"</code> on the modal component.
+        This is the default so it is not really necessary to set the attribute on the component if you want to use the big modal size.
+    </p>
+    <p>
+        <x-bladewind::button onclick="showModal('big-modal')">Big Modal</x-bladewind::button>
+    </p>
+    <pre class="language-markup line-numbers" data-line="7">
+        <code>
+            &lt;x-bladewind::button onclick="showModal('big-modal')"&gt;
+                Big Modal
+            &lt;/x-bladewind::button&gt;
+
+            &lt;x-bladewind::modal
+                title="Big Modal"
+                size="modal"
+                name="big-modal"&gt;
+                I am the medium sized modal.
+                Also the default if you do not set a size.
+            &lt;/x-bladewind::modal&gt;
+        </code>
+    </pre>
     <h3 id="large">Large Modal</h3>
     <p>
         This requires that you set <code class="inline text-red-500">size="large"</code> on the modal component.
