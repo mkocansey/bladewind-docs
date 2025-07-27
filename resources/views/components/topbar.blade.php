@@ -1,4 +1,4 @@
-<div class="fixed w-full z-40 py-4 px-6 bg-gradient-to-tr from-indigo-700 to-violet-800 dark:border-0 dark:shadow-slate-800 dark:shadow-sm shadow-md dark:bg-dark-900 dark:bg-gradient-to-r dark:from-dark-900 dark:to-dark-950">
+<div class="fixed w-full z-40 py-4 px-6 bg-gradient-to-tr from-indigo-700 to-violet-800 dark:border-0 dark:shadow-slate-800 dark:shadow-none shadow-md dark:bg-dark-600 dark:bg-gradient-to-r dark:from-dark-800 dark:via-dark-900 dark:to-dark-800 dark:border-b-4 dark:border-dark-600">
 {{--<div class="fixed w-full z-40 py-4 px-6 bg-white/90 shadow-2xl shadow-indigo-100 dark:shadow-dark-800/30 border-b border-slate-300/70 dark:border-dark-600/70 dark:bg-dark-700/80">--}}
     <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between">

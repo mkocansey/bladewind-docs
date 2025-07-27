@@ -4,7 +4,7 @@
 </x-meta>
 <x-bladewind::notification />
 <body class="text-gray-500/80 bg-slate-100 dark:bg-gradient-to-b from-slate-900 to-slate-800 dark:text-slate-400">
-    <div class="md:hidden block absolute right-4 top-1">
+    <div class="md:hidden block absolute right-6 top-6" onclick="animateCss('.navigation','slideInRight');">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -23,7 +23,7 @@
         @include('docs/nav')
     </nav>
 
-    <div class="bg-gradient-to-tr from-indigo-900 via-black to-violet-500 sm:px-10 px-5 pb-10 shadow-sm dark:from-dark-900 dark:to-dark-950">
+    <div class="bg-gradient-to-tr from-indigo-900 via-black to-violet-500 sm:px-10 px-5 pb-10 shadow-sm dark:from-dark-700 dark:via-black dark:to-violet-950">
         <div class="sm:max-w-7xl mx-auto flex justify-between items-center py-7">
             <div>
                 <img src="/assets/images/bw-logo-white.png" alt="logo" class="h-7 mx-auto opacity-80" />
@@ -36,7 +36,7 @@
         <div class="sm:text-6xl tracking-wide font-bold text-3xl sm:max-w-5xl mx-auto text-fuchsia-100 dark:text-dark-200 text-center px-6 pt-10 md:px-3 md:pt-20 font-bladewind">
             Beautifully crafted UI components for your Laravel applications.
         </div>
-        <div class="sm:text-2xl text-sm font-light tracking-wide sm:max-w-2xl mx-auto text-center text-slate-100 dark:text-dark-500 sm:py-8 px-5 pt-3 pb-6">
+        <div class="sm:text-2xl text-sm font-light tracking-wide sm:max-w-2xl mx-auto text-center text-slate-100 dark:text-dark-400 sm:py-8 px-5 pt-3 pb-6">
             Just <code class="font-bladewind2 md:text-xl text-sm">`composer require mkocansey/bladewind`</code> and start combining our elements to build something amazing.
         </div>
         <div class="text-center sm:py-6 px-6">

@@ -70,8 +70,8 @@
     <p>You can tell from the palette above that BladewindUI uses <strong>Emerald</strong> for its green and <strong>Amber</strong> for its yellow.
     As stated earlier, the default colour used for the BladewindUI components is blue. If your primary theme is not blue, you can change this in a few steps. This assumes you have some basic knowledge of <a href="https://tailwindcss.com" target="_blank">Tailwind CSS</a>.</p>
 
-    <p>Below if the tailwind.config.js file that ships with the library.</p>
-<pre class="language-js line-numbers">
+    <p>Below is the tailwind.config.js file that ships with the library.</p>
+<pre class="language-js line-numbers" data-line="7">
     <code>
 // your-project/vendor/mkocansey/bladewind/tailwind.config.js
   theme: {
@@ -79,12 +79,24 @@
       colors: {
         primary: colors.blue,
         secondary: colors.slate,
-        dark: colors.gray,
+        dark: {
+            100: '#f0f1f2',
+            200: '#d2d4d7',
+            300: '#a7aaad',
+            400: '#6c7075',
+            500: '#4a4e53',
+            600: '#33373c',
+            700: '#262a2f',
+            800: '#1C1F24',
+            900: '#101114',
+            950: '#0a0b0d'
+        },
         green: colors.emerald,
       }
 },
 </code>
 </pre>
+    <br />
 <p>
     If the default colours used in the library fit your project's colour theme you don't need to perform this next step. To change the colours used above, simply define overwriting values in your project's <code class="inline">tailwind.config.js</code>.
     This documentation website uses indigo as its primary colour.
@@ -103,6 +115,32 @@
 },
     </code>
     </pre>
+    <br />
+    <pre class="language-js line-numbers" data-line="5">
+    <code>
+        // your-project/tailwind.config.js
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+            100: '#f3e8ff',
+            200: '#e9d5ff',
+            300: '#d8b4fe',
+            400: '#c084fc',
+            500: '#a855f7',
+            600: '#9333ea',
+            700: '#7e22ce',
+            800: '#6d28d9',
+            900: '#4c1d95',
+        },
+        secondary: colors.zinc,
+        dark: colors.gray,
+        green: colors.emerald,
+      }
+},
+    </code>
+    </pre>
+    <br />
     <p>
         All components use the colour defined in the <code class="inline">primary</code> key above to display their background colour. This makes it easy for all components to quickly blend in to your preferred theme.
         From the example above, now all components will use shades of <strong>indigo</strong> as their background colour instead of blue.
