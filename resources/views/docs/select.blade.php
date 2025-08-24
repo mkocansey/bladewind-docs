@@ -1148,12 +1148,13 @@
                 <a href="javascript:filterCountries('eu')"><x-bladewind::tag label="europe" color="purple" class="cursor-pointer" /></a>
                 <a href="javascript:filterCountries('na')"><x-bladewind::tag label="north america" color="purple" class="cursor-pointer" /></a>
             </div>
-            <x-bladewind::select name="continent-country2" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
+            <x-bladewind::select name="continent-and-country2" placeholder="Select Country" searchable="true" data="{{json_encode($countries)}}" label_key="name" value_key="value" filter_by="continent_code" add_clearing="false" />
         </div>
     </x-bladewind::card>
     <script>
         filterCountries = (continent) => {
-            bw_continent_country2.filter('continent_country2', continent);
+            bw_continent_and_country2.filter('continent_and_country2');
+            bw_continent_and_country2.filter('continent_and_country2', continent);
         }
     </script>
     <br />

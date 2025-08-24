@@ -1023,6 +1023,41 @@
         </code>
     </pre>
 
+        <h2 id="onclick">Passing Custom Functions onClick</h2>
+        <p>
+            If the action icons are not enough, you can pass a custom function to the <code class="inline text-red-500">onclick</code> attribute.
+            This function will be triggered when a user clicks anywhere on the row. You can use this to redirect users to a profile page or display a modal with more details.
+            The function must be any valid function that exists in your code. You can pass any of the keys that exists in your array as parameters to the function.
+            The keys need to be wrapped in curly braces. For example: with <code class="inline text-red-500">onclick=('/user/profile/', '{first_name}', '{last_name}')</code>,
+            the table component will replace <em>'{first_name}'</em> with the actual value of first_name from your <code class="inline">$data</code> array.
+        </p>
+        <p>
+            <x-bladewind::alert show_close_icon="false">
+                Rows with custom click functions have <code>cursor-pointer</code> applied to them.
+            </x-bladewind::alert>
+        </p>
+        <p>
+            <x-bladewind::table :data="$staff" onclick="goToProfile('/user/profile/', '{first_name}', '{last_name}')" />
+            <script>
+                goToProfile = (url, firstname, lastname) => {
+                    alert(`You clicked on ${firstname} ${lastname}. Redirecting to ${url}`);
+                }
+            </script>
+        </p>
+<pre class="language-markup line-numbers">
+<code>
+    &lt;x-bladewind::table :data="$staff"
+        onclick="goToProfile('/user/profile', '{first_name'}, '{last_name}')" /&gt;
+</code>
+    </pre>
+        <pre class="language-js line-numbers">
+        <code>
+            goToProfile = (url, firstname, lastname) => {
+                alert(`You clicked on ${firstname} ${lastname}. Redirecting to ${url}`);
+            }
+        </code>
+    </pre>
+
     <h3 id="nodata">No Data Returned</h3>
     <p>
         When building dynamic table you will most likely be fetching your data from either an API or a database. You will barely be manually creating arrays as we did above.
@@ -1808,6 +1843,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#dynamic">Dynamic data</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#customize-columns">Customizing columns</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#action-icons">Action icons</a></div>
+        <div class="flex items-center pl-5"><div class="dot"></div><a href="#onclick">Custom click functions</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#nodata">No data message</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#searchable">Searchable data</a></div>
         <div class="flex items-center pl-5"><div class="dot"></div><a href="#column-aliases">Column aliases</a></div>

@@ -772,6 +772,11 @@
             </div>
             <x-bladewind::input required="true" name="email" label="Email address" error_message="Please enter your email" />
             <x-bladewind::input numeric="true" name="mobile" label="Mobile" />
+            <x-bladewind::select name="gender" placeholder="Select Gender" data="manual">
+                <x-bladewind::select.item label="Male" value="male" />
+                <x-bladewind::select.item label="Female" value="female" />
+                <x-bladewind::select.item label="Prefer not to say" value="other" />
+            </x-bladewind::select>
         </form>
     </x-bladewind::modal>
     <script>
