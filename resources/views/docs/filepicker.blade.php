@@ -467,7 +467,7 @@ class FileUploadController extends Controller
 </pre>
 <h3 id="base64">Encode Files as base64</h3>
 <p>
-    The component allows for fies to be retrieved in base64 format. This works for uploading single files or multiple files.
+    The component allows for files to be retrieved in base64 format. This works for uploading single files or multiple files.
     To encode uploaded files as base64, set <code class="inline text-red-500">base64="true"</code>. The name of input field for storing the base64 files has <code class="inline">_b64</code> appended to it.
     So if the name of your filepicker field is <code class="inline">attachment</code>, the base64 encoded files will be written to <code class="inline">attachment_b64</code>.
 </p>
