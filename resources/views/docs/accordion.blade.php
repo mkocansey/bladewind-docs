@@ -26,8 +26,7 @@
             </div>
         </x-bladewind::accordion.item>
     </x-bladewind::accordion>
-
-
+<br />
 <pre class="language-markup line-numbers" data-line="1,7">
 <code>
 &lt;x-bladewind::accordion&gt;
@@ -131,8 +130,7 @@
             </div>
         </x-bladewind::accordion.item>
     </x-bladewind::accordion>
-
-
+    <br />
     <pre class="language-markup line-numbers" data-line="2">
 <code>
 &lt;x-bladewind::accordion
@@ -182,8 +180,7 @@
             </div>
         </x-bladewind::accordion.item>
     </x-bladewind::accordion>
-
-
+    <br />
     <pre class="language-markup line-numbers" data-line="2">
 <code>
 &lt;x-bladewind::accordion
@@ -231,8 +228,7 @@
             </div>
         </x-bladewind::accordion.item>
     </x-bladewind::accordion>
-
-
+    <br />
     <pre class="language-markup line-numbers" data-line="2,3">
 <code>
 &lt;x-bladewind::accordion
@@ -310,6 +306,16 @@
                 <code class="inline">violet</code> <code class="inline">indigo</code> <code class="inline">fuchsia</code></td>
         </tr>
         <tr>
+            <td>no_padding</td>
+            <td>false</td>
+            <td>Specifies if there should be air around the accordion group. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>content_can_close</td>
+            <td>true</td>
+            <td>Determines if clicking on the accordion content will close it when it is open. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
             <td>class</td>
             <td><em>blank</em></td>
             <td>Any additional css classes can be added using this attribute. For example to make your accordion more rounded you can add <code class="inline">class="rounded-2xl"</code>.</td>
@@ -344,6 +350,16 @@
             <td>class</td>
             <td><em>blank</em></td>
             <td>Any additional css classes can be added using this attribute. For example to make your accordion more rounded you can add <code class="inline">class="rounded-2xl"</code>.</td>
+        </tr>
+        <tr>
+            <td>no_padding</td>
+            <td>false</td>
+            <td>Specifies if there should be air around each accordion item. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td>content_can_close</td>
+            <td>true</td>
+            <td>Determines if clicking on the accordion content will close it when it is open. <br /><code class="inline">true</code> <code class="inline">false</code></td>
         </tr>
         <tr>
             <td>nonce</td>

@@ -1034,10 +1034,13 @@
         <p>
             <x-bladewind::alert show_close_icon="false">
                 Rows with custom click functions have <code>cursor-pointer</code> applied to them.
+            </x-bladewind::alert><br />
+            <x-bladewind::alert show_close_icon="false">
+                To prevent users from accidentally triggering the custom click function when they click on any action icon, the action icons cell does not inherit the custom click function.
             </x-bladewind::alert>
         </p>
         <p>
-            <x-bladewind::table :data="$staff" onclick="goToProfile('/user/profile/', '{first_name}', '{last_name}')" />
+            <x-bladewind::table :data="$staff" onclick="goToProfile('/user/profile/', '{first_name}', '{last_name}')" :action_icons="$action_icons" />
             <script>
                 goToProfile = (url, firstname, lastname) => {
                     alert(`You clicked on ${firstname} ${lastname}. Redirecting to ${url}`);
@@ -1110,6 +1113,7 @@
     :data="$staff"  /&gt;
 </code>
 </pre>
+        <br />
 <p>
     Finally, it is possible to display the <strong>no data message</strong> using the <a href="/component/empty-state">Empty State</a> component.
     All the attributes of the component are allowed except <code class="inline text-red-500">message</code> and <code class="inline text-red-500">class</code>, since the table component already has its own class attribute,
@@ -1143,7 +1147,7 @@
             Check out the <a href="/component/empty-state">Empty State</a> component for information on how to use its attributes.
         </x-bladewind::alert>
     </p>
-    <br />
+
     <h3 id="searchable">Searchable Table Data</h3>
     <p>
         The table component provides a very basic way for users to search through table content.
@@ -1154,7 +1158,7 @@
     <x-bladewind::table searchable="true" search_placeholder="Find staff members by name..."
         :data="$staff" divider="thin" :action_icons="$action_icons"
         exclude_columns="id, marital_status" include_columns="first_name, last_name, department" />
-
+<br />
 <pre class="language-html line-numbers" data-line="2,5">
 <code>
     &lt;x-bladewind::table

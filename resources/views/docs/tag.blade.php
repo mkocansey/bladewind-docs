@@ -189,10 +189,8 @@
         if we have 3 tags with the name <strong>location</strong>, this input field will be created <code class="inline">&lt;input type="hidden" name="location" /&gt;</code>.
         When any location is selected, the value will be written into the hidden location input field. Multiple values are written as a comma separated list.
     </p>
-    <p>
     <b>What's in your tech stack?</b>
-    </p>
-    <div>
+    <div class="pb-8">
         <x-bladewind::tags color="orange" name="stack" required="true" max="3" error_message="You can select only up to 3 tech stacks" error_heading="Check selection!">
             <x-bladewind::tag label="laravel" value="laravel" />
             <x-bladewind::tag label="javascript" value="js" />
@@ -220,6 +218,7 @@
             &lt;/x-bladewind::tags&gt;
         </code>
     </pre>
+    <br />
     <p>
         Note the tags are wrapped in a parent <code class="inline">&lt;x-bladewind::tags&gt;...&lt;/x-bladewind::tags&gt;</code> component.
         The above example also introduces a restriction on how many tags can be selected from the list. This is achieved by
@@ -233,10 +232,8 @@
             You will need to have <b>&lt;x-bladewind::notification /&gt;</b> on the page for error messages to be displayed.
         </x-bladewind::alert>
     </p>
-    <p>
-        <b>Where are you hosting apps?</b>
-    </p>
-    <div>
+    <b>Where are you hosting apps?</b>
+    <div class="pb-8">
         <x-bladewind::tags color="green" name="host">
             <x-bladewind::tag label="digital ocean" value="do" />
             <x-bladewind::tag label="amazon web services" value="aws" />
@@ -254,10 +251,8 @@
             &lt;/x-bladewind::tags&gt;
         </code>
     </pre>
-    <p>
-        <b>What are your interests?</b>
-    </p>
-    <div>
+    <br /> <b>What are your interests?</b>
+    <div class="pb-8">
         <x-bladewind::tags color="gray" name="interests">
             <x-bladewind::tag label="artificial intelligence" value="AI" />
             <x-bladewind::tag label="blockchain" value="blockchain" />
@@ -275,9 +270,9 @@
             &lt;/x-bladewind::tags&gt;
         </code>
     </pre>
-
-    <p><b>What is your gender?</b></p>
-    <div>
+    <br />
+    <b>What is your gender?</b>
+    <div class="pb-8">
         <x-bladewind::tags color="blue" name="gender" max="1" error_message="You can select just one gender" error_heading="Yoh!" rounded="true">
             <x-bladewind::tag label="Male"  value="male" />
             <x-bladewind::tag label="female"  value="female" />
@@ -304,11 +299,12 @@
             &lt;/x-bladewind::tags&gt;
         </code>
     </pre>
+    <br />
+    <b>What do you do on friday evenings?</b>
     <p>
-        <b>What do you do on friday evenings?</b><br />
         The example below has three values selected by default.
     </p>
-    <div>
+    <div class="pb-8">
         <x-bladewind::tags color="red" name="fridays" selected_value="hangout,club,sleep">
             <x-bladewind::tag label="hangout with friends" value="hangout" />
             <x-bladewind::tag label="go clubbing" value="club" />
