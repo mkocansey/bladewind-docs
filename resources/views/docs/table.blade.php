@@ -1170,7 +1170,55 @@
         exclude_columns="id, marital_status" /&gt;
 </code>
 </pre>
-
+<br />
+<p>
+    The search bar is designed to fill the entire width of the table. There are instances where you may want to place other UI elements next to the search, like, a date range component or filter component.
+    You can achieve this by instructing the table to write the search bar into another element, by setting the <code class="text-red-500 inline">search_container</code> attribute on the table. The value of the attribute should be the id or class name of the target element.
+    In this case, the search bar is transparent so you can place it on any background you want.
+</p>
+<div class="flex space-x-4 items-center bg-gray-100 px-3 !-py-3 rounded-lg dark:bg-dark-800">
+    <div class="put-search-here p-0.5 border border-gray-300 dark:border-dark-600 dark:bg-transparent bg-white rounded-md grow"></div>
+    <div class="pt-3.5">
+        <x-bladewind::datepicker range="true" add-clearing="false" />
+    </div>
+    <div>
+        <x-bladewind::button secondary="true">Filter</x-bladewind::button>
+    </div>
+</div>
+<p>
+    <x-bladewind::table searchable="true" search_placeholder="Find staff members by name..."
+                        :data="$staff" divider="thin" :action_icons="$action_icons" search_container="put-search-here"
+                        exclude_columns="id, marital_status" include_columns="first_name, last_name, department" />
+</p>
+        <br />
+<pre class="language-html line-numbers" data-line="2,5">
+<code>
+    &lt;x-bladewind::table
+        searchable="true"
+        :data="$staff"
+        divider="thin"
+        search_container="put-search-here"
+        search_placeholder="Find staff members by name..."
+        :action_icons="$action_icons"
+        exclude_columns="id, marital_status" /&gt;
+</code>
+</pre>
+        <br />
+<pre class="language-html line-numbers" data-line="2,3">
+<code>
+&lt;div class="flex space-x-4 items-center bg-gray-100 px-3 -py-4 rounded-lg"&gt;
+    &lt;div class="put-search-here p-0.5 border
+    border-gray-300 bg-white rounded-md grow">&lt;/div&gt;
+    &lt;div class="pt-3.5"&gt;
+        &lt;x-bladewind::datepicker range="true" add-clearing="false" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;x-bladewind::button secondary="true">Filter&lt;/x-bladewind::button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        <br />
     <h3 id="column-aliases">Aliasing Column Names</h3>
     <p>
         There are times your array might contain keys that are not user-friendly enough to be column headings. From our array above assuming we wanted to replace
