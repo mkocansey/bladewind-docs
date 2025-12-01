@@ -861,10 +861,24 @@
         ];
         $column_aliases = [ 'id' => 'ref #', 'marital_status' => 'married?' ];
         $action_icons = [
-            "icon:chat-bubble-left | tip:send user a message | color:green | click:sendMessage('{first_name}', '{last_name}')",
-            "icon:pencil | click:redirect('/user/{id}')",
-            "icon:trash | click:deleteUser({id}, '{first_name}', '{last_name}')",
-        ];
+                [
+                    'icon'  => 'chat-bubble-bottom-center-text',
+                    'tip'   => 'send message',
+                    'color' => 'green',
+                    'icon_type' => 'solid', // default is outline
+                    'button_outline' => false,
+                    'click' => "sendMessage('{first_name}')",
+                ],
+                [
+                    'icon'  => 'pencil-square',
+                    'click' => "redirect('/user/{id}')",
+                ],
+                [
+                    'icon'  => 'trash',
+                    'color' => 'red',
+                    'click' => "deleteUser({id}, '{first_name}')",
+                ],
+            ];
     @endphp
     <p>
         <x-bladewind::table :data="$staff" />
@@ -903,16 +917,50 @@
     <p>
         Using the table component with dynamic data allows you to specify some extra cool attributes.
         You can show action icons by passing a json encoded array in the <code class="text-red-500 inline">action_icons</code> attribute.
-        Each action icon can have the name of the icon, the icon colour (default is the <a href="/component/button#secondary">secondary button</a> colour), a tooltip and the click action of the icon.
+        Each action icon can have the name of the icon, the icon type (outline or solid), the icon colour (default is the <a href="/component/button#secondary">secondary button</a> colour), a tooltip and the click action of the icon.
         The icons will be displayed in the order they are entered into the array.
     </p>
+        <x-bladewind::alert type="warning" show_close_icon="false">
+            This approach of using pipes as separators will be deprecated in v4.0.0. use the array approach instead
+        </x-bladewind::alert>
 <pre class="language-js line-numbers">
 <code>
+    // this approach of using pipes (|) will be deprecated in v4.0.0
+    // use the array approach instead
     $action_icons = [
         "icon:chat | tip:send message | color:green | click:sendMessage('{first_name}')",
         "icon:pencil | click:redirect('/user/{id}')",
         "icon:trash | color:red | click:deleteUser({id}, '{first_name}')",
     ];
+</code>
+</pre>
+    <br />
+    <x-bladewind::alert type="info" show_close_icon="false">
+        Use the array approach instead
+    </x-bladewind::alert>
+<pre class="language-js line-numbers">
+<code>
+    // define the action icons array
+
+    $action_icons = [
+    [
+        'icon'  => 'chat-bubble-bottom-center-text',
+        'tip'   => 'send message',
+        'color' => 'green',
+        'icon_type' => 'solid', // default is outline
+        'button_outline' => false,
+        'click' => "sendMessage('{first_name}')",
+    ],
+    [
+        'icon'  => 'pencil-square',
+        'click' => "redirect('/user/{id}')",
+    ],
+    [
+        'icon'  => 'trash',
+        'color' => 'red',
+        'click' => "deleteUser({id}, '{first_name}')",
+    ],
+];
 </code>
 </pre>
     <script>
@@ -952,20 +1000,32 @@
 
     <br />
     <p>
-        The icons are displayed from the <code class="inline">$action_icons</code> array above. Let us analyze the first line of the <code class="inline">$action_icons</code> array.
-        Note how each attribute is separated by a pipe (|).
+        The icons are displayed from the <code class="inline">$action_icons</code> array above. Let us analyze the first element in the <code class="inline">$action_icons</code> array.
     </p>
     <x-bladewind::table striped="true">
         <tr>
-            <td><b>icon:chat-bubble-left</b></td>
+            <td><b>icon</b></td>
+            <td>chat-bubble-left</td>
             <td>This will display the <b>chat-bubble-left</b> icon</td>
         </tr>
         <tr>
-            <td nowrap="nowrap"><b>tip:send user a message</b></td>
+            <td nowrap="nowrap"><b>icon_type</b></td>
+            <td nowrap="nowrap">solid</td>
+            <td>The solid version of the icon will be displayed instead of the outline version. <br /><code class="inline">solid</code> <code class="inline">outline</code></td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><b>button_outline</b></td>
+            <td nowrap="nowrap">true</td>
+            <td>If <code class="inline">true</code>, the button will have no background colour. Just an outline matching the value defined for <code class="inline">color</code>. <br /><code class="inline">true</code> <code class="inline">false</code></td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap"><b>tip</b></td>
+            <td nowrap="nowrap">send user a message</td>
             <td>On hover of the icon, the user will see a tooltip that says "send user a message"</td>
         </tr>
         <tr>
-            <td><b>click:sendMessage('{first_name}')</b></td>
+            <td><b>click</b></td>
+            <td>sendMessage('{first_name}')</td>
             <td>
                 When the icon is clicked, the <b>sendMessage</b> Javascript function is triggered. The function name can be any function that exists in your code.
                 Two parameters are passed to the function. The parameters can be any of the keys that exists in your array. In our earlier example our array contains
@@ -974,8 +1034,9 @@
             </td>
         </tr>
         <tr>
-            <td><b>color:green</b></td>
-            <td>The icon colour will be green.</td>
+            <td><b>color</b></td>
+            <td>green</td>
+            <td>The icon and button colour will be green. If <code class="inline">button_outline="false"</code>, the entire button will be green</td>
         </tr>
     </x-bladewind::table>
     <br />

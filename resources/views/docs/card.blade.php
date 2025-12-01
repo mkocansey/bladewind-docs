@@ -37,6 +37,71 @@
         </code>
     </pre>
 
+    <h2 id="radii">Different Radii</h2>
+    <p>
+        The card component comes with predefined radii which correspond to specific TailwindUI classes for roundness.
+        The default value is <code class="inline">small</code> which corresponds to Tailwind's <code class="inline">rounded-lg</code> class.
+        To change the card's border radius, specify the <code class="inline text-red-500">radius</code> attribute.
+    </p>
+    <x-bladewind::card radius="none">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sem sit amet velit efficitur faucibus. agna tincidunt sem, a fermentum neque arcu non est. Suspendisse sodales, nunc a hendrerit vestibulum, dui ipsum sagittis felis, vitae efficitur purus justo et mi. Pellentesque at arcu at ipsum semper fringilla. Maecenas at metus sit amet arcu ultricies rutrum. Proin dictum, magna vitae eleifend rhoncus, tellus urna elementum neque, sed dapibus lacus eros id ipsum.</p>
+    </x-bladewind::card>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::card radius="none"&gt;
+                // lorem ipsum text
+            &lt;/x-bladewind::card&gt;
+        </code>
+    </pre>
+<br />
+    <x-bladewind::card>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sem sit amet velit efficitur faucibus. agna tincidunt sem, a fermentum neque arcu non est. Suspendisse sodales, nunc a hendrerit vestibulum, dui ipsum sagittis felis, vitae efficitur purus justo et mi. Pellentesque at arcu at ipsum semper fringilla. Maecenas at metus sit amet arcu ultricies rutrum. Proin dictum, magna vitae eleifend rhoncus, tellus urna elementum neque, sed dapibus lacus eros id ipsum.</p>
+    </x-bladewind::card>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::card radius="small"&gt;
+                // lorem ipsum text
+            &lt;/x-bladewind::card&gt;
+        </code>
+    </pre>
+<br />
+    <x-bladewind::card radius="medium">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sem sit amet velit efficitur faucibus. agna tincidunt sem, a fermentum neque arcu non est. Suspendisse sodales, nunc a hendrerit vestibulum, dui ipsum sagittis felis, vitae efficitur purus justo et mi. Pellentesque at arcu at ipsum semper fringilla. Maecenas at metus sit amet arcu ultricies rutrum. Proin dictum, magna vitae eleifend rhoncus, tellus urna elementum neque, sed dapibus lacus eros id ipsum.</p>
+    </x-bladewind::card>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::card radius="medium"&gt;
+                // lorem ipsum text
+            &lt;/x-bladewind::card&gt;
+        </code>
+    </pre>
+<br />
+    <x-bladewind::card radius="large">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sem sit amet velit efficitur faucibus. agna tincidunt sem, a fermentum neque arcu non est. Suspendisse sodales, nunc a hendrerit vestibulum, dui ipsum sagittis felis, vitae efficitur purus justo et mi. Pellentesque at arcu at ipsum semper fringilla. Maecenas at metus sit amet arcu ultricies rutrum. Proin dictum, magna vitae eleifend rhoncus, tellus urna elementum neque, sed dapibus lacus eros id ipsum.</p>
+    </x-bladewind::card>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::card radius="large"&gt;
+                // lorem ipsum text
+            &lt;/x-bladewind::card&gt;
+        </code>
+    </pre>
+<br />
+    <x-bladewind::card radius="xl">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae sem sit amet velit efficitur faucibus. agna tincidunt sem, a fermentum neque arcu non est. Suspendisse sodales, nunc a hendrerit vestibulum, dui ipsum sagittis felis, vitae efficitur purus justo et mi. Pellentesque at arcu at ipsum semper fringilla. Maecenas at metus sit amet arcu ultricies rutrum. Proin dictum, magna vitae eleifend rhoncus, tellus urna elementum neque, sed dapibus lacus eros id ipsum.</p>
+    </x-bladewind::card>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::card radius="xl"&gt;
+                // lorem ipsum text
+            &lt;/x-bladewind::card&gt;
+        </code>
+    </pre>
+<br />
+    <x-bladewind::alert show_close_icon="false">
+        If you need to completely overwrite the radius of the card, you can specify any of the Tailwind classes used for roundness in the <code class="inline text-red-500">class</code> attribute.
+    </x-bladewind::alert>
+    <br />
     <h2 id="examples">Practical Examples</h2>
     <p>
         As explained earlier, the card component has been kept super simple because people have varying uses for cards and forcing specific layouts on them defeats the purpose of having a card component. Below are a few examples of how you can use the BladewindUI Card component for varying content types.
@@ -455,6 +520,11 @@
                 Finally, a url like <b>"https://mydomain.com/some-url" will be opened with <code class="inline">window.open()</code>.</td>
         </tr>
         <tr>
+            <td>radius</td>
+            <td>small</td>
+            <td>Increases the roundness of the card. <br /><code class="inline">none</code>  <code class="inline">small</code><code class="inline">medium</code>  <code class="inline">large</code>  <code class="inline">xl</code></td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>bw-card</td>
             <td>Any additional css classes can be added using this attribute. For example if you prefer to have non-rounded cards you can set <code class="inline">class="!rounded-none"</code>.</td>
@@ -470,6 +540,7 @@
         has_hover="false"
         compact="false"
         no_padding="true"
+        radius="large"
         url="/user"
         class="!rounded-none"&gt;
 
@@ -592,6 +663,7 @@
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic card</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#radii">Different radii</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#examples">Practical examples</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#contact">Contact card</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#header-footer">Header and footer</a></div>

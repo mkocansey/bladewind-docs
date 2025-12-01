@@ -235,6 +235,11 @@
                 Finally, a url like <b>"https://mydomain.com/some-url" will be opened with <code class="inline">window.open()</code>.</td>
         </tr>
         <tr>
+            <td>radius</td>
+            <td>small</td>
+            <td>Increases the roundness of the card. <br /><code class="inline">none</code>  <code class="inline">small</code><code class="inline">medium</code>  <code class="inline">large</code>  <code class="inline">xl</code></td>
+        </tr>
+        <tr>
             <td>class</td>
             <td>bw-spinner</td>
             <td>Any additional CSS you wish to add. You can add css to help you uniquely identify a statistic.</td>
