@@ -33,6 +33,7 @@ Start here for installation, configuration, and theming.
 | Chart | `x-bladewind::chart` | [chart.md](chart.md) |
 | Checkbox | `x-bladewind::checkbox` | [checkbox.md](checkbox.md) |
 | Check Card | `x-bladewind::checkcard` | [checkcard.md](checkcard.md) |
+| Credit Card | `x-bladewind::credit-card` | [credit-card.md](credit-card.md) |
 | Color Picker | `x-bladewind::colorpicker` | [colorpicker.md](colorpicker.md) |
 | Date Picker | `x-bladewind::datepicker` | [datepicker.md](datepicker.md) |
 | Drop Menu | `x-bladewind::dropmenu` | [dropmenu.md](dropmenu.md) |

@@ -26,6 +26,7 @@ Route::view('component/centered-content', 'docs/centered-content');
 Route::view('component/checkbox', 'docs/checkbox');
 Route::view('component/chart', 'docs/chart');
 Route::view('component/checkcard', 'docs/checkcard');
+Route::view('component/credit-card', 'docs/credit-card');
 Route::view('component/datepicker', 'docs/datepicker');
 Route::view('component/colorpicker', 'docs/colorpicker');
 Route::view('component/command-palette', 'docs/command-palette');

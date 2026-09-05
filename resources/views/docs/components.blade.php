@@ -9,6 +9,7 @@
                 ['Button', 'button', 'Trigger actions with primary, secondary, outline and icon styles.'],
                 ['Checkbox', 'checkbox', 'Let users select one or more options clearly.'],
                 ['CheckCard', 'checkcard', 'Turn rich content cards into selectable controls.'],
+                ['Credit Card', 'credit-card', 'A flippable credit card input with live network detection.'],
                 ['Colorpicker', 'colorpicker', 'Choose colours through a compact visual control.'],
                 ['Datepicker', 'datepicker', 'Select single dates, ranges and preset periods.'],
                 ['Filepicker', 'filepicker', 'Handle drag-and-drop and conventional file selection.'],

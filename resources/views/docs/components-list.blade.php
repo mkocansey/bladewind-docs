@@ -13,6 +13,7 @@
 <div class="{{ $css }} component-chart"><div class="dot"></div><a href="/component/chart">Chart</a></div>
 <div class="{{ $css }} component-checkbox"><div class="dot"></div><a href="/component/checkbox">Checkbox</a></div>
 <div class="{{ $css }} component-checkcard"><div class="dot"></div><a href="/component/checkcard">CheckCard </a></div>
+<div class="{{ $css }} component-credit-card"><div class="dot"></div><a href="/component/credit-card">Credit Card <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-colorpicker"><div class="dot"></div><a href="/component/colorpicker">Colorpicker</a></div>
 <div class="{{ $css }} component-command-palette"><div class="dot"></div><a href="/component/command-palette">Command Palette <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-data-grid"><div class="dot"></div><a href="/component/data-grid">Data Grid <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
