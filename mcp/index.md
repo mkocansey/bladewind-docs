@@ -31,10 +31,14 @@ Start here for installation, configuration, and theming.
 | Card | `x-bladewind::card` | [card.md](card.md) |
 | Centered Content | `x-bladewind::centered-content` | [centered-content.md](centered-content.md) |
 | Chart | `x-bladewind::chart` | [chart.md](chart.md) |
+| Breadcrumbs | `x-bladewind::breadcrumbs` | [breadcrumbs.md](breadcrumbs.md) |
 | Checkbox | `x-bladewind::checkbox` | [checkbox.md](checkbox.md) |
-| Check Card | `x-bladewind::checkcard` | [checkcard.md](checkcard.md) |
+| Check Card | `x-bladewind::checkcards` | [checkcard.md](checkcard.md) |
 | Color Picker | `x-bladewind::colorpicker` | [colorpicker.md](colorpicker.md) |
+| Command Palette | `x-bladewind::command-palette` | [command-palette.md](command-palette.md) |
+| Data Grid | `x-bladewind::data-grid` | [data-grid.md](data-grid.md) |
 | Date Picker | `x-bladewind::datepicker` | [datepicker.md](datepicker.md) |
+| Drawer | `x-bladewind::drawer` | [drawer.md](drawer.md) |
 | Drop Menu | `x-bladewind::dropmenu` | [dropmenu.md](dropmenu.md) |
 | Empty State | `x-bladewind::empty-state` | [empty-state.md](empty-state.md) |
 | Filepicker | `x-bladewind::filepicker` | [filepicker.md](filepicker.md) |
@@ -49,14 +53,16 @@ Start here for installation, configuration, and theming.
 | Process Indicator | `x-bladewind::processing` | [process-indicator.md](process-indicator.md) |
 | Progress Bar | `x-bladewind::progress-bar` | [progress-bar.md](progress-bar.md) |
 | Progress Circle | `x-bladewind::progress-circle` | [progress-circle.md](progress-circle.md) |
-| Radio Button | `x-bladewind::radio-button` | [radio-button.md](radio-button.md) |
+| Radio Button | `x-bladewind::radio` | [radio-button.md](radio-button.md) |
 | Rating | `x-bladewind::rating` | [rating.md](rating.md) |
 | Select | `x-bladewind::select` | [select.md](select.md) |
 | Shimmer | `x-bladewind::shimmer` | [shimmer.md](shimmer.md) |
+| Sidebar | `x-bladewind::sidebar` | [sidebar.md](sidebar.md) |
 | Slider | `x-bladewind::slider` | [slider.md](slider.md) |
 | Sortable | `x-bladewind::sortable` | [sortable.md](sortable.md) |
 | Spinner | `x-bladewind::spinner` | [spinner.md](spinner.md) |
 | Statistic | `x-bladewind::statistic` | [statistic.md](statistic.md) |
+| Stepper | `x-bladewind::stepper` | [stepper.md](stepper.md) |
 | Tab | `x-bladewind::tab` | [tab.md](tab.md) |
 | Table | `x-bladewind::table` | [table.md](table.md) |
 | Tag | `x-bladewind::tag` | [tag.md](tag.md) |
@@ -66,4 +72,4 @@ Start here for installation, configuration, and theming.
 | Timepicker | `x-bladewind::timepicker` | [timepicker.md](timepicker.md) |
 | Toggle | `x-bladewind::toggle` | [toggle.md](toggle.md) |
 | Tooltip | `x-bladewind::tooltip` | [tooltip.md](tooltip.md) |
-| Verification Code | `x-bladewind::verification-code` | [verification-code.md](verification-code.md) |
+| Verification Code | `x-bladewind::code` | [verification-code.md](verification-code.md) |
