@@ -40,6 +40,7 @@ Start here for installation, configuration, and theming.
 | Filepicker | `x-bladewind::filepicker` | [filepicker.md](filepicker.md) |
 | Horizontal Line Graph | `x-bladewind::horizontal-line-graph` | [horizontal-line-graph.md](horizontal-line-graph.md) |
 | Icon | `x-bladewind::icon` | [icon.md](icon.md) |
+| Scheduler | `x-bladewind::scheduler` | [scheduler.md](scheduler.md) |
 | Input | `x-bladewind::input` | [input.md](input.md) |
 | List View | `x-bladewind::list-view` | [list-view.md](list-view.md) |
 | Modal | `x-bladewind::modal` | [modal.md](modal.md) |

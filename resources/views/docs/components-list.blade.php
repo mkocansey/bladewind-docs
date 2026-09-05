@@ -23,6 +23,7 @@
 <div class="{{ $css }} component-filepicker"><div class="dot"></div><a href="/component/filepicker">Filepicker</a></div>
 <div class="{{ $css }} component-hlg"><div class="dot"></div><a href="/component/horizontal-line-graph">Horizontal Line Graph</a></div>
 <div class="{{ $css }} component-icon"><div class="dot"></div><a href="/component/icon">Icon</a></div>
+<div class="{{ $css }} component-scheduler"><div class="dot"></div><a href="/component/scheduler">Scheduler <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-input"><div class="dot"></div><a href="/component/input">Input</a></div>
 <div class="{{ $css }} component-input-group"><div class="dot"></div><a href="/component/input-group">Input Group</a></div>
 <div class="{{ $css }} component-list"><div class="dot"></div><a href="/component/list-view">List View</a></div>
