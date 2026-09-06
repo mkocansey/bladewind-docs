@@ -18,7 +18,6 @@
 <div class="{{ $css }} component-code-block"><div class="dot"></div><a href="/component/code-block">Code Block <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-colorpicker"><div class="dot"></div><a href="/component/colorpicker">Colorpicker</a></div>
 <div class="{{ $css }} component-command-palette"><div class="dot"></div><a href="/component/command-palette">Command Palette <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
-<div class="{{ $css }} component-confirm-dialog"><div class="dot"></div><a href="/component/confirm-dialog">Confirm Dialog <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-context-menu"><div class="dot"></div><a href="/component/context-menu">Context Menu <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-copy-button"><div class="dot"></div><a href="/component/copy-button">Copy Button <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-credit-card"><div class="dot"></div><a href="/component/credit-card">Credit Card <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>

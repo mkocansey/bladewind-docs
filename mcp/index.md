@@ -57,7 +57,6 @@ Start here for installation, configuration, and theming.
 | Inline Edit | `x-bladewind::inline-edit` | [inline-edit.md](inline-edit.md) |
 | List View | `x-bladewind::list-view` | [list-view.md](list-view.md) |
 | Modal | `x-bladewind::modal` | [modal.md](modal.md) |
-| Confirm Dialog | `x-bladewind::confirm-dialog` | [confirm-dialog.md](confirm-dialog.md) |
 | Notification | `x-bladewind::notification` | [notification.md](notification.md) |
 | Number | `x-bladewind::number` | [number.md](number.md) |
 | Currency Input | `x-bladewind::currency-input` | [currency-input.md](currency-input.md) |

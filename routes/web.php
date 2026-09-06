@@ -52,7 +52,6 @@ Route::view('component/inline-edit', 'docs/inline-edit');
 Route::view('component/input-group', 'docs/input-group');
 Route::view('component/list-view', 'docs/list');
 Route::view('component/modal', 'docs/modal');
-Route::view('component/confirm-dialog', 'docs/confirm-dialog');
 Route::view('component/notification', 'docs/notification');
 Route::view('component/number', 'docs/number');
 Route::view('component/currency-input', 'docs/currency-input');
