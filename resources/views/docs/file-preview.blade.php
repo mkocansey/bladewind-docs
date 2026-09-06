@@ -4,7 +4,7 @@
 
     <p>
         <code class="inline">x-bladewind::file-preview</code> is the read-only display counterpart to
-        <a href="/component/filepicker">Filepicker</a> — a compact row showing a thumbnail or file-type icon, the
+        <a href="/component/filepicker">Filepicker</a>: a compact row showing a thumbnail or file-type icon, the
         filename, its size, and download/remove actions. Use it for a list of already-uploaded files: attachments on
         a record, documents in a table row, files a Filepicker has already accepted.
     </p>
@@ -23,7 +23,7 @@
         </code>
     </pre>
     <p>
-        <code class="inline">size</code> is plain bytes — the component formats it into B/KB/MB/GB itself. Without a
+        <code class="inline">size</code> is plain bytes, the component formats it into B/KB/MB/GB itself. Without a
         <code class="inline">thumbnail</code>, the icon is derived from the filename's extension (PDF, Word, Excel,
         images, video, audio, archives, and code files all get a distinct icon; anything unrecognised falls back to a
         generic document icon).
@@ -31,7 +31,7 @@
 
     <h2 id="remove">Removing a file</h2>
     <p>
-        A remove control shows by default and removes the preview from the DOM directly — nothing to wire up for the
+        A remove control shows by default and removes the preview from the DOM directly, nothing to wire up for the
         common case of client-side removal from a list the user is still assembling. Pass
         <code class="inline">on-remove</code> with your own JavaScript (for example, an endpoint call) to handle it
         yourself instead; doing so replaces the default behaviour entirely, the same pattern
@@ -44,7 +44,7 @@
         </code>
     </pre>
     <p>
-        Set <code class="inline">removable="false"</code> to drop the control entirely — useful for a purely
+        Set <code class="inline">removable="false"</code> to drop the control entirely, useful for a purely
         informational list the viewer cannot edit.
     </p>
 

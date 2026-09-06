@@ -4,7 +4,7 @@
 
     <p>
         <code class="inline">x-bladewind::kbd</code> renders a semantic <code class="inline">&lt;kbd&gt;</code>
-        element styled as a physical key — for documenting a shortcut in help text, a menu item, or command
+        element styled as a physical key, for documenting a shortcut in help text, a menu item, or command
         documentation.
     </p>
 
@@ -18,7 +18,7 @@
 
     <h2 id="combos">Key combinations</h2>
     <p>
-        Pass <code class="inline">keys</code> as an array (or JSON string) to render a combo — each key in its own
+        Pass <code class="inline">keys</code> as an array (or JSON string) to render a combo: each key in its own
         pill, joined by "+". When <code class="inline">keys</code> is given, it takes priority over the default slot.
     </p>
 

@@ -3,7 +3,7 @@
     <x-slot:page_title>Confirm Dialog</x-slot:page_title>
 
     <p>
-        A purpose-built confirmation modal for destructive or consequential actions — deleting a record, cancelling a
+        A purpose-built confirmation modal for destructive or consequential actions: deleting a record, cancelling a
         subscription, discarding unsaved work. It composes <a href="/component/modal">Modal</a> rather than
         duplicating it, and adds what a plain modal does not: a tone that picks a sensible icon and confirm colour for
         you, a backdrop that will not dismiss it by accident, and an async pending state for the confirm action
@@ -24,7 +24,7 @@
         </code>
     </pre>
     <p>
-        Like Modal, a confirm dialog is opened by name with the <code class="inline">showModal()</code> helper — give
+        Like Modal, a confirm dialog is opened by name with the <code class="inline">showModal()</code> helper: give
         it a unique <code class="inline">name</code> and call <code class="inline">showModal('name')</code> from
         anywhere on the page.
     </p>
@@ -34,7 +34,7 @@
         <code class="inline">tone</code> picks the icon and the confirm button's colour in one attribute:
         <code class="inline">danger</code> (default, for destructive actions), <code class="inline">warning</code>,
         <code class="inline">info</code>, or <code class="inline">primary</code> (no icon, the button's default
-        colour — for a consequential but non-destructive confirmation).
+        colour, for a consequential but non-destructive confirmation).
     </p>
 
     <pre class="language-markup line-numbers">
@@ -70,14 +70,14 @@
         </code>
     </pre>
     <p>
-        Set <code class="inline">close-after-confirm="false"</code> if you would rather close the dialog yourself —
+        Set <code class="inline">close-after-confirm="false"</code> if you would rather close the dialog yourself,
         for example from inside the <code class="inline">onConfirm</code> promise's own <code class="inline">.then()</code>,
         after also updating the rest of the page.
     </p>
 
     <h2 id="backdrop">Backdrop</h2>
     <p>
-        Unlike a plain Modal, the backdrop cannot dismiss a confirm dialog by default — a destructive action should be
+        Unlike a plain Modal, the backdrop cannot dismiss a confirm dialog by default: a destructive action should be
         explicitly confirmed or cancelled, not accidentally dismissed by a stray click. Set
         <code class="inline">backdrop-can-close="true"</code> to restore Modal's usual behaviour.
     </p>

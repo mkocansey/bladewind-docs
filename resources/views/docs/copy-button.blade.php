@@ -3,7 +3,7 @@
     <x-slot:page_title>Copy Button</x-slot:page_title>
 
     <p>
-        <code class="inline">x-bladewind::copy-button</code> copies a value — or its own wrapped content — to the
+        <code class="inline">x-bladewind::copy-button</code> copies a value (or its own wrapped content) to the
         clipboard on click, briefly swapping its icon to a checkmark and announcing success or failure to assistive
         technology.
     </p>
@@ -18,14 +18,14 @@
         </code>
     </pre>
     <p>
-        With no <code class="inline">value</code>, the button copies its own slot's trimmed text — the display and
+        With no <code class="inline">value</code>, the button copies its own slot's trimmed text: the display and
         the copied value never drift apart because there is only one string to keep in sync.
     </p>
 
     <h2 id="icon-only">Icon-only, with an explicit value</h2>
     <p>
         Pass <code class="inline">value</code> directly for an icon-only trigger next to something that isn't itself
-        plain copyable text — a masked API key, a formatted table cell, and so on.
+        plain copyable text: a masked API key, a formatted table cell, and so on.
     </p>
 
     <div class="flex items-center gap-2">
@@ -42,7 +42,7 @@
 
     <h2 id="labelled">A labelled button</h2>
     <p>
-        Add <code class="inline">label</code> for a full text-and-icon button instead of an icon-only trigger — only
+        Add <code class="inline">label</code> for a full text-and-icon button instead of an icon-only trigger; it only
         takes effect when there is no wrapped slot content.
     </p>
 

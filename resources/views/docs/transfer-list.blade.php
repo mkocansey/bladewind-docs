@@ -3,8 +3,8 @@
     <x-slot:page_title>Transfer List</x-slot:page_title>
 
     <p>
-        <code class="inline">x-bladewind::transfer-list</code> moves items between two panels — "Available" and
-        "Selected" — with per-panel search and select-all, arrow controls in the middle, and a double-click on any
+        <code class="inline">x-bladewind::transfer-list</code> moves items between two panels, "Available" and
+        "Selected", with per-panel search and select-all, arrow controls in the middle, and a double-click on any
         row as a shortcut for moving just that one item. It submits as a normal array field: only items currently in
         the "Selected" panel are enabled, so the form only ever sends what is actually selected.
     </p>
@@ -77,7 +77,7 @@
     <h2 id="search">Search</h2>
     <p>
         Each panel gets its own search box by default, filtering that panel's rows as you type. Set
-        <code class="inline">searchable="false"</code> to remove both boxes — worth doing once a list is short enough
+        <code class="inline">searchable="false"</code> to remove both boxes, worth doing once a list is short enough
         that scanning it is faster than typing.
     </p>
 

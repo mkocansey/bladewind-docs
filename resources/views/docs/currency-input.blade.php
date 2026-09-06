@@ -26,7 +26,7 @@
     <p>
         Set <code class="inline">currency</code> to any ISO 4217 code. When PHP's <code class="inline">intl</code>
         extension is installed, <code class="inline">locale</code> (a BCP 47 tag) decides where the symbol sits and
-        which characters separate thousands and decimals — for example, French writes
+        which characters separate thousands and decimals: for example, French writes
         <code class="inline">1 234,56&nbsp;€</code> where U.S. English writes <code class="inline">$1,234.56</code>,
         for the same amount in the same currency.
     </p>
@@ -49,8 +49,8 @@
     <p>
         Without the <code class="inline">intl</code> extension, every currency still gets a sensible symbol (a small
         built-in table covers the common ones; anything else falls back to the currency code itself) and the correct
-        number of decimal places — zero for currencies like <code class="inline">JPY</code> that have no minor unit,
-        two for everything else — always shown as a prefix with <code class="inline">.</code> and
+        number of decimal places (zero for currencies like <code class="inline">JPY</code> that have no minor unit,
+        two for everything else), always shown as a prefix with <code class="inline">.</code> and
         <code class="inline">,</code> separators.
     </p>
 

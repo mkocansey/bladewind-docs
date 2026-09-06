@@ -4,7 +4,7 @@
 
     <p>
         <code class="inline">x-bladewind::password-meter</code> watches an existing password field and shows a
-        rules-based strength reading as the user types — a segmented bar plus a text label, live-updated on every
+        rules-based strength reading as the user types: a segmented bar plus a text label, live-updated on every
         keystroke. It is a standalone companion, not a wrapper: point it at any password field with
         <code class="inline">for</code>, BladewindUI's own or otherwise.
     </p>
@@ -22,7 +22,7 @@
     </pre>
     <p>
         <code class="inline">for</code> is the watched field's <code class="inline">name</code> (or, failing that, its
-        <code class="inline">id</code>) — exactly what you already passed the field itself, nothing extra to keep in
+        <code class="inline">id</code>): exactly what you already passed the field itself, nothing extra to keep in
         sync.
     </p>
 
@@ -30,7 +30,7 @@
     <p>
         A password earns up to four points: one for reaching <code class="inline">minLength</code> characters
         (8 by default), a second for reaching <code class="inline">strongLength</code> (12 by default), and up to two
-        more for character variety — lowercase, uppercase, digits, and symbols each count, capped at two points so
+        more for character variety: lowercase, uppercase, digits, and symbols each count, capped at two points so
         length still matters. Four points is "Strong", one is "Weak", and an empty field shows nothing at all.
     </p>
 

@@ -5,7 +5,7 @@
     <p>
         <code class="inline">x-bladewind::inline-edit</code> shows a value as plain text until the user clicks it (or
         its edit icon), then swaps in a text field with Save and Cancel controls. With no
-        <code class="inline">onSave</code>, it saves optimistically — the display updates the instant Save is
+        <code class="inline">onSave</code>, it saves optimistically: the display updates the instant Save is
         clicked, and a hidden field carries the current value for a normal form submission alongside the rest of the
         page.
     </p>
@@ -61,7 +61,7 @@
     <p>
         Set <code class="inline">required="true"</code> to block saving an empty value; the field shows
         <code class="inline">requiredMessage</code> instead and stays in edit mode. Any rejection from
-        <code class="inline">onSave</code> — for a server-side validation failure, say — surfaces the same way.
+        <code class="inline">onSave</code> (for a server-side validation failure, say) surfaces the same way.
     </p>
 
     <pre class="language-markup line-numbers">

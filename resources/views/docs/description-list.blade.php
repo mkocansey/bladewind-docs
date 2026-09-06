@@ -4,8 +4,8 @@
 
     <p>
         <code class="inline">x-bladewind::description-list</code> and
-        <code class="inline">x-bladewind::description-list.item</code> present label/value pairs — a profile, a
-        record's details, an order summary — as a real semantic <code class="inline">&lt;dl&gt;</code>, stacked on
+        <code class="inline">x-bladewind::description-list.item</code> present label/value pairs (a profile, a
+        record's details, an order summary) as a real semantic <code class="inline">&lt;dl&gt;</code>, stacked on
         mobile and laid out label-beside-value from the <code class="inline">sm</code> breakpoint up.
     </p>
 
@@ -27,7 +27,7 @@
 
     <h2 id="actions">Action slots</h2>
     <p>
-        Give an item an <code class="inline">action</code> slot for a control shown beside its value — an edit link,
+        Give an item an <code class="inline">action</code> slot for a control shown beside its value: an edit link,
         a copy button, anything.
     </p>
 
@@ -53,7 +53,7 @@
 
     <h2 id="striped">Striped rows</h2>
     <p>
-        Set <code class="inline">striped</code> on the list to alternate a subtle background on every row — it
+        Set <code class="inline">striped</code> on the list to alternate a subtle background on every row; it
         propagates from the list to each item automatically.
     </p>
 

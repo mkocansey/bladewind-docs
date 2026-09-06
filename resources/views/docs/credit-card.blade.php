@@ -138,7 +138,7 @@
         <tr>
             <td>name</td>
             <td>auto-generated</td>
-            <td>Used as the JS variable the component is exposed on (<code class="inline">window.{name}</code>) and to scope its script tags. Not a form field — this component does not submit.</td>
+            <td>Used as the JS variable the component is exposed on (<code class="inline">window.{name}</code>) and to scope its script tags. Not a form field: this component does not submit.</td>
         </tr>
         <tr>
             <td>cardholder_name</td>

@@ -3,7 +3,7 @@
     <x-slot:page_title>Divider</x-slot:page_title>
 
     <p>
-        A horizontal or vertical rule for separating layout regions — sections of a form, rows in a list, or items in a
+        A horizontal or vertical rule for separating layout regions: sections of a form, rows in a list, or items in a
         toolbar. It ranges from a plain line to a line split by a centered label, and can be purely decorative or a
         real <code class="inline">role="separator"</code> a screen reader announces.
     </p>
@@ -18,7 +18,7 @@
 
     <h2 id="label">Label</h2>
     <p>
-        Pass <code class="inline">label</code> to split the line around centered text — the familiar "or" divider between
+        Pass <code class="inline">label</code> to split the line around centered text, the familiar "or" divider between
         a form and an alternate action.
     </p>
 
@@ -29,7 +29,7 @@
             &lt;x-bladewind::divider label="OR" /&gt;
         </code>
     </pre>
-    <p>A label only applies to a horizontal divider — it is ignored on a vertical one.</p>
+    <p>A label only applies to a horizontal divider; it is ignored on a vertical one.</p>
 
     <h2 id="orientation">Orientation</h2>
     <p>
@@ -60,7 +60,7 @@
 
     <h2 id="spacing">Spacing</h2>
     <p>
-        <code class="inline">spacing</code> controls the margin either side of the line — <code class="inline">none</code>,
+        <code class="inline">spacing</code> controls the margin either side of the line: <code class="inline">none</code>,
         <code class="inline">small</code>, <code class="inline">medium</code> (default), or <code class="inline">large</code>.
     </p>
 
@@ -95,7 +95,7 @@
         By default a divider is purely visual: it renders <code class="inline">role="none"</code> and
         <code class="inline">aria-hidden="true"</code>, so assistive technology skips it entirely. Set
         <code class="inline">decorative="false"</code> when the divider marks a real boundary a screen reader should
-        announce — for example, between distinct sections of a long form — which renders
+        announce (for example, between distinct sections of a long form), which renders
         <code class="inline">role="separator"</code> and <code class="inline">aria-orientation</code> instead.
     </p>
 

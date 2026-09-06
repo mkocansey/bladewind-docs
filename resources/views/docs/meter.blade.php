@@ -3,8 +3,8 @@
     <x-slot:page_title>Meter</x-slot:page_title>
 
     <p>
-        <code class="inline">x-bladewind::meter</code> visualises a bounded measurement — disk usage, a score, a
-        signal strength — as opposed to <a href="/component/progress-bar">Progress Bar</a>'s task completion. Give it
+        <code class="inline">x-bladewind::meter</code> visualises a bounded measurement (disk usage, a score, a
+        signal strength) as opposed to <a href="/component/progress-bar">Progress Bar</a>'s task completion. Give it
         <code class="inline">low</code> and <code class="inline">high</code> boundaries and it colours itself
         semantically: green for the good zone, red for the bad one, yellow for the zone in between. A real, visually
         hidden <code class="inline">&lt;meter&gt;</code> element carries the actual accessible semantics; the coloured
@@ -28,7 +28,7 @@
 
     <h2 id="optimum">When lower is better</h2>
     <p>
-        Some measurements go the other way — an error rate, latency, CPU load. Set <code class="inline">optimum</code>
+        Some measurements go the other way: an error rate, latency, CPU load. Set <code class="inline">optimum</code>
         to a value inside the zone that should read as "good"; the meter works out which end is bad from there.
     </p>
 
@@ -46,7 +46,7 @@
     <h2 id="no-zones">Without zones</h2>
     <p>
         Omit <code class="inline">low</code>/<code class="inline">high</code> for a plain bounded bar with no
-        semantic colouring — a single neutral colour, still a real measurement rather than a completion percentage.
+        semantic colouring: a single neutral colour, still a real measurement rather than a completion percentage.
     </p>
 
     <div class="max-w-sm">

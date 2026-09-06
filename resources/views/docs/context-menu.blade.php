@@ -3,7 +3,7 @@
     <x-slot:page_title>Context Menu</x-slot:page_title>
 
     <p>
-        <code class="inline">x-bladewind::context-menu</code> gives any region a right-click action menu — a table
+        <code class="inline">x-bladewind::context-menu</code> gives any region a right-click action menu, a table
         row, a card, a canvas element, anything. It follows the same visual language as
         <a href="/component/dropmenu">Dropmenu</a>, but opens at the pointer instead of anchored to a trigger, and
         adds nested submenus, disabled items, and separators. Placement is always viewport-aware: the menu (and any
@@ -39,7 +39,7 @@
     </pre>
     <p>
         The <code class="inline">region</code> slot is the area that responds to a right-click (or the keyboard
-        context-menu key — both dispatch the same browser <code class="inline">contextmenu</code> event, so no
+        context-menu key: both dispatch the same browser <code class="inline">contextmenu</code> event, so no
         separate keyboard wiring is needed to trigger it). Every other child is a menu item, in the order they should
         appear.
     </p>
@@ -47,7 +47,7 @@
     <h2 id="disabled">Disabled items</h2>
     <p>
         Set <code class="inline">disabled="true"</code> on an item to grey it out and remove it from pointer and
-        keyboard interaction entirely — it is skipped by arrow-key navigation and cannot be clicked or activated.
+        keyboard interaction entirely: it is skipped by arrow-key navigation and cannot be clicked or activated.
     </p>
 
     <pre class="language-markup line-numbers">
@@ -66,7 +66,7 @@
     <p>
         Give an item a <code class="inline">submenu</code> slot containing further
         <code class="inline">x-bladewind::context-menu.item</code> elements to turn it into a submenu trigger. A
-        submenu opens on hover, click, or <code class="inline">→</code>, and can itself contain another submenu —
+        submenu opens on hover, click, or <code class="inline">→</code>, and can itself contain another submenu,
         nesting is unlimited. <code class="inline">←</code> or <code class="inline">Escape</code> closes the deepest
         open submenu and returns focus to its parent item.
     </p>
@@ -144,7 +144,7 @@
         <tr>
             <td>disableNative</td>
             <td>true</td>
-            <td>false lets the browser's own context menu show and disables this component entirely — useful for turning the feature off conditionally.</td>
+            <td>false lets the browser's own context menu show and disables this component entirely, useful for turning the feature off conditionally.</td>
         </tr>
         <tr>
             <td>padded</td>
