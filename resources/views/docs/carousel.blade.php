@@ -185,7 +185,7 @@
         </tr>
     </x-bladewind::table>
 
-    <h3>Slide with all attributes defined</h3>
+    <h3>Carousel Slide with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::carousel.slide class="ml-2"&gt;...&lt;/x-bladewind::carousel.slide&gt;
