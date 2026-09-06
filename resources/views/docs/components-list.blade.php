@@ -56,6 +56,7 @@
 <div class="{{ $css }} component-tag"><div class="dot"></div><a href="/component/tag">Tag</a></div>
 <div class="{{ $css }} component-kbd"><div class="dot"></div><a href="/component/kbd">Keyboard Key <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-copy-button"><div class="dot"></div><a href="/component/copy-button">Copy Button <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
+<div class="{{ $css }} component-meter"><div class="dot"></div><a href="/component/meter">Meter <x-bladewind::icon name="bolt" type="solid" class="text-pink-600 !size-3 ml-1" /></a></div>
 <div class="{{ $css }} component-textarea"><div class="dot"></div><a href="/component/textarea">Textarea</a></div>
 <div class="{{ $css }} component-theme-switcher"><div class="dot"></div><a href="/component/theme-switcher">Theme Switcher</a></div>
 <div class="{{ $css }} component-timeline"><div class="dot"></div><a href="/component/timeline">Timeline</a></div>

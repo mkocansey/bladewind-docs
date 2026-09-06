@@ -74,6 +74,7 @@ Route::view('component/data-grid', 'docs/data-grid');
 Route::view('component/tag', 'docs/tag');
 Route::view('component/kbd', 'docs/kbd');
 Route::view('component/copy-button', 'docs/copy-button');
+Route::view('component/meter', 'docs/meter');
 Route::view('component/textarea', 'docs/textarea');
 Route::view('component/textbox', 'docs/input');
 Route::view('component/timeline', 'docs/timeline');
