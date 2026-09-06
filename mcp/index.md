@@ -52,6 +52,7 @@ Start here for installation, configuration, and theming.
 | Confirm Dialog | `x-bladewind::confirm-dialog` | [confirm-dialog.md](confirm-dialog.md) |
 | Notification | `x-bladewind::notification` | [notification.md](notification.md) |
 | Number | `x-bladewind::number` | [number.md](number.md) |
+| Currency Input | `x-bladewind::currency-input` | [currency-input.md](currency-input.md) |
 | Popover | `x-bladewind::popover` | [popover.md](popover.md) |
 | Process Indicator | `x-bladewind::processing` | [process-indicator.md](process-indicator.md) |
 | Progress Bar | `x-bladewind::progress-bar` | [progress-bar.md](progress-bar.md) |
