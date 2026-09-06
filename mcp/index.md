@@ -41,6 +41,7 @@ Start here for installation, configuration, and theming.
 | Drawer | `x-bladewind::drawer` | [drawer.md](drawer.md) |
 | Divider | `x-bladewind::divider` | [divider.md](divider.md) |
 | Drop Menu | `x-bladewind::dropmenu` | [dropmenu.md](dropmenu.md) |
+| Context Menu | `x-bladewind::context-menu` | [context-menu.md](context-menu.md) |
 | Empty State | `x-bladewind::empty-state` | [empty-state.md](empty-state.md) |
 | Filepicker | `x-bladewind::filepicker` | [filepicker.md](filepicker.md) |
 | Horizontal Line Graph | `x-bladewind::horizontal-line-graph` | [horizontal-line-graph.md](horizontal-line-graph.md) |
