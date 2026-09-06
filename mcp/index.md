@@ -77,6 +77,7 @@ Start here for installation, configuration, and theming.
 | Keyboard Key | `x-bladewind::kbd` | [kbd.md](kbd.md) |
 | Copy Button | `x-bladewind::copy-button` | [copy-button.md](copy-button.md) |
 | Meter | `x-bladewind::meter` | [meter.md](meter.md) |
+| Description List | `x-bladewind::description-list` | [description-list.md](description-list.md) |
 | Textarea | `x-bladewind::textarea` | [textarea.md](textarea.md) |
 | Theme Switcher | `x-bladewind::theme-switcher` | [theme-switcher.md](theme-switcher.md) |
 | Timeline | `x-bladewind::timeline` | [timeline.md](timeline.md) |

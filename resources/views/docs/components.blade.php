@@ -47,6 +47,7 @@
                 ['Keyboard Key', 'kbd', 'Document a shortcut with a styled physical-key display.'],
                 ['Copy Button', 'copy-button', 'Copy a value or wrapped text to the clipboard.'],
                 ['Meter', 'meter', 'Show a bounded measurement with semantic low/medium/high zones.'],
+                ['Description List', 'description-list', 'Present label/value pairs for profiles and record details.'],
             ],
         ],
         [
