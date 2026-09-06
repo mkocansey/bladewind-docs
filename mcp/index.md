@@ -34,6 +34,7 @@ Start here for installation, configuration, and theming.
 | Chart | `x-bladewind::chart` | [chart.md](chart.md) |
 | Breadcrumbs | `x-bladewind::breadcrumbs` | [breadcrumbs.md](breadcrumbs.md) |
 | Code Block | `x-bladewind::code-block` | [code-block.md](code-block.md) |
+| Chat | `x-bladewind::chat` | [chat.md](chat.md) |
 | Checkbox | `x-bladewind::checkbox` | [checkbox.md](checkbox.md) |
 | Check Card | `x-bladewind::checkcards` | [checkcard.md](checkcard.md) |
 | Color Picker | `x-bladewind::colorpicker` | [colorpicker.md](colorpicker.md) |
