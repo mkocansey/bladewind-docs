@@ -58,8 +58,6 @@
         @endphp
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
-
     <p>
         The <code class="inline text-red-500">data</code> attribute is what really drives the BladewindUI select component.
         This attribute expects an <code class="inline text-red-500">array</code> to be passed to it. Let's look at the basic structure of such an array using a list of five countries.
@@ -1634,7 +1632,6 @@
 </x-bladewind::alert>
 
 <x-slot:side_nav>
-    <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#placeholder">Change placeholder text</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#use-labels">Using labels</a></div>
     <div class="flex items-center pl-5"><div class="dot"></div><a href="#keys">Setting keys to display</a></div>

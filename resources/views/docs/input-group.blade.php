@@ -23,7 +23,6 @@
         corners and borders for you.
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
     <p>
         Place each control inside <code class="inline">x-bladewind::input-group</code>. The
         controls will fill the available width. Add <code class="inline">shrink-control</code>
@@ -271,7 +270,6 @@
     </x-bladewind::alert>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#select-input">Select and input</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#three-controls">Using three controls</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#email-input">Email input and button</a></div>
