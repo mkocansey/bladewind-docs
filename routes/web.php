@@ -77,6 +77,7 @@ Route::view('component/kbd', 'docs/kbd');
 Route::view('component/copy-button', 'docs/copy-button');
 Route::view('component/meter', 'docs/meter');
 Route::view('component/description-list', 'docs/description-list');
+Route::view('component/code-block', 'docs/code-block');
 Route::view('component/textarea', 'docs/textarea');
 Route::view('component/textbox', 'docs/input');
 Route::view('component/timeline', 'docs/timeline');

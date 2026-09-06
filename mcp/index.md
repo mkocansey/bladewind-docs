@@ -33,6 +33,7 @@ Start here for installation, configuration, and theming.
 | Centered Content | `x-bladewind::centered-content` | [centered-content.md](centered-content.md) |
 | Chart | `x-bladewind::chart` | [chart.md](chart.md) |
 | Breadcrumbs | `x-bladewind::breadcrumbs` | [breadcrumbs.md](breadcrumbs.md) |
+| Code Block | `x-bladewind::code-block` | [code-block.md](code-block.md) |
 | Checkbox | `x-bladewind::checkbox` | [checkbox.md](checkbox.md) |
 | Check Card | `x-bladewind::checkcards` | [checkcard.md](checkcard.md) |
 | Color Picker | `x-bladewind::colorpicker` | [colorpicker.md](colorpicker.md) |
