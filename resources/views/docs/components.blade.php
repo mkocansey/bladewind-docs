@@ -14,6 +14,7 @@
                 ['Filepicker', 'filepicker', 'Handle drag-and-drop and conventional file selection.'],
                 ['File Preview', 'file-preview', 'Show an already-uploaded file with download and remove actions.'],
                 ['Input', 'input', 'Capture text with labels, icons, prefixes and validation.'],
+                ['Inline Edit', 'inline-edit', 'Turn any piece of text into a click-to-edit field.'],
                 ['Input Group', 'input-group', 'Combine related controls into one cohesive field.'],
                 ['Number', 'number', 'Capture numeric values with controlled stepping.'],
                 ['Radio Button', 'radio-button', 'Choose a single option from a visible group.'],
