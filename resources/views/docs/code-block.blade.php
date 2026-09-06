@@ -161,6 +161,22 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Code Block with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::code-block
+                code="Route::view('/', 'home');"
+                language="php"
+                title="routes/web.php"
+                line-numbers="true"
+                highlight-lines="2"
+                wrap="false"
+                show-copy="true"
+                show-language-label="true"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > code-block.blade.php</code>. Syntax highlighting is powered by <a href="https://prismjs.com" target="_blank">Prism</a>.
     </x-bladewind::alert>

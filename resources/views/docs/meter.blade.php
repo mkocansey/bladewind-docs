@@ -118,6 +118,23 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Meter with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::meter
+                value="60"
+                min="0"
+                max="100"
+                low="30"
+                high="70"
+                optimum="0"
+                label="Error rate"
+                show-value="true"
+                size="medium"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > meter.blade.php</code>
     </x-bladewind::alert>

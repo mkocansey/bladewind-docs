@@ -141,6 +141,16 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Kanban with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::kanban
+                animation="150"
+                on-move="onCardMove"
+                class="ml-2"&gt;
+        </code>
+    </pre>
+
     <h3>Column</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -180,6 +190,20 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Column with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::kanban.column
+                title="In Progress"
+                id="in-progress"
+                loading="false"
+                empty-text="No cards"
+                class="ml-2"&gt;
+                &lt;x-slot:actions&gt;...&lt;/x-slot:actions&gt;
+            &lt;/x-bladewind::kanban.column&gt;
+        </code>
+    </pre>
+
     <h3>Card</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -198,6 +222,13 @@
             <td>Additional CSS classes for the card.</td>
         </tr>
     </x-bladewind::table>
+
+    <h3>Card with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::kanban.card value="42" class="ml-2"&gt;Fix login bug&lt;/x-bladewind::kanban.card&gt;
+        </code>
+    </pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > kanban > index.blade.php</code>,

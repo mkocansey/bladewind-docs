@@ -140,6 +140,23 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Transfer List with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::transfer-list
+                name="roles"
+                :items="[['value' =&gt; 1, 'label' =&gt; 'Editor']]"
+                value-key="value"
+                label-key="label"
+                :selected="[1]"
+                available-label="Available"
+                selected-label="Selected"
+                searchable="true"
+                height="260"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > transfer-list.blade.php</code>
     </x-bladewind::alert>

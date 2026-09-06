@@ -96,6 +96,16 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Description List with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::description-list
+                divided="true"
+                striped="true"
+                class="ml-2"&gt;
+        </code>
+    </pre>
+
     <h3>Description List Item</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -119,6 +129,20 @@
             <td>Additional CSS classes for the row.</td>
         </tr>
     </x-bladewind::table>
+
+    <h3>Description List Item with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::description-list.item
+                label="Email address"
+                class="ml-2"&gt;
+                jane.cooper@example.com
+                &lt;x-slot:action&gt;
+                    &lt;a href="#"&gt;Edit&lt;/a&gt;
+                &lt;/x-slot:action&gt;
+            &lt;/x-bladewind::description-list.item&gt;
+        </code>
+    </pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > description-list > index.blade.php</code>,

@@ -86,6 +86,18 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Password Meter with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::password-meter
+                for="password"
+                show-label="true"
+                min-length="8"
+                strong-length="12"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > password-meter.blade.php</code>
     </x-bladewind::alert>

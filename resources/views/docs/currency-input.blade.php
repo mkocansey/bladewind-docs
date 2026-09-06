@@ -131,6 +131,24 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Currency Input with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::currency-input
+                name="price"
+                label="Price"
+                currency="EUR"
+                locale="fr-FR"
+                symbol="€"
+                symbol-position="suffix"
+                decimal-separator=","
+                thousands-separator=" "
+                precision="2"
+                required="true"
+                size="regular" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > currency-input.blade.php</code>
     </x-bladewind::alert>

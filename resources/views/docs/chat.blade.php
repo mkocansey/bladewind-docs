@@ -152,6 +152,15 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Chat with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::chat
+                height="400px"
+                class="ml-2"&gt;
+        </code>
+    </pre>
+
     <h3>Chat Message</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -205,6 +214,26 @@
             <td>Additional CSS classes for the message row.</td>
         </tr>
     </x-bladewind::table>
+
+    <h3>Chat Message with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::chat.message
+                outgoing="false"
+                sender="Michael"
+                avatar="/assets/images/me.jpeg"
+                time="10:24 AM"
+                status="read"
+                grouped="false"
+                show-avatar="true"
+                class="ml-2"&gt;
+                Sounds good, thanks!
+                &lt;x-slot:attachments&gt;
+                    ...
+                &lt;/x-slot:attachments&gt;
+            &lt;/x-bladewind::chat.message&gt;
+        </code>
+    </pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > chat > index.blade.php</code>,

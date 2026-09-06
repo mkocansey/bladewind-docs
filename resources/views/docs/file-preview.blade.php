@@ -108,6 +108,22 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>File Preview with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::file-preview
+                name="Quarterly report.pdf"
+                size="2621440"
+                url="/files/1"
+                thumbnail="/thumbs/report.jpg"
+                icon="document"
+                removable="true"
+                downloadable="true"
+                on-remove="deleteAttachment(1)"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > file-preview.blade.php</code>
     </x-bladewind::alert>

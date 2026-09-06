@@ -154,6 +154,17 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Context Menu with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::context-menu
+                name="basicMenu"
+                disable-native="true"
+                padded="true"
+                class="ml-2"&gt;
+        </code>
+    </pre>
+
     <h3>Context Menu Item</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -187,6 +198,22 @@
             <td>A named slot of further items, turning this item into a submenu trigger.</td>
         </tr>
     </x-bladewind::table>
+
+    <h3>Context Menu Item with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::context-menu.item
+                icon="folder-plus"
+                disabled="false"
+                tone="danger"
+                divider="false"&gt;
+                New
+                &lt;x-slot:submenu&gt;
+                    &lt;x-bladewind::context-menu.item icon="document"&gt;File&lt;/x-bladewind::context-menu.item&gt;
+                &lt;/x-slot:submenu&gt;
+            &lt;/x-bladewind::context-menu.item&gt;
+        </code>
+    </pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > context-menu > index.blade.php</code>,

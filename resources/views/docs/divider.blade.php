@@ -144,6 +144,19 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Divider with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::divider
+                orientation="horizontal"
+                label="or"
+                spacing="medium"
+                color="primary"
+                decorative="false"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#label">Label</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#orientation">Orientation</a></div>

@@ -256,6 +256,30 @@ checkout_card.validate();
 checkout_card.toggleFlip();
 checkout_card.isFlipped();</code></pre>
 
+    <h3>Credit Card with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::credit-card
+                name="checkout_card"
+                cardholder_name="Jane T. Doe"
+                number="4242424242424242"
+                expiry_month="07"
+                expiry_year="28"
+                cvc="123"
+                brand="visa"
+                color="green"
+                variant="gradient"
+                flipped="false"
+                disabled="false"
+                readonly="false"
+                required="true"
+                error_message="Complete the card details to continue"
+                show_error_inline="true"
+                on_change="onCardChange"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > credit-card.blade.php</code>
     </x-bladewind::alert>

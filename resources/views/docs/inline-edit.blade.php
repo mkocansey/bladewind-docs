@@ -124,6 +124,24 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Inline Edit with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::inline-edit
+                name="project_name"
+                value="Q3 Marketing Campaign"
+                placeholder="Click to edit"
+                required="true"
+                required-message="A project needs a name"
+                maxlength="60"
+                on-save="renameProject(1, newValue)"
+                save-label="Save"
+                cancel-label="Cancel"
+                edit-label="Edit"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > inline-edit.blade.php</code>
     </x-bladewind::alert>

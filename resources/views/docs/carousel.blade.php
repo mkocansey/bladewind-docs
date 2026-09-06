@@ -157,6 +157,21 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Carousel with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::carousel
+                arrows="true"
+                indicators="true"
+                autoplay="true"
+                interval="5000"
+                loop="true"
+                swipe="true"
+                height="320px"
+                class="ml-2"&gt;
+        </code>
+    </pre>
+
     <h3>Slide</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
@@ -170,6 +185,13 @@
             <td>Additional CSS classes for the slide.</td>
         </tr>
     </x-bladewind::table>
+
+    <h3>Slide with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::carousel.slide class="ml-2"&gt;...&lt;/x-bladewind::carousel.slide&gt;
+        </code>
+    </pre>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > carousel > index.blade.php</code>,

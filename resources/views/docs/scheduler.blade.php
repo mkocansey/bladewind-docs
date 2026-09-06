@@ -208,6 +208,25 @@
         </tr>
     </x-bladewind::table>
 
+    <h3>Scheduler with all attributes defined</h3>
+    <pre class="language-markup line-numbers">
+        <code>
+            &lt;x-bladewind::scheduler
+                view="day"
+                date="2027-03-10"
+                :resources="[['id' => 'r1', 'label' => 'Room A']]"
+                :events="$roomEvents"
+                start-hour="8"
+                end-hour="18"
+                slot-minutes="30"
+                week-starts="1"
+                timezone="GMT"
+                on-slot-click="onSlotClick"
+                on-event-click="onEventClick"
+                class="ml-2" /&gt;
+        </code>
+    </pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > scheduler.blade.php</code>
     </x-bladewind::alert>
