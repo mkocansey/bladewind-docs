@@ -16,7 +16,6 @@
         <code class="inline">&lt;pre&gt;&lt;code&gt;</code> block.
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
     <x-bladewind::code-block language="php" code="Route::get('/users', [UserController::class, 'index']);"></x-bladewind::code-block>
     <pre class="language-markup line-numbers">
         <code>
@@ -182,7 +181,6 @@
     </x-bladewind::alert>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#languages">Languages</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#title">Title</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#line-numbers">Line numbers</a></div>

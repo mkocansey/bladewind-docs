@@ -10,7 +10,6 @@
         to reorder within a column, left and right to move it into the column beside it.
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
     <x-bladewind::kanban>
         <x-bladewind::kanban.column title="To do" id="todo">
             <x-bladewind::kanban.card value="1">Design the onboarding flow</x-bladewind::kanban.card>
@@ -237,7 +236,6 @@
     </x-bladewind::alert>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#move">Reacting to a move</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#empty">Empty state</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#loading">Loading state</a></div>

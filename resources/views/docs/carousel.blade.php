@@ -9,7 +9,6 @@
         right arrow keys, or by swiping on a touch screen.
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
     <x-bladewind::carousel height="220px">
         <x-bladewind::carousel.slide>
             <div class="h-full flex items-center justify-center bg-primary-500 text-white text-xl font-semibold">Slide 1</div>
@@ -199,7 +198,6 @@
     </x-bladewind::alert>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#autoplay">Autoplay</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#no-loop">Without looping</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#no-arrows">Without arrows or indicators</a></div>

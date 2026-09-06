@@ -16,7 +16,6 @@
         JavaScript function called with the same value whenever it changes.
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
     <x-bladewind::credit-card cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
     <pre class="language-markup line-numbers">
         <code>
@@ -285,7 +284,6 @@ checkout_card.isFlipped();</code></pre>
     </x-bladewind::alert>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#flip">Flipping to the CVC</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#prefill">Pre-filling fields</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#brand">Forcing a network</a></div>

@@ -9,7 +9,6 @@
         a timestamp, a delivery state, and attachments.
     </p>
 
-    <h2 id="basic">Basic Usage</h2>
     <x-bladewind::chat class="border border-gray-200 dark:border-dark-700 rounded-lg">
         <x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM">
             Hey, are we still on for the call this afternoon?
@@ -241,7 +240,6 @@
     </x-bladewind::alert>
 
     <x-slot:side_nav>
-        <div class="flex items-center"><div class="dot"></div><a href="#basic">Basic usage</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#grouped">Grouping consecutive messages</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#status">Delivery status</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attachments">Attachments</a></div>
