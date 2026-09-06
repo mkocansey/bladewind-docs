@@ -38,6 +38,7 @@ Start here for installation, configuration, and theming.
 | Chat | `x-bladewind::chat` | [chat.md](chat.md) |
 | Checkbox | `x-bladewind::checkbox` | [checkbox.md](checkbox.md) |
 | Check Card | `x-bladewind::checkcards` | [checkcard.md](checkcard.md) |
+| Credit Card | `x-bladewind::credit-card` | [credit-card.md](credit-card.md) |
 | Color Picker | `x-bladewind::colorpicker` | [colorpicker.md](colorpicker.md) |
 | Command Palette | `x-bladewind::command-palette` | [command-palette.md](command-palette.md) |
 | Data Grid | `x-bladewind::data-grid` | [data-grid.md](data-grid.md) |
