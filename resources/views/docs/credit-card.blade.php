@@ -17,10 +17,10 @@
     </p>
 
     <h2 id="basic">Basic Usage</h2>
-    <x-bladewind::credit-card cardholder_name="Emma Reid"></x-bladewind::credit-card>
+    <x-bladewind::credit-card cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::credit-card cardholder_name="Emma Reid"&gt;&lt;/x-bladewind::credit-card&gt;
+            &lt;x-bladewind::credit-card cardholder_name="Jane T. Doe"&gt;&lt;/x-bladewind::credit-card&gt;
         </code>
     </pre>
 
@@ -44,7 +44,7 @@
         as-is for an edit screen rather than reformatted.
     </p>
     <x-bladewind::credit-card
-        cardholder_name="Emma Reid"
+        cardholder_name="Jane T. Doe"
         number="4242424242424242"
         expiry_month="07"
         expiry_year="28"
@@ -52,7 +52,7 @@
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::credit-card
-                cardholder_name="Emma Reid"
+                cardholder_name="Jane T. Doe"
                 number="4242424242424242"
                 expiry_month="07"
                 expiry_year="28"&gt;
@@ -74,7 +74,7 @@
 
     <h2 id="theming">Theming</h2>
     <p>Set <code class="inline">color</code> to any colour in the palette to change the gradient.</p>
-    <x-bladewind::credit-card color="green" cardholder_name="Emma Reid"></x-bladewind::credit-card>
+    <x-bladewind::credit-card color="green" cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::credit-card color="green"&gt;&lt;/x-bladewind::credit-card&gt;
@@ -82,10 +82,10 @@
     </pre>
 
     <p>Set <code class="inline">variant="outline"</code> for a bare card silhouette instead of the full-colour gradient face.</p>
-    <x-bladewind::credit-card variant="outline" cardholder_name="Emma Reid"></x-bladewind::credit-card>
+    <x-bladewind::credit-card variant="outline" cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::credit-card variant="outline" cardholder_name="Emma Reid"&gt;&lt;/x-bladewind::credit-card&gt;
+            &lt;x-bladewind::credit-card variant="outline" cardholder_name="Jane T. Doe"&gt;&lt;/x-bladewind::credit-card&gt;
         </code>
     </pre>
 
@@ -217,6 +217,45 @@
         </tr>
     </x-bladewind::table>
 
+    <h2 id="javascript-api">JavaScript API</h2>
+    <p>
+        Each card creates a <code class="inline">BladewindCreditCard</code> instance assigned to a variable named
+        after the component's <code class="inline text-red-500">name</code>, so it can be read or called directly
+        from your own scripts. If you set <code class="inline text-red-500">name</code> yourself, use only letters,
+        numbers, and underscores, since hyphens are not valid in a JavaScript identifier. The auto-generated default
+        already does this for you.
+    </p>
+    <x-bladewind::table>
+        <x-slot:header><th>Method</th><th>Description</th></x-slot:header>
+        <tr>
+            <td><code class="inline">name.value</code></td>
+            <td>
+                The current value as <code class="inline">{ number, numberDigits, cardholderName, expiryMonth, expiryYear, cvc, brand }</code>.
+                <code class="inline">number</code> is the formatted, on-screen string; <code class="inline">numberDigits</code> is digits only.
+            </td>
+        </tr>
+        <tr>
+            <td><code class="inline">name.validate()</code></td>
+            <td>
+                Runs the same completeness check as <code class="inline">required</code>, toggles the inline error
+                message, and returns <code class="inline">true</code> or <code class="inline">false</code>. Always
+                returns <code class="inline">true</code> when <code class="inline">required</code> is not set.
+            </td>
+        </tr>
+        <tr>
+            <td><code class="inline">name.toggleFlip()</code></td>
+            <td>Flips the card to whichever face it isn't currently showing.</td>
+        </tr>
+        <tr>
+            <td><code class="inline">name.isFlipped()</code></td>
+            <td>Returns <code class="inline">true</code> while the back (CVC) face is showing.</td>
+        </tr>
+    </x-bladewind::table>
+    <pre class="language-javascript"><code>checkout_card.value;
+checkout_card.validate();
+checkout_card.toggleFlip();
+checkout_card.isFlipped();</code></pre>
+
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > credit-card.blade.php</code>
     </x-bladewind::alert>
@@ -230,6 +269,7 @@
         <div class="flex items-center"><div class="dot"></div><a href="#inline">Inline card information</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#validation">Validation</a></div>
         <div class="flex items-center"><div class="dot"></div><a href="#attributes">Full list of attributes</a></div>
+        <div class="flex items-center"><div class="dot"></div><a href="#javascript-api">JavaScript API</a></div>
     </x-slot:side_nav>
 
     <x-slot:scripts>
