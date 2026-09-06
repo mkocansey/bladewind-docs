@@ -25,6 +25,14 @@
         resource becomes its own column, and events are placed by their start and end time. Two events that overlap
         share their column side by side instead of stacking on top of each other.
     </p>
+    <p>
+        Scheduler is not a bigger <a href="/component/calendar">Calendar</a>, it solves a different problem. Calendar
+        browses whole months and weeks of dates, with each day showing the events that fall on it. Scheduler shows
+        just one day or week at a time, drawn as an hour-by-hour grid where every event sits at its exact start and
+        end time, and, in day view, splits that grid into a column per resource. Reach for Calendar when someone
+        needs to browse a schedule and pick a date; reach for Scheduler when you are building something closer to a
+        room booking board, a staff roster, or an appointment book, where the time of day is the whole point.
+    </p>
 
     <h2 id="day">Day View With Resources</h2>
     <x-bladewind::scheduler
