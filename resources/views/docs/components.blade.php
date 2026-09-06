@@ -70,6 +70,7 @@
                 ['Horizontal Line Graph', 'horizontal-line-graph', 'Compare values through compact horizontal bars.'],
                 ['Icon', 'icon', 'Use the full Heroicons collection through Blade.'],
                 ['Kanban', 'kanban', 'Organize draggable cards into columns with keyboard-accessible reordering.'],
+                ['Scheduler', 'scheduler', 'Show a day or week resource schedule with time slots and events.'],
                 ['List View', 'list-view', 'Display structured records in scannable rows.'],
                 ['Statistic', 'statistic', 'Highlight important metrics and percentage changes.'],
                 ['Table', 'table', 'Build searchable, sortable and responsive data tables.'],
