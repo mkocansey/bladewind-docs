@@ -9,12 +9,12 @@
     </p>
 
     <div class="flex items-center gap-2 rounded-lg border border-gray-200 dark:border-dark-600 px-3 py-2 font-mono text-sm w-fit">
-        <x-bladewind::copy-button>npm install bladewindui</x-bladewind::copy-button>
+        <x-bladewind::copy-button>composer require bladewindui/ui</x-bladewind::copy-button>
     </div>
 
     <pre class="language-markup line-numbers">
         <code>
-            &lt;x-bladewind::copy-button&gt;npm install bladewindui&lt;/x-bladewind::copy-button&gt;
+            &lt;x-bladewind::copy-button&gt;composer require bladewindui/ui&lt;/x-bladewind::copy-button&gt;
         </code>
     </pre>
     <p>
