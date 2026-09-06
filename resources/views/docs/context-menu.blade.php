@@ -10,18 +10,16 @@
         submenu) flips away from whichever edge it would otherwise overflow.
     </p>
 
-    <div class="rounded-lg border border-dashed border-slate-300 dark:border-dark-600 p-8 text-center text-slate-500 dark:text-dark-400">
-        <x-bladewind::context-menu name="basicMenu">
-            <x-slot:region>
-                <div class="select-none">Right-click anywhere in this box</div>
-            </x-slot:region>
+    <x-bladewind::context-menu name="basicMenu">
+        <x-slot:region>
+            <div class="block w-full rounded-lg border border-dashed border-slate-300 dark:border-dark-600 p-8 text-center text-slate-500 dark:text-dark-400 select-none">Right-click anywhere in this box</div>
+        </x-slot:region>
 
-            <x-bladewind::context-menu.item icon="pencil-square">Edit</x-bladewind::context-menu.item>
-            <x-bladewind::context-menu.item icon="document-duplicate">Duplicate</x-bladewind::context-menu.item>
-            <x-bladewind::context-menu.item divider="true" />
-            <x-bladewind::context-menu.item icon="trash" tone="danger">Delete</x-bladewind::context-menu.item>
-        </x-bladewind::context-menu>
-    </div>
+        <x-bladewind::context-menu.item icon="pencil-square">Edit</x-bladewind::context-menu.item>
+        <x-bladewind::context-menu.item icon="document-duplicate">Duplicate</x-bladewind::context-menu.item>
+        <x-bladewind::context-menu.item divider="true" />
+        <x-bladewind::context-menu.item icon="trash" tone="danger">Delete</x-bladewind::context-menu.item>
+    </x-bladewind::context-menu>
 
     <pre class="language-markup line-numbers">
         <code>
@@ -71,22 +69,20 @@
         open submenu and returns focus to its parent item.
     </p>
 
-    <div class="rounded-lg border border-dashed border-slate-300 dark:border-dark-600 p-8 text-center text-slate-500 dark:text-dark-400">
-        <x-bladewind::context-menu name="submenuExample">
-            <x-slot:region>
-                <div class="select-none">Right-click for a submenu</div>
-            </x-slot:region>
+    <x-bladewind::context-menu name="submenuExample">
+        <x-slot:region>
+            <div class="block w-full rounded-lg border border-dashed border-slate-300 dark:border-dark-600 p-8 text-center text-slate-500 dark:text-dark-400 select-none">Right-click for a submenu</div>
+        </x-slot:region>
 
-            <x-bladewind::context-menu.item icon="folder-plus">
-                New
-                <x-slot:submenu>
-                    <x-bladewind::context-menu.item icon="document">File</x-bladewind::context-menu.item>
-                    <x-bladewind::context-menu.item icon="folder">Folder</x-bladewind::context-menu.item>
-                </x-slot:submenu>
-            </x-bladewind::context-menu.item>
-            <x-bladewind::context-menu.item icon="pencil-square">Rename</x-bladewind::context-menu.item>
-        </x-bladewind::context-menu>
-    </div>
+        <x-bladewind::context-menu.item icon="folder-plus">
+            New
+            <x-slot:submenu>
+                <x-bladewind::context-menu.item icon="document">File</x-bladewind::context-menu.item>
+                <x-bladewind::context-menu.item icon="folder">Folder</x-bladewind::context-menu.item>
+            </x-slot:submenu>
+        </x-bladewind::context-menu.item>
+        <x-bladewind::context-menu.item icon="pencil-square">Rename</x-bladewind::context-menu.item>
+    </x-bladewind::context-menu>
 
     <pre class="language-markup line-numbers">
         <code>
