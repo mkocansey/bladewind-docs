@@ -150,7 +150,7 @@
         </code>
     </pre>
 
-    <h3>Column</h3>
+    <h3>Kanban Column</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
             <th>Option</th>
@@ -189,7 +189,7 @@
         </tr>
     </x-bladewind::table>
 
-    <h3>Column with all attributes defined</h3>
+    <h3>Kanban Column with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::kanban.column
@@ -203,7 +203,7 @@
         </code>
     </pre>
 
-    <h3>Card</h3>
+    <h3>Kanban Card</h3>
     <x-bladewind::table striped="true">
         <x-slot name="header">
             <th>Option</th>
@@ -222,7 +222,7 @@
         </tr>
     </x-bladewind::table>
 
-    <h3>Card with all attributes defined</h3>
+    <h3>Kanban Card with all attributes defined</h3>
     <pre class="language-markup line-numbers">
         <code>
             &lt;x-bladewind::kanban.card value="42" class="ml-2"&gt;Fix login bug&lt;/x-bladewind::kanban.card&gt;
