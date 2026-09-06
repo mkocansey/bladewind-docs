@@ -39,6 +39,7 @@ Start here for installation, configuration, and theming.
 | Data Grid | `x-bladewind::data-grid` | [data-grid.md](data-grid.md) |
 | Date Picker | `x-bladewind::datepicker` | [datepicker.md](datepicker.md) |
 | Drawer | `x-bladewind::drawer` | [drawer.md](drawer.md) |
+| Divider | `x-bladewind::divider` | [divider.md](divider.md) |
 | Drop Menu | `x-bladewind::dropmenu` | [dropmenu.md](dropmenu.md) |
 | Empty State | `x-bladewind::empty-state` | [empty-state.md](empty-state.md) |
 | Filepicker | `x-bladewind::filepicker` | [filepicker.md](filepicker.md) |
