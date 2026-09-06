@@ -178,7 +178,7 @@
         </tr>
         <tr>
             <td>slot_minutes</td>
-            <td>60</td>
+            <td>30</td>
             <td>Grid line granularity. <code class="inline">60</code> <code class="inline">30</code> <code class="inline">15</code></td>
         </tr>
         <tr>

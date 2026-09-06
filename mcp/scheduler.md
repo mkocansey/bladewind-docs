@@ -89,7 +89,7 @@ This component does not convert times itself. Pass event times already converted
 | events | _empty_ | `['id', 'label', 'start' => 'Y-m-d H:i', 'end' => 'Y-m-d H:i', 'color', 'resource_id', 'href']`. An event outside the visible hour range is clipped to it, not hidden. |
 | start_hour | 8 | First visible hour (0-23). |
 | end_hour | 18 | Last visible hour, exclusive (1-24). |
-| slot_minutes | 60 | Grid line granularity. `60` \| `30` \| `15` |
+| slot_minutes | 30 | Grid line granularity. `60` \| `30` \| `15` |
 | week_starts | 1 | First day of the week used by week view. `0` (Sunday) or `1` (Monday) |
 | timezone | _blank_ | A display-only label. Convert event times to the viewer's timezone yourself before passing them in. |
 | on_slot_click | _blank_ | Name of a JavaScript function called as `(columnId, "H:i")` when an empty slot is clicked. |
