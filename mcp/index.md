@@ -44,6 +44,7 @@ Start here for installation, configuration, and theming.
 | Context Menu | `x-bladewind::context-menu` | [context-menu.md](context-menu.md) |
 | Empty State | `x-bladewind::empty-state` | [empty-state.md](empty-state.md) |
 | Filepicker | `x-bladewind::filepicker` | [filepicker.md](filepicker.md) |
+| File Preview | `x-bladewind::file-preview` | [file-preview.md](file-preview.md) |
 | Horizontal Line Graph | `x-bladewind::horizontal-line-graph` | [horizontal-line-graph.md](horizontal-line-graph.md) |
 | Icon | `x-bladewind::icon` | [icon.md](icon.md) |
 | Input | `x-bladewind::input` | [input.md](input.md) |
