@@ -60,6 +60,7 @@
                 ['Avatar', 'avatar', 'Represent people and teams with images or initials.'],
                 ['Calendar', 'calendar', 'Display and select dates or events in an inline month or week grid.'],
                 ['Card', 'card', 'Group related content and actions in a flexible surface.'],
+                ['Carousel', 'carousel', 'Slide through content or media with arrows, indicators, and swipe support.'],
                 ['Chart', 'chart', 'Visualize application data with configurable charts.'],
                 ['Code Block', 'code-block', 'Display syntax-highlighted code with line numbers and a copy action.'],
                 ['Chat', 'chat', 'Show a message thread with bubbles, avatars, timestamps and delivery states.'],

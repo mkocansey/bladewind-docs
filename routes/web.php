@@ -24,6 +24,7 @@ Route::view('component/breadcrumbs', 'docs/breadcrumbs');
 Route::view('component/calendar', 'docs/calendar');
 Route::view('component/card', 'docs/card');
 Route::view('component/chat', 'docs/chat');
+Route::view('component/carousel', 'docs/carousel');
 Route::view('component/centered-content', 'docs/centered-content');
 Route::view('component/checkbox', 'docs/checkbox');
 Route::view('component/chart', 'docs/chart');
