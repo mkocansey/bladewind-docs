@@ -444,7 +444,9 @@ const showDrawer = (name) => {
     requestAnimationFrame(() => {
         if (drawer.getAttribute('data-state') !== 'opening') return;
         drawer.setAttribute('data-state', 'open');
-        focusDrawer(drawer);
+        // something (a script, assistive tech) may have already moved focus into the
+        // drawer during the frame this was waiting on, don't steal it back
+        if (!drawer.contains(document.activeElement)) focusDrawer(drawer);
         drawer.dispatchEvent(new CustomEvent('bladewind:drawer-opened', {bubbles: true, detail: {name}}));
     });
     return true;
@@ -534,6 +536,43 @@ const hideModalActionButtons = (element) => {
     hide(`.bw-${element} .modal-footer`);
 };
 
+/**
+ * Run a confirm dialog's confirm action, showing a spinner and disabling both
+ * buttons for as long as it is pending. A rejection re-enables the buttons and
+ * leaves the dialog open, so a consumer can surface its own error state before
+ * the user retries.
+ * @param {string} name - The confirm dialog's name.
+ * @param {function} action - Runs on confirm; its return value is passed
+ *   through Promise.resolve(), so a plain (non-async) function is fine too.
+ * @param {boolean} closeAfter - Close the dialog once action resolves.
+ * @return {void}
+ * @see {@link https://bladewindui.com/component/confirm-dialog}
+ */
+const runBwConfirmDialogAction = (name, action, closeAfter = true) => {
+    const confirmButton = domEl(`.bw-${name}-confirm`);
+    const cancelButton = domEl(`.bw-${name}-cancel`);
+
+    if (confirmButton) confirmButton.disabled = true;
+    if (cancelButton) cancelButton.disabled = true;
+    showButtonSpinner(`.bw-${name}-confirm`);
+
+    const resetButtons = () => {
+        if (confirmButton) confirmButton.disabled = false;
+        if (cancelButton) cancelButton.disabled = false;
+        hideButtonSpinner(`.bw-${name}-confirm`);
+    };
+
+    Promise.resolve()
+        .then(action)
+        .then(() => {
+            resetButtons();
+            if (closeAfter) hideModal(name);
+        })
+        .catch((error) => {
+            resetButtons();
+            console.error(error);
+        });
+};
 
 /**
  * Alias for unhide().
@@ -908,6 +947,20 @@ const filterTableDebounced = (keyword, table, field = null, delay = 0, minLength
 
 
 /**
+ * Set a form field's value and dispatch a native `input`/`change` event so
+ * framework bindings (e.g. Livewire's wire:model) observe the change, not
+ * just listeners on the specific widget that made it.
+ * @param {HTMLElement} element - The input/hidden field to update.
+ * @param {*} value - The value to assign.
+ * @param {string} eventType - 'change' (default) or 'input'.
+ * @return {void}
+ */
+const setFieldValue = (element, value, eventType = 'change') => {
+    element.value = value;
+    element.dispatchEvent(new Event(eventType, {bubbles: true, cancelable: true}));
+};
+
+/**
  * Remove trailing comma from string.
  * @param {string} element - The input field to remove trailing comma from.
  * @return {void}
@@ -1027,8 +1080,8 @@ const checkMinMax = (min, max, element, enforceLimits = false) => {
 
     if (field.value !== '') {
         if (enforceLimits) {
-            if (!isNaN(minimum) && field.value < minimum) field.value = minimum;
-            if (!isNaN(maximum) && field.value > maximum) field.value = maximum;
+            if (!isNaN(minimum) && field.value < minimum) setFieldValue(field, minimum);
+            if (!isNaN(maximum) && field.value > maximum) setFieldValue(field, maximum);
         } else {
             if (((!isNaN(minimum) && field.value < minimum) || (!isNaN(maximum) && field.value > maximum))) {
                 changeCss(field, 'focus:outline-primary-500,focus:border-primary-500', 'remove', true);
@@ -2020,6 +2073,9 @@ bwOn('click', '[data-bw-tag-value]', (tag) => {
 
 // a closable tag with no custom onclick simply removes itself
 bwOn('click', '[data-bw-tag-remove]', (link) => link.parentElement?.remove());
+
+// a removable file preview with no custom onclick simply removes itself
+bwOn('click', '[data-bw-file-preview-remove]', (link) => link.closest('.bw-file-preview')?.remove());
 
 // the modal's own close buttons. a consumer-supplied ok/cancel action is their
 // javascript and stays inline, so it is not handled here
@@ -3373,6 +3429,7 @@ Object.assign(window, {
     hideButtonSpinner,
     showModalActionButtons,
     hideModalActionButtons,
+    runBwConfirmDialogAction,
     show,
     addToStorage,
     getFromStorage,
@@ -3389,6 +3446,7 @@ Object.assign(window, {
     initialiseSteppers,
     getPrefixSuffixOffsetWidth,
     positionPrefix,
+    setFieldValue,
     positionSuffix,
     togglePassword,
     partition,
