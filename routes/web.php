@@ -49,6 +49,7 @@ Route::view('component/confirm-dialog', 'docs/confirm-dialog');
 Route::view('component/notification', 'docs/notification');
 Route::view('component/number', 'docs/number');
 Route::view('component/currency-input', 'docs/currency-input');
+Route::view('component/password-meter', 'docs/password-meter');
 Route::view('component/popover', 'docs/popover');
 Route::view('component/process-indicator', 'docs/process-indicator');
 Route::view('component/progress-bar', 'docs/progress-bar');
