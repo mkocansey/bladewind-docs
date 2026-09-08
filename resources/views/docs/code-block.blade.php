@@ -17,12 +17,13 @@
     </p>
 
     <x-bladewind::code-block language="php" code="Route::get('/users', [UserController::class, 'index']);"></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="php" code="Route::get('/users', [UserController::class, 'index']);"&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample1 = <<<'HTML'
+            <x-bladewind::code-block language="php" code="Route::get('/users', [UserController::class, 'index']);">
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample1"></x-bladewind::code-block>
 
     <h2 id="languages">Languages</h2>
     <p>
@@ -32,12 +33,13 @@
         <code class="inline">sql</code> <code class="inline">python</code> and <code class="inline">yaml</code>.
     </p>
     <x-bladewind::code-block language="javascript" code="const total = items.reduce((sum, item) => sum + item.price, 0);"></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="javascript" code="const total = items.reduce((sum, item) => sum + item.price, 0);"&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample2 = <<<'HTML'
+            <x-bladewind::code-block language="javascript" code="const total = items.reduce((sum, item) => sum + item.price, 0);">
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample2"></x-bladewind::code-block>
 
     <h2 id="title">Title</h2>
     <p>Give a code block a <code class="inline">title</code> to show a filename or a short label above the code.</p>
@@ -49,22 +51,24 @@
             PHP;
     @endphp
     <x-bladewind::code-block language="php" title="routes/web.php" :code="$routesExample"></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="php" title="routes/web.php" :code="$routesExample"&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample3 = <<<'HTML'
+            <x-bladewind::code-block language="php" title="routes/web.php" :code="$routesExample">
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample3"></x-bladewind::code-block>
 
     <h2 id="line-numbers">Line Numbers</h2>
     <p>Set <code class="inline">line_numbers="true"</code> to number every line, useful for longer snippets.</p>
     <x-bladewind::code-block language="php" line_numbers="true" :code="$routesExample"></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="php" line_numbers="true" :code="$routesExample"&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample4 = <<<'HTML'
+            <x-bladewind::code-block language="php" line_numbers="true" :code="$routesExample">
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample4"></x-bladewind::code-block>
 
     <h2 id="highlight">Highlighting Lines</h2>
     <p>
@@ -73,12 +77,13 @@
         example <code class="inline">"2"</code> or <code class="inline">"3-5,8"</code>.
     </p>
     <x-bladewind::code-block language="php" line_numbers="true" highlight_lines="2" :code="$routesExample"></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="php" line_numbers="true" highlight_lines="2" :code="$routesExample"&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample5 = <<<'HTML'
+            <x-bladewind::code-block language="php" line_numbers="true" highlight_lines="2" :code="$routesExample">
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample5"></x-bladewind::code-block>
 
     <h2 id="wrap">Wrapping Long Lines</h2>
     <p>
@@ -86,12 +91,13 @@
         <code class="inline">wrap="true"</code> to wrap long lines onto the next line instead.
     </p>
     <x-bladewind::code-block language="bash" wrap="true" code="php artisan make:model Product -mfsc --policy --api"></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="bash" wrap="true" code="php artisan make:model Product -mfsc --policy --api"&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample6 = <<<'HTML'
+            <x-bladewind::code-block language="bash" wrap="true" code="php artisan make:model Product -mfsc --policy --api">
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample6"></x-bladewind::code-block>
 
     <h2 id="copy">Copy Action</h2>
     <p>
@@ -99,12 +105,13 @@
         <code class="inline">show_copy="false"</code> to hide it.
     </p>
     <x-bladewind::code-block language="json" show_copy="false" code='{"name": "bladewindui/ui", "license": "MIT"}'></x-bladewind::code-block>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block language="json" show_copy="false" code='{"name": "bladewindui/ui", "license": "MIT"}'&gt;
-            &lt;/x-bladewind::code-block&gt;
-        </code>
-    </pre>
+    @php
+        $codeUblockExample7 = <<<'HTML'
+            <x-bladewind::code-block language="json" show_copy="false" code='{"name": "bladewindui/ui", "license": "MIT"}'>
+            </x-bladewind::code-block>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample7"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -161,9 +168,9 @@
     </x-bladewind::table>
 
     <h3>Code Block with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::code-block
+    @php
+        $codeUblockExample8 = <<<'HTML'
+            <x-bladewind::code-block
                 code="Route::view('/', 'home');"
                 language="php"
                 title="routes/web.php"
@@ -172,9 +179,10 @@
                 wrap="false"
                 show-copy="true"
                 show-language-label="true"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$codeUblockExample8"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > code-block.blade.php</code>. Syntax highlighting is powered by <a href="https://prismjs.com" target="_blank">Prism</a>.

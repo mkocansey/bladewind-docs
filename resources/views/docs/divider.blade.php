@@ -10,11 +10,12 @@
 
     <x-bladewind::divider />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::divider /&gt;
-        </code>
-    </pre>
+    @php
+        $dividerExample1 = <<<'HTML'
+            <x-bladewind::divider />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample1"></x-bladewind::code-block>
 
     <h2 id="label">Label</h2>
     <p>
@@ -24,11 +25,12 @@
 
     <x-bladewind::divider label="OR" />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::divider label="OR" /&gt;
-        </code>
-    </pre>
+    @php
+        $dividerExample2 = <<<'HTML'
+            <x-bladewind::divider label="OR" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample2"></x-bladewind::code-block>
     <p>A label only applies to a horizontal divider; it is ignored on a vertical one.</p>
 
     <h2 id="orientation">Orientation</h2>
@@ -46,17 +48,18 @@
         <span>Delete</span>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;div class="flex items-center h-6"&gt;
-                &lt;span&gt;Edit&lt;/span&gt;
-                &lt;x-bladewind::divider orientation="vertical" /&gt;
-                &lt;span&gt;Duplicate&lt;/span&gt;
-                &lt;x-bladewind::divider orientation="vertical" /&gt;
-                &lt;span&gt;Delete&lt;/span&gt;
-            &lt;/div&gt;
-        </code>
-    </pre>
+    @php
+        $dividerExample3 = <<<'HTML'
+            <div class="flex items-center h-6">
+                <span>Edit</span>
+                <x-bladewind::divider orientation="vertical" />
+                <span>Duplicate</span>
+                <x-bladewind::divider orientation="vertical" />
+                <span>Delete</span>
+            </div>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample3"></x-bladewind::code-block>
 
     <h2 id="spacing">Spacing</h2>
     <p>
@@ -68,13 +71,14 @@
     <x-bladewind::divider spacing="small" />
     <x-bladewind::divider spacing="large" />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::divider spacing="none" /&gt;
-            &lt;x-bladewind::divider spacing="small" /&gt;
-            &lt;x-bladewind::divider spacing="large" /&gt;
-        </code>
-    </pre>
+    @php
+        $dividerExample4 = <<<'HTML'
+            <x-bladewind::divider spacing="none" />
+            <x-bladewind::divider spacing="small" />
+            <x-bladewind::divider spacing="large" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample4"></x-bladewind::code-block>
 
     <h2 id="colour">Colour</h2>
     <p>
@@ -84,11 +88,12 @@
 
     <x-bladewind::divider label="Section" color="primary" />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::divider label="Section" color="primary" /&gt;
-        </code>
-    </pre>
+    @php
+        $dividerExample5 = <<<'HTML'
+            <x-bladewind::divider label="Section" color="primary" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample5"></x-bladewind::code-block>
 
     <h2 id="decorative">Decorative vs semantic</h2>
     <p>
@@ -99,11 +104,12 @@
         <code class="inline">role="separator"</code> and <code class="inline">aria-orientation</code> instead.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::divider decorative="false" /&gt;
-        </code>
-    </pre>
+    @php
+        $dividerExample6 = <<<'HTML'
+            <x-bladewind::divider decorative="false" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample6"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -145,17 +151,18 @@
     </x-bladewind::table>
 
     <h3>Divider with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::divider
+    @php
+        $dividerExample7 = <<<'HTML'
+            <x-bladewind::divider
                 orientation="horizontal"
                 label="or"
                 spacing="medium"
                 color="primary"
                 decorative="false"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$dividerExample7"></x-bladewind::code-block>
 
     <x-slot:side_nav>
         <div class="flex items-center"><div class="dot"></div><a href="#label">Label</a></div>

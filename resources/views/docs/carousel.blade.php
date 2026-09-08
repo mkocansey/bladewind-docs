@@ -20,21 +20,22 @@
             <div class="h-full flex items-center justify-center bg-violet-500 text-white text-xl font-semibold">Slide 3</div>
         </x-bladewind::carousel.slide>
     </x-bladewind::carousel>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::carousel height="220px"&gt;
-                &lt;x-bladewind::carousel.slide&gt;
+    @php
+        $carouselExample1 = <<<'HTML'
+            <x-bladewind::carousel height="220px">
+                <x-bladewind::carousel.slide>
                     ...
-                &lt;/x-bladewind::carousel.slide&gt;
-                &lt;x-bladewind::carousel.slide&gt;
+                </x-bladewind::carousel.slide>
+                <x-bladewind::carousel.slide>
                     ...
-                &lt;/x-bladewind::carousel.slide&gt;
-                &lt;x-bladewind::carousel.slide&gt;
+                </x-bladewind::carousel.slide>
+                <x-bladewind::carousel.slide>
                     ...
-                &lt;/x-bladewind::carousel.slide&gt;
-            &lt;/x-bladewind::carousel&gt;
-        </code>
-    </pre>
+                </x-bladewind::carousel.slide>
+            </x-bladewind::carousel>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$carouselExample1"></x-bladewind::code-block>
 
     <h2 id="autoplay">Autoplay</h2>
     <p>
@@ -53,13 +54,14 @@
             <div class="h-full flex items-center justify-center bg-green-500 text-white text-xl font-semibold">Slide 3</div>
         </x-bladewind::carousel.slide>
     </x-bladewind::carousel>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::carousel height="220px" autoplay="true" interval="3000"&gt;
+    @php
+        $carouselExample2 = <<<'HTML'
+            <x-bladewind::carousel height="220px" autoplay="true" interval="3000">
                 ...
-            &lt;/x-bladewind::carousel&gt;
-        </code>
-    </pre>
+            </x-bladewind::carousel>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$carouselExample2"></x-bladewind::code-block>
 
     <h2 id="no-loop">Without Looping</h2>
     <p>
@@ -77,13 +79,14 @@
             <div class="h-full flex items-center justify-center bg-slate-800 text-white text-xl font-semibold">Slide 3</div>
         </x-bladewind::carousel.slide>
     </x-bladewind::carousel>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::carousel height="220px" loop="false"&gt;
+    @php
+        $carouselExample3 = <<<'HTML'
+            <x-bladewind::carousel height="220px" loop="false">
                 ...
-            &lt;/x-bladewind::carousel&gt;
-        </code>
-    </pre>
+            </x-bladewind::carousel>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$carouselExample3"></x-bladewind::code-block>
 
     <h2 id="no-arrows">Without Arrows Or Indicators</h2>
     <p>
@@ -98,13 +101,14 @@
             <div class="h-full flex items-center justify-center bg-red-500 text-white text-xl font-semibold">Slide 2</div>
         </x-bladewind::carousel.slide>
     </x-bladewind::carousel>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::carousel height="220px" arrows="false" indicators="false"&gt;
+    @php
+        $carouselExample4 = <<<'HTML'
+            <x-bladewind::carousel height="220px" arrows="false" indicators="false">
                 ...
-            &lt;/x-bladewind::carousel&gt;
-        </code>
-    </pre>
+            </x-bladewind::carousel>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$carouselExample4"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <h3>Carousel</h3>
@@ -157,9 +161,9 @@
     </x-bladewind::table>
 
     <h3>Carousel with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::carousel
+    @php
+        $carouselExample5 = <<<'HTML'
+            <x-bladewind::carousel
                 arrows="true"
                 indicators="true"
                 autoplay="true"
@@ -167,9 +171,10 @@
                 loop="true"
                 swipe="true"
                 height="320px"
-                class="ml-2"&gt;
-        </code>
-    </pre>
+                class="ml-2">
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$carouselExample5"></x-bladewind::code-block>
 
     <h3>Slide</h3>
     <x-bladewind::table striped="true">
@@ -186,11 +191,12 @@
     </x-bladewind::table>
 
     <h3>Carousel Slide with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::carousel.slide class="ml-2"&gt;...&lt;/x-bladewind::carousel.slide&gt;
-        </code>
-    </pre>
+    @php
+        $carouselExample6 = <<<'HTML'
+            <x-bladewind::carousel.slide class="ml-2">...</x-bladewind::carousel.slide>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$carouselExample6"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > carousel > index.blade.php</code>,

@@ -21,9 +21,9 @@
         :selected="[2]"
     />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::transfer-list
+    @php
+        $transferUlistExample1 = <<<'HTML'
+            <x-bladewind::transfer-list
                 name="roles"
                 :items="[
                     ['value' => 1, 'label' => 'Editor'],
@@ -33,9 +33,10 @@
                     ['value' => 5, 'label' => 'Support Agent'],
                 ]"
                 :selected="[2]"
-            /&gt;
-        </code>
-    </pre>
+            />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$transferUlistExample1"></x-bladewind::code-block>
     <p>
         <code class="inline">items</code> accepts an array or a JSON string; each item needs at least a
         <code class="inline">value</code> and a <code class="inline">label</code> key (override the key names with
@@ -45,16 +46,17 @@
     </p>
 
     <h2 id="keys">Custom value/label keys</h2>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::transfer-list
+    @php
+        $transferUlistExample2 = <<<'HTML'
+            <x-bladewind::transfer-list
                 name="roles"
                 :items="[['id' => 1, 'name' => 'Editor'], ['id' => 2, 'name' => 'Viewer']]"
                 value-key="id"
                 label-key="name"
-            /&gt;
-        </code>
-    </pre>
+            />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$transferUlistExample2"></x-bladewind::code-block>
 
     <h2 id="labels">Panel labels and size</h2>
     <p>
@@ -62,17 +64,18 @@
         and each panel's height (in pixels) with <code class="inline">height</code>.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::transfer-list
+    @php
+        $transferUlistExample3 = <<<'HTML'
+            <x-bladewind::transfer-list
                 name="roles"
                 :items="$items"
                 available-label="Not assigned"
                 selected-label="Assigned"
                 height="180"
-            /&gt;
-        </code>
-    </pre>
+            />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$transferUlistExample3"></x-bladewind::code-block>
 
     <h2 id="search">Search</h2>
     <p>
@@ -141,11 +144,11 @@
     </x-bladewind::table>
 
     <h3>Transfer List with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::transfer-list
+    @php
+        $transferUlistExample4 = <<<'HTML'
+            <x-bladewind::transfer-list
                 name="roles"
-                :items="[['value' =&gt; 1, 'label' =&gt; 'Editor']]"
+                :items="[['value' => 1, 'label' => 'Editor']]"
                 value-key="value"
                 label-key="label"
                 :selected="[1]"
@@ -153,9 +156,10 @@
                 selected-label="Selected"
                 searchable="true"
                 height="260"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$transferUlistExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > transfer-list.blade.php</code>

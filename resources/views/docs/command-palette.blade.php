@@ -22,34 +22,39 @@
         </x-bladewind::command-palette.group>
     </x-bladewind::command-palette>
 
-    <pre class="language-markup line-numbers"><code>
-&lt;x-bladewind::button onclick="openCommandPalette('app-commands')"&gt;
-    Search commands
-&lt;/x-bladewind::button&gt;</code></pre>
+    @php
+        $commandUpaletteExample1 = <<<'HTML'
+            <x-bladewind::button onclick="openCommandPalette('app-commands')">
+                Search commands
+            </x-bladewind::button>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$commandUpaletteExample1"></x-bladewind::code-block>
 
-    <pre class="language-markup line-numbers">
-        <code>
-&lt;x-bladewind::command-palette name="app-commands"
-    label="Command palette" placeholder="Search for a command or page…"&gt;
-    &lt;x-bladewind::command-palette.group name="navigate" label="Navigate"&gt;
-        &lt;x-bladewind::command-palette.item name="dashboard"
-            label="Dashboard"
-            description="Overview of your workspace"
-            href="#dashboard"
-            icon="home" /&gt;
-        &lt;x-bladewind::command-palette.item name="orders"
-            label="Orders"
-            description="Review recent orders"
-            href="#orders"
-            icon="shopping-bag" /&gt;
-        &lt;x-bladewind::command-palette.item name="customers"
-            label="Customers"
-            href="#customers" icon="users" /&gt;
-    &lt;/x-bladewind::command-palette.group&gt;
-    ...
-&lt;/x-bladewind::command-palette&gt;
-        </code>
-    </pre>
+    @php
+        $commandUpaletteExample2 = <<<'HTML'
+            <x-bladewind::command-palette name="app-commands"
+                label="Command palette" placeholder="Search for a command or page…">
+                <x-bladewind::command-palette.group name="navigate" label="Navigate">
+                    <x-bladewind::command-palette.item name="dashboard"
+                        label="Dashboard"
+                        description="Overview of your workspace"
+                        href="#dashboard"
+                        icon="home" />
+                    <x-bladewind::command-palette.item name="orders"
+                        label="Orders"
+                        description="Review recent orders"
+                        href="#orders"
+                        icon="shopping-bag" />
+                    <x-bladewind::command-palette.item name="customers"
+                        label="Customers"
+                        href="#customers" icon="users" />
+                </x-bladewind::command-palette.group>
+                ...
+            </x-bladewind::command-palette>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$commandUpaletteExample2"></x-bladewind::code-block>
 
     <h2 id="opening">Opening the Palette</h2>
     <p>Command Palette renders hidden. It is not tied to a trigger button by default. Open it with its keyboard shortcut, or call <code class="inline">openCommandPalette(name)</code> from any element. Try the demo above with <kbd>Ctrl</kbd> + <kbd>K</kbd> (<kbd>&#8984;</kbd> + <kbd>K</kbd> on macOS).</p>
@@ -143,35 +148,45 @@
 
     <h2 id="javascript-api">JavaScript API</h2>
     <p>Helpers return true on success or when the requested state already applies. They return false for a missing target or a canceled event.</p>
-    <pre class="language-javascript"><code>openCommandPalette('app-commands');
-closeCommandPalette('app-commands');
-toggleCommandPalette('app-commands');
-resetCommandPalette('app-commands');
-setCommandPaletteLoading('app-commands', true);</code></pre>
+    @php
+        $commandUpaletteExample3 = <<<'HTML'
+            openCommandPalette('app-commands');
+            closeCommandPalette('app-commands');
+            toggleCommandPalette('app-commands');
+            resetCommandPalette('app-commands');
+            setCommandPaletteLoading('app-commands', true);
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="javascript" :code="$commandUpaletteExample3"></x-bladewind::code-block>
 
     <h3>Command Palette with all attributes defined</h3>
-    <pre class="language-markup line-numbers"><code>&lt;x-bladewind::command-palette
-    name="app-commands"
-    label="Command palette"
-    placeholder="Search for a command or page…"
-    search-label="Command palette"
-    shortcut="mod+k"
-    size="medium"
-    open="false"
-    loading="false"
-    empty-text="No results found."
-    loading-text="Loading…"
-    close-on-select="true"
-    backdrop-can-close="true"
-    escape-can-close="true"
-    close-label="Close command palette"
-    class="app-command-palette"
-    data-region="app"&gt;
-    &lt;x-bladewind::command-palette.group name="actions" label="Actions"&gt;
-        &lt;x-bladewind::command-palette.item name="new-order" label="Create order" description="Start a manual order" icon="plus-circle" icon-type="outline" icon-dir="" shortcut="Ctrl+N" keywords="add new" href="/orders/new" disabled="false" external="false" target="_self" class="new-order-item" data-area="orders" /&gt;
-    &lt;/x-bladewind::command-palette.group&gt;
-    &lt;x-slot:footer&gt;Signed in as Ama Mensah&lt;/x-slot:footer&gt;
-&lt;/x-bladewind::command-palette&gt;</code></pre>
+    @php
+        $commandUpaletteExample4 = <<<'HTML'
+            <x-bladewind::command-palette
+                name="app-commands"
+                label="Command palette"
+                placeholder="Search for a command or page…"
+                search-label="Command palette"
+                shortcut="mod+k"
+                size="medium"
+                open="false"
+                loading="false"
+                empty-text="No results found."
+                loading-text="Loading…"
+                close-on-select="true"
+                backdrop-can-close="true"
+                escape-can-close="true"
+                close-label="Close command palette"
+                class="app-command-palette"
+                data-region="app">
+                <x-bladewind::command-palette.group name="actions" label="Actions">
+                    <x-bladewind::command-palette.item name="new-order" label="Create order" description="Start a manual order" icon="plus-circle" icon-type="outline" icon-dir="" shortcut="Ctrl+N" keywords="add new" href="/orders/new" disabled="false" external="false" target="_self" class="new-order-item" data-area="orders" />
+                </x-bladewind::command-palette.group>
+                <x-slot:footer>Signed in as Ama Mensah</x-slot:footer>
+            </x-bladewind::command-palette>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$commandUpaletteExample4"></x-bladewind::code-block>
 
     <h2 id="livewire">Using Command Palette Inside Livewire</h2>
     <p>

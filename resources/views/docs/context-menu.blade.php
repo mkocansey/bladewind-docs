@@ -21,20 +21,21 @@
         <x-bladewind::context-menu.item icon="trash" tone="danger">Delete</x-bladewind::context-menu.item>
     </x-bladewind::context-menu>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::context-menu name="basicMenu"&gt;
-                &lt;x-slot:region&gt;
-                    &lt;div&gt;Right-click anywhere in this box&lt;/div&gt;
-                &lt;/x-slot:region&gt;
+    @php
+        $contextUmenuExample1 = <<<'HTML'
+            <x-bladewind::context-menu name="basicMenu">
+                <x-slot:region>
+                    <div>Right-click anywhere in this box</div>
+                </x-slot:region>
 
-                &lt;x-bladewind::context-menu.item icon="pencil-square"&gt;Edit&lt;/x-bladewind::context-menu.item&gt;
-                &lt;x-bladewind::context-menu.item icon="document-duplicate"&gt;Duplicate&lt;/x-bladewind::context-menu.item&gt;
-                &lt;x-bladewind::context-menu.item divider="true" /&gt;
-                &lt;x-bladewind::context-menu.item icon="trash" tone="danger"&gt;Delete&lt;/x-bladewind::context-menu.item&gt;
-            &lt;/x-bladewind::context-menu&gt;
-        </code>
-    </pre>
+                <x-bladewind::context-menu.item icon="pencil-square">Edit</x-bladewind::context-menu.item>
+                <x-bladewind::context-menu.item icon="document-duplicate">Duplicate</x-bladewind::context-menu.item>
+                <x-bladewind::context-menu.item divider="true" />
+                <x-bladewind::context-menu.item icon="trash" tone="danger">Delete</x-bladewind::context-menu.item>
+            </x-bladewind::context-menu>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$contextUmenuExample1"></x-bladewind::code-block>
     <p>
         The <code class="inline">region</code> slot is the area that responds to a right-click (or the keyboard
         context-menu key: both dispatch the same browser <code class="inline">contextmenu</code> event, so no
@@ -48,11 +49,12 @@
         keyboard interaction entirely: it is skipped by arrow-key navigation and cannot be clicked or activated.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::context-menu.item icon="lock-closed" disabled="true"&gt;Restricted action&lt;/x-bladewind::context-menu.item&gt;
-        </code>
-    </pre>
+    @php
+        $contextUmenuExample2 = <<<'HTML'
+            <x-bladewind::context-menu.item icon="lock-closed" disabled="true">Restricted action</x-bladewind::context-menu.item>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$contextUmenuExample2"></x-bladewind::code-block>
 
     <h2 id="tone">Tone</h2>
     <p>
@@ -84,17 +86,18 @@
         <x-bladewind::context-menu.item icon="pencil-square">Rename</x-bladewind::context-menu.item>
     </x-bladewind::context-menu>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::context-menu.item icon="folder-plus"&gt;
+    @php
+        $contextUmenuExample3 = <<<'HTML'
+            <x-bladewind::context-menu.item icon="folder-plus">
                 New
-                &lt;x-slot:submenu&gt;
-                    &lt;x-bladewind::context-menu.item icon="document"&gt;File&lt;/x-bladewind::context-menu.item&gt;
-                    &lt;x-bladewind::context-menu.item icon="folder"&gt;Folder&lt;/x-bladewind::context-menu.item&gt;
-                &lt;/x-slot:submenu&gt;
-            &lt;/x-bladewind::context-menu.item&gt;
-        </code>
-    </pre>
+                <x-slot:submenu>
+                    <x-bladewind::context-menu.item icon="document">File</x-bladewind::context-menu.item>
+                    <x-bladewind::context-menu.item icon="folder">Folder</x-bladewind::context-menu.item>
+                </x-slot:submenu>
+            </x-bladewind::context-menu.item>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$contextUmenuExample3"></x-bladewind::code-block>
 
     <h2 id="keyboard">Keyboard support</h2>
     <x-bladewind::table hover_effect="false" divider="thin">
@@ -155,15 +158,16 @@
     </x-bladewind::table>
 
     <h3>Context Menu with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::context-menu
+    @php
+        $contextUmenuExample4 = <<<'HTML'
+            <x-bladewind::context-menu
                 name="basicMenu"
                 disable-native="true"
                 padded="true"
-                class="ml-2"&gt;
-        </code>
-    </pre>
+                class="ml-2">
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$contextUmenuExample4"></x-bladewind::code-block>
 
     <h3>Context Menu Item</h3>
     <x-bladewind::table striped="true">
@@ -200,20 +204,21 @@
     </x-bladewind::table>
 
     <h3>Context Menu Item with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::context-menu.item
+    @php
+        $contextUmenuExample5 = <<<'HTML'
+            <x-bladewind::context-menu.item
                 icon="folder-plus"
                 disabled="false"
                 tone="danger"
-                divider="false"&gt;
+                divider="false">
                 New
-                &lt;x-slot:submenu&gt;
-                    &lt;x-bladewind::context-menu.item icon="document"&gt;File&lt;/x-bladewind::context-menu.item&gt;
-                &lt;/x-slot:submenu&gt;
-            &lt;/x-bladewind::context-menu.item&gt;
-        </code>
-    </pre>
+                <x-slot:submenu>
+                    <x-bladewind::context-menu.item icon="document">File</x-bladewind::context-menu.item>
+                </x-slot:submenu>
+            </x-bladewind::context-menu.item>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$contextUmenuExample5"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > context-menu > index.blade.php</code>,

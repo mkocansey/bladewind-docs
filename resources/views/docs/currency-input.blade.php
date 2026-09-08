@@ -11,11 +11,12 @@
 
     <x-bladewind::currency-input name="price" label="Price" />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::currency-input name="price" label="Price" /&gt;
-        </code>
-    </pre>
+    @php
+        $currencyUinputExample1 = <<<'HTML'
+            <x-bladewind::currency-input name="price" label="Price" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$currencyUinputExample1"></x-bladewind::code-block>
     <p>
         The default <code class="inline">currency</code> is <code class="inline">USD</code> and the default
         <code class="inline">locale</code> is <code class="inline">en-US</code>, both overridable globally via
@@ -38,14 +39,15 @@
         <x-bladewind::currency-input name="price_jpy" label="Japanese Yen (no decimals)" currency="JPY" locale="ja-JP" />
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::currency-input name="price_usd" label="US Dollar" currency="USD" locale="en-US" /&gt;
-            &lt;x-bladewind::currency-input name="price_eur" label="Euro (French formatting)" currency="EUR" locale="fr-FR" /&gt;
-            &lt;x-bladewind::currency-input name="price_ghs" label="Ghanaian Cedi" currency="GHS" locale="en-GH" /&gt;
-            &lt;x-bladewind::currency-input name="price_jpy" label="Japanese Yen (no decimals)" currency="JPY" locale="ja-JP" /&gt;
-        </code>
-    </pre>
+    @php
+        $currencyUinputExample2 = <<<'HTML'
+            <x-bladewind::currency-input name="price_usd" label="US Dollar" currency="USD" locale="en-US" />
+            <x-bladewind::currency-input name="price_eur" label="Euro (French formatting)" currency="EUR" locale="fr-FR" />
+            <x-bladewind::currency-input name="price_ghs" label="Ghanaian Cedi" currency="GHS" locale="en-GH" />
+            <x-bladewind::currency-input name="price_jpy" label="Japanese Yen (no decimals)" currency="JPY" locale="ja-JP" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$currencyUinputExample2"></x-bladewind::code-block>
     <p>
         Without the <code class="inline">intl</code> extension, every currency still gets a sensible symbol (a small
         built-in table covers the common ones; anything else falls back to the currency code itself) and the correct
@@ -66,11 +68,12 @@
 
     <x-bladewind::currency-input name="price_custom" label="Custom symbol" symbol="US$" symbol-position="suffix" />
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::currency-input name="price_custom" label="Custom symbol" symbol="US$" symbol-position="suffix" /&gt;
-        </code>
-    </pre>
+    @php
+        $currencyUinputExample3 = <<<'HTML'
+            <x-bladewind::currency-input name="price_custom" label="Custom symbol" symbol="US$" symbol-position="suffix" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$currencyUinputExample3"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -132,9 +135,9 @@
     </x-bladewind::table>
 
     <h3>Currency Input with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::currency-input
+    @php
+        $currencyUinputExample4 = <<<'HTML'
+            <x-bladewind::currency-input
                 name="price"
                 label="Price"
                 currency="EUR"
@@ -145,9 +148,10 @@
                 thousands-separator=" "
                 precision="2"
                 required="true"
-                size="regular" /&gt;
-        </code>
-    </pre>
+                size="regular" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$currencyUinputExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > currency-input.blade.php</code>

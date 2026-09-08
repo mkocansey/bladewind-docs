@@ -17,22 +17,24 @@
     </p>
 
     <x-bladewind::credit-card cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card cardholder_name="Jane T. Doe"&gt;&lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+    @php
+        $creditUcardExample1 = <<<'HTML'
+            <x-bladewind::credit-card cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample1"></x-bladewind::code-block>
 
     <h2 id="flip">Flipping To The CVC</h2>
     <p>
         Click the round button on the card's edge to flip to the back and enter the security code. The same button
         flips back, and so does the Escape key while flipped.
     </p>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card flipped="true"&gt;&lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+    @php
+        $creditUcardExample2 = <<<'HTML'
+            <x-bladewind::credit-card flipped="true"></x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample2"></x-bladewind::code-block>
 
     <h2 id="prefill">Pre-Filling Fields</h2>
     <p>
@@ -48,16 +50,17 @@
         expiry_month="07"
         expiry_year="28"
     ></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card
+    @php
+        $creditUcardExample3 = <<<'HTML'
+            <x-bladewind::credit-card
                 cardholder_name="Jane T. Doe"
                 number="4242424242424242"
                 expiry_month="07"
-                expiry_year="28"&gt;
-            &lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+                expiry_year="28">
+            </x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample3"></x-bladewind::code-block>
 
     <h2 id="brand">Forcing A Network</h2>
     <p>
@@ -65,28 +68,31 @@
         override, for example a saved card where the network is already known but the full number is not shown.
     </p>
     <x-bladewind::credit-card brand="visa" number="•••• •••• •••• 4242"></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card brand="visa" number="•••• •••• •••• 4242"&gt;&lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+    @php
+        $creditUcardExample4 = <<<'HTML'
+            <x-bladewind::credit-card brand="visa" number="•••• •••• •••• 4242"></x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample4"></x-bladewind::code-block>
 
     <h2 id="theming">Theming</h2>
     <p>Set <code class="inline">color</code> to any colour in the palette to change the gradient.</p>
     <x-bladewind::credit-card color="green" cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card color="green"&gt;&lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+    @php
+        $creditUcardExample5 = <<<'HTML'
+            <x-bladewind::credit-card color="green"></x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample5"></x-bladewind::code-block>
 
     <p>Set <code class="inline">variant="outline"</code> for a bare card silhouette instead of the full-colour gradient face.</p>
     <x-bladewind::credit-card variant="outline" cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card variant="outline" cardholder_name="Jane T. Doe"&gt;&lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+    @php
+        $creditUcardExample6 = <<<'HTML'
+            <x-bladewind::credit-card variant="outline" cardholder_name="Jane T. Doe"></x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample6"></x-bladewind::code-block>
 
     <h2 id="inline">Inline Card Information</h2>
     <p>
@@ -94,11 +100,12 @@
         CVC on the next, with no cardholder name field or flip animation.
     </p>
     <x-bladewind::credit-card variant="inline"></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card variant="inline"&gt;&lt;/x-bladewind::credit-card&gt;
-        </code>
-    </pre>
+    @php
+        $creditUcardExample7 = <<<'HTML'
+            <x-bladewind::credit-card variant="inline"></x-bladewind::credit-card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample7"></x-bladewind::code-block>
 
     <h2 id="validation">Validation</h2>
     <p>
@@ -109,23 +116,24 @@
         a message beneath the card when it fails.
     </p>
     <x-bladewind::credit-card name="checkout_card" required="true" show_error_inline="true" error_message="Complete the card details to continue"></x-bladewind::credit-card>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card
+    @php
+        $creditUcardExample8 = <<<'HTML'
+            <x-bladewind::credit-card
                 name="checkout_card"
                 required="true"
                 show_error_inline="true"
-                error_message="Complete the card details to continue"&gt;
-            &lt;/x-bladewind::credit-card&gt;
+                error_message="Complete the card details to continue">
+            </x-bladewind::credit-card>
 
-            &lt;script&gt;
+            <script>
                 payButton.addEventListener('click', () => {
                     if (!window.checkout_card.validate()) return;
                     // proceed
                 });
-            &lt;/script&gt;
-        </code>
-    </pre>
+            </script>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample8"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -250,15 +258,20 @@
             <td>Returns <code class="inline">true</code> while the back (CVC) face is showing.</td>
         </tr>
     </x-bladewind::table>
-    <pre class="language-javascript"><code>checkout_card.value;
-checkout_card.validate();
-checkout_card.toggleFlip();
-checkout_card.isFlipped();</code></pre>
+    @php
+        $creditUcardExample9 = <<<'HTML'
+            checkout_card.value;
+            checkout_card.validate();
+            checkout_card.toggleFlip();
+            checkout_card.isFlipped();
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="javascript" :code="$creditUcardExample9"></x-bladewind::code-block>
 
     <h3>Credit Card with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::credit-card
+    @php
+        $creditUcardExample10 = <<<'HTML'
+            <x-bladewind::credit-card
                 name="checkout_card"
                 cardholder_name="Jane T. Doe"
                 number="4242424242424242"
@@ -275,9 +288,10 @@ checkout_card.isFlipped();</code></pre>
                 error_message="Complete the card details to continue"
                 show_error_inline="true"
                 on_change="onCardChange"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$creditUcardExample10"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > credit-card.blade.php</code>

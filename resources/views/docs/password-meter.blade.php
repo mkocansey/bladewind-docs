@@ -14,12 +14,13 @@
         <x-bladewind::password-meter for="password" />
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::input type="password" name="password" label="Password" viewable="true" /&gt;
-            &lt;x-bladewind::password-meter for="password" /&gt;
-        </code>
-    </pre>
+    @php
+        $passwordUmeterExample1 = <<<'HTML'
+            <x-bladewind::input type="password" name="password" label="Password" viewable="true" />
+            <x-bladewind::password-meter for="password" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$passwordUmeterExample1"></x-bladewind::code-block>
     <p>
         <code class="inline">for</code> is the watched field's <code class="inline">name</code> (or, failing that, its
         <code class="inline">id</code>): exactly what you already passed the field itself, nothing extra to keep in
@@ -34,11 +35,12 @@
         length still matters. Four points is "Strong", one is "Weak", and an empty field shows nothing at all.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::password-meter for="password" min-length="10" strong-length="16" /&gt;
-        </code>
-    </pre>
+    @php
+        $passwordUmeterExample2 = <<<'HTML'
+            <x-bladewind::password-meter for="password" min-length="10" strong-length="16" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$passwordUmeterExample2"></x-bladewind::code-block>
 
     <h2 id="label">Hiding the label</h2>
     <p>
@@ -46,11 +48,12 @@
         it and rely on the bar's colour alone.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::password-meter for="password" show-label="false" /&gt;
-        </code>
-    </pre>
+    @php
+        $passwordUmeterExample3 = <<<'HTML'
+            <x-bladewind::password-meter for="password" show-label="false" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$passwordUmeterExample3"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -87,16 +90,17 @@
     </x-bladewind::table>
 
     <h3>Password Meter with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::password-meter
+    @php
+        $passwordUmeterExample4 = <<<'HTML'
+            <x-bladewind::password-meter
                 for="password"
                 show-label="true"
                 min-length="8"
                 strong-length="12"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$passwordUmeterExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > password-meter.blade.php</code>

@@ -15,11 +15,12 @@
         <x-bladewind::meter value="72" max="100" low="30" high="70" label="Battery"/>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::meter value="72" max="100" low="30" high="70" label="Battery" /&gt;
-        </code>
-    </pre>
+    @php
+        $meterExample1 = <<<'HTML'
+            <x-bladewind::meter value="72" max="100" low="30" high="70" label="Battery" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$meterExample1"></x-bladewind::code-block>
     <p>
         With no <code class="inline">optimum</code>, higher values are assumed to be better: the zone above
         <code class="inline">high</code> is green, below <code class="inline">low</code> is red, and the band between
@@ -37,11 +38,12 @@
         <x-bladewind::meter value="85" max="100" low="20" high="60" optimum="0" label="Error rate (unhealthy)"/>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::meter value="8" max="100" low="20" high="60" optimum="0" label="Error rate" /&gt;
-        </code>
-    </pre>
+    @php
+        $meterExample2 = <<<'HTML'
+            <x-bladewind::meter value="8" max="100" low="20" high="60" optimum="0" label="Error rate" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$meterExample2"></x-bladewind::code-block>
 
     <h2 id="no-zones">Without zones</h2>
     <p>
@@ -53,11 +55,12 @@
         <x-bladewind::meter value="640" max="1000" label="Storage used (MB)"/>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::meter value="640" max="1000" label="Storage used (MB)" /&gt;
-        </code>
-    </pre>
+    @php
+        $meterExample3 = <<<'HTML'
+            <x-bladewind::meter value="640" max="1000" label="Storage used (MB)" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$meterExample3"></x-bladewind::code-block>
 
     <h2 id="sizes">Sizes</h2>
     <p>Set <code class="inline">size</code> to <code class="inline">tiny</code>, <code class="inline">small</code>, <code class="inline">medium</code> (default), or <code class="inline">large</code>.</p>
@@ -119,9 +122,9 @@
     </x-bladewind::table>
 
     <h3>Meter with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::meter
+    @php
+        $meterExample4 = <<<'HTML'
+            <x-bladewind::meter
                 value="60"
                 min="0"
                 max="100"
@@ -131,9 +134,10 @@
                 label="Error rate"
                 show-value="true"
                 size="medium"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$meterExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > meter.blade.php</code>

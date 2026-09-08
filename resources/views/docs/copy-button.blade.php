@@ -12,11 +12,12 @@
         <x-bladewind::copy-button>composer require bladewindui/ui</x-bladewind::copy-button>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::copy-button&gt;composer require bladewindui/ui&lt;/x-bladewind::copy-button&gt;
-        </code>
-    </pre>
+    @php
+        $copyUbuttonExample1 = <<<'HTML'
+            <x-bladewind::copy-button>composer require bladewindui/ui</x-bladewind::copy-button>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$copyUbuttonExample1"></x-bladewind::code-block>
     <p>
         With no <code class="inline">value</code>, the button copies its own slot's trimmed text: the display and
         the copied value never drift apart because there is only one string to keep in sync.
@@ -33,12 +34,13 @@
         <x-bladewind::copy-button value="sk_live_a1b2c3d4e5f61234" copy-label="Copy API key"/>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;code&gt;sk_live_••••••••1234&lt;/code&gt;
-            &lt;x-bladewind::copy-button value="sk_live_a1b2c3d4e5f61234" copy-label="Copy API key" /&gt;
-        </code>
-    </pre>
+    @php
+        $copyUbuttonExample2 = <<<'HTML'
+            <code>sk_live_••••••••1234</code>
+            <x-bladewind::copy-button value="sk_live_a1b2c3d4e5f61234" copy-label="Copy API key" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$copyUbuttonExample2"></x-bladewind::code-block>
 
     <h2 id="labelled">A labelled button</h2>
     <p>
@@ -48,11 +50,12 @@
 
     <x-bladewind::copy-button value="1234-5678-9012" label="Copy code"/>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::copy-button value="1234-5678-9012" label="Copy code" /&gt;
-        </code>
-    </pre>
+    @php
+        $copyUbuttonExample3 = <<<'HTML'
+            <x-bladewind::copy-button value="1234-5678-9012" label="Copy code" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$copyUbuttonExample3"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -104,9 +107,9 @@
     </x-bladewind::table>
 
     <h3>Copy Button with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::copy-button
+    @php
+        $copyUbuttonExample4 = <<<'HTML'
+            <x-bladewind::copy-button
                 value="sk_live_a1b2c3d4e5f61234"
                 label="Copy API key"
                 copy-label="Copy"
@@ -114,9 +117,10 @@
                 failed-message="Could not copy"
                 timeout="1500"
                 size="small"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$copyUbuttonExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > copy-button.blade.php</code>

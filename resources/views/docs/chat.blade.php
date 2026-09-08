@@ -20,21 +20,22 @@
             Perfect, see you then.
         </x-bladewind::chat.message>
     </x-bladewind::chat>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat&gt;
-                &lt;x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM"&gt;
+    @php
+        $chatExample1 = <<<'HTML'
+            <x-bladewind::chat>
+                <x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM">
                     Hey, are we still on for the call this afternoon?
-                &lt;/x-bladewind::chat.message&gt;
-                &lt;x-bladewind::chat.message outgoing="true" time="10:04 AM" status="read"&gt;
+                </x-bladewind::chat.message>
+                <x-bladewind::chat.message outgoing="true" time="10:04 AM" status="read">
                     Yes, 3pm works for me. I will send the link shortly.
-                &lt;/x-bladewind::chat.message&gt;
-                &lt;x-bladewind::chat.message sender="Jane Cooper" time="10:05 AM"&gt;
+                </x-bladewind::chat.message>
+                <x-bladewind::chat.message sender="Jane Cooper" time="10:05 AM">
                     Perfect, see you then.
-                &lt;/x-bladewind::chat.message&gt;
-            &lt;/x-bladewind::chat&gt;
-        </code>
-    </pre>
+                </x-bladewind::chat.message>
+            </x-bladewind::chat>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample1"></x-bladewind::code-block>
 
     <h2 id="grouped">Grouping Consecutive Messages</h2>
     <p>
@@ -52,16 +53,17 @@
             Let me know what you think.
         </x-bladewind::chat.message>
     </x-bladewind::chat>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM"&gt;
+    @php
+        $chatExample2 = <<<'HTML'
+            <x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM">
                 Quick update on the proposal.
-            &lt;/x-bladewind::chat.message&gt;
-            &lt;x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM" grouped="true"&gt;
+            </x-bladewind::chat.message>
+            <x-bladewind::chat.message sender="Jane Cooper" time="10:02 AM" grouped="true">
                 I have added the pricing section you asked for.
-            &lt;/x-bladewind::chat.message&gt;
-        </code>
-    </pre>
+            </x-bladewind::chat.message>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample2"></x-bladewind::code-block>
 
     <h2 id="status">Delivery Status</h2>
     <p>
@@ -77,15 +79,16 @@
         <x-bladewind::chat.message outgoing="true" time="10:01 AM" status="read">Great, thanks!</x-bladewind::chat.message>
         <x-bladewind::chat.message outgoing="true" time="10:02 AM" status="failed">This one did not go through.</x-bladewind::chat.message>
     </x-bladewind::chat>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat.message outgoing="true" status="sending"&gt;Uploading the file now.&lt;/x-bladewind::chat.message&gt;
-            &lt;x-bladewind::chat.message outgoing="true" status="sent"&gt;Here you go.&lt;/x-bladewind::chat.message&gt;
-            &lt;x-bladewind::chat.message outgoing="true" status="delivered"&gt;Let me know if it opens fine.&lt;/x-bladewind::chat.message&gt;
-            &lt;x-bladewind::chat.message outgoing="true" status="read"&gt;Great, thanks!&lt;/x-bladewind::chat.message&gt;
-            &lt;x-bladewind::chat.message outgoing="true" status="failed"&gt;This one did not go through.&lt;/x-bladewind::chat.message&gt;
-        </code>
-    </pre>
+    @php
+        $chatExample3 = <<<'HTML'
+            <x-bladewind::chat.message outgoing="true" status="sending">Uploading the file now.</x-bladewind::chat.message>
+            <x-bladewind::chat.message outgoing="true" status="sent">Here you go.</x-bladewind::chat.message>
+            <x-bladewind::chat.message outgoing="true" status="delivered">Let me know if it opens fine.</x-bladewind::chat.message>
+            <x-bladewind::chat.message outgoing="true" status="read">Great, thanks!</x-bladewind::chat.message>
+            <x-bladewind::chat.message outgoing="true" status="failed">This one did not go through.</x-bladewind::chat.message>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample3"></x-bladewind::code-block>
 
     <h2 id="attachments">Attachments</h2>
     <p>Give a message an <code class="inline">attachments</code> slot for files, images, or anything else it carries.</p>
@@ -100,16 +103,17 @@
             </x-slot:attachments>
         </x-bladewind::chat.message>
     </x-bladewind::chat>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat.message sender="Jane Cooper" time="2:14 PM"&gt;
+    @php
+        $chatExample4 = <<<'HTML'
+            <x-bladewind::chat.message sender="Jane Cooper" time="2:14 PM">
                 Here is the signed contract.
-                &lt;x-slot:attachments&gt;
-                    &lt;a href="#"&gt;contract-signed.pdf&lt;/a&gt;
-                &lt;/x-slot:attachments&gt;
-            &lt;/x-bladewind::chat.message&gt;
-        </code>
-    </pre>
+                <x-slot:attachments>
+                    <a href="#">contract-signed.pdf</a>
+                </x-slot:attachments>
+            </x-bladewind::chat.message>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample4"></x-bladewind::code-block>
 
     <h2 id="height">Scrollable Thread</h2>
     <p>
@@ -123,13 +127,14 @@
         <x-bladewind::chat.message outgoing="true" time="9:53 AM" status="delivered">No problem at all.</x-bladewind::chat.message>
         <x-bladewind::chat.message sender="Jane Cooper" time="9:55 AM">Catch you at the retro.</x-bladewind::chat.message>
     </x-bladewind::chat>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat height="220px"&gt;
+    @php
+        $chatExample5 = <<<'HTML'
+            <x-bladewind::chat height="220px">
                 ...
-            &lt;/x-bladewind::chat&gt;
-        </code>
-    </pre>
+            </x-bladewind::chat>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample5"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <h3>Chat</h3>
@@ -152,13 +157,14 @@
     </x-bladewind::table>
 
     <h3>Chat with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat
+    @php
+        $chatExample6 = <<<'HTML'
+            <x-bladewind::chat
                 height="400px"
-                class="ml-2"&gt;
-        </code>
-    </pre>
+                class="ml-2">
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample6"></x-bladewind::code-block>
 
     <h3>Chat Message</h3>
     <x-bladewind::table striped="true">
@@ -215,9 +221,9 @@
     </x-bladewind::table>
 
     <h3>Chat Message with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::chat.message
+    @php
+        $chatExample7 = <<<'HTML'
+            <x-bladewind::chat.message
                 outgoing="false"
                 sender="Michael"
                 avatar="/assets/images/me.jpeg"
@@ -225,14 +231,15 @@
                 status="read"
                 grouped="false"
                 show-avatar="true"
-                class="ml-2"&gt;
+                class="ml-2">
                 Sounds good, thanks!
-                &lt;x-slot:attachments&gt;
+                <x-slot:attachments>
                     ...
-                &lt;/x-slot:attachments&gt;
-            &lt;/x-bladewind::chat.message&gt;
-        </code>
-    </pre>
+                </x-slot:attachments>
+            </x-bladewind::chat.message>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$chatExample7"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > chat > index.blade.php</code>,

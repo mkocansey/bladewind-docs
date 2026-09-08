@@ -12,11 +12,12 @@
 
     <x-bladewind::inline-edit name="project_name" value="Q3 Marketing Campaign"/>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::inline-edit name="project_name" value="Q3 Marketing Campaign" /&gt;
-        </code>
-    </pre>
+    @php
+        $inlineUeditExample1 = <<<'HTML'
+            <x-bladewind::inline-edit name="project_name" value="Q3 Marketing Campaign" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$inlineUeditExample1"></x-bladewind::code-block>
     <p>
         Click the text (or its pencil icon) to edit, <code class="inline">Enter</code> to save,
         <code class="inline">Escape</code> or the × button to cancel. An empty value shows
@@ -39,11 +40,11 @@
         }
     </script>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::inline-edit name="project_name" value="Q3 Marketing Campaign" on-save="renameProject(1, newValue)" /&gt;
+    @php
+        $inlineUeditExample2 = <<<'HTML'
+            <x-bladewind::inline-edit name="project_name" value="Q3 Marketing Campaign" on-save="renameProject(1, newValue)" />
 
-            &lt;script&gt;
+            <script>
                 function renameProject(id, name) {
                     return fetch(`/projects/${id}`, {
                         method: 'PATCH',
@@ -53,9 +54,10 @@
                         if (! response.ok) throw new Error('Could not rename the project');
                     });
                 }
-            &lt;/script&gt;
-        </code>
-    </pre>
+            </script>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$inlineUeditExample2"></x-bladewind::code-block>
 
     <h2 id="required">Required and validation</h2>
     <p>
@@ -64,11 +66,12 @@
         <code class="inline">onSave</code> (for a server-side validation failure, say) surfaces the same way.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::inline-edit name="project_name" required="true" required-message="A project needs a name" /&gt;
-        </code>
-    </pre>
+    @php
+        $inlineUeditExample3 = <<<'HTML'
+            <x-bladewind::inline-edit name="project_name" required="true" required-message="A project needs a name" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$inlineUeditExample3"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -125,9 +128,9 @@
     </x-bladewind::table>
 
     <h3>Inline Edit with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::inline-edit
+    @php
+        $inlineUeditExample4 = <<<'HTML'
+            <x-bladewind::inline-edit
                 name="project_name"
                 value="Q3 Marketing Campaign"
                 placeholder="Click to edit"
@@ -138,9 +141,10 @@
                 save-label="Save"
                 cancel-label="Cancel"
                 edit-label="Edit"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$inlineUeditExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > inline-edit.blade.php</code>

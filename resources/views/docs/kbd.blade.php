@@ -10,11 +10,12 @@
 
     <p class="text-sm text-gray-600 dark:text-dark-300">Press <x-bladewind::kbd>Esc</x-bladewind::kbd> to close.</p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;p&gt;Press &lt;x-bladewind::kbd&gt;Esc&lt;/x-bladewind::kbd&gt; to close.&lt;/p&gt;
-        </code>
-    </pre>
+    @php
+        $kbdExample1 = <<<'HTML'
+            <p>Press <x-bladewind::kbd>Esc</x-bladewind::kbd> to close.</p>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kbdExample1"></x-bladewind::code-block>
 
     <h2 id="combos">Key combinations</h2>
     <p>
@@ -26,11 +27,12 @@
         Open the command palette with <x-bladewind::kbd :keys="['Ctrl', 'K']" />
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kbd :keys="['Ctrl', 'K']" /&gt;
-        </code>
-    </pre>
+    @php
+        $kbdExample2 = <<<'HTML'
+            <x-bladewind::kbd :keys="['Ctrl', 'K']" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kbdExample2"></x-bladewind::code-block>
 
     <h2 id="sizes">Sizes</h2>
     <p>Set <code class="inline">size</code> to <code class="inline">tiny</code>, <code class="inline">small</code> (default), or <code class="inline">regular</code>.</p>
@@ -41,13 +43,14 @@
         <x-bladewind::kbd size="regular">Tab</x-bladewind::kbd>
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kbd size="tiny"&gt;Tab&lt;/x-bladewind::kbd&gt;
-            &lt;x-bladewind::kbd size="small"&gt;Tab&lt;/x-bladewind::kbd&gt;
-            &lt;x-bladewind::kbd size="regular"&gt;Tab&lt;/x-bladewind::kbd&gt;
-        </code>
-    </pre>
+    @php
+        $kbdExample3 = <<<'HTML'
+            <x-bladewind::kbd size="tiny">Tab</x-bladewind::kbd>
+            <x-bladewind::kbd size="small">Tab</x-bladewind::kbd>
+            <x-bladewind::kbd size="regular">Tab</x-bladewind::kbd>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kbdExample3"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -74,14 +77,15 @@
     </x-bladewind::table>
 
     <h3>Kbd with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kbd
+    @php
+        $kbdExample4 = <<<'HTML'
+            <x-bladewind::kbd
                 :keys="['Ctrl', 'K']"
                 size="regular"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kbdExample4"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > kbd.blade.php</code>

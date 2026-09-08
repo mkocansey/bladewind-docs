@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import './prism.css';
 
 /* Scan vendor blade and JS files for class names */
 @source "../../vendor/bladewindui/bladewindui/**/*.blade.php";

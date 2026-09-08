@@ -22,22 +22,23 @@
             <x-bladewind::kanban.card value="4">Set up the staging environment</x-bladewind::kanban.card>
         </x-bladewind::kanban.column>
     </x-bladewind::kanban>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban&gt;
-                &lt;x-bladewind::kanban.column title="To do" id="todo"&gt;
-                    &lt;x-bladewind::kanban.card value="1"&gt;Design the onboarding flow&lt;/x-bladewind::kanban.card&gt;
-                    &lt;x-bladewind::kanban.card value="2"&gt;Write the API documentation&lt;/x-bladewind::kanban.card&gt;
-                &lt;/x-bladewind::kanban.column&gt;
-                &lt;x-bladewind::kanban.column title="In progress" id="in-progress"&gt;
-                    &lt;x-bladewind::kanban.card value="3"&gt;Build the payments webhook&lt;/x-bladewind::kanban.card&gt;
-                &lt;/x-bladewind::kanban.column&gt;
-                &lt;x-bladewind::kanban.column title="Done" id="done"&gt;
-                    &lt;x-bladewind::kanban.card value="4"&gt;Set up the staging environment&lt;/x-bladewind::kanban.card&gt;
-                &lt;/x-bladewind::kanban.column&gt;
-            &lt;/x-bladewind::kanban&gt;
-        </code>
-    </pre>
+    @php
+        $kanbanExample1 = <<<'HTML'
+            <x-bladewind::kanban>
+                <x-bladewind::kanban.column title="To do" id="todo">
+                    <x-bladewind::kanban.card value="1">Design the onboarding flow</x-bladewind::kanban.card>
+                    <x-bladewind::kanban.card value="2">Write the API documentation</x-bladewind::kanban.card>
+                </x-bladewind::kanban.column>
+                <x-bladewind::kanban.column title="In progress" id="in-progress">
+                    <x-bladewind::kanban.card value="3">Build the payments webhook</x-bladewind::kanban.card>
+                </x-bladewind::kanban.column>
+                <x-bladewind::kanban.column title="Done" id="done">
+                    <x-bladewind::kanban.card value="4">Set up the staging environment</x-bladewind::kanban.card>
+                </x-bladewind::kanban.column>
+            </x-bladewind::kanban>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample1"></x-bladewind::code-block>
 
     <h2 id="move">Reacting To A Move</h2>
     <p>
@@ -46,34 +47,36 @@
         <code class="inline">(cardId, fromColumnId, toColumnId, newIndex)</code>. Use it to save the new position
         with a request to your backend.
     </p>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban on_move="saveCardPosition"&gt;
+    @php
+        $kanbanExample2 = <<<'HTML'
+            <x-bladewind::kanban on_move="saveCardPosition">
                 ...
-            &lt;/x-bladewind::kanban&gt;
+            </x-bladewind::kanban>
 
-            &lt;script&gt;
+            <script>
                 function saveCardPosition(cardId, fromColumnId, toColumnId, newIndex) {
                     fetch('/tasks/' + cardId + '/move', {
                         method: 'POST',
                         body: JSON.stringify({ column: toColumnId, position: newIndex }),
                     });
                 }
-            &lt;/script&gt;
-        </code>
-    </pre>
+            </script>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample2"></x-bladewind::code-block>
 
     <h2 id="empty">Empty State</h2>
     <p>A column with no cards shows a short message instead of a blank space. Customise it with <code class="inline">empty_text</code>.</p>
     <x-bladewind::kanban>
         <x-bladewind::kanban.column title="Backlog" id="backlog" empty_text="Nothing queued up yet"></x-bladewind::kanban.column>
     </x-bladewind::kanban>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban.column title="Backlog" id="backlog" empty_text="Nothing queued up yet"&gt;
-            &lt;/x-bladewind::kanban.column&gt;
-        </code>
-    </pre>
+    @php
+        $kanbanExample3 = <<<'HTML'
+            <x-bladewind::kanban.column title="Backlog" id="backlog" empty_text="Nothing queued up yet">
+            </x-bladewind::kanban.column>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample3"></x-bladewind::code-block>
 
     <h2 id="loading">Loading State</h2>
     <p>
@@ -83,12 +86,13 @@
     <x-bladewind::kanban>
         <x-bladewind::kanban.column title="Review" id="review" loading="true"></x-bladewind::kanban.column>
     </x-bladewind::kanban>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban.column title="Review" id="review" loading="true"&gt;
-            &lt;/x-bladewind::kanban.column&gt;
-        </code>
-    </pre>
+    @php
+        $kanbanExample4 = <<<'HTML'
+            <x-bladewind::kanban.column title="Review" id="review" loading="true">
+            </x-bladewind::kanban.column>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample4"></x-bladewind::code-block>
 
     <h2 id="actions">Column Actions</h2>
     <p>Give a column an <code class="inline">actions</code> slot for a control shown beside its title, such as an add-card button.</p>
@@ -102,18 +106,19 @@
             <x-bladewind::kanban.card value="1">Design the onboarding flow</x-bladewind::kanban.card>
         </x-bladewind::kanban.column>
     </x-bladewind::kanban>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban.column title="To do" id="todo"&gt;
-                &lt;x-slot:actions&gt;
-                    &lt;button type="button"&gt;
-                        &lt;x-bladewind::icon name="plus" /&gt;
-                    &lt;/button&gt;
-                &lt;/x-slot:actions&gt;
-                &lt;x-bladewind::kanban.card value="1"&gt;Design the onboarding flow&lt;/x-bladewind::kanban.card&gt;
-            &lt;/x-bladewind::kanban.column&gt;
-        </code>
-    </pre>
+    @php
+        $kanbanExample5 = <<<'HTML'
+            <x-bladewind::kanban.column title="To do" id="todo">
+                <x-slot:actions>
+                    <button type="button">
+                        <x-bladewind::icon name="plus" />
+                    </button>
+                </x-slot:actions>
+                <x-bladewind::kanban.card value="1">Design the onboarding flow</x-bladewind::kanban.card>
+            </x-bladewind::kanban.column>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample5"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <h3>Kanban</h3>
@@ -141,14 +146,15 @@
     </x-bladewind::table>
 
     <h3>Kanban with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban
+    @php
+        $kanbanExample6 = <<<'HTML'
+            <x-bladewind::kanban
                 animation="150"
                 on-move="onCardMove"
-                class="ml-2"&gt;
-        </code>
-    </pre>
+                class="ml-2">
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample6"></x-bladewind::code-block>
 
     <h3>Kanban Column</h3>
     <x-bladewind::table striped="true">
@@ -190,18 +196,19 @@
     </x-bladewind::table>
 
     <h3>Kanban Column with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban.column
+    @php
+        $kanbanExample7 = <<<'HTML'
+            <x-bladewind::kanban.column
                 title="In Progress"
                 id="in-progress"
                 loading="false"
                 empty-text="No cards"
-                class="ml-2"&gt;
-                &lt;x-slot:actions&gt;...&lt;/x-slot:actions&gt;
-            &lt;/x-bladewind::kanban.column&gt;
-        </code>
-    </pre>
+                class="ml-2">
+                <x-slot:actions>...</x-slot:actions>
+            </x-bladewind::kanban.column>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample7"></x-bladewind::code-block>
 
     <h3>Kanban Card</h3>
     <x-bladewind::table striped="true">
@@ -223,11 +230,12 @@
     </x-bladewind::table>
 
     <h3>Kanban Card with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::kanban.card value="42" class="ml-2"&gt;Fix login bug&lt;/x-bladewind::kanban.card&gt;
-        </code>
-    </pre>
+    @php
+        $kanbanExample8 = <<<'HTML'
+            <x-bladewind::kanban.card value="42" class="ml-2">Fix login bug</x-bladewind::kanban.card>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$kanbanExample8"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > kanban > index.blade.php</code>,

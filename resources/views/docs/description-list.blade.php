@@ -15,15 +15,17 @@
         <x-bladewind::description-list.item label="Role">Admin</x-bladewind::description-list.item>
     </x-bladewind::description-list>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::description-list&gt;
-                &lt;x-bladewind::description-list.item label="Full name"&gt;Jane Cooper&lt;/x-bladewind::description-list.item&gt;
-                &lt;x-bladewind::description-list.item label="Email address"&gt;jane.cooper@example.com&lt;/x-bladewind::description-list.item&gt;
-                &lt;x-bladewind::description-list.item label="Role"&gt;Admin&lt;/x-bladewind::description-list.item&gt;
-            &lt;/x-bladewind::description-list&gt;
-        </code>
-    </pre>
+    @php
+        $descriptionUlistExample1 = <<<'HTML'
+            <x-bladewind::description-list>
+                <x-bladewind::description-list.item label="Full name">Jane Cooper</x-bladewind::description-list.item>
+                <x-bladewind::description-list.item label="Email address">jane.cooperBWATSIGNPLACEHOLDERexample.com</x-bladewind::description-list.item>
+                <x-bladewind::description-list.item label="Role">Admin</x-bladewind::description-list.item>
+            </x-bladewind::description-list>
+            HTML;
+        $descriptionUlistExample1 = str_replace('BWATSIGNPLACEHOLDER', '@', $descriptionUlistExample1);
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$descriptionUlistExample1"></x-bladewind::code-block>
 
     <h2 id="actions">Action slots</h2>
     <p>
@@ -40,16 +42,18 @@
         </x-bladewind::description-list.item>
     </x-bladewind::description-list>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::description-list.item label="Email address"&gt;
-                jane.cooper@example.com
-                &lt;x-slot:action&gt;
-                    &lt;a href="#"&gt;Edit&lt;/a&gt;
-                &lt;/x-slot:action&gt;
-            &lt;/x-bladewind::description-list.item&gt;
-        </code>
-    </pre>
+    @php
+        $descriptionUlistExample2 = <<<'HTML'
+            <x-bladewind::description-list.item label="Email address">
+                jane.cooperBWATSIGNPLACEHOLDERexample.com
+                <x-slot:action>
+                    <a href="#">Edit</a>
+                </x-slot:action>
+            </x-bladewind::description-list.item>
+            HTML;
+        $descriptionUlistExample2 = str_replace('BWATSIGNPLACEHOLDER', '@', $descriptionUlistExample2);
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$descriptionUlistExample2"></x-bladewind::code-block>
 
     <h2 id="striped">Striped rows</h2>
     <p>
@@ -63,13 +67,14 @@
         <x-bladewind::description-list.item label="Seats">12 of 20 used</x-bladewind::description-list.item>
     </x-bladewind::description-list>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::description-list striped="true"&gt;
+    @php
+        $descriptionUlistExample3 = <<<'HTML'
+            <x-bladewind::description-list striped="true">
                 ...
-            &lt;/x-bladewind::description-list&gt;
-        </code>
-    </pre>
+            </x-bladewind::description-list>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$descriptionUlistExample3"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <h3>Description List</h3>
@@ -97,14 +102,15 @@
     </x-bladewind::table>
 
     <h3>Description List with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::description-list
+    @php
+        $descriptionUlistExample4 = <<<'HTML'
+            <x-bladewind::description-list
                 divided="true"
                 striped="true"
-                class="ml-2"&gt;
-        </code>
-    </pre>
+                class="ml-2">
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$descriptionUlistExample4"></x-bladewind::code-block>
 
     <h3>Description List Item</h3>
     <x-bladewind::table striped="true">
@@ -131,18 +137,20 @@
     </x-bladewind::table>
 
     <h3>Description List Item with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::description-list.item
+    @php
+        $descriptionUlistExample5 = <<<'HTML'
+            <x-bladewind::description-list.item
                 label="Email address"
-                class="ml-2"&gt;
-                jane.cooper@example.com
-                &lt;x-slot:action&gt;
-                    &lt;a href="#"&gt;Edit&lt;/a&gt;
-                &lt;/x-slot:action&gt;
-            &lt;/x-bladewind::description-list.item&gt;
-        </code>
-    </pre>
+                class="ml-2">
+                jane.cooperBWATSIGNPLACEHOLDERexample.com
+                <x-slot:action>
+                    <a href="#">Edit</a>
+                </x-slot:action>
+            </x-bladewind::description-list.item>
+            HTML;
+        $descriptionUlistExample5 = str_replace('BWATSIGNPLACEHOLDER', '@', $descriptionUlistExample5);
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$descriptionUlistExample5"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > description-list > index.blade.php</code>,

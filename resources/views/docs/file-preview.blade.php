@@ -15,13 +15,14 @@
         <x-bladewind::file-preview name="budget.xlsx" size="51200" url="#" />
     </div>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::file-preview name="Quarterly report.pdf" size="2621440" url="/files/1" /&gt;
-            &lt;x-bladewind::file-preview name="team-photo.jpg" size="843200" thumbnail="/thumbs/team-photo.jpg" url="/files/2" /&gt;
-            &lt;x-bladewind::file-preview name="budget.xlsx" size="51200" url="/files/3" /&gt;
-        </code>
-    </pre>
+    @php
+        $fileUpreviewExample1 = <<<'HTML'
+            <x-bladewind::file-preview name="Quarterly report.pdf" size="2621440" url="/files/1" />
+            <x-bladewind::file-preview name="team-photo.jpg" size="843200" thumbnail="/thumbs/team-photo.jpg" url="/files/2" />
+            <x-bladewind::file-preview name="budget.xlsx" size="51200" url="/files/3" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$fileUpreviewExample1"></x-bladewind::code-block>
     <p>
         <code class="inline">size</code> is plain bytes, the component formats it into B/KB/MB/GB itself. Without a
         <code class="inline">thumbnail</code>, the icon is derived from the filename's extension (PDF, Word, Excel,
@@ -38,11 +39,12 @@
         <a href="/component/tag">Tag</a>'s dismiss button uses.
     </p>
 
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::file-preview name="report.pdf" on-remove="deleteAttachment(1)" /&gt;
-        </code>
-    </pre>
+    @php
+        $fileUpreviewExample2 = <<<'HTML'
+            <x-bladewind::file-preview name="report.pdf" on-remove="deleteAttachment(1)" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$fileUpreviewExample2"></x-bladewind::code-block>
     <p>
         Set <code class="inline">removable="false"</code> to drop the control entirely, useful for a purely
         informational list the viewer cannot edit.
@@ -109,9 +111,9 @@
     </x-bladewind::table>
 
     <h3>File Preview with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::file-preview
+    @php
+        $fileUpreviewExample3 = <<<'HTML'
+            <x-bladewind::file-preview
                 name="Quarterly report.pdf"
                 size="2621440"
                 url="/files/1"
@@ -120,9 +122,10 @@
                 removable="true"
                 downloadable="true"
                 on-remove="deleteAttachment(1)"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$fileUpreviewExample3"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > file-preview.blade.php</code>

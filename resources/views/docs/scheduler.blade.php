@@ -25,13 +25,11 @@
         resource becomes its own column, and events are placed by their start and end time. Two events that overlap
         share their column side by side instead of stacking on top of each other.
     </p>
+    <h3>Scheduler vs. Calendar</h3>
     <p>
-        Scheduler is not a bigger <a href="/component/calendar">Calendar</a>, it solves a different problem. Calendar
-        browses whole months and weeks of dates, with each day showing the events that fall on it. Scheduler shows
-        just one day or week at a time, drawn as an hour-by-hour grid where every event sits at its exact start and
-        end time, and, in day view, splits that grid into a column per resource. Reach for Calendar when someone
-        needs to browse a schedule and pick a date; reach for Scheduler when you are building something closer to a
-        room booking board, a staff roster, or an appointment book, where the time of day is the whole point.
+        Scheduler is not a bigger <a href="/component/calendar">Calendar</a>, it solves a different problem. Calendar displays dates across full months or weeks, with each day showing its scheduled events. Scheduler focuses on a single day or week using an hour-by-hour timeline, positioning events according to their exact start and end times. In day view, it can also divide the timeline into separate columns for each resource.
+
+        Use Calendar when users need to browse schedules and choose dates. Use Scheduler when time and availability are the primary focus, such as for room bookings, staff rosters, appointments, or other resource-based scheduling.
     </p>
 
     <h2 id="day">Day View With Resources</h2>
@@ -44,22 +42,23 @@
         ]"
         :events="$roomEvents"
     ></x-bladewind::scheduler>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::scheduler
+    @php
+        $schedulerExample1 = <<<'HTML'
+            <x-bladewind::scheduler
                 date="2027-03-10"
                 :resources="[
-                    ['id' =&gt; 'room-a', 'label' =&gt; 'Room A'],
-                    ['id' =&gt; 'room-b', 'label' =&gt; 'Room B'],
-                    ['id' =&gt; 'room-c', 'label' =&gt; 'Room C'],
+                    ['id' => 'room-a', 'label' => 'Room A'],
+                    ['id' => 'room-b', 'label' => 'Room B'],
+                    ['id' => 'room-c', 'label' => 'Room C'],
                 ]"
                 :events="[
-                    ['id' =&gt; 1, 'resource_id' =&gt; 'room-a', 'label' =&gt; 'Team standup', 'start' =&gt; '2027-03-10 09:00', 'end' =&gt; '2027-03-10 09:30', 'color' =&gt; 'primary'],
+                    ['id' => 1, 'resource_id' => 'room-a', 'label' => 'Team standup', 'start' => '2027-03-10 09:00', 'end' => '2027-03-10 09:30', 'color' => 'primary'],
                     ...
-                ]"&gt;
-            &lt;/x-bladewind::scheduler&gt;
-        </code>
-    </pre>
+                ]">
+            </x-bladewind::scheduler>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$schedulerExample1"></x-bladewind::code-block>
 
     <h2 id="week">Week View</h2>
     <p>
@@ -67,12 +66,13 @@
         as columns instead. Resources are not used in week view.
     </p>
     <x-bladewind::scheduler view="week" date="2027-03-10" :events="$weekEvents"></x-bladewind::scheduler>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::scheduler view="week" date="2027-03-10" :events="$events"&gt;
-            &lt;/x-bladewind::scheduler&gt;
-        </code>
-    </pre>
+    @php
+        $schedulerExample2 = <<<'HTML'
+            <x-bladewind::scheduler view="week" date="2027-03-10" :events="$events">
+            </x-bladewind::scheduler>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$schedulerExample2"></x-bladewind::code-block>
 
     <h2 id="hours">Visible Hours And Grid Granularity</h2>
     <p>
@@ -87,18 +87,19 @@
         :resources="[['id' => 'room-a', 'label' => 'Room A']]"
         :events="[['id' => 1, 'resource_id' => 'room-a', 'label' => 'Retro', 'start' => '2027-03-10 14:00', 'end' => '2027-03-10 15:00', 'color' => 'green']]"
     ></x-bladewind::scheduler>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::scheduler
+    @php
+        $schedulerExample3 = <<<'HTML'
+            <x-bladewind::scheduler
                 date="2027-03-10"
                 start_hour="12"
                 end_hour="16"
                 slot_minutes="30"
                 :resources="..."
-                :events="..."&gt;
-            &lt;/x-bladewind::scheduler&gt;
-        </code>
-    </pre>
+                :events="...">
+            </x-bladewind::scheduler>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$schedulerExample3"></x-bladewind::code-block>
 
     <h2 id="hooks">Selection Hooks</h2>
     <p>
@@ -108,26 +109,27 @@
         to a click on an existing event instead, called as <code class="inline">(eventId)</code>. An event given an
         <code class="inline">href</code> renders as a real link and does not fire <code class="inline">on_event_click</code>.
     </p>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::scheduler
+    @php
+        $schedulerExample4 = <<<'HTML'
+            <x-bladewind::scheduler
                 date="2027-03-10"
                 on_slot_click="proposeBooking"
                 on_event_click="showBookingDetails"
                 :resources="..."
-                :events="..."&gt;
-            &lt;/x-bladewind::scheduler&gt;
+                :events="...">
+            </x-bladewind::scheduler>
 
-            &lt;script&gt;
+            <script>
                 function proposeBooking(columnId, time) {
                     console.log('Book', columnId, 'at', time);
                 }
                 function showBookingDetails(eventId) {
                     console.log('Show booking', eventId);
                 }
-            &lt;/script&gt;
-        </code>
-    </pre>
+            </script>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$schedulerExample4"></x-bladewind::code-block>
 
     <h2 id="timezone">Timezone Label</h2>
     <p>
@@ -140,12 +142,13 @@
         :resources="[['id' => 'room-a', 'label' => 'Room A']]"
         :events="[['id' => 1, 'resource_id' => 'room-a', 'label' => 'Client call', 'start' => '2027-03-10 10:00', 'end' => '2027-03-10 11:00', 'color' => 'orange']]"
     ></x-bladewind::scheduler>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::scheduler date="2027-03-10" timezone="America/New_York" ...&gt;
-            &lt;/x-bladewind::scheduler&gt;
-        </code>
-    </pre>
+    @php
+        $schedulerExample5 = <<<'HTML'
+            <x-bladewind::scheduler date="2027-03-10" timezone="America/New_York" ...>
+            </x-bladewind::scheduler>
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$schedulerExample5"></x-bladewind::code-block>
 
     <h2 id="attributes">Full List Of Attributes</h2>
     <x-bladewind::table striped="true">
@@ -217,9 +220,9 @@
     </x-bladewind::table>
 
     <h3>Scheduler with all attributes defined</h3>
-    <pre class="language-markup line-numbers">
-        <code>
-            &lt;x-bladewind::scheduler
+    @php
+        $schedulerExample6 = <<<'HTML'
+            <x-bladewind::scheduler
                 view="day"
                 date="2027-03-10"
                 :resources="[['id' => 'r1', 'label' => 'Room A']]"
@@ -231,9 +234,10 @@
                 timezone="GMT"
                 on-slot-click="onSlotClick"
                 on-event-click="onEventClick"
-                class="ml-2" /&gt;
-        </code>
-    </pre>
+                class="ml-2" />
+            HTML;
+    @endphp
+    <x-bladewind::code-block language="markup" line_numbers="true" :code="$schedulerExample6"></x-bladewind::code-block>
 
     <x-bladewind::alert show_close_icon="false">
         The source file for this component is available in <code class="inline">resources > views > components > bladewind > scheduler.blade.php</code>
